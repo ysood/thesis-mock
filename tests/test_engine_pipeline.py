@@ -158,6 +158,8 @@ class RevisionAndQuestionTests(unittest.TestCase):
         state.ask_corpus('subregion_a1', ['region_a'], [{'question_id': 'd1', 'asker': 'region_a', 'requirement_id': 'x',
                                                         'question': 'Is there a national list?'}], 'delegation')
         self.assertEqual(list(state.extra), ['subregion_a1:impact_assessment_list'])
+        self.assertIn('YOUR PRIOR REPORT', self.seen[-1][2])  # a routed question, not only a revision, shows it
+        self.assertIn('"Old"', self.seen[-1][2])
         from engine import agents
         self.assertIn('whether or not a question asked about it', agents.delegate_system('subregion_a1', 'Region A'))
         self.assertIn('ALREADY REPORTED', agents.delegate_system('region_b', 'Region A'))

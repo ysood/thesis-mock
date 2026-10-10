@@ -77,11 +77,12 @@ class Run:
 
     def ask_corpus(self, target, asked_by, items, kind, instruction=''):
         """Put questions (or a supervisor revision) to a corpus specialist and file its answers with each asker.
-        A lower-level corpus reports its complete set of requirements, which replaces its earlier report; a
-        top-level corpus answering a peer question adds only requirements its own assessment lacks."""
+        A lower-level corpus reports its complete set of requirements, which replaces its earlier report, so it is
+        always shown that earlier report; a top-level corpus answering a peer question adds only requirements its
+        own assessment lacks."""
         lower = bool(corpus.manifests()[target].get('parent'))
         mine = [r for r in self.extra.values() if r['corpus'] == target]
-        prior = mine if instruction else []
+        prior = mine if lower or instruction else []
         already = [] if lower else [r['title'] for r in mine] + (
             [r.title for r in self.answers[target].requirements] if target in self.answers else [])
         name = ', '.join(corpus.manifests()[a]['name'] for a in asked_by)

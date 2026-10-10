@@ -44,7 +44,8 @@ are translated (APIR -> A-REG, aster -> region_a, ...).
 Each corpus agent keeps one read record across all its calls, so law it read earlier stays citable.
 Each corpus reports only requirements created by its own instruments; other corpora's law reaches it as answers.
 A lower-level delegate files every engaged obligation of its own law as a requirement, asked about or not, and its
-answers point to them by id; each report replaces its previous one. A top-level corpus answering a peer question adds
+answers point to them by id; each report replaces its previous one, so every call (delegation, routed
+question or revision) shows it its previous report. A top-level corpus answering a peer question adds
 only requirements its own assessment lacks.
 Coverage warnings (pipeline.Run.coverage): provisions of an agent's corpus that are cited by law the agent relied on
 and that it never read, from the citation graph. Shown to the supervisor in every review, and to the agent when it
