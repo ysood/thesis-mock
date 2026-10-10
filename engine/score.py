@@ -141,7 +141,8 @@ def score(result, key):
         if item.get('all_candidates'):
             explained |= {f['ref'] for f in candidates(findings, item['provisions'])}
     card = {
-        'decision': {'expect': key['decision'], 'got': result['decision'], 'ok': result['decision'] == key['decision']},
+        'decision': {'expect': key['decision'], 'got': result['decision'],  # one decision, or a list of acceptable ones
+                     'ok': result['decision'] in (key['decision'] if isinstance(key['decision'], list) else [key['decision']])},
         'engaged': {'expect': key['engaged'], 'got': engaged,
                     'ok': all(engaged.get(c) == v for c, v in key['engaged'].items())},
         'requirements': requirements,

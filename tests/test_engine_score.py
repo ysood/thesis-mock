@@ -66,6 +66,11 @@ class ScoreTests(unittest.TestCase):
         self.assertTrue({r['id']: r['ok'] for r in score.score(legacy, KEY)['requirements']}['transfer'])
         self.assertEqual(score.case_name('20261010-154033_01_valdora_gp_to_corvel_host.json'), '01_a1_gp_to_region_b_host')
 
+    def test_key_may_accept_several_decisions(self):
+        run = result([])
+        self.assertFalse(score.score(run, {**KEY, 'decision': 'proceed'})['decision']['ok'])
+        self.assertTrue(score.score(run, {**KEY, 'decision': ['proceed', 'do_not_proceed']})['decision']['ok'])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,64 @@
+{
+  "status": "DRAFT answer key: written with the case, to be reviewed and signed off by the author before results are reported.",
+  "matching": "Findings are matched by the provisions they cite, not by requirement id. The best candidate is the finding whose citations are most focused on the listed provisions.",
+  "design": "Variant of case 01 in which the practice has done everything within its own control: keys held only in A1, notice to the A1 Commission 52 days before the first transfer, impact assessment, return instead of deletion, no access from Region B. Region A's law cannot close its gates on its own text: A-REG 8(2)(c) rests 'on the basis of Subregion law' (A1-HIA 4, 5), A-REG 8(3)/21(3) bring in A1-HIA 6, and A-REG 18(2)-(3) asks whether Region B law would defeat the clauses, which turns on B-RAA 3 ('accessible to it') and B-RAA 5 (no duty to produce keys it does not hold). Without the A1 delegation and the Region B answer, those gates should stay undetermined (needs_review); with them, every gate is met. Case 01 is the contrast: same parties, host-held keys, do_not_proceed.",
+  "decision": ["proceed", "proceed_subject_to_conditions"],
+  "engaged": {
+    "region_a": true,
+    "region_b": true
+  },
+  "requirements": [
+    {"id": "scope", "provisions": ["A-REG 3"], "expect": ["met"],
+     "why": "The practice (custodian) is established in Subregion A1, listed in Annex I."},
+    {"id": "sensitive_condition", "provisions": ["A-REG 8"], "expect": ["met"],
+     "why": "Art 8(2)(c) health-care condition, which rests on Subregion law: needs the A1 answer."},
+    {"id": "a1_healthcare_basis", "provisions": ["A1-HIA 4"], "expect": ["met"],
+     "why": "A1-HIA 4(1) registered practitioners; 4(2) an agent on documented instructions is under their responsibility. Needs delegation."},
+    {"id": "lawful_ground", "provisions": ["A-REG 6"], "expect": ["met"],
+     "why": "6(1)(b) contract: patients pay under terms of care."},
+    {"id": "agent_contract", "provisions": ["A-REG 9"], "expect": ["met"],
+     "why": "The signed agreement covers the 9(2) terms, with return chosen under 9(2)(f)."},
+    {"id": "transfer_route", "provisions": ["A-REG 16"], "expect": ["met"],
+     "why": "Covered by the approved clauses under Art 18 once Region B law is shown not to defeat them with exporter-held keys (B-RAA 5)."},
+    {"id": "a1_transfer_conditions", "provisions": ["A1-HIA 6"], "expect": ["met"],
+     "why": "Written notice dated 25 Sep for a first transfer on 16 Nov (more than 30 days); records encrypted outside Region A with keys held only in A1. Needs delegation."},
+    {"id": "impact_assessment", "provisions": ["A-REG 12", "A1-HIA 8"], "expect": ["met"],
+     "why": "Required by A1-HIA 8(a) regardless of numbers (A-REG 12(2)(a) alone would not require it at 3,200); the assessment was completed before any transfer and covers the 12(4) elements."},
+    {"id": "information_to_persons", "provisions": ["A-REG 11"], "expect": ["met"],
+     "why": "The notice names the third territory and the route relied on."},
+    {"id": "host_retention", "provisions": ["B-HRA 9"], "expect": ["met"],
+     "why": "Northgate is a data host, but B-HRA 9(2) applies: the records originate outside Region B and are returned at the end of service with no copy kept."},
+    {"id": "region_b_sector_rules", "provisions": ["B-HRA 4", "B-HRA 5", "B-HRA 6", "B-HRA 7", "B-HRA 8"], "expect": ["not_applicable"], "all_candidates": true,
+     "why": "The practice bills no Region B insurer, so it is not a covered provider and Northgate is not its service agent (B-HRA 3(2))."}
+  ],
+  "routes": [
+    {"id": "recognition", "provisions": ["A-REG 17"], "expect": ["ruled_out"],
+     "why": "Annex II recognition of Region B extends only to non-sensitive information, despite the active certificate."},
+    {"id": "approved_clauses_with_measures", "provisions": ["A-REG 18"], "expect": ["supported"],
+     "why": "Executed clauses, a documented 18(2) assessment and keys held only in A1; per Region B's answer, a production order cannot compel decryption or keys Northgate does not hold (B-RAA 5)."},
+    {"id": "derogations", "provisions": ["A-REG 19"], "expect": ["ruled_out", "not_investigated"], "all_routes": true,
+     "why": "Not needed because the clauses suffice; if assessed, 19(2) excludes (a)-(b) for an ongoing transfer and (c)-(d) do not fit."},
+    {"id": "contract_ground", "provisions": ["A-REG 6"], "name_hint": ["contract"], "expect": ["supported"],
+     "why": "Patients pay under terms of care."},
+    {"id": "legitimate_interests", "provisions": ["A-REG 6"], "name_hint": ["legitimate"], "expect": ["ruled_out", "not_investigated"],
+     "why": "6(2): not available for sensitive information."},
+    {"id": "return_and_keep_no_copy", "provisions": ["B-HRA 9"], "name_hint": ["return"], "expect": ["supported"],
+     "why": "B-HRA 9(2) is in place: the agreement provides for return with no copy kept."}
+  ],
+  "conflicts": [],
+  "questions": [
+    {"id": "region_b_access_law", "asker": "region_a", "answerer": "region_b",
+     "why": "Art 18(2)-(3) turns on Region B's law on public-authority access (B-RAA 3-5), which only the Region B specialist can read."}
+  ],
+  "must_not": [
+    {"id": "recognition_relied_on", "type": "route", "provisions": ["A-REG 17"], "status": ["supported", "available"],
+     "why": "Treating the Trusted Recipient certificate as an Art 17 route for health records."},
+    {"id": "derogation_relied_on", "type": "route", "provisions": ["A-REG 19"], "status": ["supported", "available"],
+     "why": "Relying on a derogation for an ongoing hosting arrangement."},
+    {"id": "legitimate_interests_relied_on", "type": "route", "provisions": ["A-REG 6"], "name_hint": ["legitimate"], "status": ["supported", "available"],
+     "why": "Relying on legitimate interests for health records."},
+    {"id": "consent_age_engaged", "type": "requirement", "only_cites": ["A-REG 7", "A1-HIA 9", "A-REG 4"], "requires_any": ["A-REG 7", "A1-HIA 9"],
+     "status": ["met", "unmet", "undetermined"],
+     "why": "No ground relies on consent, so child-consent age rules are not engaged."}
+  ]
+}
