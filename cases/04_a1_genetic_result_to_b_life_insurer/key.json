@@ -1,0 +1,248 @@
+{
+  "status": "DRAFT answer key: written with the case on 11 Oct 2026 from the corpus text; to be reviewed and signed off by the author before results are reported.",
+  "matching": "Uses the existing provision-based scorer. Citation overlap alone does not establish that the reasoning is correct; see README.md.",
+  "design": "Genetic information is the decisive issue. Valid, explicit, written, informed consent exists, but A1-HIA 7 stops consent from lifting the Art 8(1) prohibition for genetic information processed for insurance and excludes the Art 19(1)(a) consent derogation for genetic information. Consent still works where A1 law does not restrict it (A-REG 6, A1-HIA 5). Category boundaries: a life insurer is not a 'health insurer' (B-HRA 2), and the active certificate does not bring sensitive information within the Annex II recognition.",
+  "decision": "do_not_proceed",
+  "engaged": {
+    "region_a": true,
+    "region_b": true
+  },
+  "requirements": [
+    {
+      "id": "scope",
+      "provisions": [
+        "A-REG 3"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "The clinic (custodian) is established in Subregion A1 (Art 3(1))."
+    },
+    {
+      "id": "lawful_ground",
+      "provisions": [
+        "A-REG 6"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "Art 6(1)(a): consent by a clear written statement specific to the purpose (Art 7(1)); the patient is an adult. A1-HIA 7 restricts consent only for lifting the Art 8(1) prohibition and for Art 19(1)(a), not for Art 6."
+    },
+    {
+      "id": "sensitive_condition",
+      "provisions": [
+        "A-REG 8"
+      ],
+      "expect": [
+        "unmet"
+      ],
+      "must_cite": [
+        "A1-HIA 7"
+      ],
+      "why": "Genetic information is sensitive (Art 4(4)). Art 8(2)(a) consent is excluded because A1 law (A1-HIA 7) provides that the prohibition may not be lifted by consent for genetic information processed for insurance purposes; Art 21(3) applies A1 law to a custodian established in A1. No other Art 8(2) condition fits underwriting. No change of arrangements cures this."
+    },
+    {
+      "id": "transfer_route",
+      "provisions": [
+        "A-REG 16"
+      ],
+      "expect": [
+        "unmet"
+      ],
+      "why": "Recognition excludes sensitive information (Annex II); no approved clauses; 19(1)(a) is excluded for genetic information by A1-HIA 7; 19(1)(b) needs a contract between the person and the custodian that the transfer is necessary to perform, and the clinic's testing contract is not one; (c) and (d) do not fit. Art 16 also requires the other provisions to be complied with, and Art 8 is not."
+    },
+    {
+      "id": "a1_genetic_restriction",
+      "provisions": [
+        "A1-HIA 7"
+      ],
+      "expect": [
+        "unmet"
+      ],
+      "why": "The clinic relies on consent for exactly what A1-HIA 7 excludes: lifting Art 8(1) for genetic information processed for insurance, and an Art 19(1)(a) transfer of genetic information."
+    },
+    {
+      "id": "a1_professional_secrecy",
+      "provisions": [
+        "A1-HIA 5"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "The geneticists are registered practitioners; s.5(2) permits disclosure to a third party with the patient's consent, which is recorded. Consent works here even though it does not work under A1-HIA 7."
+    },
+    {
+      "id": "a1_hosting_conditions",
+      "provisions": [
+        "A1-HIA 6"
+      ],
+      "expect": [
+        "not_applicable"
+      ],
+      "why": "Not an outward transfer of patient records for hosting or storing them; the insurer keeps the report for its own underwriting."
+    },
+    {
+      "id": "impact_assessment",
+      "provisions": [
+        "A-REG 12",
+        "A1-HIA 8"
+      ],
+      "expect": [
+        "unmet",
+        "not_applicable"
+      ],
+      "why": "Contested; both readings accepted. One person is below Art 12(2)(a). A1-HIA 8(b) lists 'the matching of health information with information held by an insurer'. Reading 1 (unmet): the clinic discloses the report so that it is matched with the insurer's application information, so the listed kind is engaged regardless of numbers and no assessment exists. Reading 2 (not_applicable): the clinic only discloses; the insurer, outside Region A's scope, does the matching. Revised 11 Oct 2026 after all four first runs took reading 1 with sound reasoning; the original key accepted only reading 2."
+    },
+    {
+      "id": "region_b_sector_rules",
+      "provisions": [
+        "B-HRA 4",
+        "B-HRA 5",
+        "B-HRA 6",
+        "B-HRA 7",
+        "B-HRA 8"
+      ],
+      "expect": [
+        "not_applicable"
+      ],
+      "all_candidates": true,
+      "why": "A covered provider is a health care provider billing a Region B health insurer, or a health insurer licensed in Region B (B-HRA 2). Northbank is licensed only as a life insurer and provides no health care, so sections 4-8 do not apply (B-HRA 3(1))."
+    },
+    {
+      "id": "region_b_host_retention",
+      "provisions": [
+        "B-HRA 9"
+      ],
+      "expect": [
+        "not_applicable"
+      ],
+      "why": "Northbank stores the report for its own purposes, not on behalf of another person, so it is not a data host (B-HRA 2)."
+    }
+  ],
+  "routes": [
+    {
+      "id": "lawful_ground_consent",
+      "provisions": [
+        "A-REG 6"
+      ],
+      "name_hint": [
+        "consent"
+      ],
+      "expect": [
+        "supported"
+      ],
+      "why": "Art 6(1)(a) with Art 7(1)."
+    },
+    {
+      "id": "sensitive_consent",
+      "provisions": [
+        "A-REG 8"
+      ],
+      "name_hint": [
+        "consent"
+      ],
+      "expect": [
+        "ruled_out"
+      ],
+      "why": "Art 8(2)(a) excepts cases where Subregion law says consent cannot lift the prohibition; A1-HIA 7 says so for genetic information processed for insurance."
+    },
+    {
+      "id": "recognition",
+      "provisions": [
+        "A-REG 17"
+      ],
+      "expect": [
+        "ruled_out"
+      ],
+      "why": "Annex II recognition of Region B extends only to information that is not sensitive information, whatever the certificate covers."
+    },
+    {
+      "id": "consent_derogation",
+      "provisions": [
+        "A-REG 19"
+      ],
+      "name_hint": [
+        "consent"
+      ],
+      "expect": [
+        "ruled_out"
+      ],
+      "why": "A1-HIA 7: genetic information may not be transferred on the basis of Art 19(1)(a). Occasional and informed consent are not enough."
+    },
+    {
+      "id": "contract_derogation",
+      "provisions": [
+        "A-REG 19"
+      ],
+      "name_hint": [
+        "contract"
+      ],
+      "expect": [
+        "ruled_out",
+        "unresolved"
+      ],
+      "why": "No contract between the person and the clinic that this transfer is necessary to perform; the insurance contract is with Northbank."
+    }
+  ],
+  "conflicts": [],
+  "questions": [],
+  "must_not": [
+    {
+      "id": "consent_lifts_genetic_prohibition",
+      "type": "route",
+      "provisions": [
+        "A-REG 8"
+      ],
+      "name_hint": [
+        "consent"
+      ],
+      "status": [
+        "supported",
+        "available"
+      ],
+      "why": "Treating explicit consent as lifting the Art 8(1) prohibition for genetic information processed for insurance."
+    },
+    {
+      "id": "consent_derogation_relied_on",
+      "type": "route",
+      "provisions": [
+        "A-REG 19"
+      ],
+      "name_hint": [
+        "consent"
+      ],
+      "status": [
+        "supported",
+        "available"
+      ],
+      "why": "Relying on Art 19(1)(a) for genetic information because the transfer is occasional and the consent informed."
+    },
+    {
+      "id": "recognition_relied_on",
+      "type": "route",
+      "provisions": [
+        "A-REG 17"
+      ],
+      "status": [
+        "supported",
+        "available"
+      ],
+      "why": "Treating the active Trusted Recipient certificate as bringing genetic information within the recognition."
+    },
+    {
+      "id": "secrecy_blocks_consented_disclosure",
+      "type": "requirement",
+      "only_cites": [
+        "A1-HIA 5",
+        "A1-HIA 2"
+      ],
+      "requires_any": [
+        "A1-HIA 5"
+      ],
+      "status": [
+        "unmet"
+      ],
+      "why": "Professional secrecy permits disclosure with the patient's consent; it is not the obstacle."
+    }
+  ]
+}

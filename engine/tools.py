@@ -6,11 +6,13 @@ records every passage shown, so only law the agent actually read becomes citable
 data, never legal conclusions.
 
 TRAVERSAL_TOOLS=0 turns tools off (agents then get their whole corpus as reading: an ablation).
+KG_GRAPH=generated adds graph_hints from the generated normative graph to kg_node and read_provision
+(engine/graph.py); the default, runtime, is the citation graph only.
 """
 
 import os
 
-from engine import corpus
+from engine import corpus, graph
 from engine.llm import emit
 
 ENABLED = os.environ.get('TRAVERSAL_TOOLS', '1') == '1'
@@ -28,10 +30,11 @@ def budget(scope):
 
 
 def prompt(scope, budget=None):
-    return PROMPT.format(scope=', '.join(scope), budget=MAX_TOOL_CALLS if budget is None else budget)
+    text = PROMPT.format(scope=', '.join(scope), budget=MAX_TOOL_CALLS if budget is None else budget)
+    return text + graph.PROMPT if graph.enabled() else text
 
 
-def describe_node(node_id):
+def describe_node(node_id, scope=()):
     p = corpus.provisions().get(node_id)
     if p is None:
         return {'error': f'Unknown provision: {node_id}. Use an exact provision ID from a table of contents or search.'}
@@ -43,6 +46,9 @@ def describe_node(node_id):
     below = [s for s in incoming if corpus.provisions()[s]['corpus'] in lower]
     if below:
         node['lower_level_provisions'] = below
+    hints = graph.about(node_id, scope)
+    if hints:
+        node['graph_hints'] = hints
     return node
 
 
@@ -75,10 +81,14 @@ def read(record, scope, provision_id, start=0):
     if pid not in record['read']:
         record['read'].append(pid)
     next_start = start + len(shown)
-    return {'id': pid, 'title': corpus.provisions()[pid]['title'],
-            'text': '\n'.join(f'[{q}] {t}' for q, t in shown),
-            'next_start': next_start if next_start < len(available) else None,
-            'kg_links': provision_links(pid)}
+    out = {'id': pid, 'title': corpus.provisions()[pid]['title'],
+           'text': '\n'.join(f'[{q}] {t}' for q, t in shown),
+           'next_start': next_start if next_start < len(available) else None,
+           'kg_links': provision_links(pid)}
+    hints = graph.about(pid, scope) if start == 0 else None
+    if hints:
+        out['graph_hints'] = hints
+    return out
 
 
 def new_record():
@@ -92,7 +102,7 @@ def toolset(agent, scope, record=None):
     def kg_node(node_id: str) -> dict:
         """Inspect a provision ID: its title, what it cites, what cites it, and lower-level provisions
         that fill it in. Metadata only; use read_provision to read law in your corpora."""
-        result = describe_node(node_id.strip())
+        result = describe_node(node_id.strip(), scope)
         emit('tool_call', agent, tool='kg_node', args={'node_id': node_id}, ok='error' not in result)
         return result
 

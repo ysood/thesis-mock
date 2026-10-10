@@ -12,7 +12,7 @@ import re
 import time
 from concurrent.futures import ThreadPoolExecutor
 
-from engine import agents, brief, corpus, facts, llm, tools
+from engine import agents, brief, corpus, facts, graph, llm, tools
 from engine.llm import emit
 from engine.schema import Case
 
@@ -482,6 +482,7 @@ def run_single(case, started):
 def save(result, events, name, folder=corpus.ROOT / 'runs' / 'mock'):
     folder.mkdir(parents=True, exist_ok=True)
     path = folder / f"{time.strftime('%Y%m%d-%H%M%S')}_{name}.json"
-    path.write_text(json.dumps({'model': llm.model_name(), 'mode': MODE, 'tools': tools.ENABLED, 'result': result, 'events': events},
+    path.write_text(json.dumps({'model': llm.model_name(), 'mode': MODE, 'tools': tools.ENABLED,
+                                'graph': graph.MODE if graph.enabled() else 'runtime', 'result': result, 'events': events},
                                indent=1, default=str))
     return path

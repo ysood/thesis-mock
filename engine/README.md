@@ -16,7 +16,11 @@ corpora/<id>/*.md          provisions headed "## [ID] Title"
    one engagement per top-level corpus, with facts. Lower-level corpora only by delegation.
 4. One specialist per engaged top-level corpus, in parallel (2 workers)            [LLM]  agents.assess
    Reads only its corpus via kg_node / search_law / read_provision (TRAVERSAL_TOOLS=0:
-   whole corpus in context). Identifies the requirements the facts engage (no checklist),
+   whole corpus in context). KG_GRAPH=generated (UI "Knowledge graph") adds graph_hints from          [Python]  graph.py
+   kg/generated_graph.json to kg_node and read_provision: requirements, routes, conditions and
+   exceptions built from the provision (own corpus only), cross-corpus effects on it, and
+   interactions with other jurisdictions' law. Never citable. Default runtime: citation graph only.
+   Identifies the requirements the facts engage (no checklist),
    assesses each with routes, gaps, facts and quotes; delegates down to its children;
    raises peer questions about other jurisdictions' law.
 5. Delegation round: each child answers its parent's questions and reports further  [LLM]  agents.answer_questions

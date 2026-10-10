@@ -12,7 +12,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from engine import corpus, llm, pipeline, score, tools
+from engine import corpus, graph, llm, pipeline, score, tools
 
 ROOT = Path(__file__).resolve().parent
 CASES = ROOT / 'cases'
@@ -39,6 +39,11 @@ with st.sidebar:
     pipeline.MODE = st.radio('Architecture', ['multi', 'single'], index=['multi', 'single'].index(pipeline.MODE),
                              format_func=lambda m: 'Multi-agent' if m == 'multi' else 'Single agent, one call')
     tools.ENABLED = st.toggle('Traversal tools (off = whole corpus in context)', value=True)
+    graph.MODE = st.radio('Knowledge graph', ['runtime', 'generated'], index=['runtime', 'generated'].index(graph.MODE),
+                          format_func=lambda m: 'Runtime citation graph' if m == 'runtime'
+                          else 'Generated normative graph (hints on kg_node / read_provision)',
+                          help='kg/generated_graph.json: generated offline from these corpora and reviewed. '
+                               'Only used while traversal tools are on.')
     tools.MAX_TOOL_CALLS = st.slider('Tool calls per agent call', 4, 40, 20)
     pipeline.CORRECTION_ROUNDS = st.slider('Supervisor correction rounds', 0, 2, 1)
     st.header('Saved runs')
@@ -334,6 +339,7 @@ with run_tab:
             status.update(label=f"Done: {result['decision']} · saved {path.name}", state='complete', expanded=False)
             st.session_state.update(result=result, folder=folder, events=events, drawing=drawing,
                                     saved=json.dumps({'model': llm.model_name(), 'mode': pipeline.MODE, 'tools': tools.ENABLED,
+                                                      'graph': graph.MODE if graph.enabled() else 'runtime',
                                                       'result': result, 'events': events},
                                                      indent=1, ensure_ascii=False, default=str),
                                     saved_name=path.name)

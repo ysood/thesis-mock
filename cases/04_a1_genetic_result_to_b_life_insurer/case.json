@@ -1,0 +1,71 @@
+{
+  "organisations": [
+    {
+      "id": "org_clinic",
+      "name": "Meridian Clinical Genetics",
+      "jurisdiction": "A1",
+      "kind": "health_care_provider",
+      "description": "Private clinical genetics service established in Subregion A1. Its consultant clinical geneticists are registered as medical practitioners with the Subregion A1 Health Professions Board. Patients pay the clinic directly under its terms of care for diagnostic testing and counselling. It does not bill any insurer and uses no external host for its records."
+    },
+    {
+      "id": "org_insurer",
+      "name": "Northbank Life Assurance",
+      "jurisdiction": "B",
+      "kind": "insurer",
+      "description": "Company established in Region B and licensed there as a life insurer. It holds no health insurance licence, does not provide health insurance and does not provide health care. It sells life cover only to residents of Region B and does not offer services to persons in Region A. It underwrites applications itself and keeps application files on its own servers in Region B for its own purposes; it stores no records on behalf of anyone else. It holds an active certification under the Region B Trusted Recipient Scheme."
+    }
+  ],
+  "transfer": {
+    "title": "A1 genetics clinic sends a patient's existing genetic test result to a Region B life insurer for an insurance application",
+    "sender": "org_clinic",
+    "recipient": "org_insurer",
+    "data": {
+      "description": "One adult's name, date of birth and clinic reference number, the laboratory report of a diagnostic genetic test the clinic carried out two years ago (a variant associated with an inherited heart-rhythm condition), and the consultant's one-page interpretation letter. No other part of the clinic record and no family members' details.",
+      "categories": ["genetic", "health", "identity"],
+      "identifiability": "identified",
+      "people": {"where": ["B"], "how_many": 1, "includes_children": false}
+    },
+    "purpose": "insurance_underwriting",
+    "purpose_description": "The patient, now living in Region B, has applied to Northbank for life cover. Northbank asks applicants to disclose known genetic test results and will use the report to decide whether to offer cover and at what premium. The patient asked the clinic in writing to send the report directly to Northbank's underwriting team.",
+    "frequency": "one_off",
+    "locations": {"stored_in": ["A1", "B"], "accessed_from": ["A1", "B"]},
+    "retention": "The clinic keeps its own record under its care retention schedule. Northbank keeps the report in the patient's application file under its own retention policy.",
+    "onward": "None proposed. Northbank does not share application files with reinsurers for this product.",
+    "method": "One-off upload of two PDF documents to Northbank's underwriting portal over an encrypted connection, after the clinic verifies the application reference with the patient.",
+    "additional_info": "The clinic relies on the patient's explicit written consent both for disclosing the report and for sending it to Region B. There is no approved transfer-clause agreement or other contract between the clinic and Northbank, and the clinic does not intend to enter one. The clinic's contract with the patient covered the diagnostic test and counselling two years ago; it says nothing about insurance. No impact assessment has been prepared for this single disclosure."
+  },
+  "evidence": [
+    {
+      "id": "ev_consent",
+      "kind": "consent_record",
+      "title": "Patient's consent to disclosure and transfer",
+      "between": ["org_clinic"],
+      "summary": "Signed by the patient (an adult) on 2 November 2026. A clear written statement consenting specifically to the clinic sending the named genetic test report and interpretation letter to Northbank Life Assurance in Region B for underwriting the patient's life insurance application, and to the processing of that information for that purpose. It records that the patient was told Region B has no recognition covering this kind of information and that no transfer safeguards would be in place, and the possible risks of that. It states the consent can be withdrawn at any time by contacting the clinic.",
+      "dated": "2026-11-02"
+    },
+    {
+      "id": "ev_request",
+      "kind": "attestation_statement",
+      "title": "Patient's written request",
+      "between": ["org_clinic"],
+      "summary": "Email from the patient asking the clinic to send the report directly to Northbank's underwriting team, quoting the application reference.",
+      "dated": "2026-11-02"
+    },
+    {
+      "id": "ev_certificate",
+      "kind": "certification_record",
+      "title": "Region B Trusted Recipient Scheme certificate",
+      "between": ["org_insurer"],
+      "summary": "Northbank Life Assurance holds an active certification under the Region B Trusted Recipient Scheme, valid until 2028-03-31, covering receipt of personal information for underwriting.",
+      "dated": "2026-03-31"
+    },
+    {
+      "id": "ev_licence",
+      "kind": "role_determination",
+      "title": "Region B insurance licence",
+      "between": ["org_insurer"],
+      "summary": "Licence issued in Region B authorising Northbank Life Assurance to carry on life insurance business. It does not authorise health insurance business.",
+      "dated": "2019-06-01"
+    }
+  ]
+}
