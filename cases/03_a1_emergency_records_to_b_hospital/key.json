@@ -1,0 +1,142 @@
+{
+  "status": "DRAFT answer key: source-checked during case authoring; to be reviewed and signed off by the author before results are reported.",
+  "matching": "Uses the existing provision-based scorer. Citation overlap alone does not establish that the reasoning is correct; review the source and reasoning checks in README.md as well.",
+  "design": "One patient, two treating organisations, one urgent disclosure. Expected to proceed as described through the vital-interests route, while reconciling A1 professional secrecy, the limited genetic-consent restriction, the purpose-specific hosting rules and Region B's covered-provider rules. This tests correct boundaries and compatible requirements, not a mandatory conflict or a required number of messages.",
+  "decision": "proceed",
+  "engaged": {"region_a": true, "region_b": true},
+  "requirements": [
+    {
+      "id": "lawful_ground",
+      "provisions": ["A-REG 6"],
+      "expect": ["met"],
+      "why": "Article 6(1)(d): the focused disclosure is necessary to protect the patient's vital interests. Legitimate interests is not available for sensitive information."
+    },
+    {
+      "id": "sensitive_condition",
+      "provisions": ["A-REG 8"],
+      "expect": ["met"],
+      "why": "Article 8(2)(b): necessary to protect vital interests while the patient is physically incapable of consent. The health-care condition under 8(2)(c) with A1-HIA 4 and 5 is also a defensible alternative; neither requires inventing consent."
+    },
+    {
+      "id": "transfer_route",
+      "provisions": ["A-REG 16"],
+      "expect": ["met"],
+      "why": "Article 19(1)(c) supplies a route despite the absence of recognition covering sensitive information and the absence of executed clauses. The evidence establishes necessity, urgency and inability to consent."
+    },
+    {
+      "id": "minimisation",
+      "provisions": ["A-REG 5"],
+      "expect": ["met"],
+      "why": "The packet contains only the material needed for the emergency. Identity is necessary for safe matching on the supplied facts. A permission to use information for treatment does not itself waive Article 5(1)(c)."
+    },
+    {
+      "id": "a1_professional_secrecy",
+      "provisions": ["A1-HIA 5"],
+      "expect": ["met"],
+      "why": "This is disclosure to another treating organisation, rather than to the practice's agent. Section 5(2) permits it where necessary to prevent a serious and imminent threat to life. Patient consent is not the only permitted basis."
+    },
+    {
+      "id": "a1_hosting_conditions",
+      "provisions": ["A1-HIA 6"],
+      "expect": ["not_applicable"],
+      "why": "The purpose is immediate treatment by a separate provider, not hosting or storing the practice's patient records. Storage in the hospital's own care record is incidental to that treatment. The 30-day notice and Region A-only keys conditions must not be generalised to every health-data transfer."
+    },
+    {
+      "id": "region_a_agent_contract",
+      "provisions": ["A-REG 9"],
+      "expect": ["not_applicable"],
+      "why": "The hospital determines its own treatment purposes and means. It is not processing on the practice's behalf, so the missing processing-service contract is not an unmet agent gate."
+    },
+    {
+      "id": "impact_assessment",
+      "provisions": ["A-REG 12"],
+      "expect": ["met", "not_applicable"],
+      "why": "No numerical, outsourced-record-system or insurer-matching trigger is present (A-REG 12(2), A1-HIA 8). If the emergency processing is assessed as high risk under 12(1), the supplied pre-transfer assessment covers description, necessity, risks and measures. Either supported interpretation is acceptable; the absence of a document must not be invented."
+    },
+    {
+      "id": "region_b_treatment_use",
+      "provisions": ["B-HRA 4"],
+      "expect": ["met"],
+      "why": "The hospital is a covered provider under B-HRA 2 because it bills a B-licensed insurer electronically. Its use for treatment is permitted without written authorisation under 4(1). This does not independently authorise the practice's outward disclosure."
+    },
+    {
+      "id": "region_b_minimum_necessary",
+      "provisions": ["B-HRA 6"],
+      "expect": ["met"],
+      "why": "The hospital's use is limited to the necessary emergency packet. Section 6's exception concerns disclosures to another provider for treatment; it does not exempt every internal treatment use, and does not displace Region A's separate minimisation rule."
+    },
+    {
+      "id": "region_b_service_agent_agreement",
+      "provisions": ["B-HRA 5"],
+      "expect": ["not_applicable"],
+      "why": "There is no service agent receiving records on behalf of a covered provider. The two providers exchange records for the hospital's own care of the patient."
+    },
+    {
+      "id": "region_b_host_retention",
+      "provisions": ["B-HRA 9"],
+      "expect": ["not_applicable"],
+      "why": "Under B-HRA 2 a data host stores records on behalf of another person. The hospital stores its own clinical record for its own treatment purpose, so the seven-year data-host rule and return-with-no-copy exception are not engaged."
+    }
+  ],
+  "routes": [
+    {
+      "id": "vital_interests_processing",
+      "provisions": ["A-REG 6"],
+      "name_hint": ["vital", "life"],
+      "expect": ["supported"],
+      "all_routes": true,
+      "why": "The emergency facts establish the ordinary processing ground independently of the sensitive-information condition and the outward-transfer route."
+    },
+    {
+      "id": "vital_interests_transfer",
+      "provisions": ["A-REG 19"],
+      "name_hint": ["vital", "life", "emergency"],
+      "expect": ["supported"],
+      "all_routes": true,
+      "why": "Article 19(1)(c) applies. A1-HIA 7 restricts the genetic-information consent route under 19(1)(a), not the vital-interests route."
+    }
+  ],
+  "conflicts": [],
+  "questions": [],
+  "must_not": [
+    {
+      "id": "recognition_for_sensitive_information",
+      "type": "route",
+      "provisions": ["A-REG 17"],
+      "status": ["supported", "available"],
+      "why": "Annex II excludes sensitive information from the Region B recognition."
+    },
+    {
+      "id": "genetic_consent_transfer_route",
+      "type": "route",
+      "provisions": ["A-REG 19"],
+      "name_hint": ["consent"],
+      "status": ["supported", "available"],
+      "why": "There is no consent, and A1-HIA 7 separately excludes Article 19(1)(a) for genetic information."
+    },
+    {
+      "id": "blanket_genetic_transfer_blocker",
+      "type": "requirement",
+      "only_cites": ["A1-HIA 7", "A1-HIA 2", "A-REG 4", "A-REG 8", "A-REG 19"],
+      "requires_any": ["A1-HIA 7"],
+      "status": ["unmet", "undetermined"],
+      "why": "Section 7 is not a general ban on transferring genetic information. Its consent restriction does not defeat this vital-interests transfer; its insurance/employment restriction is outside the proposed purpose."
+    },
+    {
+      "id": "approved_clauses_invented",
+      "type": "route",
+      "provisions": ["A-REG 18"],
+      "status": ["supported"],
+      "why": "No approved transfer clauses have been executed. Their absence does not defeat a supported Article 19 route."
+    }
+  ],
+  "manual_review": [
+    "Keep the ordinary processing ground, sensitive-information condition and outward-transfer route distinct: A-REG 6, 8 and 16/19.",
+    "Connect A-REG 8(3) and 21(3) to A1-HIA 5, 6 and 7, explaining the scope of each rather than treating every restriction as a blocker.",
+    "Explain the recipient's independent clinical role from the facts and A-REG 4/B-HRA 2; do not equate a treating hospital with a cloud host or service agent.",
+    "Apply B-HRA 3/4/6/7 to the hospital; unlike cases 01 and 02 the recipient is a covered provider. Its permission for treatment does not replace the exporter's legal requirements.",
+    "Do not require a Region B public-access assessment under A-REG 18(2) as a prerequisite to Article 19(1)(c); the hospital is also not a computing provider on the supplied facts.",
+    "Do not invent a legal contradiction: the requirements can be satisfied together by this limited emergency disclosure. Neither a conflict record nor a peer-question count is required to receive credit.",
+    "For A-REG 32, publication on 1 January 2023 gives entry into force on 21 January 2023 and application from 1 January 2025, before this transfer."
+  ]
+}

@@ -11,8 +11,9 @@ from pathlib import Path
 
 from engine import corpus, llm, pipeline, tools
 from engine.schema import (Answer, Case, Conflict, CorpusApplicability, DelegateAnswer, Delegation, Engagement,
-                           FactRef, PeerQuestion, Requirement, Revision, Route, Routing, SingleAssessment,
-                           SingleRequirement, SpecialistAnswer, SpecialistPatch, SupervisorPlan, SupervisorReview)
+                           Blocker, Correction, FactRef, PeerQuestion, PlannedRoute, Requirement, Route, Routing,
+                           SingleAssessment, SingleRequirement, SpecialistAnswer, SpecialistPatch, SupervisorConclusion,
+                           SupervisorPlan, SupervisorSynthesis)
 
 CASE = json.loads((Path(__file__).resolve().parent.parent / 'cases' / '01_a1_gp_to_region_b_host' / 'case.json').read_text())
 
@@ -30,14 +31,18 @@ def scripted(calls):
             return SupervisorPlan(understanding='GP practice to Region B host.', engagements=[
                 Engagement(corpus='region_a', engaged=True, reason='Sender in Subregion A1.', facts=fact(user)),
                 Engagement(corpus='region_b', engaged=True, reason='Host in Region B.', facts=fact(user))])
-        if schema is SupervisorReview:
+        if schema is SupervisorSynthesis:
             reviews.append(user)
-            if len(reviews) == 1:
-                return SupervisorReview(action='route_or_revise', summary='Route the access question.', routings=[
+            return SupervisorSynthesis(outcome='undetermined', reasoning='Waiting on Region B access law.',
+                                       summary='Route the access question.', routings=[
                     Routing(question_ref='region_a:q1', to_corpus='region_b', question='Can Region B authorities compel access?')])
-            return SupervisorReview(action='finish', summary='Done.', conflicts=[
-                Conflict(description='Deletion vs retention.', requirement_refs=['region_a:agent_contract', 'region_b:host_retention'],
-                         resolvable=True, resolution='Return instead of delete.')])
+        if schema is SupervisorConclusion:
+            reviews.append(user)
+            return SupervisorConclusion(outcome='not_satisfiable_together', reasoning='The route is ruled out.',
+                                        summary='Done.', conflicts=[
+                Conflict(description='Deletion vs retention.', kind='incompatible_law',
+                         requirement_refs=['region_a:transfer_route', 'region_b:host_retention'],
+                         resolvable=True, resolution='Return instead of delete.', quote_ids=['B-HRA 9#L1'])])
         if schema is DelegateAnswer and agent == 'subregion_a1_specialist':
             return DelegateAnswer(answers=[Answer(question_id='region_a>subregion_a1:d1', answer='A1-HIA 4 supplies the condition.',
                                                   citations=['A1-HIA 4'], quote_id='A1-HIA 4#L1')],
@@ -104,8 +109,13 @@ class PipelineTests(unittest.TestCase):
         self.assertIn('subregion_a1:national_transfer_conditions', ' '.join(result['reasons']))
         self.assertEqual(refs['region_a:transfer_route']['quote'][:20], '1. In the absence of')
         self.assertTrue(result['brief']['conflicts'][0]['resolvable'])
-        # plan, 2 specialists, subregion_a1 delegate, region_a reassess, review, region_b answer, region_a reassess, review
+        # plan, 2 specialists, subregion_a1 delegate, region_a reassess, synthesis, region_b answer, region_a reassess,
+        # conclusion
         self.assertEqual(len(self.calls), 9, self.calls)
+        self.assertEqual([s for a, s in self.calls if a == 'supervisor'][1:], ['SupervisorSynthesis', 'SupervisorConclusion'])
+        self.assertEqual(result['conclusion_issues'], ['the conclusion that the requirements cannot be satisfied '
+                                                       'together cites no passage'])
+        self.assertEqual(result['brief']['conclusion']['outcome'], 'not_satisfiable_together')
 
 
 class RevisionAndQuestionTests(unittest.TestCase):
@@ -132,9 +142,10 @@ class RevisionAndQuestionTests(unittest.TestCase):
         state.answers['region_a'] = SpecialistAnswer(applies=True, applicability_reasoning='r', coverage_note='c')
         state.extra['subregion_a1:old'] = {'id': 'old', 'title': 'Old', 'kind': 'gate', 'status': 'met', 'reasoning': 'r',
                                       'corpus': 'subregion_a1', 'ref': 'subregion_a1:old'}
-        review = SupervisorReview(action='route_or_revise', summary='s',
-                                  revisions=[Revision(corpus='subregion_a1', instruction='Assess A1-HIA 8.')])
-        self.assertTrue(state.route(review))
+        review = SupervisorSynthesis(outcome='undetermined', reasoning='r', summary='s', corrections=[
+            Correction(corpus='subregion_a1', requirement_ids=['old'], kind='missed_provision',
+                       instruction='Assess A1-HIA 8.')])
+        self.assertTrue(state.route(review, {}))
         self.assertEqual(list(state.extra), ['subregion_a1:impact_assessment_list'])  # replaced, not appended
         self.assertEqual([(a, s) for a, s, _ in self.seen],
                          [('subregion_a1_specialist', 'DelegateAnswer'), ('region_a_specialist', 'SpecialistPatch')])
@@ -195,11 +206,77 @@ class RevisionAndQuestionTests(unittest.TestCase):
         from engine import agents
         self.assertIn('must agree with that assessment', agents.delegate_system('region_a', 'Region B'))
 
-    def test_supervisor_is_neutral_and_never_folds_across_corpora(self):
+    def test_supervisor_owns_the_combination_not_the_findings(self):
         from engine import agents
-        self.assertIn('do not decide or suggest which is right', agents.REVIEW_RULES)
-        self.assertIn('Never ask to fold requirements of different corpora together', agents.REVIEW_RULES)
-        self.assertIn('not a legal conclusion', agents.NOT_A_CONCLUSION)
+        self.assertIn('You own the combined conclusion', agents.SYNTHESIS_RULES)
+        self.assertIn('never tell a specialist what status to give', agents.FOLLOW_UPS)
+        self.assertIn('Never ask to fold requirements of different corpora together', agents.FOLLOW_UPS)
+        self.assertIn('keep your finding if your law supports it', agents.NOT_A_CONCLUSION)
+
+    def test_corrections_must_be_specific_and_carry_their_passages(self):
+        state = pipeline.Run(CASE)
+        state.answers['region_a'] = SpecialistAnswer(applies=True, applicability_reasoning='r', coverage_note='c',
+                                                     requirements=[Requirement(id='transfer_route', title='t', kind='gate',
+                                                                               status='unmet', reasoning='r')])
+        refs, shown = {'region_a:transfer_route'}, {'A-REG 18#L2': 'Approved clauses may be used.'}
+        fix = lambda **k: state.correction(Correction(corpus='region_a', instruction='Check the clauses route.',
+                                                      **k), refs, shown)
+        text = fix(requirement_ids=['region_a:transfer_route'], kind='contradiction', quote_ids=['A-REG 18#L2'])
+        self.assertIn('contradiction in transfer_route', text)
+        self.assertIn('[A-REG 18#L2] Approved clauses may be used.', text)
+        self.assertIsNone(fix(requirement_ids=['transfer_route'], kind='contradiction'))           # no passage
+        self.assertIsNone(fix(requirement_ids=['transfer_route'], kind='stale_answer', quote_ids=['A-REG 9#L1']))
+        self.assertIsNone(fix(requirement_ids=['other'], kind='stale_answer'))                     # unknown requirement
+        self.assertEqual(len([e for e in state.log if 'rejected_correction' in e]), 3)
+
+    def test_conclusion_checks_and_combined_decision(self):
+        gate = lambda ref, status='met': {'ref': ref, 'title': ref, 'kind': 'gate', 'status': status, 'verified': True,
+                                          'issues': [], 'missing_evidence': [], 'required_actions': [],
+                                          'confirmations': [], 'routes': [{'name': 'Clauses'}]}
+        findings = [gate('region_a:route'), gate('region_b:host')]
+        shown = {'A-REG 18#L2': 'text'}
+        ok = SupervisorConclusion(outcome='satisfiable_with_changes', reasoning='r', summary='s', quote_ids=['A-REG 18#L2'],
+                                  route_plan=[PlannedRoute(requirement_ref='region_a:route', route='Clauses'),
+                                              PlannedRoute(requirement_ref='region_b:host', route='met')])
+        self.assertEqual(pipeline.check_conclusion(ok, findings, shown), [])
+        self.assertEqual(pipeline.decide(findings, {}, ok)[0], 'proceed_subject_to_conditions')
+        bad = ok.model_copy(update={'quote_ids': ['B-RAA 5#L1'], 'route_plan': ok.route_plan[:1]})
+        self.assertEqual(pipeline.check_conclusion(bad, findings, shown),
+                         ['conclusion cites passage B-RAA 5#L1, which it was not shown',
+                          'route plan leaves out gate region_b:host'])
+        refuse = ok.model_copy(update={'outcome': 'not_satisfiable_together', 'route_plan': []})
+        self.assertEqual(pipeline.decide(findings, {}, refuse, [])[0], 'do_not_proceed')
+        self.assertEqual(pipeline.decide(findings, {}, refuse, ['defect'])[0], 'needs_review')  # unverified: no refusal
+        open_ = ok.model_copy(update={'outcome': 'undetermined'})
+        self.assertEqual(pipeline.decide(findings, {}, open_)[0], 'proceed')  # undetermined with no blocker: a note
+        self.assertIn('not blocking', pipeline.supervisor_items(open_, findings)[1][0])
+        real = Blocker(requirement_ref='region_a:route', gap='Whether the clauses are signed.', why_not_a_confirmation='')
+        self.assertEqual(pipeline.decide(findings, {}, open_.model_copy(update={'blockers': [real]}))[0], 'needs_review')
+
+    def test_blockers_must_name_a_gate_and_beat_its_confirmations(self):
+        f = lambda ref, kind='gate', conf=(): {'ref': ref, 'title': ref, 'kind': kind, 'status': 'met', 'verified': True,
+                                               'issues': [], 'missing_evidence': [], 'required_actions': [],
+                                               'confirmations': list(conf), 'routes': []}
+        findings = [f('region_a:minimisation', 'duty'), f('region_a:route', conf=['Confirm accuracy.'])]
+        final = SupervisorConclusion(outcome='undetermined', reasoning='r', summary='s', blockers=[
+            Blocker(requirement_ref='region_a:minimisation', gap='Accuracy not certified.', why_not_a_confirmation=''),
+            Blocker(requirement_ref='region_a:route', gap='Accuracy not certified.', why_not_a_confirmation='')])
+        holds, notes = pipeline.supervisor_items(final, findings)
+        self.assertEqual(holds, [])
+        self.assertEqual(len(notes), 3)  # two demoted blockers + the unsupported undetermined outcome
+        self.assertEqual(pipeline.decide(findings, {}, final)[0], 'proceed_subject_to_conditions')
+
+    def test_open_question_on_a_met_requirement_does_not_block(self):
+        findings = [{'ref': 'region_a:route', 'kind': 'gate', 'status': 'met', 'verified': True}]
+        q = {'from': 'region_a', 'requirement_id': 'route'}
+        self.assertFalse(pipeline.blocking_question(q, findings))
+        self.assertTrue(pipeline.blocking_question({**q, 'requirement_id': 'other'}, findings))
+        self.assertTrue(pipeline.blocking_question(q, [{**findings[0], 'status': 'undetermined'}]))
+
+    def test_supervisor_gets_the_specialists_evidence_policy(self):
+        from engine import agents
+        self.assertIn(agents.EVIDENCE, agents.RULES)
+        self.assertIn(agents.EVIDENCE, agents.SYNTHESIS_RULES.format(evidence=agents.EVIDENCE, follow_ups=''))
 
     def test_tool_budget_lets_any_agent_read_its_whole_scope(self):
         self.assertEqual(tools.budget(['region_a']), max(tools.MAX_TOOL_CALLS, 34))

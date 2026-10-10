@@ -217,27 +217,71 @@ class Routing(BaseModel):
     question: str = Field(description='The question as the receiving specialist should read it')
 
 
-class Revision(BaseModel):
+class Correction(BaseModel):
     corpus: str
-    requirement_ids: list[str] = Field(default_factory=list)
-    instruction: str
+    requirement_ids: list[str] = Field(min_length=1, description='The requirements the error is in')
+    kind: Literal['contradiction', 'unsupported_status', 'missed_provision', 'stale_answer'] = Field(
+        description='contradiction: the finding contradicts a passage shown under LAW BEHIND THE FINDINGS or another '
+                    'finding. unsupported_status: the passages its specialist cited do not carry its status. '
+                    'missed_provision: a provision of that corpus (e.g. a coverage warning) that could change a gate or '
+                    'route is not addressed. stale_answer: the finding predates an answer it depends on.')
+    quote_ids: list[str] = Field(default_factory=list, description='Passage IDs from LAW BEHIND THE FINDINGS that '
+                                                                   'show the error (required for contradiction and '
+                                                                   'unsupported_status)')
+    instruction: str = Field(description='The specific error and what to reconsider; never the status to give')
 
 
 class Conflict(BaseModel):
     description: str
+    kind: Literal['incompatible_law', 'disagreement'] = Field(
+        description='incompatible_law: the law of two corpora makes demands on the same actor, data or time that '
+                    'pull apart. disagreement: two findings contradict each other on the same point.')
     requirement_refs: list[str] = Field(description='Refs of the requirements involved ("<corpus>:<requirement id>"), '
                                                     'exactly as listed in the current state')
-    resolvable: bool
+    resolvable: bool = Field(description='incompatible_law: a combination of routes satisfies both. disagreement: '
+                                         'always false')
     resolution: str = Field('', description='The route that satisfies both, if resolvable')
+    quote_ids: list[str] = Field(default_factory=list, description='Passage IDs from LAW BEHIND THE FINDINGS it rests on')
 
 
-class SupervisorReview(BaseModel):
-    action: Literal['route_or_revise', 'finish']
-    routings: list[Routing] = Field(default_factory=list)
-    revisions: list[Revision] = Field(default_factory=list)
+class PlannedRoute(BaseModel):
+    requirement_ref: str = Field(description='"<corpus>:<requirement id>" of a gate, exactly as listed')
+    route: str = Field(description='Name of one of its routes, exactly as listed, or "met" if it has no routes')
+
+
+class Blocker(BaseModel):
+    requirement_ref: str = Field(description='"<corpus>:<requirement id>" of the gate it blocks, exactly as listed')
+    gap: str = Field(description='The decisive missing fact, document or answer, and why the gate cannot be decided '
+                                 'without it')
+    why_not_a_confirmation: str = Field(description='If the gate already lists confirmations, why confirming them '
+                                                    'later is not enough; otherwise empty')
+
+
+class SupervisorConclusion(BaseModel):
+    """The supervisor's combined conclusion: whether the gates of every corpus can be satisfied together.
+    Specialists own their findings; the supervisor owns how they combine."""
+    outcome: Literal['satisfiable_together', 'satisfiable_with_changes', 'not_satisfiable_together', 'undetermined'] = Field(
+        description='satisfiable_together: one route per gate, all supported, work together on the facts as they '
+                    'stand. satisfiable_with_changes: they work together once the required actions are taken. '
+                    'not_satisfiable_together: no combination of routes meets every gate at once, or a gate is unmet '
+                    'with no available route. undetermined: a missing fact, document or answer decides it (name it in '
+                    'blockers), or findings still disagree.')
+    route_plan: list[PlannedRoute] = Field(default_factory=list, description='The combination of routes that meets '
+                                                                             'every engaged gate together, if any')
+    reasoning: str = Field(description='Why the requirements can or cannot be satisfied together, from the passages')
+    quote_ids: list[str] = Field(default_factory=list, description='Passage IDs from LAW BEHIND THE FINDINGS it rests on')
     conflicts: list[Conflict] = Field(default_factory=list)
     summary: str
-    unresolved: list[str] = Field(default_factory=list, description='Issues that still need human review')
+    blockers: list[Blocker] = Field(default_factory=list, description='Decisive gaps a human must close before the '
+                                                                      'transfer may proceed, each tied to a gate')
+    notes: list[str] = Field(default_factory=list, description='Anything else worth a reviewer\'s attention; '
+                                                               'notes never block')
+
+
+class SupervisorSynthesis(SupervisorConclusion):
+    """First pass: the conclusion so far, plus the bounded follow-ups that would settle it."""
+    routings: list[Routing] = Field(default_factory=list)
+    corrections: list[Correction] = Field(default_factory=list)
 
 
 # ------------------------------------------------------------------ single-agent baseline

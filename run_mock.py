@@ -46,6 +46,13 @@ def main(folder):
             print(f"    {r['status']:16} {r['name'][:90]}")
         for action in row['to_close']:
             print(f"    → {action[:150]}")
+    if b.get('conclusion'):
+        c = b['conclusion']
+        print(f"\nCOMBINED CONCLUSION: {c['outcome']}\n  {c['reasoning'][:300]}")
+        for p in c['route_plan']:
+            print(f"    {p['requirement_ref']}: {p['route'][:90]}")
+        for i in result.get('conclusion_issues', []):
+            print(f'  [defect] {i}')
     print('\nCONFLICTS')
     for c in b['conflicts']:
         print(f"  {'resolvable' if c['resolvable'] else 'UNRESOLVED'}: {c['description'][:150]}\n    → {c['resolution'][:150]}")

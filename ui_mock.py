@@ -40,7 +40,7 @@ with st.sidebar:
                              format_func=lambda m: 'Multi-agent' if m == 'multi' else 'Single agent, one call')
     tools.ENABLED = st.toggle('Traversal tools (off = whole corpus in context)', value=True)
     tools.MAX_TOOL_CALLS = st.slider('Tool calls per agent call', 4, 40, 20)
-    pipeline.MAX_REVIEWS = st.slider('Supervisor review rounds', 1, 5, 3)
+    pipeline.CORRECTION_ROUNDS = st.slider('Supervisor correction rounds', 0, 2, 1)
     st.header('Saved runs')
     saved_runs = sorted((ROOT / 'runs' / 'mock').glob('*.json'), reverse=True) if (ROOT / 'runs' / 'mock').exists() else []
     st.selectbox('Open a saved run', [None] + saved_runs, format_func=lambda p: p.name if p else '—',
@@ -138,6 +138,17 @@ def show_brief(result):
                 if r['quote']:
                     st.markdown(f"> {r['quote']}")
             bullets('To close', row['to_close'])
+    st.markdown('**Combined conclusion (supervisor)**')
+    if b.get('conclusion'):
+        c = b['conclusion']
+        st.markdown(f"**{c['outcome'].replace('_', ' ')}**: {c['reasoning']}")
+        if c['route_plan']:
+            st.dataframe(c['route_plan'], width='stretch', hide_index=True)
+        if c['quote_ids']:
+            st.caption('Passages: ' + ', '.join(c['quote_ids']))
+        bullets('Conclusion defects', result.get('conclusion_issues', []))
+    else:
+        st.write('None (single agent, or the supervisor failed).')
     st.markdown('**Conflicts between jurisdictions**')
     for c in b['conflicts']:
         (st.info if c['resolvable'] else st.error)(
@@ -184,7 +195,7 @@ def show_coordination(result):
                  width='stretch', hide_index=True)
     st.markdown('**Supervisor reviews**')
     for i, r in enumerate(result['reviews'], 1):
-        with st.expander(f"Review {i}: {r['action'] if r else 'failed'}"):
+        with st.expander(f"Supervisor pass {i}: {(r.get('outcome') or r.get('action')) if r else 'failed'}"):
             st.json(r)
     st.markdown('**Law read by each agent**')
     st.json(result['read'], expanded=False)

@@ -14,6 +14,14 @@ runs/mock/ saved runs (git-ignored)
 
 `REAL_LAW_MAP.md` records which GDPR/HIPAA/Irish provision each fictional provision is modelled on, and every deliberate departure. It is a research record only and is never sent to a model.
 
+## Cases
+
+- `01_a1_gp_to_region_b_host`: ongoing patient-record hosting with host-held keys and missing safeguards.
+- `02_a1_gp_keys_held_in_a1`: hosting variant with practice-held keys and supporting documents.
+- `03_a1_emergency_records_to_b_hospital`: one patient's emergency treatment handoff to an independent hospital, including relevant genetic information. Its research notes explain the cross-corpus checks; the draft expected result is proceed.
+
+Case folders are discovered automatically by the UI. Answer keys and case research notes are never model input.
+
 ## Run
 
 ```bash

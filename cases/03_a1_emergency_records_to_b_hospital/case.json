@@ -1,0 +1,71 @@
+{
+  "organisations": [
+    {
+      "id": "org_practice",
+      "name": "Harbourside Family Practice",
+      "jurisdiction": "A1",
+      "kind": "health_care_provider",
+      "description": "Private general practice established in Subregion A1. Its doctors and nurses are registered with the Subregion A1 Health Professions Board. It provides care to the patient and does not bill an insurer licensed in Region B."
+    },
+    {
+      "id": "org_hospital",
+      "name": "Bluewater Hospital",
+      "jurisdiction": "B",
+      "kind": "health_care_provider",
+      "description": "Hospital established in Region B that bills a Region B-licensed health insurer electronically for this patient's emergency care. Its clinicians decide the patient's diagnosis and treatment themselves. It receives the information for its own care of the patient, uses its own on-site record system, and provides no storage, hosting or computing service to the practice or to any other person."
+    }
+  ],
+  "transfer": {
+    "title": "A1 practice sends a focused emergency record to a treating hospital in Region B",
+    "sender": "org_practice",
+    "recipient": "org_hospital",
+    "data": {
+      "description": "One adult patient's name, date of birth, current medicines, serious allergies, recent relevant blood-test results and an existing genetic diagnostic report relevant to the present emergency. The packet excludes unrelated consultations, family members' details and the remainder of the patient's record.",
+      "categories": ["health", "genetic", "identity"],
+      "identifiability": "identified",
+      "people": {"where": ["A1", "B"], "how_many": 1, "includes_children": false}
+    },
+    "purpose": "treatment",
+    "purpose_description": "An adult resident of A1 is visiting Region B and is unconscious at Bluewater Hospital with an immediate threat to life. The treating clinician needs the selected information to choose emergency treatment safely. The patient cannot consent, no representative can be reached within the treatment window, and the hospital cannot obtain the needed history or genetic diagnosis elsewhere in time.",
+    "frequency": "one_off",
+    "locations": {"stored_in": ["A1", "B"], "accessed_from": ["A1", "B"]},
+    "retention": "The hospital adds the packet to its own clinical record and retains it only for the period necessary for this patient's care and follow-up, under its reviewed clinical retention schedule. The practice keeps its original record under its existing care retention schedule. The hospital does not hold a copy on behalf of the practice and is not required to return the packet to it.",
+    "onward": "No onward transfer or secondary use is proposed. Neither organisation uses an external host or another provider for this exchange.",
+    "method": "Direct transfer through the hospital's authenticated clinical portal over an encrypted connection. The intended clinician's identity and the patient's identifiers have been checked. The hospital encrypts the packet at rest with keys held by its own clinical IT team in Region B; access is restricted to the treating team and logged.",
+    "additional_info": "The proposed transfer is on 18 November 2026 during the current emergency. It is a single clinical handoff, with no ongoing record synchronisation or outsourced patient record system. There is no processing-service contract or approved transfer-clause agreement between the organisations. No consent to this transfer has been obtained."
+  },
+  "evidence": [
+    {
+      "id": "ev_emergency_request",
+      "kind": "clinical_correspondence",
+      "title": "Verified request from the treating clinician",
+      "between": ["org_practice", "org_hospital"],
+      "summary": "The hospital clinician records that the patient is unconscious, the threat to life is serious and imminent, and waiting for consent, a representative or new tests would endanger the patient. The clinician requests only the listed packet and explains how the prior genetic diagnosis affects the immediate treatment choice. The practice's registered doctor checks the request and confirms that the selected information is necessary for that purpose.",
+      "dated": "2026-11-18"
+    },
+    {
+      "id": "ev_disclosure_checks",
+      "kind": "assessment",
+      "title": "Completed emergency-disclosure and security checks",
+      "between": ["org_practice", "org_hospital"],
+      "summary": "Before sending, the practice documents the purpose, necessity, risks and safeguards for this one-patient disclosure. The hospital confirms that it needs the name and date of birth to match the packet safely to its clinical record; there is no shared patient-code system that would allow a pseudonymised packet to serve that purpose. Both organisations document their purposes, recipients, information categories, transfer basis and retention periods in their processing records. Their reviewed safeguards include encryption, access control, confidentiality, backups and regular security testing. The practice logs the disclosure and the hospital restricts use to care of this patient.",
+      "dated": "2026-11-18"
+    },
+    {
+      "id": "ev_patient_notice",
+      "kind": "policy_or_procedure",
+      "title": "Information notice previously supplied to the patient",
+      "between": ["org_practice"],
+      "summary": "Previously supplied to the patient. Identifies the practice, care purposes and applicable processing grounds, recipient categories, retention periods and patient rights. Explains that relevant records may be sent to a treating hospital in Region B in a life-threatening emergency, relying on the vital-interests transfer route when the patient cannot give consent. This notice is information about possible disclosures, not a consent statement.",
+      "dated": "2026-09-01"
+    },
+    {
+      "id": "ev_publication_record",
+      "kind": "official_record",
+      "title": "Publication and commencement record for the fictional instruments",
+      "between": [],
+      "summary": "The official gazette records publication of the Region A Personal Information Regulation on 1 January 2023. The Subregion A1 Health Information Act and both Region B Acts commenced before 1 January 2026. None of these instruments has been amended or repealed since those dates.",
+      "dated": "2026-11-18"
+    }
+  ]
+}

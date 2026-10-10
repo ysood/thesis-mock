@@ -1,11 +1,12 @@
-"""Reviewer brief: known / required / missing / routes / conflicts. Copies verified findings; infers nothing."""
+"""Reviewer brief: known / required / missing / routes / conflicts / combined conclusion. Copies verified findings
+and the supervisor's conclusion; infers nothing."""
 
 
 def blocking(f):
     return f['kind'] == 'gate' and f['status'] in ('unmet', 'undetermined')
 
 
-def build(findings, questions, final_review, offered):
+def build(findings, questions, final_review, offered, supervisor=([], []), question_blocks=lambda q, findings: True):
     known = {}
     for f in findings:
         for x in f['facts']:
@@ -34,10 +35,12 @@ def build(findings, questions, final_review, offered):
             add('confirm', text)
         for text in f['issues']:
             add('reference_defect', text)
-    missing += [{'kind': 'open_question', 'requirement': f"{q['from']}:{q['requirement_id']}", 'blocking': True,
-                 'description': q['question']} for q in questions.values() if q['status'] != 'answered']
-    missing += [{'kind': 'review', 'requirement': '', 'blocking': True, 'description': u}
-                for u in (final_review.unresolved if final_review else ['Supervisor review did not complete.'])]
+    missing += [{'kind': 'open_question', 'requirement': f"{q['from']}:{q['requirement_id']}",
+                 'blocking': question_blocks(q, findings), 'description': q['question']}
+                for q in questions.values() if q['status'] != 'answered']
+    holds, notes = supervisor
+    missing += [{'kind': 'review', 'requirement': '', 'blocking': True, 'description': u} for u in holds]
+    missing += [{'kind': 'review_note', 'requirement': '', 'blocking': False, 'description': u} for u in notes]
     missing.sort(key=lambda m: not m['blocking'])
 
     routes = [{'requirement': f['ref'], 'status': f['status'], 'blocking': blocking(f),
@@ -48,5 +51,9 @@ def build(findings, questions, final_review, offered):
     routes.sort(key=lambda r: not r['blocking'])
 
     conflicts = [c.model_dump() for c in final_review.conflicts] if final_review else []
+    conclusion = {k: getattr(final_review, k) for k in ('outcome', 'reasoning', 'quote_ids')} \
+        if hasattr(final_review, 'outcome') else None
+    if conclusion:
+        conclusion['route_plan'] = [p.model_dump() for p in final_review.route_plan]
     return {'known': list(known.values()), 'required': required, 'missing': missing, 'routes': routes,
-            'conflicts': conflicts}
+            'conflicts': conflicts, 'conclusion': conclusion}

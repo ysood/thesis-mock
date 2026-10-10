@@ -1,7 +1,9 @@
-"""Orchestration: plan -> specialists -> delegation -> supervisor review loop -> verify -> decide -> brief.
+"""Orchestration: plan -> specialists -> delegation -> supervisor synthesis -> one correction round ->
+supervisor conclusion -> verify -> decide -> brief.
 
-Python owns the flow, budgets and checks; agents own every legal judgement. Python never
-changes a status: it verifies references and derives the decision from verified statuses.
+Python owns the flow, budgets and checks; agents own every legal judgement. Specialists own their findings,
+the supervisor owns how they combine. Python never changes a status: it verifies references and derives the
+decision from verified statuses and the verified combined conclusion.
 """
 
 import json
@@ -14,7 +16,7 @@ from engine import agents, brief, corpus, facts, llm, tools
 from engine.llm import emit
 from engine.schema import Case
 
-MAX_REVIEWS = 3
+CORRECTION_ROUNDS = 1  # bounded follow-ups between the supervisor's first synthesis and its final conclusion
 MODE = os.environ.get('ARCHITECTURE', 'multi')  # 'single': one agent, one call (baseline for analyses)
 
 
@@ -134,8 +136,33 @@ class Run:
             self.log.append({'rejected_delegations': rejected, 'from': cid})
         self.assess(cid, prior=a)
 
-    def route(self, review):
-        """Apply a review: answer routed questions, then reassess askers and revision targets."""
+    def law(self):
+        """The passages behind the findings: for each finding and route, the passages its specialist was shown
+        from the provisions it cited and read. This is what the supervisor reads; Python selects, it decides nothing."""
+        shown = {}
+        for f in self.findings():
+            record = self.records[f['corpus']]
+            for pid in f['resolved_citations'] + [c for r in f['routes'] for c in r['resolved_citations']]:
+                shown.update({q: t for q, t in corpus.passages(pid).items() if q in record['passages']})
+        return shown
+
+    def correction(self, c, refs, shown):
+        """A correction's instruction with the passages it rests on, or None (logged) when it is not a bounded,
+        specific follow-up: unknown requirements, or a claimed error with no shown passage behind it."""
+        ids = [rid.split(':', 1)[1] if rid.startswith(f'{c.corpus}:') else rid for rid in c.requirement_ids]
+        unknown = [rid for rid in ids if f'{c.corpus}:{rid}' not in refs]
+        unshown = [q for q in c.quote_ids if q not in shown]
+        if unknown or unshown or (c.kind in ('contradiction', 'unsupported_status') and not c.quote_ids):
+            self.log.append({'rejected_correction': c.model_dump(), 'unknown_requirements': unknown,
+                             'unshown_passages': unshown})
+            return None
+        text = f"{c.kind.replace('_', ' ')} in {', '.join(ids)}: {c.instruction}"
+        if c.quote_ids:
+            text += '\nPassages:\n' + '\n'.join(f'[{q}] {shown[q]}' for q in c.quote_ids)
+        return text
+
+    def route(self, review, shown):
+        """Apply a synthesis: answer routed questions, then reassess askers and correction targets."""
         groups, askers = {}, set()
         for r in review.routings:
             q = self.questions.get(r.question_ref)
@@ -153,14 +180,19 @@ class Run:
                                       if a.question_id == q['ref']), None))
                 askers.add(q['from'])
         targets, lower = {}, {}
-        for r in review.revisions:
-            parent = corpus.manifests().get(r.corpus, {}).get('parent')
-            if r.corpus in self.answers:
-                targets[r.corpus] = (targets.get(r.corpus, '') + '\n' + r.instruction).strip()
-            elif parent in self.answers:  # a lower-level corpus: revise its report, then its parent reassesses
-                lower[r.corpus] = (lower.get(r.corpus, '') + '\n' + r.instruction).strip()
-            else:
-                self.log.append({'rejected_revision': r.model_dump()})
+        refs = {f'{cid}:{r.id}' for cid, a in self.answers.items() for r in a.requirements} | set(self.extra)
+        for c in review.corrections:
+            parent = corpus.manifests().get(c.corpus, {}).get('parent')
+            if c.corpus not in self.answers and parent not in self.answers:
+                self.log.append({'rejected_correction': c.model_dump()})
+                continue
+            text = self.correction(c, refs, shown)
+            if text is None:
+                continue
+            if c.corpus in self.answers:
+                targets[c.corpus] = (targets.get(c.corpus, '') + '\n\n' + text).strip()
+            else:  # a lower-level corpus: revise its report, then its parent reassesses
+                lower[c.corpus] = (lower.get(c.corpus, '') + '\n\n' + text).strip()
         for child, instruction in lower.items():
             parent = corpus.manifests()[child]['parent']
             self.ask_corpus(child, [parent], [], 'revision', instruction=instruction)
@@ -272,22 +304,86 @@ def verify(f, record, evidence_ids):
     return {**f, 'issues': issues, 'verified': not issues}
 
 
-def decide(findings, questions, final_review):
+def check_conclusion(final, findings, shown):
+    """Reference checks on the supervisor's combined conclusion: its passages were shown to it, its refs and
+    planned routes exist, and a plan that claims the gates work together covers every engaged gate."""
+    if final is None or not hasattr(final, 'outcome'):
+        return []
+    by_ref = {f['ref']: f for f in findings}
+    issues = [f'conclusion cites passage {q}, which it was not shown'
+              for q in final.quote_ids + [q for c in final.conflicts for q in c.quote_ids] if q not in shown]
+    issues += [f'conflict names unknown requirement {r}' for c in final.conflicts for r in c.requirement_refs
+               if r not in by_ref]
+    for p in final.route_plan:
+        f = by_ref.get(p.requirement_ref)
+        if f is None:
+            issues.append(f'route plan names unknown requirement {p.requirement_ref}')
+        elif p.route != 'met' and p.route not in [r['name'] for r in f['routes']]:
+            issues.append(f"route plan names '{p.route}', which is not a route of {p.requirement_ref}")
+    if final.outcome in ('satisfiable_together', 'satisfiable_with_changes'):
+        planned = {p.requirement_ref for p in final.route_plan}
+        issues += [f"route plan leaves out gate {f['ref']}" for f in findings
+                   if f['kind'] == 'gate' and f['status'] != 'not_applicable' and f['ref'] not in planned]
+    if final.outcome == 'not_satisfiable_together' and not final.quote_ids:
+        issues.append('the conclusion that the requirements cannot be satisfied together cites no passage')
+    return issues
+
+
+def supervisor_items(final_review, findings):
+    """The supervisor's open issues, split into blocking and notes. A blocker blocks only if it names a gate that is
+    still in play and, where that gate lists confirmations, says why confirming them later is not enough; otherwise
+    it is kept as a note. An undetermined outcome blocks only while a blocker or an unresolvable conflict remains.
+    The single-agent baseline has no blockers: its unresolved items all block, as before."""
+    if final_review is None:
+        return ['Supervisor review did not complete.'], []
+    if not hasattr(final_review, 'blockers'):
+        return list(final_review.unresolved), []
+    by_ref = {f['ref']: f for f in findings}
+    holds, notes = [], list(final_review.notes)
+    for b in final_review.blockers:
+        f = by_ref.get(b.requirement_ref)
+        if f is None or f['kind'] != 'gate' or f['status'] == 'not_applicable':
+            notes.append(f'{b.requirement_ref}: {b.gap} (not blocking: names no gate in play)')
+        elif f['confirmations'] and not b.why_not_a_confirmation.strip():
+            notes.append(f'{b.requirement_ref}: {b.gap} (not blocking: does not say why its confirmations are not enough)')
+        else:
+            holds.append(f'{b.requirement_ref}: {b.gap}')
+    if final_review.outcome == 'undetermined':
+        if holds or any(not c.resolvable for c in final_review.conflicts):
+            holds.append(f'Whether the requirements can be satisfied together is undetermined. {final_review.reasoning}')
+        else:
+            notes.append('Outcome undetermined without a blocker or unresolvable conflict; not blocking.')
+    return holds, notes
+
+
+def blocking_question(q, findings):
+    """An unanswered peer question blocks unless the requirement it was asked for is already a verified met or
+    not_applicable finding, or a duty: then it concerns a route or point the decision does not rest on."""
+    f = next((f for f in findings if f['ref'] == f"{q['from']}:{q['requirement_id']}"), None)
+    return not (f and f['verified'] and (f['kind'] == 'duty' or f['status'] in ('met', 'not_applicable')))
+
+
+def decide(findings, questions, final_review, conclusion_issues=()):
     gates = [f for f in findings if f['kind'] == 'gate']
-    refusals = [f for f in gates if f['status'] == 'unmet' and f['verified']]
+    outcome = getattr(final_review, 'outcome', None)  # absent for the single-agent baseline
+    refusals = [f"{f['ref']} ({f['title']}) is unmet as described." for f in gates
+                if f['status'] == 'unmet' and f['verified']]
+    if outcome == 'not_satisfiable_together' and not conclusion_issues:
+        refusals.append(f'Supervisor: the requirements cannot be satisfied together. {final_review.reasoning}')
     if refusals:
-        return 'do_not_proceed', [f"{f['ref']} ({f['title']}) is unmet as described." for f in refusals]
+        return 'do_not_proceed', refusals
     holds = [f"{f['ref']}: reference defects ({'; '.join(f['issues'][:2])})" for f in findings if not f['verified']]
     holds += [f"{f['ref']} ({f['title']}) is undetermined." for f in gates if f['status'] == 'undetermined']
-    holds += [f"Open question {q['ref']}: {q['question']}" for q in questions.values() if q['status'] != 'answered']
+    holds += [f"Open question {q['ref']}: {q['question']}" for q in questions.values()
+              if q['status'] != 'answered' and blocking_question(q, findings)]
     if final_review:
         holds += [f'Unresolved conflict: {c.description}' for c in final_review.conflicts if not c.resolvable]
-        holds += [f'Supervisor: {u}' for u in final_review.unresolved]
-    else:
-        holds.append('Supervisor review did not complete.')
+        holds += [f'Supervisor conclusion: {i}' for i in conclusion_issues]
+    holds += [f'Supervisor: {h}' for h in supervisor_items(final_review, findings)[0]]
     if holds:
         return 'needs_review', holds
-    conditional = any(f[k] for f in gates for k in ('missing_evidence', 'required_actions', 'confirmations'))
+    conditional = outcome == 'satisfiable_with_changes' or any(
+        f[k] for f in gates for k in ('missing_evidence', 'required_actions', 'confirmations'))
     return ('proceed_subject_to_conditions', ['Gates are met; conditions remain.']) if conditional else \
         ('proceed', ['Every gate is met on the supplied facts.'])
 
@@ -322,26 +418,30 @@ def run(case, on_event=None):
                 list(pool.map(lambda c: state.assess(c, focus=focus.get(c, '')), engaged))
             for cid in engaged:
                 state.delegate(cid)
-            for _ in range(MAX_REVIEWS):
-                review = supervise(agents.review, state.case, state.offered, state.view())
-                reviews.append({'review': review, 'stale': False})
-                if review is None or review.action == 'finish' or not state.route(review):
+            shown = state.law()
+            reviews.append(supervise(agents.synthesise, state.case, state.offered, state.view(), shown,
+                                     CORRECTION_ROUNDS == 0))
+            for i in range(CORRECTION_ROUNDS):  # each round: follow-ups, then a fresh synthesis (the last is final)
+                if reviews[-1] is None or not state.route(reviews[-1], shown):
                     break
-                reviews[-1]['stale'] = True
-            if reviews and reviews[-1]['stale']:  # budget spent after changes: one last look, no actions taken
-                reviews.append({'review': supervise(agents.review, state.case, state.offered, state.view()), 'stale': False})
+                shown = state.law()
+                reviews.append(supervise(agents.synthesise, state.case, state.offered, state.view(), shown,
+                                         i == CORRECTION_ROUNDS - 1))
         emit('stage', 'verification', status='running')
-        final = reviews[-1]['review'] if reviews else None
+        final = reviews[-1] if reviews else None
         findings = state.findings()
-        decision, reasons = decide(findings, state.questions, final)
+        issues = check_conclusion(final, findings, shown) if final else []
+        decision, reasons = decide(findings, state.questions, final, issues)
         result = {'decision': decision, 'reasons': reasons, 'seconds': round(time.time() - started, 1),
                   'plan': plan.model_dump() if plan else None,
                   'specialists': {c: a.model_dump() for c, a in state.answers.items()},
                   'findings': findings, 'questions': list(state.questions.values()), 'delegations': state.log,
-                  'reviews': [r['review'].model_dump() if r['review'] else None for r in reviews],
+                  'reviews': [r.model_dump() if r else None for r in reviews], 'conclusion_issues': issues,
                   'read': {c: r['read'] for c, r in state.records.items() if r['read']},
                   'case': state.case}
-        result['brief'] = brief.build(findings, state.questions, final, state.offered)
+        result['supervisor_notes'] = supervisor_items(final, findings)[1]
+        result['brief'] = brief.build(findings, state.questions, final, state.offered,
+                                      supervisor_items(final, findings), blocking_question)
         emit('decision', 'verification', decision=decision, reasons=reasons)
         emit('stage', 'verification', status='done')
         return result, events
@@ -373,7 +473,7 @@ def run_single(case, started):
               'reviews': [{'action': 'single_agent (no review)', 'conflicts': [c.model_dump() for c in answer.conflicts],
                            'unresolved': answer.unresolved}] if answer else [],
               'read': {'single_agent': record['read']}, 'case': case}
-    result['brief'] = brief.build(findings, {}, answer, offered)
+    result['brief'] = brief.build(findings, {}, answer, offered, supervisor_items(answer, findings))
     emit('decision', 'verification', decision=decision, reasons=reasons)
     emit('stage', 'verification', status='done')
     return result

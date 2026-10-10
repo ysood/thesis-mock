@@ -23,15 +23,29 @@ corpora/<id>/*.md          provisions headed "## [ID] Title"
    requirements of its own law; the parent reassesses with the answers.
    Every reassessment returns a patch (SpecialistPatch: changed/new requirements,     [LLM]  agents.assess(prior=...)
    withdrawn ids, impact) that Python merges by requirement id; unchanged ones stay.  [Python] pipeline.merge
-6. Supervisor review loop (max 3): routes open peer questions to the corpus whose   [LLM]  agents.review
-   law answers them, records conflicts (resolvable + route), requests revisions.
-   Python answers routed questions, then reassesses askers and revision targets.     [Python] pipeline.Run.route
-   If the budget ends right after changes, one last review is taken without acting on it.
+6. Supervisor synthesis: reads LAW BEHIND THE FINDINGS (the passages each           [Python] pipeline.Run.law
+   specialist was shown from the provisions its findings and routes cite) and owns    [LLM]  agents.synthesise
+   the combined conclusion: one route per engaged gate that work together (route_plan),
+   an outcome, conflicts (incompatible_law / disagreement), with quote_ids from that law.
+   It may request one bounded round of follow-ups: routings of open peer questions,
+   and corrections that name corpus, requirement ids, error kind and the passages
+   showing it. Python drops a correction with unknown requirements, unshown passages,
+   or (contradiction / unsupported_status) no passage; it answers routed questions,    [Python] pipeline.Run.route
+   then reassesses askers and correction targets (instruction + passage text).
+   Then a final conclusion pass (SupervisorConclusion, no follow-ups).               [LLM]  agents.synthesise(final)
+   CORRECTION_ROUNDS (default 1; 0 = the first pass is final).
 7. Verify every requirement and route: facts supplied, cited law actually read by     [Python] pipeline.verify
-   that agent, quote shown to it and from a cited provision.
-8. Decide from verified statuses (refusal: a verified unmet gate; hold: defects,      [Python] pipeline.decide
-   undetermined gates, unanswered questions, unresolvable conflicts, supervisor unresolved;
-   else proceed with or without conditions).
+   that agent, quote shown to it and from a cited provision. Verify the conclusion:   [Python] pipeline.check_conclusion
+   passages shown to the supervisor, refs and planned routes exist, a "satisfiable"
+   plan covers every engaged gate, a "not satisfiable" conclusion cites a passage.
+8. Decide from verified statuses (refusal: a verified unmet gate, or a verified       [Python] pipeline.decide
+   not_satisfiable_together conclusion; hold: defects, undetermined gates or outcome,
+   conclusion defects, unanswered questions, unresolvable conflicts, supervisor
+   blockers; else proceed with or without conditions).                                [Python] pipeline.supervisor_items
+   A supervisor blocker blocks only if it names a gate in play and, where that gate lists confirmations, says why
+   they are not enough; otherwise it becomes a note. "undetermined" blocks only while a blocker or unresolvable
+   conflict remains. An unanswered peer question does not block when the requirement it was asked for is a verified
+   met / not_applicable finding or a duty (pipeline.blocking_question): it concerns a route the decision does not use.
 9. Brief: known / required / missing / routes / conflicts.                           [Python] brief.py
 
 Scoring (offline, after a run): engine/score.py + score_mock.py compare a saved run with cases/<case>/key.json.
@@ -49,10 +63,12 @@ question or revision) shows it its previous report. A top-level corpus answering
 findings (status, reasoning, routes) under ALREADY REPORTED, must answer consistently with them (or say plainly which is
 wrong, for a separate revision) and adds only requirements its own assessment lacks.
 Peer questions ask only what another jurisdiction's law provides on a point the asker's own requirement depends on.
-Supervisor review is neutral: it never says which of two disagreeing findings is right, sets out both positions for the
-owner to reconsider, folds a route-shaped requirement only within its own corpus, and records a disagreement that survives
-a revision as a non-resolvable conflict (needs_review). Specialists read every instruction as "what to reconsider, not a
-legal conclusion". Tool budget per call (tools.budget): MAX_TOOL_CALLS per corpus in scope, never fewer than the
+Ownership: specialists own their findings; the supervisor owns how they combine. It may point out a specific error from
+the passages, but never tells a specialist what status to give; for a disagreement it sets out both positions for the
+owner. It folds a route-shaped requirement only within its own corpus, applies the specialists' evidence policy (agents.EVIDENCE), puts
+confirmations, duties and unchosen fallback routes in notes, never blockers, and records a disagreement that survives the correction round as a non-resolvable conflict with
+outcome undetermined (needs_review). Specialists read every correction as "what to reconsider; keep your finding if your
+law supports it". The supervisor has no tools: it reads only the passages behind the findings. Tool budget per call (tools.budget): MAX_TOOL_CALLS per corpus in scope, never fewer than the
 provisions in scope (Region A 34, single agent 64 at the default 20).
 Answers carry their law (pipeline.answer_law): every answer handed to its asker (delegation or routed peer question)
 includes the selected quote and the text of each cited provision of the answering corpus that its agent read, as shown

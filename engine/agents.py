@@ -1,6 +1,7 @@
 """Agent calls. Every role, scope and jurisdiction is read from the corpus registry; no law is named here.
 
-Supervisor: sees every corpus (manifest + table of contents), plans, routes and reconciles.
+Supervisor: sees every corpus (manifest + table of contents), plans, routes, and owns the combined conclusion,
+reading the passages behind the specialists' findings.
 Specialist: one per engaged top-level corpus, reads only its own corpora through scoped tools.
 Delegate: a lower-level (or peer) specialist answering questions put to it, and reporting any
 further requirement of its own law that the facts engage.
@@ -11,13 +12,15 @@ import re
 
 from engine import corpus, facts, tools
 from engine.llm import ask
-from engine.schema import (DelegateAnswer, SingleAssessment, SpecialistAnswer, SpecialistPatch, SupervisorPlan,
-                           SupervisorReview)
+from engine.schema import (DelegateAnswer, SingleAssessment, SpecialistAnswer, SpecialistPatch, SupervisorConclusion,
+                           SupervisorPlan, SupervisorSynthesis)
+
+EVIDENCE = """- Facts: refer to FACT PASSAGES by fact_id. Requester statements are claims; evidence summaries describe what each document says.
+- Treat the stated facts and described arrangements as complete. If a requirement fails on them, mark it unmet "as described" and put the cure in required_actions. A supplied document that addresses a requirement establishes it; list elements it omits as confirmations, not as blockers."""
 
 RULES = """RULES
 - The laws in your corpora are the only law. Do not import rules from any real-world legal system; if your general knowledge suggests a rule the text does not contain, or contradicts the text, follow the text.
-- Facts: refer to FACT PASSAGES by fact_id. Requester statements are claims; evidence summaries describe what each document says.
-- Treat the stated facts and described arrangements as complete. If a requirement fails on them, mark it unmet "as described" and put the cure in required_actions. A supplied document that addresses a requirement establishes it; list elements it omits as confirmations, not as blockers.
+""" + EVIDENCE + """
 - status: met | unmet | undetermined (a decisive fact, document or answer from other law is missing: say which in missing_facts, missing_evidence or open_dependency) | not_applicable.
 - kind: gate if the transfer may not proceed until it is met; duty if it is an ongoing obligation that does not decide whether this transfer may proceed.
 - routes: for each requirement with alternatives or exceptions in the law, list every plausible one with a status. Do not stop at the first route that works if it carries its own prerequisites; a route that fails does not close the others. Route statuses are defined in the schema; apply them literally. supported means in place now. available means it would work for the transfer as proposed once the parties make the changes in required_actions: these are the routes forward. ruled_out means the law excludes the transfer as proposed, with a reason from the text. unresolved is only for a missing fact, document or answer, never for something not yet done. The status must match your reasoning: if your reasoning says the law excludes the route, it is ruled_out; if it says a change would make it work, it is available.
@@ -122,8 +125,9 @@ def call(agent, cid, schema, system, user, record, offered):
     return facts.bind(result, offered) if result else None
 
 
-NOT_A_CONCLUSION = ('what to reconsider, not a legal conclusion: the supervisor does not read your law; decide from '
-                    'your law, and keep your finding if your law supports it')
+NOT_A_CONCLUSION = ('what to reconsider: the supervisor read the passages behind the findings and names a specific '
+                    'error, but your law is yours to assess; decide from your law, and keep your finding if your law '
+                    'supports it, saying why')
 COVERAGE = ('COVERAGE WARNINGS (structural, from the citation graph: provisions of your corpus cited by law you '
             'relied on, which you have not read. Read each one and say in impact whether it changes anything.)\n')
 
@@ -186,7 +190,7 @@ def answer_questions(cid, asked_by, questions, case, offered, record, already=()
     return call(f'{cid}_specialist', cid, DelegateAnswer, delegate_system(cid, asked_by), '\n\n'.join(parts), record, offered)
 
 
-SUPERVISOR = """You supervise a multi-jurisdiction assessment of a proposed data transfer. You can see every corpus in the system (manifests and tables of contents) but you do not assess the law yourself: specialists do, each limited to its own corpus.
+SUPERVISOR = """You supervise a multi-jurisdiction assessment of a proposed data transfer. You can see every corpus in the system (manifests and tables of contents). Specialists, each limited to its own corpus, read the law and own their findings.
 
 {rules}"""
 
@@ -196,14 +200,24 @@ PLAN_RULES = """PLAN
 - reason must cite facts. focus may point to features of the case, not to legal conclusions.
 - Jurisdictions: {registry}"""
 
-REVIEW_RULES = """REVIEW
-- OPEN QUESTIONS are peer questions specialists could not answer from their own law. Route each to the corpus whose law answers it (a top-level corpus or a lower-level one), restating the question for that specialist.
-- Compare requirements across corpora that concern the same actor, data or time. Record each real conflict, whether a route satisfies both (resolvable) and what it is. Apparent conflicts with a compatible route are resolvable.
-- COVERAGE WARNINGS (in the current state) list provisions that a specialist's own cited law points to and that it never read. They are structural, not legal conclusions. Request a revision when an unread provision could change a gate or a route's status; the specialist is shown its warnings when revised.
-- A requirement that is really one route of another requirement of the same corpus (an alternative way to meet the same obligation) is a defect: ask its specialist to fold it into that requirement's routes. Never ask to fold requirements of different corpora together: each corpus owns its own findings.
-- When findings disagree (within one corpus or across corpora), do not decide or suggest which is right: you do not read the law. In the revision instruction, set out each position with its requirement ref and ask the owning specialist to reconsider against its law. If the disagreement remains after that revision, record it as a conflict that is not resolvable, for human review; do not settle it by instruction.
-- Request a revision only for a concrete defect that could change a gate's status, the decision or the set of gates: an unsupported gate status, an engaged provision in that corpus's table of contents (top-level or lower-level) that no requirement addresses, or a stale answer after new information. Do not request revisions of wording, or of the status of duties that cannot change the decision. Name the corpus, requirement IDs and the defect. Lower-level corpora can be revised too.
-- You cannot change findings. finish when nothing remains to route or revise; list anything still needing human review in unresolved."""
+SYNTHESIS_RULES = """SYNTHESIS
+You own the combined conclusion: whether the requirements of every corpus can be satisfied together. Each specialist owns its individual findings; you cannot change them.
+- Read LAW BEHIND THE FINDINGS: the passages each specialist was shown from the provisions its findings and routes cite. It is the only law you may rely on; cite it by quote_ids. Do not import rules from any real-world legal system.
+- Check each gate's status and routes against those passages. Then choose one route per engaged gate so that all of them work together: compare requirements and required actions of different corpora that concern the same actor, data or time, and check that taking one route does not defeat another. Record that combination in route_plan, and the outcome as the schema defines it.
+- Conflicts: incompatible_law where the law of two corpora pulls apart (resolvable if some combination of routes satisfies both, and name it); disagreement where two findings contradict each other on the same point. Apparent conflicts with a compatible route are resolvable.
+- Evidence: the same standard the specialists apply.
+{evidence}
+- Blockers: a blocker names the gate it blocks (requirement_ref) and the decisive gap: a fact, document or answer without which that gate cannot be decided. If the gate already lists confirmations, say why confirming them later is not enough. Points already listed as confirmations, duties, and routes outside your route_plan (fallbacks you did not choose) are never blockers: put them in notes. The outcome is undetermined only when a blocker or a disagreement remains. A missing fact or document cannot be supplied by a specialist: do not ask for it.
+{follow_ups}"""
+
+FOLLOW_UPS = """FOLLOW-UPS (one bounded round; the next pass is final)
+- Each follow-up must settle a named legal dependency or a specific error that could change a gate, a route in your route_plan, or the outcome. Nothing else: no wording, no duties that cannot change the decision, no general re-checks.
+- routings: OPEN QUESTIONS are peer questions specialists could not answer from their own law. Route each to the corpus whose law answers it (a top-level corpus or a lower-level one), restating it narrowly.
+- corrections: name the corpus, the requirement ids, the kind of error, the passages that show it (quote_ids), and exactly what to reconsider. You may say what a passage appears to provide; never tell a specialist what status to give. For a disagreement, set out both positions with their refs and send it to the owning specialist. COVERAGE WARNINGS (structural: provisions a specialist's own cited law points to that it never read) justify a missed_provision correction only when the unread provision could change a gate or a route.
+- A requirement that is really one route of another requirement of the same corpus is a defect: ask its specialist to fold it in. Never ask to fold requirements of different corpora together."""
+
+FINAL = """FINAL PASS
+- This is the last pass: no further follow-ups. A disagreement that remains is a conflict of kind disagreement (not resolvable) and the outcome is undetermined; anything else a human must decide goes in blockers, under the rules above."""
 
 
 def plan(case, offered):
@@ -251,9 +265,23 @@ def single(case, offered):
     return (facts.bind(result, offered) if result else None), record
 
 
-def review(case, offered, view):
-    system = SUPERVISOR.format(rules=REVIEW_RULES)
+def law_block(shown):
+    """The passages behind the findings, grouped by provision."""
+    grouped = {}
+    for qid, text in shown.items():
+        grouped.setdefault(qid.rsplit('#', 1)[0], []).append(f'[{qid}] {text}')
+    return '\n\n'.join(f"## {pid} {corpus.provisions()[pid]['title']} ({corpus.provisions()[pid]['corpus']})\n"
+                        + '\n'.join(lines) for pid, lines in grouped.items()) or 'none'
+
+
+def synthesise(case, offered, view, shown, final=False):
+    """Supervisor synthesis. A first pass may request one bounded round of follow-ups; the final pass concludes."""
+    system = SUPERVISOR.format(rules=SYNTHESIS_RULES.format(evidence=EVIDENCE,
+                                                            follow_ups=FINAL if final else FOLLOW_UPS))
     user = '\n\n'.join([case_block(case, offered),
-                        'CORPORA\n' + json.dumps([corpus_view(c) for c in corpus.manifests()], indent=1),
-                        'CURRENT STATE\n' + json.dumps(view, indent=1)])
-    return ask('supervisor', 'review', SupervisorReview, system, user, fact_ids=list(offered))
+                         'CORPORA\n' + json.dumps([corpus_view(c) for c in corpus.manifests()], indent=1),
+                         'CURRENT STATE\n' + json.dumps(view, indent=1),
+                         'LAW BEHIND THE FINDINGS\n' + law_block(shown)])
+    schema = SupervisorConclusion if final else SupervisorSynthesis
+    return ask('supervisor', 'conclusion' if final else 'synthesis', schema, system, user, fact_ids=list(offered),
+               quote_ids=shown)
