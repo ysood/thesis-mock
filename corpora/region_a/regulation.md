@@ -151,6 +151,67 @@ Processing for scientific research shall be subject to appropriate safeguards, i
 2. Subregion law may make provision where this Regulation so permits, including under Article 7(2), Article 8(2)(a) and (c), Article 8(3), Article 12(3), Article 19(1)(d) and Article 20.
 3. Where a custodian is established in a Subregion, the law of that Subregion adopted under paragraph 2 applies to its processing in addition to this Regulation.
 
+## [A-REG 22] Article 22 - Independence of Authorities
+
+1. Each Authority shall act with complete independence in performing its tasks and exercising its powers under this Regulation.
+2. The members of each Authority shall remain free from external influence and shall neither seek nor take instructions from anybody.
+3. Each Subregion shall ensure that its Authority is provided with the staff, premises and financial resources necessary for the effective performance of its tasks.
+
+## [A-REG 23] Article 23 - Tasks of Authorities
+
+1. Each Authority shall in its territory:
+(a) monitor and enforce the application of this Regulation;
+(b) promote public awareness of the risks, rules and rights in relation to processing;
+(c) handle complaints lodged under Article 26 and inform the complainant of the progress and outcome within a reasonable period;
+(d) cooperate with other Authorities with a view to ensuring the consistent application of this Regulation;
+(e) conduct investigations on the application of this Regulation.
+2. The performance of the tasks of each Authority shall be free of charge for the person concerned.
+
+## [A-REG 24] Article 24 - Powers of Authorities
+
+1. Each Authority shall have the power to order a custodian or agent to provide any information it requires for the performance of its tasks, to carry out audits, and to obtain access to any premises.
+2. Each Authority shall have the power to issue warnings and reprimands, to order that processing be brought into compliance, to impose a temporary or definitive limitation on processing, and to impose an administrative fine under Article 29.
+3. The exercise of these powers shall be subject to appropriate safeguards, including an effective judicial remedy and due process.
+
+## [A-REG 25] Article 25 - Region A Information Board
+
+1. A Region A Information Board is established, composed of the head of each Authority.
+2. The Board shall issue guidelines, recommendations and best practices to encourage the consistent application of this Regulation, and shall advise the Commission on any proposed amendment of this Regulation.
+3. The Board shall draw up an annual report, which shall be made public.
+
+## [A-REG 26] Article 26 - Right to lodge a complaint
+
+Every person who considers that the processing of personal information relating to them infringes this Regulation shall have the right to lodge a complaint with an Authority, in particular in the Subregion of their habitual residence or place of work.
+
+## [A-REG 27] Article 27 - Right to an effective judicial remedy
+
+1. Each natural or legal person shall have the right to an effective judicial remedy against a legally binding decision of an Authority concerning them.
+2. Each person shall have the right to an effective judicial remedy against a custodian or agent where they consider that their rights under this Regulation have been infringed as a result of processing in breach of this Regulation.
+
+## [A-REG 28] Article 28 - Right to compensation and liability
+
+1. Any person who has suffered material or non-material damage as a result of an infringement of this Regulation shall have the right to receive compensation from the custodian or agent for the damage suffered.
+2. An agent shall be liable for the damage caused by processing only where it has not complied with the obligations of this Regulation specifically directed to agents or where it has acted outside or contrary to the lawful instructions of the custodian.
+
+## [A-REG 29] Article 29 - Administrative fines
+
+1. Each Authority shall ensure that administrative fines imposed under this Article are effective, proportionate and dissuasive in each individual case.
+2. Infringements of Article 9 and Articles 12 to 15 shall be subject to administrative fines of up to 10 000 000 units or, in the case of an undertaking, up to 2% of its total annual turnover, whichever is higher.
+3. Infringements of Articles 5 to 8, Article 11 and Articles 16 to 19 shall be subject to administrative fines of up to 20 000 000 units or, in the case of an undertaking, up to 4% of its total annual turnover, whichever is higher.
+4. When deciding whether to impose a fine and on its amount, due regard shall be given to the nature, gravity and duration of the infringement, whether it was intentional or negligent, and any action taken to mitigate the damage.
+
+## [A-REG 30] Article 30 - Processing and freedom of expression
+
+Subregion law shall reconcile the right to the protection of personal information under this Regulation with the right to freedom of expression and information, including processing for journalistic purposes and for the purposes of academic, artistic or literary expression.
+
+## [A-REG 31] Article 31 - Processing in the context of employment
+
+Subregion law may provide for more specific rules to ensure the protection of the personal information of employees in the employment context, in particular for the purposes of recruitment, the performance of the contract of employment and the management of work.
+
+## [A-REG 32] Article 32 - Entry into force and application
+
+This Regulation shall enter into force on the twentieth day following that of its publication and shall apply from the first day of the second year following its entry into force.
+
 ## [A-REG Annex I] Annex I - Subregions
 
 Subregion A1.

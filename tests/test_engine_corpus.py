@@ -27,7 +27,7 @@ class CitationGraphTests(unittest.TestCase):
         # 'Article 7(2), ... of that Regulation' in an Act whose own unit is 'section'
         self.assertEqual(c.citations()['A1-HIA 1'], ['A-REG 7', 'A-REG 8', 'A-REG 12', 'A-REG 21'])
         self.assertEqual(c.citations()['A1-HIA 7'], ['A-REG 8', 'A-REG 19'])
-        self.assertEqual(c.cited_by('A-REG 8'), ['A-REG 21', 'A1-HIA 1', 'A1-HIA 4', 'A1-HIA 6', 'A1-HIA 7'])
+        self.assertEqual(c.cited_by('A-REG 8'), ['A-REG 21', 'A-REG 29', 'A1-HIA 1', 'A1-HIA 4', 'A1-HIA 6', 'A1-HIA 7'])
 
     def test_cross_instrument_reference_within_one_corpus_and_annexes(self):
         self.assertEqual(c.citations()['B-RAA 2'], ['B-HRA 2'])

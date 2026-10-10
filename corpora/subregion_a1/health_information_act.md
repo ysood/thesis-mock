@@ -49,3 +49,13 @@ Under Article 12(3) of the Region A Regulation, an impact assessment is required
 ## [A1-HIA 9] Section 9 - Age of consent
 
 For the purposes of Article 7(2) of the Region A Regulation, the age at which a person may consent on their own behalf is 14.
+
+## [A1-HIA 10] Section 10 - Health research
+
+1. For the purposes of Article 20 of the Region A Regulation, processing of health information for health research is lawful only where the research has been approved by a research ethics committee recognised by the Commission.
+2. A research ethics committee may approve research only where the researcher has shown that the research cannot reasonably be carried out with pseudonymised information.
+
+## [A1-HIA 11] Section 11 - Offences
+
+1. A custodian who makes an outward transfer in contravention of section 6 commits an offence and is liable on summary conviction to a fine not exceeding 5 000 units.
+2. Proceedings for an offence under this section may be brought only by the Commission.

@@ -12,6 +12,8 @@ cases/     mock cases: case.json (model input) and key.json (answer key, never s
 runs/mock/ saved runs (git-ignored)
 ```
 
+`REAL_LAW_MAP.md` records which GDPR/HIPAA/Irish provision each fictional provision is modelled on, and every deliberate departure. It is a research record only and is never sent to a model.
+
 ## Run
 
 ```bash

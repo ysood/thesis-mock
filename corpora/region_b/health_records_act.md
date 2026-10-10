@@ -45,3 +45,23 @@ A covered provider shall notify affected individuals of a breach of unsecured he
 
 1. A data host shall retain every health record it stores for seven years after the last entry in the record, and shall not delete it before that time.
 2. Subsection (1) does not apply to a health record that originated outside Region B where, at the end of its service, the data host returns the record to the person on whose behalf it was stored and retains no copy.
+
+## [B-HRA 10] Section 10 - Access by individuals
+
+1. An individual has a right to inspect and obtain a copy of the health records about the individual that a covered provider maintains.
+2. A covered provider shall act on a request under subsection (1) within 30 days of receiving it, and may charge only a reasonable cost-based fee.
+
+## [B-HRA 11] Section 11 - Complaints
+
+1. A person who believes that a covered provider or service agent is not complying with sections 4 to 8 may file a complaint with the Health Records Commissioner.
+2. The Commissioner shall investigate any complaint that indicates a possible violation due to wilful neglect.
+
+## [B-HRA 12] Section 12 - Civil penalties
+
+1. The Health Records Commissioner may impose a civil penalty on a covered provider, service agent or data host that violates sections 4 to 9.
+2. A penalty shall not exceed 50 000 units for each violation, or 1 500 000 units for all violations of an identical provision in a calendar year.
+3. No penalty may be imposed for a violation that was not due to wilful neglect and was corrected within 30 days of the person becoming aware of it.
+
+## [B-HRA 13] Section 13 - Regulations
+
+The Health Records Commissioner may make regulations prescribing the form of written authorisations, the content of service agent agreements and the safeguards required by this Act.
