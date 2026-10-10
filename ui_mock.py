@@ -127,7 +127,7 @@ def show_brief(result):
     else:
         st.write('Nothing missing.')
     st.markdown('**Routes forward**')
-    marks = {'supported': '✅', 'unresolved': '❓', 'not_investigated': '…', 'ruled_out': '✗'}
+    marks = {'supported': '✅', 'available': '🔧', 'unresolved': '❓', 'not_investigated': '…', 'ruled_out': '✗'}
     for row in b['routes']:
         with st.expander(f"{ICONS[row['status']]} {row['requirement']}" + ('  ·  blocking' if row['blocking'] else '')):
             for r in row['routes']:
@@ -236,6 +236,9 @@ def describe(event):
                 if event.get('ok') else f"⚠ `{agent}` failed: {str(event.get('error'))[:200]}")
     if kind == 'llm_retry':
         return f"↻ `{agent}` retry: {event['error'][:150]}"
+    if kind == 'patch':
+        return (f"  ⇄ patch: replaced {', '.join(event['replaced']) or '—'} · added {', '.join(event['added']) or '—'}"
+                f" · removed {', '.join(event['removed']) or '—'}")
     if kind == 'decision':
         return f"**Decision:** {event['decision']}"
     return None

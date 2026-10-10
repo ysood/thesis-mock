@@ -106,7 +106,11 @@ class FactRef(BaseModel):
 
 class Route(BaseModel):
     name: str = Field(min_length=1, description='A legal route, alternative or exception, naming who and what it covers')
-    status: Literal['supported', 'ruled_out', 'unresolved', 'not_investigated']
+    status: Literal['supported', 'available', 'ruled_out', 'unresolved', 'not_investigated'] = Field(
+        description='supported: in place on the facts; available: the law offers it and the parties could adopt it '
+                    'with the changes in required_actions, but it is not in place yet; ruled_out: the law or the facts '
+                    'exclude it whatever the parties change; unresolved: depends on a missing fact or answer; '
+                    'not_investigated: an optional fallback not needed because another route suffices')
     reasoning: str
     citations: list[str] = Field(description='Provision IDs you read, e.g. "APIR 18"')
     quote_id: str = Field(min_length=1, description='One passage ID you were shown from a cited provision')
@@ -156,6 +160,19 @@ class SpecialistAnswer(BaseModel):
                                            'cumulative duty in your corpora was missed, and any remaining limit')
     delegations: list[Delegation] = Field(default_factory=list)
     peer_questions: list[PeerQuestion] = Field(default_factory=list)
+
+
+class SpecialistPatch(BaseModel):
+    """A reassessment: only what changes. Python merges it into the prior assessment by requirement id."""
+    impact: str = Field(description='Which of your requirements the new information affects and why; why the '
+                                    'others stay as they are')
+    changed_requirements: list[Requirement] = Field(
+        default_factory=list, description='Complete replacements for requirements that change (same id), and any '
+                                          'new requirements (new id). Unchanged requirements are kept automatically.')
+    removed_requirement_ids: list[str] = Field(default_factory=list,
+                                               description='Requirements to withdraw, explained in impact')
+    coverage_note: str = Field('', description='Updated coverage note, or empty to keep the prior one')
+    peer_questions: list[PeerQuestion] = Field(default_factory=list, description='New questions only')
 
 
 class Answer(BaseModel):

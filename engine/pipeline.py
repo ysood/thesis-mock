@@ -5,6 +5,7 @@ changes a status: it verifies references and derives the decision from verified 
 """
 
 import json
+import re
 import time
 from concurrent.futures import ThreadPoolExecutor
 
@@ -30,22 +31,29 @@ class Run:
 
     def assess(self, cid, **kwargs):
         emit('stage', f'{cid}_specialist', status='running')
+        asked = [{k: q[k] for k in ('ref', 'jurisdiction', 'question', 'status', 'answer')}
+                 for q in self.questions.values() if q['from'] == cid]
         result = agents.assess(cid, self.case, self.offered, self.records[cid],
-                               answers=self.received.get(cid, []), **kwargs)
+                               answers=self.received.get(cid, []), asked=asked, **kwargs)
         emit('stage', f'{cid}_specialist', status='done' if result else 'failed')
+        if result and kwargs.get('prior') is not None:
+            result = merge(kwargs['prior'], result)
         if result:
             self.answers[cid] = result
             self.collect_questions(cid)
         return result
 
     def collect_questions(self, cid):
-        # One question per asker, requirement and jurisdiction: a reassessment that rephrases it is not new.
-        known = {(q['from'], q['requirement_id'], q['jurisdiction']) for q in self.questions.values()}
+        """Register new peer questions. A question that repeats one this asker already put to the same
+        jurisdiction (same words mostly, even under a renamed requirement) is not asked again."""
         for q in self.answers[cid].peer_questions:
-            if (cid, q.requirement_id, q.jurisdiction) not in known:
-                known.add((cid, q.requirement_id, q.jurisdiction))
-                ref = f"{cid}:q{sum(x['from'] == cid for x in self.questions.values()) + 1}"
-                self.questions[ref] = {'ref': ref, 'from': cid, 'status': 'open', 'answer': None, **q.model_dump()}
+            earlier = [x['question'] for x in self.questions.values()
+                       if x['from'] == cid and x['jurisdiction'] == q.jurisdiction]
+            if any(repeats(q.question, e) for e in earlier):
+                self.log.append({'repeated_question': q.question, 'from': cid})
+                continue
+            ref = f"{cid}:q{sum(x['from'] == cid for x in self.questions.values()) + 1}"
+            self.questions[ref] = {'ref': ref, 'from': cid, 'status': 'open', 'answer': None, **q.model_dump()}
 
     def ask_corpus(self, target, asked_by, items, kind, instruction=''):
         """Put questions (or a supervisor revision) to a corpus specialist; file its answers with each
@@ -151,6 +159,25 @@ class Run:
                 'open_questions': [q for q in self.questions.values() if q['status'] == 'open'],
                 'answered_questions': [q for q in self.questions.values() if q['status'] != 'open'],
                 'delegations': self.log}
+
+
+def merge(prior, patch):
+    """Apply a reassessment patch by requirement id: replace changed, append new, drop withdrawn."""
+    changed = {r.id: r for r in patch.changed_requirements}
+    replaced = [r.id for r in prior.requirements if r.id in changed]
+    kept = [changed.pop(r.id, r) for r in prior.requirements if r.id not in patch.removed_requirement_ids]
+    emit('patch', 'pipeline', replaced=replaced, added=list(changed), removed=patch.removed_requirement_ids,
+         impact=patch.impact)
+    return prior.model_copy(update={'requirements': kept + list(changed.values()),
+                                    'coverage_note': patch.coverage_note or prior.coverage_note,
+                                    'peer_questions': patch.peer_questions, 'delegations': []})
+
+
+def repeats(a, b, threshold=0.6):
+    """Word overlap relative to the shorter question; catches rephrasings, not new questions."""
+    words = lambda t: set(re.findall(r'[a-z0-9]+', t.lower())) - {'the', 'a', 'an', 'of', 'to', 'in', 'for', 'and', 'or', 'is', 'does', 'what', 'which', 'under'}
+    x, y = words(a), words(b)
+    return bool(x and y) and len(x & y) / min(len(x), len(y)) >= threshold
 
 
 def verify(f, record, evidence_ids):

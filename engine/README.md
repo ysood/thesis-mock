@@ -21,6 +21,8 @@ corpora/<id>/*.md          provisions headed "## [ID] Title"
    raises peer questions about other jurisdictions' law.
 5. Delegation round: each child answers its parent's questions and reports further  [LLM]  agents.answer_questions
    requirements of its own law; the parent reassesses with the answers.
+   Every reassessment returns a patch (SpecialistPatch: changed/new requirements,     [LLM]  agents.assess(prior=...)
+   withdrawn ids, impact) that Python merges by requirement id; unchanged ones stay.  [Python] pipeline.merge
 6. Supervisor review loop (max 3): routes open peer questions to the corpus whose   [LLM]  agents.review
    law answers them, records conflicts (resolvable + route), requests revisions.
    Python answers routed questions, then reassesses askers and revision targets.     [Python] pipeline.Run.route
@@ -34,4 +36,9 @@ corpora/<id>/*.md          provisions headed "## [ID] Title"
 ```
 
 Each corpus agent keeps one read record across all its calls, so law it read earlier stays citable.
+Each corpus reports only requirements created by its own instruments; other corpora's law reaches it as answers.
+Route statuses: supported (in place), available (a route forward the parties could adopt via required_actions),
+ruled_out (no change could make it work), unresolved, not_investigated.
+Peer questions: each asker sees the questions it already asked with their answers; Python drops a question that
+mostly repeats an earlier one to the same jurisdiction (word overlap >= 0.6 of the shorter), even under a renamed requirement.
 Run: `.venv/bin/python run_mock.py cases/01_a1_gp_to_region_b_host`. Keys in `cases/*/key.json` never reach the model.

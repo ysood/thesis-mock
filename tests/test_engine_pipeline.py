@@ -11,7 +11,8 @@ from pathlib import Path
 
 from engine import llm, pipeline, tools
 from engine.schema import (Answer, Case, Conflict, DelegateAnswer, Delegation, Engagement, FactRef, PeerQuestion,
-                           Requirement, Revision, Route, Routing, SpecialistAnswer, SupervisorPlan, SupervisorReview)
+                           Requirement, Revision, Route, Routing, SpecialistAnswer, SpecialistPatch, SupervisorPlan,
+                           SupervisorReview)
 
 CASE = json.loads((Path(__file__).resolve().parent.parent / 'cases' / '01_a1_gp_to_region_b_host' / 'case.json').read_text())
 
@@ -54,6 +55,18 @@ def scripted(calls):
                                                               citations=['B-HRA 9'], quote_id='B-HRA 9#L1',
                                                               required_actions=['Return records and keep no copy.'])])
         answered = '"from": "region_b"' in user
+        if schema is SpecialistPatch:
+            route = Route(name='Approved clauses (Art 18)', status='ruled_out' if answered else 'unresolved',
+                          reasoning='Depends on Region B access law.', citations=['A-REG 18'], quote_id='A-REG 18#L2')
+            return SpecialistPatch(impact='Answers affect the transfer route only.', changed_requirements=[Requirement(
+                id='transfer_route', title='Outward transfer route', kind='gate',
+                status='unmet' if answered else 'undetermined', reasoning='See routes.', facts=fact(user),
+                citations=['A-REG 18'], quote_id='A-REG 18#L1', routes=[route],
+                open_dependency='' if answered else 'Region B access law',
+                required_actions=['Hold keys in Region A.'] if answered else [])],
+                peer_questions=[] if answered else [PeerQuestion(jurisdiction='B', requirement_id='transfer_route',
+                                                                 question='Can Region B authorities compel access?',
+                                                                 why='A-REG 18(2)')])
         route = Route(name='Approved clauses (Art 18)', status='ruled_out' if answered else 'unresolved',
                       reasoning='Depends on Region B access law.', citations=['A-REG 18'], quote_id='A-REG 18#L2')
         return SpecialistAnswer(
@@ -105,6 +118,8 @@ class RevisionAndQuestionTests(unittest.TestCase):
                 return DelegateAnswer(answers=[], additional_requirements=[Requirement(
                     id='impact_assessment_list', title='National impact assessment list', kind='gate', status='unmet',
                     reasoning='Hosting abroad needs one.', citations=['A1-HIA 8'], quote_id='A1-HIA 8#L1')])
+            if schema is SpecialistPatch:
+                return SpecialistPatch(impact='No change.')
             return SpecialistAnswer(applies=True, applicability_reasoning='r', coverage_note='c')
 
         llm.FAKE_MODEL, tools.ENABLED = model, False
@@ -122,7 +137,7 @@ class RevisionAndQuestionTests(unittest.TestCase):
         self.assertTrue(state.route(review))
         self.assertEqual(list(state.extra), ['subregion_a1:impact_assessment_list'])  # replaced, not appended
         self.assertEqual([(a, s) for a, s, _ in self.seen],
-                         [('subregion_a1_specialist', 'DelegateAnswer'), ('region_a_specialist', 'SpecialistAnswer')])
+                         [('subregion_a1_specialist', 'DelegateAnswer'), ('region_a_specialist', 'SpecialistPatch')])
         self.assertIn('YOUR PRIOR REPORT', self.seen[0][2])
         self.assertIn('Assess A1-HIA 8.', self.seen[0][2])
 
@@ -135,6 +150,45 @@ class RevisionAndQuestionTests(unittest.TestCase):
         state.answers['region_a'] = ask('Under Region B law, may authorities compel access?')
         state.collect_questions('region_a')
         self.assertEqual(list(state.questions), ['region_a:q1'])
+
+    def test_renamed_requirement_does_not_reopen_a_question_but_a_new_one_is_asked(self):
+        state = pipeline.Run(CASE)
+        ask = lambda rid, text: SpecialistAnswer(applies=True, applicability_reasoning='r', coverage_note='c', peer_questions=[
+            PeerQuestion(jurisdiction='B', requirement_id=rid, question=text, why='w')])
+        state.answers['region_a'] = ask('clauses_assessment', 'For Article 18(2), what Region B law lets authorities '
+                                                               'require disclosure from Northgate?')
+        state.collect_questions('region_a')
+        state.answers['region_a'] = ask('legal_environment', 'For Article 18(2), what Region B law lets public '
+                                                              'authorities require disclosure from Northgate Cloud?')
+        state.collect_questions('region_a')
+        state.answers['region_a'] = ask('retention', 'Must a Region B data host keep health records for a fixed period?')
+        state.collect_questions('region_a')
+        self.assertEqual(list(state.questions), ['region_a:q1', 'region_a:q2'])
+        self.assertIn('retention', state.questions['region_a:q2']['requirement_id'])
+
+    def test_already_asked_questions_are_shown_to_the_asker(self):
+        state = pipeline.Run(CASE)
+        state.questions['region_a:q1'] = {'ref': 'region_a:q1', 'from': 'region_a', 'jurisdiction': 'B',
+                                          'requirement_id': 'x', 'question': 'Can B compel access?', 'why': 'w',
+                                          'status': 'answered', 'answer': 'Yes.'}
+        state.assess('region_a')
+        self.assertIn('QUESTIONS YOU HAVE ALREADY ASKED', self.seen[-1][2])
+        self.assertIn('Can B compel access?', self.seen[-1][2])
+
+    def test_patch_replaces_adds_and_withdraws_by_id_and_keeps_the_rest(self):
+        req = lambda rid, status: Requirement(id=rid, title=rid, kind='gate', status=status, reasoning='r')
+        prior = SpecialistAnswer(applies=True, applicability_reasoning='r', coverage_note='old',
+                                 requirements=[req('a', 'met'), req('b', 'undetermined'), req('c', 'met')])
+        patch = SpecialistPatch(impact='b resolved; c withdrawn; d new.', changed_requirements=[req('b', 'unmet'), req('d', 'met')],
+                                removed_requirement_ids=['c'])
+        merged = pipeline.merge(prior, patch)
+        self.assertEqual([(r.id, r.status) for r in merged.requirements], [('a', 'met'), ('b', 'unmet'), ('d', 'met')])
+        self.assertEqual(merged.coverage_note, 'old')
+
+    def test_available_is_a_route_forward_status(self):
+        route = Route(name='Return records and keep no copy', status='available', reasoning='B-HRA 9(2).',
+                      citations=['B-HRA 9'], quote_id='B-HRA 9#L2')
+        self.assertEqual(route.status, 'available')
 
     def test_delegates_are_pointed_to_linked_provisions_from_the_graph(self):
         from engine import agents
