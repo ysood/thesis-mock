@@ -1,0 +1,111 @@
+{
+  "gdpr_articles": {
+    "url": "http://publications.europa.eu/resource/celex/02016R0679-20160504",
+    "retrieved_at": "2026-10-05T06:24:29.147921+00:00",
+    "final_url": "http://publications.europa.eu/resource/cellar/5f2552c2-cc45-11e6-ad7c-01aa75ed71a1.0022.03/DOC_1",
+    "content_type": "application/xhtml+xml;charset=UTF-8",
+    "sha256": "a681ff22f32f125749af6e96947224369efc132edb8a95b12637e357df1056de",
+    "bytes": 462324,
+    "status": "retrieved"
+  },
+  "gdpr_recitals": {
+    "url": "http://publications.europa.eu/resource/celex/32016R0679",
+    "retrieved_at": "2026-10-05T06:24:29.148164+00:00",
+    "final_url": "http://publications.europa.eu/resource/cellar/3e485e15-11bd-11e6-ba9a-01aa75ed71a1.0006.03/DOC_1",
+    "content_type": "application/xhtml+xml;charset=UTF-8",
+    "sha256": "962539af03738bf552319ff4ce42d69e5f95a576307c4dfed7bf87e81b646b9d",
+    "bytes": 806864,
+    "status": "retrieved"
+  },
+  "hipaa_160": {
+    "url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-160",
+    "retrieved_at": "2026-10-05T06:25:23.515592+00:00",
+    "final_url": "https://unblock.federalregister.gov/",
+    "content_type": "text/html; charset=utf-8",
+    "sha256": "bd178103de4d47eb30a61fd6e3fea63c5f38227a4563b12e047e634707285bee",
+    "bytes": 10596,
+    "status": "access_challenge",
+    "note": "Retained response is an access challenge, not CFR evidence. Excluded from quote checks. Current eCFR inspected through the web reader separately; annual official XML used for offline matching."
+  },
+  "hipaa_164": {
+    "url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164",
+    "retrieved_at": "2026-10-05T06:25:23.515875+00:00",
+    "final_url": "https://unblock.federalregister.gov/",
+    "content_type": "text/html; charset=utf-8",
+    "sha256": "11be3e622606b96e6f21eb0d6dae87929dd1799f96530f8fa91af99de966655b",
+    "bytes": 10596,
+    "status": "access_challenge",
+    "note": "Retained response is an access challenge, not CFR evidence. Excluded from quote checks. Current eCFR inspected through the web reader separately; annual official XML used for offline matching."
+  },
+  "ie_dpa_revised": {
+    "url": "https://revisedacts.lawreform.ie/eli/2018/act/7/revised/en/html",
+    "retrieved_at": "2026-10-05T06:24:29.833789+00:00",
+    "final_url": "https://revisedacts.lawreform.ie/eli/2018/act/7/revised/en/html",
+    "content_type": "text/html; charset=UTF-8",
+    "sha256": "98ad058c16fb2d31635b57dbae94339f173bc43784429bd57e16656eeb6f57ee",
+    "bytes": 1243294,
+    "status": "retrieved"
+  },
+  "ie_314_2018": {
+    "url": "https://www.irishstatutebook.ie/eli/2018/si/314/made/en/print",
+    "retrieved_at": "2026-10-05T06:24:29.855077+00:00",
+    "final_url": "https://www.irishstatutebook.ie/eli/2018/si/314/made/en/print",
+    "content_type": "text/html",
+    "sha256": "915bda068d31a12a64a3030c000ad176e1468e7f77af39c49202cc445bb6e6d4",
+    "bytes": 96981,
+    "status": "retrieved"
+  },
+  "ie_188_2019": {
+    "url": "https://www.irishstatutebook.ie/eli/2019/si/188/made/en/print",
+    "retrieved_at": "2026-10-05T06:24:31.276203+00:00",
+    "final_url": "https://www.irishstatutebook.ie/eli/2019/si/188/made/en/print",
+    "content_type": "text/html",
+    "sha256": "ee76ccf8e578890f880f788eddad6938b744a4a70e00fcd4d84502508ac8e75f",
+    "bytes": 32484,
+    "status": "retrieved"
+  },
+  "ie_18_2021": {
+    "url": "https://www.irishstatutebook.ie/eli/2021/si/18/made/en/print",
+    "retrieved_at": "2026-10-05T06:24:31.624703+00:00",
+    "final_url": "https://www.irishstatutebook.ie/eli/2021/si/18/made/en/print",
+    "content_type": "text/html",
+    "sha256": "f36c1e37dcdc8fed3dc77bcabc4a91a6dc3b60099819b806d175d354ce2b51da",
+    "bytes": 53903,
+    "status": "retrieved"
+  },
+  "ie_amendment_index": {
+    "url": "https://www.irishstatutebook.ie/eli/isbc/2018_7.html",
+    "retrieved_at": "2026-10-05T06:24:31.993213+00:00",
+    "final_url": "https://www.irishstatutebook.ie/eli/isbc/2018_7.html",
+    "content_type": "text/html",
+    "sha256": "0c1aabc75b9f82041e778063aca865ab27a9f4186ba01bc204993139edefdfbe",
+    "bytes": 69049,
+    "status": "retrieved"
+  },
+  "hhs_vacatur": {
+    "url": "https://www.hhs.gov/hipaa/for-professionals/special-topics/reproductive-health/final-rule-fact-sheet/index.html",
+    "retrieved_at": "2026-10-05T06:25:23.515970+00:00",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden",
+    "web_reader_checked_on": "2026-10-05",
+    "web_reader_result": "Publisher notice at top of page reviewed, paragraphs dated June 18, 2025; page last reviewed July 1, 2025. Most of the 2024 reproductive-health rule vacated, including 164.509; NPP paragraphs 164.520(b)(1)(ii)(F)-(H) vacated, remaining NPP amendments retained."
+  },
+  "hipaa_160_annual": {
+    "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/xml/CFR-2025-title45-vol2-part160.xml",
+    "retrieved_on": "2026-10-05",
+    "edition": "2025-10-01 annual CFR",
+    "status": "retrieved",
+    "sha256": "9c3a4e61fd1c49aa4b4a58cf431e74c31f05622d9e9826c42a718afe63c8934c",
+    "bytes": 137719,
+    "note": "Official annual edition; does not independently establish legal currency in October 2026."
+  },
+  "hipaa_164_annual": {
+    "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/xml/CFR-2025-title45-vol2-part164.xml",
+    "retrieved_on": "2026-10-05",
+    "edition": "2025-10-01 annual CFR",
+    "status": "retrieved",
+    "sha256": "786d8abda6e14b71d37c3596b3196b1aa956af54487e006a2116ebe153d16b7c",
+    "bytes": 349673,
+    "note": "Official annual edition; does not independently establish legal currency in October 2026."
+  }
+}

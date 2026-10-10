@@ -1,0 +1,29 @@
+{
+  "retrieved": "2026-10-02",
+  "sources": {
+    "eu_member_states": "https://european-union.europa.eu/principles-countries-history/eu-countries_en",
+    "eea": "https://www.efta.int/eea (EEA = EU member states plus Iceland, Liechtenstein and Norway)",
+    "adequacy_decisions": "https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en"
+  },
+  "eu_member_states": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"],
+  "other_eea_states": ["IS", "LI", "NO"],
+  "adequacy_decisions": [
+    {"country": "AD", "scope": "full"},
+    {"country": "AR", "scope": "full"},
+    {"country": "BR", "scope": "full"},
+    {"country": "CA", "scope": "partial: commercial organisations only"},
+    {"country": "FO", "scope": "full"},
+    {"country": "GG", "scope": "full"},
+    {"country": "IL", "scope": "full"},
+    {"country": "IM", "scope": "full"},
+    {"country": "JP", "scope": "full"},
+    {"country": "JE", "scope": "full"},
+    {"country": "NZ", "scope": "full"},
+    {"country": "KR", "scope": "full"},
+    {"country": "CH", "scope": "full"},
+    {"country": "GB", "scope": "full (renewed December 2025)"},
+    {"country": "US", "scope": "partial: only commercial organisations participating in the EU-US Data Privacy Framework"},
+    {"country": "UY", "scope": "full"}
+  ],
+  "note": "The Commission also recognises the European Patent Organisation (an international organisation, not a country). Adequacy lists change: re-check the source before relying on this file."
+}

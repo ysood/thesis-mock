@@ -1,0 +1,13 @@
+{
+  "id": "corvel",
+  "name": "Republic of Corvel",
+  "level": "national",
+  "territory": ["XC"],
+  "unit": "section",
+  "instruments": [
+    {"file": "health_records_act.md", "prefix": "CHRA", "title": "Corvel Health Records Act",
+     "aliases": ["Corvel Health Records Act", "Health Records Act"]},
+    {"file": "records_access_act.md", "prefix": "CRAA", "title": "Corvel Records Access Act",
+     "aliases": ["Corvel Records Access Act", "Records Access Act"]}
+  ]
+}

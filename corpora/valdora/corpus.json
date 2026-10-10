@@ -1,0 +1,12 @@
+{
+  "id": "valdora",
+  "name": "Republic of Valdora",
+  "level": "regional",
+  "territory": ["XV"],
+  "parent": "aster",
+  "unit": "section",
+  "instruments": [
+    {"file": "health_information_act.md", "prefix": "VHIA", "title": "Valdora Health Information Act",
+     "aliases": ["Valdora Health Information Act"]}
+  ]
+}

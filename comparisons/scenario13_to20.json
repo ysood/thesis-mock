@@ -1,0 +1,349 @@
+{
+  "purpose": "Trace the conversion of the repeated v5.5 GP-to-New York case to the current two-layer schema.",
+  "source_scenario": "scenarios/13_ie_patient_treated_in_ny_gp_summary.json",
+  "source_sha256": "ad6cc64c1310b592dfe03dd54b60f6e6faccb2f25fff589711ed0cb92dff0fac",
+  "candidate_scenario": "scenarios/20_ie_patient_treated_in_ny_gp_summary_two_layer.json",
+  "created_from_revision": "835ff2e0e82d4e8e6883414d494cd558555d5dbc",
+  "normalized_source_request_sha256": "f64cd913dacef6a5ea5a02a39c5e7ef21784d7bdd90f8d3c00b10cc34b26c97d",
+  "normalized_candidate_request_sha256": "44df3fd438444395c06fdae24cabded82825b5432adb8e58ab8683fea71a221c",
+  "historical_runs": [
+    {
+      "file": "runs/ui/20261004-220146_13_ie_patient_treated_in_ny_gp_summary.json",
+      "sha256": "371d4314ad2afa0aafaae756dbf597a78e1b37e436b43fcfadde4ee3cc1943bb",
+      "normalized_request_matches_source": true,
+      "model": "openai:gpt-5.6-luna",
+      "decision": "proceed_subject_to_conditions",
+      "seconds": 718.5,
+      "metered_successful_calls": 12,
+      "recorded_tokens": 332046
+    },
+    {
+      "file": "runs/ui/20261004-221338_13_ie_patient_treated_in_ny_gp_summary.json",
+      "sha256": "53801520b4d21ee18564d1b76f540873e462c0071328f5afc61500168f9d0681",
+      "normalized_request_matches_source": true,
+      "model": "openai:gpt-5.6-luna",
+      "decision": "proceed_subject_to_conditions",
+      "seconds": 530.7,
+      "metered_successful_calls": 8,
+      "recorded_tokens": 183854
+    }
+  ],
+  "field_mapping": [
+    {
+      "from": [
+        "/title"
+      ],
+      "to": [
+        "/transfer/title"
+      ],
+      "treatment": "Copied exactly."
+    },
+    {
+      "from": [
+        "/sender/name",
+        "/sender/country",
+        "/recipient/name",
+        "/recipient/country"
+      ],
+      "to": [
+        "/organisations/0/name",
+        "/organisations/0/country",
+        "/organisations/1/name",
+        "/organisations/1/country"
+      ],
+      "treatment": "Copied exactly; local organisation IDs provide from/to references."
+    },
+    {
+      "from": [
+        "/sender/organisation_type",
+        "/recipient/organisation_type",
+        "/narrative"
+      ],
+      "to": [
+        "/organisations/0/kind",
+        "/organisations/0/sector",
+        "/organisations/0/description",
+        "/organisations/1/kind",
+        "/organisations/1/sector",
+        "/organisations/1/description"
+      ],
+      "treatment": "Clinic/hospital become health_care_provider. Descriptions restate only the existing narrative and care request. Private ownership supports GP sector private. Non-profit alone does not establish a sector, so hospital sector stays unknown. No new licensing, billing, transaction, responsibility or US-operation facts are supplied."
+    },
+    {
+      "from": [
+        "/sender/gdpr_role",
+        "/sender/hipaa_role",
+        "/recipient/gdpr_role",
+        "/recipient/hipaa_role"
+      ],
+      "to": [],
+      "treatment": "Legal labels withheld as required by the new schema. All four internal role fields default to unknown; no invented operational facts replace the labels."
+    },
+    {
+      "from": [
+        "/data/description",
+        "/data/data_subject_countries",
+        "/data/special_categories"
+      ],
+      "to": [
+        "/transfer/data/description",
+        "/transfer/data/people/where",
+        "/transfer/data/categories"
+      ],
+      "treatment": "Copied exactly."
+    },
+    {
+      "from": [
+        "/data/description",
+        "/data/gdpr_status"
+      ],
+      "to": [
+        "/transfer/data/identifiability",
+        "/transfer/data/people/how_many",
+        "/transfer/data/people/includes_children"
+      ],
+      "treatment": "Identified and one person come from the named-patient description. Age is not stated, so includes_children is null. The adapter maps identified back to personal."
+    },
+    {
+      "from": [
+        "/data/hipaa_status"
+      ],
+      "to": [],
+      "treatment": "The PHI legal label is withheld. Internal HIPAA data status defaults to unknown."
+    },
+    {
+      "from": [
+        "/purpose",
+        "/purpose_description"
+      ],
+      "to": [
+        "/transfer/purpose",
+        "/transfer/purpose_description",
+        "/transfer/necessity"
+      ],
+      "treatment": "Purpose fields copied exactly; the existing explanation of what the doctor needs is also used as necessity."
+    },
+    {
+      "from": [
+        "/processing_activity"
+      ],
+      "to": [
+        "/transfer/additional_info"
+      ],
+      "treatment": "Existing is preserved as the final factual sentence in additional_info. The new schema has no activity field and the adapter does not infer it, so internal processing_activity becomes unknown. This is a documented limitation, not a claim that the activity changed."
+    },
+    {
+      "from": [
+        "/access_or_storage_countries"
+      ],
+      "to": [
+        "/transfer/locations/stored_in",
+        "/transfer/locations/accessed_from"
+      ],
+      "treatment": "Both remain empty. No additional access or storage facts are inferred from establishment countries."
+    },
+    {
+      "from": [
+        "/onward_transfers"
+      ],
+      "to": [
+        "/transfer/onward",
+        "/transfer/retention"
+      ],
+      "treatment": "Onward statement copied exactly. It gives no retention duration, so retention remains blank."
+    },
+    {
+      "from": [
+        "/arrangements/0/type",
+        "/arrangements/0/status",
+        "/arrangements/0/details"
+      ],
+      "to": [
+        "/evidence/0"
+      ],
+      "treatment": "The already-described signed consent form becomes consent_record evidence; summary is copied exactly, scope names the GP and named hospital, and no date or expiry is invented. This changes evidence representation and its treatment by the current policy, not the existence of the form."
+    },
+    {
+      "from": [
+        "/arrangements/1/type",
+        "/arrangements/1/status",
+        "/arrangements/1/details"
+      ],
+      "to": [
+        "/transfer/method"
+      ],
+      "treatment": "Encryption details copied exactly as an operational fact. No security policy document is invented."
+    },
+    {
+      "from": [
+        "/stated_legal_bases"
+      ],
+      "to": [],
+      "treatment": "All three statutory-basis labels withheld; no replacement legal conclusion is embedded in descriptions."
+    },
+    {
+      "from": [
+        "/narrative"
+      ],
+      "to": [
+        "/transfer/additional_info",
+        "/transfer/frequency"
+      ],
+      "treatment": "Narrative copied verbatim before the activity sentence. One-off frequency comes from the narrative."
+    },
+    {
+      "from": [
+        "/attestations"
+      ],
+      "to": [
+        "/evidence"
+      ],
+      "treatment": "Source attestations are empty. The sole evidence item comes from the signed consent document already described under arrangements, not a new attestation."
+    }
+  ],
+  "withheld_legal_declarations": {
+    "/sender/gdpr_role": "controller",
+    "/sender/hipaa_role": "neither",
+    "/recipient/gdpr_role": "controller",
+    "/recipient/hipaa_role": "covered_entity",
+    "/data/hipaa_status": "phi",
+    "/stated_legal_bases": [
+      "GDPR Art. 6(1)(d) vital interests",
+      "GDPR Art. 9(2)(h) provision of health care, with Data Protection Act 2018 s.52",
+      "GDPR Art. 49(1)(a) explicit consent to the transfer"
+    ]
+  },
+  "normalized_request_changes": [
+    {
+      "path": "/arrangements",
+      "before": [
+        {
+          "type": "explicit_consent",
+          "status": "in_place",
+          "details": "The patient is conscious and able to decide. They signed the practice's one-page consent form for this one transfer. It names the New York hospital, lists what will be sent, and explains that the hospital is outside the EEA, that no adequacy decision or appropriate safeguards cover the transfer, and what the possible risks are. The signed form is kept in the GP record."
+        },
+        {
+          "type": "encryption",
+          "status": "in_place",
+          "details": "Sent once as an encrypted email attachment to the treating doctor's hospital email address; the password is given by phone."
+        }
+      ],
+      "after": []
+    },
+    {
+      "path": "/attestations",
+      "before": [],
+      "after": [
+        {
+          "request_id": "ev_consent",
+          "requirement": "",
+          "evidence_type": "consent_record",
+          "attested_by": "Supplied evidence (Example GP Practice, Dublin, Example Hospital, New York)",
+          "statement": "Signed consent form for this one transfer: The patient is conscious and able to decide. They signed the practice's one-page consent form for this one transfer. It names the New York hospital, lists what will be sent, and explains that the hospital is outside the EEA, that no adequacy decision or appropriate safeguards cover the transfer, and what the possible risks are. The signed form is kept in the GP record.",
+          "reference": ""
+        }
+      ]
+    },
+    {
+      "path": "/data/hipaa_status",
+      "before": "phi",
+      "after": "unknown"
+    },
+    {
+      "path": "/data/how_many",
+      "before": null,
+      "after": 1
+    },
+    {
+      "path": "/frequency",
+      "before": "unknown",
+      "after": "one_off"
+    },
+    {
+      "path": "/method",
+      "before": "",
+      "after": "Sent once as an encrypted email attachment to the treating doctor's hospital email address; the password is given by phone."
+    },
+    {
+      "path": "/narrative",
+      "before": "An Irish resident on holiday in New York is admitted to the hospital's emergency department with chest pain. The treating doctor emailed the patient's Dublin GP on hospital letterhead asking for a summary. The practice confirmed the doctor through the hospital switchboard and had the patient sign the practice's consent form, sent and returned by email, before sending anything. This is a one-off transfer. The Dublin practice is a privately owned general practice, not a public body. The hospital is a non-profit and is not in the EU-US Data Privacy Framework.",
+      "after": "An Irish resident on holiday in New York is admitted to the hospital's emergency department with chest pain. The treating doctor emailed the patient's Dublin GP on hospital letterhead asking for a summary. The practice confirmed the doctor through the hospital switchboard and had the patient sign the practice's consent form, sent and returned by email, before sending anything. This is a one-off transfer. The Dublin practice is a privately owned general practice, not a public body. The hospital is a non-profit and is not in the EU-US Data Privacy Framework.\nThis transfer forms part of the GP practice's existing processing activity."
+    },
+    {
+      "path": "/necessity",
+      "before": "",
+      "after": "The emergency doctor treating the patient for chest pain needs their active problems, current medications and allergies before deciding on treatment."
+    },
+    {
+      "path": "/processing_activity",
+      "before": "existing",
+      "after": "unknown"
+    },
+    {
+      "path": "/recipient/description",
+      "before": "",
+      "after": "Non-profit hospital in New York. Its emergency department is treating the patient for chest pain. The hospital is not in the EU-US Data Privacy Framework."
+    },
+    {
+      "path": "/recipient/gdpr_role",
+      "before": "controller",
+      "after": "unknown"
+    },
+    {
+      "path": "/recipient/hipaa_role",
+      "before": "covered_entity",
+      "after": "unknown"
+    },
+    {
+      "path": "/recipient/organisation_type",
+      "before": "hospital",
+      "after": "health_care_provider"
+    },
+    {
+      "path": "/sender/description",
+      "before": "",
+      "after": "Privately owned general practice in Dublin, not a public body. Holds the patient's GP record and is providing the requested summary to the treating emergency doctor."
+    },
+    {
+      "path": "/sender/gdpr_role",
+      "before": "controller",
+      "after": "unknown"
+    },
+    {
+      "path": "/sender/hipaa_role",
+      "before": "neither",
+      "after": "unknown"
+    },
+    {
+      "path": "/sender/organisation_type",
+      "before": "clinic",
+      "after": "health_care_provider"
+    },
+    {
+      "path": "/sender/sector",
+      "before": "unknown",
+      "after": "private"
+    },
+    {
+      "path": "/stated_legal_bases",
+      "before": [
+        "GDPR Art. 6(1)(d) vital interests",
+        "GDPR Art. 9(2)(h) provision of health care, with Data Protection Act 2018 s.52",
+        "GDPR Art. 49(1)(a) explicit consent to the transfer"
+      ],
+      "after": []
+    }
+  ],
+  "comparison_plan": [
+    "Run original scenario 13 and new scenario 20 on the same frozen current commit, model settings and corpus to measure the input-format effect.",
+    "Use the two matching historical v5.5 runs as a separate architecture reference. They are not a controlled current-versus-v5.5 experiment.",
+    "Compare applicability and role condition answers, legal routes, national questions, DPIA activity handling, evidence status and confirmations, then final decision, call counts and token usage.",
+    "Do not equate a different final decision with incorrectness; identify the first differing classification, dependency or policy step."
+  ],
+  "limitations": [
+    "Legal labels and the structured existing-activity signal cannot be preserved in the new schema; this is therefore a documented schema conversion, not identical model input.",
+    "The consent document moves from an operational arrangement to listed evidence, which may affect the evidence policy.",
+    "No live assessment or new legal outcome is asserted."
+  ],
+  "candidate_sha256": "6f1b0f790b920abaea3c1d044aeb8713cd63660ccd8fb61ae7472598064d295c"
+}

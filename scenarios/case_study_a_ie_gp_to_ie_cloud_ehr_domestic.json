@@ -1,0 +1,147 @@
+{
+ "request": {
+  "organisations": [
+   {
+    "id": "org_practice",
+    "name": "Kilkenny Family Practice",
+    "country": "IE",
+    "sector": "private",
+    "kind": "health_care_provider",
+    "description": "Private general practice in Kilkenny with four GPs registered with the Irish Medical Council, two practice nurses and three administrative staff. Patients attend as private fee-paying patients under the practice's terms of care. All staff sign confidentiality agreements."
+   },
+   {
+    "id": "org_ehr",
+    "name": "Dubcloud Ltd",
+    "country": "IE",
+    "sector": "private",
+    "kind": "cloud_provider",
+    "description": "Dublin company hosting electronic patient record software for Irish GP practices. Hosts data only in its own data centre in Dublin; its support staff are in Dublin. It uses no sub-processors and has no establishment or staff outside Ireland."
+   }
+  ],
+  "transfer": {
+   "title": "GP practice moves its electronic patient record to an Irish-hosted cloud system",
+   "sender": "org_practice",
+   "recipient": "org_ehr",
+   "data": {
+    "description": "The practice's electronic patient record: names, dates of birth, consultation notes, diagnoses, prescriptions, test results and correspondence.",
+    "categories": [
+     "health"
+    ],
+    "identifiability": "identified",
+    "people": {
+     "where": [
+      "IE"
+     ],
+     "how_many": 6500,
+     "includes_children": false
+    }
+   },
+   "purpose": "treatment",
+   "purpose_description": "Hosting the record the GPs and nurses use to diagnose, treat and follow up the practice's patients, replacing the on-premises server.",
+   "necessity": "The record is the practice's working clinical file and must be available to clinicians at every consultation. The provider hosts and maintains it and does not use it for its own purposes.",
+   "frequency": "ongoing",
+   "locations": {
+    "stored_in": [
+     "IE"
+    ],
+    "accessed_from": [
+     "IE"
+    ]
+   },
+   "retention": "Records are kept for the practice's retention schedule. On termination the provider returns all data and deletes its copies within 30 days.",
+   "onward": "None. The provider uses no sub-processors.",
+   "method": "One-off encrypted migration from the old server, then daily use over TLS with per-user accounts.",
+   "additional_info": "Provider support staff access records only on a ticket raised by the practice, and each access is logged."
+  },
+  "evidence": [
+   {
+    "id": "ev_dpa",
+    "kind": "executed_agreement",
+    "title": "Data processing agreement (Art 28)",
+    "between": [
+     "org_practice",
+     "org_ehr"
+    ],
+    "summary": "Provider handles the records only as the practice directs in writing and does not use them for its own purposes; personnel confidentiality; the provider must keep the records encrypted, access-controlled and backed up, and restore them after an incident; no sub-processors without prior written authorisation; assistance with rights requests, breach notification and DPIAs; return and deletion on termination; audits and inspections. The provider keeps a register of the processing it carries out for each client practice, listing the data categories, the hosting and support activities and its security measures.",
+    "attested_by": "Senior partner, for Kilkenny Family Practice; a director, for Dubcloud Ltd",
+    "dated": "2026-07-14",
+    "valid_until": null
+   },
+   {
+    "id": "ev_dpia",
+    "kind": "assessment_document",
+    "title": "DPIA for the cloud EHR migration",
+    "between": [
+     "org_practice"
+    ],
+    "summary": "Assesses moving the full record of about 6,500 patients to the provider; risks of unauthorised access, loss of availability, provider support access and migration errors; measures: encryption, MFA, logged ticket-based support access, daily backups, tested restore, return and deletion on exit. Residual risk acceptable. Completed before migration.",
+    "attested_by": "Senior partner, Kilkenny Family Practice (measures approved); data protection officer, Kilkenny Family Practice (advice provided)",
+    "dated": "2026-06-30",
+    "valid_until": null
+   },
+   {
+    "id": "ev_security",
+    "kind": "policy_or_procedure",
+    "title": "Access and security procedure",
+    "between": [
+     "org_practice",
+     "org_ehr"
+    ],
+    "summary": "Named accounts with MFA for every clinician and staff member, role-based access, encryption in transit and at rest, access logs reviewed monthly by the practice manager, daily backups with a quarterly restore test. The provider's hosting is ISO/IEC 27001 certified.",
+    "attested_by": "Practice manager, Kilkenny Family Practice; information security manager, Dubcloud Ltd",
+    "dated": "2026-07-14",
+    "valid_until": null
+   },
+   {
+    "id": "ev_notice",
+    "kind": "policy_or_procedure",
+    "title": "Patient privacy notice and processing record",
+    "between": [
+     "org_practice"
+    ],
+    "summary": "Updated privacy notice naming the practice, its DPO, purposes and legal bases, the hosting provider as processor, retention periods, patients' rights and the right to complain to the Data Protection Commission. The practice's record of processing activities lists the cloud hosting, the provider, data categories, retention and security measures.",
+    "attested_by": "Data protection officer, Kilkenny Family Practice",
+    "dated": "2026-07-14",
+    "valid_until": null
+   },
+   {
+    "id": "ev_responsibility",
+    "kind": "attestation_statement",
+    "title": "Clinical responsibility for the record",
+    "between": [
+     "org_practice"
+    ],
+    "summary": "The practice's GPs, each registered with the Irish Medical Council, decide what is recorded, make or review every clinical entry and supervise the nurses and administrative staff, who sign confidentiality agreements. Provider support staff open a patient record only when a practice GP raises a ticket naming that record and the fault, and only for the time needed to fix it; the GP closes the ticket. Their employment contracts include confidentiality clauses that continue after employment ends, and breaches are disciplinary offences.",
+    "attested_by": "Senior partner, Kilkenny Family Practice",
+    "dated": "2026-07-14",
+    "valid_until": null
+   }
+  ]
+ },
+ "expected": {
+  "decision": "proceed_subject_to_conditions",
+  "requirement_statuses": {
+   "gdpr.applicability": "met",
+   "gdpr.role_arrangements": "met",
+   "gdpr.lawful_basis": "met",
+   "gdpr.special_category_condition": "met",
+   "gdpr.transfer_mechanism": "not_applicable",
+   "gdpr.research_safeguards": "not_applicable",
+   "gdpr.data_minimisation": "met",
+   "gdpr.dpia": "met",
+   "gdpr.security": "met",
+   "gdpr.accountability": "met",
+   "hipaa.applicability": "not_applicable"
+  },
+  "look_for": [
+   "HIPAA is not routed and no Chapter V mechanism is needed: every party, person and copy is in Ireland.",
+   "Controller and processor derived from the provider handling the records only as the practice directs in writing, for no purposes of its own; the Art 28 agreement covers the required terms.",
+   "Art 6: a private practice is not a public authority, so 6(1)(e) is not the route; the care relationship with fee-paying patients points to 6(1)(b).",
+   "Art 9(2)(h) with Irish DPA 2018 s.52: processing by or under the responsibility of GPs registered with the Irish Medical Council.",
+   "Art 9(3) and the Medical Council Guide para. 25: the GPs' duty of confidentiality settles professional secrecy. Para. 25.3's consent requirement for disclosure 'to others' should not be applied to a processor acting only as the practice directs; that is processing under the practice's responsibility, not a disclosure.",
+   "National-law questions, if any, concern Ireland only.",
+   "DPIA, security, transparency and records are each backed by a supplied evidence item and should be met without asking for proof beyond the summaries."
+  ],
+  "note": "Author's expectation, not validated by a live assessment and not a legal compliance claim. Single-jurisdiction rework of scenario 19: all processing stays in Ireland so every national-law question falls within the Irish corpus. Tests the processor-versus-disclosure reading of Medical Council Guide para. 25."
+ }
+}

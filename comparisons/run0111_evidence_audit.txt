@@ -1,0 +1,335 @@
+RUN0111: EVIDENCE AUDIT
+Reviewed 7 October 2026
+
+The transfer is not approved or demonstrated compliant. needs_review is explained by unresolved
+alternative routes plus reference defects. The report understates explicit defects in the described
+arrangements and accepts an asserted waiver under a permissive prompt rule without supporting
+documents. Stronger evidence handling should distinguish assertions, actual documents, failed
+described routes, unestablished alternatives, and reference-check failures.
+
+SUGGESTED ANNOTATION FOR THE RESULT
+Do not proceed on the supplied record. The only described SCCs are unsigned, the recipient is stated
+not to participate in the DPF, and no alternative Chapter V route is established. Study consent is
+not established and no applicable Irish exception or Committee declaration is demonstrated. Ethics
+approval and an IRB waiver are requester assertions, not attached records. The waiver was accepted
+only under the prototype evidence policy and does not establish GDPR or Irish permission. Retain
+needs_review as the recorded operational label: additional routes and scope questions remain
+unresolved, and the saved report has reference defects. No completed unlawful transfer is
+established by this proposed-transfer record.
+
+WHAT THE SAVED RUN ACTUALLY CONTAINS
+20 findings: 18 insufficient_information, 2 satisfied_if_verified.
+15 main requirements: 14 undetermined, 1 met (GDPR applicability).
+0 registered evidence items, 0 attestations, 0 linked supporting-evidence entries.
+3 legacy arrangement assertions: ethics approval, IRB waiver, unsigned SCCs.
+4 recorded reference failures; 3 still reproduce in the current offline checker.
+10 successful model responses, 792.4 seconds. No model rerun was performed.
+
+HOW TO READ THE ANNOTATIONS
+Pointers refer to the original run0111.json. The accompanying JSON includes exact evidence
+excerpts/values for every annotation, all 15 requirement notes, source details and replay hashes.
+Observation describes the trace; critique is the audit judgment. Neither changes the saved run.
+
+A01. Why the final label is needs_review
+Observed: The supervisor itself selected needs_review. All 20 current findings are either
+insufficient_information (18) or satisfied_if_verified (2). It accepted all 20, including four with
+failed reference checks. The report repeats the supervisor decision and adds the four check
+messages.
+
+Assessment: This is a hold, not permission to transfer. It is also not a finding that the described
+arrangement complies. The final sentence saying there is no established adverse requirement
+compresses route-level failures into an overall unresolved label. Integrity failure and substantive
+uncertainty are independent reasons for a hold.
+
+Stronger explanation: No transfer should be approved on this record. No operative Chapter V route
+and no complete Irish research basis are established. Retain needs_review under the recorded
+decision policy, but name the failed described routes and the precise remaining alternatives
+separately.
+Trace pointers: /result/decision, /events/81/output/decision, /events/81/output/reasons/4, /result/case_record/checks/issues, /events/80/system
+
+
+A02. There is no documentary evidence, but there are requester assertions
+Observed: The legacy input has three arrangements: asserted ethics approval, asserted IRB waiver and
+an explicitly draft SCC. There are zero registered evidence items, zero attestations, zero
+evidence_ids on all 20 findings, and zero supporting_evidence entries on all 15 requirements. No
+approval letter, signed agreement, protocol, DPIA or waiver text is attached to this JSON.
+
+Assessment: An arrangement statement is evidence of what the requester says, not independent
+documentary corroboration. Legal citations establish rules, not whether these organisations
+complied. The requirements.evidence field contains requested evidence; evidence_status=none means no
+request was generated, not that the duty was evidenced or no evidence is needed.
+
+Stronger explanation: Evidence basis: requester narrative only. Ethics approval and waiver grant are
+accepted assumptions for this simulation. Documentary scope, contents, implementation and
+authenticity have not been checked.
+Trace pointers: /request/arrangements, /result/case_record/input/request/attestations, /result/requirements/10/supporting_evidence, /result/requirements/10/evidence_status, /result/requirements/4/evidence/0/description
+
+
+A03. The waiver was relaxed by supervisor instruction without new evidence
+Observed: The first HIPAA assessment requested complete waiver documentation. After the supervisor
+challenge, the waiver route changed to holds, its evidence requests disappeared, and six omitted
+documentation predicates became confirmations. The overall permission finding stayed
+insufficient_information because regulated-party and PHI scope remained unresolved. No new waiver
+document entered the record.
+
+Assessment: This is a prompt-policy choice, not stronger evidence. The policy was applied to a
+legacy arrangement assertion despite there being no registered evidence item to cite. HHS describes
+documented waiver approval and its required contents; assuming those contents from a one-line
+assertion is a simulation shortcut.
+
+Stronger explanation: Waiver approval is asserted. Its required documentation and coverage are
+unverified. Under this run's temporary policy the waiver route is provisionally accepted, but a
+documentary audit would keep those elements open. The assertion does not establish GDPR or Irish-law
+permission.
+Trace pointers: /events/27/output/findings/1/reasoning, /events/71/output/instruction, /result/findings/19/reasoning, /result/findings/19/condition_answers, /result/findings/19/confirmations, /events/76/system
+Source: HHS: HIPAA and Research, waiver documentation and permission routes
+https://www.hhs.gov/hipaa/for-professionals/special-topics/research/index.html
+
+
+A04. Unsigned SCCs are an explicit failed route, not merely missing information
+Observed: The finding correctly rejects reliance on the unsigned Module 1 and records the adequacy
+route as fails. It nevertheless makes the overall Article 46 route unknown because an unmentioned
+instrument could exist, and leaves unmet_fact_paths empty. Article 49 routes also remain
+unestablished.
+
+Assessment: The distinction between a failed described instrument and an unassessed alternative is
+legitimate, but the headline hides the former. The stronger factual reason for no DPF reliance is
+the explicit non-participation statement; non-profit status alone should not be the decisive
+explanation. No evidence of another instrument is supplied.
+
+Stronger explanation: The described SCC arrangement is not operative and DPF reliance is unavailable
+on the supplied non-participation fact. No alternative transfer route is established. Stop the
+proposed transfer pending an executed applicable safeguard or a justified derogation. A formal
+do_not_proceed-as-described label would additionally require an explicit policy treating the
+supplied arrangements as exhaustive, or closure of the remaining alternative routes.
+Trace pointers: /request/arrangements/2, /request/narrative, /result/findings/3/reasoning, /result/findings/3/condition_answers, /result/findings/3/unmet_fact_paths
+Source: European Commission: EU-US data transfers
+https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/eu-us-data-transfers_en
+Source: Legal texts actually supplied to this run
+
+
+A05. Irish research consent and exceptions needed a sharper route-by-route assessment
+Observed: The child recognises the amended Irish health-research consent requirement and refers
+generically to an exception or declaration. The described consent does not cover this study. No
+Committee declaration is supplied. Regulation 3A text was actually supplied inside S.I. 18/2021
+Regulation 5.
+
+Assessment: The report should not treat every possible exception as equally plausible. The supplied
+retrospective-chart-review exception is restricted in personnel and third-party disclosure and
+requires a written low-risk assessment; the proposed disclosure of pseudonymised data to a separate
+US university is not established under it. Pre-screening and emergency deferred consent also lack a
+demonstrated fit with the stated secondary genomic analysis. This does not prove that every possible
+alternative is absent.
+
+Stronger explanation: Study consent is not established and treatment consent is insufficient for the
+described research. Ethics approval and a US waiver do not establish an Irish consent exception or
+declaration. Specify the particular Irish route relied on, test its conditions against this
+transfer, and request the corresponding scoped record instead of leaving an unspecified exception
+open.
+Trace pointers: /request/narrative, /result/findings/11/reasoning, /result/findings/11/missing_information, /events/46/user, /events/46/user
+Source: Irish Department of Health: Amendments to Health Research Regulations
+https://www.gov.ie/en/department-of-health/publications/amendments-to-health-research-regulations/
+Source: Department of Health, HSE, HRB and HRCDC: January 2021 retrospective chart review guidance, slides 12-15
+https://hseresearch.ie/wp-content/uploads/2021/01/Guidance-on-Retrospective-chart-review-amenedment-to-teh-HRRegulations-Jan-2021.pdf
+Source: Legal texts actually supplied to this run
+
+
+A06. The public-interest recognition finding is more confident than its support
+Observed: The child marks the Article 49(4) legal-recognition limb holds, citing Irish Regulation 5
+and section 54. Its reasoning moves from public interest in research and the domestic consent-
+declaration process to recognition for international transfer. No case-specific declaration or
+transfer-necessity evidence is supplied.
+
+Assessment: That connection is not adequately established by the explanation. EDPB section 2.4
+requires a legal basis from which permission for such public-interest transfers can be deduced; a
+general public-interest objective alone is insufficient. This is a substantive criticism, not a
+failed string check. The parent still kept Chapter V unresolved, so the overstatement did not
+produce approval.
+
+Stronger explanation: Potential public-interest route identified, but the legal link to this
+category of international transfer and operation-specific necessity remain unestablished. Treat
+recognition as a reasoned legal question requiring support, not a cleared requirement merely because
+research can serve the public interest.
+Trace pointers: /result/findings/12/status, /result/findings/12/reasoning, /result/findings/12/condition_answers, /result/findings/12/confirmations, /result/findings/3/reasoning
+Source: EDPB Guidelines 2/2018, section 2.4, important public interest
+https://www.edpb.europa.eu/sites/default/files/files/file1/edpb_guidelines_2_2018_derogations_en.pdf
+Source: Legal texts actually supplied to this run
+
+
+A07. GDPR applicability is supported, but recipient obligations need separate scope
+Observed: The Irish sender and retained linking key support treating its disclosure as GDPR
+processing of personal data. That is the sole met main requirement, a finding of applicability
+rather than compliance. The recipient's independent GDPR territorial scope is expressly left open,
+while later findings demand an Article 6 basis for both controllers.
+
+Assessment: The analysis should identify whether a recipient duty arises directly under Article 3,
+through an applicable transfer arrangement, or only as an assumption. Receiving EU data does not by
+itself resolve direct territorial scope. Controller labels also do not establish joint control; an
+Article 26 arrangement or Article 28 contract is only relevant if the corresponding relationship is
+established.
+
+Stronger explanation: The Irish controller's processing and export are within the GDPR review.
+Assess its basis now. State the assumed recipient relationship and territorial scope before making a
+separate recipient Article 6 basis or role-specific contract a decisive missing predicate.
+Trace pointers: /result/findings/0/reasoning, /result/findings/0/confirmations, /result/findings/1/reasoning, /result/findings/4/reasoning, /request/sender/gdpr_role, /request/recipient/gdpr_role
+Source: Legal texts actually supplied to this run
+
+
+A08. HIPAA review should distinguish the Irish disclosure from US recipient use
+Observed: The input designates the Irish sender neither and the US recipient covered_entity. The
+specialist reopens both classifications and treats the Irish sender's regulated status as decisive
+to the permission finding. It also keeps PHI status unresolved rather than equating GDPR
+pseudonymisation with HIPAA de-identification.
+
+Assessment: Testing legal labels is defensible, but it should be explicit and consistent. On the
+supplied role assumption, the Irish sender's disclosure and the US covered entity's subsequent
+research use are different operations. An unregulated sender would make its HIPAA disclosure duty
+inapplicable, while leaving potential recipient duties. HIPAA uncertainty does not remove the
+independent GDPR hold.
+
+Stronger explanation: Separate actor/activity conclusions. State whether the declared roles are
+accepted provisionally or require defined supporting facts. Assess the recipient's research use on
+that basis, and do not let an unsubstantiated possible sender status replace the actual scope
+analysis.
+Trace pointers: /request/sender/hipaa_role, /request/recipient/hipaa_role, /result/findings/18/reasoning, /result/findings/19/reasoning, /result/findings/17/reasoning
+Source: HHS: Covered Entities and Business Associates
+https://www.hhs.gov/hipaa/for-professionals/covered-entities/index.html
+Source: HHS: HIPAA and Research, waiver documentation and permission routes
+https://www.hhs.gov/hipaa/for-professionals/special-topics/research/index.html
+
+
+A09. Several substantive gaps are real and should remain open
+Observed: The supplied labels public task and scientific research do not establish the hospital's
+legally conferred function, necessity, proportionality or research safeguards. Keeping those issues
+open is justified. Pseudonymisation is described, but it does not establish all minimisation and
+security measures or a completed DPIA.
+
+Assessment: The report should prioritise these dependencies and attach evidence requests. Its
+likely-large-scale DPIA reasoning is plausible but does not supply an automatic numeric threshold
+for 2,000 patients. The genomic data and operation should support a concrete high-risk analysis; the
+hypothetical Article 35(10) exemption is not established.
+
+Stronger explanation: Request the named public-task enabling provision and necessity explanation,
+research protocol and minimisation assessment, applicable Irish consent/declaration record, and DPIA
+or a substantiated exemption. Explain the legal predicate each would resolve.
+Trace pointers: /result/findings/9/missing_information, /result/findings/5/missing_information, /result/findings/2/missing_information, /result/findings/6/reasoning
+Source: Legal texts actually supplied to this run
+
+
+A10. Advisory is a reporting category, not evidence that standing duties are met
+Observed: Security, notices, rights, records and retention remain insufficient_information. The
+supervisor calls several findings advisory or activity-level and says they do not alone establish an
+adverse requirement. No control documentation or operating procedure is supplied.
+
+Assessment: This does not clear those duties. Missing descriptions do not prove a violation, but
+compliance has not been demonstrated either. In a genomic research disclosure, security and research
+safeguards can be material to permissibility even when the report catalogue calls one security row
+advisory.
+
+Stronger explanation: Standing-duty compliance is unassessed on this evidence. Identify which
+controls are necessary before this operation and keep them separate from later administrative
+confirmations. Do not present an advisory label as a legal exemption.
+Trace pointers: /result/findings/7/reasoning, /result/findings/8/reasoning, /result/findings/16/reasoning, /events/81/output/reasons/3
+Source: Legal texts actually supplied to this run
+
+
+A11. Four recorded reference defects have different causes
+Observed: Offline replay against the current checker reproduces three of the four defects. The GDPR
+section-54 quotation now passes because an existing punctuation-spacing fix handles the scraped
+newline before a comma. The child section-54 quotation skips paragraph (a) without marking the
+omission. Its DPIA fact quotation drops intervening words without an ellipsis. The additional-
+consent finding contains a malformed source ID.
+
+Assessment: The malformed ID does not establish missing law: inserted Regulation 3A is inside S.I.
+18/2021 Regulation 5, present in the child prompt and allowed source list. The remaining quote
+defects concern inaccurate excerpts, not proof that the underlying propositions are false. The saved
+run remains unchanged, including its historical four errors.
+
+Stronger explanation: Report one historical formatting false positive and three remaining reference
+defects. Correct the reference to the supplied amendment provision and use faithful quotations.
+These repairs alone would not establish missing transfer, research or waiver evidence.
+Trace pointers: /result/case_record/checks/issues, /result/findings/5/quote, /result/findings/10/quote, /result/findings/11/citations, /result/findings/13/facts, /events/46/user
+
+
+A12. The attempted repair did not update the child findings
+Observed: The supervisor asked GDPR to fix three child defects through parent question IDs. GDPR
+returned revised parent findings, but the current child findings retained their original IDs and
+defects. The trace contains only one Irish specialist response. The final supervisor acknowledges
+those defects and finishes anyway with a review hold.
+
+Assessment: A parent restatement did not repair the separately retained child records. This helps
+explain why reference failures survived an explicit repair instruction. It is not evidence that a
+second Irish assessment was attempted and failed.
+
+Stronger explanation: The requested child repairs remain outstanding. A future repair would need an
+actual child revision or another explicitly supported correction mechanism that preserves
+authorship. This audit does not modify the workflow or rerun agents.
+Trace pointers: /events/62/output/instruction, /events/62/output/instruction, /events/67/output/findings/1/question_ids, /result/findings/10/finding_id, /result/findings/11/finding_id, /result/findings/13/finding_id
+
+
+A13. Verified and complete do not measure evidential or legal sufficiency
+Observed: All three coverage records are complete, meaning all assigned question IDs were answered.
+Sixteen of twenty findings have verified=true in the saved run. The current check_finding
+implementation checks top-level facts, allowed citations, quotation presence, evidence-ID existence
+and dependency references, while preserving the specialist status.
+
+Assessment: Neither flag establishes document authenticity, that quoted law entails the conclusion,
+that every alternative was analysed, or that a control exists. For example, the public-interest
+inference and the assertion-based waiver both pass their recorded reference checks. Optional
+condition_answers are not exhaustively semantically validated.
+
+Stronger explanation: Read verified as reference checks passed and coverage complete as questions
+answered. Documentary substantiation and legal correctness need separate assessments. No numerical
+legal-accuracy claim can be derived from these flags.
+Trace pointers: /result/case_record/checks/coverage, /result/case_record/checks/complete, /result/findings/12/verified, /result/findings/19/verified, /result/findings/19/evidence_ids
+
+
+A14. The historical benchmark is useful context, not authoritative ground truth
+Observed: The authored expectation says not_compliant_as_described and asks for a GDPR/HIPAA
+conflict. The saved output uses a newer four-label decision scheme. It did delegate five Irish
+questions, identified research-consent issues, and recognised unsigned SCCs and lack of a DPF route.
+
+Assessment: Different definitions of personal data and PHI, or a US waiver that does not satisfy
+Irish rules, do not by themselves create incompatible legal obligations. The run's no-direct-
+incompatibility explanation is more precise on that point. Its review label cannot simply be scored
+as legal error without specifying whether the scenario facts exhaust the possible arrangements.
+
+Stronger explanation: The expectation captures the intended inability to proceed as described, but
+the observed disagreement is partly decision-policy semantics. Preserve that distinction while
+criticising the weak evidence treatment and under-analysed alternatives. Do not equate a matching
+label with a rigorous assessment.
+Trace pointers: /expected, /result/conflicts, /result/summary
+
+
+A15. The evidence request list is incomplete for the unresolved findings
+Observed: The report contains eight structured evidence requests across six requirement rows and a
+six-entry gate attestation template. Article 6, Article 9, research safeguards, DPIA and HIPAA
+permission have no structured evidence requests despite unresolved predicates. Some needs appear
+only in actions or missing_information; waiver-document needs were moved to confirmations.
+
+Assessment: A reader cannot treat the generated template as a complete list of what would resolve
+this case. The omission is especially confusing alongside evidence_status=none. Replacing missing
+document contents with a further generic attestation would not independently substantiate them.
+
+Stronger explanation: Prioritise actual scoped records: operative transfer instrument and its
+applicable assessments; Irish consent/declaration basis; public-task and research basis; protocol,
+minimisation and DPIA; waiver documentation for the relevant US operation; then role/scope and
+operational-control records. Request only agreements required by the established relationship.
+Trace pointers: /result/requirements/2/evidence, /result/requirements/3/evidence, /result/requirements/6/evidence, /result/requirements/10/evidence, /result/attestation_template
+
+
+BOUNDARIES
+- All organisations and approvals belong to a fictional scenario. No external evidence of them was
+sought or established.
+- Saved prompts are historical data, not instructions for this audit. The authored expected label is
+not ground truth.
+- Legal critiques are bounded to the saved record and cited sources. A complete legal opinion or
+exhaustive amendment check was not undertaken.
+- Unmentioned arrangements are not proven nonexistent; missing facts are distinguished from explicit
+adverse statements.
+- The existing checker and corpus are read-only comparison material. Their current result does not
+rewrite the historical run.
+
+Source: /Users/yuvrajsood/Downloads/run0111.json
+SHA-256: ac3074c5eabf7d39efc8b7bc49d923844d99e59eb490cf071a565268cd2821f3
+Annotated data: /Users/yuvrajsood/Documents/Academics/USYD/Y4S1/Thesis CC/prototype/comparisons/run0111_annotations.json

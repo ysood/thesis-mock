@@ -1,0 +1,117 @@
+{
+ "about": "Routing-only probes for the HIPAA rubric (reference/applicability/hipaa.md). Each case is a scenario plus optional text appended to request fields. 'expect' is the rubric author's expected routing, not a legal compliance claim. Cases marked 'plain:' avoid rubric vocabulary (no 'claims', 'health plan', 'business associate', 'covered'), in the everyday register of the ICGP GP data guideline v3 (Nov 2025) processor and insurer examples, to test judgement rather than term matching.",
+ "cases": [
+  {
+   "name": "19 base: IE GP to DE cloud",
+   "scenario": "tests/fixtures/19_ie_gp_practice_to_de_cloud_ehr_two_layer.json",
+   "expect": {
+    "GDPR": "in",
+    "HIPAA": "out"
+   }
+  },
+  {
+   "name": "19 + US backup storage only",
+   "scenario": "tests/fixtures/19_ie_gp_practice_to_de_cloud_ehr_two_layer.json",
+   "append": {
+    "/transfer/onward": "A second backup copy is stored by a US cloud storage company in Virginia."
+   },
+   "expect": {
+    "GDPR": "in",
+    "HIPAA": "out"
+   }
+  },
+  {
+   "name": "19 + practice bills US insurers",
+   "scenario": "tests/fixtures/19_ie_gp_practice_to_de_cloud_ehr_two_layer.json",
+   "append": {
+    "/organisations/0/description": "For visiting US patients, the practice submits claims electronically to their US health insurers and is paid by them."
+   },
+   "expect": {
+    "GDPR": "in",
+    "HIPAA": "in"
+   }
+  },
+  {
+   "name": "19 + processor serves US health plans",
+   "scenario": "tests/fixtures/19_ie_gp_practice_to_de_cloud_ehr_two_layer.json",
+   "append": {
+    "/organisations/1/description": "The provider also hosts member records for US health plans as their business associate."
+   },
+   "expect": {
+    "GDPR": "in",
+    "HIPAA": "in"
+   }
+  },
+  {
+   "name": "18: IE hospital to US teleradiology",
+   "scenario": "tests/fixtures/18_ie_hospital_to_us_teleradiology_two_layer.json",
+   "expect": {
+    "GDPR": "in",
+    "HIPAA": "in"
+   }
+  },
+  {
+   "name": "20: IE patient treated in New York",
+   "scenario": "tests/fixtures/20_ie_patient_treated_in_ny_gp_summary_two_layer.json",
+   "expect": {
+    "GDPR": "in",
+    "HIPAA": "in"
+   }
+  },
+  {
+   "name": "plain: US exchange students' insurer reimburses",
+   "scenario": "tests/fixtures/19_ie_gp_practice_to_de_cloud_ehr_two_layer.json",
+   "append": {
+    "/organisations/0/description": "A handful of patients are American exchange students; for them the receptionist uploads the visit invoice to their US insurance company's online portal and the company reimburses the practice."
+   },
+   "expect": {
+    "GDPR": "in",
+    "HIPAA": "in"
+   }
+  },
+  {
+   "name": "plain: host's other customers include Boston clinics",
+   "scenario": "tests/fixtures/19_ie_gp_practice_to_de_cloud_ehr_two_layer.json",
+   "append": {
+    "/organisations/1/description": "Its other customers include several clinics in Boston."
+   },
+   "expect": {
+    "GDPR": "in",
+    "HIPAA": "in"
+   }
+  },
+  {
+   "name": "plain: support engineers in Texas",
+   "scenario": "tests/fixtures/19_ie_gp_practice_to_de_cloud_ehr_two_layer.json",
+   "append": {
+    "/transfer/additional_info": "Out-of-hours support tickets are handled by the provider's engineering team in Austin, Texas, under the same agreement."
+   },
+   "expect": {
+    "GDPR": "in",
+    "HIPAA": "out"
+   }
+  },
+  {
+   "name": "plain: host owned by a Chicago company",
+   "scenario": "tests/fixtures/19_ie_gp_practice_to_de_cloud_ehr_two_layer.json",
+   "append": {
+    "/organisations/1/description": "The company is a subsidiary of a software group headquartered in Chicago."
+   },
+   "expect": {
+    "GDPR": "in",
+    "HIPAA": "out"
+   }
+  },
+  {
+   "name": "plain: some patients are US citizens paying privately",
+   "scenario": "tests/fixtures/19_ie_gp_practice_to_de_cloud_ehr_two_layer.json",
+   "append": {
+    "/organisations/0/description": "Some patients are US citizens living in Kilkenny who pay the practice's fees themselves."
+   },
+   "expect": {
+    "GDPR": "in",
+    "HIPAA": "out"
+   }
+  }
+ ]
+}

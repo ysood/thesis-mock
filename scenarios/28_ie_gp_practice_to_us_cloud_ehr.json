@@ -1,0 +1,156 @@
+{
+ "request": {
+  "organisations": [
+   {
+    "id": "org_practice",
+    "name": "Example Kilkenny Family Practice",
+    "country": "IE",
+    "sector": "private",
+    "kind": "health_care_provider",
+    "description": "Private general practice in Kilkenny with four GPs registered with the Irish Medical Council, two practice nurses and three administrative staff. Patients attend under the practice's terms of care and pay the practice directly. The practice does not submit electronic insurance claims, eligibility enquiries or payment-authorisation requests, itself or through another organisation. It has no US premises or staff. All staff sign confidentiality agreements."
+   },
+   {
+    "id": "org_ehr",
+    "name": "Example Clinicloud LLC",
+    "country": "US",
+    "sector": "private",
+    "kind": "cloud_provider",
+    "description": "New York company hosting electronic patient record software exclusively for private GP practices in Ireland. It supplies software hosting and technical support only, provides no clinical care, sells no health insurance, and does not process insurance claims or convert billing transactions for clients. It has no hospital, insurer or other service provider as a client, and receives these records directly from the Irish practice. It hosts data only in its own data centre in New York; all its support staff are in New York. It uses no subcontractors and has no establishment or staff outside the United States."
+   }
+  ],
+  "transfer": {
+   "title": "Irish GP practice plans to move its patient record to a New York-hosted cloud system",
+   "sender": "org_practice",
+   "recipient": "org_ehr",
+   "data": {
+    "description": "The practice's electronic patient record: names, dates of birth, consultation notes, diagnoses, prescriptions, test results and correspondence.",
+    "categories": [
+     "health"
+    ],
+    "identifiability": "identified",
+    "people": {
+     "where": [
+      "IE"
+     ],
+     "how_many": 6500,
+     "includes_children": false
+    }
+   },
+   "purpose": "treatment",
+   "purpose_description": "Hosting the record the GPs and nurses use to diagnose, treat and follow up the practice's patients, replacing the on-premises server.",
+   "necessity": "The record is the practice's working clinical file and must be available to clinicians at every consultation. The provider hosts and maintains it and does not use it for its own purposes.",
+   "frequency": "ongoing",
+   "locations": {
+    "stored_in": [
+     "US"
+    ],
+    "accessed_from": [
+     "IE",
+     "US"
+    ]
+   },
+   "retention": "The practice's retention schedule will apply. The proposed service terms say the provider will return the records and delete its copies within 30 days after the service ends.",
+   "onward": "None. The provider uses no subcontractors and does not share the records with other organisations.",
+   "method": "One-off encrypted migration from the old server, then daily use over TLS with per-user accounts.",
+   "additional_info": "Migration has not started and the practice has not sent any patient records to the provider. The proposed support workflow allows a provider employee to open a patient record only for a ticket raised by a practice GP, with each access logged. The hosting and support agreement is still a draft: neither party has signed it, accepted it electronically or agreed to it in another way. There are no other agreed service terms or agreements between the practice and the provider."
+  },
+  "evidence": [
+   {
+    "id": "ev_hosting_agreement",
+    "kind": "attestation_statement",
+    "title": "Hosting agreement preparation and acceptance status",
+    "between": [
+     "org_practice",
+     "org_ehr"
+    ],
+    "summary": "A draft hosting and support agreement has been circulated but remains under negotiation. It proposes written practice instructions, no provider use for its own purposes, staff confidentiality, encryption, access controls, backups, incident reporting, help with patient requests, prior permission for subcontractors, inspection by the practice, and return and deletion on exit. Neither party has signed the draft, accepted it electronically or otherwise agreed to its terms. The practice has not accepted any separate online terms, purchase order or other agreement. The provider has made the proposed service available for testing with dummy records only; the real records remain at the practice. Statement signed by the practice's senior partner and the provider's operations manager.",
+    "dated": "2026-07-14",
+    "valid_until": null
+   },
+   {
+    "id": "ev_migration_review",
+    "kind": "assessment_document",
+    "title": "Pre-migration privacy and operational risk assessment",
+    "between": [
+     "org_practice"
+    ],
+    "summary": "Completed before the planned migration. Examines moving the full record of about 6,500 patients from the practice's server to New York, access by New York support staff, unauthorised access, service outages and migration errors. Records planned controls: encryption, MFA, logged ticket-based support access, daily backups, tested restore, a comparison of record counts before and after migration, and return and deletion on exit. Assigns the practice manager to review access logs monthly and the senior partner to review service changes. The technical controls have been tested with dummy records; patient records have not yet been migrated.",
+    "dated": "2026-06-30",
+    "valid_until": null
+   },
+   {
+    "id": "ev_access_controls",
+    "kind": "policy_or_procedure",
+    "title": "Access and security procedure",
+    "between": [
+     "org_practice",
+     "org_ehr"
+    ],
+    "summary": "Named accounts with MFA for every clinician and staff member, role-based access, encryption in transit and at rest, access logs reviewed monthly by the practice manager, daily backups with a quarterly restore test. New York support staff use separate named accounts, with access enabled only for the record and duration of an approved support ticket. The provider's hosting is ISO/IEC 27001 certified.",
+    "dated": "2026-07-14",
+    "valid_until": null
+   },
+   {
+    "id": "ev_patient_information",
+    "kind": "consent_record",
+    "title": "Signed patient permissions, information notice and service inventory",
+    "between": [
+     "org_practice"
+    ],
+    "summary": "Every patient whose record is included has signed a permission form naming Example Clinicloud LLC, storage in New York and access by its support staff when a practice GP raises a ticket for a specified fault. The form explains what record fields are involved, the care and hosting purposes, the access limits and how permission can be withdrawn. The practice offered continued care using its local record system to anyone who declined, and no included patient has withdrawn permission. The accompanying notice names the practice and its privacy contact, describes retention periods, requests for copies, corrections or deletion, and complaints to the practice or Irish Data Protection Commission. The practice's service inventory lists the proposed hosting, provider, data categories, retention and security measures.",
+    "dated": "2026-07-14",
+    "valid_until": null
+   },
+   {
+    "id": "ev_clinical_workflow",
+    "kind": "attestation_statement",
+    "title": "Clinical supervision and support-access workflow",
+    "between": [
+     "org_practice",
+     "org_ehr"
+    ],
+    "summary": "The practice's GPs, each registered with the Irish Medical Council, decide what is recorded and how it is used for patient care. Nurses and administrative staff work under their direction and sign confidentiality agreements. The planned support workflow allows provider staff to open a patient record only when a practice GP raises a ticket naming the record and fault, and only for the time needed to fix it; the GP closes the ticket. Support staff employment contracts contain confidentiality clauses continuing after employment ends, with breaches treated as disciplinary offences. The workflow has been tested using dummy records. Statement signed by the practice's senior partner and the provider's operations manager; it records staffing and test procedures and does not accept the draft service terms.",
+    "dated": "2026-07-14",
+    "valid_until": null
+   },
+   {
+    "id": "ev_provider_registration",
+    "kind": "certification_record",
+    "title": "Provider participation-list extract",
+    "between": [
+     "org_ehr"
+    ],
+    "summary": "A participation-list extract checked on 14 July 2026 records Example Clinicloud LLC, the same New York legal entity named in this request, as an active participant in the EU-US Data Privacy Framework. The entry covers non-HR personal data received through its electronic patient-record hosting and support service, including patient health records, and names that service in the organisation's published participation policy. The listing is current, with no withdrawal or removal recorded.",
+    "dated": "2026-07-14",
+    "valid_until": null
+   }
+  ]
+ },
+ "expected": {
+  "decision": "do_not_proceed",
+  "requirement_statuses": {
+   "gdpr.applicability": "met",
+   "gdpr.role_arrangements": "unmet",
+   "gdpr.lawful_basis": "met",
+   "gdpr.special_category_condition": "met",
+   "gdpr.transfer_mechanism": "met",
+   "gdpr.research_safeguards": "not_applicable",
+   "gdpr.data_minimisation": "met",
+   "gdpr.dpia": "met",
+   "gdpr.security": "met",
+   "gdpr.accountability": "met",
+   "hipaa.applicability": "not_applicable"
+  },
+  "look_for": [
+   "Recognise a proposed Ireland-to-US transfer, including US storage and support access; no real records have yet been transferred.",
+   "Derive the practice and hosting provider roles from their described decisions and activities, rather than from supplied legal labels.",
+   "Assess the active, entity- and service-specific participation record as a transfer route without treating it as satisfying the separate role-arrangement requirement.",
+   "Distinguish an unaccepted draft from a binding agreement. Neither signature, electronic acceptance nor other agreement exists, and no alternative terms are accepted.",
+   "Do not treat signed factual attestations of staffing, agreement status or procedures as acceptance of the draft service terms.",
+   "Consider the supplied patient permissions when reviewing Irish professional confidentiality; do not invent an absent permission gap.",
+   "Exclude HIPAA based on the parties' activities and relationships, not US location alone.",
+   "Hold the proposed migration until the required binding role arrangement is in place; retain non-decisive confirmations separately."
+  ],
+  "note": "Simplified fictional adaptation of scenario 28. The intended decisive defect is an unaccepted hosting agreement, not a merely omitted attachment. Active framework participation and patient permissions are supplied as fictional case facts to remove the earlier transfer-route and confidentiality ambiguities. The provider participation record does not claim this invented company appears on a real public list. Model-visible request contains document contents and operational facts, with no article references, legal role labels, HIPAA applicability conclusions or instructions about the decision. These are author expectations, not validated by a live assessment or a legal compliance claim. The CLI and UI keep expected outside model input. The original request used in run281-run285 is archived as 28_ie_gp_practice_to_us_cloud_ehr_pre_simplification_2026-10-09.json."
+ }
+}

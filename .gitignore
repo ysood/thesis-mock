@@ -1,0 +1,11 @@
+.venv/
+.chroma/
+runs/
+.env
+__pycache__/
+AGENTS.md
+CHANGE_JOURNAL.md
+.DS_Store
+:memory:.ses
+.chroma-mock/
+.venv

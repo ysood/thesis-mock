@@ -1,0 +1,76 @@
+{
+  "request": {
+    "organisations": [
+      {
+        "id": "org_gp",
+        "name": "Example GP Practice, Dublin",
+        "country": "IE",
+        "sector": "private",
+        "kind": "health_care_provider",
+        "description": "Privately owned general practice in Dublin, not a public body. Holds the patient's GP record and is providing the requested summary to the treating emergency doctor."
+      },
+      {
+        "id": "org_hospital",
+        "name": "Example Hospital, New York",
+        "country": "US",
+        "sector": "unknown",
+        "kind": "health_care_provider",
+        "description": "Non-profit hospital in New York. Its emergency department is treating the patient for chest pain. The hospital is not in the EU-US Data Privacy Framework."
+      }
+    ],
+    "transfer": {
+      "title": "One patient's GP summary from a Dublin practice to a New York emergency department",
+      "sender": "org_gp",
+      "recipient": "org_hospital",
+      "data": {
+        "description": "A one-page GP summary for one named patient (name and date of birth): active problems, current medications and allergies. Nothing else from the GP record is sent.",
+        "categories": [
+          "health"
+        ],
+        "identifiability": "identified",
+        "people": {
+          "where": [
+            "IE"
+          ],
+          "how_many": 1,
+          "includes_children": null
+        }
+      },
+      "purpose": "treatment",
+      "purpose_description": "The emergency doctor treating the patient for chest pain needs their active problems, current medications and allergies before deciding on treatment.",
+      "necessity": "The emergency doctor treating the patient for chest pain needs their active problems, current medications and allergies before deciding on treatment.",
+      "frequency": "one_off",
+      "locations": {
+        "stored_in": [],
+        "accessed_from": []
+      },
+      "retention": "",
+      "onward": "None. The summary is filed in the patient's record for this hospital visit.",
+      "method": "Sent once as an encrypted email attachment to the treating doctor's hospital email address; the password is given by phone.",
+      "additional_info": "An Irish resident on holiday in New York is admitted to the hospital's emergency department with chest pain. The treating doctor emailed the patient's Dublin GP on hospital letterhead asking for a summary. The practice confirmed the doctor through the hospital switchboard and had the patient sign the practice's consent form, sent and returned by email, before sending anything. This is a one-off transfer. The Dublin practice is a privately owned general practice, not a public body. The hospital is a non-profit and is not in the EU-US Data Privacy Framework.\nThis transfer forms part of the GP practice's existing processing activity."
+    },
+    "evidence": [
+      {
+        "id": "ev_consent",
+        "kind": "consent_record",
+        "title": "Signed consent form for this one transfer",
+        "between": [
+          "org_gp",
+          "org_hospital"
+        ],
+        "summary": "The patient is conscious and able to decide. They signed the practice's one-page consent form for this one transfer. It names the New York hospital, lists what will be sent, and explains that the hospital is outside the EEA, that no adequacy decision or appropriate safeguards cover the transfer, and what the possible risks are. The signed form is kept in the GP record.",
+        "dated": "",
+        "valid_until": null
+      }
+    ]
+  },
+  "expected": {
+    "note": "Schema-conversion comparison case. No new expected decision is assigned. The original scenario produced proceed_subject_to_conditions in two saved v5.5 runs, but this input withholds their declared legal classifications. Compare requirement statuses and dependencies, not only the final decision."
+  },
+  "provenance": {
+    "source_scenario": "scenarios/13_ie_patient_treated_in_ny_gp_summary.json",
+    "source_sha256": "ad6cc64c1310b592dfe03dd54b60f6e6faccb2f25fff589711ed0cb92dff0fac",
+    "comparison_record": "comparisons/scenario13_to20.json",
+    "note": "Fictional case adapted mechanically from scenario 13. No new operational facts, legal-role evidence, transaction facts, security documents or dates were added. Metadata and expectations are outside request."
+  }
+}

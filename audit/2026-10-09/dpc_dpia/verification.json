@@ -1,0 +1,99 @@
+{
+  "retrieved_on": "2026-10-09",
+  "publisher": "Data Protection Commission, Ireland",
+  "document_date": "2018-11-15",
+  "source_url": "https://dataprotection.ie/sites/default/files/uploads/2018-11/Data-Protection-Impact-Assessment.pdf",
+  "source_pdf": "source.pdf",
+  "source_sha256": "6c920638887f7f6401a3cd9ba315c91c731c943b3631d271a43cd884c3005f34",
+  "pdf_pages": 6,
+  "markdown_file": "../../../laws/ie_dpc_dpia_list_2018.md",
+  "markdown_sha256": "db33035190f082cbbe48b8f798a0230ac973841596d829c5233bb400713cff25",
+  "normalized_body_words": 1830,
+  "complete_source_body_matches": true,
+  "citation_ids": [
+    "IE DPC DPIA List 2018 Introduction",
+    "IE DPC DPIA List 2018 Required",
+    "IE DPC DPIA List 2018 List",
+    "IE DPC DPIA List 2018 Factors",
+    "IE DPC DPIA List 2018 References",
+    "IE DPC DPIA List 2018 Exemptions"
+  ],
+  "ten_list_entries_preserved": true,
+  "all_original_embedded_links_preserved": true,
+  "visual_review_pdf_pages": [
+    2,
+    4,
+    6
+  ],
+  "runtime_registered": true,
+  "limits": "Dated publisher snapshot. Does not contain a separate Article 35(5) whitelist or supply Irish medical-record retention law. Local retrieval verified; no live assessment or paid model calls.",
+  "runtime_verification": {
+    "registered_regime": "IE",
+    "all_six_sections_parsed": true,
+    "editorial_metadata_excluded": true,
+    "official_source_url_preserved": true,
+    "gdpr_article_35_link_present": true,
+    "indexed_dpc_chunks": 16,
+    "index_chunk_fingerprint": "40b21409b4da26fd050edae95b1c8530e752722e60b7d9aa22c0227da3a27c1c",
+    "retrieval_checks": [
+      {
+        "query": "Irish DPC Article 35(4) list processing operations mandatory DPIA documented screening high risk",
+        "hits": [
+          {
+            "id": "IE DPC DPIA List 2018 Required",
+            "distance": 0.515138
+          },
+          {
+            "id": "IE DPC DPIA List 2018 Introduction",
+            "distance": 0.570725
+          },
+          {
+            "id": "IE DPC DPIA List 2018 List",
+            "distance": 0.575514
+          },
+          {
+            "id": "IE DPC DPIA List 2018 Factors",
+            "distance": 0.632324
+          },
+          {
+            "id": "IE DPC DPIA List 2018 References",
+            "distance": 0.657647
+          },
+          {
+            "id": "IE DPC DPIA List 2018 Exemptions",
+            "distance": 0.733961
+          }
+        ]
+      },
+      {
+        "query": "DPIA exemptions individual physician patients small scale Article 35(5)",
+        "hits": [
+          {
+            "id": "IE DPC DPIA List 2018 Exemptions",
+            "distance": 0.63242
+          },
+          {
+            "id": "IE DPC DPIA List 2018 Factors",
+            "distance": 0.761249
+          },
+          {
+            "id": "IE DPC DPIA List 2018 Required",
+            "distance": 0.822508
+          },
+          {
+            "id": "IE DPC DPIA List 2018 List",
+            "distance": 0.844157
+          },
+          {
+            "id": "IE DPC DPIA List 2018 Introduction",
+            "distance": 0.910623
+          },
+          {
+            "id": "IE DPC DPIA List 2018 References",
+            "distance": 1.061319
+          }
+        ]
+      }
+    ]
+  }
+}

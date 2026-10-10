@@ -1,0 +1,71 @@
+{
+  "organisations": [
+    {
+      "id": "org_practice",
+      "name": "Harbourside Family Practice",
+      "jurisdiction": "XV",
+      "kind": "health_care_provider",
+      "description": "Private general practice in Valdora with four doctors and two nurses, all registered with the Valdora Health Professions Board. Patients pay the practice directly under its terms of care. The practice does not bill any insurer."
+    },
+    {
+      "id": "org_host",
+      "name": "Northgate Cloud Inc.",
+      "jurisdiction": "XC",
+      "kind": "cloud_provider",
+      "description": "Company incorporated in Corvel that hosts electronic patient record systems for clinics in several countries, on servers in Corvel. It does not use hosted records for its own purposes. It holds an active certification under the Corvel Trusted Recipient Scheme."
+    }
+  ],
+  "transfer": {
+    "title": "Valdoran GP practice moves its patient record system to a Corvel-hosted cloud service",
+    "sender": "org_practice",
+    "recipient": "org_host",
+    "data": {
+      "description": "The practice's electronic patient record: names, dates of birth, contact details, consultation notes, diagnoses, prescriptions, test results and correspondence.",
+      "categories": ["health", "identity", "contact"],
+      "identifiability": "identified",
+      "people": {"where": ["XV"], "how_many": 3200, "includes_children": true}
+    },
+    "purpose": "treatment",
+    "purpose_description": "Hosting the record the doctors and nurses use to diagnose, treat and follow up the practice's patients, replacing the practice's on-premises server.",
+    "frequency": "ongoing",
+    "locations": {"stored_in": ["XC"], "accessed_from": ["XV", "XC"]},
+    "retention": "The practice's retention schedule applies. The signed service agreement says that when the service ends Northgate will delete all records within 30 days.",
+    "onward": "None. Northgate uses no subcontractors.",
+    "method": "One-off encrypted migration from the old server, then daily use over an encrypted connection. Records are encrypted at rest with keys generated and held by Northgate in Corvel. Northgate support engineers in Corvel can open records when the practice raises a support ticket.",
+    "additional_info": "Migration is planned for next month. The practice has not prepared an impact assessment. The practice has not contacted any authority about the move."
+  },
+  "evidence": [
+    {
+      "id": "ev_agreement",
+      "kind": "executed_agreement",
+      "title": "Hosting and processing agreement",
+      "between": ["org_practice", "org_host"],
+      "summary": "Signed by both parties. Sets out the subject-matter, duration, nature and purpose of the hosting, the types of information and the categories of patients. Northgate acts only on the practice's documented instructions, including about where records are stored and who may access them; its staff are bound by confidentiality; it applies the security measures in the schedule; it may not engage another provider without the practice's written consent; it assists the practice and makes compliance information available for audit. On termination Northgate deletes all records within 30 days.",
+      "dated": "2026-09-14"
+    },
+    {
+      "id": "ev_clauses",
+      "kind": "executed_agreement",
+      "title": "Approved transfer clauses",
+      "between": ["org_practice", "org_host"],
+      "summary": "The transfer clauses approved by the Commission, executed without modification by the practice as exporter and Northgate as recipient.",
+      "dated": "2026-09-14"
+    },
+    {
+      "id": "ev_certificate",
+      "kind": "certification_record",
+      "title": "Corvel Trusted Recipient Scheme certificate",
+      "between": ["org_host"],
+      "summary": "Northgate Cloud Inc. holds an active certification under the Corvel Trusted Recipient Scheme, valid until 2027-12-31, covering hosting services.",
+      "dated": "2026-01-10"
+    },
+    {
+      "id": "ev_notice",
+      "kind": "policy_or_procedure",
+      "title": "Patient information notice",
+      "between": ["org_practice"],
+      "summary": "Tells patients who the practice is, why it holds their records, that its legal basis is the care relationship with them, who receives records, how long they are kept and their rights. It says records will be hosted by Northgate Cloud Inc. in the Republic of Corvel under approved transfer clauses.",
+      "dated": "2026-09-20"
+    }
+  ]
+}

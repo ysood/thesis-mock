@@ -1,0 +1,10 @@
+{
+  "note": "Fictional jurisdictions for controlled experiments. Codes use ISO 3166-1 user-assigned range (X*) so they never collide with real countries.",
+  "jurisdictions": [
+    {"code": "XU", "name": "Union of Aster", "kind": "union"},
+    {"code": "XV", "name": "Republic of Valdora", "kind": "state", "member_of": "XU"},
+    {"code": "XN", "name": "Kingdom of Nerin", "kind": "state", "member_of": "XU"},
+    {"code": "XC", "name": "Republic of Corvel", "kind": "state"}
+  ],
+  "corpora": ["aster", "corvel", "valdora"]
+}

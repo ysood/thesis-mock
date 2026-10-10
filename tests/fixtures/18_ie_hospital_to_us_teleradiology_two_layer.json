@@ -1,0 +1,101 @@
+{
+  "request": {
+    "organisations": [
+      {
+        "id": "org_hospital",
+        "name": "Example Galway University Hospital",
+        "country": "IE",
+        "sector": "public",
+        "kind": "health_care_provider",
+        "description": "Acute public hospital operated by the HSE in Galway. Diagnosis and treatment are delivered by registered consultants, doctors and nurses; administrative staff sign confidentiality agreements. No US operations."
+      },
+      {
+        "id": "org_telerad",
+        "name": "Example Teleradiology Inc.",
+        "country": "US",
+        "sector": "private",
+        "kind": "company",
+        "description": "Delaware company providing remote radiology reporting to hospitals. Reports are written by consultant radiologists registered with the Irish Medical Council and working from the US. It does not bill US health plans and has no other relationship with the hospital's patients."
+      }
+    ],
+    "transfer": {
+      "title": "Hospital sends overnight scans to a US teleradiology service for second reads",
+      "sender": "org_hospital",
+      "recipient": "org_telerad",
+      "data": {
+        "description": "CT and MRI images with the radiology request: patient name, date of birth, hospital number and the clinical question.",
+        "categories": ["health"],
+        "identifiability": "identified",
+        "people": {"where": ["IE"], "how_many": 300, "includes_children": true}
+      },
+      "purpose": "treatment",
+      "purpose_description": "Out-of-hours diagnostic reporting; reports return to the treating team in Galway the same night.",
+      "necessity": "Radiologists need the images, the clinical question and the identifiers to match reports to the right patient; no other record fields are sent.",
+      "frequency": "ongoing",
+      "locations": {"stored_in": ["US"], "accessed_from": ["US"]},
+      "retention": "Images are deleted from the company's systems 30 days after the report is issued.",
+      "onward": "No sub-processors without the hospital's prior written authorisation.",
+      "method": "Encrypted image transfer over a dedicated VPN into the company's US data centre.",
+      "additional_info": "About 300 scans a month, a small share of which concern patients under 18."
+    },
+    "evidence": [
+      {
+        "id": "ev_dpa",
+        "kind": "executed_agreement",
+        "title": "Data processing agreement (Art 28)",
+        "between": ["org_hospital", "org_telerad"],
+        "summary": "Company processes only on the hospital's documented instructions; confidentiality of personnel, Art 32 security, prior written authorisation for sub-processors, assistance with rights and DPIAs, deletion after 30 days, audits.",
+        "dated": "2026-03-02",
+        "valid_until": null
+      },
+      {
+        "id": "ev_dpf",
+        "kind": "certification_record",
+        "title": "EU-U.S. Data Privacy Framework listing",
+        "between": ["org_telerad"],
+        "summary": "Active listing covering non-HR personal data, including health data received from EU customers.",
+        "dated": "2026-02-14",
+        "valid_until": "2027-02-14"
+      },
+      {
+        "id": "ev_dpia",
+        "kind": "assessment_document",
+        "title": "DPIA for out-of-hours teleradiology",
+        "between": ["org_hospital"],
+        "summary": "Assesses identified health data of about 3,600 patients a year, including children, sent to the US; risks of interception, misidentification and US government access; measures: VPN, encryption, access logging, 30-day deletion, DPF reliance. Residual risk assessed as acceptable; DPO consulted.",
+        "dated": "2026-02-20",
+        "valid_until": null
+      },
+      {
+        "id": "ev_security",
+        "kind": "policy_or_procedure",
+        "title": "Teleradiology security and access procedure",
+        "between": ["org_hospital", "org_telerad"],
+        "summary": "Named-radiologist accounts with MFA, access logging reviewed monthly, encryption in transit and at rest, annual penetration test.",
+        "dated": "2026-03-02",
+        "valid_until": null
+      },
+      {
+        "id": "ev_responsibility",
+        "kind": "attestation_statement",
+        "title": "Clinical responsibility for reporting",
+        "between": ["org_hospital", "org_telerad"],
+        "summary": "All reporting is performed by consultant radiologists registered with the Irish Medical Council, under the clinical governance of the hospital's radiology department. Signed by the Clinical Director of Radiology.",
+        "dated": "2026-03-05",
+        "valid_until": null
+      }
+    ]
+  },
+  "expected": {
+    "decision": "proceed_subject_to_conditions",
+    "look_for": [
+      "GDPR applies; HIPAA is not engaged, derived from the descriptions (neither party is a US covered entity or acts for one), not from declared roles.",
+      "Controller and processor are derived from 'processes only on the hospital's documented instructions'.",
+      "The transfer relies on the recipient's in-scope, in-date DPF listing.",
+      "The Art 9(2)(h) treatment route with Irish s.52 practitioner responsibility, supported by the clinical-responsibility attestation.",
+      "A DPIA is in place and covers children and US access.",
+      "Transparency and records of processing have no evidence: they stay outstanding, not failed."
+    ],
+    "note": "Author's expectation in the two-layer input shape, not validated by a live assessment and not a legal compliance claim."
+  }
+}

@@ -1,0 +1,4493 @@
+{
+  "added_nodes": [
+    {
+      "id": "gdpr.cond.art9_4_national_conditions",
+      "kind": "substantive",
+      "regime": "GDPR",
+      "statement": "Any additional Member State conditions applicable to this genetic, biometric or health-data processing are satisfied, regardless of which Art. 9(2) route is used; identify applicable law or establish that no additional condition applies.",
+      "sources": [
+        {
+          "provision": "GDPR Art. 9",
+          "pinpoint": "9(4)",
+          "text": "Member States may maintain or introduce further conditions, including limitations, with regard to the processing of genetic data, biometric data or data concerning health"
+        }
+      ],
+      "opening": {
+        "provision": "GDPR Art. 9",
+        "pinpoint": "9(4)",
+        "text": "Member States may maintain or introduce further conditions, including limitations, with regard to the processing of genetic data, biometric data or data concerning health"
+      },
+      "opening_kind": "additional",
+      "evidence": [
+        "legal_basis_record"
+      ]
+    },
+    {
+      "id": "gdpr.cond.consent_cannot_lift_prohibition",
+      "kind": "scope",
+      "regime": "GDPR",
+      "statement": "Applicable Union or Member State law provides that consent cannot lift the Art. 9(1) prohibition for this processing.",
+      "sources": [
+        {
+          "provision": "GDPR Art. 9",
+          "pinpoint": "9(2)(a)",
+          "text": "(a) the data subject has given explicit consent to the processing of those personal data for one or more specified purposes, except where Union or Member State law provide that the prohibition referred to in paragraph 1 may not be lifted by the data subject;"
+        }
+      ]
+    },
+    {
+      "id": "gdpr.cond.dpia_statutory_exemption",
+      "kind": "scope",
+      "regime": "GDPR",
+      "statement": "Every Art. 35(10) condition holds: Art. 6(1)(c)/(e) legal basis regulates this operation, a DPIA formed part of adopting that basis, and Member State law does not require a further prior assessment.",
+      "sources": [
+        {
+          "provision": "GDPR Art. 35",
+          "pinpoint": "35(10)",
+          "text": "10. Where processing pursuant to point (c) or (e) of Article 6(1) has a legal basis in Union law or in the law of the Member State to which the controller is subject, that law regulates the specific processing operation or set of operations in question, and a data protection impact assessment has already been carried out as part of a general impact assessment in the context of the adoption of that legal basis, paragraphs 1 to 7 shall not apply unless Member States deem it to be necessary to carry out such an assessment prior to processing activities."
+        }
+      ],
+      "evidence": [
+        "assessment_document",
+        "legal_basis_record"
+      ]
+    },
+    {
+      "id": "hipaa.cond.business_associate_permission",
+      "kind": "substantive",
+      "regime": "HIPAA",
+      "statement": "The business associate's use/disclosure is permitted or required by its governing contract/arrangement or required by law under 164.502(a)(3), complies with applicable 164.504(e) limits and required disclosures under (a)(4), and is not otherwise prohibited.",
+      "sources": [
+        {
+          "provision": "45 CFR 164.502(a)",
+          "pinpoint": "164.502(a)(3)",
+          "text": "(3) Business associates: Permitted uses and disclosures. A business associate may use or disclose protected health information only as permitted or required by its business associate contract or other arrangement pursuant to § 164.504(e) or as required by law. The business associate may not use or disclose protected health information in a manner that would violate the requirements of this subpart, if done by the covered entity, except for the purposes specified under § 164.504(e)(2)(i)(A) or (B) if such uses or disclosures are permitted by its contract or other arrangement."
+        }
+      ],
+      "scoped_by": [
+        "hipaa.cond.sender_business_associate"
+      ],
+      "evidence": [
+        "executed_agreement",
+        "legal_basis_record"
+      ]
+    },
+    {
+      "id": "hipaa.cond.disclosure_required_by_law",
+      "kind": "scope",
+      "regime": "HIPAA",
+      "statement": "The use or disclosure is required by law as described by 164.512(a); it is limited to the relevant requirements of that law.",
+      "sources": [
+        {
+          "provision": "45 CFR 164.502(b)",
+          "pinpoint": "164.502(b)(2)(v)",
+          "text": "(v) Uses or disclosures that are required by law, as described by § 164.512(a); and"
+        }
+      ]
+    },
+    {
+      "id": "hipaa.cond.disclosure_required_for_compliance",
+      "kind": "scope",
+      "regime": "HIPAA",
+      "statement": "The use or disclosure is required for compliance with applicable requirements of this subchapter.",
+      "sources": [
+        {
+          "provision": "45 CFR 164.502(b)",
+          "pinpoint": "164.502(b)(2)(vi)",
+          "text": "(vi) Uses or disclosures that are required for compliance with applicable requirements of this subchapter."
+        }
+      ]
+    },
+    {
+      "id": "hipaa.cond.disclosure_to_individual",
+      "kind": "scope",
+      "regime": "HIPAA",
+      "statement": "The use or disclosure is made to the individual who is the subject of the PHI.",
+      "sources": [
+        {
+          "provision": "45 CFR 164.502(b)",
+          "pinpoint": "164.502(b)(2)(ii)",
+          "text": "(ii) Uses or disclosures made to the individual, as permitted under paragraph (a)(1)(i) of this section or as required by paragraph (a)(2)(i) of this section;"
+        }
+      ]
+    },
+    {
+      "id": "hipaa.cond.disclosure_to_secretary",
+      "kind": "scope",
+      "regime": "HIPAA",
+      "statement": "The disclosure is to the Secretary in accordance with subpart C of part 160.",
+      "sources": [
+        {
+          "provision": "45 CFR 164.502(b)",
+          "pinpoint": "164.502(b)(2)(iv)",
+          "text": "(iv) Disclosures made to the Secretary in accordance with subpart C of part 160 of this subchapter;"
+        }
+      ]
+    },
+    {
+      "id": "hipaa.cond.disclosure_under_authorization",
+      "kind": "scope",
+      "regime": "HIPAA",
+      "statement": "The use or disclosure is made pursuant to a valid authorization under 164.508, with its required contents, scope and validity conditions.",
+      "sources": [
+        {
+          "provision": "45 CFR 164.502(b)",
+          "pinpoint": "164.502(b)(2)(iii)",
+          "text": "(iii) Uses or disclosures made pursuant to an authorization under § 164.508;"
+        }
+      ]
+    },
+    {
+      "id": "hipaa.cond.electronic_phi",
+      "kind": "scope",
+      "regime": "HIPAA",
+      "statement": "The relevant processing involves electronic protected health information of a covered entity.",
+      "sources": [
+        {
+          "provision": "45 CFR 164.302",
+          "pinpoint": "164.302",
+          "text": "A covered entity or business associate must comply with the applicable standards, implementation specifications, and requirements of this subpart with respect to electronic protected health information of a covered entity."
+        }
+      ]
+    },
+    {
+      "id": "hipaa.cond.recipient_ba_safeguards",
+      "kind": "substantive",
+      "regime": "HIPAA",
+      "statement": "The recipient business associate complies with its applicable contract/arrangement safeguarding duties under 164.504(e), including preventing uses/disclosures outside the agreement and applicable Security Rule duties.",
+      "sources": [
+        {
+          "provision": "45 CFR 164.504(e)",
+          "pinpoint": "164.504(e)(2)(ii)(B)",
+          "text": "(B) Use appropriate safeguards and comply, where applicable, with subpart C of this part with respect to electronic protected health information, to prevent use or disclosure of the information other than as provided for by its contract;"
+        }
+      ],
+      "scoped_by": [
+        "hipaa.cond.recipient_business_associate"
+      ],
+      "evidence": [
+        "executed_agreement",
+        "policy_or_procedure"
+      ]
+    },
+    {
+      "id": "hipaa.cond.recipient_business_associate",
+      "kind": "scope",
+      "regime": "HIPAA",
+      "statement": "The recipient acts as a business associate for this PHI.",
+      "sources": [
+        {
+          "provision": "45 CFR 164.504(e)",
+          "pinpoint": "164.504(e)(2)(ii)",
+          "text": "(ii) Provide that the business associate will:"
+        }
+      ]
+    },
+    {
+      "id": "hipaa.cond.recipient_covered_entity",
+      "kind": "scope",
+      "regime": "HIPAA",
+      "statement": "The recipient acts as a covered entity for this PHI.",
+      "sources": [
+        {
+          "provision": "45 CFR 164.530(c)",
+          "pinpoint": "164.530(c)(1)",
+          "text": "(c)(1) Standard: Safeguards. A covered entity must have in place appropriate administrative, technical, and physical safeguards to protect the privacy of protected health information."
+        }
+      ]
+    },
+    {
+      "id": "hipaa.cond.sender_business_associate",
+      "kind": "scope",
+      "regime": "HIPAA",
+      "statement": "The sender acts as a business associate for this use/disclosure.",
+      "sources": [
+        {
+          "provision": "45 CFR 164.502(a)",
+          "pinpoint": "164.502(a)(3)",
+          "text": "(3) Business associates: Permitted uses and disclosures. A business associate may use or disclose protected health information only as permitted or required by its business associate contract or other arrangement pursuant to § 164.504(e) or as required by law. The business associate may not use or disclose protected health information in a manner that would violate the requirements of this subpart, if done by the covered entity, except for the purposes specified under § 164.504(e)(2)(i)(A) or (B) if such uses or disclosures are permitted by its contract or other arrangement."
+        }
+      ]
+    },
+    {
+      "id": "hipaa.cond.sender_covered_entity",
+      "kind": "scope",
+      "regime": "HIPAA",
+      "statement": "The sender acts as a covered entity for this use/disclosure.",
+      "sources": [
+        {
+          "provision": "45 CFR 164.502(a)",
+          "pinpoint": "164.502(a)(1)",
+          "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+        }
+      ]
+    },
+    {
+      "id": "hipaa.route.business_associate_authority",
+      "label": "Business-associate contractual or statutory authority",
+      "statement": "The sender is acting as a business associate. Its separate business-associate permission condition must also be met.",
+      "sources": [
+        {
+          "provision": "45 CFR 164.502(a)",
+          "pinpoint": "164.502(a)(3)",
+          "text": "(3) Business associates: Permitted uses and disclosures. A business associate may use or disclose protected health information only as permitted or required by its business associate contract or other arrangement pursuant to § 164.504(e) or as required by law. The business associate may not use or disclose protected health information in a manner that would violate the requirements of this subpart, if done by the covered entity, except for the purposes specified under § 164.504(e)(2)(i)(A) or (B) if such uses or disclosures are permitted by its contract or other arrangement."
+        }
+      ],
+      "scoped_by": [
+        "hipaa.cond.sender_business_associate"
+      ]
+    },
+    {
+      "id": "ie.cond.health_care_necessary",
+      "kind": "substantive",
+      "regime": "IE",
+      "statement": "This processing is necessary for one of the medical, occupational-health, health-care, treatment, social-care or systems/services purposes in s. 52(1).",
+      "sources": [
+        {
+          "provision": "IE DPA 2018 s. 52",
+          "pinpoint": "s. 52",
+          "text": "52. (1) Subject to subsection (2) and to suitable and specific measures being taken to safeguard the fundamental rights and freedoms of data subjects, the processing of special categories of personal data shall be lawful where it is necessary—"
+        }
+      ],
+      "evidence": [
+        "legal_basis_record"
+      ]
+    },
+    {
+      "id": "ie.cond.public_health_necessary",
+      "kind": "substantive",
+      "regime": "IE",
+      "statement": "This processing is necessary for public-interest reasons in public health under s. 53, with the relevant need and safeguards established.",
+      "sources": [
+        {
+          "provision": "IE DPA 2018 s. 53",
+          "pinpoint": "s. 53",
+          "text": "53. Subject to suitable and specific measures to safeguard the fundamental rights and freedoms of data subjects, the processing of special categories of personal data shall be lawful where it is necessary for public interest reasons in the area of public health including—"
+        }
+      ],
+      "evidence": [
+        "legal_basis_record"
+      ]
+    },
+    {
+      "id": "ie.cond.research_necessary_proportionate",
+      "kind": "substantive",
+      "regime": "IE",
+      "statement": "The special-category processing is necessary and proportionate for archiving in the public interest, scientific/historical research or statistical purposes under s. 54.",
+      "sources": [
+        {
+          "provision": "IE DPA 2018 s. 54",
+          "pinpoint": "s. 54",
+          "text": ", the processing of special categories of personal data is lawful where such processing is necessary and proportionate for—"
+        }
+      ],
+      "evidence": [
+        "legal_basis_record"
+      ]
+    },
+    {
+      "id": "ie.cond.section42_safeguards",
+      "kind": "substantive",
+      "regime": "IE",
+      "statement": "The s. 42 requirements hold: suitable and specific measures, Art. 89 compliance, data minimisation, and non-identifying processing whenever it can fulfil the purpose.",
+      "sources": [
+        {
+          "provision": "IE DPA 2018 s. 42",
+          "pinpoint": "s. 42(1)",
+          "text": "42. (1) Subject to suitable and specific measures being taken to safeguard the fundamental rights and freedoms of data subjects, personal data may be processed, in accordance with Article 89, for—"
+        }
+      ],
+      "evidence": [
+        "policy_or_procedure",
+        "data_specification"
+      ]
+    },
+    {
+      "id": "ie.research_basis",
+      "regime": "IE",
+      "role": "national",
+      "statement": "DPA 2018 s. 54, subject to s. 42, supplies a basis for necessary and proportionate special-category research, archiving and statistical processing. Health-research measures apply additionally where their scope is met.",
+      "sources": [
+        {
+          "provision": "IE DPA 2018 s. 54",
+          "pinpoint": "s. 54",
+          "text": ", the processing of special categories of personal data is lawful where such processing is necessary and proportionate for—"
+        },
+        {
+          "provision": "IE DPA 2018 s. 42",
+          "pinpoint": "s. 42(1)",
+          "text": "42. (1) Subject to suitable and specific measures being taken to safeguard the fundamental rights and freedoms of data subjects, personal data may be processed, in accordance with Article 89, for—"
+        }
+      ],
+      "implements": [
+        "gdpr.cond.art9_2_j_basis_in_law"
+      ],
+      "requires": [
+        "ie.cond.research_necessary_proportionate",
+        "ie.cond.section42_safeguards"
+      ]
+    }
+  ],
+  "removed_nodes": [],
+  "changed_nodes": [
+    {
+      "id": "gdpr.applicability",
+      "fields": {
+        "routes": {
+          "before": {
+            "closed": true,
+            "basis": {
+              "provision": "GDPR Art. 3",
+              "pinpoint": "3(1)-(3)",
+              "text": "This Regulation applies to the processing of personal data in the context of the activities of an establishment"
+            },
+            "items": [
+              {
+                "id": "gdpr.route.art3_1_establishment",
+                "label": "Establishment in the Union",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 3",
+                    "pinpoint": "3(1)",
+                    "text": "in the context of the activities of an establishment of a controller or a processor in the Union"
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art3_2_a_offering",
+                "label": "Offering goods or services to people in the Union",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 3",
+                    "pinpoint": "3(2)(a)",
+                    "text": "the offering of goods or services, irrespective of whether a payment of the data subject is required, to such data subjects in the Union"
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art3_2_b_monitoring",
+                "label": "Monitoring behaviour in the Union",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 3",
+                    "pinpoint": "3(2)(b)",
+                    "text": "the monitoring of their behaviour as far as their behaviour takes place within the Union"
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art3_3_public_international_law",
+                "label": "Member State law applies by public international law",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 3",
+                    "pinpoint": "3(3)",
+                    "text": "in a place where Member State law applies by virtue of public international law"
+                  }
+                ]
+              }
+            ]
+          },
+          "after": {
+            "closed": true,
+            "basis": {
+              "provision": "GDPR Art. 3",
+              "pinpoint": "3(1)-(3)",
+              "text": "This Regulation applies to the processing of personal data in the context of the activities of an establishment"
+            },
+            "items": [
+              {
+                "id": "gdpr.route.art3_1_establishment",
+                "label": "Establishment in the Union",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 3",
+                    "pinpoint": "3(1)",
+                    "text": "in the context of the activities of an establishment of a controller or a processor in the Union"
+                  }
+                ],
+                "statement": "The particular processing is in the context of the activities of an establishment of the relevant controller or processor in the Union, regardless of where processing occurs. Apply the test to each actor; one party being established does not automatically establish the other party's scope."
+              },
+              {
+                "id": "gdpr.route.art3_2_a_offering",
+                "label": "Offering goods or services to people in the Union",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 3",
+                    "pinpoint": "3(2)(a)",
+                    "text": "the offering of goods or services, irrespective of whether a payment of the data subject is required, to such data subjects in the Union"
+                  }
+                ],
+                "statement": "The relevant controller or processor is not established in the Union; the processing concerns people in the Union and relates to offering them goods or services, whether or not payment is required."
+              },
+              {
+                "id": "gdpr.route.art3_2_b_monitoring",
+                "label": "Monitoring behaviour in the Union",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 3",
+                    "pinpoint": "3(2)(b)",
+                    "text": "the monitoring of their behaviour as far as their behaviour takes place within the Union"
+                  }
+                ],
+                "statement": "The relevant controller or processor is not established in the Union; the processing concerns people in the Union and relates to monitoring their behaviour insofar as it takes place in the Union."
+              },
+              {
+                "id": "gdpr.route.art3_3_public_international_law",
+                "label": "Member State law applies by public international law",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 3",
+                    "pinpoint": "3(3)",
+                    "text": "in a place where Member State law applies by virtue of public international law"
+                  }
+                ],
+                "statement": "The controller is not established in the Union but processes personal data in a place where Member State law applies by virtue of public international law."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "gdpr.cond.art26_arrangement",
+      "fields": {
+        "statement": {
+          "before": "An arrangement between the joint controllers determines their respective responsibilities for compliance.",
+          "after": "Joint-controller responsibilities are transparently allocated and the arrangement reflects the parties' roles and makes its essence available to data subjects, unless and insofar as applicable law determines those responsibilities (Art. 26(1)-(3))."
+        },
+        "note": {
+          "before": "Art. 26(1) excuses the arrangement where Union or Member State law determines the responsibilities; not modelled.",
+          "after": null
+        }
+      }
+    },
+    {
+      "id": "gdpr.cond.art28_contract",
+      "fields": {
+        "statement": {
+          "before": "Processing by the processor is governed by a binding contract or other legal act containing the Art. 28(3) terms.",
+          "after": "The relevant controller/processor or processor/subprocessor relationship meets applicable Art. 28 requirements: sufficient guarantees, required prior authorisation for subprocessors, a binding contract or legal act containing the required terms and equivalent subprocessor obligations."
+        },
+        "note": {
+          "before": "The Art. 28(1) 'sufficient guarantees' duty is part of choosing the processor; not separately modelled.",
+          "after": null
+        }
+      }
+    },
+    {
+      "id": "gdpr.cond.art32_security",
+      "fields": {
+        "statement": {
+          "before": "Appropriate technical and organisational security measures are in place for the transfer and the recipient's processing.",
+          "after": "The relevant controller and processor implement risk-appropriate technical and organisational measures under Art. 32(1)-(4), including assessment, ongoing confidentiality/integrity/availability/resilience, restoration and testing as appropriate. Each actor is assessed for processing for which it is responsible."
+        }
+      }
+    },
+    {
+      "id": "gdpr.cond.art6_1_c_basis_in_law",
+      "fields": {
+        "statement": {
+          "before": "The legal obligation relied on is laid down by Union law or Member State law to which the controller is subject.",
+          "after": "The legal obligation relied on is laid down by Union law or Member State law to which the controller is subject. The legal basis determines the purpose and meets an objective of public interest and proportionality under Art. 6(3)."
+        }
+      }
+    },
+    {
+      "id": "gdpr.cond.art6_1_e_basis_in_law",
+      "fields": {
+        "statement": {
+          "before": "The public task or official authority relied on is laid down by Union law or Member State law to which the controller is subject.",
+          "after": "The public task or official authority relied on is laid down by Union law or Member State law to which the controller is subject. Its purpose is determined in that basis or necessary for the public task/authority, and the law meets public-interest and proportionality requirements under Art. 6(3)."
+        }
+      }
+    },
+    {
+      "id": "gdpr.cond.art9_2_g_basis_in_law",
+      "fields": {
+        "statement": {
+          "before": "The substantial public interest is set out in proportionate Union or Member State law providing suitable and specific measures.",
+          "after": "The substantial public interest is set out in proportionate Union or Member State law providing suitable and specific measures. It respects the essence of the right to data protection."
+        }
+      }
+    },
+    {
+      "id": "gdpr.cond.art9_2_j_basis_in_law",
+      "fields": {
+        "statement": {
+          "before": "The research processing rests on proportionate Union or Member State law providing suitable and specific measures.",
+          "after": "The research processing rests on proportionate Union or Member State law providing suitable and specific measures. It respects the essence of the right to data protection."
+        }
+      }
+    },
+    {
+      "id": "gdpr.cond.dpia_before_processing",
+      "fields": {
+        "statement": {
+          "before": "A data protection impact assessment has been carried out before the processing.",
+          "after": "A DPIA covering this processing is completed before it starts, contains Art. 35(7) assessments and measures, and meets applicable consultation and review requirements under Art. 35(2), (8), (9), (11); an existing activity is covered only if the assessment remains applicable to its current risk."
+        }
+      }
+    },
+    {
+      "id": "gdpr.cond.likely_high_risk",
+      "fields": {
+        "statement": {
+          "before": "The processing is likely to result in a high risk to individuals (Art. 35(3)(b) lists large-scale processing of special categories; under Recital 91 an individual physician's or other health care professional's processing of patients' data is not large-scale).",
+          "after": "The processing is likely to result in a high risk to individuals (Art. 35(3)(b) lists large-scale processing of special categories; under Recital 91 an individual physician's or other health care professional's processing of patients' data is not large-scale). An individual practitioner is not exempt from every high-risk trigger: consider Art. 35(1), (3)-(5) and applicable supervisory-authority lists."
+        }
+      }
+    },
+    {
+      "id": "gdpr.cond.records_of_processing",
+      "fields": {
+        "statement": {
+          "before": "The processing and the transfer are recorded in the records of processing activities.",
+          "after": "The relevant controller or processor keeps records meeting the applicable Art. 30(1)-(4) requirements, unless the narrow Art. 30(5) exemption applies; fewer than 250 employees alone is insufficient where processing is non-occasional, risky, or involves Art. 9 or Art. 10 data."
+        }
+      }
+    },
+    {
+      "id": "gdpr.cond.rights_facilitated",
+      "fields": {
+        "statement": {
+          "before": "The controller facilitates the exercise of data subject rights under Arts. 15-22 (access, rectification, erasure, restriction, portability, objection).",
+          "after": "The controller facilitates the exercise of data subject rights under Arts. 15-22 (access, rectification, erasure, restriction, portability, objection). Apply the qualifications in Art. 12(2)-(6), including identification, time limits and manifestly unfounded/excessive requests; the underlying rights have their own scope and exceptions."
+        }
+      }
+    },
+    {
+      "id": "gdpr.cond.third_country_transfer",
+      "fields": {
+        "statement": {
+          "before": "There is a transfer: a controller or processor subject to the GDPR transmits or makes available personal data to an importer in a third country or an international organisation.",
+          "after": "A controller or processor subject to the GDPR for this processing makes personal data available to ANOTHER controller, joint controller or processor in a third country, or to an international organisation. The exporter need not be located in the EEA; access within the same legal entity alone does not meet the separate-importer criterion."
+        }
+      }
+    },
+    {
+      "id": "gdpr.cond.transparency_information",
+      "fields": {
+        "statement": {
+          "before": "Data subjects receive the Art. 13/14 information, including the intended transfer and its safeguards.",
+          "after": "The controller meets the applicable Art. 13 or Art. 14 information, timing, further-processing and transfer-information requirements. Information need not be repeated where Art. 13(4) or Art. 14(5) applies; any conditions and alternative safeguards for the particular exception must be met."
+        }
+      }
+    },
+    {
+      "id": "gdpr.dpia",
+      "fields": {
+        "note": {
+          "before": "Assessed for a type of processing: no new DPIA is needed for operations already studied, only for new ones or a change of risk (WP248 III.A, III.C; Art. 35(11)). The Art. 35(10) exemption for processing whose legal basis already included an impact assessment is not modelled.",
+          "after": "The assessment is activity-based; existing activity alone never proves the DPIA covers the present risks. The Art. 35(10) exemption is explicit."
+        },
+        "excepted_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "gdpr.cond.dpia_statutory_exemption",
+              "source": {
+                "provision": "GDPR Art. 35",
+                "pinpoint": "35(10)",
+                "text": "10. Where processing pursuant to point (c) or (e) of Article 6(1) has a legal basis in Union law or in the law of the Member State to which the controller is subject, that law regulates the specific processing operation or set of operations in question, and a data protection impact assessment has already been carried out as part of a general impact assessment in the context of the adoption of that legal basis, paragraphs 1 to 7 shall not apply unless Member States deem it to be necessary to carry out such an assessment prior to processing activities."
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "gdpr.lawful_basis",
+      "fields": {
+        "routes": {
+          "before": {
+            "closed": true,
+            "basis": {
+              "provision": "GDPR Art. 6",
+              "pinpoint": "6(1)",
+              "text": "at least one of the following applies"
+            },
+            "items": [
+              {
+                "id": "gdpr.route.art6_1_a_consent",
+                "label": "Consent",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 6",
+                    "pinpoint": "6(1)(a)",
+                    "text": "the data subject has given consent to the processing of his or her personal data for one or more specific purposes"
+                  }
+                ],
+                "concepts": [
+                  "gdpr.concept.consent"
+                ],
+                "evidence": [
+                  "consent_record"
+                ]
+              },
+              {
+                "id": "gdpr.route.art6_1_b_contract",
+                "label": "Contract with the data subject",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 6",
+                    "pinpoint": "6(1)(b)",
+                    "text": "processing is necessary for the performance of a contract to which the data subject is party"
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art6_1_c_legal_obligation",
+                "label": "Legal obligation",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 6",
+                    "pinpoint": "6(1)(c)",
+                    "text": "processing is necessary for compliance with a legal obligation to which the controller is subject"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art6_1_c_basis_in_law"
+                ]
+              },
+              {
+                "id": "gdpr.route.art6_1_d_vital_interests",
+                "label": "Vital interests",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 6",
+                    "pinpoint": "6(1)(d)",
+                    "text": "processing is necessary in order to protect the vital interests of the data subject or of another natural person"
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art6_1_e_public_task",
+                "label": "Public task or official authority",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 6",
+                    "pinpoint": "6(1)(e)",
+                    "text": "processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art6_1_e_basis_in_law"
+                ]
+              },
+              {
+                "id": "gdpr.route.art6_1_f_legitimate_interests",
+                "label": "Legitimate interests",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 6",
+                    "pinpoint": "6(1)(f)",
+                    "text": "processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party"
+                  }
+                ],
+                "excepted_by": [
+                  {
+                    "node": "gdpr.cond.public_authority_performing_tasks",
+                    "source": {
+                      "provision": "GDPR Art. 6",
+                      "pinpoint": "6(1) final subparagraph",
+                      "text": "Point (f) of the first subparagraph shall not apply to processing carried out by public authorities in the performance of their tasks"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "after": {
+            "closed": true,
+            "basis": {
+              "provision": "GDPR Art. 6",
+              "pinpoint": "6(1)",
+              "text": "at least one of the following applies"
+            },
+            "items": [
+              {
+                "id": "gdpr.route.art6_1_a_consent",
+                "label": "Consent",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 6",
+                    "pinpoint": "6(1)(a)",
+                    "text": "the data subject has given consent to the processing of his or her personal data for one or more specific purposes"
+                  },
+                  {
+                    "provision": "GDPR Art. 7",
+                    "pinpoint": "7(1)",
+                    "text": "1. Where processing is based on consent, the controller shall be able to demonstrate that the data subject has consented to processing of his or her personal data."
+                  }
+                ],
+                "concepts": [
+                  "gdpr.concept.consent"
+                ],
+                "evidence": [
+                  "consent_record"
+                ],
+                "statement": "The data subject has given valid consent to this processing for one or more specific purposes, meeting Arts. 4(11) and 7, including demonstrability, a distinguishable intelligible request, withdrawal and freedom of choice."
+              },
+              {
+                "id": "gdpr.route.art6_1_b_contract",
+                "label": "Contract with the data subject",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 6",
+                    "pinpoint": "6(1)(b)",
+                    "text": "processing is necessary for the performance of a contract to which the data subject is party"
+                  }
+                ],
+                "statement": "This processing is necessary to perform a contract with the data subject or to take steps at that person's request before entering a contract. Merely having a contract is insufficient."
+              },
+              {
+                "id": "gdpr.route.art6_1_c_legal_obligation",
+                "label": "Legal obligation",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 6",
+                    "pinpoint": "6(1)(c)",
+                    "text": "processing is necessary for compliance with a legal obligation to which the controller is subject"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art6_1_c_basis_in_law"
+                ],
+                "statement": "This processing is necessary to comply with a legal obligation to which the controller is subject. A purpose label alone does not establish that obligation or necessity."
+              },
+              {
+                "id": "gdpr.route.art6_1_d_vital_interests",
+                "label": "Vital interests",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 6",
+                    "pinpoint": "6(1)(d)",
+                    "text": "processing is necessary in order to protect the vital interests of the data subject or of another natural person"
+                  }
+                ],
+                "statement": "This processing is necessary to protect the vital interests of the data subject or another natural person."
+              },
+              {
+                "id": "gdpr.route.art6_1_e_public_task",
+                "label": "Public task or official authority",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 6",
+                    "pinpoint": "6(1)(e)",
+                    "text": "processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art6_1_e_basis_in_law"
+                ],
+                "statement": "This processing is necessary for a task carried out in the public interest or the exercise of official authority vested in this controller."
+              },
+              {
+                "id": "gdpr.route.art6_1_f_legitimate_interests",
+                "label": "Legitimate interests",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 6",
+                    "pinpoint": "6(1)(f)",
+                    "text": "processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party"
+                  }
+                ],
+                "excepted_by": [
+                  {
+                    "node": "gdpr.cond.public_authority_performing_tasks",
+                    "source": {
+                      "provision": "GDPR Art. 6",
+                      "pinpoint": "6(1) final subparagraph",
+                      "text": "Point (f) of the first subparagraph shall not apply to processing carried out by public authorities in the performance of their tasks"
+                    }
+                  }
+                ],
+                "statement": "This processing is necessary for a legitimate interest pursued by the controller or a third party, and the data subject's interests or fundamental rights and freedoms do not override it, in particular where the data subject is a child."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art3_1_establishment",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The particular processing is in the context of the activities of an establishment of the relevant controller or processor in the Union, regardless of where processing occurs. Apply the test to each actor; one party being established does not automatically establish the other party's scope."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art3_2_a_offering",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The relevant controller or processor is not established in the Union; the processing concerns people in the Union and relates to offering them goods or services, whether or not payment is required."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art3_2_b_monitoring",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The relevant controller or processor is not established in the Union; the processing concerns people in the Union and relates to monitoring their behaviour insofar as it takes place in the Union."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art3_3_public_international_law",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The controller is not established in the Union but processes personal data in a place where Member State law applies by virtue of public international law."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art45_adequacy",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "A currently applicable Commission adequacy decision covers the destination, recipient, data and processing. For the US, verify the recipient's active DPF listing and the certification's scope, including HR-data coverage where relevant."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art46_appropriate_safeguards",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "An applicable safeguard instrument under Art. 46(2) or an authorised Art. 46(3) arrangement covers the actual exporter, importer and processing, with its required terms and any required authorisation. Naming SCCs or BCRs alone is insufficient."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art49_1_a_explicit_consent",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "Without an adequacy decision or appropriate safeguards, the data subject explicitly consents to this proposed transfer after being informed of its possible risks due to that absence; valid consent requirements also hold."
+        },
+        "sources": {
+          "before": [
+            {
+              "provision": "GDPR Art. 49",
+              "pinpoint": "49(1)(a)",
+              "text": "the data subject has explicitly consented to the proposed transfer, after having been informed of the possible risks of such transfers"
+            }
+          ],
+          "after": [
+            {
+              "provision": "GDPR Art. 49",
+              "pinpoint": "49(1)(a)",
+              "text": "the data subject has explicitly consented to the proposed transfer, after having been informed of the possible risks of such transfers"
+            },
+            {
+              "provision": "GDPR Art. 7",
+              "pinpoint": "7(1)",
+              "text": "1. Where processing is based on consent, the controller shall be able to demonstrate that the data subject has consented to processing of his or her personal data."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art49_1_b_contract_with_data_subject",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "Without adequacy or appropriate safeguards, this transfer is necessary to perform a contract between data subject and controller or implement pre-contractual measures taken at the data subject's request."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art49_1_c_contract_in_interest",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "Without adequacy or appropriate safeguards, the transfer is necessary to conclude or perform a contract in the data subject's interest between the controller and another natural or legal person."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art49_1_compelling_legitimate_interests",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "Neither Art. 45 nor 46 nor any first-subparagraph Art. 49(1) derogation can support the transfer. It is not repetitive, concerns only a limited number of data subjects, is necessary for compelling controller interests not overridden by data-subject interests or rights, and the controller has assessed all circumstances, supplied suitable safeguards, informed the supervisory authority and data subjects, and documented the assessment and safeguards under Art. 49(6)."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art49_1_d_public_interest",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "Without adequacy or appropriate safeguards, the transfer is necessary for important public-interest reasons recognised by the applicable Union or Member State law."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art49_1_e_legal_claims",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "Without adequacy or appropriate safeguards, this transfer is necessary to establish, exercise or defend legal claims."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art49_1_f_vital_interests",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "Without adequacy or appropriate safeguards, this transfer is necessary to protect vital interests of the data subject or other persons and the data subject is physically or legally incapable of consent."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art49_1_g_public_register",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "Without adequacy or safeguards, the transfer is from a register intended by law to inform the public and open to consultation under applicable conditions; those conditions hold, the whole register or entire categories are not transferred, and any legitimate-interest access restriction is respected (Art. 49(1)(g), (2))."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art6_1_a_consent",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The data subject has given valid consent to this processing for one or more specific purposes, meeting Arts. 4(11) and 7, including demonstrability, a distinguishable intelligible request, withdrawal and freedom of choice."
+        },
+        "sources": {
+          "before": [
+            {
+              "provision": "GDPR Art. 6",
+              "pinpoint": "6(1)(a)",
+              "text": "the data subject has given consent to the processing of his or her personal data for one or more specific purposes"
+            }
+          ],
+          "after": [
+            {
+              "provision": "GDPR Art. 6",
+              "pinpoint": "6(1)(a)",
+              "text": "the data subject has given consent to the processing of his or her personal data for one or more specific purposes"
+            },
+            {
+              "provision": "GDPR Art. 7",
+              "pinpoint": "7(1)",
+              "text": "1. Where processing is based on consent, the controller shall be able to demonstrate that the data subject has consented to processing of his or her personal data."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art6_1_b_contract",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "This processing is necessary to perform a contract with the data subject or to take steps at that person's request before entering a contract. Merely having a contract is insufficient."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art6_1_c_legal_obligation",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "This processing is necessary to comply with a legal obligation to which the controller is subject. A purpose label alone does not establish that obligation or necessity."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art6_1_d_vital_interests",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "This processing is necessary to protect the vital interests of the data subject or another natural person."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art6_1_e_public_task",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "This processing is necessary for a task carried out in the public interest or the exercise of official authority vested in this controller."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art6_1_f_legitimate_interests",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "This processing is necessary for a legitimate interest pursued by the controller or a third party, and the data subject's interests or fundamental rights and freedoms do not override it, in particular where the data subject is a child."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art9_2_a_explicit_consent",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The data subject has given valid explicit consent for this processing of these special categories for one or more specified purposes, meeting Arts. 4(11) and 7."
+        },
+        "sources": {
+          "before": [
+            {
+              "provision": "GDPR Art. 9",
+              "pinpoint": "9(2)(a)",
+              "text": "the data subject has given explicit consent to the processing of those personal data for one or more specified purposes"
+            }
+          ],
+          "after": [
+            {
+              "provision": "GDPR Art. 9",
+              "pinpoint": "9(2)(a)",
+              "text": "the data subject has given explicit consent to the processing of those personal data for one or more specified purposes"
+            },
+            {
+              "provision": "GDPR Art. 7",
+              "pinpoint": "7(1)",
+              "text": "1. Where processing is based on consent, the controller shall be able to demonstrate that the data subject has consented to processing of his or her personal data."
+            }
+          ]
+        },
+        "excepted_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "gdpr.cond.consent_cannot_lift_prohibition",
+              "source": {
+                "provision": "GDPR Art. 9",
+                "pinpoint": "9(2)(a)",
+                "text": "(a) the data subject has given explicit consent to the processing of those personal data for one or more specified purposes, except where Union or Member State law provide that the prohibition referred to in paragraph 1 may not be lifted by the data subject;"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art9_2_b_employment",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "This processing is necessary to carry out obligations or exercise specific rights of the controller or data subject in employment, social security or social protection law."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art9_2_c_vital_interests",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "This processing is necessary to protect vital interests of the data subject or another natural person and the data subject is physically or legally incapable of giving consent."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art9_2_d_not_for_profit",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "A body with a political, philosophical, religious or trade-union aim processes the data in its legitimate activities with appropriate safeguards; the data relate solely to members, former members or people in regular contact in connection with its purposes; disclosure outside the body has the data subjects' consent."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art9_2_e_made_public",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "These particular personal data were manifestly made public by the data subject."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art9_2_f_legal_claims",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The processing is necessary to establish, exercise or defend legal claims, or courts are acting in their judicial capacity."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art9_2_g_substantial_public_interest",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "This processing is necessary for substantial public interest reasons; the separate statutory-basis and safeguard conditions also hold."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art9_2_h_health_care",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "This processing is necessary for preventive or occupational medicine, assessing working capacity, diagnosis, health or social care or treatment, or managing health or social care systems and services. A treatment purpose alone does not establish necessity."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art9_2_i_public_health",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "This processing is necessary for public-interest reasons in public health, such as serious cross-border health threats or high standards of quality and safety of health care, medicines or medical devices."
+        }
+      }
+    },
+    {
+      "id": "gdpr.route.art9_2_j_research",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "This processing is necessary for archiving in the public interest, scientific or historical research, or statistical purposes. A research label alone does not establish necessity."
+        }
+      }
+    },
+    {
+      "id": "gdpr.special_category_condition",
+      "fields": {
+        "routes": {
+          "before": {
+            "closed": true,
+            "basis": {
+              "provision": "GDPR Art. 9",
+              "pinpoint": "9(2)",
+              "text": "Paragraph 1 shall not apply if one of the following applies"
+            },
+            "items": [
+              {
+                "id": "gdpr.route.art9_2_a_explicit_consent",
+                "label": "Explicit consent",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(a)",
+                    "text": "the data subject has given explicit consent to the processing of those personal data for one or more specified purposes"
+                  }
+                ],
+                "concepts": [
+                  "gdpr.concept.consent"
+                ],
+                "evidence": [
+                  "consent_record"
+                ],
+                "note": "Union or Member State law may provide that consent cannot lift the prohibition; no such Irish provision is in the corpus."
+              },
+              {
+                "id": "gdpr.route.art9_2_b_employment",
+                "label": "Employment and social security law",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(b)",
+                    "text": "processing is necessary for the purposes of carrying out the obligations and exercising specific rights of the controller or of the data subject in the field of employment and social security and social protection law"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art9_2_b_basis_in_law"
+                ]
+              },
+              {
+                "id": "gdpr.route.art9_2_c_vital_interests",
+                "label": "Vital interests, data subject incapable of consent",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(c)",
+                    "text": "processing is necessary to protect the vital interests of the data subject or of another natural person where the data subject is physically or legally incapable of giving consent"
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art9_2_d_not_for_profit",
+                "label": "Not-for-profit body, members only",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(d)",
+                    "text": "processing is carried out in the course of its legitimate activities with appropriate safeguards by a foundation, association or any other not-for-profit body"
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art9_2_e_made_public",
+                "label": "Manifestly made public by the data subject",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(e)",
+                    "text": "processing relates to personal data which are manifestly made public by the data subject"
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art9_2_f_legal_claims",
+                "label": "Legal claims or courts",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(f)",
+                    "text": "processing is necessary for the establishment, exercise or defence of legal claims or whenever courts are acting in their judicial capacity"
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art9_2_g_substantial_public_interest",
+                "label": "Substantial public interest",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(g)",
+                    "text": "processing is necessary for reasons of substantial public interest"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art9_2_g_basis_in_law"
+                ]
+              },
+              {
+                "id": "gdpr.route.art9_2_h_health_care",
+                "label": "Medicine, diagnosis, health or social care",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(h)",
+                    "text": "processing is necessary for the purposes of preventive or occupational medicine, for the assessment of the working capacity of the employee, medical diagnosis, the provision of health or social care or treatment"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art9_2_h_law_or_contract",
+                  "gdpr.cond.art9_3_professional_secrecy"
+                ]
+              },
+              {
+                "id": "gdpr.route.art9_2_i_public_health",
+                "label": "Public interest in public health",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(i)",
+                    "text": "processing is necessary for reasons of public interest in the area of public health"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art9_2_i_basis_in_law"
+                ]
+              },
+              {
+                "id": "gdpr.route.art9_2_j_research",
+                "label": "Archiving, research or statistics",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(j)",
+                    "text": "processing is necessary for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes"
+                  }
+                ],
+                "requires": [
+                  {
+                    "node": "gdpr.cond.art89_safeguards",
+                    "source": {
+                      "provision": "GDPR Art. 9",
+                      "pinpoint": "9(2)(j)",
+                      "text": "in accordance with Article 89(1)"
+                    }
+                  },
+                  "gdpr.cond.art9_2_j_basis_in_law"
+                ]
+              }
+            ]
+          },
+          "after": {
+            "closed": true,
+            "basis": {
+              "provision": "GDPR Art. 9",
+              "pinpoint": "9(2)",
+              "text": "Paragraph 1 shall not apply if one of the following applies"
+            },
+            "items": [
+              {
+                "id": "gdpr.route.art9_2_a_explicit_consent",
+                "label": "Explicit consent",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(a)",
+                    "text": "the data subject has given explicit consent to the processing of those personal data for one or more specified purposes"
+                  },
+                  {
+                    "provision": "GDPR Art. 7",
+                    "pinpoint": "7(1)",
+                    "text": "1. Where processing is based on consent, the controller shall be able to demonstrate that the data subject has consented to processing of his or her personal data."
+                  }
+                ],
+                "concepts": [
+                  "gdpr.concept.consent"
+                ],
+                "evidence": [
+                  "consent_record"
+                ],
+                "note": "Union or Member State law may provide that consent cannot lift the prohibition; no such Irish provision is in the corpus.",
+                "statement": "The data subject has given valid explicit consent for this processing of these special categories for one or more specified purposes, meeting Arts. 4(11) and 7.",
+                "excepted_by": [
+                  {
+                    "node": "gdpr.cond.consent_cannot_lift_prohibition",
+                    "source": {
+                      "provision": "GDPR Art. 9",
+                      "pinpoint": "9(2)(a)",
+                      "text": "(a) the data subject has given explicit consent to the processing of those personal data for one or more specified purposes, except where Union or Member State law provide that the prohibition referred to in paragraph 1 may not be lifted by the data subject;"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art9_2_b_employment",
+                "label": "Employment and social security law",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(b)",
+                    "text": "processing is necessary for the purposes of carrying out the obligations and exercising specific rights of the controller or of the data subject in the field of employment and social security and social protection law"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art9_2_b_basis_in_law"
+                ],
+                "statement": "This processing is necessary to carry out obligations or exercise specific rights of the controller or data subject in employment, social security or social protection law."
+              },
+              {
+                "id": "gdpr.route.art9_2_c_vital_interests",
+                "label": "Vital interests, data subject incapable of consent",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(c)",
+                    "text": "processing is necessary to protect the vital interests of the data subject or of another natural person where the data subject is physically or legally incapable of giving consent"
+                  }
+                ],
+                "statement": "This processing is necessary to protect vital interests of the data subject or another natural person and the data subject is physically or legally incapable of giving consent."
+              },
+              {
+                "id": "gdpr.route.art9_2_d_not_for_profit",
+                "label": "Not-for-profit body, members only",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(d)",
+                    "text": "processing is carried out in the course of its legitimate activities with appropriate safeguards by a foundation, association or any other not-for-profit body"
+                  }
+                ],
+                "statement": "A body with a political, philosophical, religious or trade-union aim processes the data in its legitimate activities with appropriate safeguards; the data relate solely to members, former members or people in regular contact in connection with its purposes; disclosure outside the body has the data subjects' consent."
+              },
+              {
+                "id": "gdpr.route.art9_2_e_made_public",
+                "label": "Manifestly made public by the data subject",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(e)",
+                    "text": "processing relates to personal data which are manifestly made public by the data subject"
+                  }
+                ],
+                "statement": "These particular personal data were manifestly made public by the data subject."
+              },
+              {
+                "id": "gdpr.route.art9_2_f_legal_claims",
+                "label": "Legal claims or courts",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(f)",
+                    "text": "processing is necessary for the establishment, exercise or defence of legal claims or whenever courts are acting in their judicial capacity"
+                  }
+                ],
+                "statement": "The processing is necessary to establish, exercise or defend legal claims, or courts are acting in their judicial capacity."
+              },
+              {
+                "id": "gdpr.route.art9_2_g_substantial_public_interest",
+                "label": "Substantial public interest",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(g)",
+                    "text": "processing is necessary for reasons of substantial public interest"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art9_2_g_basis_in_law"
+                ],
+                "statement": "This processing is necessary for substantial public interest reasons; the separate statutory-basis and safeguard conditions also hold."
+              },
+              {
+                "id": "gdpr.route.art9_2_h_health_care",
+                "label": "Medicine, diagnosis, health or social care",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(h)",
+                    "text": "processing is necessary for the purposes of preventive or occupational medicine, for the assessment of the working capacity of the employee, medical diagnosis, the provision of health or social care or treatment"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art9_2_h_law_or_contract",
+                  "gdpr.cond.art9_3_professional_secrecy"
+                ],
+                "statement": "This processing is necessary for preventive or occupational medicine, assessing working capacity, diagnosis, health or social care or treatment, or managing health or social care systems and services. A treatment purpose alone does not establish necessity."
+              },
+              {
+                "id": "gdpr.route.art9_2_i_public_health",
+                "label": "Public interest in public health",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(i)",
+                    "text": "processing is necessary for reasons of public interest in the area of public health"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art9_2_i_basis_in_law"
+                ],
+                "statement": "This processing is necessary for public-interest reasons in public health, such as serious cross-border health threats or high standards of quality and safety of health care, medicines or medical devices."
+              },
+              {
+                "id": "gdpr.route.art9_2_j_research",
+                "label": "Archiving, research or statistics",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 9",
+                    "pinpoint": "9(2)(j)",
+                    "text": "processing is necessary for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes"
+                  }
+                ],
+                "requires": [
+                  {
+                    "node": "gdpr.cond.art89_safeguards",
+                    "source": {
+                      "provision": "GDPR Art. 9",
+                      "pinpoint": "9(2)(j)",
+                      "text": "in accordance with Article 89(1)"
+                    }
+                  },
+                  "gdpr.cond.art9_2_j_basis_in_law"
+                ],
+                "statement": "This processing is necessary for archiving in the public interest, scientific or historical research, or statistical purposes. A research label alone does not establish necessity."
+              }
+            ]
+          }
+        },
+        "requires": {
+          "before": null,
+          "after": [
+            "gdpr.cond.art9_4_national_conditions"
+          ]
+        }
+      }
+    },
+    {
+      "id": "gdpr.transfer_mechanism",
+      "fields": {
+        "routes": {
+          "before": {
+            "closed": true,
+            "basis": {
+              "provision": "GDPR Art. 44",
+              "pinpoint": "44",
+              "text": "the conditions laid down in this Chapter are complied with by the controller and processor"
+            },
+            "items": [
+              {
+                "id": "gdpr.route.art45_adequacy",
+                "label": "Adequacy decision",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 45",
+                    "pinpoint": "45(1)",
+                    "text": "where the Commission has decided that the third country, a territory or one or more specified sectors within that third country, or the international organisation in question ensures an adequate level of protection"
+                  }
+                ],
+                "interpretation": [
+                  "dpf_2023"
+                ],
+                "evidence": [
+                  "certification_record"
+                ],
+                "note": "For the United States the decision is partial: it covers only organisations certified under the EU-US Data Privacy Framework (reference/countries.json)."
+              },
+              {
+                "id": "gdpr.route.art46_appropriate_safeguards",
+                "label": "Appropriate safeguards (SCCs, BCRs and other Art. 46 tools)",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 46",
+                    "pinpoint": "46(1)-(3)",
+                    "text": "only if the controller or processor has provided appropriate safeguards"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art46_enforceable_rights"
+                ],
+                "evidence": [
+                  "executed_agreement"
+                ],
+                "note": "The route itself is the safeguard instrument (Art. 46(2) or authorised 46(3)); its second conjunct is a separate condition because it is shown by a different document."
+              },
+              {
+                "id": "gdpr.route.art49_1_a_explicit_consent",
+                "label": "Derogation: explicit consent to the transfer",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(a)",
+                    "text": "the data subject has explicitly consented to the proposed transfer, after having been informed of the possible risks of such transfers"
+                  }
+                ],
+                "evidence": [
+                  "consent_record"
+                ],
+                "excepted_by": [
+                  {
+                    "node": "gdpr.cond.public_authority_public_powers",
+                    "source": {
+                      "provision": "GDPR Art. 49",
+                      "pinpoint": "49(3)",
+                      "text": "Points (a), (b) and (c) of the first subparagraph of paragraph 1 and the second subparagraph thereof shall not apply"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art49_1_b_contract_with_data_subject",
+                "label": "Derogation: contract with the data subject",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(b)",
+                    "text": "the transfer is necessary for the performance of a contract between the data subject and the controller"
+                  }
+                ],
+                "excepted_by": [
+                  {
+                    "node": "gdpr.cond.public_authority_public_powers",
+                    "source": {
+                      "provision": "GDPR Art. 49",
+                      "pinpoint": "49(3)",
+                      "text": "Points (a), (b) and (c) of the first subparagraph of paragraph 1 and the second subparagraph thereof shall not apply"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art49_1_c_contract_in_interest",
+                "label": "Derogation: contract in the data subject's interest",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(c)",
+                    "text": "the transfer is necessary for the conclusion or performance of a contract concluded in the interest of the data subject"
+                  }
+                ],
+                "excepted_by": [
+                  {
+                    "node": "gdpr.cond.public_authority_public_powers",
+                    "source": {
+                      "provision": "GDPR Art. 49",
+                      "pinpoint": "49(3)",
+                      "text": "Points (a), (b) and (c) of the first subparagraph of paragraph 1 and the second subparagraph thereof shall not apply"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art49_1_d_public_interest",
+                "label": "Derogation: important reasons of public interest",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(d)",
+                    "text": "the transfer is necessary for important reasons of public interest"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art49_4_recognised_in_law"
+                ]
+              },
+              {
+                "id": "gdpr.route.art49_1_e_legal_claims",
+                "label": "Derogation: legal claims",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(e)",
+                    "text": "the transfer is necessary for the establishment, exercise or defence of legal claims"
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art49_1_f_vital_interests",
+                "label": "Derogation: vital interests",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(f)",
+                    "text": "the transfer is necessary in order to protect the vital interests of the data subject or of other persons, where the data subject is physically or legally incapable of giving consent"
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art49_1_g_public_register",
+                "label": "Derogation: public register",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(g)",
+                    "text": "the transfer is made from a register which according to Union or Member State law is intended to provide information to the public"
+                  }
+                ]
+              },
+              {
+                "id": "gdpr.route.art49_1_compelling_legitimate_interests",
+                "label": "Derogation: compelling legitimate interests (last resort)",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1) second subparagraph",
+                    "text": "may take place only if the transfer is not repetitive, concerns only a limited number of data subjects"
+                  }
+                ],
+                "excepted_by": [
+                  {
+                    "node": "gdpr.cond.public_authority_public_powers",
+                    "source": {
+                      "provision": "GDPR Art. 49",
+                      "pinpoint": "49(3)",
+                      "text": "Points (a), (b) and (c) of the first subparagraph of paragraph 1 and the second subparagraph thereof shall not apply"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "after": {
+            "closed": true,
+            "basis": {
+              "provision": "GDPR Art. 44",
+              "pinpoint": "44",
+              "text": "the conditions laid down in this Chapter are complied with by the controller and processor"
+            },
+            "items": [
+              {
+                "id": "gdpr.route.art45_adequacy",
+                "label": "Adequacy decision",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 45",
+                    "pinpoint": "45(1)",
+                    "text": "where the Commission has decided that the third country, a territory or one or more specified sectors within that third country, or the international organisation in question ensures an adequate level of protection"
+                  }
+                ],
+                "interpretation": [
+                  "dpf_2023"
+                ],
+                "evidence": [
+                  "certification_record"
+                ],
+                "note": "For the United States the decision is partial: it covers only organisations certified under the EU-US Data Privacy Framework (reference/countries.json).",
+                "statement": "A currently applicable Commission adequacy decision covers the destination, recipient, data and processing. For the US, verify the recipient's active DPF listing and the certification's scope, including HR-data coverage where relevant."
+              },
+              {
+                "id": "gdpr.route.art46_appropriate_safeguards",
+                "label": "Appropriate safeguards (SCCs, BCRs and other Art. 46 tools)",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 46",
+                    "pinpoint": "46(1)-(3)",
+                    "text": "only if the controller or processor has provided appropriate safeguards"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art46_enforceable_rights"
+                ],
+                "evidence": [
+                  "executed_agreement"
+                ],
+                "note": "The route itself is the safeguard instrument (Art. 46(2) or authorised 46(3)); its second conjunct is a separate condition because it is shown by a different document.",
+                "statement": "An applicable safeguard instrument under Art. 46(2) or an authorised Art. 46(3) arrangement covers the actual exporter, importer and processing, with its required terms and any required authorisation. Naming SCCs or BCRs alone is insufficient."
+              },
+              {
+                "id": "gdpr.route.art49_1_a_explicit_consent",
+                "label": "Derogation: explicit consent to the transfer",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(a)",
+                    "text": "the data subject has explicitly consented to the proposed transfer, after having been informed of the possible risks of such transfers"
+                  },
+                  {
+                    "provision": "GDPR Art. 7",
+                    "pinpoint": "7(1)",
+                    "text": "1. Where processing is based on consent, the controller shall be able to demonstrate that the data subject has consented to processing of his or her personal data."
+                  }
+                ],
+                "evidence": [
+                  "consent_record"
+                ],
+                "excepted_by": [
+                  {
+                    "node": "gdpr.cond.public_authority_public_powers",
+                    "source": {
+                      "provision": "GDPR Art. 49",
+                      "pinpoint": "49(3)",
+                      "text": "Points (a), (b) and (c) of the first subparagraph of paragraph 1 and the second subparagraph thereof shall not apply"
+                    }
+                  }
+                ],
+                "statement": "Without an adequacy decision or appropriate safeguards, the data subject explicitly consents to this proposed transfer after being informed of its possible risks due to that absence; valid consent requirements also hold."
+              },
+              {
+                "id": "gdpr.route.art49_1_b_contract_with_data_subject",
+                "label": "Derogation: contract with the data subject",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(b)",
+                    "text": "the transfer is necessary for the performance of a contract between the data subject and the controller"
+                  }
+                ],
+                "excepted_by": [
+                  {
+                    "node": "gdpr.cond.public_authority_public_powers",
+                    "source": {
+                      "provision": "GDPR Art. 49",
+                      "pinpoint": "49(3)",
+                      "text": "Points (a), (b) and (c) of the first subparagraph of paragraph 1 and the second subparagraph thereof shall not apply"
+                    }
+                  }
+                ],
+                "statement": "Without adequacy or appropriate safeguards, this transfer is necessary to perform a contract between data subject and controller or implement pre-contractual measures taken at the data subject's request."
+              },
+              {
+                "id": "gdpr.route.art49_1_c_contract_in_interest",
+                "label": "Derogation: contract in the data subject's interest",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(c)",
+                    "text": "the transfer is necessary for the conclusion or performance of a contract concluded in the interest of the data subject"
+                  }
+                ],
+                "excepted_by": [
+                  {
+                    "node": "gdpr.cond.public_authority_public_powers",
+                    "source": {
+                      "provision": "GDPR Art. 49",
+                      "pinpoint": "49(3)",
+                      "text": "Points (a), (b) and (c) of the first subparagraph of paragraph 1 and the second subparagraph thereof shall not apply"
+                    }
+                  }
+                ],
+                "statement": "Without adequacy or appropriate safeguards, the transfer is necessary to conclude or perform a contract in the data subject's interest between the controller and another natural or legal person."
+              },
+              {
+                "id": "gdpr.route.art49_1_d_public_interest",
+                "label": "Derogation: important reasons of public interest",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(d)",
+                    "text": "the transfer is necessary for important reasons of public interest"
+                  }
+                ],
+                "requires": [
+                  "gdpr.cond.art49_4_recognised_in_law"
+                ],
+                "statement": "Without adequacy or appropriate safeguards, the transfer is necessary for important public-interest reasons recognised by the applicable Union or Member State law."
+              },
+              {
+                "id": "gdpr.route.art49_1_e_legal_claims",
+                "label": "Derogation: legal claims",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(e)",
+                    "text": "the transfer is necessary for the establishment, exercise or defence of legal claims"
+                  }
+                ],
+                "statement": "Without adequacy or appropriate safeguards, this transfer is necessary to establish, exercise or defend legal claims."
+              },
+              {
+                "id": "gdpr.route.art49_1_f_vital_interests",
+                "label": "Derogation: vital interests",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(f)",
+                    "text": "the transfer is necessary in order to protect the vital interests of the data subject or of other persons, where the data subject is physically or legally incapable of giving consent"
+                  }
+                ],
+                "statement": "Without adequacy or appropriate safeguards, this transfer is necessary to protect vital interests of the data subject or other persons and the data subject is physically or legally incapable of consent."
+              },
+              {
+                "id": "gdpr.route.art49_1_g_public_register",
+                "label": "Derogation: public register",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1)(g)",
+                    "text": "the transfer is made from a register which according to Union or Member State law is intended to provide information to the public"
+                  }
+                ],
+                "statement": "Without adequacy or safeguards, the transfer is from a register intended by law to inform the public and open to consultation under applicable conditions; those conditions hold, the whole register or entire categories are not transferred, and any legitimate-interest access restriction is respected (Art. 49(1)(g), (2))."
+              },
+              {
+                "id": "gdpr.route.art49_1_compelling_legitimate_interests",
+                "label": "Derogation: compelling legitimate interests (last resort)",
+                "sources": [
+                  {
+                    "provision": "GDPR Art. 49",
+                    "pinpoint": "49(1) second subparagraph",
+                    "text": "may take place only if the transfer is not repetitive, concerns only a limited number of data subjects"
+                  }
+                ],
+                "excepted_by": [
+                  {
+                    "node": "gdpr.cond.public_authority_public_powers",
+                    "source": {
+                      "provision": "GDPR Art. 49",
+                      "pinpoint": "49(3)",
+                      "text": "Points (a), (b) and (c) of the first subparagraph of paragraph 1 and the second subparagraph thereof shall not apply"
+                    }
+                  }
+                ],
+                "statement": "Neither Art. 45 nor 46 nor any first-subparagraph Art. 49(1) derogation can support the transfer. It is not repetitive, concerns only a limited number of data subjects, is necessary for compelling controller interests not overridden by data-subject interests or rights, and the controller has assessed all circumstances, supplied suitable safeguards, informed the supervisory authority and data subjects, and documented the assessment and safeguards under Art. 49(6)."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "hipaa.applicability",
+      "fields": {
+        "routes": {
+          "before": {
+            "closed": true,
+            "basis": {
+              "provision": "45 CFR 160.102",
+              "pinpoint": "160.102(a)-(b)",
+              "text": "the standards, requirements, and implementation specifications adopted under this subchapter apply to the following entities"
+            },
+            "items": [
+              {
+                "id": "hipaa.route.covered_entity",
+                "label": "A party is a covered entity",
+                "sources": [
+                  {
+                    "provision": "45 CFR 160.103 [Covered entity]",
+                    "pinpoint": "160.103",
+                    "text": "A health care provider who transmits any health information in electronic form in connection with a transaction covered by this subchapter"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.covered_entity"
+                ],
+                "evidence": [
+                  "role_determination"
+                ]
+              },
+              {
+                "id": "hipaa.route.business_associate",
+                "label": "A party is a business associate",
+                "sources": [
+                  {
+                    "provision": "45 CFR 160.102",
+                    "pinpoint": "160.102(b)",
+                    "text": "Where provided, the standards, requirements, and implementation specifications adopted under this subchapter apply to a business associate"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.business_associate"
+                ],
+                "evidence": [
+                  "role_determination"
+                ]
+              }
+            ]
+          },
+          "after": {
+            "closed": true,
+            "basis": {
+              "provision": "45 CFR 160.102",
+              "pinpoint": "160.102(a)-(b)",
+              "text": "the standards, requirements, and implementation specifications adopted under this subchapter apply to the following entities"
+            },
+            "items": [
+              {
+                "id": "hipaa.route.covered_entity",
+                "label": "A party is a covered entity",
+                "sources": [
+                  {
+                    "provision": "45 CFR 160.103 [Covered entity]",
+                    "pinpoint": "160.103",
+                    "text": "Covered entity means:\n(1) A health plan.\n(2) A health care clearinghouse.\n(3) A health care provider who transmits any health information in electronic form in connection with a transaction covered by this subchapter."
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.covered_entity"
+                ],
+                "evidence": [
+                  "role_determination"
+                ],
+                "statement": "At least one party is a covered entity under 160.103: a health plan, health care clearinghouse, or health care provider transmitting health information electronically in a covered transaction."
+              },
+              {
+                "id": "hipaa.route.business_associate",
+                "label": "A party is a business associate",
+                "sources": [
+                  {
+                    "provision": "45 CFR 160.102",
+                    "pinpoint": "160.102(b)",
+                    "text": "Where provided, the standards, requirements, and implementation specifications adopted under this subchapter apply to a business associate"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.business_associate"
+                ],
+                "evidence": [
+                  "role_determination"
+                ],
+                "statement": "At least one party is a business associate under 160.103, including a qualifying subcontractor; only provisions made applicable to that role bind it."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "hipaa.concept.covered_entity",
+      "fields": {
+        "defined_in": {
+          "before": [
+            {
+              "provision": "45 CFR 160.103 [Covered entity]",
+              "pinpoint": "160.103",
+              "text": "A health care provider who transmits any health information in electronic form in connection with a transaction covered by this subchapter"
+            }
+          ],
+          "after": [
+            {
+              "provision": "45 CFR 160.103 [Covered entity]",
+              "pinpoint": "160.103",
+              "text": "Covered entity means:\n(1) A health plan.\n(2) A health care clearinghouse.\n(3) A health care provider who transmits any health information in electronic form in connection with a transaction covered by this subchapter."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.cond.baa",
+      "fields": {
+        "sources": {
+          "before": [
+            {
+              "provision": "45 CFR 164.502(e)",
+              "pinpoint": "164.502(e)(1)(i)",
+              "text": "if the covered entity obtains satisfactory assurance that the business associate will appropriately safeguard the information"
+            },
+            {
+              "provision": "45 CFR 164.504(e)",
+              "pinpoint": "164.504(e)(1)",
+              "text": "The contract or other arrangement required by § 164.502(e)(2) must meet the requirements of paragraph (e)(2), (e)(3), or (e)(5) of this section, as applicable"
+            }
+          ],
+          "after": [
+            {
+              "provision": "45 CFR 164.502(e)",
+              "pinpoint": "164.502(e)(1)(i)",
+              "text": "if the covered entity obtains satisfactory assurance that the business associate will appropriately safeguard the information"
+            },
+            {
+              "provision": "45 CFR 164.504(e)",
+              "pinpoint": "164.504(e)(1)",
+              "text": "The contract or other arrangement required by § 164.502(e)(2) must meet the requirements of paragraph (e)(2), (e)(3), or (e)(5) of this section, as applicable"
+            },
+            {
+              "provision": "45 CFR 164.502(e)",
+              "pinpoint": "164.502(e)(1)(ii)",
+              "text": "(ii) A business associate may disclose protected health information to a business associate that is a subcontractor and may allow the subcontractor to create, receive, maintain, or transmit protected health information on its behalf, if the business associate obtains satisfactory assurances, in accordance with § 164.504(e)(1)(i), that the subcontractor will appropriately safeguard the information."
+            }
+          ]
+        },
+        "statement": {
+          "before": "A business associate contract meeting 164.504(e) documents satisfactory assurance that the business associate will safeguard the information.",
+          "after": "Where 164.502(e) requires assurances for this business-associate/subcontractor relationship, they are documented by a contract or other arrangement meeting the applicable 164.504(e)(2), (3) or (5) terms, including permitted uses, safeguarding and downstream restrictions; apply the express statutory exceptions."
+        }
+      }
+    },
+    {
+      "id": "hipaa.cond.limited_data_set_disclosed",
+      "fields": {
+        "statement": {
+          "before": "The disclosed information is a limited data set.",
+          "after": "The disclosure relies on the limited-data-set permission under 164.514(e), rather than a different independently valid permission. A dataset classification alone does not establish reliance on that permission."
+        }
+      }
+    },
+    {
+      "id": "hipaa.cond.minimum_necessary_limited",
+      "fields": {
+        "actor": {
+          "before": [
+            "covered_entity"
+          ],
+          "after": [
+            "covered_entity",
+            "business_associate"
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.cond.recipient_is_business_associate",
+      "fields": {
+        "statement": {
+          "before": "The recipient receives the PHI on the covered entity's behalf for a regulated function or service (a business associate).",
+          "after": "For this transaction the recipient acts on behalf of this sender as its business associate, or as the sender business associate's subcontractor; an unrelated business-associate role does not suffice."
+        }
+      }
+    },
+    {
+      "id": "hipaa.cond.recipient_privacy_safeguards",
+      "fields": {
+        "statement": {
+          "before": "The regulated recipient has administrative, technical and physical safeguards protecting the privacy of the PHI it receives.",
+          "after": "The covered-entity recipient has the privacy safeguards required by 164.530(c)(1)-(2), protecting against intentional/unintentional impermissible uses/disclosures and reasonably limiting incidental disclosures."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            "hipaa.cond.recipient_covered_entity"
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.cond.recipient_regulated",
+      "fields": {
+        "sources": {
+          "before": [
+            {
+              "provision": "45 CFR 164.500",
+              "pinpoint": "164.500(a)",
+              "text": "the standards, requirements, and implementation specifications of this subpart apply to covered entities with respect to protected health information"
+            }
+          ],
+          "after": [
+            {
+              "provision": "45 CFR 164.500",
+              "pinpoint": "164.500(a)",
+              "text": "the standards, requirements, and implementation specifications of this subpart apply to covered entities with respect to protected health information"
+            },
+            {
+              "provision": "45 CFR 164.500",
+              "pinpoint": "164.500(c)",
+              "text": "(c) Where provided, the standards, requirements, and implementation specifications adopted under this subpart apply to a business associate with respect to the protected health information of a covered entity."
+            }
+          ]
+        },
+        "concepts": {
+          "before": [
+            "hipaa.concept.covered_entity"
+          ],
+          "after": [
+            "hipaa.concept.covered_entity",
+            "hipaa.concept.business_associate"
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.cond.security_rule_safeguards",
+      "fields": {
+        "statement": {
+          "before": "Security Rule administrative and technical safeguards protect electronic PHI in transit and at rest.",
+          "after": "Applicable administrative, physical and technical safeguards, organisational requirements and documentation under 164.306 and 164.308-316 protect electronic PHI; required specifications and the assess/document/alternative-measure rules for addressable specifications are respected."
+        },
+        "sources": {
+          "before": [
+            {
+              "provision": "45 CFR 164.306",
+              "pinpoint": "164.306(a)(1)",
+              "text": "Ensure the confidentiality, integrity, and availability of all electronic protected health information"
+            },
+            {
+              "provision": "45 CFR 164.308",
+              "pinpoint": "164.308(a)(1)(i)",
+              "text": "Implement policies and procedures to prevent, detect, contain, and correct security violations"
+            },
+            {
+              "provision": "45 CFR 164.312",
+              "pinpoint": "164.312(a)(1)",
+              "text": "Implement technical policies and procedures for electronic information systems that maintain electronic protected health information"
+            }
+          ],
+          "after": [
+            {
+              "provision": "45 CFR 164.306",
+              "pinpoint": "164.306(a)(1)",
+              "text": "Ensure the confidentiality, integrity, and availability of all electronic protected health information"
+            },
+            {
+              "provision": "45 CFR 164.308",
+              "pinpoint": "164.308(a)(1)(i)",
+              "text": "Implement policies and procedures to prevent, detect, contain, and correct security violations"
+            },
+            {
+              "provision": "45 CFR 164.312",
+              "pinpoint": "164.312(a)(1)",
+              "text": "Implement technical policies and procedures for electronic information systems that maintain electronic protected health information"
+            },
+            {
+              "provision": "45 CFR 164.310",
+              "pinpoint": "164.310",
+              "text": "A covered entity or business associate must, in accordance with § 164.306:"
+            },
+            {
+              "provision": "45 CFR 164.314",
+              "pinpoint": "164.314",
+              "text": "(a)(1) Standard: Business associate contracts or other arrangements. The contract or other arrangement required by § 164.308(b)(3) must meet the requirements of paragraph (a)(2)(i), (a)(2)(ii), or (a)(2)(iii) of this section, as applicable."
+            },
+            {
+              "provision": "45 CFR 164.316",
+              "pinpoint": "164.316",
+              "text": "A covered entity or business associate must, in accordance with § 164.306:"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.cond.sender_regulated",
+      "fields": {
+        "statement": {
+          "before": "The disclosing party (the sender) is a covered entity or business associate; the disclosure rules bind it, not a non-US sender.",
+          "after": "The sender is a covered entity or business associate acting in that regulated capacity for this PHI. Country alone does not decide regulated status."
+        }
+      }
+    },
+    {
+      "id": "hipaa.minimum_necessary",
+      "fields": {
+        "note": {
+          "before": "Exceptions (iv)-(vi) (the Secretary, required by law, compliance) are not modelled.",
+          "after": null
+        },
+        "excepted_by": {
+          "before": [
+            {
+              "node": "hipaa.cond.treatment_disclosure_to_provider",
+              "source": {
+                "provision": "45 CFR 164.502(b)",
+                "pinpoint": "164.502(b)(2)(i)",
+                "text": "Disclosures to or requests by a health care provider for treatment"
+              }
+            },
+            {
+              "node": "hipaa.route.to_individual",
+              "source": {
+                "provision": "45 CFR 164.502(b)",
+                "pinpoint": "164.502(b)(2)(ii)",
+                "text": "Uses or disclosures made to the individual"
+              }
+            },
+            {
+              "node": "hipaa.route.authorization",
+              "source": {
+                "provision": "45 CFR 164.502(b)",
+                "pinpoint": "164.502(b)(2)(iii)",
+                "text": "Uses or disclosures made pursuant to an authorization under § 164.508"
+              }
+            }
+          ],
+          "after": [
+            {
+              "node": "hipaa.cond.treatment_disclosure_to_provider",
+              "source": {
+                "provision": "45 CFR 164.502(b)",
+                "pinpoint": "164.502(b)(2)(i)",
+                "text": "Disclosures to or requests by a health care provider for treatment"
+              }
+            },
+            {
+              "node": "hipaa.cond.disclosure_to_individual",
+              "source": {
+                "provision": "45 CFR 164.502(b)",
+                "pinpoint": "164.502(b)(2)(ii)",
+                "text": "Uses or disclosures made to the individual"
+              }
+            },
+            {
+              "node": "hipaa.cond.disclosure_under_authorization",
+              "source": {
+                "provision": "45 CFR 164.502(b)",
+                "pinpoint": "164.502(b)(2)(iii)",
+                "text": "Uses or disclosures made pursuant to an authorization under § 164.508"
+              }
+            },
+            {
+              "node": "hipaa.cond.disclosure_to_secretary",
+              "source": {
+                "provision": "45 CFR 164.502(b)",
+                "pinpoint": "164.502(b)(2)(iv)",
+                "text": "(iv) Disclosures made to the Secretary in accordance with subpart C of part 160 of this subchapter;"
+              }
+            },
+            {
+              "node": "hipaa.cond.disclosure_required_by_law",
+              "source": {
+                "provision": "45 CFR 164.502(b)",
+                "pinpoint": "164.502(b)(2)(v)",
+                "text": "(v) Uses or disclosures that are required by law, as described by § 164.512(a); and"
+              }
+            },
+            {
+              "node": "hipaa.cond.disclosure_required_for_compliance",
+              "source": {
+                "provision": "45 CFR 164.502(b)",
+                "pinpoint": "164.502(b)(2)(vi)",
+                "text": "(vi) Uses or disclosures that are required for compliance with applicable requirements of this subchapter."
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.permitted_disclosure",
+      "fields": {
+        "routes": {
+          "before": {
+            "closed": true,
+            "basis": {
+              "provision": "45 CFR 164.502(a)",
+              "pinpoint": "164.502(a)(1)(i)-(vi)",
+              "text": "A covered entity is permitted to use or disclose protected health information as follows"
+            },
+            "items": [
+              {
+                "id": "hipaa.route.to_individual",
+                "label": "To the individual",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(i)",
+                    "text": "To the individual"
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.tpo",
+                "label": "Treatment, payment or health care operations",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(ii)",
+                    "text": "For treatment, payment, or health care operations, as permitted by and in compliance with § 164.506"
+                  },
+                  {
+                    "provision": "45 CFR 164.506",
+                    "pinpoint": "164.506(a)",
+                    "text": "a covered entity may use or disclose protected health information for treatment, payment, or health care operations as set forth in paragraph (c) of this section"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.treatment"
+                ]
+              },
+              {
+                "id": "hipaa.route.incidental",
+                "label": "Incidental to a permitted disclosure",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(iii)",
+                    "text": "Incident to a use or disclosure otherwise permitted or required by this subpart"
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.authorization",
+                "label": "Valid authorization",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(iv)",
+                    "text": "pursuant to and in compliance with a valid authorization under § 164.508"
+                  },
+                  {
+                    "provision": "45 CFR 164.508(a)",
+                    "pinpoint": "164.508(a)(1)",
+                    "text": "a covered entity may not use or disclose protected health information without an authorization that is valid under this section"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.authorization"
+                ],
+                "evidence": [
+                  "consent_record"
+                ]
+              },
+              {
+                "id": "hipaa.route.agreement_or_objection",
+                "label": "Agreement or opportunity to object (164.510)",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(v)",
+                    "text": "Pursuant to an agreement under, or as otherwise permitted by, § 164.510"
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.business_associate_disclosure",
+                "label": "Disclosure to a business associate",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(e)",
+                    "pinpoint": "164.502(e)(1)(i)",
+                    "text": "A covered entity may disclose protected health information to a business associate"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.business_associate"
+                ],
+                "requires": [
+                  "hipaa.cond.baa"
+                ]
+              },
+              {
+                "id": "hipaa.route.other_this_section",
+                "label": "Other permissions in 164.502 (not modelled)",
+                "modelled": false,
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(vi)(A)",
+                    "text": "As permitted by and in compliance with any of the following"
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.research_waiver",
+                "label": "Research: IRB or privacy board waiver of authorization",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.512(i)",
+                    "pinpoint": "164.512(i)(1)(i)",
+                    "text": "Board approval of a waiver of authorization"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.research"
+                ],
+                "evidence": [
+                  "approval_record"
+                ]
+              },
+              {
+                "id": "hipaa.route.research_preparatory",
+                "label": "Research: reviews preparatory to research",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.512(i)",
+                    "pinpoint": "164.512(i)(1)(ii)",
+                    "text": "Reviews preparatory to research"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.research"
+                ],
+                "evidence": [
+                  "attestation_statement"
+                ],
+                "note": "Requires that no PHI is removed from the covered entity, so it rarely fits a cross-border transfer."
+              },
+              {
+                "id": "hipaa.route.research_decedents",
+                "label": "Research on decedents' information",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.512(i)",
+                    "pinpoint": "164.512(i)(1)(iii)",
+                    "text": "Research on decedent's information"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.research"
+                ],
+                "evidence": [
+                  "attestation_statement"
+                ]
+              },
+              {
+                "id": "hipaa.route.public_health",
+                "label": "Public health activities",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.512(b)",
+                    "pinpoint": "164.512(b)",
+                    "text": "Standard: Uses and disclosures for public health activities"
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.other_public_interest",
+                "label": "Other 164.512 permissions (not modelled)",
+                "modelled": false,
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(vi)(B)",
+                    "text": "Section 164.512 and, where applicable, § 164.509"
+                  },
+                  {
+                    "provision": "45 CFR 164.512 (introduction)",
+                    "pinpoint": "164.512",
+                    "text": "a covered entity may use or disclose protected health information without the written authorization of the individual"
+                  }
+                ],
+                "note": "Includes disclosures required by law (164.512(a)) and the reproductive-health attestation rule in 164.509."
+              },
+              {
+                "id": "hipaa.route.limited_data_set",
+                "label": "Limited data set with a data use agreement",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.514(e)",
+                    "pinpoint": "164.514(e)(1)",
+                    "text": "A covered entity may use or disclose a limited data set that meets the requirements of paragraphs (e)(2) and (e)(3) of this section, if the covered entity enters into a data use agreement"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.limited_data_set"
+                ],
+                "requires": [
+                  "hipaa.cond.lds_specification",
+                  "hipaa.cond.lds_permitted_purpose",
+                  "hipaa.cond.dua"
+                ]
+              },
+              {
+                "id": "hipaa.route.fundraising_underwriting",
+                "label": "Fundraising or underwriting (164.514(f)-(g); not modelled)",
+                "modelled": false,
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(vi)(C)",
+                    "text": "Section 164.514(e), (f), or (g)"
+                  }
+                ]
+              }
+            ]
+          },
+          "after": {
+            "closed": false,
+            "basis": {
+              "provision": "45 CFR 164.502(a)",
+              "pinpoint": "164.502(a)",
+              "text": "(a) Standard. A covered entity or business associate may not use or disclose protected health information, except as permitted or required by this subpart or by subpart C of part 160 of this subchapter."
+            },
+            "items": [
+              {
+                "id": "hipaa.route.to_individual",
+                "label": "To the individual",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(i)",
+                    "text": "To the individual"
+                  }
+                ],
+                "statement": "The disclosure is to the individual who is the subject of the PHI under 164.502(a)(1)(i), subject to applicable special restrictions and any mandatory-access rules.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.tpo",
+                "label": "Treatment, payment or health care operations",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(ii)",
+                    "text": "For treatment, payment, or health care operations, as permitted by and in compliance with § 164.506"
+                  },
+                  {
+                    "provision": "45 CFR 164.506",
+                    "pinpoint": "164.506(a)",
+                    "text": "a covered entity may use or disclose protected health information for treatment, payment, or health care operations as set forth in paragraph (c) of this section"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.treatment"
+                ],
+                "statement": "The covered entity's particular use or disclosure meets 164.506(c): its own treatment/payment/operations, treatment by a provider, another entity's payment activities, qualifying operations with the required relationships and purpose, or an organised health-care arrangement. Psychotherapy-note, marketing, sale-of-PHI and other applicable restrictions still apply.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.incidental",
+                "label": "Incidental to a permitted disclosure",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(iii)",
+                    "text": "Incident to a use or disclosure otherwise permitted or required by this subpart"
+                  }
+                ],
+                "statement": "The disclosure is incidental to an otherwise permitted or required use/disclosure and the applicable minimum-necessary and privacy-safeguard requirements in 164.502(b), 164.514(d) and 164.530(c) have been complied with.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.authorization",
+                "label": "Valid authorization",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(iv)",
+                    "text": "pursuant to and in compliance with a valid authorization under § 164.508"
+                  },
+                  {
+                    "provision": "45 CFR 164.508(a)",
+                    "pinpoint": "164.508(a)(1)",
+                    "text": "a covered entity may not use or disclose protected health information without an authorization that is valid under this section"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.authorization"
+                ],
+                "evidence": [
+                  "consent_record"
+                ],
+                "statement": "An unexpired, unrevoked authorization satisfies 164.508(b)-(c), including all core elements and statements, signature and date, plain language and applicable compound-authorization/conditioning rules, and covers this use/disclosure; it cannot override an applicable prohibition.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.agreement_or_objection",
+                "label": "Agreement or opportunity to object (164.510)",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(v)",
+                    "text": "Pursuant to an agreement under, or as otherwise permitted by, § 164.510"
+                  },
+                  {
+                    "provision": "45 CFR 164.510",
+                    "pinpoint": "164.510",
+                    "text": "A covered entity may use or disclose protected health information, provided that the individual is informed in advance of the use or disclosure and has the opportunity to agree to or prohibit or restrict the use or disclosure, in accordance with the applicable requirements of this section. The covered entity may orally inform the individual of and obtain the individual's oral agreement or objection to a use or disclosure permitted by this section."
+                  }
+                ],
+                "statement": "This disclosure fits 164.510(a) or (b), including the facility-directory or care/payment/disaster-relief purpose, the permitted recipient and information limits, and the applicable opportunity to agree/object or professional-judgment conditions.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.business_associate_disclosure",
+                "label": "Disclosure to a business associate",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(e)",
+                    "pinpoint": "164.502(e)(1)(i)",
+                    "text": "A covered entity may disclose protected health information to a business associate"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.business_associate"
+                ],
+                "requires": [
+                  "hipaa.cond.baa"
+                ],
+                "statement": "The recipient acts on behalf of this sender in a qualifying business-associate or subcontractor relationship under 164.502(e), with satisfactory assurances and terms under 164.504(e). A contract cannot authorise an otherwise impermissible use.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  },
+                  {
+                    "node": "hipaa.cond.recipient_is_business_associate",
+                    "source": {
+                      "provision": "45 CFR 164.502(e)",
+                      "pinpoint": "164.502(e)(1)(i)",
+                      "text": "(e)(1) Standard: Disclosures to business associates. (i) A covered entity may disclose protected health information to a business associate and may allow a business associate to create, receive, maintain, or transmit protected health information on its behalf, if the covered entity obtains satisfactory assurance that the business associate will appropriately safeguard the information. A covered entity is not required to obtain such satisfactory assurances from a business associate that is a subcontractor."
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.other_this_section",
+                "label": "Other permissions in 164.502 (not modelled)",
+                "modelled": false,
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(vi)(A)",
+                    "text": "As permitted by and in compliance with any of the following"
+                  }
+                ],
+                "statement": "Other uses/disclosures under 164.502 are not fully modelled; this placeholder cannot establish permission.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.research_waiver",
+                "label": "Research: IRB or privacy board waiver of authorization",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.512(i)",
+                    "pinpoint": "164.512(i)(1)(i)",
+                    "text": "Board approval of a waiver of authorization"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.research"
+                ],
+                "evidence": [
+                  "approval_record"
+                ],
+                "statement": "The covered entity obtains documentation of an IRB or privacy-board waiver or alteration meeting every applicable condition in 164.512(i)(1)(i) and (i)(2), including privacy risk/protection/destruction/non-reuse assurances, impracticability, identification of necessary PHI, board procedure and signature.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.research_preparatory",
+                "label": "Research: reviews preparatory to research",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.512(i)",
+                    "pinpoint": "164.512(i)(1)(ii)",
+                    "text": "Reviews preparatory to research"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.research"
+                ],
+                "evidence": [
+                  "attestation_statement"
+                ],
+                "note": "Requires that no PHI is removed from the covered entity, so it rarely fits a cross-border transfer.",
+                "statement": "Representations satisfy 164.512(i)(1)(ii): the use/disclosure is solely to prepare a research protocol or similar preparatory purpose, no PHI is removed from the covered entity by the researcher, and the PHI sought is necessary for that purpose.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.research_decedents",
+                "label": "Research on decedents' information",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.512(i)",
+                    "pinpoint": "164.512(i)(1)(iii)",
+                    "text": "Research on decedent's information"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.research"
+                ],
+                "evidence": [
+                  "attestation_statement"
+                ],
+                "statement": "Representations satisfy 164.512(i)(1)(iii): the use/disclosure is solely for research on decedents' PHI, the PHI is necessary for the research, and documentation of death is provided if requested.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.public_health",
+                "label": "Public health activities",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.512(b)",
+                    "pinpoint": "164.512(b)",
+                    "text": "Standard: Uses and disclosures for public health activities"
+                  }
+                ],
+                "statement": "This use/disclosure fits a specific paragraph of 164.512(b), including its authorised public-health actor or other specified recipient, purpose and any required notice or other conditions. A general public-health purpose alone does not suffice.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.other_public_interest",
+                "label": "Other 164.512 permissions (not modelled)",
+                "modelled": false,
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(vi)(B)",
+                    "text": "Section 164.512"
+                  },
+                  {
+                    "provision": "45 CFR 164.512 (introduction)",
+                    "pinpoint": "164.512",
+                    "text": "a covered entity may use or disclose protected health information without the written authorization of the individual"
+                  }
+                ],
+                "note": "The 2025 Purl vacatur affects the 2024 reproductive-health amendments. See reference/legal_status.json; printed text is not sufficient evidence that a provision is operative.",
+                "statement": "Other 164.512 permissions are not fully modelled; this placeholder cannot establish permission. The vacated reproductive-health attestation provisions must not be applied merely because they remain printed in eCFR.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.limited_data_set",
+                "label": "Limited data set with a data use agreement",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.514(e)",
+                    "pinpoint": "164.514(e)(1)",
+                    "text": "A covered entity may use or disclose a limited data set that meets the requirements of paragraphs (e)(2) and (e)(3) of this section, if the covered entity enters into a data use agreement"
+                  }
+                ],
+                "concepts": [
+                  "hipaa.concept.limited_data_set"
+                ],
+                "requires": [
+                  "hipaa.cond.lds_specification",
+                  "hipaa.cond.lds_permitted_purpose",
+                  "hipaa.cond.dua"
+                ],
+                "statement": "The covered entity uses the 164.514(e) limited-data-set permission for this disclosure; exclusion of the specified identifiers, a permitted purpose and a compliant data-use agreement must all hold.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  },
+                  "hipaa.cond.limited_data_set_disclosed"
+                ]
+              },
+              {
+                "id": "hipaa.route.fundraising_underwriting",
+                "label": "Fundraising or underwriting (164.514(f)-(g); not modelled)",
+                "modelled": false,
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(1)(vi)(C)",
+                    "text": "Section 164.514(e), (f), or (g)"
+                  }
+                ],
+                "statement": "The 164.514(f)-(g) permissions and their restrictions are not fully modelled; this placeholder cannot establish permission.",
+                "scoped_by": [
+                  {
+                    "node": "hipaa.cond.sender_covered_entity",
+                    "source": {
+                      "provision": "45 CFR 164.502(a)",
+                      "pinpoint": "164.502(a)(1)",
+                      "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "hipaa.route.business_associate_authority",
+                "label": "Business-associate contractual or statutory authority",
+                "statement": "The sender is acting as a business associate. Its separate business-associate permission condition must also be met.",
+                "sources": [
+                  {
+                    "provision": "45 CFR 164.502(a)",
+                    "pinpoint": "164.502(a)(3)",
+                    "text": "(3) Business associates: Permitted uses and disclosures. A business associate may use or disclose protected health information only as permitted or required by its business associate contract or other arrangement pursuant to § 164.504(e) or as required by law. The business associate may not use or disclose protected health information in a manner that would violate the requirements of this subpart, if done by the covered entity, except for the purposes specified under § 164.504(e)(2)(i)(A) or (B) if such uses or disclosures are permitted by its contract or other arrangement."
+                  }
+                ],
+                "scoped_by": [
+                  "hipaa.cond.sender_business_associate"
+                ]
+              }
+            ]
+          }
+        },
+        "statement": {
+          "before": "The covered entity may not disclose PHI except as the Privacy Rule permits; the disclosure must fit one permission.",
+          "after": "A regulated sender's use/disclosure has permission appropriate to its capacity. Covered-entity permissions and business-associate authority are separately scoped, and all applicable restrictions remain binding."
+        },
+        "note": {
+          "before": "De-identification is not a permission: de-identified information is not PHI, so it belongs to hipaa.applicability (live run 42 filed it under disclosure routes).",
+          "after": "The list does not fully model required disclosures, all special prohibitions, or every permission. Unmodelled alternatives cannot prove permission; failure of listed alternatives alone is not proof that no legal route exists."
+        },
+        "requires": {
+          "before": null,
+          "after": [
+            "hipaa.cond.business_associate_permission"
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.recipient_obligations",
+      "fields": {
+        "sources": {
+          "before": [
+            {
+              "provision": "45 CFR 164.530(c)",
+              "pinpoint": "164.530(c)(1)",
+              "text": "A covered entity must have in place appropriate administrative, technical, and physical safeguards to protect the privacy of protected health information"
+            },
+            {
+              "provision": "45 CFR 164.500",
+              "pinpoint": "164.500(a)",
+              "text": "the standards, requirements, and implementation specifications of this subpart apply to covered entities with respect to protected health information"
+            }
+          ],
+          "after": [
+            {
+              "provision": "45 CFR 164.530(c)",
+              "pinpoint": "164.530(c)(1)",
+              "text": "A covered entity must have in place appropriate administrative, technical, and physical safeguards to protect the privacy of protected health information"
+            },
+            {
+              "provision": "45 CFR 164.500",
+              "pinpoint": "164.500(a)",
+              "text": "the standards, requirements, and implementation specifications of this subpart apply to covered entities with respect to protected health information"
+            },
+            {
+              "provision": "45 CFR 164.504(e)",
+              "pinpoint": "164.504(e)(2)(ii)(B)",
+              "text": "(B) Use appropriate safeguards and comply, where applicable, with subpart C of this part with respect to electronic protected health information, to prevent use or disclosure of the information other than as provided for by its contract;"
+            }
+          ]
+        },
+        "requires": {
+          "before": [
+            "hipaa.cond.recipient_privacy_safeguards"
+          ],
+          "after": [
+            "hipaa.cond.recipient_privacy_safeguards",
+            "hipaa.cond.recipient_ba_safeguards"
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.required_agreements",
+      "fields": {
+        "statement": {
+          "before": "Disclosure to a business associate needs a business associate contract; a limited data set needs a data use agreement.",
+          "after": "The regulated sender obtains the applicable business-associate or subcontractor assurances under 164.502(e) and 164.504(e); disclosure relying on the limited-data-set permission also requires a data-use agreement."
+        },
+        "scoped_by": {
+          "before": [
+            {
+              "node": "hipaa.cond.sender_regulated",
+              "source": {
+                "provision": "45 CFR 164.502(e)",
+                "pinpoint": "164.502(e)(1)(i)",
+                "text": "A covered entity may disclose protected health information to a business associate"
+              }
+            }
+          ],
+          "after": [
+            {
+              "node": "hipaa.cond.sender_regulated",
+              "source": {
+                "provision": "45 CFR 164.502(e)",
+                "pinpoint": "164.502(e)(1)(i)-(ii)",
+                "text": "A covered entity may disclose protected health information to a business associate and may allow a business associate to create, receive, maintain, or transmit protected health information on its behalf, if the covered entity obtains satisfactory assurance that the business associate will appropriately safeguard the information. A covered entity is not required to obtain such satisfactory assurances from a business associate that is a subcontractor.\n(ii) A business associate may disclose protected health information to a business associate that is a subcontractor and may allow the subcontractor to create, receive, maintain, or transmit protected health information on its behalf, if the business associate obtains satisfactory assurances, in accordance with § 164.504(e)(1)(i), that the subcontractor will appropriately safeguard the information."
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.agreement_or_objection",
+      "fields": {
+        "sources": {
+          "before": [
+            {
+              "provision": "45 CFR 164.502(a)",
+              "pinpoint": "164.502(a)(1)(v)",
+              "text": "Pursuant to an agreement under, or as otherwise permitted by, § 164.510"
+            }
+          ],
+          "after": [
+            {
+              "provision": "45 CFR 164.502(a)",
+              "pinpoint": "164.502(a)(1)(v)",
+              "text": "Pursuant to an agreement under, or as otherwise permitted by, § 164.510"
+            },
+            {
+              "provision": "45 CFR 164.510",
+              "pinpoint": "164.510",
+              "text": "A covered entity may use or disclose protected health information, provided that the individual is informed in advance of the use or disclosure and has the opportunity to agree to or prohibit or restrict the use or disclosure, in accordance with the applicable requirements of this section. The covered entity may orally inform the individual of and obtain the individual's oral agreement or objection to a use or disclosure permitted by this section."
+            }
+          ]
+        },
+        "statement": {
+          "before": null,
+          "after": "This disclosure fits 164.510(a) or (b), including the facility-directory or care/payment/disaster-relief purpose, the permitted recipient and information limits, and the applicable opportunity to agree/object or professional-judgment conditions."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.authorization",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "An unexpired, unrevoked authorization satisfies 164.508(b)-(c), including all core elements and statements, signature and date, plain language and applicable compound-authorization/conditioning rules, and covers this use/disclosure; it cannot override an applicable prohibition."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.business_associate",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "At least one party is a business associate under 160.103, including a qualifying subcontractor; only provisions made applicable to that role bind it."
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.business_associate_disclosure",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The recipient acts on behalf of this sender in a qualifying business-associate or subcontractor relationship under 164.502(e), with satisfactory assurances and terms under 164.504(e). A contract cannot authorise an otherwise impermissible use."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            },
+            {
+              "node": "hipaa.cond.recipient_is_business_associate",
+              "source": {
+                "provision": "45 CFR 164.502(e)",
+                "pinpoint": "164.502(e)(1)(i)",
+                "text": "(e)(1) Standard: Disclosures to business associates. (i) A covered entity may disclose protected health information to a business associate and may allow a business associate to create, receive, maintain, or transmit protected health information on its behalf, if the covered entity obtains satisfactory assurance that the business associate will appropriately safeguard the information. A covered entity is not required to obtain such satisfactory assurances from a business associate that is a subcontractor."
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.covered_entity",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "At least one party is a covered entity under 160.103: a health plan, health care clearinghouse, or health care provider transmitting health information electronically in a covered transaction."
+        },
+        "sources": {
+          "before": [
+            {
+              "provision": "45 CFR 160.103 [Covered entity]",
+              "pinpoint": "160.103",
+              "text": "A health care provider who transmits any health information in electronic form in connection with a transaction covered by this subchapter"
+            }
+          ],
+          "after": [
+            {
+              "provision": "45 CFR 160.103 [Covered entity]",
+              "pinpoint": "160.103",
+              "text": "Covered entity means:\n(1) A health plan.\n(2) A health care clearinghouse.\n(3) A health care provider who transmits any health information in electronic form in connection with a transaction covered by this subchapter."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.fundraising_underwriting",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The 164.514(f)-(g) permissions and their restrictions are not fully modelled; this placeholder cannot establish permission."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.incidental",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The disclosure is incidental to an otherwise permitted or required use/disclosure and the applicable minimum-necessary and privacy-safeguard requirements in 164.502(b), 164.514(d) and 164.530(c) have been complied with."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.limited_data_set",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The covered entity uses the 164.514(e) limited-data-set permission for this disclosure; exclusion of the specified identifiers, a permitted purpose and a compliant data-use agreement must all hold."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            },
+            "hipaa.cond.limited_data_set_disclosed"
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.other_public_interest",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "Other 164.512 permissions are not fully modelled; this placeholder cannot establish permission. The vacated reproductive-health attestation provisions must not be applied merely because they remain printed in eCFR."
+        },
+        "sources": {
+          "before": [
+            {
+              "provision": "45 CFR 164.502(a)",
+              "pinpoint": "164.502(a)(1)(vi)(B)",
+              "text": "Section 164.512 and, where applicable, § 164.509"
+            },
+            {
+              "provision": "45 CFR 164.512 (introduction)",
+              "pinpoint": "164.512",
+              "text": "a covered entity may use or disclose protected health information without the written authorization of the individual"
+            }
+          ],
+          "after": [
+            {
+              "provision": "45 CFR 164.502(a)",
+              "pinpoint": "164.502(a)(1)(vi)(B)",
+              "text": "Section 164.512"
+            },
+            {
+              "provision": "45 CFR 164.512 (introduction)",
+              "pinpoint": "164.512",
+              "text": "a covered entity may use or disclose protected health information without the written authorization of the individual"
+            }
+          ]
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            }
+          ]
+        },
+        "note": {
+          "before": "Includes disclosures required by law (164.512(a)) and the reproductive-health attestation rule in 164.509.",
+          "after": "The 2025 Purl vacatur affects the 2024 reproductive-health amendments. See reference/legal_status.json; printed text is not sufficient evidence that a provision is operative."
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.other_this_section",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "Other uses/disclosures under 164.502 are not fully modelled; this placeholder cannot establish permission."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.public_health",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "This use/disclosure fits a specific paragraph of 164.512(b), including its authorised public-health actor or other specified recipient, purpose and any required notice or other conditions. A general public-health purpose alone does not suffice."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.research_decedents",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "Representations satisfy 164.512(i)(1)(iii): the use/disclosure is solely for research on decedents' PHI, the PHI is necessary for the research, and documentation of death is provided if requested."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.research_preparatory",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "Representations satisfy 164.512(i)(1)(ii): the use/disclosure is solely to prepare a research protocol or similar preparatory purpose, no PHI is removed from the covered entity by the researcher, and the PHI sought is necessary for that purpose."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.research_waiver",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The covered entity obtains documentation of an IRB or privacy-board waiver or alteration meeting every applicable condition in 164.512(i)(1)(i) and (i)(2), including privacy risk/protection/destruction/non-reuse assurances, impracticability, identification of necessary PHI, board procedure and signature."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.to_individual",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The disclosure is to the individual who is the subject of the PHI under 164.502(a)(1)(i), subject to applicable special restrictions and any mandatory-access rules."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.route.tpo",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The covered entity's particular use or disclosure meets 164.506(c): its own treatment/payment/operations, treatment by a provider, another entity's payment activities, qualifying operations with the required relationships and purpose, or an organised health-care arrangement. Psychotherapy-note, marketing, sale-of-PHI and other applicable restrictions still apply."
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            {
+              "node": "hipaa.cond.sender_covered_entity",
+              "source": {
+                "provision": "45 CFR 164.502(a)",
+                "pinpoint": "164.502(a)(1)",
+                "text": "(1) Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hipaa.security",
+      "fields": {
+        "sources": {
+          "before": [
+            {
+              "provision": "45 CFR 164.308",
+              "pinpoint": "164.308(a)",
+              "text": "A covered entity or business associate must, in accordance with § 164.306"
+            },
+            {
+              "provision": "45 CFR 164.312",
+              "pinpoint": "164.312",
+              "text": "A covered entity or business associate must, in accordance with § 164.306"
+            }
+          ],
+          "after": [
+            {
+              "provision": "45 CFR 164.308",
+              "pinpoint": "164.308(a)",
+              "text": "A covered entity or business associate must, in accordance with § 164.306"
+            },
+            {
+              "provision": "45 CFR 164.312",
+              "pinpoint": "164.312",
+              "text": "A covered entity or business associate must, in accordance with § 164.306"
+            },
+            {
+              "provision": "45 CFR 164.302",
+              "pinpoint": "164.302",
+              "text": "A covered entity or business associate must comply with the applicable standards, implementation specifications, and requirements of this subpart with respect to electronic protected health information of a covered entity."
+            }
+          ]
+        },
+        "scoped_by": {
+          "before": null,
+          "after": [
+            "hipaa.cond.electronic_phi"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ie.cond.function_conferred_by_law",
+      "fields": {
+        "statement": {
+          "before": "The processing is necessary and proportionate for a function of the controller conferred by or under an enactment or by the Constitution (identify it).",
+          "after": "Processing is necessary and proportionate for a function conferred on this controller by or under an enactment or the Constitution, including administering a non-statutory scheme/programme/funds whose legal basis is such a function (s. 38(1)(a)-(b)); identify that function. Other statutory bases remain possible."
+        }
+      }
+    },
+    {
+      "id": "ie.health_care_processing",
+      "fields": {
+        "statement": {
+          "before": "Irish law permits health-care processing of special categories under Art. 9(2)(h), by or under the responsibility of a health practitioner, with suitable and specific measures.",
+          "after": "Irish law permits health-care processing of special categories under Art. 9(2)(h), by or under the responsibility of a health practitioner, with suitable and specific measures. The processing must be necessary for a purpose listed in s. 52(1)."
+        },
+        "requires": {
+          "before": [
+            "ie.cond.health_practitioner_responsibility",
+            {
+              "node": "ie.cond.suitable_and_specific_measures",
+              "source": {
+                "provision": "IE DPA 2018 s. 52",
+                "pinpoint": "s. 52(1)",
+                "text": "to suitable and specific measures being taken to safeguard the fundamental rights and freedoms of data subjects"
+              }
+            }
+          ],
+          "after": [
+            "ie.cond.health_practitioner_responsibility",
+            {
+              "node": "ie.cond.suitable_and_specific_measures",
+              "source": {
+                "provision": "IE DPA 2018 s. 52",
+                "pinpoint": "s. 52(1)",
+                "text": "to suitable and specific measures being taken to safeguard the fundamental rights and freedoms of data subjects"
+              }
+            },
+            "ie.cond.health_care_necessary"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ie.health_research_measures",
+      "fields": {
+        "routes": {
+          "before": {
+            "closed": true,
+            "basis": {
+              "provision": "IE S.I. 18/2021 Reg. 4",
+              "pinpoint": "Reg. 3(1)(e) as substituted",
+              "text": "subject to Regulations 3A and 3B, explicit consent has been obtained from the data subject"
+            },
+            "items": [
+              {
+                "id": "ie.route.explicit_consent",
+                "label": "Explicit consent, recorded and retained",
+                "sources": [
+                  {
+                    "provision": "IE S.I. 18/2021 Reg. 4",
+                    "pinpoint": "Reg. 3(1)(e) as substituted",
+                    "text": "explicit consent has been obtained from the data subject, as a suitable and specific measure recorded and retained by the controller"
+                  }
+                ],
+                "evidence": [
+                  "consent_record"
+                ],
+                "note": "Current wording as substituted by S.I. 18/2021; the corpus also holds the superseded 2018 text."
+              },
+              {
+                "id": "ie.route.consent_declaration",
+                "label": "Consent declaration by the Health Research Consent Declaration Committee",
+                "sources": [
+                  {
+                    "provision": "IE S.I. 314/2018 Reg. 5",
+                    "pinpoint": "Reg. 5(2)",
+                    "text": "a declaration by the Committee that explicit consent by a data subject is not required by the controller"
+                  }
+                ],
+                "evidence": [
+                  "approval_record"
+                ],
+                "note": "Before applying the controller must carry out a DPIA and obtain ethical approval (Reg. 5(3))."
+              },
+              {
+                "id": "ie.route.retrospective_chart_review",
+                "label": "Retrospective chart review (Reg. 3A)",
+                "sources": [
+                  {
+                    "provision": "IE S.I. 18/2021 Reg. 5",
+                    "pinpoint": "Reg. 3A(1) as inserted",
+                    "text": "the requirement for explicit consent in Regulation 3(1)(e) shall not apply in relation to a retrospective chart review study"
+                  }
+                ],
+                "evidence": [
+                  "approval_record"
+                ],
+                "note": "Limited to the controller's own practitioners and employees; the required notices state the data 'may be used but not disclosed to another person', so it does not appear to cover disclosure to another organisation."
+              },
+              {
+                "id": "ie.route.deferred_consent",
+                "label": "Deferred consent, incapacity (Reg. 3B)",
+                "sources": [
+                  {
+                    "provision": "IE S.I. 18/2021 Reg. 5",
+                    "pinpoint": "Reg. 3B(1) as inserted",
+                    "text": "the requirement for explicit consent under Regulation 3(1)(e) will be deferred until such time as the individual concerned has the capacity to give such consent"
+                  }
+                ],
+                "evidence": [
+                  "approval_record"
+                ]
+              },
+              {
+                "id": "ie.route.pre_2018_research",
+                "label": "Research begun before 8 August 2018 (Reg. 6; not modelled)",
+                "modelled": false,
+                "sources": [
+                  {
+                    "provision": "IE S.I. 314/2018 Reg. 6",
+                    "pinpoint": "Reg. 6(1)",
+                    "text": "A controller who is carrying out health research that commenced prior to 8 August 2018"
+                  },
+                  {
+                    "provision": "IE S.I. 188/2019 Reg. 2",
+                    "pinpoint": "amends Reg. 6(1)",
+                    "text": "no later than 7 August 2019"
+                  }
+                ]
+              }
+            ]
+          },
+          "after": {
+            "closed": false,
+            "basis": {
+              "provision": "IE S.I. 18/2021 Reg. 4",
+              "pinpoint": "Reg. 3(1)(e) as substituted",
+              "text": "subject to Regulations 3A and 3B, explicit consent has been obtained from the data subject"
+            },
+            "items": [
+              {
+                "id": "ie.route.explicit_consent",
+                "label": "Explicit consent, recorded and retained",
+                "sources": [
+                  {
+                    "provision": "IE S.I. 18/2021 Reg. 4",
+                    "pinpoint": "Reg. 3(1)(e) as substituted",
+                    "text": "explicit consent has been obtained from the data subject, as a suitable and specific measure recorded and retained by the controller"
+                  }
+                ],
+                "evidence": [
+                  "consent_record"
+                ],
+                "note": "Current wording as substituted by S.I. 18/2021; the corpus also holds the superseded 2018 text.",
+                "statement": "Valid explicit consent covers the health-research processing, is recorded and retained, and meets current Reg. 3(1)(e), as substituted by S.I. 18/2021 Reg. 4."
+              },
+              {
+                "id": "ie.route.consent_declaration",
+                "label": "Consent declaration by the Health Research Consent Declaration Committee",
+                "sources": [
+                  {
+                    "provision": "IE S.I. 314/2018 Reg. 5",
+                    "pinpoint": "Reg. 5(2)",
+                    "text": "a declaration by the Committee that explicit consent by a data subject is not required by the controller"
+                  }
+                ],
+                "evidence": [
+                  "approval_record"
+                ],
+                "note": "Before applying the controller must carry out a DPIA and obtain ethical approval (Reg. 5(3)).",
+                "statement": "An applicable Committee consent declaration under Reg. 5 is in force and its conditions are met; the controller has completed the required DPIA and obtained ethics approval before applying. An application alone is insufficient."
+              },
+              {
+                "id": "ie.route.retrospective_chart_review",
+                "label": "Retrospective chart review (Reg. 3A)",
+                "sources": [
+                  {
+                    "provision": "IE S.I. 18/2021 Reg. 5",
+                    "pinpoint": "Reg. 3A(1) as inserted",
+                    "text": "the requirement for explicit consent in Regulation 3(1)(e) shall not apply in relation to a retrospective chart review study"
+                  }
+                ],
+                "evidence": [
+                  "approval_record"
+                ],
+                "note": "Limited to the controller's own practitioners and employees; the required notices state the data 'may be used but not disclosed to another person', so it does not appear to cover disclosure to another organisation.",
+                "statement": "All Reg. 3A conditions hold: an eligible internal retrospective study of this controller's care records, qualifying personnel, ethics approval with a written low-risk finding, prescribed notices, no disclosure to another person for the study, and non-identifying published findings."
+              },
+              {
+                "id": "ie.route.deferred_consent",
+                "label": "Deferred consent, incapacity (Reg. 3B)",
+                "sources": [
+                  {
+                    "provision": "IE S.I. 18/2021 Reg. 5",
+                    "pinpoint": "Reg. 3B(1) as inserted",
+                    "text": "the requirement for explicit consent under Regulation 3(1)(e) will be deferred until such time as the individual concerned has the capacity to give such consent"
+                  }
+                ],
+                "evidence": [
+                  "approval_record"
+                ],
+                "statement": "All Reg. 3B conditions hold: exceptional circumstances, processing principally necessary for care and vital interests of an individual unable to consent, related ethics-approved research, prompt consent when capacity permits, oral/written information including sharing, and the withdrawal/erasure rules and their qualified exception."
+              },
+              {
+                "id": "ie.route.pre_2018_research",
+                "label": "Research begun before 8 August 2018 (Reg. 6; not modelled)",
+                "modelled": false,
+                "sources": [
+                  {
+                    "provision": "IE S.I. 314/2018 Reg. 6",
+                    "pinpoint": "Reg. 6(1)",
+                    "text": "A controller who is carrying out health research that commenced prior to 8 August 2018"
+                  },
+                  {
+                    "provision": "IE S.I. 188/2019 Reg. 2",
+                    "pinpoint": "amends Reg. 6(1)",
+                    "text": "no later than 7 August 2019"
+                  }
+                ],
+                "statement": "The transitional Reg. 6 route, including its amendments and deadlines, is not fully modelled and cannot establish present permission."
+              }
+            ]
+          }
+        },
+        "statement": {
+          "before": "Irish law permits research processing of special categories subject to the Health Research Regulations' mandatory suitable and specific measures, including explicit consent unless an exception or Committee declaration applies.",
+          "after": "For personal data processed for health research, the Health Research Regulations impose suitable and specific measures, including the current consent/declaration/exception conditions. These are additional measures and do not themselves supply a GDPR Art. 6 basis or replace an Art. 9(2) condition."
+        },
+        "implements": {
+          "before": [
+            "gdpr.cond.art9_2_j_basis_in_law"
+          ],
+          "after": [
+            "gdpr.cond.art9_4_national_conditions"
+          ]
+        },
+        "note": {
+          "before": null,
+          "after": "Selected consent alternatives are represented. Transitional, capacity and special sector legislation require case-specific review; the graph does not claim this is an exhaustive list."
+        }
+      }
+    },
+    {
+      "id": "ie.public_function_basis",
+      "fields": {
+        "statement": {
+          "before": "Irish law supplies the basis for public-task processing: processing is lawful to the extent necessary and proportionate for a function conferred by or under an enactment or the Constitution.",
+          "after": "DPA 2018 s. 38(1) supports processing necessary and proportionate for a statutory or constitutional function, including administering a non-statutory scheme, programme or funds whose administration has that legal basis. It does not itself identify this controller’s particular function."
+        }
+      }
+    },
+    {
+      "id": "ie.public_health_processing",
+      "fields": {
+        "statement": {
+          "before": "Irish law permits processing of special categories for public interest reasons in the area of public health, with suitable and specific measures.",
+          "after": "Irish law permits processing of special categories for public interest reasons in the area of public health, with suitable and specific measures. The processing must be necessary for the public-health interest identified in s. 53."
+        },
+        "requires": {
+          "before": [
+            {
+              "node": "ie.cond.suitable_and_specific_measures",
+              "source": {
+                "provision": "IE DPA 2018 s. 53",
+                "pinpoint": "s. 53",
+                "text": "Subject to suitable and specific measures to safeguard the fundamental rights and freedoms of data subjects"
+              }
+            }
+          ],
+          "after": [
+            {
+              "node": "ie.cond.suitable_and_specific_measures",
+              "source": {
+                "provision": "IE DPA 2018 s. 53",
+                "pinpoint": "s. 53",
+                "text": "Subject to suitable and specific measures to safeguard the fundamental rights and freedoms of data subjects"
+              }
+            },
+            "ie.cond.public_health_necessary"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ie.route.consent_declaration",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "An applicable Committee consent declaration under Reg. 5 is in force and its conditions are met; the controller has completed the required DPIA and obtained ethics approval before applying. An application alone is insufficient."
+        }
+      }
+    },
+    {
+      "id": "ie.route.deferred_consent",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "All Reg. 3B conditions hold: exceptional circumstances, processing principally necessary for care and vital interests of an individual unable to consent, related ethics-approved research, prompt consent when capacity permits, oral/written information including sharing, and the withdrawal/erasure rules and their qualified exception."
+        }
+      }
+    },
+    {
+      "id": "ie.route.explicit_consent",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "Valid explicit consent covers the health-research processing, is recorded and retained, and meets current Reg. 3(1)(e), as substituted by S.I. 18/2021 Reg. 4."
+        }
+      }
+    },
+    {
+      "id": "ie.route.pre_2018_research",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "The transitional Reg. 6 route, including its amendments and deadlines, is not fully modelled and cannot establish present permission."
+        }
+      }
+    },
+    {
+      "id": "ie.route.retrospective_chart_review",
+      "fields": {
+        "statement": {
+          "before": null,
+          "after": "All Reg. 3A conditions hold: an eligible internal retrospective study of this controller's care records, qualifying personnel, ethics approval with a written low-risk finding, prescribed notices, no disclosure to another person for the study, and non-identifying published findings."
+        }
+      }
+    }
+  ],
+  "bindings_before": [
+    {
+      "field": "data.gdpr_status",
+      "value": "personal",
+      "claims": [
+        "gdpr.cond.material_scope"
+      ]
+    },
+    {
+      "field": "data.gdpr_status",
+      "value": "pseudonymised",
+      "claims": [
+        "gdpr.cond.material_scope"
+      ]
+    },
+    {
+      "field": "data.gdpr_status",
+      "value": "anonymous",
+      "denies": [
+        "gdpr.cond.material_scope"
+      ]
+    },
+    {
+      "field": "data.hipaa_status",
+      "value": "phi",
+      "claims": [
+        "hipaa.cond.phi_involved"
+      ]
+    },
+    {
+      "field": "data.hipaa_status",
+      "value": "limited_data_set",
+      "claims": [
+        "hipaa.cond.phi_involved",
+        "hipaa.cond.limited_data_set_disclosed",
+        "hipaa.route.limited_data_set"
+      ]
+    },
+    {
+      "field": "data.hipaa_status",
+      "value": "deidentified",
+      "denies": [
+        "hipaa.cond.phi_involved"
+      ]
+    },
+    {
+      "field": "data.special_categories",
+      "value": "health",
+      "claims": [
+        "gdpr.cond.special_category_data"
+      ]
+    },
+    {
+      "field": "data.special_categories",
+      "value": "genetic",
+      "claims": [
+        "gdpr.cond.special_category_data"
+      ]
+    },
+    {
+      "field": "data.special_categories",
+      "value": "biometric",
+      "claims": [
+        "gdpr.cond.special_category_data"
+      ]
+    },
+    {
+      "field": "data.special_categories",
+      "value": "other_sensitive",
+      "claims": [
+        "gdpr.cond.special_category_data"
+      ]
+    },
+    {
+      "field": "sender.gdpr_role",
+      "value": "joint_controller",
+      "claims": [
+        "gdpr.cond.joint_controllers"
+      ]
+    },
+    {
+      "field": "recipient.gdpr_role",
+      "value": "joint_controller",
+      "claims": [
+        "gdpr.cond.joint_controllers"
+      ]
+    },
+    {
+      "field": "sender.gdpr_role",
+      "value": "processor",
+      "claims": [
+        "gdpr.cond.processor_engaged"
+      ]
+    },
+    {
+      "field": "recipient.gdpr_role",
+      "value": "processor",
+      "claims": [
+        "gdpr.cond.processor_engaged"
+      ]
+    },
+    {
+      "field": "sender.hipaa_role",
+      "value": "covered_entity",
+      "claims": [
+        "hipaa.route.covered_entity",
+        "hipaa.cond.sender_regulated"
+      ]
+    },
+    {
+      "field": "sender.hipaa_role",
+      "value": "business_associate",
+      "claims": [
+        "hipaa.route.business_associate",
+        "hipaa.cond.sender_regulated"
+      ]
+    },
+    {
+      "field": "sender.hipaa_role",
+      "value": "neither",
+      "denies": [
+        "hipaa.cond.sender_regulated"
+      ]
+    },
+    {
+      "field": "recipient.hipaa_role",
+      "value": "covered_entity",
+      "claims": [
+        "hipaa.route.covered_entity",
+        "hipaa.cond.recipient_regulated"
+      ]
+    },
+    {
+      "field": "recipient.hipaa_role",
+      "value": "business_associate",
+      "claims": [
+        "hipaa.route.business_associate",
+        "hipaa.cond.recipient_regulated",
+        "hipaa.cond.recipient_is_business_associate"
+      ]
+    },
+    {
+      "field": "recipient.hipaa_role",
+      "value": "neither",
+      "denies": [
+        "hipaa.cond.recipient_regulated"
+      ]
+    },
+    {
+      "field": "purpose",
+      "value": "research",
+      "claims": [
+        "gdpr.cond.research_purpose",
+        "gdpr.route.art9_2_j_research",
+        "ie.cond.health_research_purpose"
+      ]
+    },
+    {
+      "field": "purpose",
+      "value": "treatment",
+      "claims": [
+        "gdpr.route.art9_2_h_health_care",
+        "hipaa.route.tpo"
+      ]
+    },
+    {
+      "field": "purpose",
+      "value": "treatment",
+      "claims": [
+        "hipaa.cond.treatment_disclosure_to_provider"
+      ],
+      "partial": true
+    },
+    {
+      "field": "purpose",
+      "value": "public_health",
+      "claims": [
+        "gdpr.route.art9_2_i_public_health",
+        "hipaa.route.public_health"
+      ]
+    },
+    {
+      "field": "purpose",
+      "value": "healthcare_operations",
+      "claims": [
+        "hipaa.route.tpo"
+      ]
+    },
+    {
+      "field": "purpose",
+      "value": "payment",
+      "claims": [
+        "hipaa.route.tpo"
+      ]
+    },
+    {
+      "field": "purpose",
+      "value": "legal_obligation",
+      "claims": [
+        "gdpr.route.art6_1_c_legal_obligation"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "standard_contractual_clauses",
+      "claims": [
+        "gdpr.route.art46_appropriate_safeguards"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "binding_corporate_rules",
+      "claims": [
+        "gdpr.route.art46_appropriate_safeguards"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "data_privacy_framework_certification",
+      "claims": [
+        "gdpr.route.art45_adequacy"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "processor_contract_art28",
+      "claims": [
+        "gdpr.cond.art28_contract"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "joint_controller_arrangement",
+      "claims": [
+        "gdpr.cond.art26_arrangement"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "explicit_consent",
+      "claims": [
+        "gdpr.route.art9_2_a_explicit_consent",
+        "gdpr.route.art6_1_a_consent",
+        "ie.route.explicit_consent"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "consent",
+      "claims": [
+        "gdpr.route.art6_1_a_consent"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "business_associate_agreement",
+      "claims": [
+        "hipaa.cond.baa"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "data_use_agreement",
+      "claims": [
+        "hipaa.cond.dua"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "hipaa_authorization",
+      "claims": [
+        "hipaa.route.authorization"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "irb_waiver_of_authorization",
+      "claims": [
+        "hipaa.route.research_waiver"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "ethics_approval",
+      "claims": [
+        "ie.cond.ethics_approval"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "transfer_impact_assessment",
+      "claims": [
+        "gdpr.cond.art46_enforceable_rights"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "dpia",
+      "claims": [
+        "gdpr.cond.dpia_before_processing",
+        "ie.cond.data_protection_assessment"
+      ]
+    },
+    {
+      "field": "arrangements.type",
+      "value": "encryption",
+      "claims": [
+        "gdpr.cond.art32_security",
+        "hipaa.cond.security_rule_safeguards"
+      ],
+      "partial": true
+    },
+    {
+      "field": "facts.data_moves_from_eea_to_non_eea_country",
+      "value": true,
+      "claims": [
+        "gdpr.cond.third_country_transfer"
+      ]
+    },
+    {
+      "field": "facts.data_moves_from_eea_to_non_eea_country",
+      "value": false,
+      "denies": [
+        "gdpr.cond.third_country_transfer"
+      ]
+    }
+  ],
+  "bindings_after": [
+    {
+      "field": "data.gdpr_status",
+      "value": "personal",
+      "claims": [
+        "gdpr.cond.material_scope"
+      ],
+      "partial": true
+    },
+    {
+      "field": "data.gdpr_status",
+      "value": "pseudonymised",
+      "claims": [
+        "gdpr.cond.material_scope"
+      ],
+      "partial": true
+    },
+    {
+      "field": "data.gdpr_status",
+      "value": "anonymous",
+      "denies": [
+        "gdpr.cond.material_scope"
+      ]
+    },
+    {
+      "field": "data.hipaa_status",
+      "value": "phi",
+      "claims": [
+        "hipaa.cond.phi_involved"
+      ]
+    },
+    {
+      "field": "data.hipaa_status",
+      "value": "limited_data_set",
+      "claims": [
+        "hipaa.cond.phi_involved"
+      ]
+    },
+    {
+      "field": "data.hipaa_status",
+      "value": "deidentified",
+      "denies": [
+        "hipaa.cond.phi_involved"
+      ]
+    },
+    {
+      "field": "data.special_categories",
+      "value": "health",
+      "claims": [
+        "gdpr.cond.special_category_data"
+      ]
+    },
+    {
+      "field": "data.special_categories",
+      "value": "genetic",
+      "claims": [
+        "gdpr.cond.special_category_data"
+      ]
+    },
+    {
+      "field": "data.special_categories",
+      "value": "biometric",
+      "claims": [
+        "gdpr.cond.special_category_data"
+      ],
+      "partial": true
+    },
+    {
+      "field": "data.special_categories",
+      "value": "other_sensitive",
+      "claims": [
+        "gdpr.cond.special_category_data"
+      ],
+      "partial": true
+    },
+    {
+      "field": "sender.gdpr_role",
+      "value": "joint_controller",
+      "claims": [
+        "gdpr.cond.joint_controllers"
+      ],
+      "partial": true
+    },
+    {
+      "field": "recipient.gdpr_role",
+      "value": "joint_controller",
+      "claims": [
+        "gdpr.cond.joint_controllers"
+      ],
+      "partial": true
+    },
+    {
+      "field": "sender.gdpr_role",
+      "value": "processor",
+      "claims": [
+        "gdpr.cond.processor_engaged"
+      ],
+      "partial": true
+    },
+    {
+      "field": "recipient.gdpr_role",
+      "value": "processor",
+      "claims": [
+        "gdpr.cond.processor_engaged"
+      ],
+      "partial": true
+    },
+    {
+      "field": "sender.hipaa_role",
+      "value": "covered_entity",
+      "claims": [
+        "hipaa.route.covered_entity",
+        "hipaa.cond.sender_regulated",
+        "hipaa.cond.sender_covered_entity"
+      ],
+      "exhaustive": true
+    },
+    {
+      "field": "sender.hipaa_role",
+      "value": "business_associate",
+      "claims": [
+        "hipaa.route.business_associate",
+        "hipaa.cond.sender_regulated",
+        "hipaa.cond.sender_business_associate",
+        "hipaa.route.business_associate_authority"
+      ],
+      "exhaustive": true
+    },
+    {
+      "field": "sender.hipaa_role",
+      "value": "neither",
+      "denies": [
+        "hipaa.cond.sender_regulated"
+      ],
+      "exhaustive": true
+    },
+    {
+      "field": "recipient.hipaa_role",
+      "value": "covered_entity",
+      "claims": [
+        "hipaa.route.covered_entity",
+        "hipaa.cond.recipient_regulated",
+        "hipaa.cond.recipient_covered_entity"
+      ],
+      "exhaustive": true
+    },
+    {
+      "field": "recipient.hipaa_role",
+      "value": "business_associate",
+      "claims": [
+        "hipaa.route.business_associate",
+        "hipaa.cond.recipient_regulated",
+        "hipaa.cond.recipient_business_associate"
+      ],
+      "exhaustive": true
+    },
+    {
+      "field": "recipient.hipaa_role",
+      "value": "neither",
+      "denies": [
+        "hipaa.cond.recipient_regulated"
+      ],
+      "exhaustive": true
+    },
+    {
+      "field": "purpose",
+      "value": "research",
+      "claims": [
+        "gdpr.cond.research_purpose",
+        "gdpr.route.art9_2_j_research",
+        "ie.cond.health_research_purpose"
+      ],
+      "partial": true
+    },
+    {
+      "field": "purpose",
+      "value": "treatment",
+      "claims": [
+        "gdpr.route.art9_2_h_health_care",
+        "hipaa.route.tpo"
+      ],
+      "partial": true
+    },
+    {
+      "field": "purpose",
+      "value": "treatment",
+      "claims": [
+        "hipaa.cond.treatment_disclosure_to_provider"
+      ],
+      "partial": true
+    },
+    {
+      "field": "purpose",
+      "value": "public_health",
+      "claims": [
+        "gdpr.route.art9_2_i_public_health",
+        "hipaa.route.public_health"
+      ],
+      "partial": true
+    },
+    {
+      "field": "purpose",
+      "value": "healthcare_operations",
+      "claims": [
+        "hipaa.route.tpo"
+      ],
+      "partial": true
+    },
+    {
+      "field": "purpose",
+      "value": "payment",
+      "claims": [
+        "hipaa.route.tpo"
+      ],
+      "partial": true
+    },
+    {
+      "field": "purpose",
+      "value": "legal_obligation",
+      "claims": [
+        "gdpr.route.art6_1_c_legal_obligation"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "standard_contractual_clauses",
+      "claims": [
+        "gdpr.route.art46_appropriate_safeguards"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "binding_corporate_rules",
+      "claims": [
+        "gdpr.route.art46_appropriate_safeguards"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "data_privacy_framework_certification",
+      "claims": [
+        "gdpr.route.art45_adequacy"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "processor_contract_art28",
+      "claims": [
+        "gdpr.cond.art28_contract"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "joint_controller_arrangement",
+      "claims": [
+        "gdpr.cond.art26_arrangement"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "explicit_consent",
+      "claims": [
+        "gdpr.route.art9_2_a_explicit_consent",
+        "gdpr.route.art6_1_a_consent",
+        "ie.route.explicit_consent"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "consent",
+      "claims": [
+        "gdpr.route.art6_1_a_consent"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "business_associate_agreement",
+      "claims": [
+        "hipaa.cond.baa"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "data_use_agreement",
+      "claims": [
+        "hipaa.cond.dua"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "hipaa_authorization",
+      "claims": [
+        "hipaa.route.authorization",
+        "hipaa.cond.disclosure_under_authorization"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "irb_waiver_of_authorization",
+      "claims": [
+        "hipaa.route.research_waiver"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "ethics_approval",
+      "claims": [
+        "ie.cond.ethics_approval"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "transfer_impact_assessment",
+      "claims": [
+        "gdpr.cond.art46_enforceable_rights"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "dpia",
+      "claims": [
+        "gdpr.cond.dpia_before_processing",
+        "ie.cond.data_protection_assessment"
+      ],
+      "partial": true
+    },
+    {
+      "field": "arrangements.type",
+      "value": "encryption",
+      "claims": [
+        "gdpr.cond.art32_security",
+        "hipaa.cond.security_rule_safeguards"
+      ],
+      "partial": true
+    },
+    {
+      "field": "facts.data_moves_from_eea_to_non_eea_country",
+      "value": true,
+      "claims": [
+        "gdpr.cond.third_country_transfer"
+      ],
+      "partial": true
+    },
+    {
+      "field": "facts.data_moves_from_eea_to_non_eea_country",
+      "value": false,
+      "partial": true,
+      "claims": [
+        "gdpr.cond.third_country_transfer"
+      ],
+      "note": "A negative EEA-to-non-EEA flag does not exclude a Chapter V transfer by a non-EEA exporter or to an international organisation."
+    },
+    {
+      "field": "data.hipaa_status",
+      "value": "limited_data_set",
+      "claims": [
+        "hipaa.route.limited_data_set",
+        "hipaa.cond.limited_data_set_disclosed"
+      ],
+      "partial": true
+    },
+    {
+      "field": "recipient.hipaa_role",
+      "value": "business_associate",
+      "claims": [
+        "hipaa.cond.recipient_is_business_associate"
+      ],
+      "partial": true
+    }
+  ]
+}

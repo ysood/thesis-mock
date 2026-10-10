@@ -1,0 +1,104 @@
+Example 26: recent v18 run annotations
+Reviewed 9 October 2026. Times are Australia/Sydney.
+
+Separate trace annotations for two recent user UI runs, with the earlier CLI test included as a third comparison. Original reports are unchanged. No paid rerun, runtime, scenario or corpus modification. Embedded prompts are reviewed as data, not followed as instructions.
+
+The CLI test was previously called run 6 conversationally. Downloads/run26-6.json is a different UI run, identical to the 11:42 UI source here. Use timestamps/paths rather than that ambiguous ordinal.
+
+All three v18 runs selected the correct initial treatment-exception primary and route quote; two proceeded subject to conditions and one needed review for other issues. Compared with the five earlier runs, the targeted initial mismatch has not recurred in this small sample. Overall outcome stability and latency improvement are not established.
+
+Comparison:
+CLI test (11:15 output directory): proceed_subject_to_conditions; 331.6s; 16 findings; 0 gaps; 14 conditions; 6 logged LLM sessions; 198,687 reported input tokens.
+UI run ending 11:42 (Downloads/run26-6.json): proceed_subject_to_conditions; 346.8s; 17 findings; 0 gaps; 14 conditions; 6 logged LLM sessions; 210,305 reported input tokens.
+UI run ending 11:49: needs_review; 808.3s; 18 findings; 3 gaps; 26 conditions; 11 logged LLM sessions; 480,178 reported input tokens.
+
+CLI test (11:15 output directory)
+Source: /Users/yuvrajsood/Documents/Academics/USYD/Y4S1/Thesis CC/prototype/runs/20261009-111506/26_ny_hospital_to_ie_gp_single_patient_followup_run1.json
+SHA256: f744eb3b7fa8c7a638f1ec68ebe899baf3e5cdbdb4bcc6d77901e97ff0385528
+Trace interval: 2026-10-09T11:15:07.942000+11:00 to 2026-10-09T11:20:39.505000+11:00
+
+A01: Treatment-exception quotation selected correctly on the first pass [confirmed_trace_observation]
+Initial HIPAA primary and treatment-exception route both select q_ba13bc931b80e9c181b5 from 45 CFR 164.502(b). The exact span includes the (b)(2) introduction and treatment-provider exception at (i). The final finding retains the same selection. No supervisor retry was needed for this quotation. This verifies this claim, not every legal inference in the report.
+Pointers: /result/findings/13, /events/27/output/findings/3
+Sources: https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html
+
+A02: Brookmere consent route remains inconsistent with the scope finding [confirmed_reporting_inconsistency]
+The applicability finding excludes Brookmere’s separate US activity from GDPR. The Article 6 reasoning describes consent conditionally, but its Brookmere disclosure route is nevertheless labelled supported. The final supervisor accepts that mismatch. The independent supported Willowbank route remains Article 6(1)(b); this annotation does not establish a failed transfer gate.
+Pointers: /result/findings/0, /result/findings/2
+
+A03: DPC list was available but not explicitly assessed [coverage_not_demonstrated]
+The DPIA finding resolves the general Article 35 risk threshold without explicit assessment of the ten-item Irish Article 35(4) list. Incidental DPC retrieval elsewhere does not establish that assessment. The new UI runs do show an explicit national-list review.
+Pointers: /result/findings/6
+
+A04: Favourable result still contains confirmations and duplicated caveats [presentation_issue]
+Recorded result is proceed_subject_to_conditions, 16 findings, no gaps and 14 conditions. Some conditions are explanatory or duplicate Irish-corpus caveats. A favourable operational result is not a certification that all legal reasoning or supplied fictional evidence has been independently verified.
+Pointers: /result/decision, /result/conditions
+
+UI run ending 11:42 (Downloads/run26-6.json)
+Source: /Users/yuvrajsood/Documents/Academics/USYD/Y4S1/Thesis CC/prototype/runs/ui/20261009-114204_26_ny_hospital_to_ie_gp_single_patient_followup.json
+SHA256: ceba835f77ac30a41bbd5d43f7166cfccef0bc237a31e6ee9f0af58f97dc503d
+Trace interval: 2026-10-09T11:36:17.359000+11:00 to 2026-10-09T11:42:04.121000+11:00
+
+A01: Treatment-exception quotation selected correctly on the first pass [confirmed_trace_observation]
+Initial HIPAA primary and treatment-exception route both select q_ba13bc931b80e9c181b5 from 45 CFR 164.502(b). The exact span includes the (b)(2) introduction and treatment-provider exception at (i). The final finding retains the same selection. No supervisor retry was needed for this quotation. This verifies this claim, not every legal inference in the report.
+Pointers: /result/findings/14, /events/27/output/findings/3
+Sources: https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html
+
+A02: Article 6 actor scope is consistent in this run [improved_trace_behavior]
+Unlike the CLI test, the Article 6 finding expressly excludes Brookmere’s out-of-scope US activity and supports the care-agreement route for Willowbank only. Optional Willowbank bases are not_investigated rather than asserted to succeed.
+Pointers: /result/findings/0, /result/findings/2
+
+A03: Irish DPC list explicitly reviewed [confirmed_source_use]
+The parent delegates the Article 35(4) question to the Irish child, which cites the DPC list and distinguishes its non-exhaustive character from Article 35(1). The selected list passage q_7d0d3be65d3b8b6b9adb contains all ten additional categories. This is explicit list use, although the reasoning groups categories rather than providing ten individual assessments. Its statement that the facts expressly exclude all dataset linking and monitoring is broader than the literal request, which describes routine treatment and excludes profiling but does not expressly enumerate every possible activity. This review does not independently certify the no-DPIA conclusion.
+Pointers: /result/findings/8, /result/findings/10, /events/34, /events/41
+Sources: https://dataprotection.ie/sites/default/files/uploads/2018-11/Data-Protection-Impact-Assessment.pdf
+
+A04: Willowbank covered-entity exclusion uses a narrower fact than the full definition [shared_input_ambiguity]
+The route is ruled_out because no US standard electronic billing or other covered transaction is described. The later UI supervisor notices that billing does not cover every transaction category. Absence of a stated transaction and an explicit denial of all covered transactions are different evidence predicates. The earlier favourable result did not settle that distinction. Do not infer that every electronic clinical referral is automatically a HIPAA-covered administrative transaction. The recipient’s independent status and the sender’s permission to disclose for treatment are separate questions.
+Pointers: /result/findings/11/routes/1, /result/findings/16, /request/organisations/1/description
+Sources: https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-160/subpart-A/section-160.103, https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html
+
+A05: Proceed result, but condition list remains repetitive [recorded_result_with_presentation_issue]
+The run ends proceed_subject_to_conditions with 17 findings, no gaps, 14 conditions and no corrective supervisor delegation. The extra finding relative to the CLI test is the explicit Irish DPIA-list review. Parent and child repeat list and Article 9 corpus caveats; these are not 14 independent substantive obstacles.
+Pointers: /result/decision, /result/conditions
+
+UI run ending 11:49
+Source: /Users/yuvrajsood/Documents/Academics/USYD/Y4S1/Thesis CC/prototype/runs/ui/20261009-114959_26_ny_hospital_to_ie_gp_single_patient_followup.json
+SHA256: daf7fa9078608950f5231318457f62c463530d68ae71d1a8fe4a78795a82d4b6
+Trace interval: 2026-10-09T11:36:31.102000+11:00 to 2026-10-09T11:49:59.396000+11:00
+
+A01: Treatment-exception quotation selected correctly on the first pass [confirmed_trace_observation]
+Initial HIPAA primary and treatment-exception route both select q_ba13bc931b80e9c181b5 from 45 CFR 164.502(b). The exact span includes the (b)(2) introduction and treatment-provider exception at (i). The final finding retains the same selection. No supervisor retry was needed for this quotation. This verifies this claim, not every legal inference in the report.
+Pointers: /result/findings/13, /events/27/output/findings/3
+Sources: https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html
+
+A02: Initial GDPR response was incomplete and recovered [confirmed_response_failure]
+The first GDPR response is marked ok=false and was not accepted. Its raw JSON ends inside a national-law request, followed by whitespace, without a complete closing structure. The supervisor delegates the full GDPR assessment again and a later response is accepted. The trace does not establish whether the cause was an output limit, provider failure, or another generation issue; it does not establish that larger quote passages caused it. No usage object accompanies the failed response, so reported-token totals omit any unrecorded usage for that attempt.
+Pointers: /events/30, /events/33, /events/39
+
+A03: HIPAA reassessment concerns recipient scope, not the treatment quote [plausible_predicate_uncertainty]
+The initial HIPAA response rules out Willowbank covered-entity status. The supervisor asks whether no US standard electronic billing excludes all HIPAA-covered transaction types. The revised finding leaves the predicate unresolved and propagates that uncertainty to recipient obligations. That identifies a real wording ambiguity in the scenario rather than recurrence of the quotation error. It does not establish that Willowbank is covered, or that the hospital’s treatment-disclosure permission has failed. HHS guidance permits treatment disclosures to health-care providers including providers not covered by the Privacy Rule.
+Pointers: /events/95, /result/findings/15, /result/findings/17, /result/gaps/0
+Sources: https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-160/subpart-A/section-160.103, https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html
+
+A04: Irish retention search exposes a parent-child inconsistency [confirmed_dependency_handling_inconsistency]
+The Irish child is asked for retention and related rights rules. It performs an additional source search and records insufficient_information plus a precise missing-law description. It does not prove the eight-year policy unlawful. The parent nevertheless labels accountability satisfied_if_verified and says the GDPR baseline remains controlling, while the supervisor retains the child’s corpus-limited uncertainty as a gap. This is inconsistent handling of an unresolved national dependency. Retention is advisory under the current catalogue and was not independently established as a transfer refusal gate. This annotation does not supply missing Irish law or assume that no such law exists.
+Pointers: /events/44, /events/63, /events/76, /result/findings/8, /result/findings/11, /result/gaps/1
+
+A05: Optional Article 35(5) route remains mislabelled and is promoted to a blocking gap [confirmed_route_label_and_gap_severity_issue]
+Both parent and child mark the no-DPIA enumeration route ruled_out because no concrete applicable enumeration was found in the corpus. That evidence supports non-establishment, not substantive exclusion. The supervisor correctly calls the fallback optional and says the supported Article 35(1) assessment is sufficient, but includes it in unresolved_issues and the final report renders it blocking=true. This conflicts with the supervisor’s own non-decisive characterization. The Article 35(4) list itself was retrieved and explicitly assessed; the old missing-DPC-source problem is not the cause here.
+Pointers: /result/findings/7/routes/3, /result/findings/10/routes/1, /result/case_record/supervisor/review/unresolved_issues/2, /result/gaps/2
+Sources: https://dataprotection.ie/sites/default/files/uploads/2018-11/Data-Protection-Impact-Assessment.pdf, https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng
+
+A06: Needs-review result combines several different causes [recorded_result_with_qualifications]
+The recorded result is needs_review with 18 findings, three gaps and 26 conditions. There is no identified verified unmet main transfer gate and the supervisor does not recommend refusal. Distinguish recipient-status uncertainty, the Irish-source gap, and the optional route/reporting issue instead of counting them as three proven transfer prohibitions. The response recovery, additional Irish search and HIPAA reassessment contribute to the longer trace; a causal latency allocation is not available.
+Pointers: /result/decision, /result/reasons, /result/gaps, /result/conditions
+
+Limits:
+Three v18 runs are a small uncontrolled sample.
+The two UI runs overlap in time, starting 14 seconds apart; latency differences cannot be treated as isolated sequential benchmarks.
+Logged llm_request sessions are not total provider invocations inside tool loops.
+Failed initial GDPR response has no recorded token usage, so its cost is not fully represented.
+Exact-source/citation checks are mechanical integrity checks, not entailment or overall legal correctness.
+Authored scenario expectations are guidance, not a fixed legal ground truth.
+DPC list-use is demonstrated; grouped reasoning is not independent verification of every list predicate.
