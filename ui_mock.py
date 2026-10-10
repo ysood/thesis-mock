@@ -36,6 +36,8 @@ with st.sidebar:
         'MODEL' if c == 'luna' else 'HAIKU_MODEL') or c)
     llm.CHOICE = choice
     st.header('Ablations')
+    pipeline.MODE = st.radio('Architecture', ['multi', 'single'], index=['multi', 'single'].index(pipeline.MODE),
+                             format_func=lambda m: 'Multi-agent' if m == 'multi' else 'Single agent, one call')
     tools.ENABLED = st.toggle('Traversal tools (off = whole corpus in context)', value=True)
     tools.MAX_TOOL_CALLS = st.slider('Tool calls per agent call', 4, 40, 20)
     pipeline.MAX_REVIEWS = st.slider('Supervisor review rounds', 1, 5, 3)
@@ -320,7 +322,7 @@ with run_tab:
             path = pipeline.save(result, events, folder.name)
             status.update(label=f"Done: {result['decision']} · saved {path.name}", state='complete', expanded=False)
             st.session_state.update(result=result, folder=folder, events=events, drawing=drawing,
-                                    saved=json.dumps({'model': llm.model_name(), 'tools': tools.ENABLED,
+                                    saved=json.dumps({'model': llm.model_name(), 'mode': pipeline.MODE, 'tools': tools.ENABLED,
                                                       'result': result, 'events': events},
                                                      indent=1, ensure_ascii=False, default=str),
                                     saved_name=path.name)

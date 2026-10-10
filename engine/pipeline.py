@@ -5,6 +5,7 @@ changes a status: it verifies references and derives the decision from verified 
 """
 
 import json
+import os
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -14,6 +15,7 @@ from engine.llm import emit
 from engine.schema import Case
 
 MAX_REVIEWS = 3
+MODE = os.environ.get('ARCHITECTURE', 'multi')  # 'single': one agent, one call (baseline for analyses)
 
 
 class Run:
@@ -83,8 +85,11 @@ class Run:
         lower = bool(corpus.manifests()[target].get('parent'))
         mine = [r for r in self.extra.values() if r['corpus'] == target]
         prior = mine if lower or instruction else []
-        already = [] if lower else [r['title'] for r in mine] + (
-            [r.title for r in self.answers[target].requirements] if target in self.answers else [])
+        current = mine + ([r.model_dump() for r in self.answers[target].requirements] if target in self.answers else [])
+        already = [] if lower else [{'id': r['id'], 'title': r['title'], 'kind': r['kind'], 'status': r['status'],
+                                     'reasoning': r['reasoning'],
+                                     'routes': [{k: rt[k] for k in ('name', 'status', 'reasoning')} for rt in r['routes']]}
+                                    for r in current]  # a top-level answer must agree with its current assessment
         name = ', '.join(corpus.manifests()[a]['name'] for a in asked_by)
         for asker in asked_by:
             emit('edge', 'pipeline', source=asker, target=target, relation=kind)
@@ -104,8 +109,9 @@ class Run:
         for answer in result.answers:
             item = by_id.get(answer.question_id)
             if item:
+                law, issues = answer_law(answer.model_dump(), self.records[target], target)
                 self.received.setdefault(item['asker'], []).append({'from': target, 'question': item['question'],
-                                                                    **answer.model_dump()})
+                                                                    **answer.model_dump(), 'law': law, 'issues': issues})
         for r in result.requirements:
             ref = f'{target}:{r.id}'
             self.extra[ref] = {**r.model_dump(), 'corpus': target, 'ref': ref, 'source': f'reported to {name}'}
@@ -206,6 +212,30 @@ def repeats(a, b, threshold=0.6):
     return bool(x and y) and len(x & y) / min(len(x), len(y)) >= threshold
 
 
+def answer_law(answer, record, cid):
+    """The law an answer relies on, as the answering agent was shown it: cited provisions of its own corpus that it
+    read, with the passages it saw, and the selected quote. The asker reasons from this text instead of the answer's
+    summary alone; it cannot cite it, since only its own reading is citable. Unread or foreign citations are issues."""
+    law, issues = [], []
+    for c in answer['citations']:
+        pid = corpus.resolve(c)
+        if pid is None or corpus.provisions()[pid]['corpus'] != cid:
+            issues.append(f'cites {c}, which is not a provision of {cid}')
+        elif pid not in record['read']:
+            issues.append(f'cites {pid}, which this agent did not read')
+        elif pid not in [x['provision'] for x in law]:
+            law.append({'provision': pid, 'title': corpus.provisions()[pid]['title'],
+                        'text': '\n'.join(t for q, t in corpus.passages(pid).items() if q in record['passages'])})
+    quote = record['passages'].get(answer['quote_id']) if answer['quote_id'] else None
+    if answer['quote_id'] and (quote is None or answer['quote_id'].rsplit('#', 1)[0] not in [x['provision'] for x in law]):
+        issues.append(f"quote {answer['quote_id']} was not shown to this agent from a cited provision")
+    elif quote:
+        law.insert(0, {'quote': quote})
+    if not law:
+        issues.append('cites no law it read')
+    return law, issues
+
+
 def verify(f, record, evidence_ids):
     """Reference checks only: facts were supplied, cited law was read, quotes were shown and belong to it."""
     issues = [f"unknown fact {x['fact_id']}" for x in f['facts'] if not x['quote']]
@@ -279,6 +309,8 @@ def run(case, on_event=None):
 
     llm.LISTENER = listen
     try:
+        if MODE == 'single':
+            return run_single(case, started), events
         state = Run(case)
         plan = supervise(agents.plan, state.case, state.offered)
         reviews = []
@@ -317,9 +349,39 @@ def run(case, on_event=None):
         llm.LISTENER = None
 
 
+def run_single(case, started):
+    """Baseline: one agent, one call over every corpus. No plan, delegation, peer questions or review;
+    the same reference checks, decision and brief. Its conflicts and unresolved stand in for the final review."""
+    case = Case.model_validate(case).model_dump()
+    offered = facts.passages(case)
+    emit('stage', 'single_agent', status='running')
+    answer, record = agents.single(case, offered)
+    emit('stage', 'single_agent', status='done' if answer else 'failed')
+    emit('stage', 'verification', status='running')
+    evidence = {e['id'] for e in case['evidence']}
+    findings = [verify({**r.model_dump(), 'ref': f'{r.corpus}:{r.id}', 'source': 'single agent'}, record, evidence)
+                for r in (answer.requirements if answer else [])]
+    decision, reasons = decide(findings, {}, answer)
+    result = {'decision': decision, 'reasons': reasons, 'seconds': round(time.time() - started, 1), 'mode': 'single',
+              'plan': {'understanding': answer.understanding,
+                       'engagements': [{'corpus': a.corpus, 'engaged': a.applies, 'reason': a.reasoning, 'focus': ''}
+                                       for a in answer.applicability]} if answer else None,
+              'specialists': {a.corpus: {'applies': a.applies, 'applicability_reasoning': a.reasoning,
+                                         'coverage_note': answer.coverage_note} for a in answer.applicability}
+              if answer else {},
+              'findings': findings, 'questions': [], 'delegations': [],
+              'reviews': [{'action': 'single_agent (no review)', 'conflicts': [c.model_dump() for c in answer.conflicts],
+                           'unresolved': answer.unresolved}] if answer else [],
+              'read': {'single_agent': record['read']}, 'case': case}
+    result['brief'] = brief.build(findings, {}, answer, offered)
+    emit('decision', 'verification', decision=decision, reasons=reasons)
+    emit('stage', 'verification', status='done')
+    return result
+
+
 def save(result, events, name, folder=corpus.ROOT / 'runs' / 'mock'):
     folder.mkdir(parents=True, exist_ok=True)
     path = folder / f"{time.strftime('%Y%m%d-%H%M%S')}_{name}.json"
-    path.write_text(json.dumps({'model': llm.model_name(), 'tools': tools.ENABLED, 'result': result, 'events': events},
+    path.write_text(json.dumps({'model': llm.model_name(), 'mode': MODE, 'tools': tools.ENABLED, 'result': result, 'events': events},
                                indent=1, default=str))
     return path

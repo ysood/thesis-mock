@@ -45,8 +45,19 @@ Each corpus agent keeps one read record across all its calls, so law it read ear
 Each corpus reports only requirements created by its own instruments; other corpora's law reaches it as answers.
 A lower-level delegate files every engaged obligation of its own law as a requirement, asked about or not, and its
 answers point to them by id; each report replaces its previous one, so every call (delegation, routed
-question or revision) shows it its previous report. A top-level corpus answering a peer question adds
-only requirements its own assessment lacks.
+question or revision) shows it its previous report. A top-level corpus answering a peer question sees its current
+findings (status, reasoning, routes) under ALREADY REPORTED, must answer consistently with them (or say plainly which is
+wrong, for a separate revision) and adds only requirements its own assessment lacks.
+Peer questions ask only what another jurisdiction's law provides on a point the asker's own requirement depends on.
+Supervisor review is neutral: it never says which of two disagreeing findings is right, sets out both positions for the
+owner to reconsider, folds a route-shaped requirement only within its own corpus, and records a disagreement that survives
+a revision as a non-resolvable conflict (needs_review). Specialists read every instruction as "what to reconsider, not a
+legal conclusion". Tool budget per call (tools.budget): MAX_TOOL_CALLS per corpus in scope, never fewer than the
+provisions in scope (Region A 34, single agent 64 at the default 20).
+Answers carry their law (pipeline.answer_law): every answer handed to its asker (delegation or routed peer question)
+includes the selected quote and the text of each cited provision of the answering corpus that its agent read, as shown
+to it, plus issues for citations it could not support (unread, unknown or another corpus's). The asker reasons from that
+text but cannot cite it (only its own reading is citable). Python adds text; it decides nothing.
 Coverage warnings (pipeline.Run.coverage): provisions of an agent's corpus that are cited by law the agent relied on
 and that it never read, from the citation graph. Shown to the supervisor in every review, and to the agent when it
 is reassessed or revised. Structural only; they decide nothing.
@@ -54,4 +65,11 @@ Route statuses: supported (in place), available (a route forward the parties cou
 ruled_out (no change could make it work), unresolved, not_investigated.
 Peer questions: each asker sees the questions it already asked with their answers; Python drops a question that
 mostly repeats an earlier one to the same jurisdiction (word overlap >= 0.6 of the shorter), even under a renamed requirement.
+Single-agent baseline (ARCHITECTURE=single, or the UI's Architecture switch): steps 3-6 are replaced by one LLM call
+(agents.single, SingleAssessment). One agent sees the case and every corpus manifest + table of contents, with tools
+scoped to all corpora (budget MAX_TOOL_CALLS x number of corpora; TRAVERSAL_TOOLS=0 gives it every corpus as full
+text). Its prompt is the specialist METHOD + RULES (minus the own-instruments ownership rule) + the supervisor's
+applicability and conflict rules; each requirement names the corpus whose instrument creates it. No delegation, peer
+questions, coverage warnings or review rounds. Steps 7-9 are unchanged; its conflicts and unresolved stand in for the
+final review. Saved runs record "mode".
 Run: `.venv/bin/python run_mock.py cases/01_a1_gp_to_region_b_host`. Keys in `cases/*/key.json` never reach the model.

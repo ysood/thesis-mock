@@ -9,10 +9,10 @@ import re
 import unittest
 from pathlib import Path
 
-from engine import llm, pipeline, tools
-from engine.schema import (Answer, Case, Conflict, DelegateAnswer, Delegation, Engagement, FactRef, PeerQuestion,
-                           Requirement, Revision, Route, Routing, SpecialistAnswer, SpecialistPatch, SupervisorPlan,
-                           SupervisorReview)
+from engine import corpus, llm, pipeline, tools
+from engine.schema import (Answer, Case, Conflict, CorpusApplicability, DelegateAnswer, Delegation, Engagement,
+                           FactRef, PeerQuestion, Requirement, Revision, Route, Routing, SingleAssessment,
+                           SingleRequirement, SpecialistAnswer, SpecialistPatch, SupervisorPlan, SupervisorReview)
 
 CASE = json.loads((Path(__file__).resolve().parent.parent / 'cases' / '01_a1_gp_to_region_b_host' / 'case.json').read_text())
 
@@ -164,6 +164,48 @@ class RevisionAndQuestionTests(unittest.TestCase):
         self.assertIn('whether or not a question asked about it', agents.delegate_system('subregion_a1', 'Region A'))
         self.assertIn('ALREADY REPORTED', agents.delegate_system('region_b', 'Region A'))
 
+    def test_answers_carry_the_law_they_rely_on_and_flag_unsupported_citations(self):
+        def model(agent, schema, system, user):
+            return DelegateAnswer(answers=[Answer(question_id='region_a:q1', answer='They cannot compel decryption.',
+                                                  citations=['B-RAA 5', 'A-REG 18', 'B-RAA 99'], quote_id='B-RAA 5#L1')])
+        llm.FAKE_MODEL = model
+        state = pipeline.Run(CASE)
+        state.ask_corpus('region_b', ['region_a'], [{'question_id': 'region_a:q1', 'asker': 'region_a',
+                                                     'requirement_id': 'x', 'question': 'Can B compel decryption?'}], 'routing')
+        received = state.received['region_a'][0]
+        self.assertEqual(received['law'][0], {'quote': corpus.passages('B-RAA 5')['B-RAA 5#L1']})
+        self.assertEqual(received['law'][1]['provision'], 'B-RAA 5')
+        self.assertIn(corpus.passages('B-RAA 5')['B-RAA 5#L1'], received['law'][1]['text'])
+        self.assertEqual(received['issues'], ['cites A-REG 18, which is not a provision of region_b',
+                                              'cites B-RAA 99, which is not a provision of region_b'])
+        self.assertNotIn('B-RAA 5', state.records['region_a']['read'])  # carried, not citable by the asker
+
+    def test_a_top_level_answer_sees_its_current_findings_not_just_titles(self):
+        state = pipeline.Run(CASE)
+        route = Route(name='Approved clauses', status='ruled_out', reasoning='B can compel production.',
+                      citations=['A-REG 18'], quote_id='A-REG 18#L1')
+        state.answers['region_a'] = SpecialistAnswer(applies=True, applicability_reasoning='r', coverage_note='c',
+                                                     requirements=[Requirement(id='outward_transfer', title='Transfer',
+                                                                               kind='gate', status='unmet', reasoning='r',
+                                                                               routes=[route])])
+        state.ask_corpus('region_a', ['region_b'], [{'question_id': 'region_b:q1', 'asker': 'region_b',
+                                                     'requirement_id': 'x', 'question': 'Does Article 18 allow it?'}], 'routing')
+        user = self.seen[-1][2]
+        self.assertIn('"status": "ruled_out"', user.split('ALREADY REPORTED')[1])
+        from engine import agents
+        self.assertIn('must agree with that assessment', agents.delegate_system('region_a', 'Region B'))
+
+    def test_supervisor_is_neutral_and_never_folds_across_corpora(self):
+        from engine import agents
+        self.assertIn('do not decide or suggest which is right', agents.REVIEW_RULES)
+        self.assertIn('Never ask to fold requirements of different corpora together', agents.REVIEW_RULES)
+        self.assertIn('not a legal conclusion', agents.NOT_A_CONCLUSION)
+
+    def test_tool_budget_lets_any_agent_read_its_whole_scope(self):
+        self.assertEqual(tools.budget(['region_a']), max(tools.MAX_TOOL_CALLS, 34))
+        self.assertEqual(tools.budget(['subregion_a1']), max(tools.MAX_TOOL_CALLS, 11))
+        self.assertEqual(tools.budget(['region_a', 'region_b', 'subregion_a1']), max(3 * tools.MAX_TOOL_CALLS, 64))
+
     def test_coverage_warnings_list_unread_law_linked_from_relied_on_law(self):
         state = pipeline.Run(CASE)
         state.records['region_a']['read'] = ['A-REG 16', 'A-REG 18']
@@ -220,6 +262,44 @@ class RevisionAndQuestionTests(unittest.TestCase):
         linked = agents.linked_provisions('subregion_a1', [{'question': 'Is there a list under A-REG 12#L5?',
                                                        'referring_provisions': []}])
         self.assertIn('A1-HIA 8 (Section 8 - Impact assessment list) cites A-REG 12', linked)
+
+
+class SingleAgentTests(unittest.TestCase):
+    def setUp(self):
+        self.seen = []
+
+        def model(agent, schema, system, user):
+            self.seen.append((agent, schema.__name__, system))
+            return SingleAssessment(
+                understanding='GP practice to Region B host.', coverage_note='Read everything.',
+                applicability=[CorpusApplicability(corpus=c, applies=True, reasoning='r')
+                               for c in ('region_a', 'region_b', 'subregion_a1')],
+                requirements=[SingleRequirement(corpus='subregion_a1', id='keys', title='Keys held in Region A',
+                                                kind='gate', status='unmet', reasoning='Keys are held in Region B.',
+                                                facts=fact(user), citations=['A1-HIA 6'], quote_id='A1-HIA 6#L3'),
+                              SingleRequirement(corpus='region_b', id='retention', title='Retention', kind='duty',
+                                                status='unmet', reasoning='r', citations=['B-HRA 9'],
+                                                quote_id='B-HRA 9#L1')])
+
+        llm.FAKE_MODEL, tools.ENABLED, pipeline.MODE = model, False, 'single'
+
+    def tearDown(self):
+        llm.FAKE_MODEL, tools.ENABLED, pipeline.MODE = None, True, 'multi'
+
+    def test_one_call_over_every_corpus_with_the_same_checks_and_decision(self):
+        result, _ = pipeline.run(CASE)
+        self.assertEqual([(a, s) for a, s, _ in self.seen], [('single_agent', 'SingleAssessment')])
+        self.assertNotIn('Report only requirements created by your own instruments', self.seen[0][2])
+        refs = {f['ref']: f for f in result['findings']}
+        self.assertEqual(set(refs), {'subregion_a1:keys', 'region_b:retention'})
+        self.assertTrue(all(f['verified'] for f in refs.values()), [f['issues'] for f in refs.values()])
+        self.assertEqual(result['decision'], 'do_not_proceed')
+        self.assertEqual(result['plan']['engagements'][1], {'corpus': 'region_b', 'engaged': True, 'reason': 'r',
+                                                            'focus': ''})
+
+    def test_unknown_corpus_is_rejected(self):
+        with self.assertRaises(ValueError):
+            SingleRequirement(corpus='region_c', id='x', title='x', kind='gate', status='met', reasoning='r')
 
 
 class VerificationTests(unittest.TestCase):

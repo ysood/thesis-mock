@@ -238,3 +238,37 @@ class SupervisorReview(BaseModel):
     conflicts: list[Conflict] = Field(default_factory=list)
     summary: str
     unresolved: list[str] = Field(default_factory=list, description='Issues that still need human review')
+
+
+# ------------------------------------------------------------------ single-agent baseline
+
+def check_corpus(cid):
+    if cid not in corpus.manifests():
+        raise ValueError(f"'{cid}' is not a corpus ({', '.join(corpus.manifests())})")
+    return cid
+
+
+class CorpusApplicability(BaseModel):
+    corpus: str = Field(description='Corpus ID')
+    applies: bool = Field(description='Whether this corpus applies to any party or activity in the case')
+    reasoning: str
+    citations: list[str] = Field(default_factory=list)
+
+    _corpus = field_validator('corpus')(lambda cls, v: check_corpus(v))
+
+
+class SingleRequirement(Requirement):
+    corpus: str = Field(description='ID of the corpus whose instrument creates this requirement')
+
+    _corpus = field_validator('corpus')(lambda cls, v: check_corpus(v))
+
+
+class SingleAssessment(BaseModel):
+    """One agent assessing every corpus in one call. conflicts and unresolved play the supervisor's final-review role."""
+    understanding: str = Field(description='Plain account of who sends what to whom, where, and why')
+    applicability: list[CorpusApplicability] = Field(description='One entry for each corpus')
+    requirements: list[SingleRequirement] = Field(default_factory=list)
+    conflicts: list[Conflict] = Field(default_factory=list)
+    coverage_note: str = Field(description='How you checked that no engaged requirement, alternative or '
+                                           'cumulative duty in any corpus was missed, and any remaining limit')
+    unresolved: list[str] = Field(default_factory=list, description='Issues that still need human review')

@@ -2,6 +2,7 @@
 
     .venv/bin/python run_mock.py cases/01_a1_gp_to_region_b_host
     TRAVERSAL_TOOLS=0 .venv/bin/python run_mock.py <case>   # ablation: whole corpus in context
+    ARCHITECTURE=single .venv/bin/python run_mock.py <case>   # baseline: one agent, one call
 """
 
 import json
