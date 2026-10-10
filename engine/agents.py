@@ -20,9 +20,10 @@ RULES = """RULES
 - status: met | unmet | undetermined (a decisive fact, document or answer from other law is missing: say which in missing_facts, missing_evidence or open_dependency) | not_applicable.
 - kind: gate if the transfer may not proceed until it is met; duty if it is an ongoing obligation that does not decide whether this transfer may proceed.
 - routes: for each requirement with alternatives or exceptions in the law, list every plausible one with a status. Do not stop at the first route that works if it carries its own prerequisites; a route that fails does not close the others. ruled_out needs a reason from the text, and means no change by the parties could make the route work. A route the parties could still adopt (a different contract term, a document, a notification, a technical measure) is available, with the changes in required_actions: these are the routes forward.
+- A requirement is an obligation the law imposes. Each alternative way to meet it (a recognition, a set of clauses, an exception, a derogation) is a route inside that requirement, never a requirement of its own: one route failing does not make an obligation unmet while another route remains.
 - Report only requirements created by your own instruments. Where your law applies another corpus's law as well (lower-level law, or another jurisdiction's), do not create a requirement for that law and do not assess its provisions: its own specialist reports it. Use its answer in your reasoning, or name it in open_dependency.
 - Cite only provisions you have read, by ID (e.g. "{example}"). quote_id must be a passage ID you were shown from a cited provision.
-- Passage IDs such as "{example}#L5" label lines of text, not paragraphs. In reasoning and questions, refer to a provision's own numbering (e.g. "Article 12(3)", "section 6(1)(b)"), never to an #L line label.
+- Passage IDs such as "{example}#L5" label lines of text, not paragraphs. In reasoning and questions, refer to a provision's own numbering (its article or section, paragraph and point numbers), never to an #L line label.
 """
 
 
@@ -62,7 +63,7 @@ def specialist_system(cid):
     others = [corpus.manifests()[o]['name'] for o in corpus.manifests() if o not in related]
     return f"""You are the specialist for the law of {m['name']} ({m['level']}). You assess a proposed data transfer against the instruments in your corpus: {', '.join(i['title'] for i in m['instruments'])}.
 
-Other jurisdictions in this system: {', '.join(others)}. You cannot read their law. If a requirement of your law depends on what another jurisdiction's law says (for example about the recipient's legal environment), add a peer_question naming that jurisdiction's registry code and set open_dependency on the requirement; the supervisor routes it.
+Other jurisdictions in this system: {', '.join(others)}. You cannot read their law. If a requirement of your law depends on what another jurisdiction's law says, add a peer_question naming that jurisdiction's registry code and set open_dependency on the requirement; the supervisor routes it.
 {"Lower-level corpora you may delegate to: " + ", ".join(children) + ". Where your law leaves a matter to that law, delegate a specific question with the provisions that leave it open. The delegate also reports further requirements of its own law." if children else "You have no lower-level corpora."}
 
 METHOD
@@ -80,7 +81,7 @@ def delegate_system(cid, asked_by):
     return f"""You are the specialist for the law of {m['name']} ({m['level']}), with the instruments: {', '.join(i['title'] for i in m['instruments'])}. The specialist for {asked_by} has put questions to you that your law must answer.
 
 Answer each question from your law, with facts, citations and a quote. Answer what your law provides, not only the literal question: if a provision of yours does what the question asks about by a different route or under a different name, say so. Read the provisions listed under LINKED PROVISIONS before answering: they cite the provisions the questions refer to.
-Then report in additional_requirements every further requirement of your law that the facts engage and that the questions did not ask about, such as additional conditions on the same activity. Each must be an obligation created by your own instruments: do not assess the asking specialist's provisions or any other corpus's law. Do not repeat requirements listed under ALREADY REPORTED. If YOUR PRIOR REPORT is shown, return a complete corrected replacement of those additional requirements.
+Then report in additional_requirements every further requirement of your law that the facts engage and that the questions did not ask about. Each must be an obligation created by your own instruments: do not assess the asking specialist's provisions or any other corpus's law. Do not repeat requirements listed under ALREADY REPORTED. If YOUR PRIOR REPORT is shown, return a complete corrected replacement of those additional requirements.
 
 {RULES.format(example=example_id([cid]))}"""
 
@@ -172,6 +173,7 @@ PLAN_RULES = """PLAN
 REVIEW_RULES = """REVIEW
 - OPEN QUESTIONS are peer questions specialists could not answer from their own law. Route each to the corpus whose law answers it (a top-level corpus or a lower-level one), restating the question for that specialist.
 - Compare requirements across corpora that concern the same actor, data or time. Record each real conflict, whether a route satisfies both (resolvable) and what it is. Apparent conflicts with a compatible route are resolvable.
+- A requirement that is really one route of another requirement (an alternative way to meet the same obligation) is a defect: ask its specialist to fold it into that requirement's routes.
 - Request a revision only for a concrete defect that could change a gate's status, the decision or the set of gates: an unsupported gate status, an engaged provision in that corpus's table of contents (top-level or lower-level) that no requirement addresses, or a stale answer after new information. Do not request revisions of wording, or of the status of duties that cannot change the decision. Name the corpus, requirement IDs and the defect. Lower-level corpora can be revised too.
 - You cannot change findings. finish when nothing remains to route or revise; list anything still needing human review in unresolved."""
 

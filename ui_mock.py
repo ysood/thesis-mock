@@ -12,7 +12,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from engine import corpus, llm, pipeline, tools
+from engine import corpus, llm, pipeline, score, tools
 
 ROOT = Path(__file__).resolve().parent
 CASES = ROOT / 'cases'
@@ -194,12 +194,38 @@ def show_key(folder, result):
         st.write('No answer key for this case.')
         return
     key = json.loads(path.read_text())
+    card = score.score(result, key)
+    s = card['summary']
     st.caption(key.get('status', ''))
-    st.markdown(f"Expected decision: **{key['decision']}** · this run: **{result['decision']}**")
-    st.dataframe([{'expected': k['id'], 'expect': k['expect'], 'provisions': ', '.join(k['provisions']),
-                   'why': k.get('why', '')} for k in key['must_find']], width='stretch', hide_index=True)
-    bullets('Must not', key.get('must_not', []))
-    st.json({'conflicts': key.get('conflicts'), 'cross_jurisdiction': key.get('cross_jurisdiction')}, expanded=False)
+    cols = st.columns(6)
+    cols[0].metric('Decision', '✓' if s['decision'] else '✗', help=f"expected {card['decision']['expect']}")
+    cols[1].metric('Requirements', s['requirements_correct'], help=f"found {s['requirements_found']}")
+    cols[2].metric('Routes', s['routes_correct'])
+    cols[3].metric('Conflicts', s['conflicts_found'])
+    cols[4].metric('Traps violated', s['traps_violated'])
+    cols[5].metric('Blocking not in key', s['extra_blocking'])
+    why = {i['id']: i.get('why', '') for section in ('requirements', 'routes', 'conflicts', 'questions', 'must_not')
+           for i in key.get(section, [])}
+    tick = lambda ok: '✓' if ok else '✗'
+    st.markdown('**Requirements** (matched by cited provisions)')
+    st.dataframe([{'': tick(r['ok']), 'key item': r['id'], 'got': r['status'], 'expect': '/'.join(r['expect']),
+                   'matched finding': r['best'] or 'not found',
+                   'note': ' '.join(filter(None, [f"missing {r['missing_citation']}" if r.get('missing_citation') else '',
+                                                  f"also {', '.join(r['disagreeing'])}" if r.get('disagreeing') else ''])),
+                   'why': why[r['id']]} for r in card['requirements']], width='stretch', hide_index=True)
+    st.markdown('**Routes**')
+    st.dataframe([{'': tick(r['ok']), 'route': r['id'], 'got': ', '.join(r['statuses']) or 'not found',
+                   'expect': '/'.join(r['expect']), 'why': why[r['id']]} for r in card['routes']],
+                 width='stretch', hide_index=True)
+    st.markdown('**Conflicts, questions and traps**')
+    rows = [{'': tick(r['ok']), 'check': f"conflict: {r['id']}", 'why': why[r['id']]} for r in card['conflicts']]
+    rows += [{'': tick(r['ok']), 'check': f"question: {r['id']} (asked {r['times_asked']}x)", 'why': why[r['id']]}
+             for r in card['questions']]
+    rows += [{'': tick(not r['violated']), 'check': f"trap: {r['id']}" + (f" ({'; '.join(r['hits'])})" if r['hits'] else ''),
+              'why': why[r['id']]} for r in card['must_not']]
+    st.dataframe(rows, width='stretch', hide_index=True)
+    if card['extra_blocking']:
+        st.warning('Blocking findings the key does not explain (check by hand): ' + ', '.join(card['extra_blocking']))
 
 
 def show_result(result, folder):
@@ -207,7 +233,7 @@ def show_result(result, folder):
     getattr(st, level)(f"**{label}** · {result['seconds']}s")
     for reason in result['reasons']:
         st.write('•', reason)
-    tabs = st.tabs(['Brief', 'Findings', 'Coordination', 'Answer key', 'Case'])
+    tabs = st.tabs(['Brief', 'Findings', 'Coordination', 'Score', 'Case'])
     with tabs[0]:
         show_brief(result)
     with tabs[1]:

@@ -112,12 +112,12 @@ class Route(BaseModel):
                     'exclude it whatever the parties change; unresolved: depends on a missing fact or answer; '
                     'not_investigated: an optional fallback not needed because another route suffices')
     reasoning: str
-    citations: list[str] = Field(description='Provision IDs you read, e.g. "APIR 18"')
+    citations: list[str] = Field(description='IDs of provisions you read, exactly as shown in your table of contents')
     quote_id: str = Field(min_length=1, description='One passage ID you were shown from a cited provision')
 
 
 class Requirement(BaseModel):
-    id: str = Field(min_length=1, description='Short stable slug you choose, e.g. transfer_route')
+    id: str = Field(min_length=1, description='Short stable slug you choose (lowercase words joined by underscores)')
     title: str
     kind: Literal['gate', 'duty'] = Field(description='gate: must be met before the transfer may proceed; '
                                                        'duty: ongoing obligation reported but not decisive')
@@ -207,7 +207,7 @@ class SupervisorPlan(BaseModel):
 
 
 class Routing(BaseModel):
-    question_ref: str = Field(description='Ref of an open peer question, e.g. aster:q1')
+    question_ref: str = Field(description='Ref of an open peer question, exactly as listed in open_questions')
     to_corpus: str
     question: str = Field(description='The question as the receiving specialist should read it')
 
@@ -220,7 +220,8 @@ class Revision(BaseModel):
 
 class Conflict(BaseModel):
     description: str
-    requirement_refs: list[str] = Field(description='e.g. aster:agent_contract, corvel:host_retention')
+    requirement_refs: list[str] = Field(description='Refs of the requirements involved ("<corpus>:<requirement id>"), '
+                                                    'exactly as listed in the current state')
     resolvable: bool
     resolution: str = Field('', description='The route that satisfies both, if resolvable')
 

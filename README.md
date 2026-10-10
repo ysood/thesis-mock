@@ -17,6 +17,7 @@ runs/mock/ saved runs (git-ignored)
 ```bash
 .venv/bin/streamlit run ui_mock.py --server.address 127.0.0.1 --server.port 8503
 .venv/bin/python run_mock.py cases/01_a1_gp_to_region_b_host
+.venv/bin/python score_mock.py        # score every saved run against its key, with a consistency matrix
 .venv/bin/python -m unittest discover -s tests
 ```
 

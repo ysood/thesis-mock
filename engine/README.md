@@ -33,6 +33,12 @@ corpora/<id>/*.md          provisions headed "## [ID] Title"
    undetermined gates, unanswered questions, unresolvable conflicts, supervisor unresolved;
    else proceed with or without conditions).
 9. Brief: known / required / missing / routes / conflicts.                           [Python] brief.py
+
+Scoring (offline, after a run): engine/score.py + score_mock.py compare a saved run with cases/<case>/key.json.
+Findings are matched to key items by the provisions they cite (definitions ignored; a finding is "about" an item
+when >= half its substantive citations are listed), never by requirement id. Reports requirement status, routes,
+conflicts, routed questions, traps, and blocking findings the key does not explain. Runs saved before the rename
+are translated (APIR -> A-REG, aster -> region_a, ...).
 ```
 
 Each corpus agent keeps one read record across all its calls, so law it read earlier stays citable.

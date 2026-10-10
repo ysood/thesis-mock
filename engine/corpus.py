@@ -1,7 +1,7 @@
 """Corpus registry: every jurisdiction, instrument and provision comes from corpora/, never from code.
 
 A corpus is a folder with corpus.json (manifest) and markdown instruments whose provisions are
-headed "## [ID] Title". The citation graph is read from the prose: "Article 8(3) of the Aster
+headed "## [ID] Title". The citation graph is read from the prose: "Article 8(3) of the Region A
 Regulation", "section 4(2)", "Articles 16 to 19". Nothing here knows what the law says.
 """
 
@@ -61,7 +61,7 @@ def provisions():
 
 
 def instrument_aliases():
-    """Alias -> instrument prefix, longest alias first so 'Corvel Health Records Act' beats 'Health Records Act'."""
+    """Alias -> instrument prefix, longest alias first so 'Region B Health Records Act' beats 'Health Records Act'."""
     pairs = [(alias, inst['prefix']) for m in manifests().values() for inst in m['instruments'] for alias in inst['aliases']]
     return sorted(pairs, key=lambda p: -len(p[0]))
 
@@ -120,7 +120,7 @@ def cited_by(pid):
 
 
 def resolve(ref):
-    """'APIR 8(2)(c)', '[APIR 8]' or a quote ID 'APIR 8#L3' -> 'APIR 8' when it exists, else None."""
+    """'A-REG 8(2)(c)', '[A-REG 8]' or a quote ID 'A-REG 8#L3' -> 'A-REG 8' when it exists, else None."""
     ref = ref.strip().strip('[]').split('#')[0].strip()
     if ref in provisions():
         return ref
