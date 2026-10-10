@@ -1,0 +1,13 @@
+{
+  "id": "region_b",
+  "name": "Region B",
+  "level": "region",
+  "territory": ["B"],
+  "unit": "section",
+  "instruments": [
+    {"file": "health_records_act.md", "prefix": "B-HRA", "title": "Region B Health Records Act",
+     "aliases": ["Region B Health Records Act", "Health Records Act"]},
+    {"file": "records_access_act.md", "prefix": "B-RAA", "title": "Region B Records Access Act",
+     "aliases": ["Region B Records Access Act", "Records Access Act"]}
+  ]
+}

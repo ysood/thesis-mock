@@ -34,4 +34,4 @@ corpora/<id>/*.md          provisions headed "## [ID] Title"
 ```
 
 Each corpus agent keeps one read record across all its calls, so law it read earlier stays citable.
-Run: `.venv/bin/python run_mock.py cases/01_valdora_gp_to_corvel_host`. Keys in `cases/*/key.json` never reach the model.
+Run: `.venv/bin/python run_mock.py cases/01_a1_gp_to_region_b_host`. Keys in `cases/*/key.json` never reach the model.

@@ -1,0 +1,12 @@
+{
+  "id": "subregion_a1",
+  "name": "Subregion A1",
+  "level": "subregion",
+  "territory": ["A1"],
+  "parent": "region_a",
+  "unit": "section",
+  "instruments": [
+    {"file": "health_information_act.md", "prefix": "A1-HIA", "title": "Subregion A1 Health Information Act",
+     "aliases": ["Subregion A1 Health Information Act"]}
+  ]
+}

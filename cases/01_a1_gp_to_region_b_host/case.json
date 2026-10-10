@@ -3,35 +3,35 @@
     {
       "id": "org_practice",
       "name": "Harbourside Family Practice",
-      "jurisdiction": "XV",
+      "jurisdiction": "A1",
       "kind": "health_care_provider",
-      "description": "Private general practice in Valdora with four doctors and two nurses, all registered with the Valdora Health Professions Board. Patients pay the practice directly under its terms of care. The practice does not bill any insurer."
+      "description": "Private general practice in Subregion A1 with four doctors and two nurses, all registered with the Subregion A1 Health Professions Board. Patients pay the practice directly under its terms of care. The practice does not bill any insurer."
     },
     {
       "id": "org_host",
       "name": "Northgate Cloud Inc.",
-      "jurisdiction": "XC",
+      "jurisdiction": "B",
       "kind": "cloud_provider",
-      "description": "Company incorporated in Corvel that hosts electronic patient record systems for clinics in several countries, on servers in Corvel. It does not use hosted records for its own purposes. It holds an active certification under the Corvel Trusted Recipient Scheme."
+      "description": "Company incorporated in Region B that hosts electronic patient record systems for clinics in several countries, on servers in Region B. It does not use hosted records for its own purposes. It holds an active certification under the Region B Trusted Recipient Scheme."
     }
   ],
   "transfer": {
-    "title": "Valdoran GP practice moves its patient record system to a Corvel-hosted cloud service",
+    "title": "Subregion A1 GP practice moves its patient record system to a Region B-hosted cloud service",
     "sender": "org_practice",
     "recipient": "org_host",
     "data": {
       "description": "The practice's electronic patient record: names, dates of birth, contact details, consultation notes, diagnoses, prescriptions, test results and correspondence.",
       "categories": ["health", "identity", "contact"],
       "identifiability": "identified",
-      "people": {"where": ["XV"], "how_many": 3200, "includes_children": true}
+      "people": {"where": ["A1"], "how_many": 3200, "includes_children": true}
     },
     "purpose": "treatment",
     "purpose_description": "Hosting the record the doctors and nurses use to diagnose, treat and follow up the practice's patients, replacing the practice's on-premises server.",
     "frequency": "ongoing",
-    "locations": {"stored_in": ["XC"], "accessed_from": ["XV", "XC"]},
+    "locations": {"stored_in": ["B"], "accessed_from": ["A1", "B"]},
     "retention": "The practice's retention schedule applies. The signed service agreement says that when the service ends Northgate will delete all records within 30 days.",
     "onward": "None. Northgate uses no subcontractors.",
-    "method": "One-off encrypted migration from the old server, then daily use over an encrypted connection. Records are encrypted at rest with keys generated and held by Northgate in Corvel. Northgate support engineers in Corvel can open records when the practice raises a support ticket.",
+    "method": "One-off encrypted migration from the old server, then daily use over an encrypted connection. Records are encrypted at rest with keys generated and held by Northgate in Region B. Northgate support engineers in Region B can open records when the practice raises a support ticket.",
     "additional_info": "Migration is planned for next month. The practice has not prepared an impact assessment. The practice has not contacted any authority about the move."
   },
   "evidence": [
@@ -54,9 +54,9 @@
     {
       "id": "ev_certificate",
       "kind": "certification_record",
-      "title": "Corvel Trusted Recipient Scheme certificate",
+      "title": "Region B Trusted Recipient Scheme certificate",
       "between": ["org_host"],
-      "summary": "Northgate Cloud Inc. holds an active certification under the Corvel Trusted Recipient Scheme, valid until 2027-12-31, covering hosting services.",
+      "summary": "Northgate Cloud Inc. holds an active certification under the Region B Trusted Recipient Scheme, valid until 2027-12-31, covering hosting services.",
       "dated": "2026-01-10"
     },
     {
@@ -64,7 +64,7 @@
       "kind": "policy_or_procedure",
       "title": "Patient information notice",
       "between": ["org_practice"],
-      "summary": "Tells patients who the practice is, why it holds their records, that its legal basis is the care relationship with them, who receives records, how long they are kept and their rights. It says records will be hosted by Northgate Cloud Inc. in the Republic of Corvel under approved transfer clauses.",
+      "summary": "Tells patients who the practice is, why it holds their records, that its legal basis is the care relationship with them, who receives records, how long they are kept and their rights. It says records will be hosted by Northgate Cloud Inc. in Region B under approved transfer clauses.",
       "dated": "2026-09-20"
     }
   ]

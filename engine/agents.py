@@ -125,7 +125,8 @@ def linked_provisions(cid, questions):
     """Structural pointers from the citation graph: provisions of this corpus that cite the provisions
     the questions name. They locate law to read; they decide nothing."""
     named = {corpus.resolve(ref) for q in questions for ref in q.get('referring_provisions', [])}
-    named |= {corpus.resolve(m) for q in questions for m in re.findall(r'[A-Z]{2,6} \d+', q['question'])}
+    prefixes = '|'.join(re.escape(i['prefix']) for m in corpus.manifests().values() for i in m['instruments'])
+    named |= {corpus.resolve(m) for q in questions for m in re.findall(rf'(?:{prefixes}) \d+', q['question'])}
     found = []
     for target in sorted(filter(None, named)):
         for source in corpus.cited_by(target):

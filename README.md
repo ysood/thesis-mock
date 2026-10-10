@@ -2,7 +2,7 @@
 
 A corpus-driven multi-agent framework for assessing proposed cross-border data transfers. No
 jurisdiction, law or requirement is written into the code: everything comes from `corpora/`.
-The included corpora are **fictional** (Union of Aster, Republic of Corvel, Republic of Valdora),
+The included corpora are **fictional** (Region A, Region B, Subregion A1),
 so results can be scored against known answers and cannot be produced from memorised real law.
 
 ```text
@@ -16,7 +16,7 @@ runs/mock/ saved runs (git-ignored)
 
 ```bash
 .venv/bin/streamlit run ui_mock.py --server.address 127.0.0.1 --server.port 8503
-.venv/bin/python run_mock.py cases/01_valdora_gp_to_corvel_host
+.venv/bin/python run_mock.py cases/01_a1_gp_to_region_b_host
 .venv/bin/python -m unittest discover -s tests
 ```
 

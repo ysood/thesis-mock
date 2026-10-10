@@ -1,0 +1,12 @@
+{
+  "id": "region_a",
+  "name": "Region A",
+  "level": "region",
+  "territory": ["A", "A1", "A2"],
+  "children": ["subregion_a1"],
+  "unit": "Article",
+  "instruments": [
+    {"file": "regulation.md", "prefix": "A-REG", "title": "Region A Personal Information Regulation",
+     "aliases": ["Region A Personal Information Regulation", "Region A Regulation"]}
+  ]
+}

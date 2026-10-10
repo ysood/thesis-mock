@@ -1,6 +1,6 @@
 """Run a mock case end to end and print the reviewer brief.
 
-    .venv/bin/python run_mock.py cases/01_valdora_gp_to_corvel_host
+    .venv/bin/python run_mock.py cases/01_a1_gp_to_region_b_host
     TRAVERSAL_TOOLS=0 .venv/bin/python run_mock.py <case>   # ablation: whole corpus in context
 """
 

@@ -1,0 +1,47 @@
+{
+  "status": "DRAFT answer key: written with the corpus, to be reviewed and signed off by the author before scoring.",
+  "decision": "do_not_proceed",
+  "engaged": {"region_a": true, "region_b": true},
+  "must_find": [
+    {"id": "scope", "provisions": ["A-REG 3"], "expect": "met",
+     "why": "The practice (custodian) is established in Subregion A1, a Subregion (Annex I)."},
+    {"id": "sensitive_condition", "provisions": ["A-REG 8", "A1-HIA 4"], "expect": "met", "needs_delegation": "subregion_a1",
+     "why": "Art 8(2)(c) health-care condition on the basis of Subregion law: A1-HIA 4(1) registered practitioners; A1-HIA 4(2) the agent acting on documented instructions is under their responsibility."},
+    {"id": "lawful_ground", "provisions": ["A-REG 6"], "expect": "met",
+     "why": "6(1)(b) contract: patients pay under terms of care. 6(1)(f) legitimate interests is unavailable for sensitive information (6(2))."},
+    {"id": "agent_contract", "provisions": ["A-REG 9"], "expect": "met",
+     "why": "Signed agreement covers the 9(2) terms; its deletion term interacts with B-HRA 9 (see conflicts)."},
+    {"id": "transfer_route", "provisions": ["A-REG 16", "A-REG 17", "A-REG 18", "A-REG 19", "B-RAA 3", "B-RAA 4", "B-RAA 5"], "expect": "unmet", "gate": true,
+     "routes": {
+       "A-REG 17 recognition": "ruled_out: Annex II recognition of Region B extends only to non-sensitive information, despite the active certificate",
+       "A-REG 18 approved clauses": "unmet as described: clauses executed, but no 18(2) assessment, and Region B law (B-RAA 3, 4, 6) allows secret production orders without court authorisation; with Northgate holding the keys no effective supplementary measure exists, so 18(3) bars the transfer",
+       "A-REG 19 derogations": "ruled_out: the transfer is ongoing, so 19(1)(a)-(b) are excluded by 19(2); (c) and (d) do not fit"
+     },
+     "cure": "Keep the decryption keys only within Region A (B-RAA 5 then removes the compelled-decryption risk), document the 18(2) assessment, and stop Northgate engineers in Region B opening plaintext records (support without key access, or practice-mediated)."},
+    {"id": "national_transfer_conditions", "provisions": ["A1-HIA 6"], "expect": "unmet", "gate": true, "needs_delegation": "subregion_a1",
+     "why": "Cumulative Subregion A1 condition (Art 8(3)): 30 days' prior notification to the Commission (not done) and Region A-held keys (keys are held by Northgate in Region B)."},
+    {"id": "impact_assessment", "provisions": ["A-REG 12", "A1-HIA 8"], "expect": "unmet", "gate": true, "needs_delegation": "subregion_a1",
+     "why": "3,200 patients is below the 5,000 threshold in A-REG 12(2)(a), but A1-HIA 8(a) requires an assessment for hosting a patient record system outside Subregion A1 regardless of numbers; none was prepared."},
+    {"id": "information_to_persons", "provisions": ["A-REG 11"], "expect": "met", "kind": "duty",
+     "why": "Notice names the third territory and the route relied on."},
+    {"id": "host_retention", "provisions": ["B-HRA 9"], "expect": "unmet_as_described", "corpus": "region_b",
+     "why": "Northgate is a data host; it must keep records 7 years unless it returns records that originated outside Region B and keeps no copy (9(2)). The agreement says delete within 30 days."},
+    {"id": "region_b_sector_rules", "provisions": ["B-HRA 3"], "expect": "not_applicable", "corpus": "region_b",
+     "why": "The practice bills no Region B insurer, so it is not a covered provider and Northgate is not its service agent (B-HRA 3(2)); B-HRA 4-8 do not apply."}
+  ],
+  "conflicts": [
+    {"between": ["A-REG 9(2)(f)", "B-HRA 9"], "resolvable": true,
+     "resolution": "The custodian chooses return rather than deletion under A-REG 9(2)(f); returning records that originated outside Region B and keeping no copy satisfies B-HRA 9(2)."}
+  ],
+  "cross_jurisdiction": [
+    {"asker": "region_a", "answerer": "region_b", "about": "Public-authority access in Region B for the A-REG 18(2) assessment", "answer_in": ["B-RAA 3", "B-RAA 4", "B-RAA 5", "B-RAA 6"]}
+  ],
+  "must_not": [
+    "Treat the Region B Trusted Recipient Scheme certificate as a valid Article 17 route for health records.",
+    "Require an impact assessment only because of A-REG 12(2)(a) numbers (3,200 < 5,000), or skip it because of them.",
+    "Rely on Article 19(1)(a) consent or 19(1)(b) contract for an ongoing hosting arrangement.",
+    "Rely on Article 6(1)(f) legitimate interests for health records.",
+    "Apply B-HRA 4-8 to the practice or to Northgate.",
+    "Treat a child-consent age rule (A-REG 7(2), A1-HIA 9) as engaged: no ground relies on consent."
+  ]
+}

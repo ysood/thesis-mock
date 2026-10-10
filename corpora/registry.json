@@ -1,10 +1,32 @@
 {
-  "note": "Fictional jurisdictions for controlled experiments. Codes use ISO 3166-1 user-assigned range (X*) so they never collide with real countries.",
+  "note": "Fictional jurisdictions for controlled experiments. Region A has subregions A1 and A2 (only A1 has a corpus); Region B is separate.",
   "jurisdictions": [
-    {"code": "XU", "name": "Union of Aster", "kind": "union"},
-    {"code": "XV", "name": "Republic of Valdora", "kind": "state", "member_of": "XU"},
-    {"code": "XN", "name": "Kingdom of Nerin", "kind": "state", "member_of": "XU"},
-    {"code": "XC", "name": "Republic of Corvel", "kind": "state"}
+    {
+      "code": "A",
+      "name": "Region A",
+      "kind": "region"
+    },
+    {
+      "code": "A1",
+      "name": "Subregion A1",
+      "kind": "subregion",
+      "member_of": "A"
+    },
+    {
+      "code": "A2",
+      "name": "Subregion A2",
+      "kind": "subregion",
+      "member_of": "A"
+    },
+    {
+      "code": "B",
+      "name": "Region B",
+      "kind": "region"
+    }
   ],
-  "corpora": ["aster", "corvel", "valdora"]
+  "corpora": [
+    "region_a",
+    "region_b",
+    "subregion_a1"
+  ]
 }
