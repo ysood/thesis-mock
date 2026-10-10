@@ -2,7 +2,6 @@
 
     .venv/bin/python run_mock.py cases/01_valdora_gp_to_corvel_host
     TRAVERSAL_TOOLS=0 .venv/bin/python run_mock.py <case>   # ablation: whole corpus in context
-    SEARCH=lexical    .venv/bin/python run_mock.py <case>   # ablation: BM25 instead of embeddings
 """
 
 import json

@@ -7,11 +7,9 @@ Regulation", "section 4(2)", "Articles 16 to 19". Nothing here knows what the la
 
 import hashlib
 import json
-import math
 import os
 import re
 import threading
-from collections import Counter
 from functools import lru_cache
 from pathlib import Path
 
@@ -22,8 +20,6 @@ WINDOW_CHARS = 800  # MiniLM embeds at most 256 tokens; ~800 characters of statu
 HEADING = re.compile(r'^## \[([^\]]+)\] (.+)$', re.M)
 REFERENCE = re.compile(r'\b([Aa]rticles?|[Ss]ections?)\s+(\d+)((?:\([0-9a-z]+\))*)(?:\s+to\s+(\d+))?'
                        r'|\bAnnex\s+(I{1,3})\b')
-STOPWORDS = set('a an and are as at be by for from has have in is it its of on or shall that the this to under '
-                'which with where whether not may any'.split())
 
 
 @lru_cache
@@ -132,15 +128,8 @@ def resolve(ref):
     return base if base in provisions() else None
 
 
-def tokens(text):
-    return [w for w in re.findall(r'[a-z0-9]+', text.lower()) if w not in STOPWORDS]
-
-
 def search(query, corpus_ids, k=6):
-    """Semantic search (Chroma + MiniLM) within the given corpora: [(id, title, distance)].
-    SEARCH=lexical switches to BM25 for ablations and offline runs."""
-    if os.environ.get('SEARCH') == 'lexical':
-        return lexical_search(query, corpus_ids, k)
+    """Semantic search (Chroma + MiniLM) within the given corpora: [(id, title, distance)]."""
     if not corpus_ids:
         return []
     where = {'corpus': corpus_ids[0]} if len(corpus_ids) == 1 else {'corpus': {'$in': list(corpus_ids)}}
@@ -184,27 +173,6 @@ def vector_store():
                 store._collection.modify(metadata={**metadata, 'fingerprint': fingerprint})
             _store = store
         return _store
-
-
-def lexical_search(query, corpus_ids, k=6):
-    """BM25 over whole provisions within the given corpora. Returns [(id, title, score)]."""
-    docs = {pid: tokens(p['title'] + ' ' + p['text']) for pid, p in provisions().items() if p['corpus'] in corpus_ids}
-    if not docs:
-        return []
-    avg = sum(map(len, docs.values())) / len(docs)
-    df = Counter(t for words in docs.values() for t in set(words))
-    scores = {}
-    for pid, words in docs.items():
-        tf = Counter(words)
-        score = 0.0
-        for t in set(tokens(query)):
-            if tf[t]:
-                idf = math.log(1 + (len(docs) - df[t] + 0.5) / (df[t] + 0.5))
-                score += idf * tf[t] * 2.2 / (tf[t] + 1.2 * (0.25 + 0.75 * len(words) / avg))
-        if score:
-            scores[pid] = score
-    ranked = sorted(scores.items(), key=lambda kv: -kv[1])[:k]
-    return [(pid, provisions()[pid]['title'], round(s, 2)) for pid, s in ranked]
 
 
 def passages(pid):

@@ -10,7 +10,7 @@ corpora/<id>/*.md          provisions headed "## [ID] Title"
 1. Load corpora                                                         [Python]  corpus.py
    Parse provisions; build the citation graph from the prose (own-instrument refs, ranges,
    "of the <alias>", "of that Regulation", unit-word mismatch -> nearest earlier instrument).
-   Chroma + MiniLM index over passage-packed windows (SEARCH=lexical: BM25).
+   Chroma + MiniLM index over passage-packed windows.
 2. Validate the case against registry jurisdiction codes; label FACT PASSAGES   [Python]  schema.py, facts.py
 3. Supervisor plan: sees the case + every corpus manifest and table of contents;  [LLM]  agents.plan
    one engagement per top-level corpus, with facts. Lower-level corpora only by delegation.

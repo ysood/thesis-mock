@@ -21,7 +21,7 @@ runs/mock/ saved runs (git-ignored)
 ```
 
 Copy `.env.example` to `.env` and set `MODEL` and the provider key. Ablations: `TRAVERSAL_TOOLS=0`
-(whole corpus in context), `SEARCH=lexical` (BM25 instead of embeddings), `MAX_TOOL_CALLS`.
+(whole corpus in context) and `MAX_TOOL_CALLS`.
 
 ## Adding a corpus
 

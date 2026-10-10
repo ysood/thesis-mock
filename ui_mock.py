@@ -37,8 +37,6 @@ with st.sidebar:
     llm.CHOICE = choice
     st.header('Ablations')
     tools.ENABLED = st.toggle('Traversal tools (off = whole corpus in context)', value=True)
-    lexical = st.toggle('Lexical search (BM25) instead of embeddings', value=False)
-    os.environ['SEARCH'] = 'lexical' if lexical else 'vector'
     tools.MAX_TOOL_CALLS = st.slider('Tool calls per agent call', 4, 40, 20)
     pipeline.MAX_REVIEWS = st.slider('Supervisor review rounds', 1, 5, 3)
     st.header('Saved runs')

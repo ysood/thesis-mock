@@ -40,9 +40,10 @@ class CitationGraphTests(unittest.TestCase):
 
 class SearchAndPassageTests(unittest.TestCase):
     def test_search_is_scoped_to_given_corpora(self):
-        hits = c.lexical_search('impact assessment hosting patient record system', ['corvel'])
+        hits = c.search('impact assessment hosting patient record system', ['corvel'])
         self.assertTrue(all(c.provisions()[pid]['corpus'] == 'corvel' for pid, _, _ in hits))
-        self.assertEqual(c.lexical_search('impact assessment hosting patient record system', ['aster', 'valdora'])[0][0], 'VHIA 8')
+        top = [pid for pid, _, _ in c.search('impact assessment hosting patient record system', ['aster', 'valdora'], k=3)]
+        self.assertIn('VHIA 8', top)
 
     def test_passages_are_lines_bound_to_ids(self):
         passages = c.passages('VHIA 6')
