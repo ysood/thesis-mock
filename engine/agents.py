@@ -19,7 +19,7 @@ RULES = """RULES
 - Treat the stated facts and described arrangements as complete. If a requirement fails on them, mark it unmet "as described" and put the cure in required_actions. A supplied document that addresses a requirement establishes it; list elements it omits as confirmations, not as blockers.
 - status: met | unmet | undetermined (a decisive fact, document or answer from other law is missing: say which in missing_facts, missing_evidence or open_dependency) | not_applicable.
 - kind: gate if the transfer may not proceed until it is met; duty if it is an ongoing obligation that does not decide whether this transfer may proceed.
-- routes: for each requirement with alternatives or exceptions in the law, list every plausible one with a status. Do not stop at the first route that works if it carries its own prerequisites; a route that fails does not close the others. ruled_out needs a reason from the text, and means no change by the parties could make the route work. A route the parties could still adopt (a different contract term, a document, a notification, a technical measure) is available, with the changes in required_actions: these are the routes forward.
+- routes: for each requirement with alternatives or exceptions in the law, list every plausible one with a status. Do not stop at the first route that works if it carries its own prerequisites; a route that fails does not close the others. Route statuses are defined in the schema; apply them literally. supported means in place now. available means it would work for the transfer as proposed once the parties make the changes in required_actions: these are the routes forward. ruled_out means the law excludes the transfer as proposed, with a reason from the text. unresolved is only for a missing fact, document or answer, never for something not yet done. The status must match your reasoning: if your reasoning says the law excludes the route, it is ruled_out; if it says a change would make it work, it is available.
 - A requirement is an obligation the law imposes. Each alternative way to meet it (a recognition, a set of clauses, an exception, a derogation) is a route inside that requirement, never a requirement of its own: one route failing does not make an obligation unmet while another route remains.
 - Report only requirements created by your own instruments. Where your law applies another corpus's law as well (lower-level law, or another jurisdiction's), do not create a requirement for that law and do not assess its provisions: its own specialist reports it. Use its answer in your reasoning, or name it in open_dependency.
 - Cite only provisions you have read, by ID (e.g. "{example}"). quote_id must be a passage ID you were shown from a cited provision.
@@ -78,10 +78,19 @@ METHOD
 
 def delegate_system(cid, asked_by):
     m = corpus.manifests()[cid]
+    if m.get('parent'):
+        filing = ('In requirements, file every requirement created by your own instruments that the facts engage, '
+                  'whether or not a question asked about it: a matter a question raises is still your requirement. '
+                  'This is your complete report; each answer names the requirement ids it rests on. If YOUR PRIOR '
+                  'REPORT is shown, return a complete corrected replacement.')
+    else:
+        filing = ('Your own assessment already holds the requirements listed under ALREADY REPORTED. In requirements, '
+                  'file only requirements of your own instruments that the facts engage and that are not listed '
+                  'there; each answer names the requirement ids it rests on.')
     return f"""You are the specialist for the law of {m['name']} ({m['level']}), with the instruments: {', '.join(i['title'] for i in m['instruments'])}. The specialist for {asked_by} has put questions to you that your law must answer.
 
 Answer each question from your law, with facts, citations and a quote. Answer what your law provides, not only the literal question: if a provision of yours does what the question asks about by a different route or under a different name, say so. Read the provisions listed under LINKED PROVISIONS before answering: they cite the provisions the questions refer to.
-Then report in additional_requirements every further requirement of your law that the facts engage and that the questions did not ask about. Each must be an obligation created by your own instruments: do not assess the asking specialist's provisions or any other corpus's law. Do not repeat requirements listed under ALREADY REPORTED. If YOUR PRIOR REPORT is shown, return a complete corrected replacement of those additional requirements.
+{filing} Every requirement must be an obligation created by your own instruments: do not assess the asking specialist's provisions or any other corpus's law.
 
 {RULES.format(example=example_id([cid]))}"""
 
@@ -109,7 +118,11 @@ def call(agent, cid, schema, system, user, record, offered):
     return facts.bind(result, offered) if result else None
 
 
-def assess(cid, case, offered, record, focus='', prior=None, answers=(), instruction='', asked=()):
+COVERAGE = ('COVERAGE WARNINGS (structural, from the citation graph: provisions of your corpus cited by law you '
+            'relied on, which you have not read. Read each one and say in impact whether it changes anything.)\n')
+
+
+def assess(cid, case, offered, record, focus='', prior=None, answers=(), instruction='', asked=(), coverage=()):
     parts = [case_block(case, offered), reading(cid, record)]
     if focus:
         parts.append(f'SUPERVISOR FOCUS (not a legal conclusion)\n{focus}')
@@ -123,6 +136,8 @@ def assess(cid, case, offered, record, focus='', prior=None, answers=(), instruc
                      'use the answers, do not restate their law as your own)\n' + json.dumps(list(answers), indent=1))
     if instruction:
         parts.append(f'SUPERVISOR INSTRUCTION\n{instruction}')
+    if coverage:
+        parts.append(COVERAGE + json.dumps(list(coverage), indent=1))
     if not prior:
         return call(f'{cid}_specialist', cid, SpecialistAnswer, specialist_system(cid), '\n\n'.join(parts), record, offered)
     return call(f'{cid}_specialist', cid, SpecialistPatch, specialist_system(cid) + REVISE, '\n\n'.join(parts), record, offered)
@@ -148,7 +163,7 @@ def linked_provisions(cid, questions):
     return found
 
 
-def answer_questions(cid, asked_by, questions, case, offered, record, already=(), prior=(), instruction=''):
+def answer_questions(cid, asked_by, questions, case, offered, record, already=(), prior=(), instruction='', coverage=()):
     parts = [case_block(case, offered), reading(cid, record),
              'QUESTIONS\n' + json.dumps(questions, indent=1),
              'LINKED PROVISIONS\n' + '\n'.join(linked_provisions(cid, questions) or ['none']),
@@ -157,6 +172,8 @@ def answer_questions(cid, asked_by, questions, case, offered, record, already=()
         parts.append('YOUR PRIOR REPORT\n' + json.dumps(list(prior), indent=1))
     if instruction:
         parts.append(f'SUPERVISOR INSTRUCTION\n{instruction}')
+    if coverage:
+        parts.append(COVERAGE + json.dumps(list(coverage), indent=1))
     return call(f'{cid}_specialist', cid, DelegateAnswer, delegate_system(cid, asked_by), '\n\n'.join(parts), record, offered)
 
 
@@ -173,6 +190,7 @@ PLAN_RULES = """PLAN
 REVIEW_RULES = """REVIEW
 - OPEN QUESTIONS are peer questions specialists could not answer from their own law. Route each to the corpus whose law answers it (a top-level corpus or a lower-level one), restating the question for that specialist.
 - Compare requirements across corpora that concern the same actor, data or time. Record each real conflict, whether a route satisfies both (resolvable) and what it is. Apparent conflicts with a compatible route are resolvable.
+- COVERAGE WARNINGS (in the current state) list provisions that a specialist's own cited law points to and that it never read. They are structural, not legal conclusions. Request a revision when an unread provision could change a gate or a route's status; the specialist is shown its warnings when revised.
 - A requirement that is really one route of another requirement (an alternative way to meet the same obligation) is a defect: ask its specialist to fold it into that requirement's routes.
 - Request a revision only for a concrete defect that could change a gate's status, the decision or the set of gates: an unsupported gate status, an engaged provision in that corpus's table of contents (top-level or lower-level) that no requirement addresses, or a stale answer after new information. Do not request revisions of wording, or of the status of duties that cannot change the decision. Name the corpus, requirement IDs and the defect. Lower-level corpora can be revised too.
 - You cannot change findings. finish when nothing remains to route or revise; list anything still needing human review in unresolved."""

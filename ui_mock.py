@@ -262,6 +262,8 @@ def describe(event):
                 if event.get('ok') else f"⚠ `{agent}` failed: {str(event.get('error'))[:200]}")
     if kind == 'llm_retry':
         return f"↻ `{agent}` retry: {event['error'][:150]}"
+    if kind == 'coverage':
+        return f"  ◌ {event['corpus']}: linked but unread: {', '.join(event['unread'])}" if event['unread'] else None
     if kind == 'patch':
         return (f"  ⇄ patch: replaced {', '.join(event['replaced']) or '—'} · added {', '.join(event['added']) or '—'}"
                 f" · removed {', '.join(event['removed']) or '—'}")

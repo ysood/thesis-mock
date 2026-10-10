@@ -107,10 +107,13 @@ class FactRef(BaseModel):
 class Route(BaseModel):
     name: str = Field(min_length=1, description='A legal route, alternative or exception, naming who and what it covers')
     status: Literal['supported', 'available', 'ruled_out', 'unresolved', 'not_investigated'] = Field(
-        description='supported: in place on the facts; available: the law offers it and the parties could adopt it '
-                    'with the changes in required_actions, but it is not in place yet; ruled_out: the law or the facts '
-                    'exclude it whatever the parties change; unresolved: depends on a missing fact or answer; '
-                    'not_investigated: an optional fallback not needed because another route suffices')
+        description='supported: in place on the facts as they stand. available: not in place yet, but it would work '
+                    'for the transfer as proposed in the case once the parties make the changes in the requirement\'s '
+                    'required_actions. ruled_out: the law excludes the transfer as proposed from this route; changes '
+                    'that would amount to proposing a different transfer do not make it available. unresolved: whether '
+                    'it works depends on a fact, document or answer that has not been supplied; never use it for '
+                    'something the parties have simply not done yet. not_investigated: an optional fallback left '
+                    'unassessed because another route already works.')
     reasoning: str
     citations: list[str] = Field(description='IDs of provisions you read, exactly as shown in your table of contents')
     quote_id: str = Field(min_length=1, description='One passage ID you were shown from a cited provision')
@@ -181,14 +184,16 @@ class Answer(BaseModel):
     facts: list[FactRef] = Field(default_factory=list)
     citations: list[str] = Field(default_factory=list)
     quote_id: str = ''
+    requirement_ids: list[str] = Field(default_factory=list, description='Ids of your requirements this answer rests on')
 
 
 class DelegateAnswer(BaseModel):
-    """A regional or peer specialist answering questions put to it."""
+    """A lower-level or peer specialist answering questions put to it. Obligations of its own law are filed as
+    requirements (they are findings of this corpus); answers explain and point to them."""
     answers: list[Answer]
-    additional_requirements: list[Requirement] = Field(
-        default_factory=list, description='Further requirements of your law engaged by the facts that the '
-                                          'questions did not ask about')
+    requirements: list[Requirement] = Field(
+        default_factory=list, description='Requirements created by your own instruments that the facts engage, '
+                                          'filed as the instructions say; answers point to them by id')
 
 
 # ------------------------------------------------------------------ supervisor

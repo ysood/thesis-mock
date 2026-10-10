@@ -33,6 +33,8 @@ class Run:
         emit('stage', f'{cid}_specialist', status='running')
         asked = [{k: q[k] for k in ('ref', 'jurisdiction', 'question', 'status', 'answer')}
                  for q in self.questions.values() if q['from'] == cid]
+        if kwargs.get('prior') is not None:
+            kwargs['coverage'] = self.coverage(cid)
         result = agents.assess(cid, self.case, self.offered, self.records[cid],
                                answers=self.received.get(cid, []), asked=asked, **kwargs)
         emit('stage', f'{cid}_specialist', status='done' if result else 'failed')
@@ -41,7 +43,25 @@ class Run:
         if result:
             self.answers[cid] = result
             self.collect_questions(cid)
+            emit('coverage', 'pipeline', corpus=cid, unread=[w['unread'] for w in self.coverage(cid)])
         return result
+
+    def coverage(self, cid):
+        """Structural reading gaps from the citation graph: provisions of this corpus that are cited by law the
+        agent relied on (its findings' and routes' citations) and that it has never read. Decides nothing."""
+        read = set(self.records[cid]['read'])
+        own = list(self.answers[cid].requirements) if cid in self.answers else []
+        items = [r.model_dump() for r in own] + [r for r in self.extra.values() if r['corpus'] == cid]
+        relied = {corpus.resolve(c) for item in items
+                  for c in item.get('citations', []) + [x for rt in item.get('routes', []) for x in rt['citations']]}
+        warnings, seen = [], set()
+        for source in sorted(filter(None, relied & read)):
+            for target in corpus.citations()[source]:
+                if corpus.provisions()[target]['corpus'] == cid and target not in read and target not in seen:
+                    seen.add(target)
+                    warnings.append({'unread': target, 'title': corpus.provisions()[target]['title'],
+                                     'cited_by': source})
+        return warnings
 
     def collect_questions(self, cid):
         """Register new peer questions. A question that repeats one this asker already put to the same
@@ -56,25 +76,28 @@ class Run:
             self.questions[ref] = {'ref': ref, 'from': cid, 'status': 'open', 'answer': None, **q.model_dump()}
 
     def ask_corpus(self, target, asked_by, items, kind, instruction=''):
-        """Put questions (or a supervisor revision) to a corpus specialist; file its answers with each
-        asker and keep its extra requirements. A revision replaces the target's earlier extras."""
-        prior = [r for r in self.extra.values() if r['corpus'] == target] if instruction else []
-        already = [r['title'] for r in self.extra.values() if r['corpus'] == target and not instruction]
-        if target in self.answers:
-            already += [r.title for r in self.answers[target].requirements]
+        """Put questions (or a supervisor revision) to a corpus specialist and file its answers with each asker.
+        A lower-level corpus reports its complete set of requirements, which replaces its earlier report; a
+        top-level corpus answering a peer question adds only requirements its own assessment lacks."""
+        lower = bool(corpus.manifests()[target].get('parent'))
+        mine = [r for r in self.extra.values() if r['corpus'] == target]
+        prior = mine if instruction else []
+        already = [] if lower else [r['title'] for r in mine] + (
+            [r.title for r in self.answers[target].requirements] if target in self.answers else [])
         name = ', '.join(corpus.manifests()[a]['name'] for a in asked_by)
         for asker in asked_by:
             emit('edge', 'pipeline', source=asker, target=target, relation=kind)
         emit('stage', f'{target}_specialist', status='running')
         result = agents.answer_questions(target, name, items, self.case, self.offered, self.records[target], already,
                                          prior=[{k: r[k] for k in ('id', 'title', 'kind', 'status', 'reasoning')}
-                                                for r in prior], instruction=instruction)
+                                                for r in prior], instruction=instruction,
+                                         coverage=self.coverage(target) if instruction else ())
         emit('stage', f'{target}_specialist', status='done' if result else 'failed')
         self.log.append({'to': target, 'asked_by': asked_by, 'kind': kind, 'questions': items,
                          'instruction': instruction, 'ok': bool(result)})
         if not result:
             return None
-        for r in prior:
+        for r in (mine if lower or instruction else []):
             self.extra.pop(r['ref'], None)
         by_id = {i['question_id']: i for i in items}
         for answer in result.answers:
@@ -82,9 +105,10 @@ class Run:
             if item:
                 self.received.setdefault(item['asker'], []).append({'from': target, 'question': item['question'],
                                                                     **answer.model_dump()})
-        for r in result.additional_requirements:
+        for r in result.requirements:
             ref = f'{target}:{r.id}'
             self.extra[ref] = {**r.model_dump(), 'corpus': target, 'ref': ref, 'source': f'reported to {name}'}
+        emit('coverage', 'pipeline', corpus=target, unread=[w['unread'] for w in self.coverage(target)])
         return result
 
     def delegate(self, cid):
@@ -156,6 +180,7 @@ class Run:
                 'requirements': [{k: f[k] for k in ('ref', 'title', 'kind', 'status', 'reasoning', 'citations',
                                                     'routes', 'open_dependency', 'required_actions', 'issues', 'source')}
                                  for f in self.findings()],
+                'coverage_warnings': {cid: w for cid in corpus.manifests() if (w := self.coverage(cid))},
                 'open_questions': [q for q in self.questions.values() if q['status'] == 'open'],
                 'answered_questions': [q for q in self.questions.values() if q['status'] != 'open'],
                 'delegations': self.log}

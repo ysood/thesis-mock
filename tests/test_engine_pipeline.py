@@ -41,7 +41,7 @@ def scripted(calls):
         if schema is DelegateAnswer and agent == 'subregion_a1_specialist':
             return DelegateAnswer(answers=[Answer(question_id='region_a>subregion_a1:d1', answer='A1-HIA 4 supplies the condition.',
                                                   citations=['A1-HIA 4'], quote_id='A1-HIA 4#L1')],
-                                  additional_requirements=[Requirement(
+                                  requirements=[Requirement(
                                       id='national_transfer_conditions', title='Subregion A1 outward transfer conditions', kind='gate',
                                       status='unmet', reasoning='Keys are held in Region B.', facts=fact(user),
                                       citations=['A1-HIA 6'], quote_id='A1-HIA 6#L3')])
@@ -115,7 +115,7 @@ class RevisionAndQuestionTests(unittest.TestCase):
         def model(agent, schema, system, user):
             self.seen.append((agent, schema.__name__, user))
             if schema is DelegateAnswer:
-                return DelegateAnswer(answers=[], additional_requirements=[Requirement(
+                return DelegateAnswer(answers=[], requirements=[Requirement(
                     id='impact_assessment_list', title='National impact assessment list', kind='gate', status='unmet',
                     reasoning='Hosting abroad needs one.', citations=['A1-HIA 8'], quote_id='A1-HIA 8#L1')])
             if schema is SpecialistPatch:
@@ -150,6 +150,29 @@ class RevisionAndQuestionTests(unittest.TestCase):
         state.answers['region_a'] = ask('Under Region B law, may authorities compel access?')
         state.collect_questions('region_a')
         self.assertEqual(list(state.questions), ['region_a:q1'])
+
+    def test_lower_level_report_is_complete_and_replaces_the_earlier_one(self):
+        state = pipeline.Run(CASE)
+        state.extra['subregion_a1:old'] = {'id': 'old', 'title': 'Old', 'kind': 'gate', 'status': 'met', 'reasoning': 'r',
+                                           'corpus': 'subregion_a1', 'ref': 'subregion_a1:old'}
+        state.ask_corpus('subregion_a1', ['region_a'], [{'question_id': 'd1', 'asker': 'region_a', 'requirement_id': 'x',
+                                                        'question': 'Is there a national list?'}], 'delegation')
+        self.assertEqual(list(state.extra), ['subregion_a1:impact_assessment_list'])
+        from engine import agents
+        self.assertIn('whether or not a question asked about it', agents.delegate_system('subregion_a1', 'Region A'))
+        self.assertIn('ALREADY REPORTED', agents.delegate_system('region_b', 'Region A'))
+
+    def test_coverage_warnings_list_unread_law_linked_from_relied_on_law(self):
+        state = pipeline.Run(CASE)
+        state.records['region_a']['read'] = ['A-REG 16', 'A-REG 18']
+        state.answers['region_a'] = SpecialistAnswer(applies=True, applicability_reasoning='r', coverage_note='c',
+                                                     requirements=[Requirement(id='t', title='t', kind='gate', status='unmet',
+                                                                               reasoning='r', citations=['A-REG 16'])])
+        self.assertEqual([w['unread'] for w in state.coverage('region_a')], ['A-REG 17', 'A-REG 19'])
+        self.assertIn('region_a', state.view()['coverage_warnings'])
+        state.assess('region_a', prior=state.answers['region_a'])
+        self.assertIn('COVERAGE WARNINGS', self.seen[-1][2])
+        self.assertIn('A-REG 17', self.seen[-1][2])
 
     def test_renamed_requirement_does_not_reopen_a_question_but_a_new_one_is_asked(self):
         state = pipeline.Run(CASE)
