@@ -212,7 +212,31 @@ def show_key(folder, result):
         st.write('No answer key for this case.')
         return
     key = json.loads(path.read_text())
-    card = score.score(result, key)
+    try:
+        card = score.score_file(result, path)
+    except ValueError as exc:
+        st.error(f'Score review validation failed: {exc}')
+        return
+    raw_card = card
+    if raw_card.get('reviewed'):
+        m = raw_card['review_metadata']
+        st.caption(f"Selected checks: raw {m['raw_passed']}/{m['checks_reviewed']}; "
+                   f"reviewed {m['reviewed_passed']}/{m['checks_reviewed']}. "
+                   'Reviewed scores include evidence-linked offline judgments.')
+        view = st.radio('Score view', ['Reviewed', 'Raw automated'], horizontal=True, key=f'score-view-{folder.name}')
+        card = raw_card['reviewed'] if view == 'Reviewed' else raw_card
+        corrections = [r['review'] for r in score.check_rows(raw_card['reviewed']).values() if r.get('review')]
+        if corrections:
+            with st.expander(f"Why {len(corrections)} checks changed"):
+                for r in corrections:
+                    st.markdown(f"**{r['check']}**: {'pass' if r['passed'] else 'fail'}")
+                    st.write(r['reason'])
+                    for e in r['evidence']:
+                        st.caption(e['pointer'])
+                        if e.get('quote'):
+                            st.write(e['quote'])
+    else:
+        st.caption('Raw automated matches. No complete evidence review is recorded for this exact answer and key.')
     s = card['summary']
     st.caption(key.get('status', ''))
     cols = st.columns(6)
@@ -225,15 +249,17 @@ def show_key(folder, result):
     why = {i['id']: i.get('why', '') for section in ('requirements', 'routes', 'conflicts', 'questions', 'must_not')
            for i in key.get(section, [])}
     tick = lambda ok: '✓' if ok else '✗'
-    st.markdown('**Requirements** (matched by cited provisions)')
+    st.markdown('**Requirements** (raw matches shown; reviewed judgments are explained below)')
     st.dataframe([{'': tick(r['ok']), 'key item': r['id'], 'got': r['status'], 'expect': '/'.join(r['expect']),
                    'matched finding': r['best'] or 'not found',
                    'note': ' '.join(filter(None, [f"missing {r['missing_citation']}" if r.get('missing_citation') else '',
-                                                  f"also {', '.join(r['disagreeing'])}" if r.get('disagreeing') else ''])),
+                                                  f"also {', '.join(r['disagreeing'])}" if r.get('disagreeing') else '',
+                                                  r.get('review', {}).get('reason', '')])),
                    'why': why[r['id']]} for r in card['requirements']], width='stretch', hide_index=True)
     st.markdown('**Routes**')
     st.dataframe([{'': tick(r['ok']), 'route': r['id'], 'got': ', '.join(r['statuses']) or 'not found',
-                   'expect': '/'.join(r['expect']), 'why': why[r['id']]} for r in card['routes']],
+                   'expect': '/'.join(r['expect']), 'review note': r.get('review', {}).get('reason', ''),
+                   'why': why[r['id']]} for r in card['routes']],
                  width='stretch', hide_index=True)
     st.markdown('**Conflicts, questions and traps**')
     rows = [{'': tick(r['ok']), 'check': f"conflict: {r['id']}", 'why': why[r['id']]} for r in card['conflicts']]

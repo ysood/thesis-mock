@@ -31,6 +31,10 @@ TRICKY = {
         'route:sensitive_consent', 'route:consent_derogation', 'route:recognition',
         'trap:consent_lifts_genetic_prohibition', 'trap:consent_derogation_relied_on', 'trap:recognition_relied_on',
         'trap:secrecy_blocks_consented_disclosure'],
+    '05_a1_genetic_second_opinion_in_b': [
+        'decision', 'requirement:transfer_route', 'requirement:a1_genetic_transfer_restriction',
+        'requirement:sensitive_condition', 'route:consent_derogation', 'route:approved_clauses',
+        'trap:consent_derogation_relied_on', 'trap:genetic_consent_bar_overextended'],
 }
 
 
@@ -58,7 +62,7 @@ def report():
         mode = data.get('graph', 'runtime')
         case = path.stem.split('_', 2)[2] if path.stem.split('_')[1] in ('runtime', 'generated') else path.stem
         key = json.loads((ROOT / 'cases' / case / 'key.json').read_text())
-        card = score.score(data['result'], key)
+        card = score.score_file(data['result'], ROOT / 'cases' / case / 'key.json')
         card['cost'] = score.cost(data.get('events', []))
         card['got'] = data['result']['decision']
         groups[(case, mode)].append(card)
@@ -86,6 +90,10 @@ def report():
                 lines.append(f'| {n} | ' + ' | '.join(row) + ' |')
         lines.append('| **tricky total** | ' + ' | '.join(f'**{a}/{b}**' for a, b in totals.values()) + ' |')
         lines.append('| decisions | ' + ' | '.join(', '.join(c['got'] for c in cards[m]) for m in modes) + ' |')
+        if any(c.get('reviewed') for m in modes for c in cards[m]):
+            lines.append('| reviewed checks passed per run | ' + ' | '.join(', '.join(
+                str(sum(checks(c['reviewed']).values())) if c.get('reviewed') else '-'
+                for c in cards[m]) for m in modes) + ' |')
         for field in ('seconds', 'model_calls', 'tool_calls', 'output_tokens'):
             lines.append(f'| mean {field} | ' + ' | '.join(
                 str(round(sum(c['cost'][field] for c in cards[m]) / len(cards[m]))) for m in modes) + ' |')

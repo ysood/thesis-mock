@@ -22,7 +22,7 @@ def load(path):
     key_path = ROOT / 'cases' / case / 'key.json'
     if not key_path.exists():
         return None
-    card = score.score(data['result'], json.loads(key_path.read_text()))
+    card = score.score_file(data['result'], key_path)
     card['cost'] = score.cost(data.get('events', []))
     card['run'], card['case'], card['model'] = path.name, case, data.get('model')
     return card
@@ -33,6 +33,14 @@ def details(card):
     print(f"decision {TICK[card['decision']['ok']]} {card['decision']['got']} (expect {card['decision']['expect']}) · "
           f"engaged {TICK[card['engaged']['ok']]} · refs verified {card['verified']} · "
           f"{card['cost']['seconds']}s, {card['cost']['model_calls']} calls, {card['cost']['output_tokens']} output tokens")
+    if card.get('reviewed'):
+        m = card['review_metadata']
+        print(f"selected checks: raw {m['raw_passed']} / reviewed {m['reviewed_passed']} "
+              f"({m['checks_reviewed']} checks; {m['reviewer']})")
+        for section, row in score.check_rows(card['reviewed']).items():
+            if row.get('review'):
+                r = row['review']
+                print(f"  reviewed {section}: {TICK[r['passed']]} {r['reason']}")
     print('requirements')
     for r in card['requirements']:
         extra = f"  missing citation {r['missing_citation']}" if r.get('missing_citation') else ''
@@ -63,6 +71,9 @@ def matrix(cards):
     print(f"{'check':42} " + ' '.join(c['run'][9:15] for c in cards) + '  pass')
     for name, oks in rows:
         print(f"{name:42} " + ' '.join(f'{TICK[o]:^6}' for o in oks) + f"  {sum(oks)}/{len(oks)}")
+    if any(c.get('reviewed') for c in cards):
+        print(f"{'reviewed selected-check total':42} " + ' '.join(
+            f"{sum(score.outcomes(c['reviewed']).values()):^6}" if c.get('reviewed') else '  -   ' for c in cards))
     print(f"{'seconds':42} " + ' '.join(f"{c['cost']['seconds']:^6}" for c in cards))
     print(f"{'model calls':42} " + ' '.join(f"{c['cost']['model_calls']:^6}" for c in cards))
 

@@ -53,10 +53,18 @@ corpora/<id>/*.md          provisions headed "## [ID] Title"
 9. Brief: known / required / missing / routes / conflicts.                           [Python] brief.py
 
 Scoring (offline, after a run): engine/score.py + score_mock.py compare a saved run with cases/<case>/key.json.
-Findings are matched to key items by the provisions they cite (definitions ignored; a finding is "about" an item
+Raw findings are matched to key items by the provisions they cite (definitions ignored; a finding is "about" an item
 when >= half its substantive citations are listed), never by requirement id. Reports requirement status, routes,
 conflicts, routed questions, traps, and blocking findings the key does not explain. Runs saved before the rename
-are translated (APIR -> A-REG, aster -> region_a, ...).
+are translated (APIR -> A-REG, aster -> region_a, ...). score_file(result, key_path), shared by the UI, CLI,
+analysis and exports, also loads an optional score_reviews.json sidecar. It preserves the raw card and adds
+a separately labelled reviewed card. Reviews bind the complete key, normalized result and every raw check outcome
+with canonical hashes; all checks must be reviewed and each correction must include its expected raw outcome,
+reason, and exact evidence pointer/quote (or a source snapshot hash). Changed answers/keys get no old review;
+changed scorer outcomes or invalid matching evidence require reassessment. Missing reviews are never pooled as
+reviewed scores. These are explicit offline judgments, not automatic legal interpretation of prose. Keys and
+review sidecars are evaluation-only and never become model input. Selected scores exclude full reasoning and
+compliance review even after matching corrections.
 ```
 
 Each corpus agent keeps one read record across all its calls, so law it read earlier stays citable.

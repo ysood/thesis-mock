@@ -5,8 +5,11 @@ by the provisions they cite: the best candidate is the finding whose citations a
 the key's provisions. The scorer reads saved results only; it never calls a model.
 """
 
+import hashlib
 import json
 import re
+from copy import deepcopy
+from pathlib import Path
 
 from engine import corpus
 
@@ -18,6 +21,126 @@ LEGACY = [('APIR ', 'A-REG '), ('VHIA ', 'A1-HIA '), ('CHRA ', 'B-HRA '), ('CRAA
           ('01_valdora_gp_to_corvel_host', '01_a1_gp_to_region_b_host')]
 OPEN = ('unmet', 'undetermined')
 RELEVANT = 0.5  # a finding is about the key item when at least half its substantive citations are listed provisions
+
+
+def fingerprint(value):
+    """Bind reviews to JSON contents, independent of formatting or object-key order."""
+    return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False,
+                                     separators=(',', ':')).encode()).hexdigest()
+
+
+def check_rows(card):
+    """Stable check names shared by the scorer, review ledger and exports."""
+    rows = {'decision': card['decision']}
+    for section in ('requirements', 'routes', 'conflicts', 'questions'):
+        rows.update({f"{section[:-1]}:{r['id']}": r for r in card[section]})
+    rows.update({f"trap:{r['id']}": r for r in card['must_not']})
+    return rows
+
+
+def outcomes(card):
+    return {name: not row['violated'] if name.startswith('trap:') else row['ok']
+            for name, row in check_rows(card).items()}
+
+
+def pointer_value(value, pointer):
+    """Resolve an evidence JSON pointer; reject missing or malformed paths."""
+    if not isinstance(pointer, str) or not pointer.startswith('/'):
+        raise ValueError('Review evidence needs a JSON pointer starting with /.')
+    for token in pointer[1:].split('/'):
+        if re.search(r'~(?![01])', token):
+            raise ValueError(f'Invalid JSON pointer escape: {pointer}')
+        token = token.replace('~1', '/').replace('~0', '~')
+        try:
+            if isinstance(value, list) and not re.fullmatch(r'0|[1-9][0-9]*', token):
+                raise ValueError('Invalid array index.')
+            value = value[int(token)] if isinstance(value, list) else value[token]
+        except (KeyError, IndexError, TypeError, ValueError) as exc:
+            raise ValueError(f'Review evidence pointer does not exist: {pointer}') from exc
+    return value
+
+
+def apply_review(card, result, key, ledger):
+    """Add a separately labelled reviewed score without changing raw matches.
+
+    Corrections are human-readable offline judgments, not semantic inference from prose.
+    They apply only to the exact result and key, and each needs surviving source evidence.
+    """
+    card['review_status'] = 'not_reviewed'
+    if ledger is None:
+        return card
+    if ledger.get('version') != 1:
+        raise ValueError('Unsupported score review ledger version.')
+    if ledger.get('key_sha256') != fingerprint(key):
+        card['review_status'] = 'different_key'
+        return card
+    result_hash = fingerprint(modernise(result))
+    matches = [r for r in ledger.get('runs', []) if r.get('result_sha256') == result_hash]
+    if len(matches) > 1:
+        raise ValueError('Duplicate review entries for the same result.')
+    if not matches:
+        return card
+    entry = matches[0]
+    if entry.get('raw_outcomes_sha256') != fingerprint(outcomes(card)):
+        raise ValueError('Reviewed raw outcomes differ from the current scorer; reassessment is required.')
+    reviewed = deepcopy(card)
+    rows = check_rows(reviewed)
+    covered = entry.get('reviewed_checks', [])
+    if len(covered) != len(set(covered)) or set(covered) != set(rows):
+        raise ValueError('A completed review must cover every scored check exactly once.')
+    changed = []
+    seen = set()
+    for correction in entry.get('overrides', []):
+        name = correction.get('check')
+        if name not in rows or name in seen:
+            raise ValueError(f'Unknown or duplicate reviewed check: {name}')
+        seen.add(name)
+        if not isinstance(correction.get('passed'), bool) or not correction.get('reason', '').strip():
+            raise ValueError(f'Review correction needs a boolean outcome and reason: {name}')
+        evidence = correction.get('evidence', [])
+        if not evidence:
+            raise ValueError(f'Review correction needs source evidence: {name}')
+        for source in evidence:
+            value = pointer_value(modernise(result), source.get('pointer'))
+            if 'quote' in source:
+                quote = source['quote']
+                if not isinstance(quote, str) or not quote.strip() or not isinstance(value, str) or quote not in value:
+                    raise ValueError(f'Review evidence quote does not match: {name} {source.get("pointer")}')
+            elif source.get('sha256') != fingerprint(value):
+                raise ValueError(f'Review evidence snapshot does not match: {name}')
+        row = rows[name]
+        old = not row['violated'] if name.startswith('trap:') else row['ok']
+        if not isinstance(correction.get('expected_raw'), bool) or correction['expected_raw'] != old:
+            raise ValueError(f'Review raw expectation does not match the current scorer: {name}')
+        if correction['passed'] == old:
+            raise ValueError(f'Redundant review override: {name}')
+        row['review'] = deepcopy(correction)
+        if name.startswith('trap:'):
+            row['violated'] = not correction['passed']
+        else:
+            row['ok'] = correction['passed']
+            if 'found' in row and correction['passed']:
+                row['found'] = True
+        changed.append(name)
+    reviewed['summary'] = summary(reviewed)
+    card['reviewed'] = reviewed
+    card['review_status'] = 'reviewed'
+    card['review_metadata'] = {'reviewer': ledger.get('reviewer', ''),
+                              'criterion': ledger.get('criterion', ''),
+                              'run': entry.get('label', ''), 'changed_checks': changed,
+                              'checks_reviewed': len(covered),
+                              'raw_passed': sum(outcomes(card).values()),
+                              'reviewed_passed': sum(outcomes(reviewed).values())}
+    return card
+
+
+def score_file(result, key_path):
+    """Shared UI/CLI/export entry point; case sidecar never becomes model input."""
+    key_path = Path(key_path)
+    key = json.loads(key_path.read_text())
+    review_path = key_path.parent / 'score_reviews.json'
+    ledger = json.loads(review_path.read_text()) if review_path.exists() else None
+    return score(result, key, ledger)
 
 
 def modernise(result):
@@ -129,7 +252,7 @@ def check_must_not(findings, item):
     return {'id': item['id'], 'violated': bool(hits), 'hits': hits}
 
 
-def score(result, key):
+def score(result, key, reviews=None):
     result = modernise(result)
     findings = result['findings']
     final = next((r for r in reversed(result.get('reviews') or []) if r), None)
@@ -155,7 +278,7 @@ def score(result, key):
         'verified': f"{sum(f['verified'] for f in findings)}/{len(findings)}",
     }
     card['summary'] = summary(card)
-    return card
+    return apply_review(card, result, key, reviews)
 
 
 def summary(card):
