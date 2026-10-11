@@ -18,6 +18,7 @@ from engine.schema import Case
 
 CORRECTION_ROUNDS = 1  # bounded follow-ups between the supervisor's first synthesis and its final conclusion
 MODE = os.environ.get('ARCHITECTURE', 'multi')  # 'single': one agent, one call (baseline for analyses)
+BASELINE = os.environ.get('BASELINE', 'raw')  # with ARCHITECTURE=baseline: 'raw' (contents only) | 'corpus' (full text)
 
 
 class Run:
@@ -407,6 +408,8 @@ def run(case, on_event=None):
     try:
         if MODE == 'single':
             return run_single(case, started), events
+        if MODE == 'baseline':
+            return run_baseline(case, started), events
         state = Run(case)
         plan = supervise(agents.plan, state.case, state.offered)
         reviews = []
@@ -479,10 +482,76 @@ def run_single(case, started):
     return result
 
 
+def citation_audit(answer, record, offered):
+    """Record-only checks on an unguarded answer: what it cites and quotes, against what exists and what it was shown."""
+    items = [r.model_dump() for r in answer.requirements]
+    items += [rt for r in items for rt in r['routes']]
+    cites = [c for i in items for c in i['citations']]
+    resolved = [corpus.resolve(c) for c in cites]
+    quotes = [i['quote_id'] for i in items if i.get('quote_id') and i['quote_id'].strip().lower() != 'none']
+    passages = {q: t for pid in corpus.provisions() for q, t in corpus.passages(pid).items()}
+    fact_ids = [x['fact_id'] for r in answer.requirements for x in r.model_dump()['facts']]
+    return {
+        'citations': len(cites),
+        'citations_unknown': sorted({c for c, pid in zip(cites, resolved) if pid is None}),
+        'citations_not_shown': sorted({pid for pid in resolved if pid and pid not in record['read']}),
+        'quote_ids': len(quotes),
+        'quote_ids_unknown': sorted({q for q in quotes if q not in passages}),
+        'quote_ids_not_shown': sorted({q for q in quotes if q in passages and q not in record['passages']}),
+        'fact_ids': len(fact_ids),
+        'fact_ids_unknown': sorted({f for f in fact_ids if f not in offered}),
+    }
+
+
+def run_baseline(case, started):
+    """Unguarded baseline (BASELINE=raw|corpus): one call, no tools, no strict schema or supplied-ID restriction.
+    The reference checks run but only record: citations resolve to any existing provision for scoring, whether or
+    not the model was shown it. Three decisions are kept: the model's own (the headline, scored), the one computed
+    from its gate statuses, and the one the guarded pipeline would give (unmet gates count only when verified)."""
+    case = Case.model_validate(case).model_dump()
+    offered = facts.passages(case)
+    emit('stage', 'baseline', status='running', level=BASELINE)
+    answer, record = agents.baseline(case, offered, BASELINE)
+    emit('stage', 'baseline', status='done' if answer else 'failed')
+    emit('stage', 'verification', status='running')
+    evidence = {e['id'] for e in case['evidence']}
+    findings = []
+    for r in (answer.requirements if answer else []):
+        f = verify({**r.model_dump(), 'ref': f'{r.corpus}:{r.id}', 'source': 'baseline'}, record, evidence)
+        for item, raw in [(f, r.citations)] + [(rt, src.citations) for rt, src in zip(f['routes'], r.routes)]:
+            item['resolved_citations'] = [pid for pid in dict.fromkeys(map(corpus.resolve, raw)) if pid]
+        findings.append(f)
+    computed, computed_reasons = decide([{**f, 'verified': True} for f in findings], {}, answer)
+    guarded, guarded_reasons = decide(findings, {}, answer)
+    stated = answer.decision if answer else 'needs_review'
+    reasons = [answer.decision_reasoning] if answer else ['Baseline call failed.']
+    result = {'decision': stated, 'reasons': reasons, 'seconds': round(time.time() - started, 1), 'mode': 'baseline',
+              'baseline': BASELINE,
+              'decision_from_gates': {'decision': computed, 'reasons': computed_reasons},
+              'decision_guarded': {'decision': guarded, 'reasons': guarded_reasons},
+              'audit': citation_audit(answer, record, offered) if answer else None,
+              'plan': {'understanding': answer.understanding,
+                       'engagements': [{'corpus': a.corpus, 'engaged': a.applies, 'reason': a.reasoning, 'focus': ''}
+                                       for a in answer.applicability]} if answer else None,
+              'specialists': {a.corpus: {'applies': a.applies, 'applicability_reasoning': a.reasoning,
+                                         'coverage_note': answer.coverage_note} for a in answer.applicability}
+              if answer else {},
+              'findings': findings, 'questions': [], 'delegations': [],
+              'reviews': [{'action': 'baseline (no review)', 'conflicts': [c.model_dump() for c in answer.conflicts],
+                           'unresolved': answer.unresolved}] if answer else [],
+              'read': {'baseline': record['read']}, 'case': case}
+    result['brief'] = brief.build(findings, {}, answer, offered, supervisor_items(answer, findings))
+    emit('decision', 'verification', decision=stated, reasons=reasons)
+    emit('stage', 'verification', status='done')
+    return result
+
+
 def save(result, events, name, folder=corpus.ROOT / 'runs' / 'mock'):
     folder.mkdir(parents=True, exist_ok=True)
     path = folder / f"{time.strftime('%Y%m%d-%H%M%S')}_{name}.json"
-    path.write_text(json.dumps({'model': llm.model_name(), 'mode': MODE, 'tools': tools.ENABLED,
-                                'graph': graph.MODE if graph.enabled() else 'runtime', 'result': result, 'events': events},
+    path.write_text(json.dumps({'model': llm.model_name(), 'mode': MODE, 'baseline': BASELINE if MODE == 'baseline' else None,
+                                'tools': tools.ENABLED and MODE != 'baseline',
+                                'graph': 'none' if MODE == 'baseline' else graph.MODE if graph.enabled() else 'runtime',
+                                'result': result, 'events': events},
                                indent=1, default=str))
     return path

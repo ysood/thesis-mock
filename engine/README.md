@@ -100,4 +100,15 @@ text). Its prompt is the specialist METHOD + RULES (minus the own-instruments ow
 applicability and conflict rules; each requirement names the corpus whose instrument creates it. No delegation, peer
 questions, coverage warnings or review rounds. Steps 7-9 are unchanged; its conflicts and unresolved stand in for the
 final review. Saved runs record "mode".
+
+Unguarded baseline (ARCHITECTURE=baseline with BASELINE=raw|corpus, or the UI's Architecture switch): one LLM call
+(agents.baseline, BaselineAssessment = SingleAssessment + the model's own decision). It sees the same case, fact
+passages, corpus manifests and tables of contents as the single agent; BASELINE=corpus adds every corpus's full text.
+Removed: tools, strict schema and supplied-ID enums (llm.ask strict=False: the schema is given as text), the corpus-only
+and evidence rules, the read-before-cite rule, METHOD, delegation and review. Kept: the output contract (schema and the
+status, kind, route and requirement definitions) and one retry on invalid JSON. verify() still runs but only records;
+citations resolve to any existing provision for scoring. pipeline.citation_audit records unknown citations, citations
+and quote IDs the model was not shown, and unknown fact IDs. Three decisions are saved: the model's own ("decision",
+scored), decision_from_gates (decide() on its gate statuses) and decision_guarded (decide() with verification).
+Saved runs record "mode": "baseline", "baseline" (level) and "graph": "none".
 Run: `.venv/bin/python run_mock.py cases/01_a1_gp_to_region_b_host`. Keys in `cases/*/key.json` never reach the model.

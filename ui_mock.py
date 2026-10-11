@@ -36,8 +36,16 @@ with st.sidebar:
         'MODEL' if c == 'luna' else 'HAIKU_MODEL') or c)
     llm.CHOICE = choice
     st.header('Ablations')
-    pipeline.MODE = st.radio('Architecture', ['multi', 'single'], index=['multi', 'single'].index(pipeline.MODE),
-                             format_func=lambda m: 'Multi-agent' if m == 'multi' else 'Single agent, one call')
+    pipeline.MODE = st.radio('Architecture', ['multi', 'single', 'baseline'],
+                             index=['multi', 'single', 'baseline'].index(pipeline.MODE),
+                             format_func=lambda m: {'multi': 'Multi-agent', 'single': 'Single agent, one call',
+                                                    'baseline': 'Baseline: one call, no guardrails'}[m])
+    if pipeline.MODE == 'baseline':
+        pipeline.BASELINE = st.radio('Baseline level', ['raw', 'corpus'], index=['raw', 'corpus'].index(pipeline.BASELINE),
+                                     format_func=lambda b: 'Raw: names and tables of contents only' if b == 'raw'
+                                     else 'Corpus in prompt: full text, no tools',
+                                     help='No tools, strict schema, supplied-ID restriction, corpus-only or evidence rules. '
+                                          'Same output contract; reference problems are recorded, not rejected.')
     tools.ENABLED = st.toggle('Traversal tools (off = whole corpus in context)', value=True)
     graph.MODE = st.radio('Knowledge graph', ['runtime', 'generated'], index=['runtime', 'generated'].index(graph.MODE),
                           format_func=lambda m: 'Runtime citation graph' if m == 'runtime'
@@ -364,7 +372,7 @@ with run_tab:
             path = pipeline.save(result, events, folder.name)
             status.update(label=f"Done: {result['decision']} · saved {path.name}", state='complete', expanded=False)
             st.session_state.update(result=result, folder=folder, events=events, drawing=drawing,
-                                    saved=json.dumps({'model': llm.model_name(), 'mode': pipeline.MODE, 'tools': tools.ENABLED,
+                                    saved=json.dumps({'model': llm.model_name(), 'mode': pipeline.MODE, 'baseline': pipeline.BASELINE if pipeline.MODE == 'baseline' else None, 'tools': tools.ENABLED,
                                                       'graph': graph.MODE if graph.enabled() else 'runtime',
                                                       'result': result, 'events': events},
                                                      indent=1, ensure_ascii=False, default=str),

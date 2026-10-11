@@ -316,3 +316,10 @@ class SingleAssessment(BaseModel):
     coverage_note: str = Field(description='How you checked that no engaged requirement, alternative or '
                                            'cumulative duty in any corpus was missed, and any remaining limit')
     unresolved: list[str] = Field(default_factory=list, description='Issues that still need human review')
+
+
+class BaselineAssessment(SingleAssessment):
+    """Unguarded baseline: the single-agent output contract plus the model's own decision."""
+    decision: Literal['proceed', 'proceed_subject_to_conditions', 'do_not_proceed', 'needs_review'] = Field(
+        description='Whether the transfer as proposed may proceed')
+    decision_reasoning: str = Field(description='Why, in a few sentences')

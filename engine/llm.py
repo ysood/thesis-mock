@@ -189,7 +189,7 @@ def run_tools(agent, reply, tools, used, budget):
     return results, used
 
 
-def ask(agent, purpose, schema, system, user, tools=None, budget=0, fact_ids=(), quote_ids=()):
+def ask(agent, purpose, schema, system, user, tools=None, budget=0, fact_ids=(), quote_ids=(), strict=None):
     """Ask the model for an object of type `schema`. Returns None if it fails twice.
 
     Every call is stateless: agents receive what they need in the prompt, never a transcript.
@@ -197,7 +197,8 @@ def ask(agent, purpose, schema, system, user, tools=None, budget=0, fact_ids=(),
     tool calls and results stay within this one call. quote_ids may be a shared
     passage dictionary that grows as tools display new law.
     """
-    strict = (model_name() or '').startswith('openai:')
+    # strict=False (baseline): the schema is given as text only, nothing is enforced or restricted to supplied IDs.
+    strict = (model_name() or '').startswith('openai:') if strict is None else strict
     emit("llm_request", agent, purpose=purpose, system=system, user=user,
          output_format='scripted' if FAKE_MODEL else 'json_schema_strict' if strict else 'prompt_json',
          response_schema=schema.__name__, fact_choices=len(fact_ids or ()),

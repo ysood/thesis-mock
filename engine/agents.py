@@ -12,7 +12,7 @@ import re
 
 from engine import corpus, facts, tools
 from engine.llm import ask
-from engine.schema import (DelegateAnswer, SingleAssessment, SpecialistAnswer, SpecialistPatch, SupervisorConclusion,
+from engine.schema import (BaselineAssessment, DelegateAnswer, SingleAssessment, SpecialistAnswer, SpecialistPatch, SupervisorConclusion,
                            SupervisorPlan, SupervisorSynthesis)
 
 EVIDENCE = """- Facts: refer to FACT PASSAGES by fact_id. Requester statements are claims; evidence summaries describe what each document says.
@@ -262,6 +262,39 @@ def single(case, offered):
         parts.append('FULL TEXT\n' + tools.full_reading(record, scope))
     result = ask('single_agent', 'SingleAssessment', SingleAssessment, system, '\n\n'.join(parts), tools=toolset,
                  budget=budget, fact_ids=list(offered), quote_ids=record['passages'])
+    return (facts.bind(result, offered) if result else None), record
+
+
+BASELINE = """You assess whether a proposed data transfer may proceed under the laws of the jurisdictions listed below. Reply in one go.
+
+CORPORA
+{corpora}
+Jurisdictions: {registry}
+
+Record whether each corpus applies, the requirements its law imposes that the facts engage (filed under the corpus whose instrument creates it), any conflicts between them, and your decision.
+
+DEFINITIONS
+{definitions}
+- Cite provisions by ID (e.g. "{example}"). quote_id: the passage ID (e.g. "{example}#L2") of the line of law you rely on, or "none"."""
+
+BASELINE_DEFINITIONS = ('- status:', '- kind:', '- routes:', '- A requirement is')
+
+
+def baseline(case, offered, level):
+    """Unguarded baseline (see BaselineAssessment). Same case, corpus manifests and tables of contents as the single
+    agent; level 'corpus' adds the full text of every corpus to the prompt. No tools, corpus-only or evidence rules,
+    supplied-ID restrictions or strict schema: only the output contract (schema as text and status definitions)."""
+    scope = list(corpus.manifests())
+    record = tools.new_record()
+    definitions = '\n'.join(line for line in RULES.format(example=example_id(scope)).splitlines()
+                            if line.startswith(BASELINE_DEFINITIONS))
+    system = BASELINE.format(corpora=', '.join(scope), registry=json.dumps(registry_view()),
+                             definitions=definitions, example=example_id(scope))
+    parts = [case_block(case, offered), 'CORPORA\n' + json.dumps([corpus_view(c) for c in scope], indent=1)]
+    if level == 'corpus':
+        parts.append('FULL TEXT\n' + tools.full_reading(record, scope))
+    result = ask('baseline', f'BaselineAssessment ({level})', BaselineAssessment, system, '\n\n'.join(parts),
+                 strict=False)
     return (facts.bind(result, offered) if result else None), record
 
 
