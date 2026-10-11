@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-11",
+  "scope": "Read-only manual review of 36 completed Case 05 runs; findings below supplement, and do not alter, raw automated scores.",
+  "verdict": "Useful exploratory diagnostic case. Reviewed normative KG supports recovery of the decisive transfer restriction at low effort. Selected checklist success does not establish complete reasoning or compliance coverage.",
+  "source_basis": {
+    "decisive_restriction": "A1-HIA 7 first limb prohibits genetic outward transfers on Article 19(1)(a) irrespective of purpose. The second limb restricts use of consent to overcome Article 8 prohibition only for insurance/employment purposes.",
+    "general_risk": "A-REG 12(1) general likely-high-risk test is separate from Article 12(2) enumerated examples and A1-HIA 8 listed activities.",
+    "recipient_scope": "A-REG 3(2) covers Harrow offering a clinical service to the A1 resident. Non-applicability of Region B sector duties does not remove this Region A analysis.",
+    "conditional_cure": "A-REG 18 requires approved clauses, an exporter assessment of applicable destination law/practice, and effective supplementary measures where necessary. Clauses alone do not establish full compliance.",
+    "hosting_scope": "A1-HIA 6 uses transfer-purpose wording, while A1-HIA 8 expressly describes an outside agent. Independent-custodian status alone is an incomplete explanation of the Section 6 boundary."
+  },
+  "core_rule_failures": [
+    {"source": "single_no_graph/run7.json", "issue": "Incorrectly supports consent route because purpose is treatment rather than insurance/employment.", "decision": "needs_review"},
+    {"source": "single_no_graph/run8.json", "issue": "Incorrectly supports consent route; confuses the two A1-HIA 7 limbs.", "decision": "needs_review"},
+    {"source": "multi_no_graph/run7.json", "issue": "Incorrectly supports genetic outward-transfer consent route.", "decision": "needs_review"}
+  ],
+  "core_rule_success": "All six low-effort normative-KG runs correctly block the consent-based transfer. The three incorrect citation-graph decisions hold for review rather than approve the transfer, so these are not observed false go-aheads.",
+  "multi_graph_general_risk_review": {
+    "high": {"runs": [1, 2, 3], "finding": "All preserve the general Article 12(1) high-risk question as undetermined separately from absent listed triggers."},
+    "medium": {"runs_with_unsupported_exclusion": [4, 5], "run_preserving_uncertainty": 6},
+    "low": {"runs_with_inadequately_justified_exclusion": [7, 8, 9], "finding": "All conclude that no assessment is required from absent listed triggers, without adequately resolving the general high-risk test. This does not prove an assessment definitely was required."}
+  },
+  "additional_multi_graph_defects": [
+    {"source": "multi_graph/run4.json", "issue": "Treats Article 18 destination-law assessment as completed on supplied facts/model answer and makes execution of clauses the main remaining action. Also marks security met with ongoing controls left as confirmations."},
+    {"source": "multi_graph/run8.json", "issue": "No separate Article 11 notice, Article 13 records or Article 14 security findings. Marks Article 5 principles/accountability met on limited supplied evidence."},
+    {"source": "multi_graph/run2.json", "issue": "Region A security reasoning explicitly excludes Harrow's own Region B processing, despite potential Article 3(2) recipient duties."},
+    {"source": "multi_graph/run3.json", "issue": "Recorded conclusion issues include 15 passage IDs not shown to the supervisor. Separate from checklist score."},
+    {"source": "multi_graph/run7.json", "issue": "Recorded conclusion issue: shortened alternative-route name does not exactly match existing route."},
+    {"source": "multi_graph/run8.json", "issue": "Recorded conclusion issues: omitted Region B health-record and Region A impact-assessment gates in route plan."}
+  ],
+  "low_other_completeness": "All 12 low-effort runs underanalyse Harrow's independent Region A custodian responsibilities. Low single/KG runs also omit broader notice/records/general-risk reasoning; run9 genuinely omits professional secrecy analysis. Multi/KG run9 has stronger remaining-duty coverage than run8.",
+  "scorer_false_negatives": [
+    {"source": "single_graph/run7.json", "check": "a1_genetic_transfer_restriction", "finding": "Correct prohibition appears in outward-transfer reasoning, but scorer selects a narrower sensitive-processing finding with met status."},
+    {"source": "single_graph/run8.json", "check": "a1_genetic_transfer_restriction", "finding": "Same consolidated-finding/citation-selection issue."},
+    {"source": "single_graph/run8.json", "check": "region_b_host_retention", "finding": "Correct scope finding explicitly excludes data-host/Section9 duties but cites B-HRA2/3 rather than B-HRA9."},
+    {"source": "single_no_graph/run5.json", "check": "region_b_sector_rules and region_b_host_retention", "finding": "Correct consolidated non-applicability finding cites definitions/application rather than operational duties."},
+    {"source": "single_graph/run5.json", "check": "region_b_sector_rules and region_b_host_retention", "finding": "Correct consolidated non-applicability finding cites B-HRA2/3."},
+    {"source": "single_graph/run6.json", "check": "region_b_sector_rules and region_b_host_retention", "finding": "Explicitly excludes Sections4-8 and Section9, but cites B-HRA2/3."}
+  ],
+  "proposed_hand_repairs_not_applied": {
+    "single_graph/run7.json": {"raw": 15, "selected_check_concept_review": 16},
+    "single_graph/run8.json": {"raw": 14, "selected_check_concept_review": 16},
+    "note": "These examples demonstrate rubric sensitivity. Do not substitute selectively corrected scores for a uniform independent adjudication of all configurations."
+  },
+  "region_b_interpretation": "All 12 high/medium single-agent runs correctly explain non-applicability in applicability/engagement reasoning. Raw zero scores for structured operational-duty findings should not be described as failure to understand Region B law.",
+  "other_substantive_failure": {"source": "multi_no_graph/run1.json", "issue": "Treats clinical portal/recordkeeping as computing-provider services and rules out Article18, creating a false obstruction despite a correct current-transfer refusal."},
+  "interpretation_of_existing_readme": [
+    "All24 runs is only true for high/medium, not all36.",
+    "Graph made no difference to single mean is true for medium only; high increases from12.67 to14.00 and low from9.00 to14.67.",
+    "Graph decides correctness is too causal and broad for three repetitions on one constructed scenario.",
+    "Single agent missed Region B requirements should specify structured finding/citation misses, because scope reasoning often is correct.",
+    "Medium matched/exceeded high should explicitly refer to selected automated checklist scores; manual risk reasoning regressed.",
+    "All verified findings means reference integrity, not substantive legal correctness."
+  ],
+  "thesis_positioning": "Describe a purpose-designed fictional cross-corpus stress test comparing runtime citation retrieval with a reviewed normative KG. Report raw selected-check agreement, final-decision agreement, manual reasoning/completeness findings, latency and partial token usage separately. Retain the draft/post-run key status and known omitted failed attempt.",
+  "recommended_next_study": [
+    "Freeze and author-review the key/manual rubric before evaluating new cases.",
+    "Adjudicate correct consolidated reasoning and explicit-duty findings under architecture-neutral criteria.",
+    "Capture complete token usage for every API invocation, retries and failed attempts, plus cache details.",
+    "Record effort/token cap/model/prompt/corpus/graph/code hashes in every run; equalize output cap when comparing effort.",
+    "Test more case types, including permitted transfers and cases in which a reviewed KG is incomplete or misleading.",
+    "Include graph generation and human-review costs separately from recurring query cost."
+  ]
+}

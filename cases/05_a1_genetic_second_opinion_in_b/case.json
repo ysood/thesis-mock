@@ -1,0 +1,55 @@
+{
+  "organisations": [
+    {
+      "id": "org_clinic",
+      "name": "Kestrel Genetic Medicine",
+      "jurisdiction": "A1",
+      "kind": "health_care_provider",
+      "description": "Private clinical genetics service established in Subregion A1. Its consultant clinical geneticists are registered as medical practitioners with the Subregion A1 Health Professions Board. Patients pay the clinic directly under its terms of care, which cover testing, interpretation and counselling at the clinic and say nothing about referrals outside Region A. It does not bill any insurer and uses no external host for its records."
+    },
+    {
+      "id": "org_specialist",
+      "name": "Harrow Inherited Cardiac Clinic",
+      "jurisdiction": "B",
+      "kind": "health_care_provider",
+      "description": "Private specialist clinic established in Region B, led by a cardiologist who specialises in inherited heart-rhythm conditions. Patients pay it directly; it does not bill any insurer and is not an insurer. It keeps the information it receives in its own clinical record for its own care of the patient and stores no records on behalf of anyone else. It holds no certification under the Region B Trusted Recipient Scheme."
+    }
+  ],
+  "transfer": {
+    "title": "A1 genetics clinic sends a patient's genetic test report to a Region B specialist for a second opinion",
+    "sender": "org_clinic",
+    "recipient": "org_specialist",
+    "data": {
+      "description": "One adult patient's name, date of birth and clinic reference number, the laboratory report of a diagnostic genetic test (a variant of uncertain significance in a gene linked to an inherited heart-rhythm condition), a summary of two recent ECGs, and the consultant's referral letter. No other part of the clinic record and no family members' details.",
+      "categories": ["genetic", "health", "identity"],
+      "identifiability": "identified",
+      "people": {"where": ["A1"], "how_many": 1, "includes_children": false}
+    },
+    "purpose": "treatment",
+    "purpose_description": "The treating consultant wants a second opinion on whether the variant explains the patient's symptoms before deciding on treatment. The Harrow specialist will review the report and hold one video consultation with the patient and the consultant. The patient, an adult resident of Subregion A1 who can consent, asked for the referral.",
+    "frequency": "one_off",
+    "locations": {"stored_in": ["A1", "B"], "accessed_from": ["A1", "B"]},
+    "retention": "The clinic keeps its own record under its care retention schedule. Harrow keeps the referral in its own clinical record under its retention schedule for the patient's care.",
+    "onward": "None proposed.",
+    "method": "One-off upload of the referral documents to Harrow's clinical referral portal over an encrypted connection.",
+    "additional_info": "For processing the information, the clinic relies on the provision of health care by its registered practitioners. For sending it outside Region A, the clinic relies on the patient's explicit consent to this transfer, given after the clinic explained the possible risks of a transfer without a recognition or appropriate safeguards. There is no approved transfer-clause agreement or other contract between the two clinics. No impact assessment has been prepared for this single referral."
+  },
+  "evidence": [
+    {
+      "id": "ev_consent",
+      "kind": "consent_record",
+      "title": "Patient's consent to the referral and transfer",
+      "between": ["org_clinic"],
+      "summary": "Signed by the patient (an adult) on 9 November 2026. A clear written statement consenting specifically to the clinic sending the named genetic test report, ECG summary and referral letter to Harrow Inherited Cardiac Clinic in Region B for a second opinion on the patient's care. It records that the patient was told Region B has no recognition covering this kind of information, that no transfer safeguards would be in place, and the possible risks of that. It states the consent can be withdrawn at any time by contacting the clinic.",
+      "dated": "2026-11-09"
+    },
+    {
+      "id": "ev_referral",
+      "kind": "clinical_correspondence",
+      "title": "Referral letter",
+      "between": ["org_clinic", "org_specialist"],
+      "summary": "Letter from the treating consultant to the Harrow specialist explaining the clinical question, the patient's symptoms and why a specialist opinion is needed before treatment is decided. Harrow has agreed to see the referral.",
+      "dated": "2026-11-09"
+    }
+  ]
+}

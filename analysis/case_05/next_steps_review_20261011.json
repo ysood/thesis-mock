@@ -1,0 +1,1866 @@
+{
+  "review_date": "2026-10-11",
+  "case": "05_a1_genetic_second_opinion_in_b",
+  "scope": "The three completed analysis runs in each configuration. The separate incomplete single/generated attempt is recorded below and is not substituted for the completed run3.",
+  "yardstick": {
+    "main_route": "A-REG 18: execute approved clauses, assess applicable recipient-territory law and practice, and adopt effective supplementary measures where necessary; cannot use the route if necessary effective measures cannot be adopted.",
+    "consent_limit": "A1-HIA 7 excludes A-REG 19(1)(a) for genetic transfers while its separate A-REG 8 consent restriction applies only to insurance/employment purposes.",
+    "risk": "Absent listed triggers do not resolve A-REG 12(1). Determine high risk and complete an impact assessment if required.",
+    "purpose": "Default interpretation treats independent care and incidental retention as outside the purpose-limited A1-HIA 6 hosting/storage condition; its text has no express agent limitation.",
+    "remaining_compliance": "Notices, processing records, security, minimisation, retention and each clinics own responsibilities must still be addressed."
+  },
+  "runs": [
+    {
+      "config": "single_no_graph",
+      "run": "run1",
+      "source": "analysis/case_05/single_no_graph/run1.json",
+      "sha256": "456be850578adc729615db19cefef203043f911094ae1c6998d92ae109356033",
+      "decision": "do_not_proceed",
+      "seconds": 182.3,
+      "next_steps": "Execute approved clauses, assess Region B law/practice and adopt necessary safeguards; also complete sender/recipient impact assessments and apply A1 notice/encryption/key requirements.",
+      "alignment": "Core clauses route is useful. A1-HIA 6 hosting-purpose application conflicts with the default care-referral interpretation; mandatory high-risk assessments need their own justification. Other recognition is not available under the supplied Annex II.",
+      "required_actions": [
+        {
+          "requirement": "region_a:sender_impact_assessment",
+          "status": "unmet",
+          "citations": [
+            "A-REG 12",
+            "A1-HIA 8"
+          ],
+          "actions": [
+            "Complete an impact assessment before the transfer, addressing the processing description, necessity, risks and measures to address those risks."
+          ]
+        },
+        {
+          "requirement": "region_a:recipient_impact_assessment",
+          "status": "unmet",
+          "citations": [
+            "A-REG 3",
+            "A-REG 12"
+          ],
+          "actions": [
+            "Harrow should complete or participate in an impact assessment covering its receipt, review, consultation and clinical-record retention before processing proceeds."
+          ]
+        },
+        {
+          "requirement": "subregion_a1:genetic_consent_transfer_restriction",
+          "status": "unmet",
+          "citations": [
+            "A1-HIA 7",
+            "A-REG 19"
+          ],
+          "actions": [
+            "Do not rely on Article 19(1)(a) for this outward transfer; use a valid recognition or execute and satisfy the approved transfer-clause route instead."
+          ]
+        },
+        {
+          "requirement": "region_a:outward_transfer_mechanism",
+          "status": "unmet",
+          "citations": [
+            "A-REG 4",
+            "A-REG 16",
+            "A-REG 17",
+            "A-REG 18",
+            "A-REG 19",
+            "A-REG Annex II",
+            "A1-HIA 7"
+          ],
+          "actions": [
+            "Execute the Commission-approved transfer clauses or otherwise establish a genuinely applicable non-consent route before transferring.",
+            "If relying on Article 18, complete the required assessment of Region B law and practice and implement necessary supplementary measures."
+          ]
+        },
+        {
+          "requirement": "subregion_a1:a1_external_storage_conditions",
+          "status": "unmet",
+          "citations": [
+            "A1-HIA 6"
+          ],
+          "actions": [
+            "Notify the A1 Information Commission in writing at least 30 days before the first such transfer.",
+            "Ensure the record is encrypted while stored outside Region A and that the decryption keys are held only within Region A."
+          ]
+        }
+      ],
+      "clauses_routes": [
+        {
+          "requirement": "region_a:outward_transfer_mechanism",
+          "name": "Approved transfer clauses",
+          "status": "available",
+          "reasoning": "This route would work for the proposed transfer if Kestrel and Harrow execute the Commission-approved clauses, Kestrel assesses Region B law and practice affecting Harrow, and adopts supplementary measures if necessary. No agreement or assessment is currently in place."
+        }
+      ],
+      "general_risk_findings": [
+        {
+          "requirement": "region_a:sender_impact_assessment",
+          "status": "unmet",
+          "reasoning": "The transfer involves identified genetic and health information, an unrecognised and unsafeguarded destination, and retention by a foreign recipient. On the stated facts it is likely to create a high risk to the patient's rights. No impact assessment has been prepared. The A1 list does not independently trigger an assessment for this particular arrangement because it is not described as an external agent hosting the patient-record system and does not involve insurer matching, but the general high-risk duty remains."
+        },
+        {
+          "requirement": "region_a:recipient_impact_assessment",
+          "status": "unmet",
+          "reasoning": "Harrow's processing is part of the same high-risk handling of identified genetic and health information in Region B. No assessment has been prepared, and Harrow's own processing and retention are not covered by the A1 listed external-agent trigger but remain subject to the general high-risk rule applicable through the Region A territorial scope."
+        }
+      ],
+      "final_review": {
+        "action": "single_agent (no review)",
+        "conflicts": [],
+        "unresolved": [
+          "The transfer cannot proceed as described unless a valid outward-transfer route is put in place; the practical choice is the approved-clause route, subject to its assessment and supplementary measures.",
+          "Human review is needed of the high-risk determination and completion of the required impact assessments.",
+          "Obtain and review Kestrel's and Harrow's retention, security, notice and processing-record documentation.",
+          "Confirm the required A1 Commission notification and the encryption/key-location arrangements for Harrow's stored clinical record."
+        ]
+      }
+    },
+    {
+      "config": "single_no_graph",
+      "run": "run2",
+      "source": "analysis/case_05/single_no_graph/run2.json",
+      "sha256": "4209e8d56e961cf65097377acb2a8ffe75fbbb439d66ab9de4f2d61ed48ace7d",
+      "decision": "do_not_proceed",
+      "seconds": 134.5,
+      "next_steps": "Approved clauses plus assessment/safeguards, or a genuinely necessary patient-contract route; produce processing/security records, confirm notices and portal role.",
+      "alignment": "Useful core route. Patient-contract alternative needs genuine contractual necessity and changed evidence; cannot be obtained merely by relabelling the referral. General Article 12(1) high-risk question is not independently resolved.",
+      "required_actions": [
+        {
+          "requirement": "region_a:outward_transfer_route",
+          "status": "unmet",
+          "citations": [
+            "A-REG 16",
+            "A-REG 17",
+            "A-REG Annex II",
+            "A-REG 18",
+            "A-REG 19",
+            "A1-HIA 6",
+            "A1-HIA 7"
+          ],
+          "actions": [
+            "Do not send the genetic information relying on Article 19(1)(a).",
+            "Either execute the approved transfer clauses, complete the required assessment of Region B law and practice and adopt effective supplementary measures where necessary, or establish a patient contract making the external second opinion necessary for contracted care.",
+            "Reassess and document that all other Region A and A1 requirements remain satisfied before sending."
+          ]
+        },
+        {
+          "requirement": "region_a:processing_records",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 13"
+          ],
+          "actions": [
+            "Prepare or produce the written processing record before relying on the transfer route, and update it if the parties switch from consent to clauses or contract."
+          ]
+        },
+        {
+          "requirement": "region_a:security_measures",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 14"
+          ],
+          "actions": [
+            "Confirm and document risk-appropriate technical and organisational measures, including access control, confidentiality, availability and testing of effectiveness."
+          ]
+        }
+      ],
+      "clauses_routes": [
+        {
+          "requirement": "region_a:outward_transfer_route",
+          "name": "Approved transfer clauses",
+          "status": "available",
+          "reasoning": "This route would work for the proposed transfer if Kestrel and Harrow execute the Commission-approved clauses, Kestrel assesses Region B law and practice applicable to Harrow, and adopts any necessary effective supplementary measures. No such agreement or assessment is presently in place."
+        }
+      ],
+      "general_risk_findings": [
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "not_applicable",
+          "reasoning": "The supplied facts concern one patient and do not involve processing sensitive information of more than 5,000 persons or systematic large-scale monitoring. The A1 list additionally requires an assessment for hosting or storage of a patient-record system by an agent outside A1 or matching health information with an insurer; neither occurs here. Harrow retains its own clinical record, does not host records on behalf of Kestrel, and no insurer is involved. The absence of an assessment therefore does not independently fail this requirement for the described referral."
+        }
+      ],
+      "final_review": {
+        "action": "single_agent (no review)",
+        "conflicts": [],
+        "unresolved": [
+          "The proposed transfer cannot proceed on the present Article 19(1)(a) consent route because A1 law excludes that route for genetic information.",
+          "The parties must choose either the approved-clause route, with the required Region B law/practice assessment and supplementary measures where necessary, or a genuinely necessary patient-contract route under Article 19(1)(b).",
+          "Obtain or prepare the Article 13 processing record and fuller security documentation before proceeding.",
+          "Confirm the portal is not an external data host or agent for Kestrel and confirm the complete Article 11 notice contents."
+        ]
+      }
+    },
+    {
+      "config": "single_no_graph",
+      "run": "run3",
+      "source": "analysis/case_05/single_no_graph/run3.json",
+      "sha256": "37b516851d929f392204e88bd125fea64ba9a9e0ff959ff32c5f17162b740bfc",
+      "decision": "do_not_proceed",
+      "seconds": 170.5,
+      "next_steps": "Approved clauses plus assessment/safeguards; complete impact assessments for both clinics and confirm notices, processing records, security and retention.",
+      "alignment": "Useful core route. Mandatory impact assessments are a stronger high-risk judgment needing reasons. Another recognition is hypothetical because the present Annex II excludes sensitive information.",
+      "required_actions": [
+        {
+          "requirement": "region_a:sender_impact_assessment",
+          "status": "unmet",
+          "citations": [
+            "A-REG 12",
+            "A1-HIA 1"
+          ],
+          "actions": [
+            "Before processing, prepare an impact assessment describing the transfer and processing, assessing necessity and risks, and specifying measures to address those risks."
+          ]
+        },
+        {
+          "requirement": "region_a:outward_transfer_route",
+          "status": "unmet",
+          "citations": [
+            "A-REG 4",
+            "A-REG 16",
+            "A-REG 17",
+            "A-REG 18",
+            "A-REG 19",
+            "A-REG Annex II",
+            "A1-HIA 7"
+          ],
+          "actions": [
+            "Do not make the transfer on the Article 19(1)(a) consent route.",
+            "If proceeding, execute the Commission-approved transfer clauses and complete the Article 18(2) assessment before transfer; adopt supplementary measures if the assessment requires them.",
+            "Alternatively, obtain an actually applicable recognition route covering both Harrow and this sensitive information, which is not available on the present facts."
+          ]
+        },
+        {
+          "requirement": "subregion_a1:genetic_transfer_consent_limit",
+          "status": "unmet",
+          "citations": [
+            "A1-HIA 7",
+            "A-REG 19",
+            "A-REG 18"
+          ],
+          "actions": [
+            "Use an Article 18 route or another recognition that actually covers this sensitive genetic information; do not rely on the patient's consent as an Article 19(1)(a) derogation."
+          ]
+        },
+        {
+          "requirement": "region_a:harrow_impact_assessment",
+          "status": "unmet",
+          "citations": [
+            "A-REG 3",
+            "A-REG 12"
+          ],
+          "actions": [
+            "Before Harrow processes the material, prepare an impact assessment covering the receipt, consultation and retention, including necessity, risks and mitigating measures."
+          ]
+        }
+      ],
+      "clauses_routes": [
+        {
+          "requirement": "region_a:outward_transfer_route",
+          "name": "Approved transfer clauses under Article 18",
+          "status": "available",
+          "reasoning": "This route would work for the proposed transfer once Kestrel and Harrow execute the approved clauses and Kestrel completes the required assessment of Region B law and practice, adopting supplementary measures if necessary. No current fact shows an applicable Region B public-access obligation for Harrow as a non-covered provider and non-computing provider, but the Article 18 assessment must still be performed."
+        },
+        {
+          "requirement": "subregion_a1:genetic_transfer_consent_limit",
+          "name": "Article 18 approved-clause route",
+          "status": "available",
+          "reasoning": "This does not rely on Article 19(1)(a), but the clauses and Article 18 assessment must first be completed."
+        }
+      ],
+      "general_risk_findings": [
+        {
+          "requirement": "region_a:sender_impact_assessment",
+          "status": "unmet",
+          "reasoning": "The proposed processing involves identified genetic and health information, a cross-border disclosure, and no recognition or appropriate safeguards under the proposed consent route. On the described arrangement, that combination is likely to result in a high risk to the patient's rights. No assessment has been prepared. The one-person and one-off nature means the specific more-than-5,000-person example does not apply, but it does not displace the general high-risk requirement."
+        },
+        {
+          "requirement": "region_a:harrow_impact_assessment",
+          "status": "unmet",
+          "reasoning": "Harrow will receive and retain identified genetic and health information for a cross-border clinical service without the proposed safeguards. The same processing is likely to result in a high risk to the patient's rights, and no impact assessment has been prepared. The one-off nature does not automatically remove the general high-risk requirement."
+        }
+      ],
+      "final_review": {
+        "action": "single_agent (no review)",
+        "conflicts": [],
+        "unresolved": [
+          "Kestrel and Harrow must determine and document the Article 12 high-risk assessments before processing.",
+          "The parties must decide whether to proceed through approved Article 18 clauses and complete the required assessment of Region B law and practice.",
+          "Kestrel's and Harrow's Article 5 accuracy, retention and accountability records need confirmation.",
+          "The Article 11 notices, Article 13 processing records and Article 14 security controls for both custodians need confirmation."
+        ]
+      }
+    },
+    {
+      "config": "single_graph",
+      "run": "run1",
+      "source": "analysis/case_05/single_graph/run1.json",
+      "sha256": "904a9a8fa281415b5f3ea81e6d68f53c24e6b8b1f392f10951e62b943ce4f7f8",
+      "decision": "do_not_proceed",
+      "seconds": 169.1,
+      "next_steps": "Prefer approved clauses plus assessment/safeguards; alternative genuine patient-contract basis; confirm both clinics notices, processing records, security and retention.",
+      "alignment": "Actionable clauses route. Patient-contract alternative remains conditional. The general Article 12(1) high-risk question is not separately justified by merely ruling out listed triggers.",
+      "required_actions": [
+        {
+          "requirement": "region_a:outward_transfer_gate",
+          "status": "unmet",
+          "citations": [
+            "A-REG 4",
+            "A-REG 16",
+            "A-REG 17",
+            "A-REG 18",
+            "A-REG 19",
+            "A-REG Annex II",
+            "A1-HIA 7"
+          ],
+          "actions": [
+            "Do not make the transfer under the current Article 19(1)(a) consent route.",
+            "Preferably execute the Commission-approved transfer clauses with Harrow before the upload.",
+            "Complete the Article 18 assessment of Region B law and practice, including any applicable public-authority access powers, and adopt necessary supplementary measures.",
+            "Alternatively, establish a qualifying patient-clinic contract basis under Article 19(1)(b) and document why this one-off transfer is necessary for that contract."
+          ]
+        },
+        {
+          "requirement": "subregion_a1:a1_genetic_transfer_restriction",
+          "status": "unmet",
+          "citations": [
+            "A1-HIA 7",
+            "A-REG 19"
+          ],
+          "actions": [
+            "Replace the proposed Article 19(1)(a) reliance with a valid Article 18 route or, if genuinely necessary for a patient-clinic contract, the Article 19(1)(b) route."
+          ]
+        }
+      ],
+      "clauses_routes": [
+        {
+          "requirement": "region_a:outward_transfer_gate",
+          "name": "Approved transfer clauses",
+          "status": "available",
+          "reasoning": "This route can work for the same proposed transfer once Kestrel and Harrow execute the Commission-approved clauses, Kestrel assesses Region B law and practice, and adopts supplementary measures where necessary. No fact establishes that effective supplementary measures cannot be adopted."
+        },
+        {
+          "requirement": "subregion_a1:a1_genetic_transfer_restriction",
+          "name": "Article 18 approved clauses or Article 19(1)(b) contract route",
+          "status": "available",
+          "reasoning": "The restriction does not exclude those routes. They can be used after their respective contractual and assessment conditions are satisfied."
+        }
+      ],
+      "general_risk_findings": [
+        {
+          "requirement": "region_a:sender_impact_assessment",
+          "status": "not_applicable",
+          "reasoning": "The facts concern one person, not more than 5,000 persons, and do not describe large-scale public-area monitoring. The A1 list does not apply because Harrow is receiving the information for its own clinical record and care, not acting as an outside agent hosting or storing Kestrel's patient record system. No matching with insurer-held information is proposed."
+        }
+      ],
+      "final_review": {
+        "action": "single_agent (no review)",
+        "conflicts": [],
+        "unresolved": [
+          "The transfer must not proceed until Kestrel replaces the Article 19(1)(a) consent reliance with an available Article 18 route or a documented Article 19(1)(b) contract route.",
+          "Obtain and review the Commission-approved clauses, the Region B law-and-practice assessment and any required supplementary measures.",
+          "Confirm the Article 11 notices, Article 13 processing records, Article 5 accountability/retention evidence and Article 14 security documentation for both Kestrel and Harrow.",
+          "Confirm that Harrow's portal and clinical record are not external hosting or storage performed on Kestrel's behalf.",
+          "Confirm that Harrow has provided its own required information to the patient and that its direct-care arrangement covers the consultation and record retention."
+        ]
+      }
+    },
+    {
+      "config": "single_graph",
+      "run": "run2",
+      "source": "analysis/case_05/single_graph/run2.json",
+      "sha256": "dc57f0ad3f3009d5e0f713e9d5ef94c62c99caa2cf9845a09fbafb3925cb3c23",
+      "decision": "do_not_proceed",
+      "seconds": 145.4,
+      "next_steps": "Approved clauses, documented Region B assessment and necessary effective safeguards; update patient notice and processing record to show the new route; confirm security.",
+      "alignment": "Actionable clauses route with a useful explicit notice/record update. General high-risk reasoning still needs review.",
+      "required_actions": [
+        {
+          "requirement": "region_a:information_to_patient",
+          "status": "met",
+          "citations": [
+            "A-REG 11"
+          ],
+          "actions": [
+            "If the transfer is changed to the Article 18 route, inform the patient of that route and the relevant storage period and rights if those were not already given."
+          ]
+        },
+        {
+          "requirement": "region_a:outward_transfer_route",
+          "status": "unmet",
+          "citations": [
+            "A-REG 4",
+            "A-REG 16",
+            "A-REG 17",
+            "A-REG 18",
+            "A-REG 19",
+            "A-REG Annex II",
+            "A1-HIA 7"
+          ],
+          "actions": [
+            "Do not make the transfer on the Article 19(1)(a) consent route.",
+            "For the Article 18 route, execute the Commission-approved transfer clauses between Kestrel and Harrow before transfer.",
+            "Before relying on the clauses, complete and document the assessment of Region B law and practice applicable to Harrow, including any power of public authorities to require disclosure or access.",
+            "Adopt effective supplementary measures if the assessment shows they are necessary; if effective supplementary measures cannot be adopted, do not transfer on the Article 18 route.",
+            "Update the processing record and patient information to identify the route actually relied on."
+          ]
+        },
+        {
+          "requirement": "subregion_a1:a1_genetic_transfer_restriction",
+          "status": "unmet",
+          "citations": [
+            "A1-HIA 7",
+            "A-REG 19"
+          ],
+          "actions": [
+            "Do not rely on the patient's consent as the Article 19(1)(a) outward-transfer derogation for this genetic information.",
+            "Use a permitted alternative such as Article 18 approved transfer clauses and satisfy all of that route's conditions."
+          ]
+        }
+      ],
+      "clauses_routes": [
+        {
+          "requirement": "region_a:outward_transfer_route",
+          "name": "Approved transfer clauses",
+          "status": "available",
+          "reasoning": "This route would work for the proposed referral if Kestrel and Harrow execute the Commission-approved clauses, Kestrel assesses Region B law and practice applicable to Harrow, including any relevant disclosure powers, and adopts supplementary measures if the assessment shows they are necessary. No such agreement or assessment currently exists."
+        }
+      ],
+      "general_risk_findings": [
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "not_applicable",
+          "reasoning": "The transfer concerns one person and is a one-off treatment referral, not processing of sensitive information of more than 5,000 persons or large-scale public-area monitoring. A1-HIA 8's additional list covers hosting or storage of a patient record system by an agent outside A1 and matching health information with insurer information; neither is present. Harrow is not an external agent or host for Kestrel, and no insurer is involved."
+        },
+        {
+          "requirement": "subregion_a1:a1_listed_impact_assessment",
+          "status": "not_applicable",
+          "reasoning": "The transfer is not hosting or storage of a patient record system by an agent outside A1 and does not match health information with insurer-held information. It is a one-off referral to a specialist's own clinical record, and neither organisation bills an insurer."
+        }
+      ],
+      "final_review": {
+        "action": "single_agent (no review)",
+        "conflicts": [],
+        "unresolved": [
+          "The transfer cannot proceed under the presently proposed consent derogation because the data includes genetic information and A1-HIA 7 excludes that route.",
+          "Kestrel and Harrow must execute approved Article 18 transfer clauses and complete the required assessment of Region B law and practice before using that route.",
+          "The parties should determine and document any supplementary measures required by the Article 18 assessment; if effective measures cannot be adopted, the transfer must not proceed on that route.",
+          "Kestrel should produce or update its written processing record and security documentation and confirm the complete Article 11 information supplied to the patient."
+        ]
+      }
+    },
+    {
+      "config": "single_graph",
+      "run": "run3",
+      "source": "analysis/case_05/single_graph/run3.json",
+      "sha256": "17a63bdad43b5d7863138d53c73dd9ad0087ea9dc734c5d4b85a289139390d29",
+      "decision": "do_not_proceed",
+      "seconds": 188.4,
+      "next_steps": "Approved clauses, Region B assessment and necessary effective safeguards; both clinics provide/document notices and processing records and confirm ongoing security.",
+      "alignment": "Actionable clauses route and both-clinic documentation. General high-risk reasoning still needs review.",
+      "required_actions": [
+        {
+          "requirement": "region_a:kestrel_person_notice",
+          "status": "unmet",
+          "citations": [
+            "A-REG 11",
+            "A-REG 17",
+            "A-REG 18",
+            "A-REG 19"
+          ],
+          "actions": [
+            "Give or document the Article 11 information, including the correct approved-clause route once selected, before proceeding."
+          ]
+        },
+        {
+          "requirement": "region_a:harrow_person_notice",
+          "status": "unmet",
+          "citations": [
+            "A-REG 3",
+            "A-REG 11"
+          ],
+          "actions": [
+            "Harrow should provide or document the Article 11 information for its own consultation and clinical-record processing."
+          ]
+        },
+        {
+          "requirement": "region_a:kestrel_processing_record",
+          "status": "unmet",
+          "citations": [
+            "A-REG 13"
+          ],
+          "actions": [
+            "Create or update the written Article 13 record before or alongside the transfer, identifying the approved route actually used."
+          ]
+        },
+        {
+          "requirement": "region_a:harrow_processing_record",
+          "status": "unmet",
+          "citations": [
+            "A-REG 3",
+            "A-REG 13"
+          ],
+          "actions": [
+            "Create or update Harrow's Article 13 record for the referral, consultation, recipient and retention period."
+          ]
+        },
+        {
+          "requirement": "region_a:outward_transfer_route",
+          "status": "unmet",
+          "citations": [
+            "A-REG 4",
+            "A-REG 16",
+            "A-REG 17",
+            "A-REG 18",
+            "A-REG 19",
+            "A-REG Annex II",
+            "A1-HIA 7"
+          ],
+          "actions": [
+            "Do not proceed on the Article 19(1)(a) consent route.",
+            "Execute Commission-approved transfer clauses between Kestrel and Harrow.",
+            "Complete the Article 18 assessment, including applicable Region B law and any authority-access powers.",
+            "Adopt and document any necessary effective supplementary measures before transfer."
+          ]
+        },
+        {
+          "requirement": "subregion_a1:genetic_transfer_restriction",
+          "status": "unmet",
+          "citations": [
+            "A1-HIA 7",
+            "A-REG 19"
+          ],
+          "actions": [
+            "Replace the prohibited Article 19(1)(a) transfer basis with a valid Article 18 approved-clause route, subject to all Article 18 conditions."
+          ]
+        }
+      ],
+      "clauses_routes": [
+        {
+          "requirement": "region_a:outward_transfer_route",
+          "name": "Approved transfer clauses",
+          "status": "available",
+          "reasoning": "This route can work for the proposed one-off transfer once Kestrel and Harrow execute the Commission-approved clauses, Kestrel assesses Region B law and practice applicable to Harrow, and any necessary effective supplementary measures are adopted. If effective supplementary measures cannot be adopted, this route is unavailable."
+        }
+      ],
+      "general_risk_findings": [
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "not_applicable",
+          "reasoning": "The transfer concerns one person, not more than 5,000 persons, and is not systematic monitoring of a publicly accessible area. Subregion A1's further listed triggers concern hosting or storage of a patient record system by an agent outside A1 or matching health information with insurer information. Harrow is an independent recipient keeping its own record, not an agent or external host, and no insurer matching is proposed. The absence of an impact assessment therefore does not block this one-off referral."
+        },
+        {
+          "requirement": "subregion_a1:a1_listed_impact_assessment",
+          "status": "not_applicable",
+          "reasoning": "The transfer is not hosting or storage of a patient record system by an agent outside A1 and does not involve matching health information with insurer-held information. Harrow is an independent recipient and no insurer is involved."
+        }
+      ],
+      "final_review": {
+        "action": "single_agent (no review)",
+        "conflicts": [
+          {
+            "description": "Region A's general derogation provision permits an occasional outward transfer on the person's explicit consent after risk information, but Subregion A1 law prohibits making genetic information the subject of an outward transfer on that Article 19(1)(a) basis. The conflict is resolvable by using the Article 18 approved-clause route instead, if its assessment and supplementary-measure requirements are satisfied.",
+            "kind": "incompatible_law",
+            "requirement_refs": [
+              "region_a:outward_transfer_route",
+              "subregion_a1:genetic_transfer_restriction"
+            ],
+            "resolvable": true,
+            "resolution": "Execute Commission-approved transfer clauses, complete the Article 18 law-and-practice assessment, and implement any necessary effective supplementary measures. Continue to rely on the patient's consent for Harrow's Region A-covered sensitive-information processing, but not as the Article 19(1)(a) outward-transfer derogation.",
+            "quote_ids": [
+              "A-REG 19#L2",
+              "A1-HIA 7#L1"
+            ]
+          }
+        ],
+        "unresolved": [
+          "Before the transfer, the parties must execute the Commission-approved clauses and Kestrel must complete and document the Article 18 assessment of Region B law and practice applicable to Harrow.",
+          "The parties must determine and document any supplementary measures needed to achieve essentially equivalent protection; if effective measures cannot be adopted, the Article 18 route cannot be used.",
+          "Kestrel and Harrow should document their Article 11 notices and Article 13 processing records and confirm the broader ongoing security controls beyond encrypted transmission."
+        ]
+      }
+    },
+    {
+      "config": "multi_no_graph",
+      "run": "run1",
+      "source": "analysis/case_05/multi_no_graph/run1.json",
+      "sha256": "406d201beb800916f9f2fc7b512d8f0c6167bdebdd3ebc2dfee9ee1750ab2611",
+      "decision": "do_not_proceed",
+      "seconds": 621.4,
+      "next_steps": "Do not rely on clauses unless applicable law or transfer architecture changes enough to permit effective safeguards; update notices, records/security and determine high risk.",
+      "alignment": "Closes off the source-supported candidate route by treating contingent computing-provider powers as decisive for the clinical recipient. Harrow is not described as providing computing/storage services. The supplied case does not establish that effective measures are impossible.",
+      "required_actions": [
+        {
+          "requirement": "region_a:general_processing_principles",
+          "status": "unmet",
+          "citations": [
+            "A-REG 5",
+            "A-REG 16",
+            "A-REG 18",
+            "A-REG 19"
+          ],
+          "actions": [
+            "Do not make the outward transfer as described unless a different valid Article 16 to 19 route becomes applicable.",
+            "Document accuracy, transparency, necessary retention and risk-appropriate security compliance."
+          ]
+        },
+        {
+          "requirement": "region_a:information_to_patient",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 11",
+            "A-REG 16",
+            "A-REG 18",
+            "A-REG 19"
+          ],
+          "actions": [
+            "Give or document the Article 11 information, including the custodians, purposes and grounds, recipients, storage periods and rights.",
+            "Do not describe Article 19(1)(a) consent or Article 18 approved clauses as the valid route for this transfer unless a lawful route actually becomes available."
+          ]
+        },
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 12",
+            "A-REG 21"
+          ],
+          "actions": [
+            "Complete and document the Article 12(1) high-risk determination; if the processing is high risk, complete the impact assessment before processing."
+          ]
+        },
+        {
+          "requirement": "region_a:processing_records",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 13",
+            "A-REG 16",
+            "A-REG 19"
+          ],
+          "actions": [
+            "Maintain or update written processing records for each clinic covering the purpose, categories, recipient, Region B outward transfer, the valid route relied on and storage periods."
+          ]
+        },
+        {
+          "requirement": "region_a:security_measures",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 14"
+          ],
+          "actions": [
+            "Confirm and document risk-appropriate security measures for upload, access, consultation and clinical-record retention, including regular effectiveness testing."
+          ]
+        },
+        {
+          "requirement": "region_a:outward_transfer_mechanism",
+          "status": "unmet",
+          "citations": [
+            "A-REG 16",
+            "A-REG 17",
+            "A-REG 18",
+            "A-REG 19",
+            "A-REG Annex II",
+            "A-REG 21"
+          ],
+          "actions": [
+            "Do not make the transfer as described unless a different valid Article 16 to 19 route becomes applicable.",
+            "Do not rely on Article 18 for this proposed transfer unless the applicable law or transfer architecture changes so that effective supplementary measures providing essentially equivalent protection can be adopted."
+          ]
+        },
+        {
+          "requirement": "subregion_a1:genetic_outward_transfer_consent_bar",
+          "status": "unmet",
+          "citations": [
+            "A1-HIA 7"
+          ],
+          "actions": [
+            "Do not rely on Article 19(1)(a) consent for the genetic report. Establish and document a different outward-transfer basis under the Region A Regulation that is not barred by A1-HIA 7, if one is available."
+          ]
+        }
+      ],
+      "clauses_routes": [
+        {
+          "requirement": "region_a:outward_transfer_mechanism",
+          "name": "Approved transfer clauses with Article 18 assessment",
+          "status": "ruled_out",
+          "reasoning": "No approved clauses have been executed. More decisively, the answered Region B law assessment identifies a contingent power to compel production of records accessible to Harrow and to prohibit notice, with no broader supplementary measure capable of providing essentially equivalent protection. Article 18(3) therefore prevents this transfer from proceeding on the basis of Article 18."
+        }
+      ],
+      "general_risk_findings": [
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "undetermined",
+          "reasoning": "The A1 specialist confirms that the A1 Article 12(3) list covers only hosting or storage of a patient-record system by an agent outside A1 and matching health information with insurer-held information. Neither activity is described: Harrow keeps its own clinical record, is not acting as an agent or host for Kestrel, and there is no insurer or insurer matching. The separate Article 12(1) high-risk test remains unresolved. No assessment has been prepared, so whether an assessment is required before this transfer depends on whether the proposed processing is likely to result in a high risk to the patient's rights."
+        }
+      ],
+      "final_review": {
+        "outcome": "not_satisfiable_together",
+        "route_plan": [
+          {
+            "requirement_ref": "region_a:scope_and_outward_transfer_characterisation",
+            "route": "met"
+          },
+          {
+            "requirement_ref": "region_a:lawful_processing_ground",
+            "route": "Specific consent"
+          },
+          {
+            "requirement_ref": "region_a:consent_conditions",
+            "route": "met"
+          },
+          {
+            "requirement_ref": "region_a:sensitive_information_processing",
+            "route": "Healthcare, diagnosis or treatment by a professional subject to secrecy"
+          },
+          {
+            "requirement_ref": "subregion_a1:healthcare_processing_condition",
+            "route": "Direct processing by or under the responsibility of an A1 registered practitioner"
+          },
+          {
+            "requirement_ref": "subregion_a1:professional_secrecy",
+            "route": "Patient consent"
+          },
+          {
+            "requirement_ref": "subregion_a1:consent_age",
+            "route": "met"
+          }
+        ],
+        "reasoning": "The proposed processing is within Region A's scope: the identified name, date of birth, reference number, genetic report and ECG information are personal and sensitive information, and making the documents available to Harrow in Region B is an outward transfer. The A1 establishment also brings the processing within the Regulation even where access or storage occurs in Region B [f_6fcc5cd6b927] [f_72bdc3d5c28e] [f_7892b94ae5e8] [f_73d3eb94625a]. Articles 6 and 7 support the clinic's processing ground because the patient gave specific written consent for the named documents, recipient and second-opinion purpose, with withdrawal information [f_66d5f3ce3996] [f_4a28f229317f]. The sensitive-information requirement can be satisfied through the healthcare route: the second opinion concerns treatment, the A1 consultants are registered practitioners, and A1 law imposes professional secrecy [f_827ad358a031] [f_987ab471487e3] [A-REG 8#L1] [A-REG 8#L5] [A1-HIA 4#L1] [A1-HIA 5#L1]. The disclosure-specific secrecy condition is also satisfied by the patient's consent [A1-HIA 5#L2]. These processing and secrecy routes do not themselves authorise the outward transfer; Article 16 separately requires an applicable Article 17, 18 or 19 mechanism [A-REG 16#L1].\n\nNo such outward-transfer mechanism is available on the stated facts. Article 17 recognition is unavailable because Harrow has no Trusted Recipient Scheme certification and the recognition for Region B excludes sensitive information [f_febc895bce9e] [f_72bdc3d5c28e] [f_7892b94ae5e] [A-REG 17#L1] [A-REG 17#L3] [A-REG Annex II#L1]. Article 19(1)(a) cannot cover the genetic report because A1 law expressly prohibits making genetic information the subject of an outward transfer on that basis [A1-HIA 7#L1]. The patient's consent remains relevant to A1 professional secrecy and to ordinary processing, but it cannot substitute for the separate Article 16 outward-transfer requirement. The contract, vital-interest and public-interest derogations are not supported by the stated facts [A-REG 19#L1] [A-REG 19#L3] [A-REG 19#L4] [A-REG 19#L5].\n\nArticle 18 is also unavailable as described. No approved transfer-clause agreement exists [f_d75ec85c160f], and Article 18 requires executed approved clauses plus an assessment of third-territory law and supplementary measures where necessary [A-REG 18#L1] [A-REG 18#L2]. Harrow's portal activity is within the computing-provider definition [f_8c44c6e413c5] [B-RAA 2#L2] [B-RAA 2#L3]. Region B law permits a production order for records stored by or accessible to the computing provider, without court authorisation [B-RAA 3#L1] [B-RAA 3#L2], permits non-disclosure [B-RAA 4#L1], and removes statutory notice and review rights for the person concerned [B-RAA 6#L1]. The encryption provision only protects records where the provider does not hold and cannot obtain the keys; it does not provide equivalent protection against compelled production of records accessible to Harrow or against non-disclosure and lack of review [B-RAA 5#L1]. On the specialist assessment and the described portal arrangement, no effective supplementary measure providing essentially equivalent protection is identified. Article 18 therefore cannot be used [A-REG 18#L3].\n\nThe Region B Health Records Act does not add a current disclosure, service-agent, security or retention gate: the clinics are paid directly, Harrow keeps the referral in its own record for its own care, and it does not store records for another person [f_85110fb9a3e5] [f_3707d0e0f8a9] [f_7ddb7b6d46db]. Those facts fit the statutory limits for covered providers, service agents and data hosts [B-HRA 2#L3] [B-HRA 2#L4] [B-HRA 2#L5] [B-HRA 3#L1] [B-HRA 3#L2] [B-HRA 3#L3]. That non-application does not remove the separate Records Access Act issue relevant to assessing Article 18.\n\nThe remaining Region A duties do not cure the absent transfer mechanism. The general principles require lawful processing and demonstrable compliance [A-REG 5#L1] [A-REG 5#L7] [A-REG 5#L8], and the outward processing is unlawful as described because Article 16 is not satisfied. Article 11 information, Article 13 records and Article 14 security confirmations remain incomplete; the encrypted upload alone does not establish every risk-appropriate security measure [f_8c44c6e413c5] [A-REG 11#L1] [A-REG 11#L2] [A-REG 13#L1] [A-REG 14#L1]. The Article 12 high-risk determination also remains unresolved, although the A1 prescribed impact-assessment list is not engaged because this is not hosting or storage by an agent and does not involve insurer matching [f_a7a94423ed89] [A-REG 12#L1] [A-REG 12#L5] [A1-HIA 8#L1] [A1-HIA 8#L2] [A1-HIA 8#L3].",
+        "quote_ids": [
+          "A-REG 2#L1",
+          "A-REG 3#L1",
+          "A-REG 4#L2",
+          "A-REG 4#L3",
+          "A-REG 4#L4",
+          "A-REG 4#L5",
+          "A-REG 4#L10",
+          "A-REG 5#L1",
+          "A-REG 5#L7",
+          "A-REG 5#L8",
+          "A-REG 6#L1",
+          "A-REG 6#L2",
+          "A-REG 7#L1",
+          "A-REG 8#L1",
+          "A-REG 8#L5",
+          "A-REG 11#L1",
+          "A-REG 11#L2",
+          "A-REG 12#L1",
+          "A-REG 12#L5",
+          "A-REG 13#L1",
+          "A-REG 14#L1",
+          "A-REG 16#L1",
+          "A-REG 17#L1",
+          "A-REG 17#L3",
+          "A-REG Annex II#L1",
+          "A-REG 18#L1",
+          "A-REG 18#L2",
+          "A-REG 18#L3",
+          "A-REG 19#L1",
+          "A-REG 19#L3",
+          "A-REG 19#L4",
+          "A-REG 19#L5",
+          "B-HRA 2#L3",
+          "B-HRA 2#L4",
+          "B-HRA 2#L5",
+          "B-HRA 3#L1",
+          "B-HRA 3#L2",
+          "B-HRA 3#L3",
+          "B-RAA 2#L2",
+          "B-RAA 2#L3",
+          "B-RAA 3#L1",
+          "B-RAA 3#L2",
+          "B-RAA 4#L1",
+          "B-RAA 5#L1",
+          "B-RAA 6#L1",
+          "A1-HIA 4#L1",
+          "A1-HIA 5#L1",
+          "A1-HIA 5#L2",
+          "A1-HIA 7#L1",
+          "A1-HIA 8#L1",
+          "A1-HIA 8#L2",
+          "A1-HIA 8#L3"
+        ],
+        "conflicts": [],
+        "summary": "The A1 healthcare-processing, consent, professional-secrecy and age requirements can be satisfied, and the Region B Health Records Act gates are not applicable. However, the transfer itself has no available Article 16-19 mechanism as described: recognition is unavailable, A1 bars the Article 19(1)(a) route for the genetic report, and Article 18 cannot be used without clauses and effective supplementary measures addressing Region B compulsory-access powers. The transfer must not proceed in its current form.",
+        "blockers": [],
+        "notes": [
+          "The recognition, approved-clause and Article 19(1)(a) routes are outside the route plan because each is ruled out on the stated facts; they are not separate blockers. A different transfer architecture or a different legally available Article 16-19 route would require a fresh assessment.",
+          "The patient's consent supports ordinary processing and the A1 professional-secrecy disclosure condition, but it does not overcome the distinct A1-HIA 7 prohibition on using Article 19(1)(a) for an outward transfer of genetic information.",
+          "The Article 12 high-risk determination, complete Article 11 information, Article 13 processing records and full Article 14 security documentation remain required confirmations or duties identified by the specialists. They do not cure the absent outward-transfer mechanism.",
+          "The Region B production-order power is contingent, so it does not create a current Region B disclosure duty or a present production-order block. It is nevertheless material to the Article 18 law-and-practice assessment."
+        ]
+      }
+    },
+    {
+      "config": "multi_no_graph",
+      "run": "run2",
+      "source": "analysis/case_05/multi_no_graph/run2.json",
+      "sha256": "0149aa1af75556e137e7c5c074635016dc7133f408e52c2bf564f2a99dad5680",
+      "decision": "do_not_proceed",
+      "seconds": 507.6,
+      "next_steps": "Potential clauses route after assessment/safeguards; identify any portal operator and key/access arrangements; determine high risk; update notices, records, security and retention.",
+      "alignment": "Identifies a route, but labels it unresolved because an external portal provider has not been identified. That provider is not supplied in the mock facts; investigating it can be sensible in practice, but it must not become an assumed blocker.",
+      "required_actions": [
+        {
+          "requirement": "region_a:processing_principles",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 5",
+            "A-REG 14"
+          ],
+          "actions": [
+            "Ensure the information is retained only for the period necessary for the stated care purposes and maintain appropriate technical and organisational safeguards."
+          ]
+        },
+        {
+          "requirement": "region_a:person_information_notice",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 11",
+            "A-REG 16",
+            "A-REG 18",
+            "A-REG 19"
+          ],
+          "actions": [
+            "Before any lawful outward transfer, provide or document the Article 11 information, including identity, purposes and lawful grounds, recipients, storage periods, rights, Region B and the Article 18 route actually relied on. Do not describe Article 19(1)(a) as the route for the proposed transfer."
+          ]
+        },
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 12",
+            "A-REG 21"
+          ],
+          "actions": [
+            "Determine the general Article 12(1) high-risk question. If the processing is likely to result in high risk, complete the assessment before processing; the A1 listed-activity rule does not independently require an assessment for this referral."
+          ]
+        },
+        {
+          "requirement": "region_a:processing_records",
+          "status": "unmet",
+          "citations": [
+            "A-REG 13",
+            "A-REG 18"
+          ],
+          "actions": [
+            "Create or update the written processing record to include the treatment purpose, categories of information and persons, Harrow as recipient, Region B outward transfer, the Article 18 route, the Article 18 assessment and any supplementary measures, and applicable storage periods."
+          ]
+        },
+        {
+          "requirement": "region_a:security_measures",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 14"
+          ],
+          "actions": [
+            "Confirm and document risk-appropriate technical and organisational measures, including confidentiality, availability and regular effectiveness testing in addition to encryption in transit. Identify any external portal or computing provider and address its access to the information and encryption keys."
+          ]
+        },
+        {
+          "requirement": "region_a:outward_transfer",
+          "status": "unmet",
+          "citations": [
+            "A-REG 4",
+            "A-REG 16",
+            "A-REG 17",
+            "A-REG 18",
+            "A-REG 19",
+            "A-REG Annex II",
+            "A-REG 21"
+          ],
+          "actions": [
+            "Do not make the proposed transfer on the Article 19(1)(a) consent route. If proceeding with the proposed genetic-information transfer, execute approved transfer clauses, complete the Article 18 assessment, identify any external portal or computing provider and its access and key arrangements, and adopt effective supplementary measures where necessary. If effective supplementary measures cannot be adopted, do not proceed on that route."
+          ]
+        },
+        {
+          "requirement": "subregion_a1:genetic_outward_consent_bar",
+          "status": "unmet",
+          "citations": [
+            "A1-HIA 6",
+            "A1-HIA 7"
+          ],
+          "actions": [
+            "Do not make the proposed genetic-information transfer on Article 19(1)(a) consent alone.",
+            "Ask the Region A specialist to identify and satisfy a lawful outward-transfer basis that is not Article 19(1)(a), if one is available; any required recognition or approved transfer clauses must be put in place under the Region A Regulation."
+          ]
+        }
+      ],
+      "clauses_routes": [
+        {
+          "requirement": "region_a:outward_transfer",
+          "name": "Approved transfer clauses with assessment and supplementary measures where necessary",
+          "status": "unresolved",
+          "reasoning": "The route is not currently in place because no approved transfer-clause agreement has been executed. The resolved Region B answer indicates that the identified Region B rules do not prevent Harrow from complying with the clauses. However, the parties must still execute the clauses, complete the Article 18 assessment, determine whether an external provider operates or can access the referral portal, and adopt effective supplementary measures where necessary. The unidentified portal arrangements leave the final sufficiency of the safeguards unresolved."
+        }
+      ],
+      "general_risk_findings": [
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "undetermined",
+          "reasoning": "The automatic threshold for sensitive information of more than 5,000 persons is not met. The A1 specialist confirms that A1's additional Article 12(3) list requires an assessment only for hosting or storage of a patient record system by an agent outside A1 or matching health information with information held by an insurer. The facts describe neither: Kestrel uses no external host, Harrow keeps its own record for its own care, and no insurer or insurer matching is involved. The remaining issue is the general Article 12(1) high-risk test. The combination of genetic and health information and a proposed outward transfer without a recognition or approved clauses makes that question material, but no facts or assessment establish whether the envisaged processing is likely to result in a high risk."
+        }
+      ],
+      "final_review": {
+        "outcome": "undetermined",
+        "route_plan": [
+          {
+            "requirement_ref": "region_a:regulation_scope",
+            "route": "met"
+          },
+          {
+            "requirement_ref": "region_a:lawful_processing",
+            "route": "Consent for the specified treatment-related processing and disclosure"
+          },
+          {
+            "requirement_ref": "region_a:sensitive_processing",
+            "route": "Health-care or treatment processing by a professional subject to secrecy"
+          },
+          {
+            "requirement_ref": "region_a:consent_conditions",
+            "route": "met"
+          },
+          {
+            "requirement_ref": "region_a:impact_assessment",
+            "route": "met"
+          },
+          {
+            "requirement_ref": "region_a:outward_transfer",
+            "route": "Approved transfer clauses with assessment and supplementary measures where necessary"
+          },
+          {
+            "requirement_ref": "subregion_a1:health_care_processing_route",
+            "route": "met"
+          },
+          {
+            "requirement_ref": "subregion_a1:third_party_disclosure_consent",
+            "route": "Patient consent"
+          },
+          {
+            "requirement_ref": "subregion_a1:consent_age",
+            "route": "met"
+          },
+          {
+            "requirement_ref": "subregion_a1:genetic_outward_consent_bar",
+            "route": "A different outward-transfer basis under Articles 16 to 18 of the Region A Regulation"
+          }
+        ],
+        "reasoning": "Region A law applies because the identified health and genetic information is processed by automated means in the context of Kestrel's A1 establishment, even though it will be made available in Region B (f_6fcc, f_12d62771fdeb, f_8c44c6e413c5). The treatment-related processing can be supported by the patient's specific consent and by the health-care route: the purpose is a treatment second opinion (f_110e981b0a7c, f_827ad358a031), and Kestrel's consultants are registered practitioners (f_987ab471487e). The consent also supports disclosure to Harrow under A1 professional-secrecy rules (f_66d5f3ce3996, f_2ecc11637ef3). These routes are compatible with Articles 6, 7 and 8 and A1-HIA sections 4 and 5. The genetic-outward-transfer prohibition does not prevent treatment processing, but it prevents reliance on Article 19(1)(a) for the outward transfer itself (A1-HIA 7#L1). The consent therefore cannot be the transfer route.\n\nThe transfer is an outward transfer because the information is sent to, stored in and accessed from a third territory (A-REG 4#L10; f_5aa17aaaa329, f_73d3eb94625a). Recognition is unavailable because Harrow lacks Trusted Recipient certification and the information is sensitive (f_febc895bce9e; f_72bdc3d5c28e, f_7892b94ae5e8; A-REG 17#L3; A-REG Annex II#L1). The compatible route is Article 18: the parties must execute approved clauses, assess third-territory law and practice, and adopt supplementary measures where necessary; if effective measures cannot be adopted, the transfer cannot proceed (A-REG 16#L1; A-REG 18#L1-A-REG 18#L3). Region B's findings do not engage the Health Records Act duties because neither clinic is a covered provider, service agent or data host on the supplied facts (B-HRA 2#L3-B-HRA 2#L5; B-HRA 3#L1-B-HRA 3#L3). They do not, however, resolve the unidentified portal operator's possible access or key arrangements.\n\nThe Article 18 route is capable of satisfying both Region A and A1 law, but it is not yet decidable as a complete route. No transfer-clause agreement exists (f_d75ec85c160f), and the Article 18 assessment cannot be completed for the portal arrangements because the portal operator, its access to the referral, and its access to encryption keys are not identified. The general Article 12(1) high-risk question is also unresolved. In addition, Region A's processing-principles, security, notice and records duties require the stated remedial actions before proceeding. These unresolved matters leave the combined outcome undetermined rather than demonstrating an incompatibility between the corpora.",
+        "quote_ids": [
+          "A-REG 2#L1",
+          "A-REG 3#L1",
+          "A-REG 4#L10",
+          "A-REG 6#L1",
+          "A-REG 7#L1",
+          "A-REG 8#L1",
+          "A-REG 8#L5",
+          "A-REG 16#L1",
+          "A-REG 17#L3",
+          "A-REG Annex II#L1",
+          "A-REG 18#L1",
+          "A-REG 18#L2",
+          "A-REG 18#L3",
+          "A-REG 19#L1",
+          "A-REG 19#L2",
+          "A-REG 5#L6",
+          "A-REG 11#L1",
+          "A-REG 11#L2",
+          "A-REG 12#L1",
+          "A-REG 13#L1",
+          "A-REG 14#L1",
+          "B-HRA 2#L3",
+          "B-HRA 2#L4",
+          "B-HRA 2#L5",
+          "B-HRA 3#L1",
+          "B-HRA 3#L3",
+          "A1-HIA 4#L1",
+          "A1-HIA 5#L1",
+          "A1-HIA 5#L2",
+          "A1-HIA 7#L1"
+        ],
+        "conflicts": [],
+        "summary": "The transfer cannot presently be approved on the patient's consent alone. An Article 18 approved-clause route is legally compatible with A1 law and is not defeated by the Region B Health Records Act, but the transfer remains undetermined until the Article 18 assessment, portal arrangements, supplementary safeguards and the unresolved Article 12(1) high-risk question are closed.",
+        "blockers": [
+          {
+            "requirement_ref": "region_a:outward_transfer",
+            "gap": "The Article 18 assessment cannot be completed for the referral portal because the facts identify an encrypted portal upload (f_8c44c6e413c5) but do not identify the portal operator, whether it can access the information, or who holds or can obtain the encryption keys. Without those facts, the applicable third-territory law and practice and the availability of effective supplementary measures cannot be decided.",
+            "why_not_a_confirmation": "The Region B assessment addresses Harrow's status but expressly does not resolve an unidentified external portal or computing provider. Confirming that Harrow itself is not a covered provider or data host is therefore insufficient to decide the Article 18 route for the portal."
+          },
+          {
+            "requirement_ref": "region_a:impact_assessment",
+            "gap": "No determination or assessment establishes whether the envisaged processing is likely to result in a high risk under Article 12(1). The numerical threshold and A1 listed-activity triggers being inapplicable do not answer the independent general high-risk test, particularly for identified genetic and health information transferred without a recognition or existing safeguards.",
+            "why_not_a_confirmation": "The A1 list findings only rule out the two specified A1-listed activities; they do not decide the general Article 12(1) threshold. A later confirmation of the A1 list would therefore not close this gap."
+          },
+          {
+            "requirement_ref": "region_a:security_measures",
+            "gap": "Apart from encryption in transit, the facts do not establish the risk-appropriate confidentiality, availability, or regular effectiveness-testing measures, and do not establish the portal provider's access to the information or keys. The Article 14 gate cannot be decided without that security and access information.",
+            "why_not_a_confirmation": "The encrypted upload confirms one measure only (f_8c44c6e413c5). It does not establish the other Article 14 elements or the portal/key arrangements that are material to the risk assessment."
+          },
+          {
+            "requirement_ref": "region_a:processing_principles",
+            "gap": "The described retention schedules do not state the actual retention periods or establish why those periods are necessary for the care purposes (f_1d30f2f75c58, f_a7a94423ed89). The facts also do not establish all security measures required to assess the principles as a whole.",
+            "why_not_a_confirmation": "The existence of care retention schedules confirms an intended retention arrangement, but not that the periods are no longer than necessary or that the associated security measures satisfy the principles."
+          }
+        ],
+        "notes": [
+          "Region B Health Records Act gates for permitted disclosure, service-agent agreement, minimum necessary handling, security, breach notification, data-host retention and individual access are not applicable on the supplied facts; neither clinic is a covered provider, service agent or data host under the cited definitions.",
+          "The A1 consent route for third-party disclosure remains usable for A1 professional secrecy, but it cannot be reused as the Article 19(1)(a) outward-transfer route for the genetic information.",
+          "The recognition route, the Article 19(1)(a) consent route and the clinic-contract outward-transfer route are not selected. Their failure does not create an additional blocker because the Article 18 route is available in principle.",
+          "Before proceeding, the parties must execute the approved clauses; complete the Article 18 assessment; identify the portal operator and access/key arrangements; adopt supplementary measures where necessary; and do not transfer if effective measures cannot be adopted.",
+          "Kestrel must also provide or document the Article 11 notice, create or update the Article 13 processing record, determine the Article 12(1) high-risk question, and ensure necessary retention and Article 14 security measures."
+        ]
+      }
+    },
+    {
+      "config": "multi_no_graph",
+      "run": "run3",
+      "source": "analysis/case_05/multi_no_graph/run3.json",
+      "sha256": "58d209ddcf78cb7642411c1b91613a4c8afe000be657b0b306108f51498c176c",
+      "decision": "do_not_proceed",
+      "seconds": 598.5,
+      "next_steps": "Potential clauses route after assessing whether Harrow portal is computing/storage/hosting services; complete assessment/safeguards and high-risk determination; document processing/security.",
+      "alignment": "Identifies a route but keeps it unresolved on portal legal classification. The stated independent-care activity should be the starting point; use of a clinical portal alone does not establish a computing-provider service.",
+      "required_actions": [
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 12",
+            "A-REG 21"
+          ],
+          "actions": [
+            "Determine and document whether Article 12(1)'s high-risk threshold is met before processing.",
+            "If the threshold is met, complete the Article 12(4) impact assessment before processing and transfer."
+          ]
+        },
+        {
+          "requirement": "region_a:processing_records",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 13"
+          ],
+          "actions": [
+            "Create or update records identifying the purpose, categories, patient category, recipient, Region B transfer, consent route and storage periods."
+          ]
+        },
+        {
+          "requirement": "region_a:security_measures",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 14"
+          ],
+          "actions": [
+            "Confirm and document risk-appropriate technical and organisational measures for transmission, receipt, consultation and storage."
+          ]
+        },
+        {
+          "requirement": "region_a:outward_transfer_route",
+          "status": "unmet",
+          "citations": [
+            "A-REG 4",
+            "A-REG 16",
+            "A-REG 17",
+            "A-REG 18",
+            "A-REG 19",
+            "A-REG Annex II",
+            "A-REG 21"
+          ],
+          "actions": [
+            "Do not proceed with the proposed transfer on the Article 19(1)(a) consent route.",
+            "To use Article 18, determine and document whether Harrow's portal is storage, hosting or computing services provided by Harrow, execute the approved transfer clauses, complete the Article 18(2) assessment, and adopt any necessary supplementary measures.",
+            "Alternatively, establish a different Article 19 route that legally covers the genetic component before transferring, or do not make the proposed transfer."
+          ]
+        },
+        {
+          "requirement": "subregion_a1:a1_genetic_transfer_restriction",
+          "status": "unmet",
+          "citations": [
+            "A1-HIA 6",
+            "A1-HIA 7"
+          ],
+          "actions": [
+            "Do not make the proposed genetic-information transfer on the Article 19(1)(a) consent route.",
+            "Obtain and satisfy a lawful non-Article 19(1)(a) outward-transfer route under the Region A Regulation before sending the genetic report, if the Region A specialist confirms that such a route is available."
+          ]
+        }
+      ],
+      "clauses_routes": [
+        {
+          "requirement": "region_a:outward_transfer_route",
+          "name": "Approved transfer clauses",
+          "status": "unresolved",
+          "reasoning": "No approved-clause agreement has been executed. The Region B answer indicates no general Region B law or practice presently prevents compliance with approved clauses and no general supplementary measure is imposed by Region B law. However, it remains unresolved whether Harrow's referral portal is legally operated as storage, hosting or computing services by Harrow. If that classification applies, a conditional Region B production-order power may affect the Article 18(2) assessment and any necessary supplementary measures."
+        }
+      ],
+      "general_risk_findings": [
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "undetermined",
+          "reasoning": "The A1 Authority list does not require an assessment for this arrangement: the referral is not hosting or storage of a patient-record system by an external agent and does not involve matching health information with insurer-held information. The express Article 12(2)(a) example is also not met because only one person is involved, and there is no large-scale public-area monitoring. However, Article 12(1)'s independent question—whether this processing is likely to result in a high risk to the patient's rights—has not been determined, and no assessment has been prepared. The A1 answer resolves the list-based issue but not that general high-risk determination."
+        }
+      ],
+      "final_review": {
+        "outcome": "undetermined",
+        "route_plan": [
+          {
+            "requirement_ref": "region_a:sender_lawful_ground",
+            "route": "Specific consent"
+          },
+          {
+            "requirement_ref": "region_a:recipient_lawful_ground",
+            "route": "Specific consent"
+          },
+          {
+            "requirement_ref": "region_a:consent_conditions",
+            "route": "met"
+          },
+          {
+            "requirement_ref": "region_a:sender_sensitive_processing",
+            "route": "Health-care processing by a professional subject to secrecy"
+          },
+          {
+            "requirement_ref": "region_a:recipient_sensitive_processing",
+            "route": "Explicit consent"
+          },
+          {
+            "requirement_ref": "region_a:impact_assessment",
+            "route": "met"
+          },
+          {
+            "requirement_ref": "region_a:outward_transfer_route",
+            "route": "Approved transfer clauses"
+          },
+          {
+            "requirement_ref": "subregion_a1:a1_healthcare_processing",
+            "route": "Processing directly by or under the responsibility of a registered A1 practitioner"
+          },
+          {
+            "requirement_ref": "subregion_a1:a1_professional_secrecy",
+            "route": "Disclosure with the patient's consent"
+          },
+          {
+            "requirement_ref": "subregion_a1:a1_genetic_transfer_restriction",
+            "route": "A lawful outward-transfer route not based on Article 19(1)(a)"
+          }
+        ],
+        "reasoning": "The processing and clinical disclosure bases can operate together. The information is identified personal, health and genetic information, and making it available in Region B is an outward transfer under Article 4. The sender and recipient have supported consent-based lawful grounds under Articles 6 and 7, and the supplied consent is specific, written, risk-informed and withdrawable (f_66d5f3ce3996, f_e22033e7c743, f_4a28f229317f). The sensitive-processing requirements are also met through the treatment-related health-care route: the second opinion concerns treatment, and the A1 consultants are registered practitioners (f_110e981b0a7c, f_987ab471487e). A1 professional secrecy permits the described disclosure with the patient's consent. These consent uses do not themselves authorize the outward transfer of the genetic report.\n\nThe outward-transfer requirement is the principal unresolved issue. Article 16 requires coverage by recognition, approved clauses or a derogation. Recognition is unavailable because Region B certification is absent and the information is sensitive (f_febc895bce9, f_72bdc3d5c28e, f_7892b94ae5e8). Article 19(1)(a) would otherwise concern an occasional, specifically consented transfer, but A1-HIA 7 prohibits using that route for genetic information. The compatible potential route is Article 18: execute approved clauses, assess third-territory law and practice, adopt necessary supplementary measures, and do not transfer if effective measures cannot be adopted. No such clauses have been executed (f_d75ec85c160f). The Article 18 assessment remains undecided because the available facts do not establish whether Harrow's portal is legally a storage, hosting or computing service operated by Harrow. That classification affects the public-authority-access analysis required by Article 18(2).\n\nThe separate Article 12(1) high-risk question is also unresolved. The one-person facts and the A1 listed-processing exclusions address the examples and A1 list, but do not decide the independent question whether the processing is likely to result in a high risk. No impact assessment has been prepared (f_7e86304fe561). The processing-record and security duties also require completion or documentation before proceeding; the encrypted upload addresses only part of the security requirement.",
+        "quote_ids": [
+          "A-REG 3#L1",
+          "A-REG 3#L2",
+          "A-REG 4#L2",
+          "A-REG 4#L3",
+          "A-REG 4#L4",
+          "A-REG 4#L5",
+          "A-REG 4#L10",
+          "A-REG 6#L1",
+          "A-REG 6#L2",
+          "A-REG 7#L1",
+          "A-REG 8#L1",
+          "A-REG 8#L3",
+          "A-REG 8#L5",
+          "A-REG 12#L1",
+          "A-REG 12#L2",
+          "A-REG 12#L5",
+          "A-REG 12#L6",
+          "A-REG 13#L1",
+          "A-REG 14#L1",
+          "A-REG 16#L1",
+          "A-REG 17#L3",
+          "A-REG 18#L1",
+          "A-REG 18#L2",
+          "A-REG 18#L3",
+          "A-REG 19#L1",
+          "A-REG 19#L2",
+          "A-REG 19#L6",
+          "A-REG 21#L2",
+          "A-REG 21#L3",
+          "A1-HIA 4#L1",
+          "A1-HIA 5#L1",
+          "A1-HIA 5#L2",
+          "A1-HIA 6#L1",
+          "A1-HIA 6#L4",
+          "A1-HIA 7#L1",
+          "A1-HIA 8#L1",
+          "A1-HIA 8#L2",
+          "A1-HIA 8#L3"
+        ],
+        "conflicts": [
+          {
+            "description": "Region A Article 19(1)(a) would permit an occasional, explicitly consented outward transfer in the absence of recognition or approved clauses, while A1-HIA 7 prohibits making genetic information the subject of an outward transfer on that basis. The laws therefore pull apart on the proposed consent route, but the conflict is resolved by using Article 18 rather than Article 19(1)(a), if Article 18's conditions are satisfied.",
+            "kind": "incompatible_law",
+            "requirement_refs": [
+              "region_a:outward_transfer_route",
+              "subregion_a1:a1_genetic_transfer_restriction"
+            ],
+            "resolvable": true,
+            "resolution": "Do not use the Article 19(1)(a) consent derogation for the genetic information. Use Article 18 approved transfer clauses, after the required third-territory assessment and any necessary supplementary measures, or do not transfer.",
+            "quote_ids": [
+              "A-REG 18#L1",
+              "A-REG 18#L2",
+              "A-REG 18#L3",
+              "A-REG 19#L1",
+              "A-REG 19#L2",
+              "A-REG 19#L6",
+              "A-REG 21#L2",
+              "A-REG 21#L3",
+              "A1-HIA 6#L4",
+              "A1-HIA 7#L1"
+            ]
+          }
+        ],
+        "summary": "The clinical processing and disclosure requirements can be satisfied together, but the transfer cannot presently be cleared. A possible compatible path is Article 18 approved clauses plus the A1 non-consent route, yet the portal's legal classification and the Article 12(1) high-risk determination remain decisive unresolved matters.",
+        "blockers": [
+          {
+            "requirement_ref": "region_a:outward_transfer_route",
+            "gap": "The facts do not establish whether Harrow's own clinical referral portal is legally operated as storage, hosting or computing services provided by Harrow. Without that classification, the Article 18(2) assessment of applicable public-authority access or disclosure powers cannot be completed. The existing consent, encryption and clinical-purpose facts do not answer this classification question.",
+            "why_not_a_confirmation": "The gate's existing confirmations show that recognition is unavailable and that the Article 19(1)(a) route cannot cover the genetic report. They do not resolve the separate Article 18(2) assessment required before approved clauses can be relied on."
+          },
+          {
+            "requirement_ref": "region_a:impact_assessment",
+            "gap": "There is no determination whether the processing is likely to result in a high risk under Article 12(1), and no assessment has been prepared. Without that threshold determination, it cannot be decided whether an assessment was required before processing.",
+            "why_not_a_confirmation": "The one-person fact and the A1 Authority-list exclusions address Article 12(2) and Article 12(3), but they do not answer Article 12(1)'s independent high-risk question. Confirming only the list-based exclusions would therefore not decide this gate."
+          }
+        ],
+        "notes": [
+          "As described, the transfer must not proceed on the Article 19(1)(a) consent route for the genetic report. The consent remains relevant to ordinary processing, sensitive-processing conditions and A1 professional secrecy, but it does not cure the A1 genetic-transfer restriction.",
+          "If the Article 18 route is confirmed as available, the clinics must execute the approved transfer clauses, complete the Article 18(2) assessment, and adopt any necessary supplementary measures. If effective supplementary measures cannot be adopted, Article 18 does not permit the transfer.",
+          "Article 13 written processing records and Article 14 risk-appropriate security measures, including ongoing confidentiality, availability and regular testing, remain duties requiring completion or documentation before proceeding. Their present uncertainty is not a separate blocker because the current requirements already identify the necessary actions.",
+          "The A1 hosting/storage conditions and A1 listed impact-assessment triggers are not engaged on the described arrangement: Harrow retains the referral in its own clinical record for its own care, rather than hosting Kestrel's record system, and no insurer matching is described (f_3707d0e0f8a9, f_a7a94423ed89, f_7ddb7b6d46db)."
+        ]
+      }
+    },
+    {
+      "config": "multi_graph",
+      "run": "run1",
+      "source": "analysis/case_05/multi_graph/run1.json",
+      "sha256": "d8983cd0e6fcc1a9298ae15383048be41a78d0db46f52924429bf3ce0803f3e6",
+      "decision": "do_not_proceed",
+      "seconds": 501.1,
+      "next_steps": "Use approved clauses, assess Region B law/practice and apply necessary effective safeguards; separately determine high risk and complete an impact assessment if required; update notices/records.",
+      "alignment": "Actionable conditional route and distinguishes general high risk from absent listed triggers. A patient-contract alternative is mentioned but not selected on the present care terms.",
+      "required_actions": [
+        {
+          "requirement": "region_a:outward_transfer_routes",
+          "status": "unmet",
+          "citations": [
+            "A-REG 4",
+            "A-REG 16",
+            "A-REG 17",
+            "A-REG 18",
+            "A-REG 19",
+            "A-REG 21",
+            "A-REG Annex II"
+          ],
+          "actions": [
+            "Do not make the transfer on the Article 19(1)(a) consent basis.",
+            "Either execute approved transfer clauses and complete the Article 18 assessment, adopting any necessary effective supplementary measures, or establish that the transfer is necessary for performance of the patient's contract and that Article 19(1)(b) applies.",
+            "Before relying on Article 18, document the assessment of Region B law and practice applicable to Harrow, including the conclusion that no currently applicable public-authority power has been shown on the supplied facts and whether supplementary measures are necessary."
+          ]
+        },
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 12",
+            "A-REG 21"
+          ],
+          "actions": [
+            "Determine whether Article 12(1) requires an assessment before processing; if it does, complete the assessment before the transfer."
+          ]
+        },
+        {
+          "requirement": "region_a:processing_principles_and_accountability",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 5",
+            "A-REG 16",
+            "A-REG 18"
+          ],
+          "actions": [
+            "Do not process the outward transfer until a valid Article 17, 18 or 19 route is established."
+          ]
+        },
+        {
+          "requirement": "region_a:information_to_person",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 11",
+            "A-REG 18",
+            "A-REG 19",
+            "A-REG 21"
+          ],
+          "actions": [
+            "Before proceeding under any alternative route, provide or document the Article 11 information identifying the route actually relied on; do not describe Article 19(1)(a) as the lawful route for this genetic-information transfer."
+          ]
+        },
+        {
+          "requirement": "region_a:processing_records",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 4",
+            "A-REG 13",
+            "A-REG 18",
+            "A-REG 19",
+            "A-REG 21"
+          ],
+          "actions": [
+            "Create or update Kestrel's Article 13 record to identify the valid outward-transfer route actually relied on; if Article 18 is used, record the executed clauses and completed Article 18 assessment rather than Article 19(1)(a)."
+          ]
+        },
+        {
+          "requirement": "subregion_a1:genetic_outward_transfer_basis",
+          "status": "unmet",
+          "citations": [
+            "A1-HIA 7"
+          ],
+          "actions": [
+            "Do not make the genetic-information transfer on the Article 19(1)(a) consent derogation. Obtain and rely on a different outward-transfer basis if one is available under Region A law."
+          ]
+        }
+      ],
+      "clauses_routes": [
+        {
+          "requirement": "region_a:outward_transfer_routes",
+          "name": "Approved transfer clauses",
+          "status": "available",
+          "reasoning": "The route would work for this transfer once Kestrel and Harrow execute Commission-approved clauses and Kestrel completes the Article 18(2) assessment. The Region B response identifies a production-order power for computing providers, but Harrow is not shown to be a computing provider or to provide storage or hosting services; no currently applicable public-authority power has therefore been shown that would prevent Harrow from complying with the clauses. The assessment must still address applicable law and practice, public-authority access, and whether supplementary measures are necessary. If effective supplementary measures are found necessary but cannot be adopted, Article 18(3) would prevent reliance on this route."
+        }
+      ],
+      "general_risk_findings": [
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "undetermined",
+          "reasoning": "The express Article 12(2)(a) threshold is not met because the processing concerns one person, and no large-scale systematic monitoring is proposed. The delegated A1 list does not add an assessment requirement for this arrangement: Harrow is keeping the referral in its own clinical record for its own care, not hosting Kestrel's patient-record system as an agent, and no insurer matching is proposed. The general Article 12(1) question remains open because the supplied facts do not establish whether this processing is likely to result in a high risk to the patient's rights. No assessment has been prepared."
+        }
+      ],
+      "final_review": {
+        "outcome": "undetermined",
+        "route_plan": [
+          {
+            "requirement_ref": "region_a:material_and_territorial_scope",
+            "route": "met"
+          },
+          {
+            "requirement_ref": "region_a:lawful_ground_for_processing",
+            "route": "Consent for a specific purpose"
+          },
+          {
+            "requirement_ref": "region_a:consent_conditions",
+            "route": "Consent by a person aged 16 or older"
+          },
+          {
+            "requirement_ref": "region_a:sensitive_information_processing",
+            "route": "Explicit consent for specified purposes"
+          },
+          {
+            "requirement_ref": "region_a:outward_transfer_routes",
+            "route": "Approved transfer clauses"
+          },
+          {
+            "requirement_ref": "region_a:impact_assessment",
+            "route": "General likely-high-risk processing"
+          },
+          {
+            "requirement_ref": "subregion_a1:healthcare_processing_basis",
+            "route": "Direct processing by or under the responsibility of registered practitioners"
+          },
+          {
+            "requirement_ref": "subregion_a1:consent_age",
+            "route": "met"
+          },
+          {
+            "requirement_ref": "subregion_a1:third_party_disclosure_consent",
+            "route": "Patient consent"
+          },
+          {
+            "requirement_ref": "subregion_a1:genetic_outward_transfer_basis",
+            "route": "Another valid outward-transfer basis not relying on Article 19(1)(a)"
+          }
+        ],
+        "reasoning": "Region B creates no engaged transfer gate on the described facts. Although the material is a health record under B-HRA 2#L2, neither clinic is a covered provider under B-HRA 2#L3, Harrow is not acting as a service agent under B-HRA 2#L4 and B-HRA 3#L1-L2, and Harrow is not a data host under B-HRA 2#L5 and B-HRA 3#L3. The relevant facts are that Kestrel does not bill an insurer (f_7ddb7b6d46db), Harrow does not bill an insurer and is not an insurer (f_85110fb9a3e5), and Harrow keeps the referral in its own clinical record for its own care (f_3707d0e0f8a9). The Region B production-order power likewise has not been triggered and Harrow is not described as providing computing services.\n\nRegion A applies because the identified genetic, health and identity information is processed through an upload portal and clinical records, and Kestrel is established in Subregion A1. The information is also an outward transfer because it is sent to, stored in, and accessed from Region B. Those conclusions follow from A-REG 2#L1, A-REG 3#L1, A-REG 4#L2-L5 and A-REG 4#L10. The ordinary processing gates can be satisfied together: the adult patient's written consent specifically identifies the documents, Harrow and the second-opinion purpose (f_66d5f3ce3996, f_e22033e7c743), satisfying A-REG 6#L1-L2 and A-REG 7#L1. The same consent supports sensitive-information processing under A-REG 8#L3 and third-party disclosure under A1-HIA 5#L2; the treatment and registered-practitioner basis is also supported by A1-HIA 4#L1 and the professional-secrecy duty in A1-HIA 5#L1.\n\nThe consent used for ordinary processing and clinical disclosure cannot be used as the outward-transfer route. Article 16 requires an outward transfer to be covered by Article 17, 18 or 19 (A-REG 16#L1). Recognition is unavailable because Harrow lacks the required certification and the information is sensitive (A-REG 17#L1-L3; A-REG Annex II#L1). Article 19(1)(a) is unavailable for this genetic-information transfer because A1-HIA 7#L1 prohibits that basis. This is not a disagreement with the findings that consent supports processing and disclosure: those are different requirements from the separate outward-transfer requirement.\n\nThe feasible selected transfer route is Article 18. It requires executed Commission-approved clauses and an assessment of Region B law and practice, including public-authority access powers, with effective supplementary measures where necessary (A-REG 18#L1-L3). The supplied Region B assessment identifies no currently applicable power shown to prevent Harrow from complying with the clauses, so the route is compatible in principle. However, the clauses and Article 18 assessment have not been executed or completed (f_d75ec85c160f), so the transfer cannot proceed as described. The Article 19(1)(b) contract route is not selected because the supplied care terms say nothing about referrals outside Region A.\n\nA separate decisive issue remains under Article 12(1). Only one person's information is involved (f_e77bee462e0e), the large-scale statutory examples do not apply, and the A1 listed categories do not apply to Harrow's own clinical record. But Article 12(1) independently requires a prior impact assessment whenever processing is likely to result in high risk (A-REG 12#L1-L6). The facts do not establish whether this particular identified genetic and health-information transfer is likely to create that high risk, and no assessment has been prepared (f_7e86304fe561). That missing determination prevents a final conclusion on whether the transfer can satisfy all requirements together.",
+        "quote_ids": [
+          "B-HRA 2#L2",
+          "B-HRA 2#L3",
+          "B-HRA 2#L4",
+          "B-HRA 2#L5",
+          "B-HRA 3#L1",
+          "B-HRA 3#L2",
+          "B-HRA 3#L3",
+          "A-REG 2#L1",
+          "A-REG 3#L1",
+          "A-REG 4#L2",
+          "A-REG 4#L3",
+          "A-REG 4#L4",
+          "A-REG 4#L5",
+          "A-REG 4#L10",
+          "A-REG 6#L1",
+          "A-REG 6#L2",
+          "A-REG 7#L1",
+          "A-REG 8#L3",
+          "A-REG 16#L1",
+          "A-REG 17#L1",
+          "A-REG 17#L3",
+          "A-REG Annex II#L1",
+          "A-REG 18#L1",
+          "A-REG 18#L2",
+          "A-REG 18#L3",
+          "A-REG 12#L1",
+          "A-REG 12#L2",
+          "A-REG 12#L3",
+          "A-REG 12#L4",
+          "A-REG 12#L5",
+          "A-REG 12#L6",
+          "A1-HIA 4#L1",
+          "A1-HIA 5#L1",
+          "A1-HIA 5#L2",
+          "A1-HIA 7#L1"
+        ],
+        "conflicts": [],
+        "summary": "Undetermined. Region B imposes no engaged gate, and the Region A requirements have a compatible Article 18 route once approved clauses and the required assessments and measures are completed. However, the independent Article 12(1) high-risk threshold has not been determined, so it is not possible to conclude finally that all requirements can be satisfied together.",
+        "blockers": [
+          {
+            "requirement_ref": "region_a:impact_assessment",
+            "gap": "No fact, document or answer establishes whether the proposed one-off transfer of identified genetic and health information is likely to result in a high risk to the patient's rights under Article 12(1). No impact assessment has been prepared (f_7e86304fe561), so it is unknown whether an assessment is mandatory before processing.",
+            "why_not_a_confirmation": "The gate already confirms that the more-than-5,000-person and large-scale-monitoring examples do not apply and that the A1 listed categories are absent. Those confirmations do not resolve the independent Article 12(1) likely-high-risk test in A-REG 12#L1."
+          }
+        ],
+        "notes": [
+          "Do not rely on the patient's consent as the Article 19(1)(a) outward-transfer derogation for this genetic information. The consent remains relevant to Article 6 processing and A1 third-party disclosure.",
+          "Before transfer, execute Commission-approved Article 18 clauses between Kestrel and Harrow and complete the Article 18(2) assessment of Region B law and practice. Adopt effective supplementary measures if necessary; if effective measures cannot be adopted, the Article 18 route cannot be used.",
+          "The Article 19(1)(b) contract route is an unresolved fallback and is not part of the selected route plan.",
+          "Before proceeding, Kestrel should also complete or document the applicable Article 11 outward-transfer information, Article 13 processing record, Article 14 risk-appropriate security measures, and Article 5 accountability elements identified in the current findings. These are duties and confirmations for implementation, not additional conflicts."
+        ]
+      }
+    },
+    {
+      "config": "multi_graph",
+      "run": "run2",
+      "source": "analysis/case_05/multi_graph/run2.json",
+      "sha256": "fba296d50f96acb1efb978e1b9943a99f4ff56843e597be793520adf2e3f2408",
+      "decision": "do_not_proceed",
+      "seconds": 437.5,
+      "next_steps": "Execute approved clauses and document the Region B assessment; determine high risk and complete an impact assessment if required; update patient information, processing records, security/retention evidence.",
+      "alignment": "Actionable route and a separate high-risk decision. Its conclusion that no additional transfer measures are necessary should remain an assessment conclusion on the supplied facts, not a guarantee based only on absence of a current order.",
+      "required_actions": [
+        {
+          "requirement": "region_a:outward_transfer",
+          "status": "unmet",
+          "citations": [
+            "A-REG 4",
+            "A-REG 16",
+            "A-REG 17",
+            "A-REG 18",
+            "A-REG 19",
+            "A-REG Annex II"
+          ],
+          "actions": [
+            "Do not make the transfer on the Article 19(1)(a) consent route.",
+            "Execute the Commission-approved transfer clauses before the transfer and document the Article 18(2) assessment, including the conclusion that no effective supplementary measures are required on the supplied facts.",
+            "Do not proceed until the approved clauses are executed and the Article 18(2) assessment is complete."
+          ]
+        },
+        {
+          "requirement": "region_a:processing_principles_and_accountability",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 5"
+          ],
+          "actions": [
+            "Maintain documentation demonstrating purpose limitation, necessity and minimisation, accuracy, retention and compliance."
+          ]
+        },
+        {
+          "requirement": "region_a:information_to_patient",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 11",
+            "A-REG 19"
+          ],
+          "actions": [
+            "Provide or retain evidence of the complete Article 11 information, including the intended Region B transfer and the Article 17, 18 or 19 route relied on."
+          ]
+        },
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 12",
+            "A-REG 21"
+          ],
+          "actions": [
+            "Complete and document a high-risk screening before processing. If the screening concludes that the processing is likely to result in a high risk, complete an assessment covering the processing, its necessity, the risks and mitigation measures before the transfer."
+          ]
+        },
+        {
+          "requirement": "region_a:security_measures",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 14",
+            "A-REG 5"
+          ],
+          "actions": [
+            "Document and maintain risk-appropriate technical and organisational measures, including confidentiality, availability and regular testing; retain evidence that the encrypted transfer is appropriately configured."
+          ]
+        },
+        {
+          "requirement": "region_a:processing_records",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 13"
+          ],
+          "actions": [
+            "Create or update the written processing record to include the purpose, data and person categories, Harrow as recipient, the Region B outward transfer and route relied on, and both storage periods."
+          ]
+        },
+        {
+          "requirement": "subregion_a1:genetic_outward_transfer_restriction",
+          "status": "unmet",
+          "citations": [
+            "A1-HIA 7"
+          ],
+          "actions": [
+            "Do not rely on Article 19(1)(a) consent as the outward-transfer basis for the genetic information.",
+            "Identify and satisfy any alternative outward-transfer route available under Region A law before sending the genetic report."
+          ]
+        }
+      ],
+      "clauses_routes": [
+        {
+          "requirement": "region_a:outward_transfer",
+          "name": "Approved transfer clauses",
+          "status": "available",
+          "reasoning": "The parties have not executed approved transfer clauses, so this route is not currently supported. It would work for the proposed transfer once the parties execute the Commission-approved clauses and the exporter documents the Article 18(2) assessment. The Region B answer identifies no applicable law or practice that would prevent Harrow from complying with the clauses and no need for supplementary measures on the supplied facts."
+        }
+      ],
+      "general_risk_findings": [
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "undetermined",
+          "reasoning": "Article 12(2)'s stated examples are not engaged: the arrangement concerns one adult patient, is one-off, and is not large-scale monitoring or processing of sensitive information of more than 5,000 persons. The delegated A1 answer also confirms that no A1-specific assessment category applies: Harrow is not Kestrel's agent hosting or storing a patient record system, and no insurer information is being matched. However, Article 12(1) still requires an assessment before processing if this particular processing is likely to result in a high risk to the patient's rights. The facts do not establish that risk determination, and no assessment has been prepared. The requirement therefore remains undetermined rather than unmet."
+        }
+      ],
+      "final_review": {
+        "outcome": "undetermined",
+        "route_plan": [
+          {
+            "requirement_ref": "region_a:lawful_processing_ground",
+            "route": "Consent for specific purposes"
+          },
+          {
+            "requirement_ref": "region_a:consent_conditions",
+            "route": "Consent by a person aged 16 or older"
+          },
+          {
+            "requirement_ref": "region_a:sensitive_information",
+            "route": "Preventive medicine, medical diagnosis or health care by or under the responsibility of a qualifying professional"
+          },
+          {
+            "requirement_ref": "region_a:outward_transfer",
+            "route": "Approved transfer clauses"
+          },
+          {
+            "requirement_ref": "subregion_a1:healthcare_treatment_basis",
+            "route": "Processing directly by or under the responsibility of a registered practitioner"
+          },
+          {
+            "requirement_ref": "subregion_a1:third_party_disclosure",
+            "route": "Patient consent"
+          },
+          {
+            "requirement_ref": "subregion_a1:consent_age",
+            "route": "Person aged 14 or older consenting on their own behalf"
+          },
+          {
+            "requirement_ref": "subregion_a1:genetic_outward_transfer_restriction",
+            "route": "Another outward-transfer basis under Region A law that is not Article 19(1)(a)"
+          }
+        ],
+        "reasoning": "Region B adds no operative transfer condition on the stated facts. The material is a health record, but the Region B provisions apply to covered providers, service agents or data hosts, and the Records Access Act production-order framework applies to computing providers. Neither clinic bills a Region B-licensed insurer, Harrow retains the referral for its own care rather than on behalf of another person, no external host is identified, and Harrow is not described as providing computing services [f_85110fb9a3e5][f_3707d0e0f8a9]. This is consistent with B-HRA 2-3 and B-RAA 2-3.\n\nThe Region A processing gates can be combined: the adult patient's signed consent specifically identifies the documents, Harrow, Region B and the second-opinion purpose [f_66d5f3ce3996][f_e22033e7c743], and the processing is treatment-related and performed by registered A1 practitioners [f_110e981b0a7c][f_987ab471487e]. The consent route therefore supports ordinary processing, while the healthcare-professional route supports sensitive-information processing. A1 also permits the disclosure to Harrow with patient consent [f_66d5f3ce3996].\n\nThe outward transfer is not covered by Region B recognition because the data is sensitive and Harrow lacks the required certification [f_febc895bce9][f_72bdc3d5c28e][f_7892b94ae5e8]. The Article 19(1)(a) consent derogation cannot be used for this genetic information under A1 law. The compatible route is Article 18 approved transfer clauses: the parties must execute them and Kestrel must complete and document the Article 18(2) assessment. The Region B findings identify no applicable public-authority access rule that would prevent Harrow from complying with those clauses. The current absence of clauses and assessment [f_d75ec85c160f] means the transfer cannot proceed as described.\n\nA further decisive issue remains under Article 12. The facts establish that no impact assessment has been prepared [f_7e86304fe561], but do not establish whether this processing is likely to create a high risk. The one-off, single-adult arrangement does not resolve that conditional question. Until the required high-risk screening is completed, the impact-assessment gate cannot be decided. The other unresolved Region A duties—principles and accountability, complete information to the patient, security measures and processing records—must also be completed or documented, but they are ongoing duties rather than alternative transfer routes.",
+        "quote_ids": [
+          "B-HRA 2#L2",
+          "B-HRA 2#L3",
+          "B-HRA 2#L4",
+          "B-HRA 2#L5",
+          "B-HRA 3#L1",
+          "B-HRA 3#L2",
+          "B-HRA 3#L3",
+          "B-RAA 2#L3",
+          "B-RAA 3#L1",
+          "A-REG 4#L5",
+          "A-REG 4#L10",
+          "A-REG 6#L1",
+          "A-REG 6#L2",
+          "A-REG 7#L1",
+          "A-REG 8#L1",
+          "A-REG 8#L3",
+          "A-REG 8#L5",
+          "A-REG 16#L1",
+          "A-REG 17#L1",
+          "A-REG 17#L3",
+          "A-REG 18#L1",
+          "A-REG 18#L2",
+          "A-REG 18#L3",
+          "A-REG 19#L1",
+          "A-REG 19#L2",
+          "A-REG 19#L6",
+          "A-REG 21#L2",
+          "A-REG 21#L3",
+          "A-REG 5#L1",
+          "A-REG 5#L8",
+          "A-REG 11#L1",
+          "A-REG 11#L2",
+          "A-REG 12#L1",
+          "A-REG 12#L4",
+          "A-REG 12#L5",
+          "A-REG 12#L6",
+          "A-REG 14#L1",
+          "A-REG 13#L1",
+          "A1-HIA 4#L1",
+          "A1-HIA 5#L1",
+          "A1-HIA 5#L2",
+          "A1-HIA 7#L1",
+          "A1-HIA 9#L1"
+        ],
+        "conflicts": [
+          {
+            "description": "Region A's general outward-transfer derogation includes explicit consent for an occasional transfer where no recognition or approved clauses apply, while A1 law prohibits making genetic information the subject of an outward transfer on that consent basis. The laws pull apart on the consent route, but the conflict is resolved by using approved transfer clauses instead of Article 19(1)(a).",
+            "kind": "incompatible_law",
+            "requirement_refs": [
+              "region_a:outward_transfer",
+              "subregion_a1:genetic_outward_transfer_restriction"
+            ],
+            "resolvable": true,
+            "resolution": "Execute Commission-approved transfer clauses and complete the Article 18(2) assessment. That route is not Article 19(1)(a), so it satisfies the A1 genetic-information restriction as well as the Region A outward-transfer requirements.",
+            "quote_ids": [
+              "A-REG 19#L1",
+              "A-REG 19#L2",
+              "A-REG 18#L1",
+              "A-REG 18#L2",
+              "A1-HIA 7#L1"
+            ]
+          }
+        ],
+        "summary": "The proposed transfer is not currently cleared. A compatible route exists—consent for processing and disclosure, healthcare processing by registered practitioners, and approved transfer clauses rather than the prohibited genetic-information consent derogation—but the Article 12 impact-assessment gate remains undetermined. The clauses, Article 18(2) assessment, high-risk screening, and the identified ongoing compliance documentation must be completed before proceeding.",
+        "blockers": [
+          {
+            "requirement_ref": "region_a:impact_assessment",
+            "gap": "No impact assessment or documented high-risk screening exists [f_7e86304fe561], and the supplied facts do not determine whether this processing is likely to result in a high risk to the patient's rights. That determination is necessary to decide whether Article 12 requires an assessment before processing.",
+            "why_not_a_confirmation": "This is not merely an omitted item in an otherwise supplied assessment: no risk screening or assessment exists, and the conditional trigger for the gate cannot be established from the stated facts alone."
+          }
+        ],
+        "notes": [
+          "The Region B Health Records Act and Records Access Act gates are not applicable on the stated arrangement; they do not create additional routes or blockers.",
+          "Do not use the patient's consent as the Article 19(1)(a) outward-transfer route for the genetic information. Consent remains usable for the ordinary processing and A1 third-party disclosure gates.",
+          "Before sending, execute the Commission-approved transfer clauses and document the Article 18(2) assessment, including the Region B law-and-practice conclusion and any necessary supplementary-measures analysis [f_d75ec85c160f].",
+          "Complete or document the Region A duties concerning accountability and principles, complete Article 11 information, risk-appropriate security, and the written processing record. The encrypted upload is relevant but does not itself establish all required security measures [f_8c44c6e413c5].",
+          "The A1 hosting/storage conditions and A1-specific impact-assessment list are not engaged because Harrow keeps the referral in its own clinical record for its own care, not as Kestrel's agent."
+        ]
+      }
+    },
+    {
+      "config": "multi_graph",
+      "run": "run3",
+      "source": "analysis/case_05/multi_graph/run3.json",
+      "sha256": "13d7046137128c039ca7d4f4b89b26c8124626b9d788b3a96f5518a8fc439482",
+      "decision": "do_not_proceed",
+      "seconds": 583.7,
+      "next_steps": "Execute approved clauses, assess Region B law/practice and apply necessary effective safeguards; resolve high risk and assess if required; update notices/records. Contract derogation only if facts establish genuine necessity.",
+      "alignment": "Actionable conditional route. General high-risk uncertainty is retained; the optional contract route is properly conditional on necessity not established by the supplied care terms.",
+      "required_actions": [
+        {
+          "requirement": "region_a:clinic_processing_principles",
+          "status": "unmet",
+          "citations": [
+            "A-REG 5",
+            "A-REG 16",
+            "A-REG 18",
+            "A-REG 19"
+          ],
+          "actions": [
+            "Do not proceed with the outward disclosure until a valid Article 18 or Article 19(1)(b) route is established.",
+            "If Article 18 is used, execute the Commission-approved transfer clauses and complete and document the assessment of Region B law and practice, adopting supplementary measures if necessary.",
+            "Continue to confirm accuracy and updating, retention no longer than necessary, and appropriate technical and organisational security measures."
+          ]
+        },
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 12",
+            "A-REG 21"
+          ],
+          "actions": [
+            "Before processing, complete an Article 12 assessment if the transfer is likely to result in high risk, describing the processing, necessity, risks and measures addressing those risks."
+          ]
+        },
+        {
+          "requirement": "region_a:outward_transfer",
+          "status": "unmet",
+          "citations": [
+            "A-REG 4",
+            "A-REG 16",
+            "A-REG 17",
+            "A-REG 18",
+            "A-REG 19",
+            "A-REG Annex II",
+            "A-REG 21"
+          ],
+          "actions": [
+            "Do not make the transfer on the Article 19(1)(a) consent route; that route is unavailable for this genetic information.",
+            "For the Article 18 route, execute the Commission-approved transfer clauses and complete and document Kestrel's assessment of Region B law and practice, adopting effective supplementary measures if necessary. Do not proceed under Article 18 if effective supplementary measures cannot be adopted.",
+            "Only if the facts and evidence establish that the transfer is necessary for performance of the patient's contract with Kestrel, assess and document the Article 19(1)(b) route; the transfer must remain occasional."
+          ]
+        },
+        {
+          "requirement": "region_a:information_to_persons",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 11",
+            "A-REG 18",
+            "A-REG 19"
+          ],
+          "actions": [
+            "Before proceeding under Article 18, provide or update the patient information to identify Article 18, the approved clauses and any applicable supplementary measures, together with the other Article 11(1) information.",
+            "If Article 19(1)(b) is instead established, update the notice to identify that route accurately."
+          ]
+        },
+        {
+          "requirement": "region_a:processing_records",
+          "status": "undetermined",
+          "citations": [
+            "A-REG 13",
+            "A-REG 18",
+            "A-REG 19"
+          ],
+          "actions": [
+            "Prepare or update the written processing records with the selected valid outward-transfer route and its supporting documentation before proceeding.",
+            "If Article 18 is selected, record the executed approved clauses and the Article 18 assessment and any supplementary measures."
+          ]
+        },
+        {
+          "requirement": "subregion_a1:genetic_outward_route_restriction",
+          "status": "unmet",
+          "citations": [
+            "A1-HIA 7"
+          ],
+          "actions": [
+            "Do not rely on Article 19(1)(a) as the outward-transfer basis for the genetic information. Obtain confirmation from the Region A specialist of another applicable Article 16 to 19 route, if one exists."
+          ]
+        }
+      ],
+      "clauses_routes": [
+        {
+          "requirement": "region_a:outward_transfer",
+          "name": "Approved transfer clauses",
+          "status": "available",
+          "reasoning": "The parties have not executed approved clauses, so this route is not presently supported. It would work for the proposed transfer once Kestrel and Harrow execute the Commission-approved clauses and Kestrel completes the Article 18 assessment of Region B law and practice. The answered Region B question identifies no current applicable obligation or present public-authority event that would prevent Harrow from complying with the clauses; if the assessment identifies a need for supplementary measures, those measures must also be adopted. If effective supplementary measures cannot be adopted, this route would not support the transfer."
+        }
+      ],
+      "general_risk_findings": [
+        {
+          "requirement": "region_a:impact_assessment",
+          "status": "undetermined",
+          "reasoning": "The express Article 12(2) thresholds are not met: the referral concerns one person and is not systematic monitoring of a publicly accessible area. The A1 answer confirms that the A1 Authority's further list does not cover this arrangement because Harrow is an independent recipient retaining the information for its own care, not an agent hosting or storing Kestrel's patient-record system, and there is no insurer matching. The remaining issue is Article 12(1): whether this sensitive-information transfer, particularly the proposed transfer without recognition or approved safeguards, is likely to result in a high risk to the person's rights. No impact assessment or separate high-risk determination has been supplied."
+        }
+      ],
+      "final_review": {
+        "outcome": "undetermined",
+        "route_plan": [
+          {
+            "requirement_ref": "region_a:material_scope",
+            "route": "Partly automated processing"
+          },
+          {
+            "requirement_ref": "region_a:territorial_scope",
+            "route": "Processing in the context of an establishment in a Subregion"
+          },
+          {
+            "requirement_ref": "region_a:clinic_lawful_ground",
+            "route": "Consent for one or more specific purposes"
+          },
+          {
+            "requirement_ref": "region_a:harrow_lawful_ground",
+            "route": "Consent for the second-opinion purpose"
+          },
+          {
+            "requirement_ref": "region_a:consent_conditions",
+            "route": "Consent by a person aged 16 or older"
+          },
+          {
+            "requirement_ref": "region_a:clinic_sensitive_information",
+            "route": "Healthcare, medical diagnosis or treatment by or under a professional subject to secrecy"
+          },
+          {
+            "requirement_ref": "region_a:harrow_sensitive_information",
+            "route": "Explicit consent for the clinical second-opinion purpose"
+          },
+          {
+            "requirement_ref": "region_a:outward_transfer",
+            "route": "Approved transfer clauses"
+          },
+          {
+            "requirement_ref": "subregion_a1:healthcare_processing_basis",
+            "route": "Direct processing by or under the responsibility of a registered practitioner"
+          },
+          {
+            "requirement_ref": "subregion_a1:third_party_disclosure",
+            "route": "Patient consent"
+          },
+          {
+            "requirement_ref": "subregion_a1:consent_age_threshold",
+            "route": "Patient consent by a person aged at least 14"
+          }
+        ],
+        "reasoning": "The Region A Regulation applies because the transfer involves identified personal information, including health and genetic information, uploaded electronically and retained in clinical records (f_6fcc5cd6b927, f_72bdc3d5c28e, f_7892b94ae5e8, f_6a3e2263dd33). It applies to Kestrel through its A1 establishment and to Harrow because Harrow provides a specialist service to the A1 patient (f_12d62771fdeb, f_cbbbb15c04e0). The patient's signed consent is specific to the named information, Harrow, Region B and the second-opinion purpose (f_66d5f3ce3996, f_e22033e7c743), so it supports the ordinary processing, sensitive-information processing and A1 professional-secrecy disclosure requirements under A-REG 6#L2, A-REG 7#L1, A-REG 8#L3 and A1-HIA 5#L2. Kestrel's registered practitioners also support the healthcare route under A1-HIA 4#L1 and A-REG 8#L5.\n\nRegion B does not impose a conflicting current Health Records Act route on Harrow. Harrow is direct-pay, does not bill a Region B insurer and is not an insurer (f_85110fb9a3e5); it keeps the referral in its own record for its own care rather than on behalf of another person (f_3707d0e0f8a9). Under B-HRA 2#L3-L5 and B-HRA 3#L1-L3, it is not a covered provider, service agent or data host for this arrangement. Accordingly, the Region B permitted-use, service-agent agreement, minimum-necessary, security and data-host retention requirements do not create additional gates here.\n\nThe transfer itself is not covered by recognition. Harrow has no Trusted Recipient certification (f_febc895bce9e), and the data is sensitive, so the Annex II limits exclude the recognition route under A-REG 17#L1-L3 and A-REG Annex II#L1. The patient's consent cannot be used as the Article 19(1)(a) outward-transfer derogation because the data includes genetic information and A1-HIA 7#L1 prohibits that route. The Article 19(1)(b) contract route remains unresolved because Kestrel's care terms say nothing about referrals outside Region A (f_91896785f7d3), and it is not selected.\n\nThe compatible route is Article 18. Under A-REG 16#L1 and A-REG 18#L1-L3, Kestrel and Harrow must execute the approved transfer clauses, complete the required assessment of Region B law and practice, and adopt supplementary measures if necessary. The answered Region B assessment identifies no current applicable obligation or event that would prevent Harrow from complying with those clauses on the described facts. This is therefore a resolvable route, not an incompatibility between the corpora. However, no approved clauses or other contract have been executed (f_d75ec85c160f), so the route is not yet operational.\n\nA separate Article 12(1) question remains decisive. The transfer concerns identified genetic and health information and no impact assessment or separate high-risk determination has been prepared (f_7e86304fe561). The supplied facts establish that the express numerical and listed A1 categories are not triggered, but they do not establish whether this particular transfer is likely to result in a high risk. Under A-REG 12#L1 and A-REG 12#L4, that unresolved classification determines whether a pre-processing impact assessment is mandatory. The final conclusion is therefore undetermined rather than satisfiable_with_changes. If the high-risk issue is resolved and the assessment is completed where required, the Article 18 route can be combined with the other selected routes.",
+        "quote_ids": [
+          "A-REG 2#L1",
+          "A-REG 3#L1-L2",
+          "A-REG 4#L2-L10",
+          "A-REG 5#L2-L7",
+          "A-REG 6#L1-L7",
+          "A-REG 7#L1",
+          "A-REG 8#L1-L8",
+          "A-REG 11#L1-L2",
+          "A-REG 12#L1-L6",
+          "A-REG 13#L1",
+          "A-REG 14#L1",
+          "A-REG 16#L1",
+          "A-REG 17#L1-L3",
+          "A-REG 18#L1-L3",
+          "A-REG 19#L1-L6",
+          "A-REG Annex II#L1",
+          "A-REG 21#L2-L3",
+          "B-HRA 2#L2-L5",
+          "B-HRA 3#L1-L3",
+          "A1-HIA 4#L1",
+          "A1-HIA 5#L1-L3",
+          "A1-HIA 7#L1",
+          "A1-HIA 8#L1-L3"
+        ],
+        "conflicts": [],
+        "summary": "Undetermined. Article 18 is a compatible outward-transfer route, but it requires executed approved clauses and supporting assessment measures. More importantly, no Article 12(1) high-risk determination has been supplied, so it cannot yet be decided whether a pre-processing impact assessment is mandatory. The Article 19(1)(a) consent route is unavailable for the genetic information.",
+        "blockers": [
+          {
+            "requirement_ref": "region_a:impact_assessment",
+            "gap": "No Article 12(1) high-risk determination or impact assessment is supplied for the identified, sensitive one-off transfer. The facts establish that the transfer involves one person and is not one of the expressly listed large-scale or A1-listed categories, but they do not decide whether this transfer is likely to result in a high risk to the person's rights. That determination is necessary to decide whether the pre-processing assessment duty applies under A-REG 12#L1.",
+            "why_not_a_confirmation": "This is not merely an omitted element of an otherwise supplied assessment. The unresolved likelihood-of-high-risk determination changes whether a mandatory pre-processing assessment exists at all; confirming only the transfer's one-off nature or the use of encryption would not decide that conditional requirement."
+          }
+        ],
+        "notes": [
+          "Before relying on Article 18, execute the Commission-approved clauses and complete and document the assessment of Region B law and practice required by A-REG 18#L2; adopt effective supplementary measures if necessary. Do not proceed under Article 18 if effective supplementary measures cannot be adopted under A-REG 18#L3.",
+          "The Article 19(1)(a) consent derogation is a ruled-out fallback, not part of the route plan. The patient's consent remains usable for ordinary processing, sensitive-information processing and A1 third-party disclosure, but it cannot authorize this genetic-information outward transfer under A1-HIA 7#L1.",
+          "Before proceeding, update the patient information to identify the selected Article 18 route, the approved clauses and any supplementary measures, together with the Article 11 information; prepare the written processing records identifying the outward-transfer route; and confirm that the technical and organisational security measures are appropriate. These are implementation conditions and do not create a separate cross-jurisdiction conflict.",
+          "The Article 19(1)(b) contract route is an unselected fallback. It could be considered only if evidence establishes that the external transfer is necessary for performance of the patient's contract with Kestrel and remains occasional under A-REG 19#L3 and A-REG 19#L6.",
+          "The A1 hosting/storage conditions are not engaged because Harrow keeps the referral in its own clinical record for its own care rather than hosting or storing Kestrel's records for Kestrel (f_a7a94423ed89, f_3707d0e0f8a)."
+        ]
+      }
+    }
+  ],
+  "additional_failed_attempt": {
+    "config": "single_graph",
+    "run_identity": "20261011-090431_05_a1_genetic_second_opinion_in_b",
+    "record_in_current_runs_folder": false,
+    "previously_observed_error": "Model response was incomplete or failed; no assessment was accepted.",
+    "previously_observed_decision": "needs_review",
+    "previously_observed_findings": 0,
+    "evidence": "Inspected in this chat before the key review; its JSON is no longer in the current runs/mock folder. The replacement completed run3 is 20261011-091147.",
+    "note": "This comparison covers the 12 completed analysis runs. Include the earlier failed attempt separately when reporting attempt reliability and cost."
+  }
+}

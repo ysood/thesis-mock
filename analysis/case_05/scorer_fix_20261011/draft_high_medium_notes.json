@@ -1,0 +1,102 @@
+{
+  "method": "All 16 selected concepts were reviewed in all 24 high/medium accepted result objects. Correct explicit assessment may appear in findings, routes, applicability, or accepted specialist output. Mere status labels, source facts, or source-law quotes without application do not establish a pass. Selected concept scores remain distinct from the key manual_checks and full reasoning quality.",
+  "retained_failures": [
+    {
+      "config": "single_no_graph",
+      "run": 1,
+      "check": "requirement:a1_hosting_conditions",
+      "reason": "The output applies section 6 to Harrow own-record retention and requires notice/encryption/key conditions. This contradicts the default reviewed purpose-based key. It is a contested literal interpretation, not a citation miss, and is not auto-corrected.",
+      "evidence": [
+        {
+          "pointer": "/findings/20/reasoning",
+          "quote": "Harrow will store the referral in its own clinical record in Region B. That is storage of a patient's health record outside Region A."
+        }
+      ]
+    },
+    {
+      "config": "multi_no_graph",
+      "run": 1,
+      "check": "route:approved_clauses",
+      "reason": "Incorrectly treats Harrow portal/clinical storage as computing services, rules out Article 18, and finds irreversible incompatibility.",
+      "evidence": [
+        {
+          "pointer": "/findings/18/routes/1/reasoning",
+          "quote": "Article 18(3) therefore prevents this transfer from proceeding on the basis of Article 18."
+        }
+      ]
+    },
+    {
+      "config": "multi_no_graph",
+      "run": 2,
+      "check": "route:approved_clauses",
+      "reason": "Leaves route unresolved over an unspecified external portal provider, rather than available subject to future assessment and implementation.",
+      "evidence": [
+        {
+          "pointer": "/findings/16/routes/1/reasoning",
+          "quote": "The unidentified portal arrangements leave the final sufficiency of the safeguards unresolved."
+        }
+      ]
+    },
+    {
+      "config": "multi_no_graph",
+      "run": 2,
+      "check": "route:vital_interests_derogation",
+      "reason": "No accepted transfer-route assessment explicitly rules out Article 19(1)(c); the patient can consent fact alone is not an assessment.",
+      "evidence": []
+    },
+    {
+      "config": "multi_no_graph",
+      "run": 3,
+      "check": "route:approved_clauses",
+      "reason": "Leaves Article 18 unresolved over Harrow portal computing-provider classification. This is a substantive route assessment, not a citation miss.",
+      "evidence": [
+        {
+          "pointer": "/findings/10/routes/1/reasoning",
+          "quote": "it remains unresolved whether Harrow's referral portal is legally operated as storage, hosting or computing services by Harrow."
+        }
+      ]
+    }
+  ],
+  "manual_quality_caveats": [
+    {
+      "config": "multi_graph",
+      "run": 4,
+      "issue": "Article 12(1) omitted, impact-assessment status met from absent enumerated/listed triggers; Article 18 assessment falsely asserted completed; security met from encrypted upload alone. Article18 availability conclusion remains selected-check pass but its prerequisites/reasoning need manual failure.",
+      "evidence": [
+        {
+          "pointer": "/findings/16/routes/1/reasoning",
+          "quote": "The Article 18(2) assessment has been completed on the supplied facts and answer"
+        }
+      ]
+    },
+    {
+      "config": "multi_graph",
+      "run": 5,
+      "issue": "No independent Article12(1) justification for not_applicable impact assessment. Selected A1 list check remains correct."
+    },
+    {
+      "config": "multi_graph",
+      "run": 2,
+      "issue": "Harrow own processing excluded from Region A security analysis despite Article3(2)."
+    },
+    {
+      "config": "multi_graph",
+      "run": 3,
+      "issue": "15 supervisor conclusion passage-reference defects are not selected-status checks."
+    },
+    {
+      "config": "multi_no_graph",
+      "run": 6,
+      "issue": "A1 parent finding undetermined while its consent route and final Region A transfer finding correctly reject the consent basis. Preserve inconsistency outside the selected-concept pass."
+    },
+    {
+      "config": "single_no_graph",
+      "run": 2,
+      "issue": "Section6 reasoning imports section8 agent/patient-record-system words. Existing selected hosting-purpose conclusion pass is qualified rather than silently treated as fully correct reasoning."
+    },
+    {
+      "issue": "Several runs assert healthcare as an additional ordinary lawful ground even while separately identifying a correct Article6 consent ground. These pass the presence-of-correct-selected-ground criterion; they are not proof of correct complete reasoning. Notable SNP5, SNP6, SG4, SG5, SG6, MNG4, MG4, MG6."
+    }
+  ],
+  "no_blanket_perfect_reasoning_claim": "Reviewed selected agreement is not legal accuracy. High/medium full high-risk analysis, full recipient duties, source references, and remedy prerequisites still require separate review."
+}

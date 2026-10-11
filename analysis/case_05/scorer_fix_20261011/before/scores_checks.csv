@@ -1,0 +1,385 @@
+key_version,config,architecture,graph,run,section,check,passed_auto,passed_hand,hand_note,got,expected
+reviewed,single_no_graph,single,runtime,run1,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,single_no_graph,single,runtime,run1,requirement,lawful_ground,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run1,requirement,sensitive_condition,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run1,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,single_no_graph,single,runtime,run1,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+reviewed,single_no_graph,single,runtime,run1,requirement,a1_professional_secrecy,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run1,requirement,a1_hosting_conditions,0,0,,unmet,not_applicable
+reviewed,single_no_graph,single,runtime,run1,requirement,a1_listed_impact_assessment,0,0,,unmet,not_applicable
+reviewed,single_no_graph,single,runtime,run1,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run1,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run1,route,consent_derogation,1,1,,"ruled_out,ruled_out",ruled_out
+reviewed,single_no_graph,single,runtime,run1,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run1,route,approved_clauses,1,1,,available,available
+reviewed,single_no_graph,single,runtime,run1,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run1,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+reviewed,single_no_graph,single,runtime,run1,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+reviewed,single_no_graph,single,runtime,run2,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,single_no_graph,single,runtime,run2,requirement,lawful_ground,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run2,requirement,sensitive_condition,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run2,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,single_no_graph,single,runtime,run2,requirement,a1_genetic_transfer_restriction,0,1,Folded into region_a:outward_transfer_route: 19(1)(a) ruled out because of A1 s.7; scorer matched the Art 8 finding instead.,met,unmet
+reviewed,single_no_graph,single,runtime,run2,requirement,a1_professional_secrecy,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run2,requirement,a1_hosting_conditions,0,1,"Folded into region_a:outward_transfer_route: A1 s.6 ""do not apply because this is not a transfer for hosting""; scorer matched that unmet transfer finding.",unmet,not_applicable
+reviewed,single_no_graph,single,runtime,run2,requirement,a1_listed_impact_assessment,1,1,,not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run2,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run2,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run2,route,consent_derogation,1,1,,ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run2,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run2,route,approved_clauses,1,1,,available,available
+reviewed,single_no_graph,single,runtime,run2,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run2,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+reviewed,single_no_graph,single,runtime,run2,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+reviewed,single_no_graph,single,runtime,run3,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,single_no_graph,single,runtime,run3,requirement,lawful_ground,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run3,requirement,sensitive_condition,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run3,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,single_no_graph,single,runtime,run3,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+reviewed,single_no_graph,single,runtime,run3,requirement,a1_professional_secrecy,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run3,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run3,requirement,a1_listed_impact_assessment,1,1,,not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run3,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run3,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run3,route,consent_derogation,1,1,,"ruled_out,ruled_out",ruled_out
+reviewed,single_no_graph,single,runtime,run3,route,recognition,1,1,,"ruled_out,ruled_out",ruled_out
+reviewed,single_no_graph,single,runtime,run3,route,approved_clauses,1,1,,"available,available",available
+reviewed,single_no_graph,single,runtime,run3,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run3,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+reviewed,single_no_graph,single,runtime,run3,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+reviewed,single_graph,single,generated,run1,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,single_graph,single,generated,run1,requirement,lawful_ground,1,1,,met,met
+reviewed,single_graph,single,generated,run1,requirement,sensitive_condition,1,1,,met,met
+reviewed,single_graph,single,generated,run1,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,single_graph,single,generated,run1,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+reviewed,single_graph,single,generated,run1,requirement,a1_professional_secrecy,1,1,,met,met
+reviewed,single_graph,single,generated,run1,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+reviewed,single_graph,single,generated,run1,requirement,a1_listed_impact_assessment,1,1,,not_applicable,not_applicable
+reviewed,single_graph,single,generated,run1,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+reviewed,single_graph,single,generated,run1,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+reviewed,single_graph,single,generated,run1,route,consent_derogation,1,1,,"ruled_out,ruled_out",ruled_out
+reviewed,single_graph,single,generated,run1,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,single_graph,single,generated,run1,route,approved_clauses,1,1,,"available,available",available
+reviewed,single_graph,single,generated,run1,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+reviewed,single_graph,single,generated,run1,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+reviewed,single_graph,single,generated,run1,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+reviewed,single_graph,single,generated,run2,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,single_graph,single,generated,run2,requirement,lawful_ground,1,1,,met,met
+reviewed,single_graph,single,generated,run2,requirement,sensitive_condition,1,1,,met,met
+reviewed,single_graph,single,generated,run2,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,single_graph,single,generated,run2,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+reviewed,single_graph,single,generated,run2,requirement,a1_professional_secrecy,1,1,,met,met
+reviewed,single_graph,single,generated,run2,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+reviewed,single_graph,single,generated,run2,requirement,a1_listed_impact_assessment,1,1,,not_applicable,not_applicable
+reviewed,single_graph,single,generated,run2,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+reviewed,single_graph,single,generated,run2,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+reviewed,single_graph,single,generated,run2,route,consent_derogation,1,1,,ruled_out,ruled_out
+reviewed,single_graph,single,generated,run2,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,single_graph,single,generated,run2,route,approved_clauses,1,1,,available,available
+reviewed,single_graph,single,generated,run2,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+reviewed,single_graph,single,generated,run2,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+reviewed,single_graph,single,generated,run2,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+reviewed,single_graph,single,generated,run3,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,single_graph,single,generated,run3,requirement,lawful_ground,1,1,,met,met
+reviewed,single_graph,single,generated,run3,requirement,sensitive_condition,1,1,,met,met
+reviewed,single_graph,single,generated,run3,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,single_graph,single,generated,run3,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+reviewed,single_graph,single,generated,run3,requirement,a1_professional_secrecy,1,1,,met,met
+reviewed,single_graph,single,generated,run3,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+reviewed,single_graph,single,generated,run3,requirement,a1_listed_impact_assessment,1,1,,not_applicable,not_applicable
+reviewed,single_graph,single,generated,run3,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+reviewed,single_graph,single,generated,run3,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+reviewed,single_graph,single,generated,run3,route,consent_derogation,1,1,,ruled_out,ruled_out
+reviewed,single_graph,single,generated,run3,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,single_graph,single,generated,run3,route,approved_clauses,1,1,,available,available
+reviewed,single_graph,single,generated,run3,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+reviewed,single_graph,single,generated,run3,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+reviewed,single_graph,single,generated,run3,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run1,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,multi_no_graph,multi,runtime,run1,requirement,lawful_ground,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run1,requirement,sensitive_condition,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run1,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run1,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run1,requirement,a1_professional_secrecy,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run1,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run1,requirement,a1_listed_impact_assessment,1,1,,not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run1,requirement,region_b_sector_rules,1,1,,not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run1,requirement,region_b_host_retention,1,1,,not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run1,route,consent_derogation,1,1,,"ruled_out,ruled_out",ruled_out
+reviewed,multi_no_graph,multi,runtime,run1,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run1,route,approved_clauses,0,0,,ruled_out,available
+reviewed,multi_no_graph,multi,runtime,run1,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run1,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run1,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run2,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,multi_no_graph,multi,runtime,run2,requirement,lawful_ground,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run2,requirement,sensitive_condition,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run2,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run2,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run2,requirement,a1_professional_secrecy,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run2,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run2,requirement,a1_listed_impact_assessment,1,1,,not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run2,requirement,region_b_sector_rules,1,1,,not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run2,requirement,region_b_host_retention,1,1,,not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run2,route,consent_derogation,1,1,,ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run2,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run2,route,approved_clauses,0,0,,unresolved,available
+reviewed,multi_no_graph,multi,runtime,run2,route,vital_interests_derogation,0,0,,not_found,ruled_out
+reviewed,multi_no_graph,multi,runtime,run2,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run2,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run3,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,multi_no_graph,multi,runtime,run3,requirement,lawful_ground,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run3,requirement,sensitive_condition,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run3,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run3,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run3,requirement,a1_professional_secrecy,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run3,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run3,requirement,a1_listed_impact_assessment,1,1,,not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run3,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+reviewed,multi_no_graph,multi,runtime,run3,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+reviewed,multi_no_graph,multi,runtime,run3,route,consent_derogation,1,1,,ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run3,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run3,route,approved_clauses,0,0,,unresolved,available
+reviewed,multi_no_graph,multi,runtime,run3,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run3,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run3,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+reviewed,multi_graph,multi,generated,run1,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,multi_graph,multi,generated,run1,requirement,lawful_ground,1,1,,met,met
+reviewed,multi_graph,multi,generated,run1,requirement,sensitive_condition,1,1,,met,met
+reviewed,multi_graph,multi,generated,run1,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,multi_graph,multi,generated,run1,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+reviewed,multi_graph,multi,generated,run1,requirement,a1_professional_secrecy,1,1,,met,met
+reviewed,multi_graph,multi,generated,run1,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run1,requirement,a1_listed_impact_assessment,1,1,,not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run1,requirement,region_b_sector_rules,1,1,,not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run1,requirement,region_b_host_retention,1,1,,not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run1,route,consent_derogation,1,1,,"ruled_out,ruled_out",ruled_out
+reviewed,multi_graph,multi,generated,run1,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run1,route,approved_clauses,1,1,,available,available
+reviewed,multi_graph,multi,generated,run1,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run1,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+reviewed,multi_graph,multi,generated,run1,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+reviewed,multi_graph,multi,generated,run2,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,multi_graph,multi,generated,run2,requirement,lawful_ground,1,1,,met,met
+reviewed,multi_graph,multi,generated,run2,requirement,sensitive_condition,1,1,,met,met
+reviewed,multi_graph,multi,generated,run2,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,multi_graph,multi,generated,run2,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+reviewed,multi_graph,multi,generated,run2,requirement,a1_professional_secrecy,1,1,,met,met
+reviewed,multi_graph,multi,generated,run2,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run2,requirement,a1_listed_impact_assessment,1,1,,not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run2,requirement,region_b_sector_rules,1,1,,not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run2,requirement,region_b_host_retention,1,1,,not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run2,route,consent_derogation,1,1,,ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run2,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run2,route,approved_clauses,1,1,,available,available
+reviewed,multi_graph,multi,generated,run2,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run2,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+reviewed,multi_graph,multi,generated,run2,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+reviewed,multi_graph,multi,generated,run3,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,multi_graph,multi,generated,run3,requirement,lawful_ground,1,1,,met,met
+reviewed,multi_graph,multi,generated,run3,requirement,sensitive_condition,1,1,,met,met
+reviewed,multi_graph,multi,generated,run3,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,multi_graph,multi,generated,run3,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+reviewed,multi_graph,multi,generated,run3,requirement,a1_professional_secrecy,1,1,,met,met
+reviewed,multi_graph,multi,generated,run3,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run3,requirement,a1_listed_impact_assessment,1,1,,not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run3,requirement,region_b_sector_rules,1,1,,not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run3,requirement,region_b_host_retention,0,1,"region_b:data_host_retention is not_applicable (correct) but cites B-HRA 2 and 3 rather than s.9, so the scorer could not match it.",not_found,not_applicable
+reviewed,multi_graph,multi,generated,run3,route,consent_derogation,1,1,,"ruled_out,ruled_out",ruled_out
+reviewed,multi_graph,multi,generated,run3,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run3,route,approved_clauses,1,1,,available,available
+reviewed,multi_graph,multi,generated,run3,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run3,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+reviewed,multi_graph,multi,generated,run3,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run1,decision,decision,1,1,,do_not_proceed,do_not_proceed
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,lawful_ground,1,1,,met,met
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,sensitive_condition,1,1,,met,met
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,transfer_route,1,1,,unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,a1_professional_secrecy,1,1,,met,met
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,a1_hosting_conditions,0,0,,unmet,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,impact_assessment,0,0,,unmet,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run1,route,consent_derogation,1,1,,"ruled_out,ruled_out",ruled_out
+before_review_20261011,single_no_graph,single,runtime,run1,route,recognition,1,1,,ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run1,route,approved_clauses,1,1,,available,available
+before_review_20261011,single_no_graph,single,runtime,run1,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run1,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run1,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run2,decision,decision,1,1,,do_not_proceed,do_not_proceed
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,lawful_ground,1,1,,met,met
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,sensitive_condition,1,1,,met,met
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,transfer_route,1,1,,unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,a1_genetic_transfer_restriction,0,1,Folded into region_a:outward_transfer_route: 19(1)(a) ruled out because of A1 s.7; scorer matched the Art 8 finding instead.,met,unmet
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,a1_professional_secrecy,1,1,,met,met
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,a1_hosting_conditions,0,1,"Folded into region_a:outward_transfer_route: A1 s.6 ""do not apply because this is not a transfer for hosting""; scorer matched that unmet transfer finding.",unmet,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,impact_assessment,1,1,,not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run2,route,consent_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run2,route,recognition,1,1,,ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run2,route,approved_clauses,1,1,,available,available
+before_review_20261011,single_no_graph,single,runtime,run2,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run2,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run2,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run3,decision,decision,1,1,,do_not_proceed,do_not_proceed
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,lawful_ground,1,1,,met,met
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,sensitive_condition,1,1,,met,met
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,transfer_route,1,1,,unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,a1_professional_secrecy,1,1,,met,met
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,impact_assessment,1,1,,not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run3,route,consent_derogation,1,1,,"ruled_out,ruled_out",ruled_out
+before_review_20261011,single_no_graph,single,runtime,run3,route,recognition,1,1,,"ruled_out,ruled_out",ruled_out
+before_review_20261011,single_no_graph,single,runtime,run3,route,approved_clauses,1,1,,"available,available",available
+before_review_20261011,single_no_graph,single,runtime,run3,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run3,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run3,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+before_review_20261011,single_graph,single,generated,run1,decision,decision,1,1,,do_not_proceed,do_not_proceed
+before_review_20261011,single_graph,single,generated,run1,requirement,lawful_ground,1,1,,met,met
+before_review_20261011,single_graph,single,generated,run1,requirement,sensitive_condition,1,1,,met,met
+before_review_20261011,single_graph,single,generated,run1,requirement,transfer_route,1,1,,unmet,unmet
+before_review_20261011,single_graph,single,generated,run1,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+before_review_20261011,single_graph,single,generated,run1,requirement,a1_professional_secrecy,1,1,,met,met
+before_review_20261011,single_graph,single,generated,run1,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run1,requirement,impact_assessment,1,1,,not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run1,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run1,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run1,route,consent_derogation,1,1,,"ruled_out,ruled_out",ruled_out
+before_review_20261011,single_graph,single,generated,run1,route,recognition,1,1,,ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run1,route,approved_clauses,1,1,,"available,available",available
+before_review_20261011,single_graph,single,generated,run1,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run1,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+before_review_20261011,single_graph,single,generated,run1,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+before_review_20261011,single_graph,single,generated,run2,decision,decision,1,1,,do_not_proceed,do_not_proceed
+before_review_20261011,single_graph,single,generated,run2,requirement,lawful_ground,1,1,,met,met
+before_review_20261011,single_graph,single,generated,run2,requirement,sensitive_condition,1,1,,met,met
+before_review_20261011,single_graph,single,generated,run2,requirement,transfer_route,1,1,,unmet,unmet
+before_review_20261011,single_graph,single,generated,run2,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+before_review_20261011,single_graph,single,generated,run2,requirement,a1_professional_secrecy,1,1,,met,met
+before_review_20261011,single_graph,single,generated,run2,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run2,requirement,impact_assessment,1,1,,not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run2,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run2,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run2,route,consent_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run2,route,recognition,1,1,,ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run2,route,approved_clauses,1,1,,available,available
+before_review_20261011,single_graph,single,generated,run2,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run2,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+before_review_20261011,single_graph,single,generated,run2,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+before_review_20261011,single_graph,single,generated,run3,decision,decision,1,1,,do_not_proceed,do_not_proceed
+before_review_20261011,single_graph,single,generated,run3,requirement,lawful_ground,1,1,,met,met
+before_review_20261011,single_graph,single,generated,run3,requirement,sensitive_condition,1,1,,met,met
+before_review_20261011,single_graph,single,generated,run3,requirement,transfer_route,1,1,,unmet,unmet
+before_review_20261011,single_graph,single,generated,run3,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+before_review_20261011,single_graph,single,generated,run3,requirement,a1_professional_secrecy,1,1,,met,met
+before_review_20261011,single_graph,single,generated,run3,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run3,requirement,impact_assessment,1,1,,not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run3,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run3,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run3,route,consent_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run3,route,recognition,1,1,,ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run3,route,approved_clauses,1,1,,available,available
+before_review_20261011,single_graph,single,generated,run3,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run3,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+before_review_20261011,single_graph,single,generated,run3,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run1,decision,decision,1,1,,do_not_proceed,do_not_proceed
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,lawful_ground,1,1,,met,met
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,sensitive_condition,1,1,,met,met
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,transfer_route,1,1,,unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,a1_professional_secrecy,1,1,,met,met
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,impact_assessment,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,region_b_sector_rules,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,region_b_host_retention,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run1,route,consent_derogation,1,1,,"ruled_out,ruled_out",ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run1,route,recognition,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run1,route,approved_clauses,0,0,,ruled_out,available
+before_review_20261011,multi_no_graph,multi,runtime,run1,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run1,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run1,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run2,decision,decision,1,1,,do_not_proceed,do_not_proceed
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,lawful_ground,1,1,,met,met
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,sensitive_condition,1,1,,met,met
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,transfer_route,1,1,,unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,a1_professional_secrecy,1,1,,met,met
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,impact_assessment,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,region_b_sector_rules,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,region_b_host_retention,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run2,route,consent_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run2,route,recognition,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run2,route,approved_clauses,0,0,,unresolved,available
+before_review_20261011,multi_no_graph,multi,runtime,run2,route,vital_interests_derogation,0,0,,not_found,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run2,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run2,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run3,decision,decision,1,1,,do_not_proceed,do_not_proceed
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,lawful_ground,1,1,,met,met
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,sensitive_condition,1,1,,met,met
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,transfer_route,1,1,,unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,a1_professional_secrecy,1,1,,met,met
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,impact_assessment,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,region_b_host_retention,0,0,,not_found,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run3,route,consent_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run3,route,recognition,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run3,route,approved_clauses,0,0,,unresolved,available
+before_review_20261011,multi_no_graph,multi,runtime,run3,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run3,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run3,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run1,decision,decision,1,1,,do_not_proceed,do_not_proceed
+before_review_20261011,multi_graph,multi,generated,run1,requirement,lawful_ground,1,1,,met,met
+before_review_20261011,multi_graph,multi,generated,run1,requirement,sensitive_condition,1,1,,met,met
+before_review_20261011,multi_graph,multi,generated,run1,requirement,transfer_route,1,1,,unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run1,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run1,requirement,a1_professional_secrecy,1,1,,met,met
+before_review_20261011,multi_graph,multi,generated,run1,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run1,requirement,impact_assessment,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run1,requirement,region_b_sector_rules,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run1,requirement,region_b_host_retention,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run1,route,consent_derogation,1,1,,"ruled_out,ruled_out",ruled_out
+before_review_20261011,multi_graph,multi,generated,run1,route,recognition,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run1,route,approved_clauses,1,1,,available,available
+before_review_20261011,multi_graph,multi,generated,run1,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run1,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run1,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run2,decision,decision,1,1,,do_not_proceed,do_not_proceed
+before_review_20261011,multi_graph,multi,generated,run2,requirement,lawful_ground,1,1,,met,met
+before_review_20261011,multi_graph,multi,generated,run2,requirement,sensitive_condition,1,1,,met,met
+before_review_20261011,multi_graph,multi,generated,run2,requirement,transfer_route,1,1,,unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run2,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run2,requirement,a1_professional_secrecy,1,1,,met,met
+before_review_20261011,multi_graph,multi,generated,run2,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run2,requirement,impact_assessment,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run2,requirement,region_b_sector_rules,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run2,requirement,region_b_host_retention,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run2,route,consent_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run2,route,recognition,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run2,route,approved_clauses,1,1,,available,available
+before_review_20261011,multi_graph,multi,generated,run2,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run2,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run2,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run3,decision,decision,1,1,,do_not_proceed,do_not_proceed
+before_review_20261011,multi_graph,multi,generated,run3,requirement,lawful_ground,1,1,,met,met
+before_review_20261011,multi_graph,multi,generated,run3,requirement,sensitive_condition,1,1,,met,met
+before_review_20261011,multi_graph,multi,generated,run3,requirement,transfer_route,1,1,,unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run3,requirement,a1_genetic_transfer_restriction,1,1,,unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run3,requirement,a1_professional_secrecy,1,1,,met,met
+before_review_20261011,multi_graph,multi,generated,run3,requirement,a1_hosting_conditions,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run3,requirement,impact_assessment,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run3,requirement,region_b_sector_rules,1,1,,not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run3,requirement,region_b_host_retention,0,1,"region_b:data_host_retention is not_applicable (correct) but cites B-HRA 2 and 3 rather than s.9, so the scorer could not match it.",not_found,not_applicable
+before_review_20261011,multi_graph,multi,generated,run3,route,consent_derogation,1,1,,"ruled_out,ruled_out",ruled_out
+before_review_20261011,multi_graph,multi,generated,run3,route,recognition,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run3,route,approved_clauses,1,1,,available,available
+before_review_20261011,multi_graph,multi,generated,run3,route,vital_interests_derogation,1,1,,ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run3,trap,consent_derogation_relied_on,1,1,,not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run3,trap,genetic_consent_bar_overextended,1,1,,not violated,not violated

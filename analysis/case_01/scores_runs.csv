@@ -1,0 +1,5 @@
+key_version,config,architecture,graph,run,decision,decision_ok,checks,passed_auto,passed_hand,seconds,model_calls,tool_calls,output_tokens,supervisor_passes,corrections,routings,source_run
+reviewed,single_no_graph,single,runtime,run1,do_not_proceed,1,24,20,20,156.7,1,57,7700,0,0,0,openai:gpt-5.6-luna
+reviewed,single_graph,single,generated,run1,do_not_proceed,1,24,20,20,116.5,1,42,15113,0,0,0,openai:gpt-5.6-luna
+reviewed,multi_no_graph,multi,runtime,run1,do_not_proceed,1,24,22,22,452.6,9,71,55611,2,0,1,openai:gpt-5.6-luna
+reviewed,multi_graph,multi,generated,run1,do_not_proceed,1,24,21,21,408.6,9,61,62369,2,0,2,openai:gpt-5.6-luna

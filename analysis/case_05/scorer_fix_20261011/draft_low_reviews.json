@@ -1,0 +1,463 @@
+{
+  "criterion": "All 16 selected checks were reviewed for every low-effort run. Accept an explicit correct selected concept anywhere in accepted final output (findings, plan, final review); preserve substantive failures and missing concepts. General Article 12(1), full compliance, scope completeness, Article 6 erroneous extra routes and Section 6 purpose interpretation are not added to the 16-check denominator.",
+  "runs": [
+    {
+      "config": "single_no_graph",
+      "run": 7,
+      "reviewed_checks": [
+        "decision",
+        "requirement:lawful_ground",
+        "requirement:sensitive_condition",
+        "requirement:transfer_route",
+        "requirement:a1_genetic_transfer_restriction",
+        "requirement:a1_professional_secrecy",
+        "requirement:a1_hosting_conditions",
+        "requirement:a1_listed_impact_assessment",
+        "requirement:region_b_sector_rules",
+        "requirement:region_b_host_retention",
+        "route:consent_derogation",
+        "route:recognition",
+        "route:approved_clauses",
+        "route:vital_interests_derogation",
+        "trap:consent_derogation_relied_on",
+        "trap:genetic_consent_bar_overextended"
+      ],
+      "overrides": [
+        {
+          "check": "requirement:a1_listed_impact_assessment",
+          "passed": true,
+          "reason": "The combined Article 12/A1 list finding explicitly excludes both Section 8 listed activities; its aggregate met status concerns no assessment presently required. The separate general-risk reasoning is not part of this selected list check.",
+          "evidence": [
+            {
+              "pointer": "/findings/8/reasoning",
+              "quote": "The proposed activity is a one-off upload to Harrow's own clinical record, not hosting or storage of the clinic's patient record system by an agent, and no insurer matching occurs."
+            }
+          ]
+        },
+        {
+          "check": "requirement:region_b_sector_rules",
+          "passed": true,
+          "reason": "The accepted final plan gives the fact-specific statutory role exclusions and concludes the Region B Health Records Act provisions do not apply. The selected concept is explicit despite no separately cited sector finding.",
+          "evidence": [
+            {
+              "pointer": "/plan/engagements/2/reason",
+              "quote": "Harrow is a health care provider in Region B, but it does not bill a health insurer and is not an insurer, so it is not a covered provider. It is not a service agent because it keeps the records for its own care and not on behalf of a covered provider."
+            }
+          ]
+        },
+        {
+          "check": "requirement:region_b_host_retention",
+          "passed": true,
+          "reason": "The accepted final plan explicitly excludes the data-host role on the own-care facts. This supports non-applicability of the data-host retention requirement despite absence of a B-HRA 9 finding.",
+          "evidence": [
+            {
+              "pointer": "/plan/engagements/2/reason",
+              "quote": "It is not a data host because it stores the records in its own clinical record rather than on behalf of another person."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "config": "single_no_graph",
+      "run": 8,
+      "reviewed_checks": [
+        "decision",
+        "requirement:lawful_ground",
+        "requirement:sensitive_condition",
+        "requirement:transfer_route",
+        "requirement:a1_genetic_transfer_restriction",
+        "requirement:a1_professional_secrecy",
+        "requirement:a1_hosting_conditions",
+        "requirement:a1_listed_impact_assessment",
+        "requirement:region_b_sector_rules",
+        "requirement:region_b_host_retention",
+        "route:consent_derogation",
+        "route:recognition",
+        "route:approved_clauses",
+        "route:vital_interests_derogation",
+        "trap:consent_derogation_relied_on",
+        "trap:genetic_consent_bar_overextended"
+      ],
+      "overrides": [
+        {
+          "check": "requirement:region_b_sector_rules",
+          "passed": true,
+          "reason": "The scope finding explicitly excludes covered-provider/service-agent roles and Sections 4 to 8. The provision matcher misses a non-applicability finding cited to scope Sections 2 and 3.",
+          "evidence": [
+            {
+              "pointer": "/findings/9/reasoning",
+              "quote": "Sections 4 to 8 therefore do not apply to Harrow or this receipt."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "config": "single_no_graph",
+      "run": 9,
+      "reviewed_checks": [
+        "decision",
+        "requirement:lawful_ground",
+        "requirement:sensitive_condition",
+        "requirement:transfer_route",
+        "requirement:a1_genetic_transfer_restriction",
+        "requirement:a1_professional_secrecy",
+        "requirement:a1_hosting_conditions",
+        "requirement:a1_listed_impact_assessment",
+        "requirement:region_b_sector_rules",
+        "requirement:region_b_host_retention",
+        "route:consent_derogation",
+        "route:recognition",
+        "route:approved_clauses",
+        "route:vital_interests_derogation",
+        "trap:consent_derogation_relied_on",
+        "trap:genetic_consent_bar_overextended"
+      ],
+      "overrides": [
+        {
+          "check": "requirement:a1_genetic_transfer_restriction",
+          "passed": true,
+          "reason": "The outward-transfer finding correctly states the genetic-information restriction and finds the transfer unmet. The scorer instead picks the narrower combined processing finding with met status.",
+          "evidence": [
+            {
+              "pointer": "/findings/5/reasoning",
+              "quote": "A1 section 7 expressly provides that genetic information may not be made the subject of an outward transfer on the basis of Article 19(1)(a). Because the payload includes genetic information, the proposed consent route is unavailable."
+            }
+          ]
+        },
+        {
+          "check": "requirement:a1_listed_impact_assessment",
+          "passed": true,
+          "reason": "The combined assessment finding explicitly excludes both Section 8 listed activities. Its aggregate met status does not mean those listed triggers are present. General Article 12(1) reasoning is reviewed separately.",
+          "evidence": [
+            {
+              "pointer": "/findings/4/reasoning",
+              "quote": "Harrow is receiving and retaining the referral in its own clinical record for its own care, not hosting or storing a patient record system as an agent for the A1 clinic, and no insurer matching occurs."
+            }
+          ]
+        },
+        {
+          "check": "requirement:region_b_sector_rules",
+          "passed": true,
+          "reason": "The combined recipient-scope finding correctly excludes covered-provider and service-agent roles and Sections 4 to 9. The matcher requires operative provision citations instead of accepting the Sections 2 and 3 scope reasoning.",
+          "evidence": [
+            {
+              "pointer": "/findings/7/reasoning",
+              "quote": "Sections 4 to 9 therefore do not impose obligations on the described recipient or arrangement."
+            }
+          ]
+        },
+        {
+          "check": "requirement:region_b_host_retention",
+          "passed": true,
+          "reason": "The combined recipient-scope finding expressly excludes the data-host role because records are held for Harrow own care, supporting Section 9 non-applicability without an operative Section 9 citation.",
+          "evidence": [
+            {
+              "pointer": "/findings/7/reasoning",
+              "quote": "It receives and retains the referral for its own care, not on behalf of a covered provider or another person, so it is neither a service agent nor a data host."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "config": "single_graph",
+      "run": 7,
+      "reviewed_checks": [
+        "decision",
+        "requirement:lawful_ground",
+        "requirement:sensitive_condition",
+        "requirement:transfer_route",
+        "requirement:a1_genetic_transfer_restriction",
+        "requirement:a1_professional_secrecy",
+        "requirement:a1_hosting_conditions",
+        "requirement:a1_listed_impact_assessment",
+        "requirement:region_b_sector_rules",
+        "requirement:region_b_host_retention",
+        "route:consent_derogation",
+        "route:recognition",
+        "route:approved_clauses",
+        "route:vital_interests_derogation",
+        "trap:consent_derogation_relied_on",
+        "trap:genetic_consent_bar_overextended"
+      ],
+      "overrides": [
+        {
+          "check": "requirement:a1_genetic_transfer_restriction",
+          "passed": true,
+          "reason": "The outward-transfer finding explicitly cites and applies A1-HIA 7 to rule out Article 19(1)(a). The scorer prefers the sensitive-processing finding where Article 8 consent properly remains met.",
+          "evidence": [
+            {
+              "pointer": "/findings/5/reasoning",
+              "quote": "A1-HIA 7 expressly prohibits making genetic information the subject of an outward transfer on that basis."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "config": "single_graph",
+      "run": 8,
+      "reviewed_checks": [
+        "decision",
+        "requirement:lawful_ground",
+        "requirement:sensitive_condition",
+        "requirement:transfer_route",
+        "requirement:a1_genetic_transfer_restriction",
+        "requirement:a1_professional_secrecy",
+        "requirement:a1_hosting_conditions",
+        "requirement:a1_listed_impact_assessment",
+        "requirement:region_b_sector_rules",
+        "requirement:region_b_host_retention",
+        "route:consent_derogation",
+        "route:recognition",
+        "route:approved_clauses",
+        "route:vital_interests_derogation",
+        "trap:consent_derogation_relied_on",
+        "trap:genetic_consent_bar_overextended"
+      ],
+      "overrides": [
+        {
+          "check": "requirement:a1_genetic_transfer_restriction",
+          "passed": true,
+          "reason": "The outward-transfer finding explicitly applies A1-HIA 7 and finds no authorisation. The scorer prefers the sensitive-processing finding where consent properly remains met for Article 8.",
+          "evidence": [
+            {
+              "pointer": "/findings/6/reasoning",
+              "quote": "A1-HIA 7 expressly prohibits using Article 19(1)(a) for an outward transfer concerning genetic information."
+            }
+          ]
+        },
+        {
+          "check": "requirement:region_b_host_retention",
+          "passed": true,
+          "reason": "The combined Region B scope finding correctly excludes the data-host role and explicitly states Section 9 is not engaged, though only Sections 2 and 3 are cited.",
+          "evidence": [
+            {
+              "pointer": "/findings/9/reasoning",
+              "quote": "It is not a data host because it stores the record on its own behalf rather than on behalf of another person. Accordingly the Region B Health Records Act's Sections 4 to 8 and Section 9 are not engaged by the proposed recipient arrangement."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "config": "single_graph",
+      "run": 9,
+      "reviewed_checks": [
+        "decision",
+        "requirement:lawful_ground",
+        "requirement:sensitive_condition",
+        "requirement:transfer_route",
+        "requirement:a1_genetic_transfer_restriction",
+        "requirement:a1_professional_secrecy",
+        "requirement:a1_hosting_conditions",
+        "requirement:a1_listed_impact_assessment",
+        "requirement:region_b_sector_rules",
+        "requirement:region_b_host_retention",
+        "route:consent_derogation",
+        "route:recognition",
+        "route:approved_clauses",
+        "route:vital_interests_derogation",
+        "trap:consent_derogation_relied_on",
+        "trap:genetic_consent_bar_overextended"
+      ],
+      "overrides": []
+    },
+    {
+      "config": "multi_no_graph",
+      "run": 7,
+      "reviewed_checks": [
+        "decision",
+        "requirement:lawful_ground",
+        "requirement:sensitive_condition",
+        "requirement:transfer_route",
+        "requirement:a1_genetic_transfer_restriction",
+        "requirement:a1_professional_secrecy",
+        "requirement:a1_hosting_conditions",
+        "requirement:a1_listed_impact_assessment",
+        "requirement:region_b_sector_rules",
+        "requirement:region_b_host_retention",
+        "route:consent_derogation",
+        "route:recognition",
+        "route:approved_clauses",
+        "route:vital_interests_derogation",
+        "trap:consent_derogation_relied_on",
+        "trap:genetic_consent_bar_overextended"
+      ],
+      "overrides": []
+    },
+    {
+      "config": "multi_no_graph",
+      "run": 8,
+      "reviewed_checks": [
+        "decision",
+        "requirement:lawful_ground",
+        "requirement:sensitive_condition",
+        "requirement:transfer_route",
+        "requirement:a1_genetic_transfer_restriction",
+        "requirement:a1_professional_secrecy",
+        "requirement:a1_hosting_conditions",
+        "requirement:a1_listed_impact_assessment",
+        "requirement:region_b_sector_rules",
+        "requirement:region_b_host_retention",
+        "route:consent_derogation",
+        "route:recognition",
+        "route:approved_clauses",
+        "route:vital_interests_derogation",
+        "trap:consent_derogation_relied_on",
+        "trap:genetic_consent_bar_overextended"
+      ],
+      "overrides": [
+        {
+          "check": "requirement:a1_genetic_transfer_restriction",
+          "passed": true,
+          "reason": "The accepted outward-transfer finding and consent route explicitly state the genetic Article 19(1)(a) restriction and apply it to this case. No separately cited A1-HIA 7 finding exists, producing a citation-matching false negative. Missing direct source attribution remains a qualitative traceability limitation.",
+          "evidence": [
+            {
+              "pointer": "/findings/18/reasoning",
+              "quote": "Subregion A1 law expressly prohibits making genetic information the subject of an outward transfer on the basis of Article 19(1)(a)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "config": "multi_no_graph",
+      "run": 9,
+      "reviewed_checks": [
+        "decision",
+        "requirement:lawful_ground",
+        "requirement:sensitive_condition",
+        "requirement:transfer_route",
+        "requirement:a1_genetic_transfer_restriction",
+        "requirement:a1_professional_secrecy",
+        "requirement:a1_hosting_conditions",
+        "requirement:a1_listed_impact_assessment",
+        "requirement:region_b_sector_rules",
+        "requirement:region_b_host_retention",
+        "route:consent_derogation",
+        "route:recognition",
+        "route:approved_clauses",
+        "route:vital_interests_derogation",
+        "trap:consent_derogation_relied_on",
+        "trap:genetic_consent_bar_overextended"
+      ],
+      "overrides": [
+        {
+          "check": "requirement:a1_hosting_conditions",
+          "passed": true,
+          "reason": "The final accepted supervisor review explicitly concludes the Section 6 condition is not engaged, giving the own-care rather than hosting purpose rationale. The scorer examines findings alone. Apply the reviewed key care-referral interpretation; independent custodian status is not itself the Section 6 test.",
+          "evidence": [
+            {
+              "pointer": "/reviews/0/notes/2",
+              "quote": "The A1 hosting/storage condition is not engaged on the described arrangement because Harrow keeps the referral in its own clinical record for its own care, rather than hosting or storing Kestrel's patient-record system as an agent."
+            }
+          ]
+        },
+        {
+          "check": "requirement:region_b_sector_rules",
+          "passed": true,
+          "reason": "The specific scope finding expressly excludes covered-provider/service-agent roles and Sections 4 to 8. The matcher misses it because it cites the applicable scope provisions, not the inapplicable operative duties.",
+          "evidence": [
+            {
+              "pointer": "/findings/0/reasoning",
+              "quote": "Sections 4 to 8 apply only to covered providers and service agents. Harrow is not a covered provider because it does not bill a Region B-licensed health insurer electronically and is not an insurer."
+            }
+          ]
+        },
+        {
+          "check": "requirement:lawful_ground",
+          "passed": false,
+          "reason": "The accepted finding concludes Article 6 met solely from health-care purpose and practitioner registration, which are not an Article 6(1) ground. No supported Article 6 consent ground or contract necessity is identified anywhere accepted final output; the final supervisor plan simply selects met. Article 8 health-care exception and valid consent-form evidence do not repair the missing Article 6 legal analysis.",
+          "evidence": [
+            {
+              "pointer": "/findings/6/reasoning",
+              "quote": "Article 6 requires at least one lawful ground, and the stated treatment-related processing is supported by the health-care purpose and the practitioners' registration."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "config": "multi_graph",
+      "run": 7,
+      "reviewed_checks": [
+        "decision",
+        "requirement:lawful_ground",
+        "requirement:sensitive_condition",
+        "requirement:transfer_route",
+        "requirement:a1_genetic_transfer_restriction",
+        "requirement:a1_professional_secrecy",
+        "requirement:a1_hosting_conditions",
+        "requirement:a1_listed_impact_assessment",
+        "requirement:region_b_sector_rules",
+        "requirement:region_b_host_retention",
+        "route:consent_derogation",
+        "route:recognition",
+        "route:approved_clauses",
+        "route:vital_interests_derogation",
+        "trap:consent_derogation_relied_on",
+        "trap:genetic_consent_bar_overextended"
+      ],
+      "overrides": []
+    },
+    {
+      "config": "multi_graph",
+      "run": 8,
+      "reviewed_checks": [
+        "decision",
+        "requirement:lawful_ground",
+        "requirement:sensitive_condition",
+        "requirement:transfer_route",
+        "requirement:a1_genetic_transfer_restriction",
+        "requirement:a1_professional_secrecy",
+        "requirement:a1_hosting_conditions",
+        "requirement:a1_listed_impact_assessment",
+        "requirement:region_b_sector_rules",
+        "requirement:region_b_host_retention",
+        "route:consent_derogation",
+        "route:recognition",
+        "route:approved_clauses",
+        "route:vital_interests_derogation",
+        "trap:consent_derogation_relied_on",
+        "trap:genetic_consent_bar_overextended"
+      ],
+      "overrides": []
+    },
+    {
+      "config": "multi_graph",
+      "run": 9,
+      "reviewed_checks": [
+        "decision",
+        "requirement:lawful_ground",
+        "requirement:sensitive_condition",
+        "requirement:transfer_route",
+        "requirement:a1_genetic_transfer_restriction",
+        "requirement:a1_professional_secrecy",
+        "requirement:a1_hosting_conditions",
+        "requirement:a1_listed_impact_assessment",
+        "requirement:region_b_sector_rules",
+        "requirement:region_b_host_retention",
+        "route:consent_derogation",
+        "route:recognition",
+        "route:approved_clauses",
+        "route:vital_interests_derogation",
+        "trap:consent_derogation_relied_on",
+        "trap:genetic_consent_bar_overextended"
+      ],
+      "overrides": []
+    }
+  ],
+  "qualitative_notes": [
+    "single_no_graph/run7 Article 6 reasoning is disputed: it incorrectly says no separate consent route is needed, but its combined Article 6/8 lawful_processing gate also includes a supported explicit-consent alternative. Retain the selected pass under an anywhere-correct-concept criterion, flag the erroneous health-care-alone claim separately.",
+    "multi_graph/run9 retains lawful_ground pass because its Consent route correctly cites Article 6/7 and supports consent, despite also presenting a bogus standalone health-care-related Article 6 route. multi_graph/run7, single_graph/run7-9, multi_no_graph/run7-8 and single_no_graph/run8-9 similarly have adequate consent evidence for the selected concept.",
+    "All low multi_graph runs leave the general Article 12(1) high-risk test unreasoned while excluding listed triggers. This does not change a1_listed_impact_assessment selected passes.",
+    "Retain forbidden-consent failures in single_no_graph/run7-8 and multi_no_graph/run7, including decision, transfer_route, A1 genetic restriction, consent route and consent trap. Their needs_review outcomes held the transfer for review rather than issuing proceed.",
+    "Retain omitted Article 19 vital-interests route failures in single_no_graph/run7-8 and multi_no_graph/run7. single_no_graph/run8 rules out an Article 8 vital-interests exception but does not explicitly assess the separate outward-transfer derogation.",
+    "Retain missing professional secrecy concepts in single_no_graph/run9 and single_graph/run9.",
+    "Section 6 non-applicability is retained under the reviewed key treatment-purpose reading. Many outputs unnecessarily rely on independent-custodian/agent wording absent from Section 6. Do not treat this as proof that independent status alone excludes Section 6.",
+    "No edits to key, saved runs, scorer, or score exports were made in this audit."
+  ]
+}

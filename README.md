@@ -22,6 +22,7 @@ runs/mock/ saved runs (git-ignored)
 - `03_a1_emergency_records_to_b_hospital`: one patient's emergency treatment handoff to an independent hospital, including relevant genetic information. Its research notes explain the cross-corpus checks; the draft expected result is proceed.
 
 - `04_a1_genetic_result_to_b_life_insurer`: one genetic test result sent to a Region B life insurer on explicit written consent. A1-HIA 7 stops that consent lifting the sensitive-information prohibition for insurance and excludes the consent derogation for genetic information; the same consent still works for the lawful ground and professional secrecy. Draft expected result is do not proceed.
+- `05_a1_genetic_second_opinion_in_b`: one genetic report sent to a Region B specialist for a second opinion, with the transfer resting on explicit consent. A1-HIA 7's first limb excludes the consent derogation for genetic information whatever the purpose; nothing in Art 19 points to it. Built to test graph support. Draft expected result is do not proceed as described.
 
 Case folders are discovered automatically by the UI. Answer keys and case research notes are never model input.
 

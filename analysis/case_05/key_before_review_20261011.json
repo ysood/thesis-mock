@@ -1,0 +1,195 @@
+{
+  "status": "DRAFT answer key: written with the case on 11 Oct 2026 from the corpus text; to be reviewed and signed off by the author before results are reported.",
+  "matching": "Uses the existing provision-based scorer. Citation overlap alone does not establish that the reasoning is correct; see README.md.",
+  "design": "Graph-discriminating case. Everything works except one cross-corpus restriction with a weak textual pointer: A1-HIA 7's first limb excludes the Art 19(1)(a) consent derogation for genetic information, whatever the purpose. Art 19 itself does not mention Subregion law and Art 21(2) does not list 19(1)(a); the restriction is reached through Art 8(3) delegation, the citation graph's lower-level pointer, or the generated graph's restricts_route link. Misreading risk: only A1-HIA 7's second limb is limited to insurance and employment.",
+  "decision": "do_not_proceed",
+  "engaged": {
+    "region_a": true,
+    "region_b": true
+  },
+  "requirements": [
+    {
+      "id": "lawful_ground",
+      "provisions": [
+        "A-REG 6"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "Art 6(1)(a) consent (clear written specific statement, Art 7(1)), and arguably 6(1)(b) under the terms of care."
+    },
+    {
+      "id": "sensitive_condition",
+      "provisions": [
+        "A-REG 8"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "Art 8(2)(c) health care on the basis of A1-HIA 4 (registered practitioners), as the clinic states; 8(2)(a) explicit consent is also available because A1-HIA 7's consent bar applies only to insurance or employment purposes."
+    },
+    {
+      "id": "transfer_route",
+      "provisions": [
+        "A-REG 16",
+        "A-REG 17",
+        "A-REG 18",
+        "A-REG 19"
+      ],
+      "expect": [
+        "unmet"
+      ],
+      "why": "The clinic relies on 19(1)(a), which A1-HIA 7 excludes for genetic information. No recognition covers the transfer (Annex II: certified recipients only, and not sensitive information); no approved clauses; 19(1)(b) needs a contract between the person and the custodian that the transfer is necessary to perform, and the terms of care do not cover referrals abroad; 19(1)(c) needs the person to be incapable of consent; 19(1)(d) has no public-interest basis. Cure: execute the approved clauses with an Art 18(2) assessment."
+    },
+    {
+      "id": "a1_genetic_transfer_restriction",
+      "provisions": [
+        "A1-HIA 7"
+      ],
+      "expect": [
+        "unmet"
+      ],
+      "why": "A1-HIA 7, first limb: genetic information may not be made the subject of an outward transfer on the basis of Art 19(1)(a). Not limited by purpose. The transfer as described relies on exactly that."
+    },
+    {
+      "id": "a1_professional_secrecy",
+      "provisions": [
+        "A1-HIA 5"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "Disclosure by registered practitioners to a third party with the patient's consent (s.5(2))."
+    },
+    {
+      "id": "a1_hosting_conditions",
+      "provisions": [
+        "A1-HIA 6"
+      ],
+      "expect": [
+        "not_applicable"
+      ],
+      "why": "Not an outward transfer of patient records for hosting or storing them."
+    },
+    {
+      "id": "impact_assessment",
+      "provisions": [
+        "A-REG 12",
+        "A1-HIA 8"
+      ],
+      "expect": [
+        "not_applicable"
+      ],
+      "why": "One person; not hosting a patient record system by an agent outside A1; no insurer matching."
+    },
+    {
+      "id": "region_b_sector_rules",
+      "provisions": [
+        "B-HRA 4",
+        "B-HRA 5",
+        "B-HRA 6",
+        "B-HRA 7",
+        "B-HRA 8"
+      ],
+      "expect": [
+        "not_applicable"
+      ],
+      "all_candidates": true,
+      "why": "Harrow bills no insurer and is not an insurer, so it is not a covered provider (B-HRA 2, 3(1))."
+    },
+    {
+      "id": "region_b_host_retention",
+      "provisions": [
+        "B-HRA 9"
+      ],
+      "expect": [
+        "not_applicable"
+      ],
+      "why": "Harrow keeps the referral for its own care, not on behalf of another person: not a data host."
+    }
+  ],
+  "routes": [
+    {
+      "id": "consent_derogation",
+      "provisions": [
+        "A-REG 19"
+      ],
+      "name_hint": [
+        "consent"
+      ],
+      "expect": [
+        "ruled_out"
+      ],
+      "why": "A1-HIA 7 first limb. Occasional and informed consent are not enough."
+    },
+    {
+      "id": "recognition",
+      "provisions": [
+        "A-REG 17"
+      ],
+      "expect": [
+        "ruled_out"
+      ],
+      "why": "Annex II: certified recipients only and not sensitive information; Harrow holds no certificate."
+    },
+    {
+      "id": "approved_clauses",
+      "provisions": [
+        "A-REG 18"
+      ],
+      "expect": [
+        "available"
+      ],
+      "why": "Executing the approved clauses with an Art 18(2) assessment would cover the transfer; Harrow is not a computing provider, so B-RAA production orders do not reach it."
+    },
+    {
+      "id": "vital_interests_derogation",
+      "provisions": [
+        "A-REG 19"
+      ],
+      "name_hint": [
+        "vital"
+      ],
+      "expect": [
+        "ruled_out"
+      ],
+      "why": "The patient can consent."
+    }
+  ],
+  "conflicts": [],
+  "questions": [],
+  "must_not": [
+    {
+      "id": "consent_derogation_relied_on",
+      "type": "route",
+      "provisions": [
+        "A-REG 19"
+      ],
+      "name_hint": [
+        "consent"
+      ],
+      "status": [
+        "supported",
+        "available"
+      ],
+      "why": "Relying on Art 19(1)(a) for genetic information: the decisive trap."
+    },
+    {
+      "id": "genetic_consent_bar_overextended",
+      "type": "route",
+      "provisions": [
+        "A-REG 8"
+      ],
+      "name_hint": [
+        "explicit consent"
+      ],
+      "status": [
+        "ruled_out"
+      ],
+      "why": "Ruling out Art 8(2)(a) consent with A1-HIA 7's second limb, which applies only to insurance or employment purposes."
+    }
+  ],
+  "revisions": [
+    "11 Oct 2026 after the first four runs: transfer_route also lists A-REG 17-19, so the scorer matches the transfer finding rather than a records/principles finding citing A-REG 16; the overextension trap's hint is 'explicit consent', since 'consent' also matched 'vital interests where consent is impossible'."
+  ]
+}

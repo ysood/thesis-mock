@@ -1,0 +1,97 @@
+key_version,config,architecture,graph,run,section,check,passed_auto,passed_hand,hand_note,got,expected
+reviewed,single_no_graph,single,runtime,run1,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,single_no_graph,single,runtime,run1,requirement,scope,0,0,,not_found,met
+reviewed,single_no_graph,single,runtime,run1,requirement,sensitive_condition,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run1,requirement,a1_healthcare_basis,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run1,requirement,lawful_ground,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run1,requirement,agent_contract,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run1,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,single_no_graph,single,runtime,run1,requirement,a1_transfer_conditions,1,1,,unmet,unmet
+reviewed,single_no_graph,single,runtime,run1,requirement,impact_assessment,1,1,,unmet,unmet
+reviewed,single_no_graph,single,runtime,run1,requirement,information_to_persons,1,1,,met,met
+reviewed,single_no_graph,single,runtime,run1,requirement,host_retention,1,1,,unmet,unmet
+reviewed,single_no_graph,single,runtime,run1,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run1,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run1,route,approved_clauses_with_measures,1,1,,"available,available",available
+reviewed,single_no_graph,single,runtime,run1,route,derogations,1,1,,ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run1,route,contract_ground,1,1,,supported,supported
+reviewed,single_no_graph,single,runtime,run1,route,legitimate_interests,0,0,,not_found,ruled_out
+reviewed,single_no_graph,single,runtime,run1,route,return_and_keep_no_copy,1,1,,available,available
+reviewed,single_no_graph,single,runtime,run1,conflict,retention_vs_deletion,1,1,,[True],
+reviewed,single_no_graph,single,runtime,run1,question,region_b_access_law,0,0,,asked 0,
+reviewed,single_no_graph,single,runtime,run1,trap,recognition_relied_on,1,1,,not violated,not violated
+reviewed,single_no_graph,single,runtime,run1,trap,derogation_relied_on,1,1,,not violated,not violated
+reviewed,single_no_graph,single,runtime,run1,trap,legitimate_interests_relied_on,1,1,,not violated,not violated
+reviewed,single_no_graph,single,runtime,run1,trap,consent_age_engaged,1,1,,not violated,not violated
+reviewed,single_graph,single,generated,run1,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,single_graph,single,generated,run1,requirement,scope,0,0,,not_found,met
+reviewed,single_graph,single,generated,run1,requirement,sensitive_condition,1,1,,met,met
+reviewed,single_graph,single,generated,run1,requirement,a1_healthcare_basis,1,1,,met,met
+reviewed,single_graph,single,generated,run1,requirement,lawful_ground,1,1,,met,met
+reviewed,single_graph,single,generated,run1,requirement,agent_contract,1,1,,met,met
+reviewed,single_graph,single,generated,run1,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,single_graph,single,generated,run1,requirement,a1_transfer_conditions,1,1,,unmet,unmet
+reviewed,single_graph,single,generated,run1,requirement,impact_assessment,1,1,,unmet,unmet
+reviewed,single_graph,single,generated,run1,requirement,information_to_persons,1,1,,met,met
+reviewed,single_graph,single,generated,run1,requirement,host_retention,0,0,,undetermined,unmet
+reviewed,single_graph,single,generated,run1,requirement,region_b_sector_rules,0,0,,not_found,not_applicable
+reviewed,single_graph,single,generated,run1,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,single_graph,single,generated,run1,route,approved_clauses_with_measures,1,1,,"available,supported,unresolved,available",available
+reviewed,single_graph,single,generated,run1,route,derogations,1,1,,"ruled_out,ruled_out,ruled_out,ruled_out",ruled_out
+reviewed,single_graph,single,generated,run1,route,contract_ground,1,1,,supported,supported
+reviewed,single_graph,single,generated,run1,route,legitimate_interests,1,1,,ruled_out,ruled_out
+reviewed,single_graph,single,generated,run1,route,return_and_keep_no_copy,1,1,,available,available
+reviewed,single_graph,single,generated,run1,conflict,retention_vs_deletion,1,1,,[True],
+reviewed,single_graph,single,generated,run1,question,region_b_access_law,0,0,,asked 0,
+reviewed,single_graph,single,generated,run1,trap,recognition_relied_on,1,1,,not violated,not violated
+reviewed,single_graph,single,generated,run1,trap,derogation_relied_on,1,1,,not violated,not violated
+reviewed,single_graph,single,generated,run1,trap,legitimate_interests_relied_on,1,1,,not violated,not violated
+reviewed,single_graph,single,generated,run1,trap,consent_age_engaged,1,1,,not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run1,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,multi_no_graph,multi,runtime,run1,requirement,scope,0,0,,not_found,met
+reviewed,multi_no_graph,multi,runtime,run1,requirement,sensitive_condition,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run1,requirement,a1_healthcare_basis,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run1,requirement,lawful_ground,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run1,requirement,agent_contract,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run1,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run1,requirement,a1_transfer_conditions,1,1,,unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run1,requirement,impact_assessment,1,1,,unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run1,requirement,information_to_persons,1,1,,met,met
+reviewed,multi_no_graph,multi,runtime,run1,requirement,host_retention,1,1,,unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run1,requirement,region_b_sector_rules,1,1,,not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run1,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run1,route,approved_clauses_with_measures,1,1,,available,available
+reviewed,multi_no_graph,multi,runtime,run1,route,derogations,0,0,,"ruled_out,ruled_out,ruled_out,unresolved",ruled_out
+reviewed,multi_no_graph,multi,runtime,run1,route,contract_ground,1,1,,supported,supported
+reviewed,multi_no_graph,multi,runtime,run1,route,legitimate_interests,1,1,,ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run1,route,return_and_keep_no_copy,1,1,,available,available
+reviewed,multi_no_graph,multi,runtime,run1,conflict,retention_vs_deletion,1,1,,[True],
+reviewed,multi_no_graph,multi,runtime,run1,question,region_b_access_law,1,1,,asked 1,
+reviewed,multi_no_graph,multi,runtime,run1,trap,recognition_relied_on,1,1,,not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run1,trap,derogation_relied_on,1,1,,not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run1,trap,legitimate_interests_relied_on,1,1,,not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run1,trap,consent_age_engaged,1,1,,not violated,not violated
+reviewed,multi_graph,multi,generated,run1,decision,decision,1,1,,do_not_proceed,do_not_proceed
+reviewed,multi_graph,multi,generated,run1,requirement,scope,0,0,,not_found,met
+reviewed,multi_graph,multi,generated,run1,requirement,sensitive_condition,1,1,,met,met
+reviewed,multi_graph,multi,generated,run1,requirement,a1_healthcare_basis,1,1,,met,met
+reviewed,multi_graph,multi,generated,run1,requirement,lawful_ground,1,1,,met,met
+reviewed,multi_graph,multi,generated,run1,requirement,agent_contract,1,1,,met,met
+reviewed,multi_graph,multi,generated,run1,requirement,transfer_route,1,1,,unmet,unmet
+reviewed,multi_graph,multi,generated,run1,requirement,a1_transfer_conditions,1,1,,unmet,unmet
+reviewed,multi_graph,multi,generated,run1,requirement,impact_assessment,1,1,,unmet,unmet
+reviewed,multi_graph,multi,generated,run1,requirement,information_to_persons,1,1,,met,met
+reviewed,multi_graph,multi,generated,run1,requirement,host_retention,1,1,,unmet,unmet
+reviewed,multi_graph,multi,generated,run1,requirement,region_b_sector_rules,1,1,,not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run1,route,recognition,1,1,,ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run1,route,approved_clauses_with_measures,0,0,,unresolved,available
+reviewed,multi_graph,multi,generated,run1,route,derogations,1,1,,"ruled_out,ruled_out,ruled_out,ruled_out",ruled_out
+reviewed,multi_graph,multi,generated,run1,route,contract_ground,1,1,,supported,supported
+reviewed,multi_graph,multi,generated,run1,route,legitimate_interests,1,1,,ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run1,route,return_and_keep_no_copy,0,0,,unresolved,available
+reviewed,multi_graph,multi,generated,run1,conflict,retention_vs_deletion,1,1,,[True],
+reviewed,multi_graph,multi,generated,run1,question,region_b_access_law,1,1,,asked 2,
+reviewed,multi_graph,multi,generated,run1,trap,recognition_relied_on,1,1,,not violated,not violated
+reviewed,multi_graph,multi,generated,run1,trap,derogation_relied_on,1,1,,not violated,not violated
+reviewed,multi_graph,multi,generated,run1,trap,legitimate_interests_relied_on,1,1,,not violated,not violated
+reviewed,multi_graph,multi,generated,run1,trap,consent_age_engaged,1,1,,not violated,not violated

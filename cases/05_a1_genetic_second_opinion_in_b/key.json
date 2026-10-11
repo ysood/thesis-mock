@@ -1,0 +1,236 @@
+{
+  "status": "DRAFT answer key: source review on 11 Oct 2026 after exploratory runs. The transfer refusal is supported, but the general high-risk question and full compliance need reasoning review. Author sign-off is still required before results are reported.",
+  "matching": "Uses the existing provision-based scorer for selected checks only. It does not judge all reasoning, reconcile disagreeing findings, or evaluate manual_checks. Automated totals must be reported alongside manual review and execution failures.",
+  "design": "Graph-discriminating case with a decisive cross-corpus restriction: A1-HIA 7 first limb excludes the Art 19(1)(a) consent derogation for genetic information, whatever the purpose. Art 19 itself does not mention Subregion law and Art 21(2) does not list 19(1)(a); the restriction is reached through Art 8(3) delegation, the citation graph lower-level pointer, or the generated graph restricts_route link. Only the second limb is limited to insurance and employment. The case does not establish that every other obligation is met.",
+  "decision": "do_not_proceed",
+  "engaged": {
+    "region_a": true
+  },
+  "requirements": [
+    {
+      "id": "lawful_ground",
+      "provisions": [
+        "A-REG 6"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "Kestrel has a specific written consent statement for the described referral-related processing, satisfying Art 6(1)(a) and Art 7(1). Its clinic care contract does not establish that a referral abroad is necessary to perform that contract. Harrow has its own processing responsibilities under Art 3(2); do not treat this check of Kestrel as proof of every recipient-side requirement."
+    },
+    {
+      "id": "sensitive_condition",
+      "provisions": [
+        "A-REG 8"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "Art 8(2)(c) health care on the basis of A1-HIA 4 (registered practitioners), as the clinic states; 8(2)(a) explicit consent is also available because A1-HIA 7's consent bar applies only to insurance or employment purposes."
+    },
+    {
+      "id": "transfer_route",
+      "provisions": [
+        "A-REG 16",
+        "A-REG 17",
+        "A-REG 18",
+        "A-REG 19"
+      ],
+      "expect": [
+        "unmet"
+      ],
+      "why": "The clinic relies on 19(1)(a), which A1-HIA 7 excludes for genetic information. Recognition cannot cover sensitive information and Harrow has no certificate; no approved clauses are executed; the care terms do not establish a transfer necessary for a patient-custodian contract under 19(1)(b); 19(1)(c) requires incapacity to consent; no recognised public-interest basis supports 19(1)(d). Article 18 is a potential route forward: execute approved clauses, complete the assessment of applicable recipient-territory law and practice, and adopt effective supplementary measures if necessary. Article 18(3) excludes it if necessary effective measures cannot be adopted. Other applicable duties and the general high-risk question still need to be addressed."
+    },
+    {
+      "id": "a1_genetic_transfer_restriction",
+      "provisions": [
+        "A1-HIA 7"
+      ],
+      "expect": [
+        "unmet"
+      ],
+      "why": "A1-HIA 7, first limb: genetic information may not be made the subject of an outward transfer on the basis of Art 19(1)(a). Not limited by purpose. The transfer as described relies on exactly that."
+    },
+    {
+      "id": "a1_professional_secrecy",
+      "provisions": [
+        "A1-HIA 5"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "Disclosure by registered practitioners to a third party with the patient's consent (s.5(2))."
+    },
+    {
+      "id": "a1_hosting_conditions",
+      "provisions": [
+        "A1-HIA 6"
+      ],
+      "expect": [
+        "not_applicable"
+      ],
+      "why": "On the stated treatment purpose, this is an independent-care referral with incidental retention in Harrow own clinical record, not a transfer for the purpose of providing hosting or storage. A1-HIA 6 is purpose-limited; unlike A1-HIA 8(a), it does not expressly require an agent or storage on behalf of another person. Independent-custodian status alone is not the reason for non-applicability. This purpose interpretation needs manual review if contested."
+    },
+    {
+      "id": "a1_listed_impact_assessment",
+      "provisions": [
+        "A1-HIA 8"
+      ],
+      "expect": [
+        "not_applicable"
+      ],
+      "why": "Neither A1-HIA 8 listed trigger is present: no outside-A1 agent hosts or stores a patient record system and no health information is matched with insurer-held information. This check covers only the A1 list. It does not decide the separate general high-risk test in A-REG 12(1), which is a manual check."
+    },
+    {
+      "id": "region_b_sector_rules",
+      "provisions": [
+        "B-HRA 4",
+        "B-HRA 5",
+        "B-HRA 6",
+        "B-HRA 7",
+        "B-HRA 8"
+      ],
+      "expect": [
+        "not_applicable"
+      ],
+      "all_candidates": true,
+      "why": "Under B-HRA 2 and 3, Harrow is neither a covered provider (no insurer billing and not an insurer) nor a service agent processing on behalf of a covered provider. Sections 4-8 are not engaged. Independent clinical treatment is not by itself enough to bring these sections into scope."
+    },
+    {
+      "id": "region_b_host_retention",
+      "provisions": [
+        "B-HRA 9"
+      ],
+      "expect": [
+        "not_applicable"
+      ],
+      "why": "Harrow keeps the referral for its own care, not on behalf of another person: not a data host."
+    }
+  ],
+  "routes": [
+    {
+      "id": "consent_derogation",
+      "provisions": [
+        "A-REG 19"
+      ],
+      "name_hint": [
+        "consent"
+      ],
+      "expect": [
+        "ruled_out"
+      ],
+      "why": "A1-HIA 7 first limb. Occasional and informed consent are not enough."
+    },
+    {
+      "id": "recognition",
+      "provisions": [
+        "A-REG 17"
+      ],
+      "expect": [
+        "ruled_out"
+      ],
+      "why": "Annex II: certified recipients only and not sensitive information; Harrow holds no certificate."
+    },
+    {
+      "id": "approved_clauses",
+      "provisions": [
+        "A-REG 18"
+      ],
+      "expect": [
+        "available"
+      ],
+      "why": "Available is used in the output schema sense of a route forward after specified changes, not protection already in place. Execute the approved clauses; assess all recipient-applicable Region B law and practice, including public-authority access; adopt effective supplementary measures where necessary. Harrow provides clinical care and retains its own care record, not storage, hosting or computing services, so the stated B-RAA computing-provider powers are not shown to reach it. This does not itself prove that all applicable law/practice is harmless. If necessary effective measures cannot be adopted, Art 18(3) excludes the route. An unresolved status needs an identified material unknown, rather than the mere fact that clauses or an assessment have not yet been completed."
+    },
+    {
+      "id": "vital_interests_derogation",
+      "provisions": [
+        "A-REG 19"
+      ],
+      "name_hint": [
+        "vital"
+      ],
+      "expect": [
+        "ruled_out"
+      ],
+      "why": "The patient can consent."
+    }
+  ],
+  "conflicts": [],
+  "questions": [],
+  "must_not": [
+    {
+      "id": "consent_derogation_relied_on",
+      "type": "route",
+      "provisions": [
+        "A-REG 19"
+      ],
+      "name_hint": [
+        "consent"
+      ],
+      "status": [
+        "supported",
+        "available"
+      ],
+      "why": "Relying on Art 19(1)(a) for genetic information: the decisive trap."
+    },
+    {
+      "id": "genetic_consent_bar_overextended",
+      "type": "route",
+      "provisions": [
+        "A-REG 8"
+      ],
+      "name_hint": [
+        "explicit consent"
+      ],
+      "status": [
+        "ruled_out"
+      ],
+      "why": "Ruling out Art 8(2)(a) consent with A1-HIA 7's second limb, which applies only to insurance or employment purposes."
+    }
+  ],
+  "revisions": [
+    "11 Oct 2026 after the first four runs: transfer_route also lists A-REG 17-19, so the scorer matches the transfer finding rather than a records/principles finding citing A-REG 16; the overextension trap's hint is 'explicit consent', since 'consent' also matched 'vital interests where consent is impossible'.",
+    "11 Oct 2026 source review after exploratory runs: replaced the combined impact_assessment check with the A1-HIA 8 list-only check and added manual review of A-REG 12(1), whose general high-risk trigger is not resolved by patient count; qualified the Article 18 cure and remaining compliance; distinguished section 6 purpose from section 8 agent wording; removed architecture-dependent Region B planning engagement from the required engagement check. Original key preserved in analysis/case_05/key_before_review_20261011.json. Case facts, corpora, generated graph, engine, and saved model results are unchanged."
+  ],
+  "engagement_note": "Region B must be examined, but the single mode reports legal applicability while multi planning can engage a specialist to establish non-applicability. Region B is therefore excluded from this architecture-dependent planning check. Review scope separately: Region A applies to Kestrel and to Harrow offering services to the A1 patient; Subregion A1 applies to Kestrel; the supplied Region B sector/access duties do not bind these clinics on the stated roles.",
+  "manual_checks": [
+    {
+      "id": "general_high_risk_assessment",
+      "provisions": [
+        "A-REG 12",
+        "A1-HIA 8"
+      ],
+      "review": "Assess Article 12(1) separately from the enumerated triggers. One patient rules out the more-than-5,000 threshold, not the general high-risk test. No monitoring or A1 listed activity is described. Whether the particular processing is likely to result in high risk remains a judgment on these facts; undetermined is a defensible cautious conclusion. A conclusion of unmet must explain why high risk is likely and note that no assessment is prepared; not_applicable must address and justify the general test, not merely recite absent listed triggers. The source supplies no objective general-risk threshold, so automated status-only scoring cannot settle this. Review each custodian to whom Region A applies."
+    },
+    {
+      "id": "hosting_purpose_scope",
+      "provisions": [
+        "A1-HIA 6",
+        "A1-HIA 8"
+      ],
+      "review": "Distinguish the purpose wording in section 6 from the express outside-agent trigger in section 8(a). The default key treats this as a care referral rather than a hosting/storage transfer. A different literal reading of the recipient retention should be recorded and assessed, not rejected solely because Harrow is an independent custodian."
+    },
+    {
+      "id": "conditional_cure_and_remaining_compliance",
+      "provisions": [
+        "A-REG 3",
+        "A-REG 5",
+        "A-REG 11",
+        "A-REG 12",
+        "A-REG 13",
+        "A-REG 14",
+        "A-REG 16",
+        "A-REG 18"
+      ],
+      "review": "Do not present execution of clauses alone as sufficient. The Article 18 assessment and any necessary effective supplementary measures remain prerequisites, as do other applicable requirements. Notice, minimisation/pseudonymisation, security, record keeping, risk assessment and recipient-side responsibilities are not all established by the consent and referral documents. Explain duties and relevant uncertainty without inventing missing external providers or current production orders."
+    },
+    {
+      "id": "reasoning_and_consistency",
+      "provisions": [
+        "A1-HIA 7",
+        "A-REG 8",
+        "A-REG 19"
+      ],
+      "review": "Check the two section 7 limbs separately, confirm that the consent restriction attaches to the outward-transfer route rather than all genetic treatment processing, and inspect all relevant findings/routes for inconsistent conclusions. Citation matches, one correctly labelled candidate, and non-violation of a trap alone do not establish correct complete reasoning. A run with no accepted assessment is an execution failure even if its absence of routes automatically clears the trap checks."
+    }
+  ]
+}

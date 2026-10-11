@@ -1,0 +1,542 @@
+{
+  "review_date": "2026-10-11",
+  "old_key_sha256": "c8541a5b8f31df0274e4a46bad1d772ae29eae29da8493707e3a4c68e3c4d613",
+  "reviewed_key_sha256": "c6417dbe8105c4a5fa391e5ecf0679f03717b00160207c276eb429e2e6246cd6",
+  "note": "Offline scoring of selected checks. Manual checks are not evaluated by the scorer; trap non-violation is not meaningful evidence of correctness for an empty failed assessment.",
+  "runs": [
+    {
+      "source": "runs/mock/20261011-083546_05_a1_genetic_second_opinion_in_b.json",
+      "mode": "single",
+      "graph": "generated",
+      "decision": "do_not_proceed",
+      "accepted_assessment": true,
+      "before_review": {
+        "passed": 14,
+        "total": 16,
+        "failed": [
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true,
+            "region_b": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": false,
+            "subregion_a1": true
+          },
+          "ok": false
+        }
+      },
+      "reviewed": {
+        "passed": 14,
+        "total": 16,
+        "failed": [
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": false,
+            "subregion_a1": true
+          },
+          "ok": true
+        }
+      }
+    },
+    {
+      "source": "runs/mock/20261011-083550_05_a1_genetic_second_opinion_in_b.json",
+      "mode": "single",
+      "graph": "runtime",
+      "decision": "do_not_proceed",
+      "accepted_assessment": true,
+      "before_review": {
+        "passed": 12,
+        "total": 16,
+        "failed": [
+          "requirement:a1_hosting_conditions",
+          "requirement:impact_assessment",
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true,
+            "region_b": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": false,
+            "subregion_a1": true
+          },
+          "ok": false
+        }
+      },
+      "reviewed": {
+        "passed": 12,
+        "total": 16,
+        "failed": [
+          "requirement:a1_hosting_conditions",
+          "requirement:a1_listed_impact_assessment",
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": false,
+            "subregion_a1": true
+          },
+          "ok": true
+        }
+      }
+    },
+    {
+      "source": "runs/mock/20261011-084102_05_a1_genetic_second_opinion_in_b.json",
+      "mode": "multi",
+      "graph": "generated",
+      "decision": "do_not_proceed",
+      "accepted_assessment": true,
+      "before_review": {
+        "passed": 16,
+        "total": 16,
+        "failed": [],
+        "engagement_check": {
+          "expect": {
+            "region_a": true,
+            "region_b": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": true
+          },
+          "ok": true
+        }
+      },
+      "reviewed": {
+        "passed": 16,
+        "total": 16,
+        "failed": [],
+        "engagement_check": {
+          "expect": {
+            "region_a": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": true
+          },
+          "ok": true
+        }
+      }
+    },
+    {
+      "source": "runs/mock/20261011-084256_05_a1_genetic_second_opinion_in_b.json",
+      "mode": "multi",
+      "graph": "runtime",
+      "decision": "do_not_proceed",
+      "accepted_assessment": true,
+      "before_review": {
+        "passed": 15,
+        "total": 16,
+        "failed": [
+          "route:approved_clauses"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true,
+            "region_b": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": true
+          },
+          "ok": true
+        }
+      },
+      "reviewed": {
+        "passed": 15,
+        "total": 16,
+        "failed": [
+          "route:approved_clauses"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": true
+          },
+          "ok": true
+        }
+      }
+    },
+    {
+      "source": "runs/mock/20261011-085037_05_a1_genetic_second_opinion_in_b.json",
+      "mode": "single",
+      "graph": "runtime",
+      "decision": "do_not_proceed",
+      "accepted_assessment": true,
+      "before_review": {
+        "passed": 12,
+        "total": 16,
+        "failed": [
+          "requirement:a1_genetic_transfer_restriction",
+          "requirement:a1_hosting_conditions",
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true,
+            "region_b": true
+          },
+          "got": {
+            "region_a": true,
+            "subregion_a1": true,
+            "region_b": false
+          },
+          "ok": false
+        }
+      },
+      "reviewed": {
+        "passed": 12,
+        "total": 16,
+        "failed": [
+          "requirement:a1_genetic_transfer_restriction",
+          "requirement:a1_hosting_conditions",
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true
+          },
+          "got": {
+            "region_a": true,
+            "subregion_a1": true,
+            "region_b": false
+          },
+          "ok": true
+        }
+      }
+    },
+    {
+      "source": "runs/mock/20261011-085051_05_a1_genetic_second_opinion_in_b.json",
+      "mode": "single",
+      "graph": "generated",
+      "decision": "do_not_proceed",
+      "accepted_assessment": true,
+      "before_review": {
+        "passed": 14,
+        "total": 16,
+        "failed": [
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true,
+            "region_b": true
+          },
+          "got": {
+            "region_a": true,
+            "subregion_a1": true,
+            "region_b": false
+          },
+          "ok": false
+        }
+      },
+      "reviewed": {
+        "passed": 14,
+        "total": 16,
+        "failed": [
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true
+          },
+          "got": {
+            "region_a": true,
+            "subregion_a1": true,
+            "region_b": false
+          },
+          "ok": true
+        }
+      }
+    },
+    {
+      "source": "runs/mock/20261011-085538_05_a1_genetic_second_opinion_in_b.json",
+      "mode": "multi",
+      "graph": "generated",
+      "decision": "do_not_proceed",
+      "accepted_assessment": true,
+      "before_review": {
+        "passed": 16,
+        "total": 16,
+        "failed": [],
+        "engagement_check": {
+          "expect": {
+            "region_a": true,
+            "region_b": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": true
+          },
+          "ok": true
+        }
+      },
+      "reviewed": {
+        "passed": 16,
+        "total": 16,
+        "failed": [],
+        "engagement_check": {
+          "expect": {
+            "region_a": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": true
+          },
+          "ok": true
+        }
+      }
+    },
+    {
+      "source": "runs/mock/20261011-085647_05_a1_genetic_second_opinion_in_b.json",
+      "mode": "multi",
+      "graph": "runtime",
+      "decision": "do_not_proceed",
+      "accepted_assessment": true,
+      "before_review": {
+        "passed": 14,
+        "total": 16,
+        "failed": [
+          "route:approved_clauses",
+          "route:vital_interests_derogation"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true,
+            "region_b": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": true
+          },
+          "ok": true
+        }
+      },
+      "reviewed": {
+        "passed": 14,
+        "total": 16,
+        "failed": [
+          "route:approved_clauses",
+          "route:vital_interests_derogation"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": true
+          },
+          "ok": true
+        }
+      }
+    },
+    {
+      "source": "runs/mock/20261011-090442_05_a1_genetic_second_opinion_in_b.json",
+      "mode": "single",
+      "graph": "runtime",
+      "decision": "do_not_proceed",
+      "accepted_assessment": true,
+      "before_review": {
+        "passed": 14,
+        "total": 16,
+        "failed": [
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true,
+            "region_b": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": false,
+            "subregion_a1": true
+          },
+          "ok": false
+        }
+      },
+      "reviewed": {
+        "passed": 14,
+        "total": 16,
+        "failed": [
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": false,
+            "subregion_a1": true
+          },
+          "ok": true
+        }
+      }
+    },
+    {
+      "source": "runs/mock/20261011-091133_05_a1_genetic_second_opinion_in_b.json",
+      "mode": "multi",
+      "graph": "generated",
+      "decision": "do_not_proceed",
+      "accepted_assessment": true,
+      "before_review": {
+        "passed": 15,
+        "total": 16,
+        "failed": [
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true,
+            "region_b": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": true
+          },
+          "ok": true
+        }
+      },
+      "reviewed": {
+        "passed": 15,
+        "total": 16,
+        "failed": [
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": true
+          },
+          "ok": true
+        }
+      }
+    },
+    {
+      "source": "runs/mock/20261011-091145_05_a1_genetic_second_opinion_in_b.json",
+      "mode": "multi",
+      "graph": "runtime",
+      "decision": "do_not_proceed",
+      "accepted_assessment": true,
+      "before_review": {
+        "passed": 13,
+        "total": 16,
+        "failed": [
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention",
+          "route:approved_clauses"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true,
+            "region_b": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": true
+          },
+          "ok": true
+        }
+      },
+      "reviewed": {
+        "passed": 13,
+        "total": 16,
+        "failed": [
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention",
+          "route:approved_clauses"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": true
+          },
+          "ok": true
+        }
+      }
+    },
+    {
+      "source": "runs/mock/20261011-091147_05_a1_genetic_second_opinion_in_b.json",
+      "mode": "single",
+      "graph": "generated",
+      "decision": "do_not_proceed",
+      "accepted_assessment": true,
+      "before_review": {
+        "passed": 14,
+        "total": 16,
+        "failed": [
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true,
+            "region_b": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": false,
+            "subregion_a1": true
+          },
+          "ok": false
+        }
+      },
+      "reviewed": {
+        "passed": 14,
+        "total": 16,
+        "failed": [
+          "requirement:region_b_sector_rules",
+          "requirement:region_b_host_retention"
+        ],
+        "engagement_check": {
+          "expect": {
+            "region_a": true
+          },
+          "got": {
+            "region_a": true,
+            "region_b": false,
+            "subregion_a1": true
+          },
+          "ok": true
+        }
+      }
+    }
+  ]
+}

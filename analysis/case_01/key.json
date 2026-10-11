@@ -1,0 +1,280 @@
+{
+  "status": "DRAFT answer key: written with the corpus, to be reviewed and signed off by the author before results are reported.",
+  "matching": "Findings are matched by the provisions they cite, not by requirement id. The best candidate is the finding whose citations are most focused on the listed provisions.",
+  "decision": "do_not_proceed",
+  "engaged": {
+    "region_a": true,
+    "region_b": true
+  },
+  "requirements": [
+    {
+      "id": "scope",
+      "provisions": [
+        "A-REG 3"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "The practice (custodian) is established in Subregion A1, listed in Annex I."
+    },
+    {
+      "id": "sensitive_condition",
+      "provisions": [
+        "A-REG 8"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "Art 8(2)(c) health-care condition on the basis of Subregion law."
+    },
+    {
+      "id": "a1_healthcare_basis",
+      "provisions": [
+        "A1-HIA 4"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "A1-HIA 4(1) registered practitioners; 4(2) an agent on documented instructions is under their responsibility. Needs delegation."
+    },
+    {
+      "id": "lawful_ground",
+      "provisions": [
+        "A-REG 6"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "6(1)(b) contract: patients pay under terms of care."
+    },
+    {
+      "id": "agent_contract",
+      "provisions": [
+        "A-REG 9"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "The signed agreement covers the 9(2) terms; its deletion term interacts with B-HRA 9 (see conflicts)."
+    },
+    {
+      "id": "transfer_route",
+      "provisions": [
+        "A-REG 16"
+      ],
+      "expect": [
+        "unmet"
+      ],
+      "why": "No route covers the transfer as described: recognition excludes sensitive data, derogations exclude ongoing transfers, and the approved clauses fail Art 18(2)-(3) while Northgate holds the keys."
+    },
+    {
+      "id": "a1_transfer_conditions",
+      "provisions": [
+        "A1-HIA 6"
+      ],
+      "expect": [
+        "unmet"
+      ],
+      "why": "Cumulative A1 condition: 30 days' notice to the Commission (not given) and keys held only in Region A (held by Northgate in Region B). Needs delegation."
+    },
+    {
+      "id": "impact_assessment",
+      "provisions": [
+        "A-REG 12",
+        "A1-HIA 8"
+      ],
+      "expect": [
+        "unmet"
+      ],
+      "must_cite": [
+        "A1-HIA 8"
+      ],
+      "why": "3,200 patients is below the A-REG 12(2)(a) threshold, but A1-HIA 8(a) requires an assessment for hosting a patient record system outside A1 regardless of numbers; none was prepared."
+    },
+    {
+      "id": "information_to_persons",
+      "provisions": [
+        "A-REG 11"
+      ],
+      "expect": [
+        "met"
+      ],
+      "why": "The notice names the third territory and the route relied on."
+    },
+    {
+      "id": "host_retention",
+      "provisions": [
+        "B-HRA 9"
+      ],
+      "expect": [
+        "unmet"
+      ],
+      "why": "Northgate is a data host; it must keep records 7 years unless it returns foreign-origin records and keeps no copy. The agreement says delete within 30 days."
+    },
+    {
+      "id": "region_b_sector_rules",
+      "provisions": [
+        "B-HRA 4",
+        "B-HRA 5",
+        "B-HRA 6",
+        "B-HRA 7",
+        "B-HRA 8"
+      ],
+      "expect": [
+        "not_applicable"
+      ],
+      "all_candidates": true,
+      "why": "The practice bills no Region B insurer, so it is not a covered provider and Northgate is not its service agent (B-HRA 3(2))."
+    }
+  ],
+  "routes": [
+    {
+      "id": "recognition",
+      "provisions": [
+        "A-REG 17"
+      ],
+      "expect": [
+        "ruled_out"
+      ],
+      "why": "Annex II recognition of Region B extends only to non-sensitive information, despite the active certificate."
+    },
+    {
+      "id": "approved_clauses_with_measures",
+      "provisions": [
+        "A-REG 18"
+      ],
+      "expect": [
+        "available"
+      ],
+      "why": "Executed clauses plus a documented 18(2) assessment and keys held only in Region A (B-RAA 5 then removes compelled decryption) would cover the transfer."
+    },
+    {
+      "id": "derogations",
+      "provisions": [
+        "A-REG 19"
+      ],
+      "expect": [
+        "ruled_out"
+      ],
+      "all_routes": true,
+      "why": "The transfer is ongoing, so 19(1)(a)-(b) are excluded by 19(2); (c) and (d) do not fit."
+    },
+    {
+      "id": "contract_ground",
+      "provisions": [
+        "A-REG 6"
+      ],
+      "name_hint": [
+        "contract"
+      ],
+      "expect": [
+        "supported"
+      ],
+      "why": "Patients pay under terms of care."
+    },
+    {
+      "id": "legitimate_interests",
+      "provisions": [
+        "A-REG 6"
+      ],
+      "name_hint": [
+        "legitimate"
+      ],
+      "expect": [
+        "ruled_out"
+      ],
+      "why": "6(2): not available for sensitive information."
+    },
+    {
+      "id": "return_and_keep_no_copy",
+      "provisions": [
+        "B-HRA 9"
+      ],
+      "name_hint": [
+        "return"
+      ],
+      "expect": [
+        "available"
+      ],
+      "why": "B-HRA 9(2): returning foreign-origin records at the end of service and keeping no copy satisfies the retention rule; A-REG 9(2)(f) lets the custodian choose return."
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "retention_vs_deletion",
+      "provisions": [
+        "B-HRA 9"
+      ],
+      "resolvable": true,
+      "why": "Choose return rather than deletion under A-REG 9(2)(f); returning foreign-origin records and keeping no copy satisfies B-HRA 9(2)."
+    }
+  ],
+  "questions": [
+    {
+      "id": "region_b_access_law",
+      "asker": "region_a",
+      "answerer": "region_b",
+      "why": "Art 18(2) needs Region B's law on public-authority access (B-RAA 3-6), which only the Region B specialist can read."
+    }
+  ],
+  "must_not": [
+    {
+      "id": "recognition_relied_on",
+      "type": "route",
+      "provisions": [
+        "A-REG 17"
+      ],
+      "status": [
+        "supported",
+        "available"
+      ],
+      "why": "Treating the Trusted Recipient certificate as an Art 17 route for health records."
+    },
+    {
+      "id": "derogation_relied_on",
+      "type": "route",
+      "provisions": [
+        "A-REG 19"
+      ],
+      "status": [
+        "supported",
+        "available"
+      ],
+      "why": "Relying on a derogation for an ongoing hosting arrangement."
+    },
+    {
+      "id": "legitimate_interests_relied_on",
+      "type": "route",
+      "provisions": [
+        "A-REG 6"
+      ],
+      "name_hint": [
+        "legitimate"
+      ],
+      "status": [
+        "supported",
+        "available"
+      ],
+      "why": "Relying on legitimate interests for health records."
+    },
+    {
+      "id": "consent_age_engaged",
+      "type": "requirement",
+      "only_cites": [
+        "A-REG 7",
+        "A1-HIA 9",
+        "A-REG 4"
+      ],
+      "status": [
+        "met",
+        "unmet",
+        "undetermined"
+      ],
+      "why": "No ground relies on consent, so child-consent age rules are not engaged.",
+      "requires_any": [
+        "A-REG 7",
+        "A1-HIA 9"
+      ]
+    }
+  ]
+}

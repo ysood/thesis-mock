@@ -1,0 +1,1153 @@
+key_version,config,architecture,graph,run,section,check,passed_auto,passed_hand,passed_reviewed,hand_note,review_status,review_evidence,got,expected
+reviewed,single_no_graph,single,runtime,run1,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_no_graph,single,runtime,run1,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run1,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run1,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_no_graph,single,runtime,run1,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_no_graph,single,runtime,run1,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run1,requirement,a1_hosting_conditions,0,0,0,,reviewed,[],unmet,not_applicable
+reviewed,single_no_graph,single,runtime,run1,requirement,a1_listed_impact_assessment,0,1,1,"The consolidated finding explicitly and correctly excludes both A1-listed triggers. Its unmet status addresses the separate general high-risk duty, so matching the entire finding's status produces a false failure.",reviewed,"[{""pointer"": ""/findings/16/reasoning"", ""quote"": ""The A1 list does not independently trigger an assessment for this particular arrangement because it is not described as an external agent hosting the patient-record system and does not involve insurer matching""}]",unmet,not_applicable
+reviewed,single_no_graph,single,runtime,run1,requirement,region_b_sector_rules,0,1,1,The accepted applicability assessment correctly excludes covered-provider and service-agent status. Scope reasoning is present despite absent operational-provision matches in findings.,reviewed,"[{""pointer"": ""/plan/engagements/1/reason"", ""quote"": ""Harrow is a private health-care provider, but it does not bill a Region B insurer and is not an insurer, so it is not a covered provider. It is not a service agent because it keeps the information in its own record for its own care, and it is not a data host because it does not store records on behalf of another person. The Records Access Act applies to computing providers, and Harrow is not described as providing storage, hosting or computing services.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run1,requirement,region_b_host_retention,0,1,1,The accepted applicability assessment correctly excludes data-host status because Harrow retains its own care record rather than storing on another person's behalf.,reviewed,"[{""pointer"": ""/plan/engagements/1/reason"", ""quote"": ""Harrow is a private health-care provider, but it does not bill a Region B insurer and is not an insurer, so it is not a covered provider. It is not a service agent because it keeps the information in its own record for its own care, and it is not a data host because it does not store records on behalf of another person. The Records Access Act applies to computing providers, and Harrow is not described as providing storage, hosting or computing services.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run1,route,consent_derogation,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,single_no_graph,single,runtime,run1,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run1,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,single_no_graph,single,runtime,run1,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run1,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run1,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run2,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_no_graph,single,runtime,run2,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run2,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run2,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_no_graph,single,runtime,run2,requirement,a1_genetic_transfer_restriction,0,1,1,The accepted outward-transfer finding correctly rejects Article 19(1)(a) under A1 section 7; the scorer instead matches the sensitive-processing finding.,reviewed,"[{""pointer"": ""/findings/6/reasoning"", ""quote"": ""A1 section 7 expressly prohibits making genetic information the subject of an outward transfer on that basis.""}]",met,unmet
+reviewed,single_no_graph,single,runtime,run2,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run2,requirement,a1_hosting_conditions,0,1,1,"Retains the existing hand override: the consolidated finding explicitly rejects a hosting-purpose transfer and describes own clinical retention. Qualification: its wording improperly imports the patient-record-system/agent language from section 8; this is a selected conclusion pass, with a scope-reasoning caveat recorded separately.",reviewed,"[{""pointer"": ""/findings/6/reasoning"", ""quote"": ""A1 section 6's notice and encryption-at-rest conditions do not apply because this is not a transfer for hosting or storing the patient record system by an agent outside A1; Harrow is retaining its own clinical record.""}]",unmet,not_applicable
+reviewed,single_no_graph,single,runtime,run2,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run2,requirement,region_b_sector_rules,0,1,1,The accepted applicability assessment correctly excludes covered-provider and service-agent status. Scope reasoning is present despite absent operational-provision matches in findings.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""Harrow is a health-care provider, but it does not bill a Region B insurer and is therefore not a covered provider. It is not a service agent because it maintains the record for its own care, not for a covered provider, and it is not a data host because it does not store records on behalf of another person. The Region B Records Access Act provisions read here concern orders to computing providers; Harrow's own clinical recordkeeping is not a computing service on the supplied facts.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run2,requirement,region_b_host_retention,0,1,1,The accepted applicability assessment correctly excludes data-host status because Harrow retains its own care record rather than storing on another person's behalf.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""Harrow is a health-care provider, but it does not bill a Region B insurer and is therefore not a covered provider. It is not a service agent because it maintains the record for its own care, not for a covered provider, and it is not a data host because it does not store records on behalf of another person. The Region B Records Access Act provisions read here concern orders to computing providers; Harrow's own clinical recordkeeping is not a computing service on the supplied facts.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run2,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run2,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run2,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,single_no_graph,single,runtime,run2,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run2,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run2,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run3,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_no_graph,single,runtime,run3,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run3,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run3,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_no_graph,single,runtime,run3,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_no_graph,single,runtime,run3,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run3,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run3,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run3,requirement,region_b_sector_rules,0,1,1,The accepted applicability assessment correctly excludes covered-provider and service-agent status. Scope reasoning is present despite absent operational-provision matches in findings.,reviewed,"[{""pointer"": ""/plan/engagements/1/reason"", ""quote"": ""The Region B Health Records Act applies its operative provisions to covered providers, service agents, and data hosts. Kestrel is not a Region B entity, Harrow does not bill a health insurer and is not an insurer, Harrow keeps the record for its own care rather than on behalf of another person, and no external data host is described. The Records Access Act applies production-order provisions to computing providers; neither clinic is described as providing storage, hosting, or computing services. The Region B provisions therefore impose no engaged requirement on the proposed transfer as described.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run3,requirement,region_b_host_retention,0,1,1,The accepted applicability assessment correctly excludes data-host status because Harrow retains its own care record rather than storing on another person's behalf.,reviewed,"[{""pointer"": ""/plan/engagements/1/reason"", ""quote"": ""The Region B Health Records Act applies its operative provisions to covered providers, service agents, and data hosts. Kestrel is not a Region B entity, Harrow does not bill a health insurer and is not an insurer, Harrow keeps the record for its own care rather than on behalf of another person, and no external data host is described. The Records Access Act applies production-order provisions to computing providers; neither clinic is described as providing storage, hosting, or computing services. The Region B provisions therefore impose no engaged requirement on the proposed transfer as described.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run3,route,consent_derogation,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,single_no_graph,single,runtime,run3,route,recognition,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,single_no_graph,single,runtime,run3,route,approved_clauses,1,1,1,,reviewed,[],"available,available",available
+reviewed,single_no_graph,single,runtime,run3,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run3,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run3,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run4,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_no_graph,single,runtime,run4,requirement,lawful_ground,1,0,0,"False pass: the only A-REG 6 finding establishes the Article 8 healthcare exception, and its consent alternative is explicitly framed as an Article 8 exception. The accepted output never explicitly assesses consent or another Article 6 ground as satisfying the separate ordinary lawful-ground requirement.",reviewed,"[{""pointer"": ""/findings/1/reasoning"", ""quote"": ""This satisfies the Subregion A1 route for processing health information for health care or treatment and the corresponding sensitive-information exception in the Region A Regulation.""}, {""pointer"": ""/findings/1/routes/1/reasoning"", ""quote"": ""This is an alternative route for the underlying sensitive-information prohibition""}]",met,met
+reviewed,single_no_graph,single,runtime,run4,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run4,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_no_graph,single,runtime,run4,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_no_graph,single,runtime,run4,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run4,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run4,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run4,requirement,region_b_sector_rules,0,1,1,The accepted applicability assessment correctly excludes covered-provider and service-agent status. Scope reasoning is present despite absent operational-provision matches in findings.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""The Region B Health Records Act does not apply on the supplied facts because Harrow is not a covered provider: it does not bill a Region B health insurer and is not an insurer. Harrow is also not a service agent because it keeps the information in its own clinical record for its own care, not on behalf of a covered provider. It is not a data host because it does not store records on behalf of another person. The Region B Records Access Act concerns computing providers, and Harrow is described as a specialist clinic maintaining its own clinical record, not as a provider of storage, hosting or computing services.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run4,requirement,region_b_host_retention,0,1,1,The accepted applicability assessment correctly excludes data-host status because Harrow retains its own care record rather than storing on another person's behalf.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""The Region B Health Records Act does not apply on the supplied facts because Harrow is not a covered provider: it does not bill a Region B health insurer and is not an insurer. Harrow is also not a service agent because it keeps the information in its own clinical record for its own care, not on behalf of a covered provider. It is not a data host because it does not store records on behalf of another person. The Region B Records Access Act concerns computing providers, and Harrow is described as a specialist clinic maintaining its own clinical record, not as a provider of storage, hosting or computing services.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run4,route,consent_derogation,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,single_no_graph,single,runtime,run4,route,recognition,1,1,1,,reviewed,[],"ruled_out,available",ruled_out
+reviewed,single_no_graph,single,runtime,run4,route,approved_clauses,1,1,1,,reviewed,[],"available,available",available
+reviewed,single_no_graph,single,runtime,run4,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run4,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run4,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run5,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_no_graph,single,runtime,run5,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run5,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run5,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_no_graph,single,runtime,run5,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_no_graph,single,runtime,run5,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run5,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run5,requirement,a1_listed_impact_assessment,0,1,1,The consolidated finding correctly excludes both A1-listed triggers while leaving the distinct general-risk requirement undetermined. Its overall status should not be assigned to the list-only check.,reviewed,"[{""pointer"": ""/findings/8/reasoning"", ""quote"": ""the listed cases concern hosting or storage of a patient-record system by an agent outside A1 or matching health information with insurer information, neither of which is described.""}]",undetermined,not_applicable
+reviewed,single_no_graph,single,runtime,run5,requirement,region_b_sector_rules,0,1,1,The accepted applicability assessment correctly excludes covered-provider and service-agent status. Scope reasoning is present despite absent operational-provision matches in findings.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""The Region B Health Records Act applies its operative sections to covered providers and service agents. Harrow is a health-care provider but does not bill a Region B health insurer and is not an insurer, so it is not a covered provider. It is not a service agent because it keeps the records for its own care rather than on behalf of a covered provider. The Region B Records Access Act applies to computing providers; the facts describe Harrow as a clinical provider, not a provider of storage, hosting or computing services. Harrow is also not a data host storing records on behalf of another person.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run5,requirement,region_b_host_retention,0,1,1,The accepted applicability assessment correctly excludes data-host status because Harrow retains its own care record rather than storing on another person's behalf.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""The Region B Health Records Act applies its operative sections to covered providers and service agents. Harrow is a health-care provider but does not bill a Region B health insurer and is not an insurer, so it is not a covered provider. It is not a service agent because it keeps the records for its own care rather than on behalf of a covered provider. The Region B Records Access Act applies to computing providers; the facts describe Harrow as a clinical provider, not a provider of storage, hosting or computing services. Harrow is also not a data host storing records on behalf of another person.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run5,route,consent_derogation,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,single_no_graph,single,runtime,run5,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run5,route,approved_clauses,1,1,1,,reviewed,[],"available,available",available
+reviewed,single_no_graph,single,runtime,run5,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run5,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run5,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run6,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_no_graph,single,runtime,run6,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run6,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run6,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_no_graph,single,runtime,run6,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_no_graph,single,runtime,run6,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run6,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run6,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run6,requirement,region_b_sector_rules,0,1,1,The accepted applicability assessment correctly excludes covered-provider and service-agent status. Scope reasoning is present despite absent operational-provision matches in findings.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""The recipient is in Region B, but the Health Records Act's substantive sections apply only to covered providers, service agents or data hosts. Harrow does not bill a Region B health insurer, is not an insurer, is not acting as a service agent for a covered provider, and keeps the referral in its own record rather than storing it on behalf of another person. The Records Access Act provisions concern computing providers and production orders; Harrow is not described as providing storage, hosting or computing services. No Region B requirement is therefore engaged by the proposed arrangement.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run6,requirement,region_b_host_retention,0,1,1,The accepted applicability assessment correctly excludes data-host status because Harrow retains its own care record rather than storing on another person's behalf.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""The recipient is in Region B, but the Health Records Act's substantive sections apply only to covered providers, service agents or data hosts. Harrow does not bill a Region B health insurer, is not an insurer, is not acting as a service agent for a covered provider, and keeps the referral in its own record rather than storing it on behalf of another person. The Records Access Act provisions concern computing providers and production orders; Harrow is not described as providing storage, hosting or computing services. No Region B requirement is therefore engaged by the proposed arrangement.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run6,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run6,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run6,route,approved_clauses,1,1,1,,reviewed,[],"available,available",available
+reviewed,single_no_graph,single,runtime,run6,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run6,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run6,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run7,decision,decision,0,0,0,,reviewed,[],needs_review,do_not_proceed
+reviewed,single_no_graph,single,runtime,run7,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run7,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run7,requirement,transfer_route,0,0,0,,reviewed,[],met,unmet
+reviewed,single_no_graph,single,runtime,run7,requirement,a1_genetic_transfer_restriction,0,0,0,,reviewed,[],met,unmet
+reviewed,single_no_graph,single,runtime,run7,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run7,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run7,requirement,a1_listed_impact_assessment,0,1,1,The combined Article 12/A1 list finding explicitly excludes both Section 8 listed activities; its aggregate met status concerns no assessment presently required. The separate general-risk reasoning is not part of this selected list check.,reviewed,"[{""pointer"": ""/findings/8/reasoning"", ""quote"": ""The proposed activity is a one-off upload to Harrow's own clinical record, not hosting or storage of the clinic's patient record system by an agent, and no insurer matching occurs.""}]",met,not_applicable
+reviewed,single_no_graph,single,runtime,run7,requirement,region_b_sector_rules,0,1,1,The accepted final plan gives the fact-specific statutory role exclusions and concludes the Region B Health Records Act provisions do not apply. The selected concept is explicit despite no separately cited sector finding.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""Harrow is a health care provider in Region B, but it does not bill a health insurer and is not an insurer, so it is not a covered provider. It is not a service agent because it keeps the records for its own care and not on behalf of a covered provider.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run7,requirement,region_b_host_retention,0,1,1,The accepted final plan explicitly excludes the data-host role on the own-care facts. This supports non-applicability of the data-host retention requirement despite absence of a B-HRA 9 finding.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""It is not a data host because it stores the records in its own clinical record rather than on behalf of another person.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run7,route,consent_derogation,0,0,0,,reviewed,[],supported,ruled_out
+reviewed,single_no_graph,single,runtime,run7,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run7,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,single_no_graph,single,runtime,run7,route,vital_interests_derogation,0,0,0,,reviewed,[],not_found,ruled_out
+reviewed,single_no_graph,single,runtime,run7,trap,consent_derogation_relied_on,0,0,0,,reviewed,[],region_a:outward_transfer_route: Explicit consent for an occasional transfer (supported),not violated
+reviewed,single_no_graph,single,runtime,run7,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run8,decision,decision,0,0,0,,reviewed,[],needs_review,do_not_proceed
+reviewed,single_no_graph,single,runtime,run8,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run8,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run8,requirement,transfer_route,0,0,0,,reviewed,[],met,unmet
+reviewed,single_no_graph,single,runtime,run8,requirement,a1_genetic_transfer_restriction,0,0,0,,reviewed,[],met,unmet
+reviewed,single_no_graph,single,runtime,run8,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run8,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run8,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run8,requirement,region_b_sector_rules,0,1,1,The scope finding explicitly excludes covered-provider/service-agent roles and Sections 4 to 8. The provision matcher misses a non-applicability finding cited to scope Sections 2 and 3.,reviewed,"[{""pointer"": ""/findings/9/reasoning"", ""quote"": ""Sections 4 to 8 therefore do not apply to Harrow or this receipt.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run8,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run8,route,consent_derogation,0,0,0,,reviewed,[],supported,ruled_out
+reviewed,single_no_graph,single,runtime,run8,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run8,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,single_no_graph,single,runtime,run8,route,vital_interests_derogation,0,0,0,,reviewed,[],not_found,ruled_out
+reviewed,single_no_graph,single,runtime,run8,trap,consent_derogation_relied_on,0,0,0,,reviewed,[],region_a:outward_transfer_framework: Occasional explicit-consent derogation (supported),not violated
+reviewed,single_no_graph,single,runtime,run8,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run9,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_no_graph,single,runtime,run9,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run9,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_no_graph,single,runtime,run9,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_no_graph,single,runtime,run9,requirement,a1_genetic_transfer_restriction,0,1,1,The outward-transfer finding correctly states the genetic-information restriction and finds the transfer unmet. The scorer instead picks the narrower combined processing finding with met status.,reviewed,"[{""pointer"": ""/findings/5/reasoning"", ""quote"": ""A1 section 7 expressly provides that genetic information may not be made the subject of an outward transfer on the basis of Article 19(1)(a). Because the payload includes genetic information, the proposed consent route is unavailable.""}]",met,unmet
+reviewed,single_no_graph,single,runtime,run9,requirement,a1_professional_secrecy,0,0,0,,reviewed,[],not_found,met
+reviewed,single_no_graph,single,runtime,run9,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_no_graph,single,runtime,run9,requirement,a1_listed_impact_assessment,0,1,1,The combined assessment finding explicitly excludes both Section 8 listed activities. Its aggregate met status does not mean those listed triggers are present. General Article 12(1) reasoning is reviewed separately.,reviewed,"[{""pointer"": ""/findings/4/reasoning"", ""quote"": ""Harrow is receiving and retaining the referral in its own clinical record for its own care, not hosting or storing a patient record system as an agent for the A1 clinic, and no insurer matching occurs.""}]",met,not_applicable
+reviewed,single_no_graph,single,runtime,run9,requirement,region_b_sector_rules,0,1,1,The combined recipient-scope finding correctly excludes covered-provider and service-agent roles and Sections 4 to 9. The matcher requires operative provision citations instead of accepting the Sections 2 and 3 scope reasoning.,reviewed,"[{""pointer"": ""/findings/7/reasoning"", ""quote"": ""Sections 4 to 9 therefore do not impose obligations on the described recipient or arrangement.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run9,requirement,region_b_host_retention,0,1,1,"The combined recipient-scope finding expressly excludes the data-host role because records are held for Harrow own care, supporting Section 9 non-applicability without an operative Section 9 citation.",reviewed,"[{""pointer"": ""/findings/7/reasoning"", ""quote"": ""It receives and retains the referral for its own care, not on behalf of a covered provider or another person, so it is neither a service agent nor a data host.""}]",not_found,not_applicable
+reviewed,single_no_graph,single,runtime,run9,route,consent_derogation,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,single_no_graph,single,runtime,run9,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run9,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,single_no_graph,single,runtime,run9,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_no_graph,single,runtime,run9,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_no_graph,single,runtime,run9,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run1,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_graph,single,generated,run1,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run1,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run1,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run1,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run1,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run1,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run1,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run1,requirement,region_b_sector_rules,0,1,1,The accepted applicability assessment correctly excludes covered-provider and service-agent status. Scope reasoning is present despite absent operational-provision matches in findings.,reviewed,"[{""pointer"": ""/plan/engagements/1/reason"", ""quote"": ""Harrow is not a Region B covered provider because it does not bill a Region B health insurer, is not an insurer, and is not a service agent for a covered provider. It is also not a data host because it keeps the record for its own care and does not store records on behalf of another person. The supplied facts do not show that Harrow is a computing provider under the Records Access Act. Accordingly, no Region B operative requirement is engaged by the proposed arrangement.""}]",not_found,not_applicable
+reviewed,single_graph,single,generated,run1,requirement,region_b_host_retention,0,1,1,The accepted applicability assessment correctly excludes data-host status because Harrow retains its own care record rather than storing on another person's behalf.,reviewed,"[{""pointer"": ""/plan/engagements/1/reason"", ""quote"": ""Harrow is not a Region B covered provider because it does not bill a Region B health insurer, is not an insurer, and is not a service agent for a covered provider. It is also not a data host because it keeps the record for its own care and does not store records on behalf of another person. The supplied facts do not show that Harrow is a computing provider under the Records Access Act. Accordingly, no Region B operative requirement is engaged by the proposed arrangement.""}]",not_found,not_applicable
+reviewed,single_graph,single,generated,run1,route,consent_derogation,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,single_graph,single,generated,run1,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run1,route,approved_clauses,1,1,1,,reviewed,[],"available,available",available
+reviewed,single_graph,single,generated,run1,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run1,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run1,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run2,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_graph,single,generated,run2,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run2,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run2,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run2,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run2,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run2,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run2,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run2,requirement,region_b_sector_rules,0,1,1,The accepted applicability assessment correctly excludes covered-provider and service-agent status. Scope reasoning is present despite absent operational-provision matches in findings.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""Harrow is not a covered provider because it does not bill a Region B health insurer and is not an insurer. It is not a service agent because it keeps the information for its own care rather than on behalf of a covered provider, and it is not a data host because it does not store records on behalf of another person. The facts do not describe Harrow as a person providing storage, hosting or computing services; the Region B Records Access Act's contingent production-order regime is therefore not engaged by the proposed transfer.""}]",not_found,not_applicable
+reviewed,single_graph,single,generated,run2,requirement,region_b_host_retention,0,1,1,The accepted applicability assessment correctly excludes data-host status because Harrow retains its own care record rather than storing on another person's behalf.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""Harrow is not a covered provider because it does not bill a Region B health insurer and is not an insurer. It is not a service agent because it keeps the information for its own care rather than on behalf of a covered provider, and it is not a data host because it does not store records on behalf of another person. The facts do not describe Harrow as a person providing storage, hosting or computing services; the Region B Records Access Act's contingent production-order regime is therefore not engaged by the proposed transfer.""}]",not_found,not_applicable
+reviewed,single_graph,single,generated,run2,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run2,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run2,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,single_graph,single,generated,run2,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run2,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run2,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run3,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_graph,single,generated,run3,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run3,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run3,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run3,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run3,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run3,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run3,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run3,requirement,region_b_sector_rules,0,1,1,The accepted applicability assessment correctly excludes covered-provider and service-agent status. Scope reasoning is present despite absent operational-provision matches in findings.,reviewed,"[{""pointer"": ""/plan/engagements/1/reason"", ""quote"": ""Harrow is not a Region B covered provider because it does not bill a health insurer and is not an insurer. It is not a service agent because it is not acting on behalf of a covered provider, and it is not a data host because it keeps the referral in its own record for its own care rather than storing it on behalf of another person. The facts also do not show that Harrow provides storage, hosting or computing services to others so that it would be a computing provider under the Records Access Act.""}]",not_found,not_applicable
+reviewed,single_graph,single,generated,run3,requirement,region_b_host_retention,0,1,1,The accepted applicability assessment correctly excludes data-host status because Harrow retains its own care record rather than storing on another person's behalf.,reviewed,"[{""pointer"": ""/plan/engagements/1/reason"", ""quote"": ""Harrow is not a Region B covered provider because it does not bill a health insurer and is not an insurer. It is not a service agent because it is not acting on behalf of a covered provider, and it is not a data host because it keeps the referral in its own record for its own care rather than storing it on behalf of another person. The facts also do not show that Harrow provides storage, hosting or computing services to others so that it would be a computing provider under the Records Access Act.""}]",not_found,not_applicable
+reviewed,single_graph,single,generated,run3,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run3,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run3,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,single_graph,single,generated,run3,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run3,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run3,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run4,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_graph,single,generated,run4,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run4,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run4,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run4,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run4,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run4,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run4,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run4,requirement,region_b_sector_rules,0,1,1,The accepted applicability assessment correctly excludes covered-provider and service-agent status. Scope reasoning is present despite absent operational-provision matches in findings.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""The information is a health record in Region B, but Harrow is not a covered provider because it does not bill a Region B health insurer and is not an insurer. It is not a service agent because it keeps the information for its own care, not on behalf of a covered provider. It is not a data host because it does not store records on behalf of another person. The supplied facts also do not make Harrow a computing provider for purposes of the Records Access Act. Accordingly, no Region B actor-specific gate or duty in the supplied transfer is engaged.""}]",not_found,not_applicable
+reviewed,single_graph,single,generated,run4,requirement,region_b_host_retention,0,1,1,The accepted applicability assessment correctly excludes data-host status because Harrow retains its own care record rather than storing on another person's behalf.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""The information is a health record in Region B, but Harrow is not a covered provider because it does not bill a Region B health insurer and is not an insurer. It is not a service agent because it keeps the information for its own care, not on behalf of a covered provider. It is not a data host because it does not store records on behalf of another person. The supplied facts also do not make Harrow a computing provider for purposes of the Records Access Act. Accordingly, no Region B actor-specific gate or duty in the supplied transfer is engaged.""}]",not_found,not_applicable
+reviewed,single_graph,single,generated,run4,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run4,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run4,route,approved_clauses,1,1,1,,reviewed,[],"available,available",available
+reviewed,single_graph,single,generated,run4,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run4,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run4,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run5,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_graph,single,generated,run5,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run5,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run5,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run5,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run5,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run5,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run5,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run5,requirement,region_b_sector_rules,0,1,1,The accepted applicability assessment correctly excludes covered-provider and service-agent status. Scope reasoning is present despite absent operational-provision matches in findings.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""Harrow is in B, but the supplied facts do not make it a covered provider, service agent or data host under the Health Records Act: it does not bill a B insurer, maintains the record for its own care rather than on behalf of another person, and is not acting for a covered provider. The Records Access Act provisions concerning computing providers and production orders are not engaged because Harrow is not described as providing storage, hosting or computing services and no production order exists.""}]",not_found,not_applicable
+reviewed,single_graph,single,generated,run5,requirement,region_b_host_retention,0,1,1,The accepted applicability assessment correctly excludes data-host status because Harrow retains its own care record rather than storing on another person's behalf.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""Harrow is in B, but the supplied facts do not make it a covered provider, service agent or data host under the Health Records Act: it does not bill a B insurer, maintains the record for its own care rather than on behalf of another person, and is not acting for a covered provider. The Records Access Act provisions concerning computing providers and production orders are not engaged because Harrow is not described as providing storage, hosting or computing services and no production order exists.""}]",not_found,not_applicable
+reviewed,single_graph,single,generated,run5,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run5,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run5,route,approved_clauses,1,1,1,,reviewed,[],"available,available",available
+reviewed,single_graph,single,generated,run5,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run5,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run5,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run6,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_graph,single,generated,run6,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run6,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run6,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run6,requirement,a1_genetic_transfer_restriction,0,1,1,The accepted outward-transfer route explicitly identifies A1-HIA 7 and rules out the genetic-information consent basis. The substantive reasoning is correct even though the parent finding does not supply the matching A1 citation.,reviewed,"[{""pointer"": ""/findings/10/routes/2/reasoning"", ""quote"": ""A1-HIA 7 expressly prohibits making genetic information the subject of an outward transfer on the basis of Article 19(1)(a).""}]",met,unmet
+reviewed,single_graph,single,generated,run6,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run6,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run6,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run6,requirement,region_b_sector_rules,0,1,1,The accepted applicability assessment correctly excludes covered-provider and service-agent status. Scope reasoning is present despite absent operational-provision matches in findings.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""The recipient's processing and storage occur in Region B, so Region B law must be checked. However, the Region B Health Records Act's provisions for covered providers, service agents and data hosts do not apply on the supplied facts: Harrow does not bill an insurer, is not an insurer, is not acting for a covered provider, and stores the information in its own record rather than on behalf of another person. The Records Access Act was checked for possible powers concerning computing providers, but no current production order or other present obligation is described.""}]",not_found,not_applicable
+reviewed,single_graph,single,generated,run6,requirement,region_b_host_retention,0,1,1,The accepted applicability assessment correctly excludes data-host status because Harrow retains its own care record rather than storing on another person's behalf.,reviewed,"[{""pointer"": ""/plan/engagements/2/reason"", ""quote"": ""The recipient's processing and storage occur in Region B, so Region B law must be checked. However, the Region B Health Records Act's provisions for covered providers, service agents and data hosts do not apply on the supplied facts: Harrow does not bill an insurer, is not an insurer, is not acting for a covered provider, and stores the information in its own record rather than on behalf of another person. The Records Access Act was checked for possible powers concerning computing providers, but no current production order or other present obligation is described.""}]",not_found,not_applicable
+reviewed,single_graph,single,generated,run6,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run6,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run6,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,single_graph,single,generated,run6,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run6,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run6,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run7,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_graph,single,generated,run7,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run7,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run7,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run7,requirement,a1_genetic_transfer_restriction,0,1,1,The outward-transfer finding explicitly cites and applies A1-HIA 7 to rule out Article 19(1)(a). The scorer prefers the sensitive-processing finding where Article 8 consent properly remains met.,reviewed,"[{""pointer"": ""/findings/5/reasoning"", ""quote"": ""A1-HIA 7 expressly prohibits making genetic information the subject of an outward transfer on that basis.""}]",met,unmet
+reviewed,single_graph,single,generated,run7,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run7,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run7,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run7,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run7,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run7,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run7,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run7,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,single_graph,single,generated,run7,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run7,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run7,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run8,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_graph,single,generated,run8,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run8,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run8,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run8,requirement,a1_genetic_transfer_restriction,0,1,1,The outward-transfer finding explicitly applies A1-HIA 7 and finds no authorisation. The scorer prefers the sensitive-processing finding where consent properly remains met for Article 8.,reviewed,"[{""pointer"": ""/findings/6/reasoning"", ""quote"": ""A1-HIA 7 expressly prohibits using Article 19(1)(a) for an outward transfer concerning genetic information.""}]",met,unmet
+reviewed,single_graph,single,generated,run8,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run8,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run8,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run8,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run8,requirement,region_b_host_retention,0,1,1,"The combined Region B scope finding correctly excludes the data-host role and explicitly states Section 9 is not engaged, though only Sections 2 and 3 are cited.",reviewed,"[{""pointer"": ""/findings/9/reasoning"", ""quote"": ""It is not a data host because it stores the record on its own behalf rather than on behalf of another person. Accordingly the Region B Health Records Act's Sections 4 to 8 and Section 9 are not engaged by the proposed recipient arrangement.""}]",not_found,not_applicable
+reviewed,single_graph,single,generated,run8,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run8,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run8,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,single_graph,single,generated,run8,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run8,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run8,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run9,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,single_graph,single,generated,run9,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run9,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,single_graph,single,generated,run9,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run9,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,single_graph,single,generated,run9,requirement,a1_professional_secrecy,0,0,0,,reviewed,[],not_found,met
+reviewed,single_graph,single,generated,run9,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run9,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run9,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run9,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,single_graph,single,generated,run9,route,consent_derogation,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,single_graph,single,generated,run9,route,recognition,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,single_graph,single,generated,run9,route,approved_clauses,1,1,1,,reviewed,[],"available,available",available
+reviewed,single_graph,single,generated,run9,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,single_graph,single,generated,run9,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,single_graph,single,generated,run9,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run1,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_no_graph,multi,runtime,run1,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run1,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run1,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run1,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run1,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run1,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run1,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run1,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run1,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run1,route,consent_derogation,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,multi_no_graph,multi,runtime,run1,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run1,route,approved_clauses,0,0,0,,reviewed,[],ruled_out,available
+reviewed,multi_no_graph,multi,runtime,run1,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run1,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run1,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run2,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_no_graph,multi,runtime,run2,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run2,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run2,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run2,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run2,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run2,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run2,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run2,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run2,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run2,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run2,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run2,route,approved_clauses,0,0,0,,reviewed,[],unresolved,available
+reviewed,multi_no_graph,multi,runtime,run2,route,vital_interests_derogation,0,0,0,,reviewed,[],not_found,ruled_out
+reviewed,multi_no_graph,multi,runtime,run2,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run2,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run3,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_no_graph,multi,runtime,run3,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run3,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run3,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run3,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run3,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run3,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run3,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run3,requirement,region_b_sector_rules,0,1,1,The accepted Region B specialist applicability assessment correctly excludes covered-provider and service-agent status. Not emitting separate findings does not erase the explicit legal scope assessment.,reviewed,"[{""pointer"": ""/specialists/region_b/applicability_reasoning"", ""quote"": ""The supplied information is a health record under B-HRA 2 because it identifies an individual and relates to physical health and the provision of health care. But B-HRA 3 limits Sections 4–8 to covered providers and service agents, and Section 9 to data hosts. Harrow is not a covered provider because it does not bill a Region B-licensed health insurer and is not an insurer. It is not a service agent because it maintains the information in its own clinical record for its own care, rather than on behalf of a covered provider, and it is not a data host because it stores no records on behalf of another person. The sender is likewise not shown to be a covered provider or service agent. Harrow is also not shown to be a computing provider under B-RAA 2; it is a clinic using its own clinical referral portal, not a provider of storage, hosting or computing services.""}]",not_found,not_applicable
+reviewed,multi_no_graph,multi,runtime,run3,requirement,region_b_host_retention,0,1,1,The accepted Region B specialist applicability assessment explicitly excludes data-host status and the resulting retention duty.,reviewed,"[{""pointer"": ""/specialists/region_b/applicability_reasoning"", ""quote"": ""The supplied information is a health record under B-HRA 2 because it identifies an individual and relates to physical health and the provision of health care. But B-HRA 3 limits Sections 4–8 to covered providers and service agents, and Section 9 to data hosts. Harrow is not a covered provider because it does not bill a Region B-licensed health insurer and is not an insurer. It is not a service agent because it maintains the information in its own clinical record for its own care, rather than on behalf of a covered provider, and it is not a data host because it stores no records on behalf of another person. The sender is likewise not shown to be a covered provider or service agent. Harrow is also not shown to be a computing provider under B-RAA 2; it is a clinic using its own clinical referral portal, not a provider of storage, hosting or computing services.""}]",not_found,not_applicable
+reviewed,multi_no_graph,multi,runtime,run3,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run3,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run3,route,approved_clauses,0,0,0,,reviewed,[],unresolved,available
+reviewed,multi_no_graph,multi,runtime,run3,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run3,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run3,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run4,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_no_graph,multi,runtime,run4,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run4,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run4,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run4,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run4,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run4,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run4,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run4,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run4,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run4,route,consent_derogation,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,multi_no_graph,multi,runtime,run4,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run4,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_no_graph,multi,runtime,run4,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run4,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run4,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run5,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_no_graph,multi,runtime,run5,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run5,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run5,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run5,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run5,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run5,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run5,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run5,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run5,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run5,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run5,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run5,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_no_graph,multi,runtime,run5,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run5,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run5,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run6,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_no_graph,multi,runtime,run6,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run6,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run6,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run6,requirement,a1_genetic_transfer_restriction,0,1,1,The final Region A outward-transfer finding explicitly rejects the genetic consent route and is unmet as proposed. This supplies the selected concept despite the A1 specialist's undetermined parent status; that inconsistent granularity is recorded as a reasoning caveat.,reviewed,"[{""pointer"": ""/findings/8/reasoning"", ""quote"": ""The Article 19(1)(a) consent route is also ruled out because A1 law prohibits using that route for genetic information.""}, {""pointer"": ""/findings/8/routes/2/reasoning"", ""quote"": ""A1 law prohibits making genetic information the subject of an outward transfer on the basis of Article 19(1)(a).""}]",undetermined,unmet
+reviewed,multi_no_graph,multi,runtime,run6,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run6,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run6,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run6,requirement,region_b_sector_rules,0,1,1,The accepted Region B specialist applicability assessment correctly excludes covered-provider and service-agent status. Not emitting separate findings does not erase the explicit legal scope assessment.,reviewed,"[{""pointer"": ""/specialists/region_b/applicability_reasoning"", ""quote"": ""The proposed transfer involves a health record received and retained in Region B, but the Region B Health Records Act does not apply to the parties or activities described. Harrow is not a covered provider because it does not bill a Region B health insurer and is not an insurer. It is not a service agent because it maintains the information in its own clinical record for its own care; section 3(2) also excludes service-agent status for records maintained for a person that is not a covered provider. Harrow is not a data host because it does not store records on behalf of another person. The Records Access Act does not apply because Harrow is described as a clinical provider, not a computing provider supplying storage, hosting or computing services.""}]",not_found,not_applicable
+reviewed,multi_no_graph,multi,runtime,run6,requirement,region_b_host_retention,0,1,1,The accepted Region B specialist applicability assessment explicitly excludes data-host status and the resulting retention duty.,reviewed,"[{""pointer"": ""/specialists/region_b/applicability_reasoning"", ""quote"": ""The proposed transfer involves a health record received and retained in Region B, but the Region B Health Records Act does not apply to the parties or activities described. Harrow is not a covered provider because it does not bill a Region B health insurer and is not an insurer. It is not a service agent because it maintains the information in its own clinical record for its own care; section 3(2) also excludes service-agent status for records maintained for a person that is not a covered provider. Harrow is not a data host because it does not store records on behalf of another person. The Records Access Act does not apply because Harrow is described as a clinical provider, not a computing provider supplying storage, hosting or computing services.""}]",not_found,not_applicable
+reviewed,multi_no_graph,multi,runtime,run6,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run6,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run6,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_no_graph,multi,runtime,run6,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run6,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run6,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run7,decision,decision,0,0,0,,reviewed,[],needs_review,do_not_proceed
+reviewed,multi_no_graph,multi,runtime,run7,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run7,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run7,requirement,transfer_route,0,0,0,,reviewed,[],met,unmet
+reviewed,multi_no_graph,multi,runtime,run7,requirement,a1_genetic_transfer_restriction,0,0,0,,reviewed,[],not_applicable,unmet
+reviewed,multi_no_graph,multi,runtime,run7,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run7,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run7,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run7,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run7,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run7,route,consent_derogation,0,0,0,,reviewed,[],supported,ruled_out
+reviewed,multi_no_graph,multi,runtime,run7,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run7,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_no_graph,multi,runtime,run7,route,vital_interests_derogation,0,0,0,,reviewed,[],not_found,ruled_out
+reviewed,multi_no_graph,multi,runtime,run7,trap,consent_derogation_relied_on,0,0,0,,reviewed,[],region_a:outward_transfer_coverage: Explicit-consent derogation for an occasional transfer (supported),not violated
+reviewed,multi_no_graph,multi,runtime,run7,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run8,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_no_graph,multi,runtime,run8,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run8,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run8,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run8,requirement,a1_genetic_transfer_restriction,0,1,1,"The accepted outward-transfer finding and consent route explicitly state the genetic Article 19(1)(a) restriction and apply it to this case. No separately cited A1-HIA 7 finding exists, producing a citation-matching false negative. Missing direct source attribution remains a qualitative traceability limitation.",reviewed,"[{""pointer"": ""/findings/18/reasoning"", ""quote"": ""Subregion A1 law expressly prohibits making genetic information the subject of an outward transfer on the basis of Article 19(1)(a).""}]",not_found,unmet
+reviewed,multi_no_graph,multi,runtime,run8,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run8,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run8,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run8,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run8,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run8,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run8,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run8,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_no_graph,multi,runtime,run8,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run8,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run8,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run9,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_no_graph,multi,runtime,run9,requirement,lawful_ground,1,0,0,"The accepted finding concludes Article 6 met solely from health-care purpose and practitioner registration, which are not an Article 6(1) ground. No supported Article 6 consent ground or contract necessity is identified anywhere accepted final output; the final supervisor plan simply selects met. Article 8 health-care exception and valid consent-form evidence do not repair the missing Article 6 legal analysis.",reviewed,"[{""pointer"": ""/findings/6/reasoning"", ""quote"": ""Article 6 requires at least one lawful ground, and the stated treatment-related processing is supported by the health-care purpose and the practitioners' registration.""}]",met,met
+reviewed,multi_no_graph,multi,runtime,run9,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run9,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run9,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_no_graph,multi,runtime,run9,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_no_graph,multi,runtime,run9,requirement,a1_hosting_conditions,0,1,1,"The final accepted supervisor review explicitly concludes the Section 6 condition is not engaged, giving the own-care rather than hosting purpose rationale. The scorer examines findings alone. Apply the reviewed key care-referral interpretation; independent custodian status is not itself the Section 6 test.",reviewed,"[{""pointer"": ""/reviews/0/notes/2"", ""quote"": ""The A1 hosting/storage condition is not engaged on the described arrangement because Harrow keeps the referral in its own clinical record for its own care, rather than hosting or storing Kestrel's patient-record system as an agent.""}]",not_found,not_applicable
+reviewed,multi_no_graph,multi,runtime,run9,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run9,requirement,region_b_sector_rules,0,1,1,"The specific scope finding expressly excludes covered-provider/service-agent roles and Sections 4 to 8. The matcher misses it because it cites the applicable scope provisions, not the inapplicable operative duties.",reviewed,"[{""pointer"": ""/findings/0/reasoning"", ""quote"": ""Sections 4 to 8 apply only to covered providers and service agents. Harrow is not a covered provider because it does not bill a Region B-licensed health insurer electronically and is not an insurer.""}]",not_found,not_applicable
+reviewed,multi_no_graph,multi,runtime,run9,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_no_graph,multi,runtime,run9,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run9,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run9,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_no_graph,multi,runtime,run9,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_no_graph,multi,runtime,run9,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_no_graph,multi,runtime,run9,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run1,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_graph,multi,generated,run1,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run1,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run1,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run1,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run1,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run1,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run1,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run1,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run1,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run1,route,consent_derogation,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,multi_graph,multi,generated,run1,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run1,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_graph,multi,generated,run1,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run1,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run1,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run2,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_graph,multi,generated,run2,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run2,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run2,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run2,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run2,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run2,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run2,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run2,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run2,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run2,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run2,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run2,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_graph,multi,generated,run2,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run2,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run2,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run3,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_graph,multi,generated,run3,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run3,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run3,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run3,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run3,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run3,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run3,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run3,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run3,requirement,region_b_host_retention,0,1,1,"Retains the existing hand override: the accepted retention finding correctly excludes data-host status and is not_applicable, but cites the governing definition/application provisions rather than section 9.",reviewed,"[{""pointer"": ""/findings/4/reasoning"", ""quote"": ""Section 9 applies to a data host. A data host is a person that stores health records in Region B on behalf of another person. Harrow stores the referral in its own clinical record for its own care and expressly stores no records on behalf of anyone else. It therefore is not a data host, and its own clinical retention schedule does not engage the Section 9 data-host retention alternatives.""}]",not_found,not_applicable
+reviewed,multi_graph,multi,generated,run3,route,consent_derogation,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,multi_graph,multi,generated,run3,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run3,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_graph,multi,generated,run3,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run3,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run3,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run4,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_graph,multi,generated,run4,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run4,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run4,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run4,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run4,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run4,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run4,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run4,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run4,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run4,route,consent_derogation,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,multi_graph,multi,generated,run4,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run4,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_graph,multi,generated,run4,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run4,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run4,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run5,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_graph,multi,generated,run5,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run5,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run5,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run5,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run5,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run5,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run5,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run5,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run5,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run5,route,consent_derogation,1,1,1,,reviewed,[],"ruled_out,ruled_out",ruled_out
+reviewed,multi_graph,multi,generated,run5,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run5,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_graph,multi,generated,run5,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run5,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run5,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run6,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_graph,multi,generated,run6,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run6,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run6,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run6,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run6,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run6,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run6,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run6,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run6,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run6,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run6,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run6,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_graph,multi,generated,run6,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run6,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run6,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run7,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_graph,multi,generated,run7,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run7,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run7,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run7,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run7,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run7,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run7,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run7,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run7,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run7,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run7,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run7,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_graph,multi,generated,run7,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run7,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run7,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run8,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_graph,multi,generated,run8,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run8,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run8,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run8,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run8,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run8,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run8,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run8,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run8,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run8,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run8,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run8,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_graph,multi,generated,run8,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run8,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run8,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run9,decision,decision,1,1,1,,reviewed,[],do_not_proceed,do_not_proceed
+reviewed,multi_graph,multi,generated,run9,requirement,lawful_ground,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run9,requirement,sensitive_condition,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run9,requirement,transfer_route,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run9,requirement,a1_genetic_transfer_restriction,1,1,1,,reviewed,[],unmet,unmet
+reviewed,multi_graph,multi,generated,run9,requirement,a1_professional_secrecy,1,1,1,,reviewed,[],met,met
+reviewed,multi_graph,multi,generated,run9,requirement,a1_hosting_conditions,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run9,requirement,a1_listed_impact_assessment,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run9,requirement,region_b_sector_rules,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run9,requirement,region_b_host_retention,1,1,1,,reviewed,[],not_applicable,not_applicable
+reviewed,multi_graph,multi,generated,run9,route,consent_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run9,route,recognition,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run9,route,approved_clauses,1,1,1,,reviewed,[],available,available
+reviewed,multi_graph,multi,generated,run9,route,vital_interests_derogation,1,1,1,,reviewed,[],ruled_out,ruled_out
+reviewed,multi_graph,multi,generated,run9,trap,consent_derogation_relied_on,1,1,1,,reviewed,[],not violated,not violated
+reviewed,multi_graph,multi,generated,run9,trap,genetic_consent_bar_overextended,1,1,1,,reviewed,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run1,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,a1_hosting_conditions,0,0,,,different_key,[],unmet,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,impact_assessment,0,0,,,different_key,[],unmet,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run1,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run1,route,consent_derogation,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,single_no_graph,single,runtime,run1,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run1,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,single_no_graph,single,runtime,run1,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run1,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run1,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run2,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,a1_genetic_transfer_restriction,0,1,,Folded into region_a:outward_transfer_route: 19(1)(a) ruled out because of A1 s.7; scorer matched the Art 8 finding instead.,different_key,[],met,unmet
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,a1_hosting_conditions,0,1,,"Folded into region_a:outward_transfer_route: A1 s.6 ""do not apply because this is not a transfer for hosting""; scorer matched that unmet transfer finding.",different_key,[],unmet,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run2,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run2,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run2,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run2,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,single_no_graph,single,runtime,run2,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run2,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run2,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run3,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run3,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run3,route,consent_derogation,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,single_no_graph,single,runtime,run3,route,recognition,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,single_no_graph,single,runtime,run3,route,approved_clauses,1,1,,,different_key,[],"available,available",available
+before_review_20261011,single_no_graph,single,runtime,run3,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run3,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run3,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run4,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_no_graph,single,runtime,run4,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run4,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run4,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run4,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run4,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run4,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run4,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run4,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run4,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run4,route,consent_derogation,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,single_no_graph,single,runtime,run4,route,recognition,1,1,,,different_key,[],"ruled_out,available",ruled_out
+before_review_20261011,single_no_graph,single,runtime,run4,route,approved_clauses,1,1,,,different_key,[],"available,available",available
+before_review_20261011,single_no_graph,single,runtime,run4,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run4,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run4,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run5,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_no_graph,single,runtime,run5,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run5,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run5,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run5,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run5,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run5,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run5,requirement,impact_assessment,0,0,,,different_key,[],undetermined,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run5,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run5,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run5,route,consent_derogation,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,single_no_graph,single,runtime,run5,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run5,route,approved_clauses,1,1,,,different_key,[],"available,available",available
+before_review_20261011,single_no_graph,single,runtime,run5,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run5,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run5,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run6,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_no_graph,single,runtime,run6,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run6,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run6,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run6,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run6,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run6,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run6,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run6,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run6,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run6,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run6,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run6,route,approved_clauses,1,1,,,different_key,[],"available,available",available
+before_review_20261011,single_no_graph,single,runtime,run6,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run6,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run6,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run7,decision,decision,0,0,,,different_key,[],needs_review,do_not_proceed
+before_review_20261011,single_no_graph,single,runtime,run7,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run7,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run7,requirement,transfer_route,0,0,,,different_key,[],met,unmet
+before_review_20261011,single_no_graph,single,runtime,run7,requirement,a1_genetic_transfer_restriction,0,0,,,different_key,[],met,unmet
+before_review_20261011,single_no_graph,single,runtime,run7,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run7,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run7,requirement,impact_assessment,0,0,,,different_key,[],met,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run7,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run7,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run7,route,consent_derogation,0,0,,,different_key,[],supported,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run7,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run7,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,single_no_graph,single,runtime,run7,route,vital_interests_derogation,0,0,,,different_key,[],not_found,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run7,trap,consent_derogation_relied_on,0,0,,,different_key,[],region_a:outward_transfer_route: Explicit consent for an occasional transfer (supported),not violated
+before_review_20261011,single_no_graph,single,runtime,run7,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run8,decision,decision,0,0,,,different_key,[],needs_review,do_not_proceed
+before_review_20261011,single_no_graph,single,runtime,run8,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run8,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run8,requirement,transfer_route,0,0,,,different_key,[],met,unmet
+before_review_20261011,single_no_graph,single,runtime,run8,requirement,a1_genetic_transfer_restriction,0,0,,,different_key,[],met,unmet
+before_review_20261011,single_no_graph,single,runtime,run8,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run8,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run8,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run8,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run8,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run8,route,consent_derogation,0,0,,,different_key,[],supported,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run8,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run8,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,single_no_graph,single,runtime,run8,route,vital_interests_derogation,0,0,,,different_key,[],not_found,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run8,trap,consent_derogation_relied_on,0,0,,,different_key,[],region_a:outward_transfer_framework: Occasional explicit-consent derogation (supported),not violated
+before_review_20261011,single_no_graph,single,runtime,run8,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run9,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_no_graph,single,runtime,run9,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run9,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_no_graph,single,runtime,run9,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_no_graph,single,runtime,run9,requirement,a1_genetic_transfer_restriction,0,0,,,different_key,[],met,unmet
+before_review_20261011,single_no_graph,single,runtime,run9,requirement,a1_professional_secrecy,0,0,,,different_key,[],not_found,met
+before_review_20261011,single_no_graph,single,runtime,run9,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run9,requirement,impact_assessment,0,0,,,different_key,[],met,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run9,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run9,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_no_graph,single,runtime,run9,route,consent_derogation,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,single_no_graph,single,runtime,run9,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run9,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,single_no_graph,single,runtime,run9,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_no_graph,single,runtime,run9,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_no_graph,single,runtime,run9,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run1,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_graph,single,generated,run1,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run1,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run1,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run1,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run1,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run1,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run1,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run1,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run1,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run1,route,consent_derogation,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,single_graph,single,generated,run1,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run1,route,approved_clauses,1,1,,,different_key,[],"available,available",available
+before_review_20261011,single_graph,single,generated,run1,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run1,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run1,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run2,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_graph,single,generated,run2,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run2,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run2,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run2,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run2,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run2,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run2,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run2,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run2,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run2,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run2,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run2,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,single_graph,single,generated,run2,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run2,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run2,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run3,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_graph,single,generated,run3,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run3,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run3,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run3,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run3,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run3,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run3,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run3,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run3,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run3,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run3,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run3,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,single_graph,single,generated,run3,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run3,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run3,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run4,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_graph,single,generated,run4,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run4,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run4,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run4,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run4,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run4,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run4,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run4,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run4,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run4,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run4,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run4,route,approved_clauses,1,1,,,different_key,[],"available,available",available
+before_review_20261011,single_graph,single,generated,run4,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run4,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run4,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run5,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_graph,single,generated,run5,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run5,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run5,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run5,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run5,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run5,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run5,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run5,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run5,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run5,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run5,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run5,route,approved_clauses,1,1,,,different_key,[],"available,available",available
+before_review_20261011,single_graph,single,generated,run5,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run5,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run5,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run6,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_graph,single,generated,run6,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run6,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run6,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run6,requirement,a1_genetic_transfer_restriction,0,0,,,different_key,[],met,unmet
+before_review_20261011,single_graph,single,generated,run6,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run6,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run6,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run6,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run6,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run6,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run6,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run6,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,single_graph,single,generated,run6,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run6,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run6,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run7,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_graph,single,generated,run7,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run7,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run7,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run7,requirement,a1_genetic_transfer_restriction,0,0,,,different_key,[],met,unmet
+before_review_20261011,single_graph,single,generated,run7,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run7,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run7,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run7,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run7,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run7,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run7,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run7,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,single_graph,single,generated,run7,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run7,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run7,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run8,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_graph,single,generated,run8,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run8,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run8,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run8,requirement,a1_genetic_transfer_restriction,0,0,,,different_key,[],met,unmet
+before_review_20261011,single_graph,single,generated,run8,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run8,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run8,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run8,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run8,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,single_graph,single,generated,run8,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run8,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run8,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,single_graph,single,generated,run8,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run8,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run8,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run9,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,single_graph,single,generated,run9,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run9,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,single_graph,single,generated,run9,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run9,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,single_graph,single,generated,run9,requirement,a1_professional_secrecy,0,0,,,different_key,[],not_found,met
+before_review_20261011,single_graph,single,generated,run9,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run9,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run9,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run9,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,single_graph,single,generated,run9,route,consent_derogation,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,single_graph,single,generated,run9,route,recognition,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,single_graph,single,generated,run9,route,approved_clauses,1,1,,,different_key,[],"available,available",available
+before_review_20261011,single_graph,single,generated,run9,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,single_graph,single,generated,run9,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,single_graph,single,generated,run9,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run1,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run1,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run1,route,consent_derogation,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run1,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run1,route,approved_clauses,0,0,,,different_key,[],ruled_out,available
+before_review_20261011,multi_no_graph,multi,runtime,run1,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run1,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run1,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run2,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run2,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run2,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run2,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run2,route,approved_clauses,0,0,,,different_key,[],unresolved,available
+before_review_20261011,multi_no_graph,multi,runtime,run2,route,vital_interests_derogation,0,0,,,different_key,[],not_found,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run2,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run2,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run3,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run3,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run3,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run3,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run3,route,approved_clauses,0,0,,,different_key,[],unresolved,available
+before_review_20261011,multi_no_graph,multi,runtime,run3,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run3,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run3,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run4,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_no_graph,multi,runtime,run4,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run4,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run4,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run4,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run4,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run4,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run4,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run4,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run4,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run4,route,consent_derogation,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run4,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run4,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_no_graph,multi,runtime,run4,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run4,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run4,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run5,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_no_graph,multi,runtime,run5,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run5,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run5,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run5,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run5,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run5,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run5,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run5,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run5,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run5,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run5,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run5,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_no_graph,multi,runtime,run5,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run5,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run5,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run6,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_no_graph,multi,runtime,run6,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run6,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run6,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run6,requirement,a1_genetic_transfer_restriction,0,0,,,different_key,[],undetermined,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run6,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run6,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run6,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run6,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run6,requirement,region_b_host_retention,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run6,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run6,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run6,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_no_graph,multi,runtime,run6,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run6,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run6,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run7,decision,decision,0,0,,,different_key,[],needs_review,do_not_proceed
+before_review_20261011,multi_no_graph,multi,runtime,run7,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run7,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run7,requirement,transfer_route,0,0,,,different_key,[],met,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run7,requirement,a1_genetic_transfer_restriction,0,0,,,different_key,[],not_applicable,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run7,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run7,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run7,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run7,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run7,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run7,route,consent_derogation,0,0,,,different_key,[],supported,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run7,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run7,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_no_graph,multi,runtime,run7,route,vital_interests_derogation,0,0,,,different_key,[],not_found,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run7,trap,consent_derogation_relied_on,0,0,,,different_key,[],region_a:outward_transfer_coverage: Explicit-consent derogation for an occasional transfer (supported),not violated
+before_review_20261011,multi_no_graph,multi,runtime,run7,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run8,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_no_graph,multi,runtime,run8,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run8,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run8,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run8,requirement,a1_genetic_transfer_restriction,0,0,,,different_key,[],not_found,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run8,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run8,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run8,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run8,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run8,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run8,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run8,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run8,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_no_graph,multi,runtime,run8,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run8,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run8,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run9,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_no_graph,multi,runtime,run9,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run9,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run9,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run9,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_no_graph,multi,runtime,run9,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_no_graph,multi,runtime,run9,requirement,a1_hosting_conditions,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run9,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run9,requirement,region_b_sector_rules,0,0,,,different_key,[],not_found,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run9,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_no_graph,multi,runtime,run9,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run9,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run9,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_no_graph,multi,runtime,run9,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_no_graph,multi,runtime,run9,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_no_graph,multi,runtime,run9,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run1,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_graph,multi,generated,run1,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run1,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run1,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run1,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run1,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run1,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run1,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run1,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run1,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run1,route,consent_derogation,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,multi_graph,multi,generated,run1,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run1,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_graph,multi,generated,run1,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run1,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run1,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run2,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_graph,multi,generated,run2,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run2,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run2,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run2,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run2,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run2,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run2,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run2,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run2,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run2,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run2,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run2,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_graph,multi,generated,run2,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run2,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run2,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run3,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_graph,multi,generated,run3,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run3,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run3,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run3,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run3,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run3,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run3,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run3,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run3,requirement,region_b_host_retention,0,1,,"region_b:data_host_retention is not_applicable (correct) but cites B-HRA 2 and 3 rather than s.9, so the scorer could not match it.",different_key,[],not_found,not_applicable
+before_review_20261011,multi_graph,multi,generated,run3,route,consent_derogation,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,multi_graph,multi,generated,run3,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run3,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_graph,multi,generated,run3,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run3,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run3,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run4,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_graph,multi,generated,run4,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run4,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run4,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run4,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run4,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run4,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run4,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run4,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run4,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run4,route,consent_derogation,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,multi_graph,multi,generated,run4,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run4,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_graph,multi,generated,run4,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run4,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run4,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run5,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_graph,multi,generated,run5,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run5,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run5,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run5,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run5,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run5,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run5,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run5,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run5,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run5,route,consent_derogation,1,1,,,different_key,[],"ruled_out,ruled_out",ruled_out
+before_review_20261011,multi_graph,multi,generated,run5,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run5,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_graph,multi,generated,run5,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run5,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run5,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run6,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_graph,multi,generated,run6,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run6,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run6,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run6,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run6,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run6,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run6,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run6,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run6,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run6,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run6,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run6,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_graph,multi,generated,run6,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run6,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run6,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run7,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_graph,multi,generated,run7,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run7,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run7,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run7,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run7,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run7,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run7,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run7,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run7,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run7,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run7,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run7,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_graph,multi,generated,run7,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run7,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run7,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run8,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_graph,multi,generated,run8,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run8,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run8,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run8,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run8,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run8,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run8,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run8,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run8,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run8,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run8,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run8,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_graph,multi,generated,run8,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run8,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run8,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run9,decision,decision,1,1,,,different_key,[],do_not_proceed,do_not_proceed
+before_review_20261011,multi_graph,multi,generated,run9,requirement,lawful_ground,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run9,requirement,sensitive_condition,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run9,requirement,transfer_route,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run9,requirement,a1_genetic_transfer_restriction,1,1,,,different_key,[],unmet,unmet
+before_review_20261011,multi_graph,multi,generated,run9,requirement,a1_professional_secrecy,1,1,,,different_key,[],met,met
+before_review_20261011,multi_graph,multi,generated,run9,requirement,a1_hosting_conditions,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run9,requirement,impact_assessment,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run9,requirement,region_b_sector_rules,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run9,requirement,region_b_host_retention,1,1,,,different_key,[],not_applicable,not_applicable
+before_review_20261011,multi_graph,multi,generated,run9,route,consent_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run9,route,recognition,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run9,route,approved_clauses,1,1,,,different_key,[],available,available
+before_review_20261011,multi_graph,multi,generated,run9,route,vital_interests_derogation,1,1,,,different_key,[],ruled_out,ruled_out
+before_review_20261011,multi_graph,multi,generated,run9,trap,consent_derogation_relied_on,1,1,,,different_key,[],not violated,not violated
+before_review_20261011,multi_graph,multi,generated,run9,trap,genetic_consent_bar_overextended,1,1,,,different_key,[],not violated,not violated

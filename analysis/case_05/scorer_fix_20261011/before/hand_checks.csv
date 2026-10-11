@@ -1,0 +1,7 @@
+key_version,config,run,check,passed,note
+reviewed,single_no_graph,run2,a1_genetic_transfer_restriction,true,Folded into region_a:outward_transfer_route: 19(1)(a) ruled out because of A1 s.7; scorer matched the Art 8 finding instead.
+reviewed,single_no_graph,run2,a1_hosting_conditions,true,"Folded into region_a:outward_transfer_route: A1 s.6 ""do not apply because this is not a transfer for hosting""; scorer matched that unmet transfer finding."
+reviewed,multi_graph,run3,region_b_host_retention,true,"region_b:data_host_retention is not_applicable (correct) but cites B-HRA 2 and 3 rather than s.9, so the scorer could not match it."
+before_review_20261011,single_no_graph,run2,a1_genetic_transfer_restriction,true,Folded into region_a:outward_transfer_route: 19(1)(a) ruled out because of A1 s.7; scorer matched the Art 8 finding instead.
+before_review_20261011,single_no_graph,run2,a1_hosting_conditions,true,"Folded into region_a:outward_transfer_route: A1 s.6 ""do not apply because this is not a transfer for hosting""; scorer matched that unmet transfer finding."
+before_review_20261011,multi_graph,run3,region_b_host_retention,true,"region_b:data_host_retention is not_applicable (correct) but cites B-HRA 2 and 3 rather than s.9, so the scorer could not match it."
