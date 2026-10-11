@@ -68,7 +68,7 @@ The complete correction ledger is `score_reviews.json`, mirrored in the source c
 
 ## Unguarded baseline: full corpus in the prompt (branch v4)
 
-`baseline_corpus/` holds `ARCHITECTURE=baseline BASELINE=corpus` runs: one call with the case, the corpus manifests and tables of contents, and the full text of every corpus in the prompt; no tools, strict schema, supplied-ID restriction, corpus-only or evidence rules, method steps, delegation or review. The output contract (schema as text, status, kind and route definitions) is kept, so the same scorer applies. Numbering differs from the system folders: baseline runs 1-3 are low effort, 4-6 medium, 7-9 high.
+`baseline_corpus/` (runs 1-9) holds `ARCHITECTURE=baseline BASELINE=corpus` runs: one call with the case, the corpus manifests and tables of contents, and the full text of every corpus in the prompt; no tools, strict schema, supplied-ID restriction, corpus-only or evidence rules, method steps, delegation or review. The output contract (schema as text, status, kind and route definitions) is kept, so the same scorer applies. Numbering differs from the system folders: baseline runs 1-3 are low effort, 4-6 medium, 7-9 high.
 
 | run | effort | file | model's decision | decision from its gates | checks passed |
 |---|---|---|---|---|---|
@@ -78,14 +78,17 @@ The complete correction ledger is `score_reviews.json`, mirrored in the source c
 | run4 | medium | 20261011-234845 | proceed_subject_to_conditions | do_not_proceed | 11/16 |
 | run5 | medium | 20261011-234844 | do_not_proceed | do_not_proceed | 12/16 |
 | run6 | medium | 20261011-234848 | proceed_subject_to_conditions | do_not_proceed | 10/16 |
+| run7 | high | 20261011-235345 | proceed_subject_to_conditions | do_not_proceed | 13/16 |
+| run8 | high | 20261011-235352 | do_not_proceed | do_not_proceed | 13/16 |
+| run9 | high | 20261011-235403 | proceed_subject_to_conditions | do_not_proceed | 13/16 |
 
 The headline score uses the model's own decision. Each run also records `decision_from_gates` and `decision_guarded`, and an `audit` of citations, quote IDs and fact IDs.
 
-- The model's own decision was wrong in 4 of 5 completed runs (proceed_subject_to_conditions while its own gates were unmet); the decision computed from its gate statuses was right in 5 of 5.
+- The model's own decision was wrong in 6 of 8 completed runs (proceed_subject_to_conditions while its own gates were unmet); the decision computed from its gate statuses was right in 8 of 8.
 - With the text in the prompt it avoided the consent-derogation trap in every completed run.
-- It never filed the Region B requirements (0/5). At medium effort it also missed the A1 genetic restriction and the listed impact assessment as requirements (0/3 each).
-- Hallucination was low: no unknown provision IDs, no quote IDs that were not shown (105 quotes), 4 miscopied fact IDs in total. One run in six failed on malformed JSON.
-- Means: low 9.0 including the failed run (12.5 excluding it), medium 11.0; system medium means for comparison: single 13.7, multi 15.0 (no graph) and 16.0 (graph).
+- It never filed the Region B requirements (0/8). At medium effort it also missed the A1 genetic restriction and the listed impact assessment as requirements (0/3 each); at high effort it found both in all three runs except one listed-impact miss.
+- Hallucination was low: no unknown provision IDs, no quote IDs that were not shown (219 quotes), 5 miscopied fact IDs in total. One run in nine failed on malformed JSON (low effort).
+- Means (checks passed / 16): low 9.0 including the failed run (12.5 excluding it), medium 11.0, high 13.0. Mean time 40 s, 44 s, 99 s. System means at the same effort: single 12.7-14.0 (high), 13.7 (medium), 9.0-14.7 (low); multi_graph 15.7 (high), 16.0 (medium and low).
 
 ## Hand-check notes
 
