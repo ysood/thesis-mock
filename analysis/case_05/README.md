@@ -73,7 +73,7 @@ The complete correction ledger is `score_reviews.json`, mirrored in the source c
 | run | effort | file | model's decision | decision from its gates | checks passed |
 |---|---|---|---|---|---|
 | run1 | low | 20261011-234605 | proceed_subject_to_conditions | do_not_proceed | 13/16 |
-| run2 | low | 20261011-234620 | failed: invalid JSON twice | - | 2/16 |
+| run2 | low | 20261011-235612 | proceed_subject_to_conditions | do_not_proceed | 11/16 |
 | run3 | low | 20261011-234603 | proceed_subject_to_conditions | do_not_proceed | 12/16 |
 | run4 | medium | 20261011-234845 | proceed_subject_to_conditions | do_not_proceed | 11/16 |
 | run5 | medium | 20261011-234844 | do_not_proceed | do_not_proceed | 12/16 |
@@ -82,13 +82,13 @@ The complete correction ledger is `score_reviews.json`, mirrored in the source c
 | run8 | high | 20261011-235352 | do_not_proceed | do_not_proceed | 13/16 |
 | run9 | high | 20261011-235403 | proceed_subject_to_conditions | do_not_proceed | 13/16 |
 
-The headline score uses the model's own decision. Each run also records `decision_from_gates` and `decision_guarded`, and an `audit` of citations, quote IDs and fact IDs.
+The first low run 2 (20261011-234620) failed on invalid JSON twice (no strict schema) and is kept as `run2_failed.json`; run 2 was re-run. The headline score uses the model's own decision. Each run also records `decision_from_gates` and `decision_guarded`, and an `audit` of citations, quote IDs and fact IDs.
 
-- The model's own decision was wrong in 6 of 8 completed runs (proceed_subject_to_conditions while its own gates were unmet); the decision computed from its gate statuses was right in 8 of 8.
+- The model's own decision was wrong in 7 of 9 runs (proceed_subject_to_conditions while its own gates were unmet); the decision computed from its gate statuses was right in 9 of 9.
 - With the text in the prompt it avoided the consent-derogation trap in every completed run.
-- It never filed the Region B requirements (0/8). At medium effort it also missed the A1 genetic restriction and the listed impact assessment as requirements (0/3 each); at high effort it found both in all three runs except one listed-impact miss.
-- Hallucination was low: no unknown provision IDs, no quote IDs that were not shown (219 quotes), 5 miscopied fact IDs in total. One run in nine failed on malformed JSON (low effort).
-- Means (checks passed / 16): low 9.0 including the failed run (12.5 excluding it), medium 11.0, high 13.0. Mean time 40 s, 44 s, 99 s. System means at the same effort: single 12.7-14.0 (high), 13.7 (medium), 9.0-14.7 (low); multi_graph 15.7 (high), 16.0 (medium and low).
+- It never filed the Region B requirements (0/9). At medium effort it also missed the A1 genetic restriction and the listed impact assessment as requirements (0/3 each); at high effort it found both in all three runs except one listed-impact miss.
+- Hallucination was low: no unknown provision IDs, no quote IDs that were not shown (240 quotes), 5 miscopied fact IDs in total. One call in ten (the archived low run) failed on malformed JSON.
+- Means (checks passed / 16): low 12.0, medium 11.0, high 13.0. Mean time 36 s, 44 s, 99 s. System means at the same effort: single 12.7-14.0 (high), 13.7 (medium), 9.0-14.7 (low); multi_graph 15.7 (high), 16.0 (medium and low).
 
 ## Hand-check notes
 

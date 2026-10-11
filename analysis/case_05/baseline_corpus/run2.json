@@ -5,32 +5,649 @@
  "tools": false,
  "graph": "none",
  "result": {
-  "decision": "needs_review",
+  "decision": "proceed_subject_to_conditions",
   "reasons": [
-   "Baseline call failed."
+   "The processing and clinical disclosure are otherwise lawful, and the Region B statutes supplied do not impose a gate on this recipient. However, the transfer cannot proceed as proposed because Region B recognition does not cover this sensitive information or this uncertified recipient, no approved clauses are in place, and A1 law rules out the explicit-consent derogation for genetic information. The transfer may proceed only after the parties use the Article 18 approved-clause route, complete the required assessment of Region B law and practice, and implement any necessary effective supplementary measures."
   ],
-  "seconds": 50.9,
+  "seconds": 37.3,
   "mode": "baseline",
   "baseline": "corpus",
   "decision_from_gates": {
-   "decision": "needs_review",
+   "decision": "do_not_proceed",
    "reasons": [
-    "Supervisor: Supervisor review did not complete."
+    "region_a:outward_transfer_coverage (Coverage of the outward transfer by a recognised territory, approved clauses or a valid derogation) is unmet as described."
    ]
   },
   "decision_guarded": {
-   "decision": "needs_review",
+   "decision": "do_not_proceed",
    "reasons": [
-    "Supervisor: Supervisor review did not complete."
+    "region_a:outward_transfer_coverage (Coverage of the outward transfer by a recognised territory, approved clauses or a valid derogation) is unmet as described."
    ]
   },
-  "audit": null,
-  "plan": null,
-  "specialists": {},
-  "findings": [],
+  "audit": {
+   "citations": 35,
+   "citations_unknown": [],
+   "citations_not_shown": [],
+   "quote_ids": 21,
+   "quote_ids_unknown": [],
+   "quote_ids_not_shown": [],
+   "fact_ids": 20,
+   "fact_ids_unknown": []
+  },
+  "plan": {
+   "understanding": "Kestrel Genetic Medicine, a health-care provider established in Subregion A1, would upload one identified adult patient's genetic and health information to Harrow Inherited Cardiac Clinic in Region B for a one-off treatment-related second opinion. Harrow would review the information, conduct one video consultation, and retain the referral in its own patient record. No onward transfer is proposed.",
+   "engagements": [
+    {
+     "corpus": "region_a",
+     "engaged": true,
+     "reason": "The transfer is processing of identified personal, health and genetic information by a custodian established in Subregion A1, and making the information available to a recipient in a third territory. Region A law therefore governs both the processing and the outward transfer.",
+     "focus": ""
+    },
+    {
+     "corpus": "subregion_a1",
+     "engaged": true,
+     "reason": "The sender is established in Subregion A1, its practitioners are registered under A1 law, and the information is health and genetic information. A1 law supplies the permitted health-care processing rule, professional-secrecy obligations and additional outward-transfer conditions permitted by Region A law.",
+     "focus": ""
+    },
+    {
+     "corpus": "region_b",
+     "engaged": false,
+     "reason": "The Region B Health Records Act applies its operational provisions to covered providers and service agents. Neither clinic bills a Region B health insurer, Harrow is not an insurer, and Harrow keeps the information for its own clinical record rather than as a service agent or data host for another person. The Records Access Act provisions supplied apply to computing providers, but no computing provider or hosted record system is involved on the stated facts.",
+     "focus": ""
+    }
+   ]
+  },
+  "specialists": {
+   "region_a": {
+    "applies": true,
+    "applicability_reasoning": "The transfer is processing of identified personal, health and genetic information by a custodian established in Subregion A1, and making the information available to a recipient in a third territory. Region A law therefore governs both the processing and the outward transfer.",
+    "coverage_note": "The assessment checked Region A's scope, lawful grounds, sensitive-information rules, consent conditions, minimisation, security, impact assessment, records, notice and outward-transfer routes, together with A1's permitted health-care processing, professional secrecy, genetic-transfer restriction and impact-assessment list. Region B's health-record and records-access statutes were checked and found not to apply on the supplied provider, service-agent, data-host and computing-provider facts. No direct conflict between applicable laws was identified; the decisive issue is the absence of a currently supported Region A outward-transfer route."
+   },
+   "subregion_a1": {
+    "applies": true,
+    "applicability_reasoning": "The sender is established in Subregion A1, its practitioners are registered under A1 law, and the information is health and genetic information. A1 law supplies the permitted health-care processing rule, professional-secrecy obligations and additional outward-transfer conditions permitted by Region A law.",
+    "coverage_note": "The assessment checked Region A's scope, lawful grounds, sensitive-information rules, consent conditions, minimisation, security, impact assessment, records, notice and outward-transfer routes, together with A1's permitted health-care processing, professional secrecy, genetic-transfer restriction and impact-assessment list. Region B's health-record and records-access statutes were checked and found not to apply on the supplied provider, service-agent, data-host and computing-provider facts. No direct conflict between applicable laws was identified; the decisive issue is the absence of a currently supported Region A outward-transfer route."
+   },
+   "region_b": {
+    "applies": false,
+    "applicability_reasoning": "The Region B Health Records Act applies its operational provisions to covered providers and service agents. Neither clinic bills a Region B health insurer, Harrow is not an insurer, and Harrow keeps the information for its own clinical record rather than as a service agent or data host for another person. The Records Access Act provisions supplied apply to computing providers, but no computing provider or hosted record system is involved on the stated facts.",
+    "coverage_note": "The assessment checked Region A's scope, lawful grounds, sensitive-information rules, consent conditions, minimisation, security, impact assessment, records, notice and outward-transfer routes, together with A1's permitted health-care processing, professional secrecy, genetic-transfer restriction and impact-assessment list. Region B's health-record and records-access statutes were checked and found not to apply on the supplied provider, service-agent, data-host and computing-provider facts. No direct conflict between applicable laws was identified; the decisive issue is the absence of a currently supported Region A outward-transfer route."
+   }
+  },
+  "findings": [
+   {
+    "id": "lawful_processing",
+    "title": "Lawful processing of personal information",
+    "kind": "gate",
+    "status": "met",
+    "reasoning": "The proposed processing is for the patient's treatment and is supported by the health-care processing route in A1 law. The clinic's registered practitioners process the information in connection with providing health care, satisfying the applicable Region A lawful-ground and sensitive-information conditions.",
+    "facts": [
+     {
+      "fact_id": "f_27f370d17c18",
+      "path": "/transfer/additional_info",
+      "quote": "For processing the information, the clinic relies on the provision of health care by its registered practitioners."
+     },
+     {
+      "fact_id": "f_987ab471487e",
+      "path": "/organisations/0/description",
+      "quote": "Its consultant clinical geneticists are registered as medical practitioners with the Subregion A1 Health Professions Board."
+     },
+     {
+      "fact_id": "f_fc5f59499494",
+      "path": "/transfer/purpose",
+      "quote": "treatment"
+     },
+     {
+      "fact_id": "f_110e981b0a7c",
+      "path": "/transfer/purpose_description",
+      "quote": "The treating consultant wants a second opinion on whether the variant explains the patient's symptoms before deciding on treatment."
+     }
+    ],
+    "evidence_ids": [
+     "ev_referral"
+    ],
+    "citations": [
+     "A-REG 6",
+     "A-REG 8",
+     "A1-HIA 4"
+    ],
+    "quote_id": "A1-HIA 4#L1",
+    "routes": [
+     {
+      "name": "Necessary provision of health care or treatment by or under the responsibility of a registered practitioner",
+      "status": "supported",
+      "reasoning": "The transfer supports a second opinion before treatment, and the sender's consultants are registered medical practitioners.",
+      "citations": [
+       "A-REG 8",
+       "A1-HIA 4"
+      ],
+      "quote_id": "A1-HIA 4#L1",
+      "resolved_citations": [
+       "A-REG 8",
+       "A1-HIA 4"
+      ],
+      "quote": "1. For the purposes of Article 8(2)(c) of the Region A Regulation, the processing of health information is lawful where it is necessary for the provision of health care or treatment and is carried out by or under the responsibility of a registered practitioner."
+     },
+     {
+      "name": "Explicit consent to processing",
+      "status": "supported",
+      "reasoning": "The signed consent specifically identifies the information, recipient and second-opinion purpose and is withdrawable as easily as given.",
+      "citations": [
+       "A-REG 6",
+       "A-REG 7",
+       "A-REG 8"
+      ],
+      "quote_id": "A-REG 7#L1",
+      "resolved_citations": [
+       "A-REG 6",
+       "A-REG 7",
+       "A-REG 8"
+      ],
+      "quote": "1. Consent shall be given by a clear written or electronic statement, specific to each purpose, and may be withdrawn at any time as easily as it was given."
+     }
+    ],
+    "missing_facts": [],
+    "missing_evidence": [],
+    "required_actions": [],
+    "confirmations": [
+     "The clinic should preserve evidence of the treatment purpose and practitioner responsibility."
+    ],
+    "open_dependency": "",
+    "corpus": "region_a",
+    "ref": "region_a:lawful_processing",
+    "source": "baseline",
+    "resolved_citations": [
+     "A-REG 6",
+     "A-REG 8",
+     "A1-HIA 4"
+    ],
+    "quote": "1. For the purposes of Article 8(2)(c) of the Region A Regulation, the processing of health information is lawful where it is necessary for the provision of health care or treatment and is carried out by or under the responsibility of a registered practitioner.",
+    "issues": [],
+    "verified": true
+   },
+   {
+    "id": "professional_secrecy",
+    "title": "Professional secrecy and patient-consented disclosure",
+    "kind": "gate",
+    "status": "met",
+    "reasoning": "A1 registered practitioners owe professional secrecy, but may disclose health information to a third party with patient consent. The supplied signed consent specifically covers the named information, Harrow and the second-opinion purpose.",
+    "facts": [
+     {
+      "fact_id": "f_987ab471487e",
+      "path": "/organisations/0/description",
+      "quote": "Its consultant clinical geneticists are registered as medical practitioners with the Subregion A1 Health Professions Board."
+     }
+    ],
+    "evidence_ids": [
+     "ev_consent"
+    ],
+    "citations": [
+     "A1-HIA 5"
+    ],
+    "quote_id": "A1-HIA 5#L2",
+    "routes": [
+     {
+      "name": "Patient consent to disclosure to the third party",
+      "status": "supported",
+      "reasoning": "The patient gave specific written consent to sending the referral documents to Harrow.",
+      "citations": [
+       "A1-HIA 5"
+      ],
+      "quote_id": "A1-HIA 5#L2",
+      "resolved_citations": [
+       "A1-HIA 5"
+      ],
+      "quote": "2. A registered practitioner may disclose such information to a third party only with the consent of the patient, where required by law, or where necessary to prevent a serious and imminent threat to life."
+     },
+     {
+      "name": "Disclosure required by law",
+      "status": "not_investigated",
+      "reasoning": "No legal-compulsion route is needed on the supplied facts.",
+      "citations": [
+       "A1-HIA 5"
+      ],
+      "quote_id": "A1-HIA 5#L2",
+      "resolved_citations": [
+       "A1-HIA 5"
+      ],
+      "quote": "2. A registered practitioner may disclose such information to a third party only with the consent of the patient, where required by law, or where necessary to prevent a serious and imminent threat to life."
+     },
+     {
+      "name": "Disclosure necessary to prevent a serious and imminent threat to life",
+      "status": "ruled_out",
+      "reasoning": "The transfer is for a planned second opinion, not to prevent a serious and imminent threat to life.",
+      "citations": [
+       "A1-HIA 5"
+      ],
+      "quote_id": "A1-HIA 5#L2",
+      "resolved_citations": [
+       "A1-HIA 5"
+      ],
+      "quote": "2. A registered practitioner may disclose such information to a third party only with the consent of the patient, where required by law, or where necessary to prevent a serious and imminent threat to life."
+     }
+    ],
+    "missing_facts": [],
+    "missing_evidence": [],
+    "required_actions": [],
+    "confirmations": [],
+    "open_dependency": "",
+    "corpus": "subregion_a1",
+    "ref": "subregion_a1:professional_secrecy",
+    "source": "baseline",
+    "resolved_citations": [
+     "A1-HIA 5"
+    ],
+    "quote": "2. A registered practitioner may disclose such information to a third party only with the consent of the patient, where required by law, or where necessary to prevent a serious and imminent threat to life.",
+    "issues": [],
+    "verified": true
+   },
+   {
+    "id": "outward_transfer_coverage",
+    "title": "Coverage of the outward transfer by a recognised territory, approved clauses or a valid derogation",
+    "kind": "gate",
+    "status": "unmet",
+    "reasoning": "Region B recognition is limited to certified recipients and excludes sensitive information. Harrow lacks certification and the transfer contains health and genetic information. No approved transfer-clause agreement exists. The apparent explicit-consent derogation is unavailable because A1 law prohibits genetic information from being transferred on the basis of Article 19(1)(a).",
+    "facts": [
+     {
+      "fact_id": "f_febc895bce9e",
+      "path": "/organisations/1/description",
+      "quote": "It holds no certification under the Region B Trusted Recipient Scheme."
+     },
+     {
+      "fact_id": "f_6a3e2263dd33",
+      "path": "/transfer/data/description",
+      "quote": "One adult patient's name, date of birth and clinic reference number, the laboratory report of a diagnostic genetic test (a variant of uncertain significance in a gene linked to an inherited heart-rhythm condition), a summary of two recent ECGs, and the consultant's referral letter."
+     },
+     {
+      "fact_id": "f_c6e3ac5f8610",
+      "path": "/transfer/data/description",
+      "quote": "No other part of the clinic record and no family members' details."
+     },
+     {
+      "fact_id": "f_d75ec85c160f",
+      "path": "/transfer/additional_info",
+      "quote": "There is no approved transfer-clause agreement or other contract between the two clinics."
+     },
+     {
+      "fact_id": "f_55ec68a77a25",
+      "path": "/transfer/additional_info",
+      "quote": "For sending it outside Region A, the clinic relies on the patient's explicit consent to this transfer, given after the clinic explained the possible risks of a transfer without a recognition or appropriate safeguards."
+     }
+    ],
+    "evidence_ids": [
+     "ev_consent"
+    ],
+    "citations": [
+     "A-REG 16",
+     "A-REG 17",
+     "A-REG 18",
+     "A-REG 19",
+     "A1-HIA 7"
+    ],
+    "quote_id": "A1-HIA 7#L1",
+    "routes": [
+     {
+      "name": "Recognition for Region B and certified recipient covering the transferred information",
+      "status": "ruled_out",
+      "reasoning": "The recognition excludes sensitive information, and Harrow has no Trusted Recipient Scheme certification. The information includes health and genetic information.",
+      "citations": [
+       "A-REG 17",
+       "A-REG Annex II"
+      ],
+      "quote_id": "A-REG Annex II#L1",
+      "resolved_citations": [
+       "A-REG 17",
+       "A-REG Annex II"
+      ],
+      "quote": "Region B: recognition limited to recipients holding an active certification under the Region B Trusted Recipient Scheme. The recognition extends only to personal information which is not sensitive information."
+     },
+     {
+      "name": "Approved transfer clauses executed by the exporter and recipient, with any necessary supplementary measures",
+      "status": "available",
+      "reasoning": "The parties have not executed approved clauses, but this route would cover the transfer if they execute the Commission-approved clauses and complete the required assessment of Region B law and practice, adopting effective supplementary measures if necessary. If effective supplementary measures cannot be adopted, this route would fail.",
+      "citations": [
+       "A-REG 18"
+      ],
+      "quote_id": "A-REG 18#L1",
+      "resolved_citations": [
+       "A-REG 18"
+      ],
+      "quote": "1. In the absence of a recognition covering the transfer, an outward transfer may take place where the exporter and the recipient have executed the transfer clauses approved by the Commission."
+     },
+     {
+      "name": "Explicit-consent derogation after risk information",
+      "status": "ruled_out",
+      "reasoning": "Although the consent records the risks and absence of safeguards, A1 law expressly prohibits making genetic information the subject of an outward transfer on the basis of Article 19(1)(a).",
+      "citations": [
+       "A-REG 19",
+       "A1-HIA 7"
+      ],
+      "quote_id": "A1-HIA 7#L1",
+      "resolved_citations": [
+       "A-REG 19",
+       "A1-HIA 7"
+      ],
+      "quote": "Genetic information may not be made the subject of an outward transfer on the basis of Article 19(1)(a) of the Region A Regulation, and the prohibition in Article 8(1) of that Regulation may not be lifted by consent in respect of genetic information processed for insurance or employment purposes."
+     },
+     {
+      "name": "Contract-performance derogation",
+      "status": "ruled_out",
+      "reasoning": "The transfer is not necessary for performance of a contract between the patient and the custodian. The patient's care terms say nothing about referrals outside Region A, and in any event this one-off route cannot overcome the A1 genetic-information restriction applicable to the consent derogation; no facts establish the contract route.",
+      "citations": [
+       "A-REG 19"
+      ],
+      "quote_id": "A-REG 19#L3",
+      "resolved_citations": [
+       "A-REG 19"
+      ],
+      "quote": "(b) the transfer is necessary for the performance of a contract between the person and the custodian;"
+     },
+     {
+      "name": "Vital-interests derogation",
+      "status": "ruled_out",
+      "reasoning": "The patient is an adult who can consent, so the incapacity condition for this route is not met.",
+      "citations": [
+       "A-REG 19"
+      ],
+      "quote_id": "A-REG 19#L4",
+      "resolved_citations": [
+       "A-REG 19"
+      ],
+      "quote": "(c) the transfer is necessary to protect the vital interests of the person or of other persons, where the person is physically or legally incapable of giving consent;"
+     },
+     {
+      "name": "Important public-interest derogation",
+      "status": "ruled_out",
+      "reasoning": "No important public-interest basis recognised in Region A or A1 law is supplied.",
+      "citations": [
+       "A-REG 19"
+      ],
+      "quote_id": "A-REG 19#L5",
+      "resolved_citations": [
+       "A-REG 19"
+      ],
+      "quote": "(d) the transfer is necessary for important reasons of public interest recognised in Region A law or in the law of the Subregion to which the custodian is subject."
+     }
+    ],
+    "missing_facts": [
+     "Whether effective supplementary measures can be adopted after assessing Region B law and practice."
+    ],
+    "missing_evidence": [
+     "Executed Commission-approved transfer-clause agreement.",
+     "Documented Article 18(2) transfer-impact assessment.",
+     "Evidence of any supplementary measures adopted."
+    ],
+    "required_actions": [
+     "Execute the Commission-approved transfer clauses between Kestrel and Harrow.",
+     "Assess Region B law and practice, including public-authority access powers, as required by Article 18(2).",
+     "Adopt effective supplementary measures sufficient to ensure essentially equivalent protection, if the assessment requires them.",
+     "Do not proceed under the Article 19(1)(a) consent route for this genetic information."
+    ],
+    "confirmations": [],
+    "open_dependency": "",
+    "corpus": "region_a",
+    "ref": "region_a:outward_transfer_coverage",
+    "source": "baseline",
+    "resolved_citations": [
+     "A-REG 16",
+     "A-REG 17",
+     "A-REG 18",
+     "A-REG 19",
+     "A1-HIA 7"
+    ],
+    "quote": "Genetic information may not be made the subject of an outward transfer on the basis of Article 19(1)(a) of the Region A Regulation, and the prohibition in Article 8(1) of that Regulation may not be lifted by consent in respect of genetic information processed for insurance or employment purposes.",
+    "issues": [],
+    "verified": true
+   },
+   {
+    "id": "minimum_necessary",
+    "title": "Data minimisation and purpose limitation",
+    "kind": "gate",
+    "status": "met",
+    "reasoning": "The transfer is limited to the patient's identity details, diagnostic genetic report, two ECG summaries and referral letter, with no other record or family details. Those materials are directly relevant to the specified second-opinion treatment purpose.",
+    "facts": [
+     {
+      "fact_id": "f_6a3e2263dd33",
+      "path": "/transfer/data/description",
+      "quote": "One adult patient's name, date of birth and clinic reference number, the laboratory report of a diagnostic genetic test (a variant of uncertain significance in a gene linked to an inherited heart-rhythm condition), a summary of two recent ECGs, and the consultant's referral letter."
+     },
+     {
+      "fact_id": "f_c6e3ac5f8610",
+      "path": "/transfer/data/description",
+      "quote": "No other part of the clinic record and no family members' details."
+     },
+     {
+      "fact_id": "f_110e981b0a7c",
+      "path": "/transfer/purpose_description",
+      "quote": "The treating consultant wants a second opinion on whether the variant explains the patient's symptoms before deciding on treatment."
+     }
+    ],
+    "evidence_ids": [],
+    "citations": [
+     "A-REG 5"
+    ],
+    "quote_id": "A-REG 5#L3",
+    "routes": [],
+    "missing_facts": [],
+    "missing_evidence": [],
+    "required_actions": [],
+    "confirmations": [],
+    "open_dependency": "",
+    "corpus": "region_a",
+    "ref": "region_a:minimum_necessary",
+    "source": "baseline",
+    "resolved_citations": [
+     "A-REG 5"
+    ],
+    "quote": "(b) collected for specified and explicit purposes and not further processed in a manner incompatible with them;",
+    "issues": [],
+    "verified": true
+   },
+   {
+    "id": "security",
+    "title": "Appropriate technical and organisational security",
+    "kind": "duty",
+    "status": "met",
+    "reasoning": "The upload uses an encrypted connection. The facts support an appropriate transport security measure, although the clinic must maintain broader safeguards appropriate to the risk.",
+    "facts": [
+     {
+      "fact_id": "f_8c44c6e413c5",
+      "path": "/transfer/method",
+      "quote": "One-off upload of the referral documents to Harrow's clinical referral portal over an encrypted connection."
+     }
+    ],
+    "evidence_ids": [],
+    "citations": [
+     "A-REG 5",
+     "A-REG 14"
+    ],
+    "quote_id": "A-REG 14#L1",
+    "routes": [],
+    "missing_facts": [],
+    "missing_evidence": [],
+    "required_actions": [],
+    "confirmations": [
+     "Confirm portal access controls, authentication, audit logging and protection of stored copies."
+    ],
+    "open_dependency": "",
+    "corpus": "region_a",
+    "ref": "region_a:security",
+    "source": "baseline",
+    "resolved_citations": [
+     "A-REG 5",
+     "A-REG 14"
+    ],
+    "quote": "The custodian and the agent shall implement technical and organisational measures appropriate to the risk, including as appropriate encryption, the ability to ensure ongoing confidentiality and availability, and a process for regularly testing the effectiveness of those measures.",
+    "issues": [],
+    "verified": true
+   },
+   {
+    "id": "impact_assessment",
+    "title": "Impact assessment where required",
+    "kind": "duty",
+    "status": "met",
+    "reasoning": "No supplied A1 impact-assessment category applies: this is not hosting or storage of a patient record system by an agent outside A1, and there is no insurer matching. The general Region A rule is triggered only where processing is likely to result in high risk; the supplied facts do not establish that threshold for this one-off referral.",
+    "facts": [
+     {
+      "fact_id": "f_2f7b22f9f431",
+      "path": "/transfer/frequency",
+      "quote": "one_off"
+     },
+     {
+      "fact_id": "f_a7a94423ed89",
+      "path": "/transfer/retention",
+      "quote": "Harrow keeps the referral in its own clinical record under its retention schedule for the patient's care."
+     },
+     {
+      "fact_id": "f_3707d0e0f8a9",
+      "path": "/organisations/1/description",
+      "quote": "It keeps the information it receives in its own clinical record for its own care of the patient and stores no records on behalf of anyone else."
+     },
+     {
+      "fact_id": "f_7e86304fe561",
+      "path": "/transfer/additional_info",
+      "quote": "No impact assessment has been prepared for this single referral."
+     }
+    ],
+    "evidence_ids": [],
+    "citations": [
+     "A-REG 12",
+     "A1-HIA 8"
+    ],
+    "quote_id": "A1-HIA 8#L1",
+    "routes": [
+     {
+      "name": "No impact assessment because no listed A1 activity and no established high-risk processing",
+      "status": "supported",
+      "reasoning": "The transfer is one-off and Harrow is receiving information for its own clinical record, not acting as an external agent hosting the clinic's patient record system.",
+      "citations": [
+       "A-REG 12",
+       "A1-HIA 8"
+      ],
+      "quote_id": "A1-HIA 8#L2",
+      "resolved_citations": [
+       "A-REG 12",
+       "A1-HIA 8"
+      ],
+      "quote": "(a) the hosting or storage of a patient record system by an agent outside Subregion A1;"
+     },
+     {
+      "name": "Impact assessment for processing likely to result in high risk",
+      "status": "not_investigated",
+      "reasoning": "This fallback is not needed on the stated facts, but the clinic remains responsible for reassessing risk if the scope, volume or method changes.",
+      "citations": [
+       "A-REG 12"
+      ],
+      "quote_id": "A-REG 12#L1",
+      "resolved_citations": [
+       "A-REG 12"
+      ],
+      "quote": "1. Where processing is likely to result in a high risk to the rights of persons, the custodian shall, before the processing, carry out an assessment of the impact of the envisaged processing."
+     }
+    ],
+    "missing_facts": [],
+    "missing_evidence": [],
+    "required_actions": [],
+    "confirmations": [],
+    "open_dependency": "",
+    "corpus": "region_a",
+    "ref": "region_a:impact_assessment",
+    "source": "baseline",
+    "resolved_citations": [
+     "A-REG 12",
+     "A1-HIA 8"
+    ],
+    "quote": "Under Article 12(3) of the Region A Regulation, an impact assessment is required in Subregion A1, regardless of the number of persons concerned, for:",
+    "issues": [],
+    "verified": true
+   },
+   {
+    "id": "processing_records",
+    "title": "Written records of processing",
+    "kind": "duty",
+    "status": "undetermined",
+    "reasoning": "Region A requires the custodian to maintain a written record including the outward transfer and route relied on. The facts do not establish whether Kestrel's record contains the required entries.",
+    "facts": [
+     {
+      "fact_id": "f_55ec68a77a25",
+      "path": "/transfer/additional_info",
+      "quote": "For sending it outside Region A, the clinic relies on the patient's explicit consent to this transfer, given after the clinic explained the possible risks of a transfer without a recognition or appropriate safeguards."
+     }
+    ],
+    "evidence_ids": [],
+    "citations": [
+     "A-REG 13"
+    ],
+    "quote_id": "A-REG 13#L1",
+    "routes": [],
+    "missing_facts": [],
+    "missing_evidence": [
+     "Kestrel's written processing record showing the purpose, categories, recipient, outward-transfer route and storage periods."
+    ],
+    "required_actions": [],
+    "confirmations": [],
+    "open_dependency": "",
+    "corpus": "region_a",
+    "ref": "region_a:processing_records",
+    "source": "baseline",
+    "resolved_citations": [
+     "A-REG 13"
+    ],
+    "quote": "Each custodian and agent shall maintain a written record of the processing activities under its responsibility, including the purposes, the categories of information and persons, the recipients, any outward transfers and the route relied on, and the storage periods.",
+    "issues": [],
+    "verified": true
+   },
+   {
+    "id": "information_notice",
+    "title": "Information to the patient about processing and outward transfer",
+    "kind": "duty",
+    "status": "undetermined",
+    "reasoning": "The patient was informed of the risks and absence of safeguards for consent purposes, but the facts do not establish that the broader Article 11 information was provided, including the storage period, rights and the route relied on.",
+    "facts": [
+     {
+      "fact_id": "f_e22033e7c743",
+      "path": "/evidence/0/summary",
+      "quote": "It records that the patient was told Region B has no recognition covering this kind of information, that no transfer safeguards would be in place, and the possible risks of that."
+     }
+    ],
+    "evidence_ids": [
+     "ev_consent"
+    ],
+    "citations": [
+     "A-REG 11"
+    ],
+    "quote_id": "A-REG 11#L2",
+    "routes": [],
+    "missing_facts": [],
+    "missing_evidence": [
+     "Privacy notice or other record showing all Article 11 information was provided."
+    ],
+    "required_actions": [],
+    "confirmations": [],
+    "open_dependency": "",
+    "corpus": "region_a",
+    "ref": "region_a:information_notice",
+    "source": "baseline",
+    "resolved_citations": [
+     "A-REG 11"
+    ],
+    "quote": "2. Where the custodian intends to make an outward transfer, it shall also inform the person of that intention, of the third territory concerned and of the route under Articles 17 to 19 relied on.",
+    "issues": [],
+    "verified": true
+   }
+  ],
   "questions": [],
   "delegations": [],
-  "reviews": [],
+  "reviews": [
+   {
+    "action": "baseline (no review)",
+    "conflicts": [],
+    "unresolved": [
+     "Whether the parties can execute approved transfer clauses and adopt effective supplementary measures after assessing Region B law and practice.",
+     "Whether Kestrel has completed its Article 13 processing record and Article 11 notice obligations."
+    ]
+   }
+  ],
   "read": {
    "baseline": [
     "A-REG 1",
@@ -181,31 +798,485 @@
    ]
   },
   "brief": {
-   "known": [],
-   "required": [],
+   "known": [
+    {
+     "fact_id": "f_27f370d17c18",
+     "path": "/transfer/additional_info",
+     "text": "For processing the information, the clinic relies on the provision of health care by its registered practitioners.",
+     "used_by": [
+      "region_a:lawful_processing"
+     ]
+    },
+    {
+     "fact_id": "f_987ab471487e",
+     "path": "/organisations/0/description",
+     "text": "Its consultant clinical geneticists are registered as medical practitioners with the Subregion A1 Health Professions Board.",
+     "used_by": [
+      "region_a:lawful_processing",
+      "subregion_a1:professional_secrecy"
+     ]
+    },
+    {
+     "fact_id": "f_fc5f59499494",
+     "path": "/transfer/purpose",
+     "text": "treatment",
+     "used_by": [
+      "region_a:lawful_processing"
+     ]
+    },
+    {
+     "fact_id": "f_110e981b0a7c",
+     "path": "/transfer/purpose_description",
+     "text": "The treating consultant wants a second opinion on whether the variant explains the patient's symptoms before deciding on treatment.",
+     "used_by": [
+      "region_a:lawful_processing",
+      "region_a:minimum_necessary"
+     ]
+    },
+    {
+     "fact_id": "f_febc895bce9e",
+     "path": "/organisations/1/description",
+     "text": "It holds no certification under the Region B Trusted Recipient Scheme.",
+     "used_by": [
+      "region_a:outward_transfer_coverage"
+     ]
+    },
+    {
+     "fact_id": "f_6a3e2263dd33",
+     "path": "/transfer/data/description",
+     "text": "One adult patient's name, date of birth and clinic reference number, the laboratory report of a diagnostic genetic test (a variant of uncertain significance in a gene linked to an inherited heart-rhythm condition), a summary of two recent ECGs, and the consultant's referral letter.",
+     "used_by": [
+      "region_a:outward_transfer_coverage",
+      "region_a:minimum_necessary"
+     ]
+    },
+    {
+     "fact_id": "f_c6e3ac5f8610",
+     "path": "/transfer/data/description",
+     "text": "No other part of the clinic record and no family members' details.",
+     "used_by": [
+      "region_a:outward_transfer_coverage",
+      "region_a:minimum_necessary"
+     ]
+    },
+    {
+     "fact_id": "f_d75ec85c160f",
+     "path": "/transfer/additional_info",
+     "text": "There is no approved transfer-clause agreement or other contract between the two clinics.",
+     "used_by": [
+      "region_a:outward_transfer_coverage"
+     ]
+    },
+    {
+     "fact_id": "f_55ec68a77a25",
+     "path": "/transfer/additional_info",
+     "text": "For sending it outside Region A, the clinic relies on the patient's explicit consent to this transfer, given after the clinic explained the possible risks of a transfer without a recognition or appropriate safeguards.",
+     "used_by": [
+      "region_a:outward_transfer_coverage",
+      "region_a:processing_records"
+     ]
+    },
+    {
+     "fact_id": "f_8c44c6e413c5",
+     "path": "/transfer/method",
+     "text": "One-off upload of the referral documents to Harrow's clinical referral portal over an encrypted connection.",
+     "used_by": [
+      "region_a:security"
+     ]
+    },
+    {
+     "fact_id": "f_2f7b22f9f431",
+     "path": "/transfer/frequency",
+     "text": "one_off",
+     "used_by": [
+      "region_a:impact_assessment"
+     ]
+    },
+    {
+     "fact_id": "f_a7a94423ed89",
+     "path": "/transfer/retention",
+     "text": "Harrow keeps the referral in its own clinical record under its retention schedule for the patient's care.",
+     "used_by": [
+      "region_a:impact_assessment"
+     ]
+    },
+    {
+     "fact_id": "f_3707d0e0f8a9",
+     "path": "/organisations/1/description",
+     "text": "It keeps the information it receives in its own clinical record for its own care of the patient and stores no records on behalf of anyone else.",
+     "used_by": [
+      "region_a:impact_assessment"
+     ]
+    },
+    {
+     "fact_id": "f_7e86304fe561",
+     "path": "/transfer/additional_info",
+     "text": "No impact assessment has been prepared for this single referral.",
+     "used_by": [
+      "region_a:impact_assessment"
+     ]
+    },
+    {
+     "fact_id": "f_e22033e7c743",
+     "path": "/evidence/0/summary",
+     "text": "It records that the patient was told Region B has no recognition covering this kind of information, that no transfer safeguards would be in place, and the possible risks of that.",
+     "used_by": [
+      "region_a:information_notice"
+     ]
+    }
+   ],
+   "required": [
+    {
+     "ref": "region_a:outward_transfer_coverage",
+     "title": "Coverage of the outward transfer by a recognised territory, approved clauses or a valid derogation",
+     "kind": "gate",
+     "status": "unmet",
+     "blocking": true,
+     "citations": [
+      "A-REG 16",
+      "A-REG 17",
+      "A-REG 18",
+      "A-REG 19",
+      "A1-HIA 7"
+     ],
+     "quote": "Genetic information may not be made the subject of an outward transfer on the basis of Article 19(1)(a) of the Region A Regulation, and the prohibition in Article 8(1) of that Regulation may not be lifted by consent in respect of genetic information processed for insurance or employment purposes.",
+     "verified": true,
+     "source": "baseline"
+    },
+    {
+     "ref": "region_a:lawful_processing",
+     "title": "Lawful processing of personal information",
+     "kind": "gate",
+     "status": "met",
+     "blocking": false,
+     "citations": [
+      "A-REG 6",
+      "A-REG 8",
+      "A1-HIA 4"
+     ],
+     "quote": "1. For the purposes of Article 8(2)(c) of the Region A Regulation, the processing of health information is lawful where it is necessary for the provision of health care or treatment and is carried out by or under the responsibility of a registered practitioner.",
+     "verified": true,
+     "source": "baseline"
+    },
+    {
+     "ref": "region_a:minimum_necessary",
+     "title": "Data minimisation and purpose limitation",
+     "kind": "gate",
+     "status": "met",
+     "blocking": false,
+     "citations": [
+      "A-REG 5"
+     ],
+     "quote": "(b) collected for specified and explicit purposes and not further processed in a manner incompatible with them;",
+     "verified": true,
+     "source": "baseline"
+    },
+    {
+     "ref": "subregion_a1:professional_secrecy",
+     "title": "Professional secrecy and patient-consented disclosure",
+     "kind": "gate",
+     "status": "met",
+     "blocking": false,
+     "citations": [
+      "A1-HIA 5"
+     ],
+     "quote": "2. A registered practitioner may disclose such information to a third party only with the consent of the patient, where required by law, or where necessary to prevent a serious and imminent threat to life.",
+     "verified": true,
+     "source": "baseline"
+    },
+    {
+     "ref": "region_a:impact_assessment",
+     "title": "Impact assessment where required",
+     "kind": "duty",
+     "status": "met",
+     "blocking": false,
+     "citations": [
+      "A-REG 12",
+      "A1-HIA 8"
+     ],
+     "quote": "Under Article 12(3) of the Region A Regulation, an impact assessment is required in Subregion A1, regardless of the number of persons concerned, for:",
+     "verified": true,
+     "source": "baseline"
+    },
+    {
+     "ref": "region_a:information_notice",
+     "title": "Information to the patient about processing and outward transfer",
+     "kind": "duty",
+     "status": "undetermined",
+     "blocking": false,
+     "citations": [
+      "A-REG 11"
+     ],
+     "quote": "2. Where the custodian intends to make an outward transfer, it shall also inform the person of that intention, of the third territory concerned and of the route under Articles 17 to 19 relied on.",
+     "verified": true,
+     "source": "baseline"
+    },
+    {
+     "ref": "region_a:processing_records",
+     "title": "Written records of processing",
+     "kind": "duty",
+     "status": "undetermined",
+     "blocking": false,
+     "citations": [
+      "A-REG 13"
+     ],
+     "quote": "Each custodian and agent shall maintain a written record of the processing activities under its responsibility, including the purposes, the categories of information and persons, the recipients, any outward transfers and the route relied on, and the storage periods.",
+     "verified": true,
+     "source": "baseline"
+    },
+    {
+     "ref": "region_a:security",
+     "title": "Appropriate technical and organisational security",
+     "kind": "duty",
+     "status": "met",
+     "blocking": false,
+     "citations": [
+      "A-REG 5",
+      "A-REG 14"
+     ],
+     "quote": "The custodian and the agent shall implement technical and organisational measures appropriate to the risk, including as appropriate encryption, the ability to ensure ongoing confidentiality and availability, and a process for regularly testing the effectiveness of those measures.",
+     "verified": true,
+     "source": "baseline"
+    }
+   ],
    "missing": [
+    {
+     "kind": "fact",
+     "requirement": "region_a:outward_transfer_coverage",
+     "blocking": true,
+     "description": "Whether effective supplementary measures can be adopted after assessing Region B law and practice."
+    },
+    {
+     "kind": "evidence",
+     "requirement": "region_a:outward_transfer_coverage",
+     "blocking": true,
+     "description": "Executed Commission-approved transfer-clause agreement."
+    },
+    {
+     "kind": "evidence",
+     "requirement": "region_a:outward_transfer_coverage",
+     "blocking": true,
+     "description": "Documented Article 18(2) transfer-impact assessment."
+    },
+    {
+     "kind": "evidence",
+     "requirement": "region_a:outward_transfer_coverage",
+     "blocking": true,
+     "description": "Evidence of any supplementary measures adopted."
+    },
     {
      "kind": "review",
      "requirement": "",
      "blocking": true,
-     "description": "Supervisor review did not complete."
+     "description": "Whether the parties can execute approved transfer clauses and adopt effective supplementary measures after assessing Region B law and practice."
+    },
+    {
+     "kind": "review",
+     "requirement": "",
+     "blocking": true,
+     "description": "Whether Kestrel has completed its Article 13 processing record and Article 11 notice obligations."
+    },
+    {
+     "kind": "confirm",
+     "requirement": "region_a:lawful_processing",
+     "blocking": false,
+     "description": "The clinic should preserve evidence of the treatment purpose and practitioner responsibility."
+    },
+    {
+     "kind": "confirm",
+     "requirement": "region_a:security",
+     "blocking": false,
+     "description": "Confirm portal access controls, authentication, audit logging and protection of stored copies."
+    },
+    {
+     "kind": "evidence",
+     "requirement": "region_a:processing_records",
+     "blocking": false,
+     "description": "Kestrel's written processing record showing the purpose, categories, recipient, outward-transfer route and storage periods."
+    },
+    {
+     "kind": "evidence",
+     "requirement": "region_a:information_notice",
+     "blocking": false,
+     "description": "Privacy notice or other record showing all Article 11 information was provided."
     }
    ],
-   "routes": [],
+   "routes": [
+    {
+     "requirement": "region_a:outward_transfer_coverage",
+     "status": "unmet",
+     "blocking": true,
+     "routes": [
+      {
+       "name": "Recognition for Region B and certified recipient covering the transferred information",
+       "status": "ruled_out",
+       "reasoning": "The recognition excludes sensitive information, and Harrow has no Trusted Recipient Scheme certification. The information includes health and genetic information.",
+       "resolved_citations": [
+        "A-REG 17",
+        "A-REG Annex II"
+       ],
+       "quote": "Region B: recognition limited to recipients holding an active certification under the Region B Trusted Recipient Scheme. The recognition extends only to personal information which is not sensitive information."
+      },
+      {
+       "name": "Approved transfer clauses executed by the exporter and recipient, with any necessary supplementary measures",
+       "status": "available",
+       "reasoning": "The parties have not executed approved clauses, but this route would cover the transfer if they execute the Commission-approved clauses and complete the required assessment of Region B law and practice, adopting effective supplementary measures if necessary. If effective supplementary measures cannot be adopted, this route would fail.",
+       "resolved_citations": [
+        "A-REG 18"
+       ],
+       "quote": "1. In the absence of a recognition covering the transfer, an outward transfer may take place where the exporter and the recipient have executed the transfer clauses approved by the Commission."
+      },
+      {
+       "name": "Explicit-consent derogation after risk information",
+       "status": "ruled_out",
+       "reasoning": "Although the consent records the risks and absence of safeguards, A1 law expressly prohibits making genetic information the subject of an outward transfer on the basis of Article 19(1)(a).",
+       "resolved_citations": [
+        "A-REG 19",
+        "A1-HIA 7"
+       ],
+       "quote": "Genetic information may not be made the subject of an outward transfer on the basis of Article 19(1)(a) of the Region A Regulation, and the prohibition in Article 8(1) of that Regulation may not be lifted by consent in respect of genetic information processed for insurance or employment purposes."
+      },
+      {
+       "name": "Contract-performance derogation",
+       "status": "ruled_out",
+       "reasoning": "The transfer is not necessary for performance of a contract between the patient and the custodian. The patient's care terms say nothing about referrals outside Region A, and in any event this one-off route cannot overcome the A1 genetic-information restriction applicable to the consent derogation; no facts establish the contract route.",
+       "resolved_citations": [
+        "A-REG 19"
+       ],
+       "quote": "(b) the transfer is necessary for the performance of a contract between the person and the custodian;"
+      },
+      {
+       "name": "Vital-interests derogation",
+       "status": "ruled_out",
+       "reasoning": "The patient is an adult who can consent, so the incapacity condition for this route is not met.",
+       "resolved_citations": [
+        "A-REG 19"
+       ],
+       "quote": "(c) the transfer is necessary to protect the vital interests of the person or of other persons, where the person is physically or legally incapable of giving consent;"
+      },
+      {
+       "name": "Important public-interest derogation",
+       "status": "ruled_out",
+       "reasoning": "No important public-interest basis recognised in Region A or A1 law is supplied.",
+       "resolved_citations": [
+        "A-REG 19"
+       ],
+       "quote": "(d) the transfer is necessary for important reasons of public interest recognised in Region A law or in the law of the Subregion to which the custodian is subject."
+      }
+     ],
+     "to_close": [
+      "Execute the Commission-approved transfer clauses between Kestrel and Harrow.",
+      "Assess Region B law and practice, including public-authority access powers, as required by Article 18(2).",
+      "Adopt effective supplementary measures sufficient to ensure essentially equivalent protection, if the assessment requires them.",
+      "Do not proceed under the Article 19(1)(a) consent route for this genetic information."
+     ]
+    },
+    {
+     "requirement": "region_a:lawful_processing",
+     "status": "met",
+     "blocking": false,
+     "routes": [
+      {
+       "name": "Necessary provision of health care or treatment by or under the responsibility of a registered practitioner",
+       "status": "supported",
+       "reasoning": "The transfer supports a second opinion before treatment, and the sender's consultants are registered medical practitioners.",
+       "resolved_citations": [
+        "A-REG 8",
+        "A1-HIA 4"
+       ],
+       "quote": "1. For the purposes of Article 8(2)(c) of the Region A Regulation, the processing of health information is lawful where it is necessary for the provision of health care or treatment and is carried out by or under the responsibility of a registered practitioner."
+      },
+      {
+       "name": "Explicit consent to processing",
+       "status": "supported",
+       "reasoning": "The signed consent specifically identifies the information, recipient and second-opinion purpose and is withdrawable as easily as given.",
+       "resolved_citations": [
+        "A-REG 6",
+        "A-REG 7",
+        "A-REG 8"
+       ],
+       "quote": "1. Consent shall be given by a clear written or electronic statement, specific to each purpose, and may be withdrawn at any time as easily as it was given."
+      }
+     ],
+     "to_close": []
+    },
+    {
+     "requirement": "subregion_a1:professional_secrecy",
+     "status": "met",
+     "blocking": false,
+     "routes": [
+      {
+       "name": "Patient consent to disclosure to the third party",
+       "status": "supported",
+       "reasoning": "The patient gave specific written consent to sending the referral documents to Harrow.",
+       "resolved_citations": [
+        "A1-HIA 5"
+       ],
+       "quote": "2. A registered practitioner may disclose such information to a third party only with the consent of the patient, where required by law, or where necessary to prevent a serious and imminent threat to life."
+      },
+      {
+       "name": "Disclosure required by law",
+       "status": "not_investigated",
+       "reasoning": "No legal-compulsion route is needed on the supplied facts.",
+       "resolved_citations": [
+        "A1-HIA 5"
+       ],
+       "quote": "2. A registered practitioner may disclose such information to a third party only with the consent of the patient, where required by law, or where necessary to prevent a serious and imminent threat to life."
+      },
+      {
+       "name": "Disclosure necessary to prevent a serious and imminent threat to life",
+       "status": "ruled_out",
+       "reasoning": "The transfer is for a planned second opinion, not to prevent a serious and imminent threat to life.",
+       "resolved_citations": [
+        "A1-HIA 5"
+       ],
+       "quote": "2. A registered practitioner may disclose such information to a third party only with the consent of the patient, where required by law, or where necessary to prevent a serious and imminent threat to life."
+      }
+     ],
+     "to_close": []
+    },
+    {
+     "requirement": "region_a:impact_assessment",
+     "status": "met",
+     "blocking": false,
+     "routes": [
+      {
+       "name": "No impact assessment because no listed A1 activity and no established high-risk processing",
+       "status": "supported",
+       "reasoning": "The transfer is one-off and Harrow is receiving information for its own clinical record, not acting as an external agent hosting the clinic's patient record system.",
+       "resolved_citations": [
+        "A-REG 12",
+        "A1-HIA 8"
+       ],
+       "quote": "(a) the hosting or storage of a patient record system by an agent outside Subregion A1;"
+      },
+      {
+       "name": "Impact assessment for processing likely to result in high risk",
+       "status": "not_investigated",
+       "reasoning": "This fallback is not needed on the stated facts, but the clinic remains responsible for reassessing risk if the scope, volume or method changes.",
+       "resolved_citations": [
+        "A-REG 12"
+       ],
+       "quote": "1. Where processing is likely to result in a high risk to the rights of persons, the custodian shall, before the processing, carry out an assessment of the impact of the envisaged processing."
+      }
+     ],
+     "to_close": []
+    }
+   ],
    "conflicts": [],
    "conclusion": null
   }
  },
  "events": [
   {
-   "time": 1791722729.4,
+   "time": 1791723335.496,
    "kind": "stage",
    "agent": "baseline",
    "status": "running",
    "level": "corpus"
   },
   {
-   "time": 1791722729.402,
+   "time": 1791723335.499,
    "kind": "llm_request",
    "agent": "baseline",
    "purpose": "BaselineAssessment (corpus)",
@@ -217,55 +1288,532 @@
    "quote_choices": 0
   },
   {
-   "time": 1791722758.002,
-   "kind": "llm_retry",
-   "agent": "baseline",
-   "purpose": "BaselineAssessment (corpus)",
-   "attempt": 1,
-   "error": "Invalid control character at: line 326 column 37 (char 13085)",
-   "raw": "{\n  \"understanding\": \"Kestrel Genetic Medicine, established in Subregion A1, would send one identified adult patient's genetic and health information to Harrow Inherited Cardiac Clinic in Region B for a one-off treatment-related second opinion. Harrow would review the material, conduct one video consultation, and retain the referral in its own clinical record. No onward transfer or external hosting is proposed.\",\n  \"applicability\": [\n    {\n      \"corpus\": \"region_a\",\n      \"applies\": true,\n      \"reasoning\": \"The transfer involves identified personal, health and genetic information processed in the context of the A1 establishment, and making the information available to a recipient in Region B is an outward transfer.\",\n      \"citations\": [\n        \"A-REG 2\",\n        \"A-REG 3\",\n        \"A-REG 4\",\n        \"A-REG 16\"\n      ]\n    },\n    {\n      \"corpus\": \"region_b\",\n      \"applies\": true,\n      \"reasoning\": \"The recipient is established in Region B and the information will be received and retained there. However, the supplied facts indicate that Harrow is not a covered provider because it does not bill a Region B health insurer, is not an insurer, and is not acting as a service agent or data host for another person. The Region B Records Access Act is not engaged on the supplied facts because Harrow is not identified as a computing provider or external host.\",\n      \"citations\": [\n        \"B-HRA 2\",\n        \"B-HRA 3\",\n        \"B-RAA 2\"\n      ]\n    },\n    {\n      \"corpus\": \"subregion_a1\",\n      \"applies\": true,\n      \"reasoning\": \"Kestrel is established in Subregion A1, its practitioners are registered with the A1 Health Professions Board, and A1 law supplies additional rules expressly permitted by the Region A Regulation.\",\n      \"citations\": [\n        \"A1-HIA 1\",\n        \"A1-HIA 2\",\n        \"A1-HIA 3\",\n        \"A-REG 21\"\n      ]\n    }\n  ],\n  \"requirements\": [\n    {\n      \"id\": \"lawful_processing_basis\",\n      \"title\": \"Lawful basis for processing\",\n      \"kind\": \"gate\",\n      \"status\": \"met\",\n      \"reasoning\": \"The processing is necessary for medical diagnosis and treatment and is carried out by or under the responsibility of registered practitioners. This satisfies the health-care route for sensitive information and the general lawful-processing requirement.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_27f370d17c18\"\n        },\n        {\n          \"fact_id\": \"f_987ab471487e\"\n        },\n        {\n          \"fact_id\": \"f_110e981b0a7c\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_referral\"\n      ],\n      \"citations\": [\n        \"A-REG 6\",\n        \"A-REG 8\",\n        \"A1-HIA 4\"\n      ],\n      \"quote_id\": \"A1-HIA 4#L1\",\n      \"routes\": [\n        {\n          \"name\": \"Necessary health care or treatment by or under the responsibility of a registered practitioner\",\n          \"status\": \"supported\",\n          \"reasoning\": \"The referral seeks a second opinion before treatment and the sender's consultants are registered practitioners.\",\n          \"citations\": [\n            \"A-REG 8\",\n            \"A1-HIA 4\"\n          ],\n          \"quote_id\": \"A1-HIA 4#L1\"\n        },\n        {\n          \"name\": \"Explicit consent to processing\",\n          \"status\": \"supported\",\n          \"reasoning\": \"The evidence records a clear written, purpose-specific consent that may be withdrawn at any time.\",\n          \"citations\": [\n            \"A-REG 6\",\n            \"A-REG 7\",\n            \"A-REG 8\"\n          ],\n          \"quote_id\": \"A-REG 7#L1\"\n        }\n      ],\n      \"required_actions\": [],\n      \"confirmations\": [],\n      \"corpus\": \"region_a\"\n    },\n    {\n      \"id\": \"professional_secrecy\",\n      \"title\": \"Professional secrecy and permitted disclosure\",\n      \"kind\": \"gate\",\n      \"status\": \"met\",\n      \"reasoning\": \"The patient's written consent specifically covers sending the named report, ECG summary and referral letter to Harrow for the second opinion. The disclosure is therefore permitted under the A1 professional-secrecy rule.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_66e3ac5f8610\"\n        },\n        {\n          \"fact_id\": \"f_987ab471487e\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_consent\"\n      ],\n      \"citations\": [\n        \"A1-HIA 5\"\n      ],\n      \"quote_id\": \"A1-HIA 5#L2\",\n      \"routes\": [\n        {\n          \"name\": \"Patient consent to disclosure to a third party\",\n          \"status\": \"supported\",\n          \"reasoning\": \"The consent is specific to the recipient, information and treatment-related purpose.\",\n          \"citations\": [\n            \"A1-HIA 5\"\n          ],\n          \"quote_id\": \"A1-HIA 5#L2\"\n        }\n      ],\n      \"required_actions\": [],\n      \"confirmations\": [],\n      \"corpus\": \"subregion_a1\"\n    },\n    {\n      \"id\": \"outward_transfer_authorisation\",\n      \"title\": \"Coverage of outward transfer by a recognised territory, approved clauses or derogation\",\n      \"kind\": \"gate\",\n      \"status\": \"unmet\",\n      \"reasoning\": \"The transfer is an outward transfer to Region B. Region B recognition is limited to certified recipients and excludes sensitive information; Harrow has no certification and the data are genetic and health information. No approved transfer-clause agreement exists. Although the patient gave explicit, risk-informed consent and the transfer is occasional, A1 law expressly prohibits genetic information from being transferred on the basis of the consent derogation in Article 19(1)(a). The proposed transfer therefore lacks a currently available Article 17, 18 or 19 route.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_5aa17aaaa329\"\n        },\n        {\n          \"fact_id\": \"f_febc895bce9e\"\n        },\n        {\n          \"fact_id\": \"f_55ec68a77a25\"\n        },\n        {\n          \"fact_id\": \"f_2f7b22f9f431\"\n        },\n        {\n          \"fact_id\": \"f_66e3ac5f8610\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_consent\"\n      ],\n      \"citations\": [\n        \"A-REG 16\",\n        \"A-REG 17\",\n        \"A-REG 18\",\n        \"A-REG 19\",\n        \"A1-"
-  },
-  {
-   "time": 1791722780.281,
-   "kind": "llm_retry",
-   "agent": "baseline",
-   "purpose": "BaselineAssessment (corpus)",
-   "attempt": 2,
-   "error": "Invalid control character at: line 323 column 37 (char 12161)",
-   "raw": "{\n  \"understanding\": \"Kestrel Genetic Medicine in Subregion A1 would send one identified adult patient's genetic and health information to Harrow Inherited Cardiac Clinic in Region B for a one-off treatment-related second opinion. Harrow would review the material, conduct one video consultation, and retain the referral in its own clinical record. No onward transfer or external hosting is proposed.\",\n  \"applicability\": [\n    {\n      \"corpus\": \"region_a\",\n      \"applies\": true,\n      \"reasoning\": \"The transfer involves identified personal, health and genetic information processed in the context of an A1 establishment. Making the information available to a recipient in Region B is an outward transfer.\",\n      \"citations\": [\n        \"A-REG 2\",\n        \"A-REG 3\",\n        \"A-REG 4\"\n      ]\n    },\n    {\n      \"corpus\": \"region_b\",\n      \"applies\": true,\n      \"reasoning\": \"The recipient is established in Region B and will receive and retain the information there. The Region B Health Records Act provisions for covered providers and service agents do not apply on the supplied facts because Harrow does not bill a health insurer, is not an insurer, and retains the information for its own care.\",\n      \"citations\": [\n        \"B-HRA 2\",\n        \"B-HRA 3\"\n      ]\n    },\n    {\n      \"corpus\": \"subregion_a1\",\n      \"applies\": true,\n      \"reasoning\": \"Kestrel is established in Subregion A1 and its practitioners are registered with the A1 Health Professions Board. A1 law supplies additional rules expressly permitted by the Region A Regulation.\",\n      \"citations\": [\n        \"A1-HIA 1\",\n        \"A1-HIA 2\",\n        \"A-REG 21\"\n      ]\n    }\n  ],\n  \"requirements\": [\n    {\n      \"id\": \"lawful_processing_basis\",\n      \"title\": \"Lawful basis for processing\",\n      \"kind\": \"gate\",\n      \"status\": \"met\",\n      \"reasoning\": \"The processing is necessary for medical diagnosis and treatment and is carried out by or under the responsibility of registered practitioners. This satisfies the health-care route for sensitive information.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_27f370d17c18\"\n        },\n        {\n          \"fact_id\": \"f_987ab471487e\"\n        },\n        {\n          \"fact_id\": \"f_110e981b0a7c\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_referral\"\n      ],\n      \"citations\": [\n        \"A-REG 6\",\n        \"A-REG 8\",\n        \"A1-HIA 4\"\n      ],\n      \"quote_id\": \"A1-HIA 4#L1\",\n      \"routes\": [\n        {\n          \"name\": \"Necessary health care or treatment by or under the responsibility of a registered practitioner\",\n          \"status\": \"supported\",\n          \"reasoning\": \"The referral seeks a second opinion before treatment and the sender's consultants are registered practitioners.\",\n          \"citations\": [\n            \"A-REG 8\",\n            \"A1-HIA 4\"\n          ],\n          \"quote_id\": \"A1-HIA 4#L1\"\n        },\n        {\n          \"name\": \"Explicit consent to processing\",\n          \"status\": \"supported\",\n          \"reasoning\": \"The evidence records a clear written, purpose-specific consent that may be withdrawn at any time.\",\n          \"citations\": [\n            \"A-REG 6\",\n            \"A-REG 7\",\n            \"A-REG 8\"\n          ],\n          \"quote_id\": \"A-REG 7#L1\"\n        }\n      ],\n      \"required_actions\": [],\n      \"confirmations\": [],\n      \"corpus\": \"region_a\"\n    },\n    {\n      \"id\": \"professional_secrecy\",\n      \"title\": \"Professional secrecy and permitted disclosure\",\n      \"kind\": \"gate\",\n      \"status\": \"met\",\n      \"reasoning\": \"The patient's written consent specifically covers sending the named report, ECG summary and referral letter to Harrow for the second opinion. The disclosure is therefore permitted under the A1 professional-secrecy rule.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_66e3ac5f8610\"\n        },\n        {\n          \"fact_id\": \"f_987ab471487e\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_consent\"\n      ],\n      \"citations\": [\n        \"A1-HIA 5\"\n      ],\n      \"quote_id\": \"A1-HIA 5#L2\",\n      \"routes\": [\n        {\n          \"name\": \"Patient consent to disclosure to a third party\",\n          \"status\": \"supported\",\n          \"reasoning\": \"The consent is specific to the recipient, information and treatment-related purpose.\",\n          \"citations\": [\n            \"A1-HIA 5\"\n          ],\n          \"quote_id\": \"A1-HIA 5#L2\"\n        }\n      ],\n      \"required_actions\": [],\n      \"confirmations\": [],\n      \"corpus\": \"subregion_a1\"\n    },\n    {\n      \"id\": \"outward_transfer_authorisation\",\n      \"title\": \"Coverage of outward transfer by recognition, approved clauses or derogation\",\n      \"kind\": \"gate\",\n      \"status\": \"unmet\",\n      \"reasoning\": \"Region B recognition is limited to certified recipients and excludes sensitive information. Harrow has no certification and the data are genetic and health information. No approved transfer-clause agreement exists. Although the patient gave explicit, risk-informed consent and the transfer is occasional, A1 law expressly prohibits genetic information from being transferred on the basis of the Article 19(1)(a) consent derogation.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_5aa17aaaa329\"\n        },\n        {\n          \"fact_id\": \"f_febc895bce9e\"\n        },\n        {\n          \"fact_id\": \"f_55ec68a77a25\"\n        },\n        {\n          \"fact_id\": \"f_2f7b22f9f431\"\n        },\n        {\n          \"fact_id\": \"f_66e3ac5f8610\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_consent\"\n      ],\n      \"citations\": [\n        \"A-REG 16\",\n        \"A-REG 17\",\n        \"A-REG 18\",\n        \"A-REG 19\",\n        \"A1-HIA 7\"\n      ],\n      \"quote_id\": \"A1-HIA 7#L1\",\n      \"routes\": [\n        {\n          \"name\": \"Recognition covering Region B, this recipient and the information\",\n          \"status\": \"ruled_out\",\n          \"reasoning\": \"The recognition is limited to active certified recipients and does not extend to sensitive information. Harrow is uncertified and the transferred information is genetic and health informatio"
-  },
-  {
-   "time": 1791722780.281,
+   "time": 1791723372.8,
    "kind": "llm_response",
    "agent": "baseline",
    "purpose": "BaselineAssessment (corpus)",
-   "ok": false,
-   "error": "Invalid control character at: line 323 column 37 (char 12161)",
-   "raw": "{\n  \"understanding\": \"Kestrel Genetic Medicine in Subregion A1 would send one identified adult patient's genetic and health information to Harrow Inherited Cardiac Clinic in Region B for a one-off treatment-related second opinion. Harrow would review the material, conduct one video consultation, and retain the referral in its own clinical record. No onward transfer or external hosting is proposed.\",\n  \"applicability\": [\n    {\n      \"corpus\": \"region_a\",\n      \"applies\": true,\n      \"reasoning\": \"The transfer involves identified personal, health and genetic information processed in the context of an A1 establishment. Making the information available to a recipient in Region B is an outward transfer.\",\n      \"citations\": [\n        \"A-REG 2\",\n        \"A-REG 3\",\n        \"A-REG 4\"\n      ]\n    },\n    {\n      \"corpus\": \"region_b\",\n      \"applies\": true,\n      \"reasoning\": \"The recipient is established in Region B and will receive and retain the information there. The Region B Health Records Act provisions for covered providers and service agents do not apply on the supplied facts because Harrow does not bill a health insurer, is not an insurer, and retains the information for its own care.\",\n      \"citations\": [\n        \"B-HRA 2\",\n        \"B-HRA 3\"\n      ]\n    },\n    {\n      \"corpus\": \"subregion_a1\",\n      \"applies\": true,\n      \"reasoning\": \"Kestrel is established in Subregion A1 and its practitioners are registered with the A1 Health Professions Board. A1 law supplies additional rules expressly permitted by the Region A Regulation.\",\n      \"citations\": [\n        \"A1-HIA 1\",\n        \"A1-HIA 2\",\n        \"A-REG 21\"\n      ]\n    }\n  ],\n  \"requirements\": [\n    {\n      \"id\": \"lawful_processing_basis\",\n      \"title\": \"Lawful basis for processing\",\n      \"kind\": \"gate\",\n      \"status\": \"met\",\n      \"reasoning\": \"The processing is necessary for medical diagnosis and treatment and is carried out by or under the responsibility of registered practitioners. This satisfies the health-care route for sensitive information.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_27f370d17c18\"\n        },\n        {\n          \"fact_id\": \"f_987ab471487e\"\n        },\n        {\n          \"fact_id\": \"f_110e981b0a7c\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_referral\"\n      ],\n      \"citations\": [\n        \"A-REG 6\",\n        \"A-REG 8\",\n        \"A1-HIA 4\"\n      ],\n      \"quote_id\": \"A1-HIA 4#L1\",\n      \"routes\": [\n        {\n          \"name\": \"Necessary health care or treatment by or under the responsibility of a registered practitioner\",\n          \"status\": \"supported\",\n          \"reasoning\": \"The referral seeks a second opinion before treatment and the sender's consultants are registered practitioners.\",\n          \"citations\": [\n            \"A-REG 8\",\n            \"A1-HIA 4\"\n          ],\n          \"quote_id\": \"A1-HIA 4#L1\"\n        },\n        {\n          \"name\": \"Explicit consent to processing\",\n          \"status\": \"supported\",\n          \"reasoning\": \"The evidence records a clear written, purpose-specific consent that may be withdrawn at any time.\",\n          \"citations\": [\n            \"A-REG 6\",\n            \"A-REG 7\",\n            \"A-REG 8\"\n          ],\n          \"quote_id\": \"A-REG 7#L1\"\n        }\n      ],\n      \"required_actions\": [],\n      \"confirmations\": [],\n      \"corpus\": \"region_a\"\n    },\n    {\n      \"id\": \"professional_secrecy\",\n      \"title\": \"Professional secrecy and permitted disclosure\",\n      \"kind\": \"gate\",\n      \"status\": \"met\",\n      \"reasoning\": \"The patient's written consent specifically covers sending the named report, ECG summary and referral letter to Harrow for the second opinion. The disclosure is therefore permitted under the A1 professional-secrecy rule.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_66e3ac5f8610\"\n        },\n        {\n          \"fact_id\": \"f_987ab471487e\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_consent\"\n      ],\n      \"citations\": [\n        \"A1-HIA 5\"\n      ],\n      \"quote_id\": \"A1-HIA 5#L2\",\n      \"routes\": [\n        {\n          \"name\": \"Patient consent to disclosure to a third party\",\n          \"status\": \"supported\",\n          \"reasoning\": \"The consent is specific to the recipient, information and treatment-related purpose.\",\n          \"citations\": [\n            \"A1-HIA 5\"\n          ],\n          \"quote_id\": \"A1-HIA 5#L2\"\n        }\n      ],\n      \"required_actions\": [],\n      \"confirmations\": [],\n      \"corpus\": \"subregion_a1\"\n    },\n    {\n      \"id\": \"outward_transfer_authorisation\",\n      \"title\": \"Coverage of outward transfer by recognition, approved clauses or derogation\",\n      \"kind\": \"gate\",\n      \"status\": \"unmet\",\n      \"reasoning\": \"Region B recognition is limited to certified recipients and excludes sensitive information. Harrow has no certification and the data are genetic and health information. No approved transfer-clause agreement exists. Although the patient gave explicit, risk-informed consent and the transfer is occasional, A1 law expressly prohibits genetic information from being transferred on the basis of the Article 19(1)(a) consent derogation.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_5aa17aaaa329\"\n        },\n        {\n          \"fact_id\": \"f_febc895bce9e\"\n        },\n        {\n          \"fact_id\": \"f_55ec68a77a25\"\n        },\n        {\n          \"fact_id\": \"f_2f7b22f9f431\"\n        },\n        {\n          \"fact_id\": \"f_66e3ac5f8610\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_consent\"\n      ],\n      \"citations\": [\n        \"A-REG 16\",\n        \"A-REG 17\",\n        \"A-REG 18\",\n        \"A-REG 19\",\n        \"A1-HIA 7\"\n      ],\n      \"quote_id\": \"A1-HIA 7#L1\",\n      \"routes\": [\n        {\n          \"name\": \"Recognition covering Region B, this recipient and the information\",\n          \"status\": \"ruled_out\",\n          \"reasoning\": \"The recognition is limited to active certified recipients and does not extend to sensitive information. Harrow is uncertified and the transferred information is genetic and health information.\",\n          \"citations\": [\n            \"A-REG 17\",\n            \"A-REG Annex II\"\n          ],\n          \"quote_id\": \"A-REG Annex II#L1\"\n        },\n        {\n          \"name\": \"Approved transfer clauses executed by exporter and recipient, with the required assessment and supplementary measures\",\n          \"status\": \"available\",\n          \"reasoning\": \"This route would work if the parties execute the approved clauses, assess Region B law and practice, and implement effective supplementary measures where necessary. It is not currently in place.\",\n          \"citations\": [\n            \"A-REG 18\"\n          ],\n          \"quote_id\": \"A-REG 18#L1\"\n        },\n        {\n          \"name\": \"Explicit, risk-informed consent for an occasional transfer without recognition or approved clauses\",\n          \"status\": \"ruled_out\",\n          \"reasoning\": \"The factual prerequisites and occasional-transfer limitation are satisfied, but A1-HIA 7 expressly excludes genetic information from this consent route.\",\n          \"citations\": [\n            \"A-REG 19\",\n            \"A1-HIA 7\"\n          ],\n          \"quote_id\": \"A1-HIA 7#L1\"\n        },\n        {\n          \"name\": \"Contract, vital-interests or important-public-interest derogation\",\n          \"status\": \"ruled_out\",\n          \"reasoning\": \"No contract or important-public-interest basis is supplied, and the patient is capable of consenting, so the vital-interests route does not apply.\",\n          \"citations\": [\n            \"A-REG 19\"\n          ],\n          \"quote_id\": \"A-REG 19#L3\"\n        }\n      ],\n      \"missing_facts\": [],\n      \"missing_evidence\": [],\n      \"required_actions\": [\n        \"Do not make the transfer under the current consent-only route.\",\n        \"Execute the Commission-approved transfer clauses between Kestrel and Harrow.\",\n        \"Before relying on the clauses, assess Region B law and practice, including public-authority access powers, and implement effective supplementary measures where necessary.\"\n      ],\n      \"confirmations\": [],\n      \"corpus\": \"region_a\"\n    },\n    {\n      \"id\": \"data_minimisation_and_security\",\n      \"title\": \"Data minimisation and appropriate security\",\n      \"kind\": \"duty\",\n      \"status\": \"met\",\n      \"reasoning\": \"The transfer is limited to the patient's identity details, diagnostic genetic report, two ECG summaries and referral letter, with no other record or family details. The upload uses an encrypted connection.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_6a3e2263dd33\"\n        },\n        {\n          \"fact_id\": \"f_c6e3ac5f8610\"\n        },\n        {\n          \"fact_id\": \"f_8c44c6e413c5\"\n        }\n      ],\n      \"citations\": [\n        \"A-REG 5\",\n        \"A-REG 14\"\n      ],\n      \"quote_id\": \"A-REG 5#L4\",\n      \"routes\": [],\n      \"required_actions\": [],\n      \"confirmations\": [\n        \"Confirm that retention by both clinics remains no longer than necessary for the treatment purpose.\"\n      ],\n      \"corpus\": \"region_a\"\n    },\n    {\n      \"id\": \"processing_records_and_information\",\n      \"title\": \"Records of processing and information to the patient\",\n      \"kind\": \"duty\",\n      \"status\": \"undetermined\",\n      \"reasoning\": \"The law requires records documenting the outward transfer and route relied on, and requires information about the outward transfer, third territory and route. The supplied facts do not establish that all required information or the processing record has been completed.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_e22033e7c743\"\n        },\n        {\n          \"fact_id\": \"f_55ec68a77a25\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_consent\"\n      ],\n      \"citations\": [\n        \"A-REG 11\",\n        \"A-REG 13\"\n      ],\n      \"quote_id\": \"A-REG 13#L1\",\n      \"routes\": [],\n      \"missing_facts\": [\n        \"Whether the patient received all Article 11 information, including storage period and rights.\",\n        \"Whether Kestrel's written processing record documents the recipient, outward transfer and route relied on.\"\n      ],\n      \"missing_evidence\": [\n        \"Privacy notice or equivalent Article 11 information.\",\n        \"Processing record entry for this transfer.\"\n      ],\n      \"required_actions\": [],\n      \"confirmations\": [],\n      \"corpus\": \"region_a\"\n    },\n    {\n      \"id\": \"a1_storage_transfer_conditions\",\n      \"title\": \"A1 notification and encryption conditions for outward hosting or storage\",\n      \"kind\": \"gate\",\n      \"status\": \"not_applicable\",\n      \"reasoning\": \"The A1 conditions apply to an outward transfer for hosting or storing patient records. Harrow will retain the referral in its own clinical record for its own care, and the facts do not describe Kestrel's record system being hosted or stored by an outside agent.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_a7a94423ed89\"\n        },\n        {\n          \"fact_id\": \"f_fcf66f6c1d2b\"\n        }\n      ],\n      \"citations\": [\n        \"A1-HIA 6\"\n      ],\n      \"quote_id\": \"A1-HIA 6#L1\",\n      \"routes\": [],\n      \"corpus\": \"subregion_a1\"\n    },\n    {\n      \"id\": \"region_b_health_records_requirements\",\n      \"title\": \"Region B covered-provider health-record requirements\",\n      \"kind\": \"gate\",\n      \"status\": \"not_applicable\",\n      \"reasoning\": \"Sections 4 to 8 apply only to covered providers and service agents. Harrow does not bill a Region B health insurer, is not an insurer, and stores the information for its own care rather than on behalf of a covered provider.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_85110fb9a3e5\"\n        },\n        {\n          \"fact_id\": \"f_3707d0e0f8a9\"\n        }\n      ],\n      \"citations\": [\n        \"B-HRA 2\",\n        \"B-HRA 3\"\n      ],\n      \"quote_id\": \"B-HRA 2#L3\",\n      \"routes\": [],\n      \"corpus\": \"region_b\"\n    },\n    {\n      \"id\": \"region_b_data_host_retention\",\n      \"title\": \"Region B data-host retention\",\n      \"kind\": \"duty\",\n      \"status\": \"not_applicable\",\n      \"reasoning\": \"Harrow keeps the referral in its own clinical record and no separate data host is identified. The data-host retention rule is therefore not engaged on the supplied facts.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_3707d0e0f8a9\n        }\n      ],\n      \"citations\": [\n        \"B-HRA 2\",\n        \"B-HRA 3\",\n        \"B-HRA 9\"\n      ],\n      \"quote_id\": \"B-HRA 2#L5\",\n      \"routes\": [],\n      \"corpus\": \"region_b\"\n    }\n  ],\n  \"conflicts\": [],\n  \"coverage_note\": \"The assessment checked Region A's general processing, sensitive-information, consent, information, records, security, impact-assessment and outward-transfer provisions; the expressly permitted A1 health-care, secrecy, outward-storage and genetic-information rules; and the Region B health-record, service-agent, minimum-necessary, security, breach, data-host and records-access scopes. The principal decisive issue is that A1 excludes genetic information from the Article 19(1)(a) consent route, while no recognition or approved clauses are currently in place.\",\n  \"unresolved\": [\n    \"Whether Article 11 information and an Article 13 processing record have been completed.\",\n    \"If the parties choose the approved-clause route, the Region B legal-access assessment and any required supplementary measures must still be completed.\"\n  ],\n  \"decision\": \"do_not_proceed\",\n  \"decision_reasoning\": \"The transfer is lawful for treatment processing and the patient's consent satisfies professional-secrecy requirements, but the transfer itself is not covered by a valid outward-transfer route. Region B recognition does not cover uncertified recipients or sensitive information, no approved clauses exist, and A1 law rules out relying on consent for an outward transfer of genetic information. The parties must first implement the approved transfer-clause route and its associated assessment and safeguards.\"\n}"
+   "ok": true,
+   "attempt": 1,
+   "seconds": 37.2,
+   "output": {
+    "understanding": "Kestrel Genetic Medicine, a health-care provider established in Subregion A1, would upload one identified adult patient's genetic and health information to Harrow Inherited Cardiac Clinic in Region B for a one-off treatment-related second opinion. Harrow would review the information, conduct one video consultation, and retain the referral in its own patient record. No onward transfer is proposed.",
+    "applicability": [
+     {
+      "corpus": "region_a",
+      "applies": true,
+      "reasoning": "The transfer is processing of identified personal, health and genetic information by a custodian established in Subregion A1, and making the information available to a recipient in a third territory. Region A law therefore governs both the processing and the outward transfer.",
+      "citations": [
+       "A-REG 2",
+       "A-REG 3",
+       "A-REG 4",
+       "A-REG 16"
+      ]
+     },
+     {
+      "corpus": "subregion_a1",
+      "applies": true,
+      "reasoning": "The sender is established in Subregion A1, its practitioners are registered under A1 law, and the information is health and genetic information. A1 law supplies the permitted health-care processing rule, professional-secrecy obligations and additional outward-transfer conditions permitted by Region A law.",
+      "citations": [
+       "A1-HIA 1",
+       "A1-HIA 2",
+       "A1-HIA 4",
+       "A1-HIA 5",
+       "A1-HIA 7",
+       "A1-HIA 8"
+      ]
+     },
+     {
+      "corpus": "region_b",
+      "applies": false,
+      "reasoning": "The Region B Health Records Act applies its operational provisions to covered providers and service agents. Neither clinic bills a Region B health insurer, Harrow is not an insurer, and Harrow keeps the information for its own clinical record rather than as a service agent or data host for another person. The Records Access Act provisions supplied apply to computing providers, but no computing provider or hosted record system is involved on the stated facts.",
+      "citations": [
+       "B-HRA 2",
+       "B-HRA 3",
+       "B-RAA 2"
+      ]
+     }
+    ],
+    "requirements": [
+     {
+      "id": "lawful_processing",
+      "title": "Lawful processing of personal information",
+      "kind": "gate",
+      "status": "met",
+      "reasoning": "The proposed processing is for the patient's treatment and is supported by the health-care processing route in A1 law. The clinic's registered practitioners process the information in connection with providing health care, satisfying the applicable Region A lawful-ground and sensitive-information conditions.",
+      "facts": [
+       {
+        "fact_id": "f_27f370d17c18",
+        "path": "",
+        "quote": ""
+       },
+       {
+        "fact_id": "f_987ab471487e",
+        "path": "",
+        "quote": ""
+       },
+       {
+        "fact_id": "f_fc5f59499494",
+        "path": "",
+        "quote": ""
+       },
+       {
+        "fact_id": "f_110e981b0a7c",
+        "path": "",
+        "quote": ""
+       }
+      ],
+      "evidence_ids": [
+       "ev_referral"
+      ],
+      "citations": [
+       "A-REG 6",
+       "A-REG 8",
+       "A1-HIA 4"
+      ],
+      "quote_id": "A1-HIA 4#L1",
+      "routes": [
+       {
+        "name": "Necessary provision of health care or treatment by or under the responsibility of a registered practitioner",
+        "status": "supported",
+        "reasoning": "The transfer supports a second opinion before treatment, and the sender's consultants are registered medical practitioners.",
+        "citations": [
+         "A-REG 8",
+         "A1-HIA 4"
+        ],
+        "quote_id": "A1-HIA 4#L1"
+       },
+       {
+        "name": "Explicit consent to processing",
+        "status": "supported",
+        "reasoning": "The signed consent specifically identifies the information, recipient and second-opinion purpose and is withdrawable as easily as given.",
+        "citations": [
+         "A-REG 6",
+         "A-REG 7",
+         "A-REG 8"
+        ],
+        "quote_id": "A-REG 7#L1"
+       }
+      ],
+      "missing_facts": [],
+      "missing_evidence": [],
+      "required_actions": [],
+      "confirmations": [
+       "The clinic should preserve evidence of the treatment purpose and practitioner responsibility."
+      ],
+      "open_dependency": "",
+      "corpus": "region_a"
+     },
+     {
+      "id": "professional_secrecy",
+      "title": "Professional secrecy and patient-consented disclosure",
+      "kind": "gate",
+      "status": "met",
+      "reasoning": "A1 registered practitioners owe professional secrecy, but may disclose health information to a third party with patient consent. The supplied signed consent specifically covers the named information, Harrow and the second-opinion purpose.",
+      "facts": [
+       {
+        "fact_id": "f_987ab471487e",
+        "path": "",
+        "quote": ""
+       }
+      ],
+      "evidence_ids": [
+       "ev_consent"
+      ],
+      "citations": [
+       "A1-HIA 5"
+      ],
+      "quote_id": "A1-HIA 5#L2",
+      "routes": [
+       {
+        "name": "Patient consent to disclosure to the third party",
+        "status": "supported",
+        "reasoning": "The patient gave specific written consent to sending the referral documents to Harrow.",
+        "citations": [
+         "A1-HIA 5"
+        ],
+        "quote_id": "A1-HIA 5#L2"
+       },
+       {
+        "name": "Disclosure required by law",
+        "status": "not_investigated",
+        "reasoning": "No legal-compulsion route is needed on the supplied facts.",
+        "citations": [
+         "A1-HIA 5"
+        ],
+        "quote_id": "A1-HIA 5#L2"
+       },
+       {
+        "name": "Disclosure necessary to prevent a serious and imminent threat to life",
+        "status": "ruled_out",
+        "reasoning": "The transfer is for a planned second opinion, not to prevent a serious and imminent threat to life.",
+        "citations": [
+         "A1-HIA 5"
+        ],
+        "quote_id": "A1-HIA 5#L2"
+       }
+      ],
+      "missing_facts": [],
+      "missing_evidence": [],
+      "required_actions": [],
+      "confirmations": [],
+      "open_dependency": "",
+      "corpus": "subregion_a1"
+     },
+     {
+      "id": "outward_transfer_coverage",
+      "title": "Coverage of the outward transfer by a recognised territory, approved clauses or a valid derogation",
+      "kind": "gate",
+      "status": "unmet",
+      "reasoning": "Region B recognition is limited to certified recipients and excludes sensitive information. Harrow lacks certification and the transfer contains health and genetic information. No approved transfer-clause agreement exists. The apparent explicit-consent derogation is unavailable because A1 law prohibits genetic information from being transferred on the basis of Article 19(1)(a).",
+      "facts": [
+       {
+        "fact_id": "f_febc895bce9e",
+        "path": "",
+        "quote": ""
+       },
+       {
+        "fact_id": "f_6a3e2263dd33",
+        "path": "",
+        "quote": ""
+       },
+       {
+        "fact_id": "f_c6e3ac5f8610",
+        "path": "",
+        "quote": ""
+       },
+       {
+        "fact_id": "f_d75ec85c160f",
+        "path": "",
+        "quote": ""
+       },
+       {
+        "fact_id": "f_55ec68a77a25",
+        "path": "",
+        "quote": ""
+       }
+      ],
+      "evidence_ids": [
+       "ev_consent"
+      ],
+      "citations": [
+       "A-REG 16",
+       "A-REG 17",
+       "A-REG 18",
+       "A-REG 19",
+       "A1-HIA 7"
+      ],
+      "quote_id": "A1-HIA 7#L1",
+      "routes": [
+       {
+        "name": "Recognition for Region B and certified recipient covering the transferred information",
+        "status": "ruled_out",
+        "reasoning": "The recognition excludes sensitive information, and Harrow has no Trusted Recipient Scheme certification. The information includes health and genetic information.",
+        "citations": [
+         "A-REG 17",
+         "A-REG Annex II"
+        ],
+        "quote_id": "A-REG Annex II#L1"
+       },
+       {
+        "name": "Approved transfer clauses executed by the exporter and recipient, with any necessary supplementary measures",
+        "status": "available",
+        "reasoning": "The parties have not executed approved clauses, but this route would cover the transfer if they execute the Commission-approved clauses and complete the required assessment of Region B law and practice, adopting effective supplementary measures if necessary. If effective supplementary measures cannot be adopted, this route would fail.",
+        "citations": [
+         "A-REG 18"
+        ],
+        "quote_id": "A-REG 18#L1"
+       },
+       {
+        "name": "Explicit-consent derogation after risk information",
+        "status": "ruled_out",
+        "reasoning": "Although the consent records the risks and absence of safeguards, A1 law expressly prohibits making genetic information the subject of an outward transfer on the basis of Article 19(1)(a).",
+        "citations": [
+         "A-REG 19",
+         "A1-HIA 7"
+        ],
+        "quote_id": "A1-HIA 7#L1"
+       },
+       {
+        "name": "Contract-performance derogation",
+        "status": "ruled_out",
+        "reasoning": "The transfer is not necessary for performance of a contract between the patient and the custodian. The patient's care terms say nothing about referrals outside Region A, and in any event this one-off route cannot overcome the A1 genetic-information restriction applicable to the consent derogation; no facts establish the contract route.",
+        "citations": [
+         "A-REG 19"
+        ],
+        "quote_id": "A-REG 19#L3"
+       },
+       {
+        "name": "Vital-interests derogation",
+        "status": "ruled_out",
+        "reasoning": "The patient is an adult who can consent, so the incapacity condition for this route is not met.",
+        "citations": [
+         "A-REG 19"
+        ],
+        "quote_id": "A-REG 19#L4"
+       },
+       {
+        "name": "Important public-interest derogation",
+        "status": "ruled_out",
+        "reasoning": "No important public-interest basis recognised in Region A or A1 law is supplied.",
+        "citations": [
+         "A-REG 19"
+        ],
+        "quote_id": "A-REG 19#L5"
+       }
+      ],
+      "missing_facts": [
+       "Whether effective supplementary measures can be adopted after assessing Region B law and practice."
+      ],
+      "missing_evidence": [
+       "Executed Commission-approved transfer-clause agreement.",
+       "Documented Article 18(2) transfer-impact assessment.",
+       "Evidence of any supplementary measures adopted."
+      ],
+      "required_actions": [
+       "Execute the Commission-approved transfer clauses between Kestrel and Harrow.",
+       "Assess Region B law and practice, including public-authority access powers, as required by Article 18(2).",
+       "Adopt effective supplementary measures sufficient to ensure essentially equivalent protection, if the assessment requires them.",
+       "Do not proceed under the Article 19(1)(a) consent route for this genetic information."
+      ],
+      "confirmations": [],
+      "open_dependency": "",
+      "corpus": "region_a"
+     },
+     {
+      "id": "minimum_necessary",
+      "title": "Data minimisation and purpose limitation",
+      "kind": "gate",
+      "status": "met",
+      "reasoning": "The transfer is limited to the patient's identity details, diagnostic genetic report, two ECG summaries and referral letter, with no other record or family details. Those materials are directly relevant to the specified second-opinion treatment purpose.",
+      "facts": [
+       {
+        "fact_id": "f_6a3e2263dd33",
+        "path": "",
+        "quote": ""
+       },
+       {
+        "fact_id": "f_c6e3ac5f8610",
+        "path": "",
+        "quote": ""
+       },
+       {
+        "fact_id": "f_110e981b0a7c",
+        "path": "",
+        "quote": ""
+       }
+      ],
+      "evidence_ids": [],
+      "citations": [
+       "A-REG 5"
+      ],
+      "quote_id": "A-REG 5#L3",
+      "routes": [],
+      "missing_facts": [],
+      "missing_evidence": [],
+      "required_actions": [],
+      "confirmations": [],
+      "open_dependency": "",
+      "corpus": "region_a"
+     },
+     {
+      "id": "security",
+      "title": "Appropriate technical and organisational security",
+      "kind": "duty",
+      "status": "met",
+      "reasoning": "The upload uses an encrypted connection. The facts support an appropriate transport security measure, although the clinic must maintain broader safeguards appropriate to the risk.",
+      "facts": [
+       {
+        "fact_id": "f_8c44c6e413c5",
+        "path": "",
+        "quote": ""
+       }
+      ],
+      "evidence_ids": [],
+      "citations": [
+       "A-REG 5",
+       "A-REG 14"
+      ],
+      "quote_id": "A-REG 14#L1",
+      "routes": [],
+      "missing_facts": [],
+      "missing_evidence": [],
+      "required_actions": [],
+      "confirmations": [
+       "Confirm portal access controls, authentication, audit logging and protection of stored copies."
+      ],
+      "open_dependency": "",
+      "corpus": "region_a"
+     },
+     {
+      "id": "impact_assessment",
+      "title": "Impact assessment where required",
+      "kind": "duty",
+      "status": "met",
+      "reasoning": "No supplied A1 impact-assessment category applies: this is not hosting or storage of a patient record system by an agent outside A1, and there is no insurer matching. The general Region A rule is triggered only where processing is likely to result in high risk; the supplied facts do not establish that threshold for this one-off referral.",
+      "facts": [
+       {
+        "fact_id": "f_2f7b22f9f431",
+        "path": "",
+        "quote": ""
+       },
+       {
+        "fact_id": "f_a7a94423ed89",
+        "path": "",
+        "quote": ""
+       },
+       {
+        "fact_id": "f_3707d0e0f8a9",
+        "path": "",
+        "quote": ""
+       },
+       {
+        "fact_id": "f_7e86304fe561",
+        "path": "",
+        "quote": ""
+       }
+      ],
+      "evidence_ids": [],
+      "citations": [
+       "A-REG 12",
+       "A1-HIA 8"
+      ],
+      "quote_id": "A1-HIA 8#L1",
+      "routes": [
+       {
+        "name": "No impact assessment because no listed A1 activity and no established high-risk processing",
+        "status": "supported",
+        "reasoning": "The transfer is one-off and Harrow is receiving information for its own clinical record, not acting as an external agent hosting the clinic's patient record system.",
+        "citations": [
+         "A-REG 12",
+         "A1-HIA 8"
+        ],
+        "quote_id": "A1-HIA 8#L2"
+       },
+       {
+        "name": "Impact assessment for processing likely to result in high risk",
+        "status": "not_investigated",
+        "reasoning": "This fallback is not needed on the stated facts, but the clinic remains responsible for reassessing risk if the scope, volume or method changes.",
+        "citations": [
+         "A-REG 12"
+        ],
+        "quote_id": "A-REG 12#L1"
+       }
+      ],
+      "missing_facts": [],
+      "missing_evidence": [],
+      "required_actions": [],
+      "confirmations": [],
+      "open_dependency": "",
+      "corpus": "region_a"
+     },
+     {
+      "id": "processing_records",
+      "title": "Written records of processing",
+      "kind": "duty",
+      "status": "undetermined",
+      "reasoning": "Region A requires the custodian to maintain a written record including the outward transfer and route relied on. The facts do not establish whether Kestrel's record contains the required entries.",
+      "facts": [
+       {
+        "fact_id": "f_55ec68a77a25",
+        "path": "",
+        "quote": ""
+       }
+      ],
+      "evidence_ids": [],
+      "citations": [
+       "A-REG 13"
+      ],
+      "quote_id": "A-REG 13#L1",
+      "routes": [],
+      "missing_facts": [],
+      "missing_evidence": [
+       "Kestrel's written processing record showing the purpose, categories, recipient, outward-transfer route and storage periods."
+      ],
+      "required_actions": [],
+      "confirmations": [],
+      "open_dependency": "",
+      "corpus": "region_a"
+     },
+     {
+      "id": "information_notice",
+      "title": "Information to the patient about processing and outward transfer",
+      "kind": "duty",
+      "status": "undetermined",
+      "reasoning": "The patient was informed of the risks and absence of safeguards for consent purposes, but the facts do not establish that the broader Article 11 information was provided, including the storage period, rights and the route relied on.",
+      "facts": [
+       {
+        "fact_id": "f_e22033e7c743",
+        "path": "",
+        "quote": ""
+       }
+      ],
+      "evidence_ids": [
+       "ev_consent"
+      ],
+      "citations": [
+       "A-REG 11"
+      ],
+      "quote_id": "A-REG 11#L2",
+      "routes": [],
+      "missing_facts": [],
+      "missing_evidence": [
+       "Privacy notice or other record showing all Article 11 information was provided."
+      ],
+      "required_actions": [],
+      "confirmations": [],
+      "open_dependency": "",
+      "corpus": "region_a"
+     }
+    ],
+    "conflicts": [],
+    "coverage_note": "The assessment checked Region A's scope, lawful grounds, sensitive-information rules, consent conditions, minimisation, security, impact assessment, records, notice and outward-transfer routes, together with A1's permitted health-care processing, professional secrecy, genetic-transfer restriction and impact-assessment list. Region B's health-record and records-access statutes were checked and found not to apply on the supplied provider, service-agent, data-host and computing-provider facts. No direct conflict between applicable laws was identified; the decisive issue is the absence of a currently supported Region A outward-transfer route.",
+    "unresolved": [
+     "Whether the parties can execute approved transfer clauses and adopt effective supplementary measures after assessing Region B law and practice.",
+     "Whether Kestrel has completed its Article 13 processing record and Article 11 notice obligations."
+    ],
+    "decision": "proceed_subject_to_conditions",
+    "decision_reasoning": "The processing and clinical disclosure are otherwise lawful, and the Region B statutes supplied do not impose a gate on this recipient. However, the transfer cannot proceed as proposed because Region B recognition does not cover this sensitive information or this uncertified recipient, no approved clauses are in place, and A1 law rules out the explicit-consent derogation for genetic information. The transfer may proceed only after the parties use the Article 18 approved-clause route, complete the required assessment of Region B law and practice, and implement any necessary effective supplementary measures."
+   },
+   "raw": "{\n  \"understanding\": \"Kestrel Genetic Medicine, a health-care provider established in Subregion A1, would upload one identified adult patient's genetic and health information to Harrow Inherited Cardiac Clinic in Region B for a one-off treatment-related second opinion. Harrow would review the information, conduct one video consultation, and retain the referral in its own patient record. No onward transfer is proposed.\",\n  \"applicability\": [\n    {\n      \"corpus\": \"region_a\",\n      \"applies\": true,\n      \"reasoning\": \"The transfer is processing of identified personal, health and genetic information by a custodian established in Subregion A1, and making the information available to a recipient in a third territory. Region A law therefore governs both the processing and the outward transfer.\",\n      \"citations\": [\n        \"A-REG 2\",\n        \"A-REG 3\",\n        \"A-REG 4\",\n        \"A-REG 16\"\n      ]\n    },\n    {\n      \"corpus\": \"subregion_a1\",\n      \"applies\": true,\n      \"reasoning\": \"The sender is established in Subregion A1, its practitioners are registered under A1 law, and the information is health and genetic information. A1 law supplies the permitted health-care processing rule, professional-secrecy obligations and additional outward-transfer conditions permitted by Region A law.\",\n      \"citations\": [\n        \"A1-HIA 1\",\n        \"A1-HIA 2\",\n        \"A1-HIA 4\",\n        \"A1-HIA 5\",\n        \"A1-HIA 7\",\n        \"A1-HIA 8\"\n      ]\n    },\n    {\n      \"corpus\": \"region_b\",\n      \"applies\": false,\n      \"reasoning\": \"The Region B Health Records Act applies its operational provisions to covered providers and service agents. Neither clinic bills a Region B health insurer, Harrow is not an insurer, and Harrow keeps the information for its own clinical record rather than as a service agent or data host for another person. The Records Access Act provisions supplied apply to computing providers, but no computing provider or hosted record system is involved on the stated facts.\",\n      \"citations\": [\n        \"B-HRA 2\",\n        \"B-HRA 3\",\n        \"B-RAA 2\"\n      ]\n    }\n  ],\n  \"requirements\": [\n    {\n      \"id\": \"lawful_processing\",\n      \"title\": \"Lawful processing of personal information\",\n      \"kind\": \"gate\",\n      \"status\": \"met\",\n      \"reasoning\": \"The proposed processing is for the patient's treatment and is supported by the health-care processing route in A1 law. The clinic's registered practitioners process the information in connection with providing health care, satisfying the applicable Region A lawful-ground and sensitive-information conditions.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_27f370d17c18\"\n        },\n        {\n          \"fact_id\": \"f_987ab471487e\"\n        },\n        {\n          \"fact_id\": \"f_fc5f59499494\"\n        },\n        {\n          \"fact_id\": \"f_110e981b0a7c\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_referral\"\n      ],\n      \"citations\": [\n        \"A-REG 6\",\n        \"A-REG 8\",\n        \"A1-HIA 4\"\n      ],\n      \"quote_id\": \"A1-HIA 4#L1\",\n      \"routes\": [\n        {\n          \"name\": \"Necessary provision of health care or treatment by or under the responsibility of a registered practitioner\",\n          \"status\": \"supported\",\n          \"reasoning\": \"The transfer supports a second opinion before treatment, and the sender's consultants are registered medical practitioners.\",\n          \"citations\": [\n            \"A-REG 8\",\n            \"A1-HIA 4\"\n          ],\n          \"quote_id\": \"A1-HIA 4#L1\"\n        },\n        {\n          \"name\": \"Explicit consent to processing\",\n          \"status\": \"supported\",\n          \"reasoning\": \"The signed consent specifically identifies the information, recipient and second-opinion purpose and is withdrawable as easily as given.\",\n          \"citations\": [\n            \"A-REG 6\",\n            \"A-REG 7\",\n            \"A-REG 8\"\n          ],\n          \"quote_id\": \"A-REG 7#L1\"\n        }\n      ],\n      \"required_actions\": [],\n      \"confirmations\": [\n        \"The clinic should preserve evidence of the treatment purpose and practitioner responsibility.\"\n      ],\n      \"corpus\": \"region_a\"\n    },\n    {\n      \"id\": \"professional_secrecy\",\n      \"title\": \"Professional secrecy and patient-consented disclosure\",\n      \"kind\": \"gate\",\n      \"status\": \"met\",\n      \"reasoning\": \"A1 registered practitioners owe professional secrecy, but may disclose health information to a third party with patient consent. The supplied signed consent specifically covers the named information, Harrow and the second-opinion purpose.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_987ab471487e\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_consent\"\n      ],\n      \"citations\": [\n        \"A1-HIA 5\"\n      ],\n      \"quote_id\": \"A1-HIA 5#L2\",\n      \"routes\": [\n        {\n          \"name\": \"Patient consent to disclosure to the third party\",\n          \"status\": \"supported\",\n          \"reasoning\": \"The patient gave specific written consent to sending the referral documents to Harrow.\",\n          \"citations\": [\n            \"A1-HIA 5\"\n          ],\n          \"quote_id\": \"A1-HIA 5#L2\"\n        },\n        {\n          \"name\": \"Disclosure required by law\",\n          \"status\": \"not_investigated\",\n          \"reasoning\": \"No legal-compulsion route is needed on the supplied facts.\",\n          \"citations\": [\n            \"A1-HIA 5\"\n          ],\n          \"quote_id\": \"A1-HIA 5#L2\"\n        },\n        {\n          \"name\": \"Disclosure necessary to prevent a serious and imminent threat to life\",\n          \"status\": \"ruled_out\",\n          \"reasoning\": \"The transfer is for a planned second opinion, not to prevent a serious and imminent threat to life.\",\n          \"citations\": [\n            \"A1-HIA 5\"\n          ],\n          \"quote_id\": \"A1-HIA 5#L2\"\n        }\n      ],\n      \"required_actions\": [],\n      \"corpus\": \"subregion_a1\"\n    },\n    {\n      \"id\": \"outward_transfer_coverage\",\n      \"title\": \"Coverage of the outward transfer by a recognised territory, approved clauses or a valid derogation\",\n      \"kind\": \"gate\",\n      \"status\": \"unmet\",\n      \"reasoning\": \"Region B recognition is limited to certified recipients and excludes sensitive information. Harrow lacks certification and the transfer contains health and genetic information. No approved transfer-clause agreement exists. The apparent explicit-consent derogation is unavailable because A1 law prohibits genetic information from being transferred on the basis of Article 19(1)(a).\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_febc895bce9e\"\n        },\n        {\n          \"fact_id\": \"f_6a3e2263dd33\"\n        },\n        {\n          \"fact_id\": \"f_c6e3ac5f8610\"\n        },\n        {\n          \"fact_id\": \"f_d75ec85c160f\"\n        },\n        {\n          \"fact_id\": \"f_55ec68a77a25\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_consent\"\n      ],\n      \"citations\": [\n        \"A-REG 16\",\n        \"A-REG 17\",\n        \"A-REG 18\",\n        \"A-REG 19\",\n        \"A1-HIA 7\"\n      ],\n      \"quote_id\": \"A1-HIA 7#L1\",\n      \"routes\": [\n        {\n          \"name\": \"Recognition for Region B and certified recipient covering the transferred information\",\n          \"status\": \"ruled_out\",\n          \"reasoning\": \"The recognition excludes sensitive information, and Harrow has no Trusted Recipient Scheme certification. The information includes health and genetic information.\",\n          \"citations\": [\n            \"A-REG 17\",\n            \"A-REG Annex II\"\n          ],\n          \"quote_id\": \"A-REG Annex II#L1\"\n        },\n        {\n          \"name\": \"Approved transfer clauses executed by the exporter and recipient, with any necessary supplementary measures\",\n          \"status\": \"available\",\n          \"reasoning\": \"The parties have not executed approved clauses, but this route would cover the transfer if they execute the Commission-approved clauses and complete the required assessment of Region B law and practice, adopting effective supplementary measures if necessary. If effective supplementary measures cannot be adopted, this route would fail.\",\n          \"citations\": [\n            \"A-REG 18\"\n          ],\n          \"quote_id\": \"A-REG 18#L1\"\n        },\n        {\n          \"name\": \"Explicit-consent derogation after risk information\",\n          \"status\": \"ruled_out\",\n          \"reasoning\": \"Although the consent records the risks and absence of safeguards, A1 law expressly prohibits making genetic information the subject of an outward transfer on the basis of Article 19(1)(a).\",\n          \"citations\": [\n            \"A-REG 19\",\n            \"A1-HIA 7\"\n          ],\n          \"quote_id\": \"A1-HIA 7#L1\"\n        },\n        {\n          \"name\": \"Contract-performance derogation\",\n          \"status\": \"ruled_out\",\n          \"reasoning\": \"The transfer is not necessary for performance of a contract between the patient and the custodian. The patient's care terms say nothing about referrals outside Region A, and in any event this one-off route cannot overcome the A1 genetic-information restriction applicable to the consent derogation; no facts establish the contract route.\",\n          \"citations\": [\n            \"A-REG 19\"\n          ],\n          \"quote_id\": \"A-REG 19#L3\"\n        },\n        {\n          \"name\": \"Vital-interests derogation\",\n          \"status\": \"ruled_out\",\n          \"reasoning\": \"The patient is an adult who can consent, so the incapacity condition for this route is not met.\",\n          \"citations\": [\n            \"A-REG 19\"\n          ],\n          \"quote_id\": \"A-REG 19#L4\"\n        },\n        {\n          \"name\": \"Important public-interest derogation\",\n          \"status\": \"ruled_out\",\n          \"reasoning\": \"No important public-interest basis recognised in Region A or A1 law is supplied.\",\n          \"citations\": [\n            \"A-REG 19\"\n          ],\n          \"quote_id\": \"A-REG 19#L5\"\n        }\n      ],\n      \"required_actions\": [\n        \"Execute the Commission-approved transfer clauses between Kestrel and Harrow.\",\n        \"Assess Region B law and practice, including public-authority access powers, as required by Article 18(2).\",\n        \"Adopt effective supplementary measures sufficient to ensure essentially equivalent protection, if the assessment requires them.\",\n        \"Do not proceed under the Article 19(1)(a) consent route for this genetic information.\"\n      ],\n      \"missing_facts\": [\n        \"Whether effective supplementary measures can be adopted after assessing Region B law and practice.\"\n      ],\n      \"missing_evidence\": [\n        \"Executed Commission-approved transfer-clause agreement.\",\n        \"Documented Article 18(2) transfer-impact assessment.\",\n        \"Evidence of any supplementary measures adopted.\"\n      ],\n      \"corpus\": \"region_a\"\n    },\n    {\n      \"id\": \"minimum_necessary\",\n      \"title\": \"Data minimisation and purpose limitation\",\n      \"kind\": \"gate\",\n      \"status\": \"met\",\n      \"reasoning\": \"The transfer is limited to the patient's identity details, diagnostic genetic report, two ECG summaries and referral letter, with no other record or family details. Those materials are directly relevant to the specified second-opinion treatment purpose.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_6a3e2263dd33\"\n        },\n        {\n          \"fact_id\": \"f_c6e3ac5f8610\"\n        },\n        {\n          \"fact_id\": \"f_110e981b0a7c\"\n        }\n      ],\n      \"citations\": [\n        \"A-REG 5\"\n      ],\n      \"quote_id\": \"A-REG 5#L3\",\n      \"routes\": [],\n      \"corpus\": \"region_a\"\n    },\n    {\n      \"id\": \"security\",\n      \"title\": \"Appropriate technical and organisational security\",\n      \"kind\": \"duty\",\n      \"status\": \"met\",\n      \"reasoning\": \"The upload uses an encrypted connection. The facts support an appropriate transport security measure, although the clinic must maintain broader safeguards appropriate to the risk.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_8c44c6e413c5\"\n        }\n      ],\n      \"citations\": [\n        \"A-REG 5\",\n        \"A-REG 14\"\n      ],\n      \"quote_id\": \"A-REG 14#L1\",\n      \"routes\": [],\n      \"confirmations\": [\n        \"Confirm portal access controls, authentication, audit logging and protection of stored copies.\"\n      ],\n      \"corpus\": \"region_a\"\n    },\n    {\n      \"id\": \"impact_assessment\",\n      \"title\": \"Impact assessment where required\",\n      \"kind\": \"duty\",\n      \"status\": \"met\",\n      \"reasoning\": \"No supplied A1 impact-assessment category applies: this is not hosting or storage of a patient record system by an agent outside A1, and there is no insurer matching. The general Region A rule is triggered only where processing is likely to result in high risk; the supplied facts do not establish that threshold for this one-off referral.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_2f7b22f9f431\"\n        },\n        {\n          \"fact_id\": \"f_a7a94423ed89\"\n        },\n        {\n          \"fact_id\": \"f_3707d0e0f8a9\"\n        },\n        {\n          \"fact_id\": \"f_7e86304fe561\"\n        }\n      ],\n      \"citations\": [\n        \"A-REG 12\",\n        \"A1-HIA 8\"\n      ],\n      \"quote_id\": \"A1-HIA 8#L1\",\n      \"routes\": [\n        {\n          \"name\": \"No impact assessment because no listed A1 activity and no established high-risk processing\",\n          \"status\": \"supported\",\n          \"reasoning\": \"The transfer is one-off and Harrow is receiving information for its own clinical record, not acting as an external agent hosting the clinic's patient record system.\",\n          \"citations\": [\n            \"A-REG 12\",\n            \"A1-HIA 8\"\n          ],\n          \"quote_id\": \"A1-HIA 8#L2\"\n        },\n        {\n          \"name\": \"Impact assessment for processing likely to result in high risk\",\n          \"status\": \"not_investigated\",\n          \"reasoning\": \"This fallback is not needed on the stated facts, but the clinic remains responsible for reassessing risk if the scope, volume or method changes.\",\n          \"citations\": [\n            \"A-REG 12\"\n          ],\n          \"quote_id\": \"A-REG 12#L1\"\n        }\n      ],\n      \"corpus\": \"region_a\"\n    },\n    {\n      \"id\": \"processing_records\",\n      \"title\": \"Written records of processing\",\n      \"kind\": \"duty\",\n      \"status\": \"undetermined\",\n      \"reasoning\": \"Region A requires the custodian to maintain a written record including the outward transfer and route relied on. The facts do not establish whether Kestrel's record contains the required entries.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_55ec68a77a25\"\n        }\n      ],\n      \"citations\": [\n        \"A-REG 13\"\n      ],\n      \"quote_id\": \"A-REG 13#L1\",\n      \"missing_evidence\": [\n        \"Kestrel's written processing record showing the purpose, categories, recipient, outward-transfer route and storage periods.\"\n      ],\n      \"corpus\": \"region_a\"\n    },\n    {\n      \"id\": \"information_notice\",\n      \"title\": \"Information to the patient about processing and outward transfer\",\n      \"kind\": \"duty\",\n      \"status\": \"undetermined\",\n      \"reasoning\": \"The patient was informed of the risks and absence of safeguards for consent purposes, but the facts do not establish that the broader Article 11 information was provided, including the storage period, rights and the route relied on.\",\n      \"facts\": [\n        {\n          \"fact_id\": \"f_e22033e7c743\"\n        }\n      ],\n      \"evidence_ids\": [\n        \"ev_consent\"\n      ],\n      \"citations\": [\n        \"A-REG 11\"\n      ],\n      \"quote_id\": \"A-REG 11#L2\",\n      \"missing_evidence\": [\n        \"Privacy notice or other record showing all Article 11 information was provided.\"\n      ],\n      \"corpus\": \"region_a\"\n    }\n  ],\n  \"conflicts\": [],\n  \"coverage_note\": \"The assessment checked Region A's scope, lawful grounds, sensitive-information rules, consent conditions, minimisation, security, impact assessment, records, notice and outward-transfer routes, together with A1's permitted health-care processing, professional secrecy, genetic-transfer restriction and impact-assessment list. Region B's health-record and records-access statutes were checked and found not to apply on the supplied provider, service-agent, data-host and computing-provider facts. No direct conflict between applicable laws was identified; the decisive issue is the absence of a currently supported Region A outward-transfer route.\",\n  \"unresolved\": [\n    \"Whether the parties can execute approved transfer clauses and adopt effective supplementary measures after assessing Region B law and practice.\",\n    \"Whether Kestrel has completed its Article 13 processing record and Article 11 notice obligations.\"\n  ],\n  \"decision\": \"proceed_subject_to_conditions\",\n  \"decision_reasoning\": \"The processing and clinical disclosure are otherwise lawful, and the Region B statutes supplied do not impose a gate on this recipient. However, the transfer cannot proceed as proposed because Region B recognition does not cover this sensitive information or this uncertified recipient, no approved clauses are in place, and A1 law rules out the explicit-consent derogation for genetic information. The transfer may proceed only after the parties use the Article 18 approved-clause route, complete the required assessment of Region B law and practice, and implement any necessary effective supplementary measures.\"\n}",
+   "usage": {
+    "input_tokens": 15146,
+    "output_tokens": 4282,
+    "total_tokens": 19428,
+    "input_token_details": {
+     "audio": 0,
+     "cache_read": 15143,
+     "cache_creation": 0
+    },
+    "output_token_details": {
+     "audio": 0,
+     "reasoning": 233
+    }
+   },
+   "tool_calls": 0
   },
   {
-   "time": 1791722780.281,
+   "time": 1791723372.8,
    "kind": "stage",
    "agent": "baseline",
-   "status": "failed"
+   "status": "done"
   },
   {
-   "time": 1791722780.281,
+   "time": 1791723372.8,
    "kind": "stage",
    "agent": "verification",
    "status": "running"
   },
   {
-   "time": 1791722780.281,
+   "time": 1791723372.801,
    "kind": "decision",
    "agent": "verification",
-   "decision": "needs_review",
+   "decision": "proceed_subject_to_conditions",
    "reasons": [
-    "Baseline call failed."
+    "The processing and clinical disclosure are otherwise lawful, and the Region B statutes supplied do not impose a gate on this recipient. However, the transfer cannot proceed as proposed because Region B recognition does not cover this sensitive information or this uncertified recipient, no approved clauses are in place, and A1 law rules out the explicit-consent derogation for genetic information. The transfer may proceed only after the parties use the Article 18 approved-clause route, complete the required assessment of Region B law and practice, and implement any necessary effective supplementary measures."
    ]
   },
   {
-   "time": 1791722780.281,
+   "time": 1791723372.801,
    "kind": "stage",
    "agent": "verification",
    "status": "done"
