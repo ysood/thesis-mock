@@ -1,0 +1,613 @@
+{
+  "physical_assessment_files": 91,
+  "unique_assessment_attempts": 75,
+  "duplicate_files_removed": 16,
+  "per_run_checks": [
+    {
+      "run_id": "01e7ceef2f860c69b4ffa05d4b7e1879a57f536d6703542a63eb7f3a19b3bf0e",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run6.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "02ffc951cc6d7025b1bf805f6e046d078e0825760875a9a80fc1740cc5d93dee",
+      "source_path": "prototype-mock/runs/mock/20261010-212944_03_a1_emergency_records_to_b_hospital.json",
+      "assertions_passed": 35,
+      "status": "passed"
+    },
+    {
+      "run_id": "052cc4fbf16e30c8fae9c404b736d2a3726ec5b3e8d08db55a82cebb5686a4e9",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run4.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "118aa7a27506817893afbfe011bffad60f43178561ff8789e2890e25acab66ca",
+      "source_path": "prototype-mock/runs/mock/20261010-174200_01_a1_gp_to_region_b_host.json",
+      "assertions_passed": 35,
+      "status": "passed"
+    },
+    {
+      "run_id": "11a00f636f87a0684f29c1c916beadc39b182f723b9f550e92fd2423564c885c",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run5.json",
+      "assertions_passed": 33,
+      "status": "passed"
+    },
+    {
+      "run_id": "163806457e1d48aa08f6d837eb84e0e77e3349f908bdf5d159268abdd607ed3b",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run9.json",
+      "assertions_passed": 33,
+      "status": "passed"
+    },
+    {
+      "run_id": "1a737eca5aa45aaa7f6252495edca36c999f2e35117aa4dec95918cbad60368c",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run9.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "1d540c4cf8412fbd750188b581c1931e27f747a75f176ccc244291897417b799",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run1.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "1df7f13f9e3411bbc5c1b140f8d3596a57043e6c1c2100e96485d023532adb54",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run7.json",
+      "assertions_passed": 33,
+      "status": "passed"
+    },
+    {
+      "run_id": "246264df57a6b99a3a2eaab845e5e288c3b8f3e653254326b9f6e3e4427dd2b4",
+      "source_path": "prototype-mock/runs/mock/20261010-212435_03_a1_emergency_records_to_b_hospital.json",
+      "assertions_passed": 27,
+      "status": "passed"
+    },
+    {
+      "run_id": "24e62c049a6603a5090de4bf0c73f0c4c14dd9206ff83f51acf6f0606d6e1d81",
+      "source_path": "prototype-mock/runs/mock/20261010-194827_01_a1_gp_to_region_b_host.json",
+      "assertions_passed": 27,
+      "status": "passed"
+    },
+    {
+      "run_id": "27d09c79287e3bf5f31d0c9d2b2a5354253151c9d9ac19be72e99a5fef6628ca",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run1.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "2e35cccc737ee0c840a5d8917e87c8148c05fb6c42567154d8098909a2656898",
+      "source_path": "prototype-mock/runs/mock/20261010-171834_01_a1_gp_to_region_b_host.json",
+      "assertions_passed": 41,
+      "status": "passed"
+    },
+    {
+      "run_id": "30a34848afba55ae89edcbc14f3005b3ded3bcd7c83650240c8ee231ddfa324e",
+      "source_path": "prototype-mock/runs/mock/20261010-195527_01_a1_gp_to_region_b_host.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "31b00b5e5d9f0a7780663d0e77ecffef996f03f0a63df75558983530d462275f",
+      "source_path": "prototype-mock/runs/mock/20261010-210454_02_a1_gp_keys_held_in_a1.json",
+      "assertions_passed": 27,
+      "status": "passed"
+    },
+    {
+      "run_id": "37d8e4d65a6a2c2ffe9aaf3b6b390f85e6cc79c58cd788ab134873ce5c3adc93",
+      "source_path": "prototype-mock/runs/mock/20261010-174531_01_a1_gp_to_region_b_host.json",
+      "assertions_passed": 41,
+      "status": "passed"
+    },
+    {
+      "run_id": "389af74189dc8fa858695361ca3bb73eeb8eed622233f51b042cd96dcca0d2d2",
+      "source_path": "prototype-mock/runs/mock/20261011-081133_04_a1_genetic_result_to_b_life_insurer.json",
+      "assertions_passed": 32,
+      "status": "passed"
+    },
+    {
+      "run_id": "38a185833cf4e0c54d9c39239bf3c9ba3dc444b372b6848612d45563dd09e8fb",
+      "source_path": "prototype-mock/analysis/case_01/multi_no_graph/run1.json",
+      "assertions_passed": 35,
+      "status": "passed"
+    },
+    {
+      "run_id": "3d3953aaae4521765be0f31eddcd33cb36d2590ee4fe927e20f2a584e7688ffc",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run3.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "3d9fc7b4d1c50cce8c8d390eeae98d9005eb68b7ecc95dba98712bbf23db577a",
+      "source_path": "prototype-mock/analysis/case_01/single_no_graph/run1.json",
+      "assertions_passed": 27,
+      "status": "passed"
+    },
+    {
+      "run_id": "3f325ad3b9035ad72fd2c111da40e0817648aa5393473216c8928baf9b6d72c0",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run3.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "48527fb0b08223ef3bc1d05f6d3718f276e20c586e916174e945e4e0f71ad8a9",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run3.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "5320cb97856702238b43868bffe61e81142d5a3d01013eb9560b2eb9107475a5",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run6.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "580bd225a48d7e58ad59ce47cde6f083c37a27af25fb63fe43e760d995e3bf60",
+      "source_path": "prototype-mock/runs/mock/20261010-172317_01_a1_gp_to_region_b_host.json",
+      "assertions_passed": 39,
+      "status": "passed"
+    },
+    {
+      "run_id": "6152f3158b16afc9b9fdb52953b87d1d70137ef597730c58f43e42b70cf8a8a3",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run2_failed.json",
+      "assertions_passed": 26,
+      "status": "passed"
+    },
+    {
+      "run_id": "659b805431f4fbaa81d27b048b66ff1de213993c27edaace81e4ef6092597adf",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run2.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "676f803599f06ada8cd7b180a5dcb3bcc2c4450f5c0cbbad7b239109e720f329",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run2.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "6977b332d7762e25e742ca25ee96dc2d57dee41088db0f4d00e19d3d0c51c8ad",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run1.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "6a9d55719805298ade80023583b1ead9c8354c95d71e8bbf0480a29f6f3f5b9c",
+      "source_path": "prototype-mock/analysis/case_01/single_graph/run1.json",
+      "assertions_passed": 27,
+      "status": "passed"
+    },
+    {
+      "run_id": "6f2f8a7efceb41298a387bbd78a6ca01ab454297d4e0cc9d6ad0c72d3e1a9e39",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run6.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "7150eecf7fcc803b33f26ff5095cde5f05b8fb6dc9567532f05ff96fe7284488",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run5.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "7a6ade00d0b411b72af8ce363fd3abc4e68fa0aff8e5e15541c077d5b89cb523",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run6.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "8074e54246c3135a2a571f45265aacd285ea1a070c2ccc78a99c767d58fd6fa1",
+      "source_path": "prototype-mock/runs/mock/20261010-171438_01_a1_gp_to_region_b_host.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "81c70f112310f78668cffa0ad6731de0f1a13c44942454f7c26df201f0258b4c",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run6.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "8208b1452adf9102b877c1ab185d3f1d8b256325fb778f1b1cbd54f3fc496d90",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run8.json",
+      "assertions_passed": 33,
+      "status": "passed"
+    },
+    {
+      "run_id": "8217afc5e554a330230815e744de2082e751615c32f562998d828627ac6eaa3d",
+      "source_path": "prototype-mock/runs/mock/20261010-191112_02_a1_gp_keys_held_in_a1.json",
+      "assertions_passed": 41,
+      "status": "passed"
+    },
+    {
+      "run_id": "8425d74044d2426908bba5e1cacc5f8e174c16702472fb8a1e833910526a45fd",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run9.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "8592128e0dc998f129917191b504ac4dbc0a0a0a347738051c0d4bc1d042ad19",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run7.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "86d9a86ac4b4bb7fde2025eb98877e7f798224b3ea4659b9d24a16c025d3a24a",
+      "source_path": "prototype-mock/runs/mock/20261010-190919_02_a1_gp_keys_held_in_a1.json",
+      "assertions_passed": 40,
+      "status": "passed"
+    },
+    {
+      "run_id": "89219d1c08692c5127f8dfe66af6e9dd62e4c3e899b26560e2d510fa07f60b7c",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run4.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "8bd48b201fd35f66a1a9bca0d8d309486727345115d40923c78de7636711d310",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run2.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "8bd87edc0ab78a2d6a6435f16f4bd8ce2907ed4d433e23031ea88535a699a8de",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run3.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "9216995345fad063ab561a2fb6c9e680bd0b24745e9d3b91a06e58fba4e571d4",
+      "source_path": "prototype-mock/runs/mock/20261011-080924_04_a1_genetic_result_to_b_life_insurer.json",
+      "assertions_passed": 27,
+      "status": "passed"
+    },
+    {
+      "run_id": "99469ee55fb9306e79bdd8e7894b9dcc498cbbfb14baf44cc90e1ea3396464b4",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run4.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "9c16a93cf80d9fb84ae19599cb7ae8cf53131247ec1a18d7fcf530e789e11216",
+      "source_path": "prototype-mock/runs/mock/20261010-171234_01_a1_gp_to_region_b_host.json",
+      "assertions_passed": 34,
+      "status": "passed"
+    },
+    {
+      "run_id": "9d5b3d2bf2ce6f1c5efe4e70001c4638bea2e0b24966fecba73f57b579b6e285",
+      "source_path": "prototype-mock/runs/mock/20261010-200535_02_a1_gp_keys_held_in_a1.json",
+      "assertions_passed": 27,
+      "status": "passed"
+    },
+    {
+      "run_id": "9eb4de8e532f6fe2a82aa3d8e076eb96e422dc6f132cab6088a144d07bf7558f",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run8.json",
+      "assertions_passed": 33,
+      "status": "passed"
+    },
+    {
+      "run_id": "9ff2645a9bbce74ce4cab680137ce20d286679ace852737b586ac765748f5543",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run5.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "a2494c8eee31f2c6f25e002cee0376b3a8069972de2abb6574cf701e058d8b08",
+      "source_path": "prototype-mock/runs/mock/20261010-162611_01_a1_gp_to_region_b_host.json",
+      "assertions_passed": 41,
+      "status": "passed"
+    },
+    {
+      "run_id": "a7bffef84ae2e09af483bcd31eb878b7dc410c3d89868d46f1513051aac9422e",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run5.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "ac16d6ab3c64b3b6e2421d2e906a015888e2725a186e39b6d54caf78a61eee31",
+      "source_path": "prototype-mock/runs/mock/20261010-154033_01_valdora_gp_to_corvel_host.json",
+      "assertions_passed": 39,
+      "status": "passed"
+    },
+    {
+      "run_id": "ac78fb56d49b903a91eb42089d7def207356fbaa892c820ef170429f5f0e0145",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run8.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "af5279d9c69ebd9dc2213033bd91f5cddf2b9274fc3454f25129df3589d9002e",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run4.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "b0829f65e17b81ce0c9d83622c4be8611f054e26a9649e4478b7c47746da3107",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run2.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "b6c361b4fbce726b8938d8fad71da4ef2e5ddda670834930894921892e3c8ef1",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run8.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "b77839a1238edc9f8e5d8fb7ab9f804968ad266c2c7c83039350c0a4e7060d66",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run7.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "c0aab875a711de1411ed927c9eaf0badc514126d886b87ecb1dac437711cb801",
+      "source_path": "prototype-mock/analysis/case_01/multi_graph/run1.json",
+      "assertions_passed": 35,
+      "status": "passed"
+    },
+    {
+      "run_id": "c154a2b64b6f16308ef3f9fdcbcaa7edfe9535a651637575b6cf6e12af15e157",
+      "source_path": "prototype-mock/runs/mock/20261010-205955_02_a1_gp_keys_held_in_a1.json",
+      "assertions_passed": 35,
+      "status": "passed"
+    },
+    {
+      "run_id": "c1cd50b2526c4f622374c3a71c8aff13f8a8c1c66fd059da99422ba4c95921a5",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run8.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "c489544f7ed2ad7e93bd5a19b3233f1363457360cc23d45c31a1815f08c181f4",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run1.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "c65f8107733d4f4decbe367913f5011b67a42127eb8bc68fac5f98a57cf18a4a",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run4.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "c720faf5c0282054e37362370ddd22fd80766d1f67382e09418c9d0723ced805",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run2.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "c778f635dde9a2d38dffb2eea029bf0c87d289233c57ecbb4c28ec15c7757a64",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run3.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "d0dc883cafafed73d2b965b8d3819578cfc80e2f5c10e899e8d16ff8e517fdc6",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run7.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "d66b80242a928404f809d597637bf06d850b0459a30f752f1888d68b5388069a",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run1.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "d9baca2464e49c73d275c980e6afaba36e91acfabcb2dda73d4da4b2b3956e57",
+      "source_path": "prototype-mock/runs/mock/20261010-174520_01_a1_gp_to_region_b_host.json",
+      "assertions_passed": 40,
+      "status": "passed"
+    },
+    {
+      "run_id": "d9ddce648c754b3d41e16f3b20909afa5945eaa45468aa2227e388f2341a9d9b",
+      "source_path": "prototype-mock/runs/mock/20261010-164950_01_a1_gp_to_region_b_host.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "dc6f34331f02464c9df605bccc2dd022d89c69f2a81f57f486b96e992b46aced",
+      "source_path": "prototype-mock/runs/mock/20261010-201346_02_a1_gp_keys_held_in_a1.json",
+      "assertions_passed": 41,
+      "status": "passed"
+    },
+    {
+      "run_id": "dc7b5a13dcf9e6521101320cdb784059c60a1172c8f3cc4ff472258a8e70f7db",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run5.json",
+      "assertions_passed": 37,
+      "status": "passed"
+    },
+    {
+      "run_id": "dcfd24347af2d8d3536b8a9c4bcbb5e0c269d09b21cbc100b2df41db35493b22",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run9.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "e74bd0f5ee5f98ab7aff7fc4420501749e00a6cb5c20568bbef1c022b96577de",
+      "source_path": "prototype-mock/runs/mock/20261010-190818_02_a1_gp_keys_held_in_a1.json",
+      "assertions_passed": 35,
+      "status": "passed"
+    },
+    {
+      "run_id": "e84edd636b587e01e181e4c22f1e34f6bf83e333591635d0afb83a0f3e918ee7",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run7.json",
+      "assertions_passed": 33,
+      "status": "passed"
+    },
+    {
+      "run_id": "e84f4eda9a9d7dc4f69de9357f3e57c43a0c232c1324fba6dad9f07a2d1da5cb",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run9.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "ee052aed4bc519c467caa6c7d3e95b20e082f176a17d38913d75bd9a6ad24a23",
+      "source_path": "prototype-mock/runs/mock/20261011-080835_04_a1_genetic_result_to_b_life_insurer.json",
+      "assertions_passed": 27,
+      "status": "passed"
+    },
+    {
+      "run_id": "f3d345575ae7f4f1ea472434fb4531b731fa448dff643ce0f0b2aeabdbca64fd",
+      "source_path": "prototype-mock/runs/mock/20261011-081424_04_a1_genetic_result_to_b_life_insurer.json",
+      "assertions_passed": 35,
+      "status": "passed"
+    }
+  ],
+  "existing_export_comparisons_passed": 236,
+  "cohort_counts": {
+    "case_01_comparison": 4,
+    "exploratory": 25,
+    "case_05_baseline": 10,
+    "case_05_comparison": 36
+  },
+  "source_hashes": {
+    "prototype-mock/analysis/case_05/baseline_corpus/run6.json": "a8ee690a280be5d05f02ffda6be99accf83ab0aa3a06fb384c412be07e301044",
+    "prototype-mock/runs/mock/20261010-212944_03_a1_emergency_records_to_b_hospital.json": "51dbd0f119e0a7e306765d3df433ebf45b0ecde63603dc57e984ccd90a020c0d",
+    "prototype-mock/analysis/case_05/multi_no_graph/run4.json": "ab50eec3dd60487791762d959634a10cdc1427d5e64214b7843cbeeccf177a12",
+    "prototype-mock/runs/mock/20261010-174200_01_a1_gp_to_region_b_host.json": "b7b32aa7bb2128cc51ea4143fb7af600960257d4ac28b1e2ed5d32c84b3ea47a",
+    "prototype-mock/analysis/case_05/multi_graph/run5.json": "7c818529de31bc7e5dcf7c97565af24fc0d8c9c6dde0ab205d826f3fd928e288",
+    "prototype-mock/analysis/case_05/multi_no_graph/run9.json": "cc15d7d1ec5d761c1f79972f714b70a23ad5ad85c68b4b176bfb5c23160f3df9",
+    "prototype-mock/analysis/case_05/single_no_graph/run9.json": "ce5c4bc78c982af953f6b6422b6b8e4b7853fb1d00dc9d9ac8f819eb0f61ade3",
+    "prototype-mock/analysis/case_05/multi_graph/run1.json": "d8983cd0e6fcc1a9298ae15383048be41a78d0db46f52924429bf3ce0803f3e6",
+    "prototype-mock/runs/mock/20261011-084102_05_a1_genetic_second_opinion_in_b.json": "d8983cd0e6fcc1a9298ae15383048be41a78d0db46f52924429bf3ce0803f3e6",
+    "prototype-mock/analysis/case_05/multi_graph/run7.json": "6d943bb76c154b428acb01cb41a58a16aa184156ea723a5585d6090212d1ff2c",
+    "prototype-mock/runs/mock/20261010-212435_03_a1_emergency_records_to_b_hospital.json": "11854ea4947a4529ccbeb8e1e12f55c8bf06c5352bef0bdeec5b9c20c8b36e5e",
+    "prototype-mock/runs/mock/20261010-194827_01_a1_gp_to_region_b_host.json": "6af589e2f4e08a3a2819ccb4a90c0f599c95b2d4ebaf770d264c13817e503091",
+    "prototype-mock/analysis/case_05/single_graph/run1.json": "904a9a8fa281415b5f3ea81e6d68f53c24e6b8b1f392f10951e62b943ce4f7f8",
+    "prototype-mock/runs/mock/20261011-083546_05_a1_genetic_second_opinion_in_b.json": "904a9a8fa281415b5f3ea81e6d68f53c24e6b8b1f392f10951e62b943ce4f7f8",
+    "prototype-mock/runs/mock/20261010-171834_01_a1_gp_to_region_b_host.json": "c0fe06d9cda0ccf84bf3c53ef94845d260f5454fd22266a2e092f9294baaf968",
+    "prototype-mock/runs/mock/20261010-195527_01_a1_gp_to_region_b_host.json": "7c6cea0dbd0becae1307cdd0d2be69f3ddfdb0fa3b7b59467d02d4717e47bb58",
+    "prototype-mock/runs/mock/20261010-210454_02_a1_gp_keys_held_in_a1.json": "4cf5605959f517d0bfe4c4f9309d5a2776cc608e932be6bdfaee84702e63ee74",
+    "prototype-mock/runs/mock/20261010-174531_01_a1_gp_to_region_b_host.json": "c18a41a83dc1d602c6d9fd96a5fb5fb71a642c870708b95636594e285277d070",
+    "prototype-mock/runs/mock/20261011-081133_04_a1_genetic_result_to_b_life_insurer.json": "ceacfd623f09869a89142ddeed311b86a26a62e7ec62b287dd00e0209965469b",
+    "prototype-mock/analysis/case_01/multi_no_graph/run1.json": "ce7e141ee7d9e784bdeb19de2e77b3c3f31c98c4d13dd0d786f5437fce37100e",
+    "prototype-mock/runs/mock/20261011-094004_01_a1_gp_to_region_b_host.json": "ce7e141ee7d9e784bdeb19de2e77b3c3f31c98c4d13dd0d786f5437fce37100e",
+    "prototype-mock/analysis/case_05/single_no_graph/run3.json": "37b516851d929f392204e88bd125fea64ba9a9e0ff959ff32c5f17162b740bfc",
+    "prototype-mock/runs/mock/20261011-090442_05_a1_genetic_second_opinion_in_b.json": "37b516851d929f392204e88bd125fea64ba9a9e0ff959ff32c5f17162b740bfc",
+    "prototype-mock/analysis/case_01/single_no_graph/run1.json": "b5c0ff14954d811b1efae06c1bbb308ebf7e7922a6566b5b89d11d8d366cd35f",
+    "prototype-mock/runs/mock/20261011-092321_01_a1_gp_to_region_b_host.json": "b5c0ff14954d811b1efae06c1bbb308ebf7e7922a6566b5b89d11d8d366cd35f",
+    "prototype-mock/analysis/case_05/baseline_corpus/run3.json": "3fc145934c77219e78328b5a83e6230c936b2f7b5c39438c6d75c37c2c208640",
+    "prototype-mock/analysis/case_05/multi_graph/run3.json": "13d7046137128c039ca7d4f4b89b26c8124626b9d788b3a96f5518a8fc439482",
+    "prototype-mock/runs/mock/20261011-091133_05_a1_genetic_second_opinion_in_b.json": "13d7046137128c039ca7d4f4b89b26c8124626b9d788b3a96f5518a8fc439482",
+    "prototype-mock/analysis/case_05/multi_graph/run6.json": "116bb984d55030a58c5dd9189a4c14f2e00ae746a9f000d698378ea5395d17db",
+    "prototype-mock/runs/mock/20261010-172317_01_a1_gp_to_region_b_host.json": "87bbee494cd186c1de31fe3f3f79ce3c48b7a57cfe859c325b6577c1f9f384da",
+    "prototype-mock/analysis/case_05/baseline_corpus/run2_failed.json": "fc1e779006f025e01b8603032a6566f1291e926aeee20578335bf8c966ada29f",
+    "prototype-mock/analysis/case_05/baseline_corpus/run2.json": "dc2d7b55e9ee794caf047144b8a1b256f00e1861f52171c1945b999ebd6605b9",
+    "prototype-mock/analysis/case_05/multi_no_graph/run2.json": "0149aa1af75556e137e7c5c074635016dc7133f408e52c2bf564f2a99dad5680",
+    "prototype-mock/runs/mock/20261011-085647_05_a1_genetic_second_opinion_in_b.json": "0149aa1af75556e137e7c5c074635016dc7133f408e52c2bf564f2a99dad5680",
+    "prototype-mock/analysis/case_05/single_no_graph/run1.json": "456be850578adc729615db19cefef203043f911094ae1c6998d92ae109356033",
+    "prototype-mock/runs/mock/20261011-083550_05_a1_genetic_second_opinion_in_b.json": "456be850578adc729615db19cefef203043f911094ae1c6998d92ae109356033",
+    "prototype-mock/analysis/case_01/single_graph/run1.json": "46abc7cf37c8cfa68ba9616024ff7becf3f453c2dcfe5a77c3a1cfeb9c720db6",
+    "prototype-mock/runs/mock/20261011-092247_01_a1_gp_to_region_b_host.json": "46abc7cf37c8cfa68ba9616024ff7becf3f453c2dcfe5a77c3a1cfeb9c720db6",
+    "prototype-mock/analysis/case_05/single_no_graph/run6.json": "9e43f6a7af72dece28859d9ca64c2930a4c0aa20cfa18d2ee951dd3abb499b3b",
+    "prototype-mock/analysis/case_05/baseline_corpus/run5.json": "c32689373df222e77692d86f40d86f9ab09c1374a9bc1679b301bb5cac4d8628",
+    "prototype-mock/analysis/case_05/multi_no_graph/run6.json": "dd4e6d8d17e9f6335a4849f4a18068674a15127f06a52e82c08c319c0b9c3843",
+    "prototype-mock/runs/mock/20261010-171438_01_a1_gp_to_region_b_host.json": "e2de83b20dd06f11ccb5b28d8712731e9abf920b3086409aa27cb01a745bebe6",
+    "prototype-mock/analysis/case_05/single_graph/run6.json": "e928db9d750974b348472ce097f29fbe3d6954990f3e85be21b37bdff54d7bab",
+    "prototype-mock/analysis/case_05/multi_graph/run8.json": "85d7b57bfb6a14deb9c8dadf6b5449a5d9bbfe213abfaccddd1da3842748aeb4",
+    "prototype-mock/runs/mock/20261010-191112_02_a1_gp_keys_held_in_a1.json": "c68f092cfddf6abf84492dd998b64dafeec0402128b4267e621c095a34cece4f",
+    "prototype-mock/analysis/case_05/baseline_corpus/run9.json": "9bd13ec11fb31c17e086fb0c53c62dfc4643aa25d2e55ac49814012d4829ca3f",
+    "prototype-mock/analysis/case_05/single_graph/run7.json": "dc39bc64130c480a63c32fa75fec7b9ab7dccfc2f9f57bcd015f989f9bbeacab",
+    "prototype-mock/runs/mock/20261010-190919_02_a1_gp_keys_held_in_a1.json": "a0626a23baae345b2cd0a395c46771b61e7a4c5b4975ce38da5686c73ba11f07",
+    "prototype-mock/analysis/case_05/single_graph/run4.json": "df1d35e4a925e37fe252c74357c05411d04d59959443d2c475785d9e80056147",
+    "prototype-mock/analysis/case_05/single_graph/run2.json": "dc57f0ad3f3009d5e0f713e9d5ef94c62c99caa2cf9845a09fbafb3925cb3c23",
+    "prototype-mock/runs/mock/20261011-085051_05_a1_genetic_second_opinion_in_b.json": "dc57f0ad3f3009d5e0f713e9d5ef94c62c99caa2cf9845a09fbafb3925cb3c23",
+    "prototype-mock/analysis/case_05/multi_no_graph/run3.json": "58d209ddcf78cb7642411c1b91613a4c8afe000be657b0b306108f51498c176c",
+    "prototype-mock/runs/mock/20261011-091145_05_a1_genetic_second_opinion_in_b.json": "58d209ddcf78cb7642411c1b91613a4c8afe000be657b0b306108f51498c176c",
+    "prototype-mock/runs/mock/20261011-080924_04_a1_genetic_result_to_b_life_insurer.json": "fdc3f897b49b417bc89c750965cb8a8cc3faf098915c2fe61da2e2de69ff3dbd",
+    "prototype-mock/analysis/case_05/multi_graph/run4.json": "eff65af5656107f1913c16f6b29a705b34ea084d8355cfc78fd8b9003825acf3",
+    "prototype-mock/runs/mock/20261010-171234_01_a1_gp_to_region_b_host.json": "5ae71d4970a8d8227d5cf4c0655a3139d2480b186cdc1a07375e9fab5fb80a7f",
+    "prototype-mock/runs/mock/20261010-200535_02_a1_gp_keys_held_in_a1.json": "18fbfb68c167bc46dc4578585662492cba59c779b1937768f4665c04100206a9",
+    "prototype-mock/analysis/case_05/multi_no_graph/run8.json": "80a3a94a2d5c5c679f4b5b144740d42d5d23166a39b722e9446be4e97bff11fb",
+    "prototype-mock/analysis/case_05/single_no_graph/run5.json": "0899cd1794066606b23903395bba201710e860523747954d70c5060986523d17",
+    "prototype-mock/runs/mock/20261010-162611_01_a1_gp_to_region_b_host.json": "847d5a816b170ff5b0fbdc6dfc7543d49fbd8993a3060cdc6b22bc06f8e688a9",
+    "prototype-mock/analysis/case_05/single_graph/run5.json": "df907344ed51fba76dbdebaadf08738d5a0e9ba2b68e112260e5362688b5d1cd",
+    "prototype-mock/runs/mock/20261010-154033_01_valdora_gp_to_corvel_host.json": "7ab48140bde4b41130f22d2263f55e119856dbb2114f53d94bcc7c1ebb39b889",
+    "prototype-mock/analysis/case_05/single_no_graph/run8.json": "433fa5e02b85669b41be1bcfb638e36687daf198366dec840c5470a824924796",
+    "prototype-mock/analysis/case_05/baseline_corpus/run4.json": "05749e1e30af9bbfb2405053e553690eedb59c47e9744ceedb414e505b98d5af",
+    "prototype-mock/analysis/case_05/single_no_graph/run2.json": "4209e8d56e961cf65097377acb2a8ffe75fbbb439d66ab9de4f2d61ed48ace7d",
+    "prototype-mock/runs/mock/20261011-085037_05_a1_genetic_second_opinion_in_b.json": "4209e8d56e961cf65097377acb2a8ffe75fbbb439d66ab9de4f2d61ed48ace7d",
+    "prototype-mock/analysis/case_05/baseline_corpus/run8.json": "22285b82e816cfaae90d01c9ae9f80cd12e7613bcd310c660e170e078ff8664d",
+    "prototype-mock/analysis/case_05/single_no_graph/run7.json": "1b541fcce04bbe598f37d77e7646a0326fa4ac0b7fb5aacbb8199f2ebf763c02",
+    "prototype-mock/analysis/case_01/multi_graph/run1.json": "5c592a5063e1c73422edee64519bd9d6f869f9d1a68c4ef3c7dc89626e0508cd",
+    "prototype-mock/runs/mock/20261011-093914_01_a1_gp_to_region_b_host.json": "5c592a5063e1c73422edee64519bd9d6f869f9d1a68c4ef3c7dc89626e0508cd",
+    "prototype-mock/runs/mock/20261010-205955_02_a1_gp_keys_held_in_a1.json": "5a90cc6c981742606ae94bf77c5c141eceb75f6c43857e57d1c4b4c0f0c024f7",
+    "prototype-mock/analysis/case_05/single_graph/run8.json": "c7703add5f6d99eb6078d5d134f160e5ef9446c970fb1195914ea3068fda7025",
+    "prototype-mock/analysis/case_05/baseline_corpus/run1.json": "0a34f3ae891ea83b86310f9484bbd9fa35045dd8b06b7192f720898c43fee4e7",
+    "prototype-mock/analysis/case_05/single_no_graph/run4.json": "8b1ff776974aec7cd2813c477bfa007a1f5c20a2d3e5b98bfaae50207dd4a2f5",
+    "prototype-mock/analysis/case_05/multi_graph/run2.json": "fba296d50f96acb1efb978e1b9943a99f4ff56843e597be793520adf2e3f2408",
+    "prototype-mock/runs/mock/20261011-085538_05_a1_genetic_second_opinion_in_b.json": "fba296d50f96acb1efb978e1b9943a99f4ff56843e597be793520adf2e3f2408",
+    "prototype-mock/analysis/case_05/single_graph/run3.json": "17a63bdad43b5d7863138d53c73dd9ad0087ea9dc734c5d4b85a289139390d29",
+    "prototype-mock/runs/mock/20261011-091147_05_a1_genetic_second_opinion_in_b.json": "17a63bdad43b5d7863138d53c73dd9ad0087ea9dc734c5d4b85a289139390d29",
+    "prototype-mock/analysis/case_05/baseline_corpus/run7.json": "619ca5c6ece5291a1d05646341d6dff405910570f59c663d5ed8d36707941704",
+    "prototype-mock/analysis/case_05/multi_no_graph/run1.json": "406d201beb800916f9f2fc7b512d8f0c6167bdebdd3ebc2dfee9ee1750ab2611",
+    "prototype-mock/runs/mock/20261011-084256_05_a1_genetic_second_opinion_in_b.json": "406d201beb800916f9f2fc7b512d8f0c6167bdebdd3ebc2dfee9ee1750ab2611",
+    "prototype-mock/runs/mock/20261010-174520_01_a1_gp_to_region_b_host.json": "e68e6dfbeaaf7337350752777bea15ced70d34ae7f51a368369defddac9c4efc",
+    "prototype-mock/runs/mock/20261010-164950_01_a1_gp_to_region_b_host.json": "fa2703683312fa3cd6caf4afccb9d89748d13b6baab8821fdbb226669d805842",
+    "prototype-mock/runs/mock/20261010-201346_02_a1_gp_keys_held_in_a1.json": "b9a59e185eb3964201357600c40a92d0dd94972171b15d31c51a87e43802acab",
+    "prototype-mock/analysis/case_05/multi_no_graph/run5.json": "dda5ae03371be920f50963a1435fe859a831cbe4bc1192ccbc9a180dc8281a56",
+    "prototype-mock/analysis/case_05/single_graph/run9.json": "6a4cc200a60d03bd88a066d3dbd544629e069394e7887093c673cf3ec17cb83a",
+    "prototype-mock/runs/mock/20261010-190818_02_a1_gp_keys_held_in_a1.json": "8fdbd69665783e267cb2715525f0f269197716707497211f610470ea8f8c7215",
+    "prototype-mock/analysis/case_05/multi_no_graph/run7.json": "e4498b4c779ad1d6f2e82c666e918dbe0a9c870ad3cadbe505d732540de864c2",
+    "prototype-mock/analysis/case_05/multi_graph/run9.json": "7775b937868c7b13f4c0f8ce5c6344ee58ab26a4b4d4c87f8ef7a821efeceb0f",
+    "prototype-mock/runs/mock/20261011-080835_04_a1_genetic_result_to_b_life_insurer.json": "6c41ef3a61ce5c110f78ac995ed3a5fceee6842ac04ebf3dad534c8dd164961f",
+    "prototype-mock/runs/mock/20261011-081424_04_a1_genetic_result_to_b_life_insurer.json": "dc8743c20a3396fec20c425230cf910f88e98431dda6ee809610b545d72e04b2"
+  },
+  "table_row_counts": {
+    "all_runs": 75,
+    "model_calls": 506,
+    "check_scores": 1383,
+    "graph_metrics": 3,
+    "raw_numeric": 26251,
+    "data_dictionary": 274
+  },
+  "known_unavailable_attempts": "Case 5 single/generated incomplete attempt and two deleted Case 1 multi runs are mentioned in notes but have no saved source JSON in the inventoried folders. No measurements were fabricated.",
+  "exported": {
+    "all_runs": {
+      "rows": 75,
+      "columns": 159,
+      "cellChecks": 12084,
+      "fileSha256": "ad67d1282add49166355e6d3f1960ae1778bd0dd073beba7ccef7196c59297ac"
+    },
+    "model_calls": {
+      "rows": 506,
+      "columns": 24,
+      "cellChecks": 12168,
+      "fileSha256": "657614acc94b6f1a5019ddf744b84a320d6291cb2409a53569156b0b45a85f7f"
+    },
+    "check_scores": {
+      "rows": 1383,
+      "columns": 15,
+      "cellChecks": 20760,
+      "fileSha256": "1899ff70a9ebe57a4743cb8158946c45e9f0ffbc725c1698ddb333af19534822"
+    },
+    "graph_metrics": {
+      "rows": 3,
+      "columns": 70,
+      "cellChecks": 280,
+      "fileSha256": "e5e346e906c24c31a350a1945d5af0fadf650784887b1b71523084048ee38c31"
+    },
+    "raw_numeric": {
+      "rows": 26251,
+      "columns": 6,
+      "cellChecks": 157512,
+      "fileSha256": "978fca3aca878085a4d11193ae9286b38afe4b768f90b42995e9e7a0e34277a4"
+    },
+    "data_dictionary": {
+      "rows": 274,
+      "columns": 5,
+      "cellChecks": 1375,
+      "fileSha256": "d67eb188808a935f455838517768160cbbfa85a768b5c26ee18797ebe30b4b04"
+    }
+  },
+  "authoring": "@oai/artifact-tool typed tables, verified cell by cell, serialized to CSV",
+  "readback": {
+    "status": "passed",
+    "fields_checked": 203900,
+    "numeric_source_pointers_checked": 26251,
+    "original_assessment_files_unchanged": 91,
+    "cross_table_usage_totals": "matched for every attempt",
+    "baseline_decisions": "2/9 stated labels match gates; 9/9 gate-derived decisions do_not_proceed"
+  }
+}

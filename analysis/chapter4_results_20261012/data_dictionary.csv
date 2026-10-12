@@ -1,0 +1,397 @@
+table,column,data_type,missing_value,description
+model_calls.csv,record_type,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,run_id,text,empty field,"Semantic SHA-256 of the complete saved attempt, used to deduplicate copies and join tables."
+model_calls.csv,event_index,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,event_kind,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,model,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,agent,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,purpose,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,attempt_number,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,ok,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,event_time_unix,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,response_seconds,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,reported_tool_calls,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,usage_present,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,error,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,source_path,text,empty field,Source location relative to the thesis workspace.
+model_calls.csv,source_pointer,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+model_calls.csv,input_tokens,number,empty field,"Recorded token usage for the named input/output category. Reasoning tokens are included in output, not an extra additive charge."
+model_calls.csv,output_tokens,number,empty field,"Recorded token usage for the named input/output category. Reasoning tokens are included in output, not an extra additive charge."
+model_calls.csv,total_tokens,number,empty field,"Recorded token usage for the named input/output category. Reasoning tokens are included in output, not an extra additive charge."
+model_calls.csv,cache_read_input_tokens,number,empty field,"Recorded token usage for the named input/output category. Reasoning tokens are included in output, not an extra additive charge."
+model_calls.csv,cache_creation_input_tokens,number,empty field,"Recorded token usage for the named input/output category. Reasoning tokens are included in output, not an extra additive charge."
+model_calls.csv,reasoning_output_tokens,number,empty field,"Recorded token usage for the named input/output category. Reasoning tokens are included in output, not an extra additive charge."
+model_calls.csv,audio_input_tokens,number,empty field,"Recorded token usage for the named input/output category. Reasoning tokens are included in output, not an extra additive charge."
+model_calls.csv,audio_output_tokens,number,empty field,"Recorded token usage for the named input/output category. Reasoning tokens are included in output, not an extra additive charge."
+check_scores.csv,run_id,text,empty field,"Semantic SHA-256 of the complete saved attempt, used to deduplicate copies and join tables."
+check_scores.csv,check_id,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+check_scores.csv,section,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+check_scores.csv,passed_raw,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+check_scores.csv,passed_reviewed,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+check_scores.csv,passed_historical_key,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+check_scores.csv,legacy_hand_override,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+check_scores.csv,found,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+check_scores.csv,review_changed,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+check_scores.csv,review_status,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+check_scores.csv,review_reason,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+check_scores.csv,expected,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+check_scores.csv,got,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+check_scores.csv,key_path,text,empty field,Source location relative to the thesis workspace.
+check_scores.csv,source_path,text,empty field,Source location relative to the thesis workspace.
+graph_metrics.csv,snapshot,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+graph_metrics.csv,record_type,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+graph_metrics.csv,model,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+graph_metrics.csv,source_path,text,empty field,Source location relative to the thesis workspace.
+graph_metrics.csv,source_file_sha256,text,empty field,"SHA-256 provenance fingerprint; file hashes use original bytes, semantic hashes use canonical JSON."
+graph_metrics.csv,shared_generation_id,text,empty field,Raw and reviewed snapshots share one generation cost. Do not add their token usage or elapsed time together.
+graph_metrics.csv,generation_seconds,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+graph_metrics.csv,generation_calls,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+graph_metrics.csv,input_tokens,number,empty field,"Recorded token usage for the named input/output category. Reasoning tokens are included in output, not an extra additive charge."
+graph_metrics.csv,output_tokens,number,empty field,"Recorded token usage for the named input/output category. Reasoning tokens are included in output, not an extra additive charge."
+graph_metrics.csv,reasoning_tokens,number,empty field,"Recorded token usage for the named input/output category. Reasoning tokens are included in output, not an extra additive charge."
+graph_metrics.csv,cached_calls,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+graph_metrics.csv,total_tokens,number,empty field,"Recorded token usage for the named input/output category. Reasoning tokens are included in output, not an extra additive charge."
+graph_metrics.csv,requirements_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,conditions_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,concepts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,typed_cross_corpus_links_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,interactions_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,routes_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,quarantined_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,review_operations_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,provisions_classified,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+graph_metrics.csv,provisions_total,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+graph_metrics.csv,normative_provisions,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+graph_metrics.csv,normative_provisions_in_graph,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+graph_metrics.csv,report_nodes_requirement_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_nodes_route_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_nodes_condition_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_nodes_concept_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_nodes_provision_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_has_route_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_gated_by_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_uses_concept_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_requires_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_scoped_by_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_excepted_by_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_actor_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_borrows_definition_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_fills_opening_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_adds_condition_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_satisfies_condition_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_restricts_route_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_extends_trigger_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_informs_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_may_conflict_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,report_links_may_reconcile_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,survey_items_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,survey_first_time_accepted_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,survey_repaired_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,survey_quarantined_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,survey_attempts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,survey_issues_over_attempts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,structure_items_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,structure_first_time_accepted_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,structure_repaired_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,structure_quarantined_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,structure_attempts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,structure_issues_over_attempts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,link_items_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,link_first_time_accepted_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,link_repaired_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,link_quarantined_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,link_attempts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,link_issues_over_attempts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,interact_items_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,interact_first_time_accepted_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,interact_repaired_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,interact_quarantined_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,interact_attempts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+graph_metrics.csv,interact_issues_over_attempts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+raw_numeric.csv,record_type,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+raw_numeric.csv,run_id,text,empty field,"Semantic SHA-256 of the complete saved attempt, used to deduplicate copies and join tables."
+raw_numeric.csv,source_path,text,empty field,Source location relative to the thesis workspace.
+raw_numeric.csv,json_pointer,text,empty field,"Exact JSON-pointer location in source_path; numerics may repeat in result and events, so do not sum this table indiscriminately."
+raw_numeric.csv,value,number,empty field,"Verbatim numeric or boolean source value. Numeric facts inside the case are data, not runtime metrics."
+raw_numeric.csv,value_type,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,case_id,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,cohort,text,empty field,"case_05_comparison, case_05_baseline, case_01_comparison or exploratory. Do not pool cohorts by default."
+failed_attempts.csv,config,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,architecture,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,graph,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,run_number,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,reasoning_effort,text,empty field,Effort inferred from the documented cohort/run number; unknown for exploratory runs.
+failed_attempts.csv,reasoning_effort_basis,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,response_token_limit,number,empty field,"Documented response cap by cohort, not an observed output token count."
+failed_attempts.csv,settings_source,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,scoring_key_path,text,empty field,Source location relative to the thesis workspace.
+failed_attempts.csv,run_id,text,empty field,"Semantic SHA-256 of the complete saved attempt, used to deduplicate copies and join tables."
+failed_attempts.csv,model,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,decision,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,assessment_accepted,number,empty field,1 when findings were accepted and saved final model responses did not fail; 0 for the saved failed attempt.
+failed_attempts.csv,decision_from_gates,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,decision_guarded,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,decision_label_matches_gates,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,started_at_utc,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,start_time_unix,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,end_time_unix,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,elapsed_seconds,number,empty field,"Run's result.seconds, the wall-clock assessment time in seconds."
+failed_attempts.csv,event_span_seconds,number,empty field,Maximum minus minimum saved event timestamp; distinct from rounded result.seconds.
+failed_attempts.csv,event_span_seconds_rounded,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,elapsed_minutes,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,model_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+failed_attempts.csv,llm_request_records_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,failed_model_responses_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,llm_retry_events_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,tool_calls_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,failed_tool_calls_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,model_response_seconds_sum,text,empty field,Sum of recorded final model-response durations. Parallel calls overlap; this is not run elapsed time.
+failed_attempts.csv,usage_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+failed_attempts.csv,usage_scope,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,cost_usd_recorded,text,empty field,Unavailable: saved artifacts do not contain reliable billing amounts or pricing for the model alias.
+failed_attempts.csv,billing_cost_available,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,source_path,text,empty field,Source location relative to the thesis workspace.
+failed_attempts.csv,duplicate_source_files_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,source_aliases,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+failed_attempts.csv,source_file_sha256,text,empty field,"SHA-256 provenance fingerprint; file hashes use original bytes, semantic hashes use canonical JSON."
+failed_attempts.csv,source_semantic_sha256,text,empty field,"SHA-256 provenance fingerprint; file hashes use original bytes, semantic hashes use canonical JSON."
+failed_attempts.csv,result_sha256,text,empty field,"SHA-256 provenance fingerprint; file hashes use original bytes, semantic hashes use canonical JSON."
+failed_attempts.csv,case_input_sha256,text,empty field,"SHA-256 provenance fingerprint; file hashes use original bytes, semantic hashes use canonical JSON."
+failed_attempts.csv,total_events_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,captured_input_tokens,text,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+failed_attempts.csv,input_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+failed_attempts.csv,captured_output_tokens,text,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+failed_attempts.csv,output_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+failed_attempts.csv,captured_total_tokens,text,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+failed_attempts.csv,total_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+failed_attempts.csv,captured_cache_read_input_tokens,text,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+failed_attempts.csv,cache_read_input_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+failed_attempts.csv,captured_cache_creation_input_tokens,text,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+failed_attempts.csv,cache_creation_input_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+failed_attempts.csv,captured_reasoning_output_tokens,text,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+failed_attempts.csv,reasoning_output_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+failed_attempts.csv,captured_audio_input_tokens,text,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+failed_attempts.csv,audio_input_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+failed_attempts.csv,captured_audio_output_tokens,text,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+failed_attempts.csv,audio_output_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+failed_attempts.csv,findings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,verified_findings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,finding_reference_issues_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,conclusion_issues_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,finding_citations_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,unique_finding_citations_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,fact_references_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,unique_fact_references_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,evidence_references_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,routes_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,questions_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,answered_questions_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,open_questions_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,delegations_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,peer_routings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,supervisor_passes_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,supervisor_corrections_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,supervisor_routings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,conflicts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,unresolved_conflicts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,required_actions_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,finding_missing_facts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,finding_missing_evidence_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,confirmations_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,open_dependencies_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,brief_known_facts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,brief_requirements_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,brief_missing_items_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+failed_attempts.csv,brief_blocking_missing_items_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,brief_actions_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,brief_route_groups_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,findings_gate_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,findings_duty_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,findings_applicability_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,findings_met_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,findings_unmet_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,findings_undetermined_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,findings_not_applicable_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,routes_supported_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,routes_available_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,routes_ruled_out_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,routes_unresolved_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,routes_not_investigated_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,region_a_findings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,region_a_provisions_read_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,region_b_findings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,region_b_provisions_read_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,subregion_a1_findings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,subregion_a1_provisions_read_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,unique_provisions_read_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,search_law_calls_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,read_provision_calls_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,kg_node_calls_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+failed_attempts.csv,brief_missing_fact_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+failed_attempts.csv,brief_missing_evidence_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+failed_attempts.csv,brief_missing_confirm_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+failed_attempts.csv,brief_missing_other_law_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+failed_attempts.csv,brief_missing_reference_defect_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+failed_attempts.csv,brief_missing_open_question_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+failed_attempts.csv,brief_missing_review_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+failed_attempts.csv,brief_missing_review_note_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+failed_attempts.csv,score_status,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,case_id,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,cohort,text,empty field,"case_05_comparison, case_05_baseline, case_01_comparison or exploratory. Do not pool cohorts by default."
+chapter4_runs.csv,config,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,architecture,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,graph,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,run_number,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,reasoning_effort,text,empty field,Effort inferred from the documented cohort/run number; unknown for exploratory runs.
+chapter4_runs.csv,reasoning_effort_basis,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,response_token_limit,number,empty field,"Documented response cap by cohort, not an observed output token count."
+chapter4_runs.csv,settings_source,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,scoring_key_path,text,empty field,Source location relative to the thesis workspace.
+chapter4_runs.csv,run_id,text,empty field,"Semantic SHA-256 of the complete saved attempt, used to deduplicate copies and join tables."
+chapter4_runs.csv,model,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,decision,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,assessment_accepted,number,empty field,1 when findings were accepted and saved final model responses did not fail; 0 for the saved failed attempt.
+chapter4_runs.csv,decision_from_gates,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,decision_guarded,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,decision_label_matches_gates,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,started_at_utc,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,start_time_unix,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,end_time_unix,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,elapsed_seconds,number,empty field,"Run's result.seconds, the wall-clock assessment time in seconds."
+chapter4_runs.csv,event_span_seconds,number,empty field,Maximum minus minimum saved event timestamp; distinct from rounded result.seconds.
+chapter4_runs.csv,event_span_seconds_rounded,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,elapsed_minutes,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,model_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+chapter4_runs.csv,llm_request_records_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,failed_model_responses_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,llm_retry_events_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,tool_calls_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,failed_tool_calls_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,model_response_seconds_sum,number,empty field,Sum of recorded final model-response durations. Parallel calls overlap; this is not run elapsed time.
+chapter4_runs.csv,usage_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+chapter4_runs.csv,usage_scope,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,cost_usd_recorded,text,empty field,Unavailable: saved artifacts do not contain reliable billing amounts or pricing for the model alias.
+chapter4_runs.csv,billing_cost_available,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,source_path,text,empty field,Source location relative to the thesis workspace.
+chapter4_runs.csv,duplicate_source_files_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,source_aliases,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,source_file_sha256,text,empty field,"SHA-256 provenance fingerprint; file hashes use original bytes, semantic hashes use canonical JSON."
+chapter4_runs.csv,source_semantic_sha256,text,empty field,"SHA-256 provenance fingerprint; file hashes use original bytes, semantic hashes use canonical JSON."
+chapter4_runs.csv,result_sha256,text,empty field,"SHA-256 provenance fingerprint; file hashes use original bytes, semantic hashes use canonical JSON."
+chapter4_runs.csv,case_input_sha256,text,empty field,"SHA-256 provenance fingerprint; file hashes use original bytes, semantic hashes use canonical JSON."
+chapter4_runs.csv,total_events_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,captured_input_tokens,number,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+chapter4_runs.csv,input_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+chapter4_runs.csv,captured_output_tokens,number,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+chapter4_runs.csv,output_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+chapter4_runs.csv,captured_total_tokens,number,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+chapter4_runs.csv,total_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+chapter4_runs.csv,captured_cache_read_input_tokens,number,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+chapter4_runs.csv,cache_read_input_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+chapter4_runs.csv,captured_cache_creation_input_tokens,number,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+chapter4_runs.csv,cache_creation_input_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+chapter4_runs.csv,captured_reasoning_output_tokens,number,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+chapter4_runs.csv,reasoning_output_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+chapter4_runs.csv,captured_audio_input_tokens,number,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+chapter4_runs.csv,audio_input_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+chapter4_runs.csv,captured_audio_output_tokens,number,empty field,Sum of this usage field over saved final llm_response events with the field present. Blank if absent everywhere; excludes unlogged intermediate and retry usage.
+chapter4_runs.csv,audio_output_tokens_response_records_count,number,empty field,Number of final model-response records reporting the named usage field; use to inspect measurement coverage.
+chapter4_runs.csv,findings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,verified_findings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,finding_reference_issues_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,conclusion_issues_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,finding_citations_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,unique_finding_citations_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,fact_references_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,unique_fact_references_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,evidence_references_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,routes_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,questions_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,answered_questions_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,open_questions_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,delegations_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,peer_routings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,supervisor_passes_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,supervisor_corrections_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,supervisor_routings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,conflicts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,unresolved_conflicts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,required_actions_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,finding_missing_facts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,finding_missing_evidence_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,confirmations_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,open_dependencies_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,brief_known_facts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,brief_requirements_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,brief_missing_items_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+chapter4_runs.csv,brief_blocking_missing_items_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,brief_actions_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,brief_route_groups_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,findings_gate_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,findings_duty_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,findings_applicability_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,findings_met_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,findings_unmet_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,findings_undetermined_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,findings_not_applicable_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,routes_supported_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,routes_available_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,routes_ruled_out_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,routes_unresolved_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,routes_not_investigated_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,region_a_findings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,region_a_provisions_read_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,region_b_findings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,region_b_provisions_read_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,subregion_a1_findings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,subregion_a1_provisions_read_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,unique_provisions_read_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,search_law_calls_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,read_provision_calls_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,kg_node_calls_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,brief_missing_fact_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+chapter4_runs.csv,brief_missing_evidence_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+chapter4_runs.csv,brief_missing_confirm_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+chapter4_runs.csv,brief_missing_other_law_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+chapter4_runs.csv,brief_missing_reference_defect_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+chapter4_runs.csv,brief_missing_open_question_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+chapter4_runs.csv,brief_missing_review_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+chapter4_runs.csv,brief_missing_review_note_count,number,empty field,Count of missing items of this kind in the saved reviewer brief.
+chapter4_runs.csv,baseline_audit_citations,number,empty field,"Recorded baseline audit field, or the number of items in its recorded issue list."
+chapter4_runs.csv,baseline_audit_citations_unknown_count,number,empty field,"Recorded baseline audit field, or the number of items in its recorded issue list."
+chapter4_runs.csv,baseline_audit_citations_not_shown_count,number,empty field,"Recorded baseline audit field, or the number of items in its recorded issue list."
+chapter4_runs.csv,baseline_audit_quote_ids,number,empty field,"Recorded baseline audit field, or the number of items in its recorded issue list."
+chapter4_runs.csv,baseline_audit_quote_ids_unknown_count,number,empty field,"Recorded baseline audit field, or the number of items in its recorded issue list."
+chapter4_runs.csv,baseline_audit_quote_ids_not_shown_count,number,empty field,"Recorded baseline audit field, or the number of items in its recorded issue list."
+chapter4_runs.csv,baseline_audit_fact_ids,number,empty field,"Recorded baseline audit field, or the number of items in its recorded issue list."
+chapter4_runs.csv,baseline_audit_fact_ids_unknown_count,number,empty field,"Recorded baseline audit field, or the number of items in its recorded issue list."
+chapter4_runs.csv,consent_route_entries_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,clauses_route_entries_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,consent_route_closed,number,empty field,Case 5 brief: a consent route citing Article 19 exists and every matching route is ruled_out.
+chapter4_runs.csv,clauses_route_available,number,empty field,Case 5 brief: a clauses/safeguards route citing Article 18 is available.
+chapter4_runs.csv,transfer_gate_unmet,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,execute_clauses_action_keyword_match,number,empty field,Mechanical keyword flag on actions for transfer gates citing Article 16. This is not the prose chapter's hand-reviewed guidance judgment.
+chapter4_runs.csv,score_status,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,score_basis,text,empty field,Current saved key replay. Exploratory runs may use earlier cases/corpora and are not comparable controlled replications.
+chapter4_runs.csv,review_status,text,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,checks_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,checks_passed_raw,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,checks_passed_reviewed,number,empty field,Pass count from a complete hash-bound source-evidence review; blank without such review.
+chapter4_runs.csv,checks_passed_historical_key,number,empty field,"Same accepted response replayed against the preserved earlier key, not an additional run."
+chapter4_runs.csv,checks_reviewed_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,review_changes_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,decision_matches_key,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,engagement_matches_key,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,extra_blocking_findings_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,checks_raw_fraction,number,empty field,"Pass count divided by the number of scored checks, on a 0-to-1 scale."
+chapter4_runs.csv,checks_reviewed_fraction,number,empty field,"Pass count divided by the number of scored checks, on a 0-to-1 scale."
+chapter4_runs.csv,key_requirements_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,key_requirements_passed_raw,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,key_routes_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,key_routes_passed_raw,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,key_conflicts_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,key_conflicts_passed_raw,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,key_questions_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,key_questions_passed_raw,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.
+chapter4_runs.csv,key_must_not_count,number,empty field,"Count of the named records/items, computed from the saved source; repeated references count separately unless labelled unique."
+chapter4_runs.csv,key_must_not_passed_raw,number,empty field,Recorded source metadata or derived metric named by this column; see export README for scope and missing-value rules.

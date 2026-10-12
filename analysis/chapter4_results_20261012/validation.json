@@ -1,0 +1,400 @@
+{
+  "export_scope": "chapter4",
+  "physical_assessment_files": 46,
+  "unique_assessment_attempts": 46,
+  "duplicate_files_removed": 0,
+  "per_run_checks": [
+    {
+      "run_id": "01e7ceef2f860c69b4ffa05d4b7e1879a57f536d6703542a63eb7f3a19b3bf0e",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run6.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "052cc4fbf16e30c8fae9c404b736d2a3726ec5b3e8d08db55a82cebb5686a4e9",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run4.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "11a00f636f87a0684f29c1c916beadc39b182f723b9f550e92fd2423564c885c",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run5.json",
+      "assertions_passed": 33,
+      "status": "passed"
+    },
+    {
+      "run_id": "163806457e1d48aa08f6d837eb84e0e77e3349f908bdf5d159268abdd607ed3b",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run9.json",
+      "assertions_passed": 33,
+      "status": "passed"
+    },
+    {
+      "run_id": "1a737eca5aa45aaa7f6252495edca36c999f2e35117aa4dec95918cbad60368c",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run9.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "1d540c4cf8412fbd750188b581c1931e27f747a75f176ccc244291897417b799",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run1.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "1df7f13f9e3411bbc5c1b140f8d3596a57043e6c1c2100e96485d023532adb54",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run7.json",
+      "assertions_passed": 33,
+      "status": "passed"
+    },
+    {
+      "run_id": "27d09c79287e3bf5f31d0c9d2b2a5354253151c9d9ac19be72e99a5fef6628ca",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run1.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "3d3953aaae4521765be0f31eddcd33cb36d2590ee4fe927e20f2a584e7688ffc",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run3.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "3f325ad3b9035ad72fd2c111da40e0817648aa5393473216c8928baf9b6d72c0",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run3.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "48527fb0b08223ef3bc1d05f6d3718f276e20c586e916174e945e4e0f71ad8a9",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run3.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "5320cb97856702238b43868bffe61e81142d5a3d01013eb9560b2eb9107475a5",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run6.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "6152f3158b16afc9b9fdb52953b87d1d70137ef597730c58f43e42b70cf8a8a3",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run2_failed.json",
+      "assertions_passed": 26,
+      "status": "passed"
+    },
+    {
+      "run_id": "659b805431f4fbaa81d27b048b66ff1de213993c27edaace81e4ef6092597adf",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run2.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "676f803599f06ada8cd7b180a5dcb3bcc2c4450f5c0cbbad7b239109e720f329",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run2.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "6977b332d7762e25e742ca25ee96dc2d57dee41088db0f4d00e19d3d0c51c8ad",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run1.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "6f2f8a7efceb41298a387bbd78a6ca01ab454297d4e0cc9d6ad0c72d3e1a9e39",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run6.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "7150eecf7fcc803b33f26ff5095cde5f05b8fb6dc9567532f05ff96fe7284488",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run5.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "7a6ade00d0b411b72af8ce363fd3abc4e68fa0aff8e5e15541c077d5b89cb523",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run6.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "81c70f112310f78668cffa0ad6731de0f1a13c44942454f7c26df201f0258b4c",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run6.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "8208b1452adf9102b877c1ab185d3f1d8b256325fb778f1b1cbd54f3fc496d90",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run8.json",
+      "assertions_passed": 33,
+      "status": "passed"
+    },
+    {
+      "run_id": "8425d74044d2426908bba5e1cacc5f8e174c16702472fb8a1e833910526a45fd",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run9.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "8592128e0dc998f129917191b504ac4dbc0a0a0a347738051c0d4bc1d042ad19",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run7.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "89219d1c08692c5127f8dfe66af6e9dd62e4c3e899b26560e2d510fa07f60b7c",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run4.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "8bd48b201fd35f66a1a9bca0d8d309486727345115d40923c78de7636711d310",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run2.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "8bd87edc0ab78a2d6a6435f16f4bd8ce2907ed4d433e23031ea88535a699a8de",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run3.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "99469ee55fb9306e79bdd8e7894b9dcc498cbbfb14baf44cc90e1ea3396464b4",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run4.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "9eb4de8e532f6fe2a82aa3d8e076eb96e422dc6f132cab6088a144d07bf7558f",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run8.json",
+      "assertions_passed": 33,
+      "status": "passed"
+    },
+    {
+      "run_id": "9ff2645a9bbce74ce4cab680137ce20d286679ace852737b586ac765748f5543",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run5.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "a7bffef84ae2e09af483bcd31eb878b7dc410c3d89868d46f1513051aac9422e",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run5.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "ac78fb56d49b903a91eb42089d7def207356fbaa892c820ef170429f5f0e0145",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run8.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "af5279d9c69ebd9dc2213033bd91f5cddf2b9274fc3454f25129df3589d9002e",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run4.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "b0829f65e17b81ce0c9d83622c4be8611f054e26a9649e4478b7c47746da3107",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run2.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "b6c361b4fbce726b8938d8fad71da4ef2e5ddda670834930894921892e3c8ef1",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run8.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "b77839a1238edc9f8e5d8fb7ab9f804968ad266c2c7c83039350c0a4e7060d66",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run7.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "c1cd50b2526c4f622374c3a71c8aff13f8a8c1c66fd059da99422ba4c95921a5",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run8.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "c489544f7ed2ad7e93bd5a19b3233f1363457360cc23d45c31a1815f08c181f4",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run1.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "c65f8107733d4f4decbe367913f5011b67a42127eb8bc68fac5f98a57cf18a4a",
+      "source_path": "prototype-mock/analysis/case_05/single_no_graph/run4.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "c720faf5c0282054e37362370ddd22fd80766d1f67382e09418c9d0723ced805",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run2.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "c778f635dde9a2d38dffb2eea029bf0c87d289233c57ecbb4c28ec15c7757a64",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run3.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "d0dc883cafafed73d2b965b8d3819578cfc80e2f5c10e899e8d16ff8e517fdc6",
+      "source_path": "prototype-mock/analysis/case_05/baseline_corpus/run7.json",
+      "assertions_passed": 29,
+      "status": "passed"
+    },
+    {
+      "run_id": "d66b80242a928404f809d597637bf06d850b0459a30f752f1888d68b5388069a",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run1.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    },
+    {
+      "run_id": "dc7b5a13dcf9e6521101320cdb784059c60a1172c8f3cc4ff472258a8e70f7db",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run5.json",
+      "assertions_passed": 37,
+      "status": "passed"
+    },
+    {
+      "run_id": "dcfd24347af2d8d3536b8a9c4bcbb5e0c269d09b21cbc100b2df41db35493b22",
+      "source_path": "prototype-mock/analysis/case_05/single_graph/run9.json",
+      "assertions_passed": 28,
+      "status": "passed"
+    },
+    {
+      "run_id": "e84edd636b587e01e181e4c22f1e34f6bf83e333591635d0afb83a0f3e918ee7",
+      "source_path": "prototype-mock/analysis/case_05/multi_no_graph/run7.json",
+      "assertions_passed": 33,
+      "status": "passed"
+    },
+    {
+      "run_id": "e84f4eda9a9d7dc4f69de9357f3e57c43a0c232c1324fba6dad9f07a2d1da5cb",
+      "source_path": "prototype-mock/analysis/case_05/multi_graph/run9.json",
+      "assertions_passed": 36,
+      "status": "passed"
+    }
+  ],
+  "existing_export_comparisons_passed": 216,
+  "cohort_counts": {
+    "case_05_baseline": 9,
+    "case_05_comparison": 36
+  },
+  "source_hashes": {
+    "prototype-mock/analysis/case_05/baseline_corpus/run6.json": "a8ee690a280be5d05f02ffda6be99accf83ab0aa3a06fb384c412be07e301044",
+    "prototype-mock/analysis/case_05/multi_no_graph/run4.json": "ab50eec3dd60487791762d959634a10cdc1427d5e64214b7843cbeeccf177a12",
+    "prototype-mock/analysis/case_05/multi_graph/run5.json": "7c818529de31bc7e5dcf7c97565af24fc0d8c9c6dde0ab205d826f3fd928e288",
+    "prototype-mock/analysis/case_05/multi_no_graph/run9.json": "cc15d7d1ec5d761c1f79972f714b70a23ad5ad85c68b4b176bfb5c23160f3df9",
+    "prototype-mock/analysis/case_05/single_no_graph/run9.json": "ce5c4bc78c982af953f6b6422b6b8e4b7853fb1d00dc9d9ac8f819eb0f61ade3",
+    "prototype-mock/analysis/case_05/multi_graph/run1.json": "d8983cd0e6fcc1a9298ae15383048be41a78d0db46f52924429bf3ce0803f3e6",
+    "prototype-mock/analysis/case_05/multi_graph/run7.json": "6d943bb76c154b428acb01cb41a58a16aa184156ea723a5585d6090212d1ff2c",
+    "prototype-mock/analysis/case_05/single_graph/run1.json": "904a9a8fa281415b5f3ea81e6d68f53c24e6b8b1f392f10951e62b943ce4f7f8",
+    "prototype-mock/analysis/case_05/single_no_graph/run3.json": "37b516851d929f392204e88bd125fea64ba9a9e0ff959ff32c5f17162b740bfc",
+    "prototype-mock/analysis/case_05/baseline_corpus/run3.json": "3fc145934c77219e78328b5a83e6230c936b2f7b5c39438c6d75c37c2c208640",
+    "prototype-mock/analysis/case_05/multi_graph/run3.json": "13d7046137128c039ca7d4f4b89b26c8124626b9d788b3a96f5518a8fc439482",
+    "prototype-mock/analysis/case_05/multi_graph/run6.json": "116bb984d55030a58c5dd9189a4c14f2e00ae746a9f000d698378ea5395d17db",
+    "prototype-mock/analysis/case_05/baseline_corpus/run2_failed.json": "fc1e779006f025e01b8603032a6566f1291e926aeee20578335bf8c966ada29f",
+    "prototype-mock/analysis/case_05/baseline_corpus/run2.json": "dc2d7b55e9ee794caf047144b8a1b256f00e1861f52171c1945b999ebd6605b9",
+    "prototype-mock/analysis/case_05/multi_no_graph/run2.json": "0149aa1af75556e137e7c5c074635016dc7133f408e52c2bf564f2a99dad5680",
+    "prototype-mock/analysis/case_05/single_no_graph/run1.json": "456be850578adc729615db19cefef203043f911094ae1c6998d92ae109356033",
+    "prototype-mock/analysis/case_05/single_no_graph/run6.json": "9e43f6a7af72dece28859d9ca64c2930a4c0aa20cfa18d2ee951dd3abb499b3b",
+    "prototype-mock/analysis/case_05/baseline_corpus/run5.json": "c32689373df222e77692d86f40d86f9ab09c1374a9bc1679b301bb5cac4d8628",
+    "prototype-mock/analysis/case_05/multi_no_graph/run6.json": "dd4e6d8d17e9f6335a4849f4a18068674a15127f06a52e82c08c319c0b9c3843",
+    "prototype-mock/analysis/case_05/single_graph/run6.json": "e928db9d750974b348472ce097f29fbe3d6954990f3e85be21b37bdff54d7bab",
+    "prototype-mock/analysis/case_05/multi_graph/run8.json": "85d7b57bfb6a14deb9c8dadf6b5449a5d9bbfe213abfaccddd1da3842748aeb4",
+    "prototype-mock/analysis/case_05/baseline_corpus/run9.json": "9bd13ec11fb31c17e086fb0c53c62dfc4643aa25d2e55ac49814012d4829ca3f",
+    "prototype-mock/analysis/case_05/single_graph/run7.json": "dc39bc64130c480a63c32fa75fec7b9ab7dccfc2f9f57bcd015f989f9bbeacab",
+    "prototype-mock/analysis/case_05/single_graph/run4.json": "df1d35e4a925e37fe252c74357c05411d04d59959443d2c475785d9e80056147",
+    "prototype-mock/analysis/case_05/single_graph/run2.json": "dc57f0ad3f3009d5e0f713e9d5ef94c62c99caa2cf9845a09fbafb3925cb3c23",
+    "prototype-mock/analysis/case_05/multi_no_graph/run3.json": "58d209ddcf78cb7642411c1b91613a4c8afe000be657b0b306108f51498c176c",
+    "prototype-mock/analysis/case_05/multi_graph/run4.json": "eff65af5656107f1913c16f6b29a705b34ea084d8355cfc78fd8b9003825acf3",
+    "prototype-mock/analysis/case_05/multi_no_graph/run8.json": "80a3a94a2d5c5c679f4b5b144740d42d5d23166a39b722e9446be4e97bff11fb",
+    "prototype-mock/analysis/case_05/single_no_graph/run5.json": "0899cd1794066606b23903395bba201710e860523747954d70c5060986523d17",
+    "prototype-mock/analysis/case_05/single_graph/run5.json": "df907344ed51fba76dbdebaadf08738d5a0e9ba2b68e112260e5362688b5d1cd",
+    "prototype-mock/analysis/case_05/single_no_graph/run8.json": "433fa5e02b85669b41be1bcfb638e36687daf198366dec840c5470a824924796",
+    "prototype-mock/analysis/case_05/baseline_corpus/run4.json": "05749e1e30af9bbfb2405053e553690eedb59c47e9744ceedb414e505b98d5af",
+    "prototype-mock/analysis/case_05/single_no_graph/run2.json": "4209e8d56e961cf65097377acb2a8ffe75fbbb439d66ab9de4f2d61ed48ace7d",
+    "prototype-mock/analysis/case_05/baseline_corpus/run8.json": "22285b82e816cfaae90d01c9ae9f80cd12e7613bcd310c660e170e078ff8664d",
+    "prototype-mock/analysis/case_05/single_no_graph/run7.json": "1b541fcce04bbe598f37d77e7646a0326fa4ac0b7fb5aacbb8199f2ebf763c02",
+    "prototype-mock/analysis/case_05/single_graph/run8.json": "c7703add5f6d99eb6078d5d134f160e5ef9446c970fb1195914ea3068fda7025",
+    "prototype-mock/analysis/case_05/baseline_corpus/run1.json": "0a34f3ae891ea83b86310f9484bbd9fa35045dd8b06b7192f720898c43fee4e7",
+    "prototype-mock/analysis/case_05/single_no_graph/run4.json": "8b1ff776974aec7cd2813c477bfa007a1f5c20a2d3e5b98bfaae50207dd4a2f5",
+    "prototype-mock/analysis/case_05/multi_graph/run2.json": "fba296d50f96acb1efb978e1b9943a99f4ff56843e597be793520adf2e3f2408",
+    "prototype-mock/analysis/case_05/single_graph/run3.json": "17a63bdad43b5d7863138d53c73dd9ad0087ea9dc734c5d4b85a289139390d29",
+    "prototype-mock/analysis/case_05/baseline_corpus/run7.json": "619ca5c6ece5291a1d05646341d6dff405910570f59c663d5ed8d36707941704",
+    "prototype-mock/analysis/case_05/multi_no_graph/run1.json": "406d201beb800916f9f2fc7b512d8f0c6167bdebdd3ebc2dfee9ee1750ab2611",
+    "prototype-mock/analysis/case_05/multi_no_graph/run5.json": "dda5ae03371be920f50963a1435fe859a831cbe4bc1192ccbc9a180dc8281a56",
+    "prototype-mock/analysis/case_05/single_graph/run9.json": "6a4cc200a60d03bd88a066d3dbd544629e069394e7887093c673cf3ec17cb83a",
+    "prototype-mock/analysis/case_05/multi_no_graph/run7.json": "e4498b4c779ad1d6f2e82c666e918dbe0a9c870ad3cadbe505d732540de864c2",
+    "prototype-mock/analysis/case_05/multi_graph/run9.json": "7775b937868c7b13f4c0f8ce5c6344ee58ab26a4b4d4c87f8ef7a821efeceb0f"
+  },
+  "table_row_counts": {
+    "model_calls": 179,
+    "check_scores": 720,
+    "graph_metrics": 2,
+    "raw_numeric": 12666,
+    "failed_attempts": 1,
+    "chapter4_runs": 45,
+    "data_dictionary": 396
+  },
+  "known_unavailable_attempts": "Case 5 single/generated incomplete attempt is mentioned in notes but its source JSON is unavailable. No measurements were fabricated.",
+  "exported": {
+    "model_calls": {
+      "rows": 179,
+      "columns": 24,
+      "cellChecks": 4320,
+      "fileSha256": "048b904e84195786c40b0d0d08db90a1ede1d06dc3ecff104d884f5175874a37"
+    },
+    "check_scores": {
+      "rows": 720,
+      "columns": 15,
+      "cellChecks": 10815,
+      "fileSha256": "dc83f5eea407150e7ae018e2e14ef5213f4569b2b1297825987bea6823980646"
+    },
+    "graph_metrics": {
+      "rows": 2,
+      "columns": 70,
+      "cellChecks": 210,
+      "fileSha256": "ce0e44bf31016d64a8d9093e7791ee12ee9606cf23a3823fe9e9e9964f8f5941"
+    },
+    "raw_numeric": {
+      "rows": 12666,
+      "columns": 6,
+      "cellChecks": 76002,
+      "fileSha256": "0ea889fc4bef616670844397f0e2c62ecf555133ac039ca63a86e9341724bc76"
+    },
+    "failed_attempts": {
+      "rows": 1,
+      "columns": 122,
+      "cellChecks": 244,
+      "fileSha256": "e80c9dcb58454f541c93116bc5b5f336b6c54db11143ecb906c8908182dd3653"
+    },
+    "chapter4_runs": {
+      "rows": 45,
+      "columns": 159,
+      "cellChecks": 7314,
+      "fileSha256": "4bbe0b0d86088ab4f67789df7a23a6874f14edf3cadca8a2a32bb4b03080ac90"
+    },
+    "data_dictionary": {
+      "rows": 396,
+      "columns": 5,
+      "cellChecks": 1985,
+      "fileSha256": "484bffec0bcb54f5eaaa1f1e75fc4b082461dc8d1d27c95de53eb58186462ea3"
+    }
+  },
+  "authoring": "@oai/artifact-tool typed tables, verified cell by cell, serialized to CSV",
+  "readback": {
+    "status": "passed",
+    "fields_checked": 100489,
+    "numeric_source_pointers_checked": 12666,
+    "original_assessment_files_unchanged": 46,
+    "cross_table_usage_totals": "matched for every attempt",
+    "baseline_decisions": "2/9 stated labels match gates; 9/9 gate-derived decisions do_not_proceed"
+  }
+}
